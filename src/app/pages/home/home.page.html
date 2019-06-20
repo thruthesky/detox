@@ -1,15 +1,13 @@
 <ion-header>
-  <ion-toolbar color="green">
+  <ion-toolbar color="green" mode="ios">
     <ion-buttons slot="start">
       <ion-button>
         <ion-icon slot="icon-only" name="home"></ion-icon>
       </ion-button>
     </ion-buttons>
-
-    <ion-title text-center>
+    <ion-title class="ion-text-center">
       <img src="/assets/img/logo/title-logo.png">
     </ion-title>
-
     <ion-buttons slot="end">
       <ion-button>
         <ion-icon slot="icon-only" name="search"></ion-icon>
@@ -22,9 +20,9 @@
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
+
 <ion-content>
   <!-- menu bar -->
-
   <ion-segment color="green" mode="md">
     <ion-segment-button checked mode="md">
       Menu1
@@ -60,18 +58,64 @@
     Toolbar middle title
   </div>
 
+  <div class="flex pt-10 px-15">
+    <span>TITLE</span>
+    <span class="spacer"></span>
+    <span class="green fs-12 ">
+      <span class="arrow-text">NEXT </span>
+      <ion-icon class="arrow-icon" name="arrow-forward" mode="ios"></ion-icon>
+    </span>
+  </div>
+
   <!-- grid section -->
-  <div class="">
-    <ion-grid>
-      <ion-row>
-        <ion-col size="6" color="primary" *ngFor="let item of [].constructor(10)">
-          <ion-img
-            src="https://static1.squarespace.com/static/571fb0c760b5e9a0a98cc71c/5c3cf3b9758d4640ed8e42f1/5c3cf47a1ae6cfa74d78926d/1549515177784/Santa-Barbara-Hotel-Photography-Mark-Skovorodko0003.jpg">
-          </ion-img>
-          <ion-label>asdasfdkaskldfjladsfljdsabfjkasdflklASDKasdhAKSDNKAsnd</ion-label>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col size="6" color="primary" *ngFor="let item of [].constructor(4)">
+        <ion-img
+          src="https://static1.squarespace.com/static/571fb0c760b5e9a0a98cc71c/5c3cf3b9758d4640ed8e42f1/5c3cf47a1ae6cfa74d78926d/1549515177784/Santa-Barbara-Hotel-Photography-Mark-Skovorodko0003.jpg">
+        </ion-img>
+        <div class="pt-5">
+          <ion-label color="medium">asdasfdkaskldfjladsfljdsabfjkas</ion-label>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <div class="py-15px px-15">
+    TITLE
+  </div>
+  <!-- slider by two -->
+  <div class="bg-light-gray">
+    <ion-slides options="initialSlide: 1;speed: 100">
+      <ion-slide *ngFor="let items of [].constructor(10)">
+        <ion-grid fixed>
+          <ion-row>
+            <ion-col size="6">
+              <div class="shadow bg-white">
+                <ion-img class="img"
+                  src="https://static1.squarespace.com/static/571fb0c760b5e9a0a98cc71c/5c3cf3b9758d4640ed8e42f1/5c3cf47a1ae6cfa74d78926d/1549515177784/Santa-Barbara-Hotel-Photography-Mark-Skovorodko0003.jpg">
+                </ion-img>
+                <div class="ion-text-start ion-padding-start">
+                  <div class="bold pt-5 black fs-12">Title</div>
+                  <div class="py-5 fs-12"> asdasdjkashdlkasdhajdhasdalsdhasdj</div>
+                </div>
+              </div>
+            </ion-col>
+            <ion-col size="6">
+              <div class="shadow bg-white">
+                <ion-img class="img"
+                  src="https://static1.squarespace.com/static/571fb0c760b5e9a0a98cc71c/5c3cf3b9758d4640ed8e42f1/5c3cf47a1ae6cfa74d78926d/1549515177784/Santa-Barbara-Hotel-Photography-Mark-Skovorodko0003.jpg">
+                </ion-img>
+                <div class="ion-text-start ion-padding-start">
+                  <div class="bold pt-5 black fs-12">Title</div>
+                  <div class="py-5 fs-12"> asdasdjkashdlkasdhajdhasdalsdhasdj</div>
+                </div>
+              </div>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-slide>
+    </ion-slides>
   </div>
 
 

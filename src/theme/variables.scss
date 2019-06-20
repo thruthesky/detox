@@ -90,15 +90,66 @@
 .bg-green {
   background-color: #7db262 !important;
 }
+.bg-light-gray{
+  background-color: #f4f5f8!important;
+}
+.bg-white{
+  background-color: #ffffff!important;
+}
+
 .white {
   color: white;
 }
+.green {
+color:   #7db262 !important;
+}
+
 
 .py-15px {
   padding-top: 15px !important;
   padding-bottom: 15px !important;
 }
+.py-5 {
+  padding-top:5px;
+  padding-bottom: 5px;
+}
+.px-15 {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
 
 .bold {
   font-weight: bold;
+}
+
+
+.pt-5 {
+  padding-top:5px;
+}
+
+.pt-10 {
+  padding-top:10px;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+.flex {
+  display: flex;
+}
+
+.fs-12 {
+  font-size: 12px!important;
+}
+
+.h-300{
+  height: 180px!important;
+}
+.black {
+  color:black;
+}
+
+.shadow {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
