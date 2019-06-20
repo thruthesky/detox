@@ -103,11 +103,17 @@
 .green {
 color:   #7db262 !important;
 }
-
+.gray {
+  color: #989aa2;
+}
 
 .py-15px {
   padding-top: 15px !important;
   padding-bottom: 15px !important;
+}
+.py-10 {
+  padding-top:10px;
+  padding-bottom: 10px;
 }
 .py-5 {
   padding-top:5px;
@@ -142,12 +148,15 @@ color:   #7db262 !important;
 .fs-12 {
   font-size: 12px!important;
 }
+.fs-14 {
+  font-size: 14px!important;
+}
 
 .h-300{
   height: 180px!important;
 }
 .black {
-  color:black;
+  color:black!important;
 }
 
 .shadow {
