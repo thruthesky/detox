@@ -1,14 +1,40 @@
 <ion-header>
   <ion-toolbar color="7">
-    <ion-title>
+    <ion-buttons slot="start">
+      <ion-button>
+        <ion-icon slot="icon-only" name="home"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title text-center>
       <img src="/assets/img/logo/title-logo.png">
     </ion-title>
+    <ion-buttons slot="secondary">
+      <ion-button>
+        <ion-icon slot="icon-only" name="search"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="primary">
+      <ion-button>
+        <ion-icon slot="icon-only" name="menu"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
-
 <ion-content>
-  <div class="ion-padding">
-    The world is your oyster.
-    <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
-  </div>
+    <ion-toolbar>
+        <ion-segment>
+          <ion-segment-button checked>
+            Menu1
+          </ion-segment-button>
+          <ion-segment-button>
+            Menu2
+          </ion-segment-button>
+          <ion-segment-button>
+            Menu3
+          </ion-segment-button>
+          <ion-segment-button>
+            Menu4
+          </ion-segment-button>
+        </ion-segment>
+      </ion-toolbar>
 </ion-content>
