@@ -76,11 +76,29 @@
   --ion-color-light-tint: #f5f6f9;
 }
 
-.ion-color-7 {
+.ion-color-green {
   --ion-color-base: #7db262;
   --ion-color-base-rgb: 125, 178, 98;
   --ion-color-contrast: #ffffff;
   --ion-color-contrast-rgb: 255, 255, 255;
   --ion-color-shade: #6e9d56;
   --ion-color-tint: #8aba72;
+}
+
+
+
+.bg-green {
+  background-color: #7db262 !important;
+}
+.white {
+  color: white;
+}
+
+.py-15px {
+  padding-top: 15px !important;
+  padding-bottom: 15px !important;
+}
+
+.bold {
+  font-weight: bold;
 }
