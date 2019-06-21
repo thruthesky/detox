@@ -1,62 +1,16 @@
 <ion-header>
-  <ion-toolbar color="green" mode="ios">
-    <ion-buttons slot="start">
-      <ion-button>
-        <ion-icon slot="icon-only" name="home"></ion-icon>
-      </ion-button>
-    </ion-buttons>
-    <ion-title class="ion-text-center">
-      <img src="/assets/img/logo/title-logo.png">
-    </ion-title>
-    <ion-buttons slot="end">
-      <ion-button>
-        <ion-icon slot="icon-only" name="search"></ion-icon>
-      </ion-button>
-    </ion-buttons>
-    <ion-buttons slot="primary">
-      <ion-button>
-        <ion-icon slot="icon-only" name="menu"></ion-icon>
-      </ion-button>
-    </ion-buttons>
-  </ion-toolbar>
+  <app-mobile-header></app-mobile-header>
 </ion-header>
 
 <ion-content>
-  <!-- menu bar -->
-  <ion-segment color="green" mode="md">
-    <ion-segment-button checked mode="md">
-      Menu1
-    </ion-segment-button>
-    <ion-segment-button mode="md">
-      Menu2
-    </ion-segment-button>
-    <ion-segment-button mode="md">
-      Menu3
-    </ion-segment-button>
-    <ion-segment-button mode="md">
-      Menu4
-    </ion-segment-button>
-  </ion-segment>
-
-  <!-- banner slider -->
-  <ion-slides pager="true" options="initialSlide: 1;speed: 100">
-    <ion-slide>
-      <ion-img src="http://www.sle.co.uk/blog/wp-content/uploads/2017/10/image1-lebanon-view-1000x500.jpg"></ion-img>
-    </ion-slide>
-    <ion-slide>
-      <ion-img src="https://voss-photography.com/wp-content/uploads/2015/12/berlin-rooftop-view.jpg?7f1c30"></ion-img>
-    </ion-slide>
-    <ion-slide>
-      <ion-img
-        src="https://static1.squarespace.com/static/571fb0c760b5e9a0a98cc71c/5c3cf3b9758d4640ed8e42f1/5c3cf47a1ae6cfa74d78926d/1549515177784/Santa-Barbara-Hotel-Photography-Mark-Skovorodko0003.jpg">
-      </ion-img>
-    </ion-slide>
-  </ion-slides>
 
 
-  <div class="py-15px ion-text-center bold bg-green white">
-    Toolbar middle title
-  </div>
+  <app-mobile-home-top-menu></app-mobile-home-top-menu>
+
+  <app-mobile-home-top-slider></app-mobile-home-top-slider>
+
+
+  <app-mobile-home-calc-button></app-mobile-home-calc-button>
 
   <div class="flex pt-10 px-15">
     <span>TITLE</span>
@@ -91,7 +45,7 @@
           <ion-row>
             <ion-col size="6">
               <ion-card class="card">
-                  <img [src]="img" class="mh-100" alt="">
+                <img [src]="img" class="mh-100" alt="">
                 <ion-card-content class="ion-text-start" no-padding>
                   <div class="dark-gray pt-10  px-10 bold fs-14">TITLE</div>
                   <div class="gray p-10 pt-5 fs-14">Card Details</div>
@@ -99,14 +53,14 @@
               </ion-card>
             </ion-col>
             <ion-col size="6">
-                <ion-card class="card">
-                    <img [src]="img" class="mh-100" alt="">
-                  <ion-card-content class="ion-text-start" no-padding>
-                    <div class="dark-gray pt-10  px-10 bold fs-14">TITLE</div>
-                    <div class="gray p-10 pt-5 fs-14">Card Details</div>
-                  </ion-card-content>
-                </ion-card>
-              </ion-col>  
+              <ion-card class="card">
+                <img [src]="img" class="mh-100" alt="">
+                <ion-card-content class="ion-text-start" no-padding>
+                  <div class="dark-gray pt-10  px-10 bold fs-14">TITLE</div>
+                  <div class="gray p-10 pt-5 fs-14">Card Details</div>
+                </ion-card-content>
+              </ion-card>
+            </ion-col>
           </ion-row>
         </ion-grid>
       </ion-slide>
