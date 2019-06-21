@@ -91,32 +91,29 @@
         <ion-grid fixed>
           <ion-row>
             <ion-col size="6">
-              <div class="shadow bg-white h-250">
-                <ion-img [src]="img">
-                </ion-img>
-                <div class="ion-text-start ion-padding-horizontal">
-                  <div class="bold pt-5 black fs-14">Title</div>
-                  <div class="py-5 fs-14 gray"> asdasdjkashdlkasdhajdhasdalsdhasdj</div>
-                </div>
-              </div>
+              <ion-card class="card">
+                  <img [src]="img" class="h-100" alt="">
+                <ion-card-content class="ion-text-start" no-padding>
+                  <div class="dark-gray pt-10  px-10 bold fs-14">TITLE</div>
+                  <div class="gray p-10 pt-5 fs-14">Card Details</div>
+                </ion-card-content>
+              </ion-card>
             </ion-col>
             <ion-col size="6">
-              <div class="shadow bg-white h-250">
-                <ion-img [src]="img">
-                </ion-img>
-                <div class="ion-text-start ion-padding-horizontal">
-                  <div class="bold pt-5 fs-14">Title</div>
-                  <div class="py-5 fs-14 gray"> asdasdjkashdlkasdhajdhasdalsdhasdj</div>
-                </div>
-              </div>
-            </ion-col>
+                <ion-card class="card">
+                    <img [src]="img" class="h-100" alt="">
+                  <ion-card-content class="ion-text-start" no-padding>
+                    <div class="dark-gray pt-10  px-10 bold fs-14">TITLE</div>
+                    <div class="gray p-10 pt-5 fs-14">Card Details</div>
+                  </ion-card-content>
+                </ion-card>
+              </ion-col>  
           </ion-row>
         </ion-grid>
       </ion-slide>
     </ion-slides>
   </div>
   <div>
-
   </div>
   <div class="ion-text-center py-10 gray">
     Text Center
