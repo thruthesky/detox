@@ -8,10 +8,42 @@ import { IonSlides } from '@ionic/angular';
 })
 export class DesktopHomeTopSliderComponent implements OnInit {
   @ViewChild('slides') slides: IonSlides;
+
+  options = {
+    initialSlide: 1,
+    speed: 400,
+    loop: true,
+    autoplay: {
+      delay: 20000
+    },
+    navigation: {
+      nextEl: '.swiper-button-prev',
+      prevEl: '.swiper-button-next',
+    }
+  };
+
+  moving = false;
   constructor() { }
 
-  ngOnInit() {}
-  
+  ngOnInit() {
+    this.slides.ionSlideTransitionStart.subscribe(res => {
+      this.moving = true;
+      console.log('transition start');
+    });
+    this.slides.ionSlideTransitionEnd.subscribe(res => {
+      this.moving = false;
+      console.log('transition ended');
+    });
+
+    this.slides.ionSlideDrag.subscribe(res => {
+      this.moving = true;
+      console.log('drag event');
+    });
+
+    this.slides.ionSlideTouchStart.subscribe( () => this.moving = true );
+    this.slides.ionSlideTouchEnd.subscribe( () => this.moving = false );
+  }
+
   next() {
     this.slides.slideNext();
   }

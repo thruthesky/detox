@@ -1,4 +1,4 @@
-    <div class="arrow-wrapper">
+    <!-- <div class="arrow-wrapper">
       <div class="flex-between layout-width ">
         <div (click)="prev()">
           <ion-icon class="arrow" name="arrow-back" mode="ios"></ion-icon>
@@ -7,12 +7,25 @@
           <ion-icon class="arrow" name="arrow-forward" mode="ios"></ion-icon>
         </div>
       </div>    
-    </div>
-    <ion-slides mode="ios" pager="ios" scrollbar="ios" #slides>
-      <ion-slide *ngFor="let item of [].constructor(4)">
-        <img class="img-slider"
-          src="https://static.rogerebert.com/uploads/review/primary_image/reviews/the-image-book-2019/hero_image-book-image.jpg"
-          alt="">
+    </!-->
+
+
+
+
+
+    <ion-slides class="position-absolute top left right" options=" options " mode="ios" pager="ios" scrollbar="ios"
+      #slides>
+
+      <ion-slide class="h-500px" *ngFor="let item of [].constructor(10)">
+        <div class="w-100 h-500px corver" style="background-image: url(/assets/img/desktop-home-top-slider/1.jpg)">
+          <div class="layout-width h-500px flex-between align-items-center" *ngIf=" ! moving ">
+            <ion-button (click)="prev()">
+              <ion-icon name="arrow-dropleft-circle"></ion-icon>
+            </ion-button>
+            <ion-button (click)="next()">
+              <ion-icon name="arrow-dropright-circle"></ion-icon>
+            </ion-button>
+          </div>
+        </div>
       </ion-slide>
     </ion-slides>
-  
