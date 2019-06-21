@@ -1,3 +1,16 @@
-<p>
-  desktop-home-top-slider works!
-</p>
+    <div class="flex-between layout-width ">
+      <div (click)="prev()">
+        <ion-icon class="arrow" name="arrow-back" mode="ios"></ion-icon>
+      </div>
+      <div (click)="next()">
+        <ion-icon class="arrow" name="arrow-forward" mode="ios"></ion-icon>
+      </div>
+    </div>
+    <ion-slides mode="ios" pager="ios" scrollbar="ios" #slides>
+      <ion-slide *ngFor="let item of [].constructor(4)">
+        <img style="width: 100%;"
+          src="https://static.rogerebert.com/uploads/review/primary_image/reviews/the-image-book-2019/hero_image-book-image.jpg"
+          alt="">
+      </ion-slide>
+    </ion-slides>
+  
