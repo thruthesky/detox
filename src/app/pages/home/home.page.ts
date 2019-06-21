@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AppService } from 'src/app/services/app.service';
 
 @Component({
   selector: 'app-home',
@@ -6,7 +7,14 @@ import { Component } from '@angular/core';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
- 
-  constructor() {}
+
+  constructor(
+    public a: AppService
+  ) { }
+
+  imgload() {
+    console.log('asda');
+  }
+
 
 }
