@@ -346,16 +346,10 @@
 }
 
 .cover {
-  background-repeat:  no-repeat center center fixed; 
-  background-attachment: center  center;
-  background-position: fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
+  background-attachment: center;
   background-size: cover;
   background-repeat: no-repeat;
-background-attachment: center center;
-background-position: fixed;
+
 }
 
 
