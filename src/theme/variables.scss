@@ -114,6 +114,9 @@
 .gray {
   color: #747474 !important;
 }
+.white-5 {
+  color: #ffffffde;
+}
 
 .dark-gray {
   color: #2e393e;
@@ -318,6 +321,15 @@
 
 
 
+.r-xl-10 {
+  @media all and (max-width: 1254px) {
+    right: 100px!important;
+  }
+}
+
+
+
+
 
 
 
@@ -334,9 +346,16 @@
 }
 
 .cover {
+  background-repeat:  no-repeat center center fixed; 
+  background-attachment: center  center;
+  background-position: fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
   background-size: cover;
-  background-position: center;
   background-repeat: no-repeat;
+background-attachment: center center;
+background-position: fixed;
 }
 
 
@@ -391,4 +410,43 @@
   padding: 3px;
   transform: rotate(-45deg);
   -webkit-transform: rotate(-45deg);
+}
+
+
+
+.h-300px {
+  height: 300px;
+}
+.w-400px {
+  width: 400px;
+}
+
+.fs-16px {
+  font-size: 20px;
+  line-height: 20px;
+}
+.fs-45px {
+  font-size: 45px!important;
+  line-height: 45px!important;
+}
+
+.fw-100 {
+  font-weight: 100;
+}
+.w-200px {
+  width: 200px;
+}
+.h-65px {
+  height: 65px;
+}
+.fw-500 {
+  font-weight: 500;
+}
+
+.top-150px {
+  top:150px;
+}
+
+.r-270px {
+  right: 270px;
 }

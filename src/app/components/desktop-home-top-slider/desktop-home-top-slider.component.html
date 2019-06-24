@@ -1,18 +1,29 @@
-   <div class="layout-width flex-between">
-     <button class="l-xl-1 l-xxl-15 top-175px position-absolute w-150px h-150px no-outline bg-trans white z-1000"
-       (click)="prev()">
-       <i class="arrow-left  w-50px h-50px"></i>
-     </button>
-     <button class="r-xl-1 r-xxl-15 top-175px position-absolute  w-150px h-150px no-outline bg-trans white z-1000"
-       (click)="next()">
-       <i class="arrow-right  w-50px h-50px"></i>
-     </button>
-   </div>
 
-   <ion-slides mode="ios" pager="ios" scrollbar="ios" #slides>
-     <ion-slide *ngFor="let x of [].constructor(10)">
-       <div class="w-100 h-550px  cover"
-         style="background-image: url(/assets/img/desktop-home-top-slider/img_mainbanner.png);">
-       </div>
-     </ion-slide>
-   </ion-slides>
+    <div class="layout-width flex-between">
+      <button class="l-xl-1 l-xxl-15 top-175px position-absolute w-150px h-150px no-outline bg-trans white z-1000"
+        (click)="prev()">
+        <i class="arrow-left  w-50px h-50px"></i>
+      </button>
+      <button class="r-xl-1 r-xxl-15 top-175px position-absolute  w-150px h-150px no-outline bg-trans white z-1000"
+        (click)="next()">
+        <i class="arrow-right  w-50px h-50px"></i>
+      </button>
+    </div>
+    <ion-slides mode="ios" pager="ios" scrollbar="ios" #slides>
+      <ion-slide *ngFor="let x of [].constructor(10)">
+        <div class="position-absolute  top-150px r-270px   r-xl-10 h-300px w-400px z-1000 ion-text-start">
+          <p class="fs-16px ion-no-margin  white fw py-10 fw-100 white-5">AWESOME TEXT</p>
+          <p class="fs-45px ion-no-margin white fw-100 white-5 ">AWESOME TEXT</p>
+          <p class="fs-45px ion-no-margin py-10 white fw-500">AWESOME</p>
+         
+          <div class="w-200px">
+            <ion-button expand="full" class=" h-65px" color="light">
+              <ion-label class="green">LabelLabelLabel</ion-label>
+            </ion-button>
+          </div>
+        </div>
+        <div class="w-100 h-550px  cover"
+          style="background-image: url(/assets/img/desktop-home-top-slider/img_mainbanner.png);">
+        </div>
+      </ion-slide>
+    </ion-slides>
