@@ -1,31 +1,18 @@
-    <!-- <div class="arrow-wrapper">
-      <div class="flex-between layout-width ">
-        <div (click)="prev()">
-          <ion-icon class="arrow" name="arrow-back" mode="ios"></ion-icon>
-        </div>
-        <div (click)="next()">
-          <ion-icon class="arrow" name="arrow-forward" mode="ios"></ion-icon>
-        </div>
-      </div>    
-    </!-->
+   <div class="layout-width flex-between">
+     <button class="l-xl-1 l-xxl-15 top-175px position-absolute w-150px h-150px no-outline bg-trans white z-1000"
+       (click)="prev()">
+       <i class="arrow-left  w-50px h-50px"></i>
+     </button>
+     <button class="r-xl-1 r-xxl-15 top-175px position-absolute  w-150px h-150px no-outline bg-trans white z-1000"
+       (click)="next()">
+       <i class="arrow-right  w-50px h-50px"></i>
+     </button>
+   </div>
 
-
-
-
-
-    <ion-slides class="position-absolute top left right" options=" options " mode="ios" pager="ios" scrollbar="ios"
-      #slides>
-
-      <ion-slide class="h-500px" *ngFor="let item of [].constructor(10)">
-        <div class="w-100 h-500px corver" style="background-image: url(/assets/img/desktop-home-top-slider/1.jpg)">
-          <div class="layout-width h-500px flex-between align-items-center" *ngIf=" ! moving ">
-            <ion-button (click)="prev()">
-              <ion-icon name="arrow-dropleft-circle"></ion-icon>
-            </ion-button>
-            <ion-button (click)="next()">
-              <ion-icon name="arrow-dropright-circle"></ion-icon>
-            </ion-button>
-          </div>
-        </div>
-      </ion-slide>
-    </ion-slides>
+   <ion-slides mode="ios" pager="ios" scrollbar="ios" #slides>
+     <ion-slide *ngFor="let x of [].constructor(10)">
+       <div class="w-100 h-500px  cover"
+         style="background-image: url(/assets/img/desktop-home-top-slider/img_mainbanner.png);">
+       </div>
+     </ion-slide>
+   </ion-slides>
