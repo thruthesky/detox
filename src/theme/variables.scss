@@ -444,3 +444,11 @@
 .r-270px {
   right: 270px;
 }
+
+
+.btn-trans {
+  --background: #ffffff00;
+  --background-activated:red;
+  --border-color: red;
+  --background-focused: red;
+}

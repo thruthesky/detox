@@ -3,48 +3,50 @@
     <ion-grid>
       <ion-row >
         <ion-col size="4" offset="4">
-          <div class="ion-text-center">
-            <img src="/assets/img/logo/7detox_logo-origin1@2x.png"  height="28" alt="">
+          <div class="ion-text-center h-50px">
+            <img src="/assets/img/logo/7detox_logo-origin1@2x.png"  height="25" alt="">
           </div>
         </ion-col>
         <ion-col size="4">
-          <div class="ion-text-end" style="line-height: 28px">
-            Menu 1
-            Menu 2
-            Menu 3
-            Menu 4
+          <div class="ion-text-end green" style="line-height: 28px">
+            <ion-label class="px-10 fs-12">Menu1</ion-label>
+            <ion-label class="px-10 fs-12">Menu2</ion-label>
+            <ion-label class="px-10 fs-12">Menu3</ion-label>
+            <ion-label class="px-10 fs-12">Menu4</ion-label>
           </div>
         </ion-col>
       </ion-row>
     </ion-grid>
   </div>
+
   <div class="desktop-header-bottom-menu bg-green">
     <div class="flex-between layout-width">
       <div>
-        <ion-button slog="icon-only">
-          <ion-icon name="menu"></ion-icon>
+        <ion-button slot="icon-only"  fill >
+          <ion-icon name="menu" class="white"></ion-icon>
         </ion-button>
+        
       </div>
-      <div>
-        <ion-button>
-          <ion-icon name="document"></ion-icon>
-          <ion-label>{{ a.t({ en: 'Documents', ko: '설명서' }) }}</ion-label>
+      <div class="white">
+        <ion-button fill>
+          <ion-icon name="document" slot="start"></ion-icon>
+          <ion-label class="fs-12">{{ a.t({ en: 'Documents', ko: '설명서' }) }}</ion-label>
         </ion-button>
-        <ion-button>
-          <ion-icon name="document"></ion-icon>
-          <ion-label>{{ a.t({ en: 'Documents', ko: '설명서' }) }}</ion-label>
+        <ion-button fill>
+            <ion-icon name="thumbs-up" slot="start"></ion-icon>
+          <ion-label  class="fs-12">{{ a.t({ en: 'Documents', ko: '설명서' }) }}</ion-label>
         </ion-button>
-        <ion-button>
-          <ion-icon name="document"></ion-icon>
-          <ion-label>{{ a.t({ en: 'Documents', ko: '설명서' }) }}</ion-label>
+        <ion-button fill>
+          <ion-icon name="fitness" slot="start"></ion-icon>
+          <ion-label  class="fs-12">{{ a.t({ en: 'Documents', ko: '설명서' }) }}</ion-label>
         </ion-button>
-        <ion-button>
-          <ion-icon name="document"></ion-icon>
-          <ion-label>{{ a.t({ en: 'Documents', ko: '설명서' }) }}</ion-label>
+        <ion-button fill>
+          <ion-icon name="bookmarks" slot="start"></ion-icon>
+          <ion-label  class="fs-12">{{ a.t({ en: 'Documents', ko: '설명서' }) }}</ion-label>
         </ion-button>
-        <ion-button>
-          <ion-icon name="document"></ion-icon>
-          <ion-label>{{ a.t({ en: 'Documents', ko: '설명서' }) }}</ion-label>
+        <ion-button fill>
+          <ion-icon name="book" slot="start"></ion-icon>
+          <ion-label  class="fs-12">{{ a.t({ en: 'Documents', ko: '설명서' }) }}</ion-label>
         </ion-button>
       </div>
     </div>
