@@ -13,6 +13,7 @@ import { MobileHomeBottomButtonsModule } from 'src/app/components/mobile-home-bo
 import { HeaderModule } from 'src/app/components/header/header.module';
 import { DesktopHomeTopSliderModule } from 'src/app/components/desktop-home-top-slider/desktop-home-top-slider.module';
 import { DesktopHomeTestimonialModule } from 'src/app/components/desktop-home-testimonial/desktop-home-testimonial.module';
+import { DesktopHomeProductsModule } from 'src/app/components/desktop-home-products/desktop-home-products.module';
 
 @NgModule({
   imports: [
@@ -33,6 +34,7 @@ import { DesktopHomeTestimonialModule } from 'src/app/components/desktop-home-te
     MobileHomeBottomButtonsModule,
     DesktopHomeTopSliderModule,
     DesktopHomeTestimonialModule,
+    DesktopHomeProductsModule
   ],
   declarations: [HomePage]
 })
