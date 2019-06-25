@@ -12,6 +12,9 @@ import { MobileHomeProductsModule } from 'src/app/components/mobile-home-product
 import { MobileHomeBottomButtonsModule } from 'src/app/components/mobile-home-bottom-buttons/mobile-home-bottom-buttons.module';
 import { HeaderModule } from 'src/app/components/header/header.module';
 import { DesktopHomeTopSliderModule } from 'src/app/components/desktop-home-top-slider/desktop-home-top-slider.module';
+import { DesktopHomeTestimonialModule } from 'src/app/components/desktop-home-testimonial/desktop-home-testimonial.module';
+import { DesktopHomeProductsModule } from 'src/app/components/desktop-home-products/desktop-home-products.module';
+import { DesktopHomeFooterModule } from 'src/app/components/desktop-home-footer/desktop-home-footer.module';
 
 @NgModule({
   imports: [
@@ -30,7 +33,10 @@ import { DesktopHomeTopSliderModule } from 'src/app/components/desktop-home-top-
     MobileHomeTestimonialModule,
     MobileHomeProductsModule,
     MobileHomeBottomButtonsModule,
-    DesktopHomeTopSliderModule
+    DesktopHomeTopSliderModule,
+    DesktopHomeTestimonialModule,
+    DesktopHomeProductsModule,
+    DesktopHomeFooterModule,
   ],
   declarations: [HomePage]
 })
