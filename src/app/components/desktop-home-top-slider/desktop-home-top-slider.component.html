@@ -9,7 +9,7 @@
         <i class="arrow-right  w-50px h-50px"></i>
       </button>
     </div>
-    <ion-slides mode="ios" pager="ios" scrollbar="ios" #slides>
+    <ion-slides mode="ios" pager="ios" scrollbar="ios" [options]="options" #slides>
       <ion-slide *ngFor="let x of [].constructor(10)">
         <div class="position-absolute  top-175px r-270px   r-xl-10 h-300px w-400px z-1000 ion-text-start">
           <p class="fs-16px ion-no-margin  white fw py-10 fw-100 white-5">1:1 AWESOME TEXT</p>
@@ -17,7 +17,7 @@
           <p class="fs-45px ion-no-margin py-10 white fw-500">AWESOME</p>
          
           <div class="w-200px ">
-            <ion-button expand="block"   class=" h-60px  i-bg-white b-radius-5 b-green" color="light">
+            <ion-button expand="block"   class=" h-60px  b-radius-5 b-green  i-btn-white "  >
               <ion-label class="green">LabelLabelLabel</ion-label>
             </ion-button>
           </div>

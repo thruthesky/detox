@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { IonSlides } from '@ionic/angular';
 
 @Component({
@@ -10,38 +10,30 @@ export class DesktopHomeTopSliderComponent implements OnInit {
   @ViewChild('slides') slides: IonSlides;
 
   options = {
-    initialSlide: 1,
+    initialSlide: 3 ,
     speed: 400,
     loop: true,
-    autoplay: {
-      delay: 20000
-    },
-    navigation: {
-      nextEl: '.swiper-button-prev',
-      prevEl: '.swiper-button-next',
-    }
   };
-
-  moving = false;
+  // moving = false;
   constructor() { }
 
   ngOnInit() {
-    this.slides.ionSlideTransitionStart.subscribe(res => {
-      this.moving = true;
-      console.log('transition start');
-    });
-    this.slides.ionSlideTransitionEnd.subscribe(res => {
-      this.moving = false;
-      console.log('transition ended');
-    });
+    // this.slides.ionSlideTransitionStart.subscribe(res => {
+    //   this.moving = true;
+    //   console.log('transition start');
+    // });
+    // this.slides.ionSlideTransitionEnd.subscribe(res => {
+    //   this.moving = false;
+    //   console.log('transition ended');
+    // });
 
-    this.slides.ionSlideDrag.subscribe(res => {
-      this.moving = true;
-      console.log('drag event');
-    });
+    // this.slides.ionSlideDrag.subscribe(res => {
+    //   this.moving = true;
+    //   console.log('drag event');
+    // });
 
-    this.slides.ionSlideTouchStart.subscribe( () => this.moving = true );
-    this.slides.ionSlideTouchEnd.subscribe( () => this.moving = false );
+    // this.slides.ionSlideTouchStart.subscribe( () => this.moving = true );
+    // this.slides.ionSlideTouchEnd.subscribe( () => this.moving = false );
   }
 
   next() {
