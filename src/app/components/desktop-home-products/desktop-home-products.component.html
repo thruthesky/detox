@@ -3,7 +3,7 @@
   </div>
     <div class="position-relative">
         <div class="layout-width flex-between">
-            <button class="pl-15px bg-gray-9 l-xl-1 l-xxl-15 top-175px position-absolute h-70px w-70px no-outline bg-trans white z-1000"
+            <button class="pl-15px bg-gray-9 l-xl-1 l-xxl-15 top-145px position-absolute h-70px w-70px no-outline bg-trans white z-1000"
               (click)="prev()">
               <i class="arrow-left b-white-9  pl-70px w-50px h-50px "></i>
             </button>
@@ -13,9 +13,9 @@
             </button>
           </div>
       <ion-slides  class="px-xxl-150" mode="ios" [options]="options"  #slides>
-            <ion-slide *ngFor="let x of [].constructor(10)">
-              <ion-card text-center>
-                  <img style="max-height: 340px;"  src="/assets/img/product/img_product.png" alt="">
+            <ion-slide  *ngFor="let x of [].constructor(10)">
+              <ion-card text-center  class="  card ion-no-margin mx-10px">
+                  <img class="h-340px"  src="/assets/img/product/img_product.png" alt="">
                   <ion-card-header class="pt-37px pb-20px">
                     <ion-card-title color="success" class="fs-24px ">Awesome Title</ion-card-title>
                   </ion-card-header>      

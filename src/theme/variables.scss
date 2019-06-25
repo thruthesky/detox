@@ -222,6 +222,7 @@
 
 .card {
   border-radius: 0 !important;
+  box-shadow: none !important;
 }
 
 .flex-between {
@@ -512,6 +513,11 @@
   padding-top: 25px;
   padding-bottom:25px;
 }
+.py-0 {
+  padding-top: 0;
+  padding-bottom: 0;
+  
+}
 
 .i-col-padding-10 {
   --ion-grid-column-padding: 6px;
@@ -593,4 +599,15 @@
     padding-right: 40px;
     padding-left: 40px;
   }
+}
+.h-340px {
+  height: 340px;
+}
+.top-145px  {
+  top: 145px;
+}
+
+.mx-10px {
+  margin-right: 10px!important;
+  margin-left: 10px!important;
 }
