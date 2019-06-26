@@ -15,10 +15,9 @@
       <ion-slides  class="px-xxl-150" mode="ios" [options]="options"  #slides>
             <ion-slide  *ngFor="let x of [].constructor(10)">
 
-              <ion-card  class="card   ion-no-margin mx-10px">
-                <div>
-                    <img style="
-                    margin:auto;" class="h-340px"  src="/assets/img/product/img_product.png" alt="">
+              <ion-card  class="card    mx-10px">
+                <div class="flex flex-center"> 
+                    <img  style="min-height: 350px;"  src="/assets/img/product/img_product.png" alt="">
                 </div>
                   <ion-card-header class="pt-37px pb-20px">
                     <ion-card-title color="success" class="fs-24px ">Awesome Title</ion-card-title>
@@ -26,7 +25,7 @@
                   <ion-card-content class="px-xxl-40" >
                       Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard
                   </ion-card-content>
-              </ion-card>
+              </ion-card> 
             </ion-slide>
           </ion-slides>
     </div>

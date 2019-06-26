@@ -247,6 +247,9 @@
   justify-content: space-between;
 }
 
+.flex-center {
+  justify-content: center;
+}
 
 .layout-width {
   margin-left: auto;
@@ -635,12 +638,7 @@
   }
 }
 
-.px-xxl-150 { 
-  @media all and (min-width: 1128px) {
-    padding-right: 150px;
-    padding-left: 150px;
-  }
-}
+
 .px-xxl-40 {
   @media all and (min-width: 1128px) {
     padding-right: 40px;
