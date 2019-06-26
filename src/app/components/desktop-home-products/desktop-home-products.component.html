@@ -14,8 +14,12 @@
           </div>
       <ion-slides  class="px-xxl-150" mode="ios" [options]="options"  #slides>
             <ion-slide  *ngFor="let x of [].constructor(10)">
-              <ion-card text-center  class="  card ion-no-margin mx-10px">
-                  <img class="h-340px"  src="/assets/img/product/img_product.png" alt="">
+
+              <ion-card  class="card   ion-no-margin mx-10px">
+                <div>
+                    <img style="
+                    margin:auto;" class="h-340px"  src="/assets/img/product/img_product.png" alt="">
+                </div>
                   <ion-card-header class="pt-37px pb-20px">
                     <ion-card-title color="success" class="fs-24px ">Awesome Title</ion-card-title>
                   </ion-card-header>      
