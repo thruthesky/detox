@@ -325,38 +325,60 @@
 
 
 .l-xl-1 {
-  @media all and (max-width: 1254px) {
+  @media all and (max-width: 1128px) {
     left: 10px;
   }
 }
 
 .r-xl-1 {
-  @media all and (max-width: 1254px) {
+  @media all and (max-width: 1128px) {
     right: 10px;
   }
 }
 
+
+.r-md-50px {
+  @media all and (max-width: 1128px) {
+    right: 50px;
+  }
+}
+
+
 .l-xxl-15 {
-  @media all and (min-width: 1254px) {
+  @media all and (min-width: 1128px) {
     left: 170px;
   }
 }
 
 .r-xxl-15 {
-  @media all and (min-width: 1254px) {
-    right: 170px;
+  @media all and (min-width: 1128px) {
+    right: 170px; 
+  }
+}
+.r-xxl-270px {
+  @media all and (min-width: 1128px) {
+    right: 270px;
   }
 }
 
 
 
+
 .r-xl-10 {
-  @media all and (max-width: 1254px) {
+  @media all and (min-width: 1128px) {
     right: 100px!important;
   }
 }
 
 
+.r-100px {
+  right: 10px;
+}
+.r-xl-170px {
+  @media all and (min-width:1128px) {
+    right: 270px!important;
+  }
+}
 
 
 
@@ -607,20 +629,20 @@
 }
 
 .px-xxl-150 {
-  @media all and (min-width: 1254px) {
+  @media all and (min-width: 1128px) {
     padding-right: 150px;
     padding-left: 150px;
   }
 }
 
-.px-xxl-150 {
-  @media all and (min-width: 1254px) {
+.px-xxl-150 { 
+  @media all and (min-width: 1128px) {
     padding-right: 150px;
     padding-left: 150px;
   }
 }
 .px-xxl-40 {
-  @media all and (min-width: 1254px) {
+  @media all and (min-width: 1128px) {
     padding-right: 40px;
     padding-left: 40px;
   }
@@ -660,4 +682,28 @@ p {
 .i-py-5px {
   --padding-start	: 5px;
   --padding-end: 5px;
+}
+.top-100px {
+  top:100px;
+}
+.top-60px {
+  top:60px;
+}
+
+
+.top-xl-175px {
+  @media all and (min-width: 1128px) {
+    top: 175px;
+  }
+}
+.fs-md-35px {
+  @media all and (max-width: 1128px) {
+    font-size: 35px!important;
+  }
+}
+
+.right-md-200px {
+  @media all and (max-width: 1128px) {
+    right:200px;
+  }
 }
