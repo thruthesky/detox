@@ -1,34 +1,41 @@
  <div class="fs-30px green ion-text-center pt-70px pb-37px">
-   AWESOME
- </div>
- <div class="position-relative">
-   <div class="layout-width flex-between">
-     <button
-       class="pl-15px bg-gray-9 l-xl-1 l-xxl-15 top-145px position-absolute h-70px w-70px no-outline bg-trans white z-1000"
-       (click)="prev()">
-       <i class="arrow-left b-white-9  pl-70px w-50px h-50px "></i>
-     </button>
-     <button
-       class="pr-70px bg-gray-9 r-xl-1 r-xxl-15 top-175px position-absolute h-70px w-70px no-outline bg-trans white z-1000"
-       (click)="next()">
-       <i class="arrow-right  b-white-9 w-50px h-50px"></i>
-     </button>
-   </div>
-   <ion-slides class="px-xxl-150" mode="ios" [options]="options" #slides>
-     <ion-slide *ngFor="let x of [].constructor(10); let i = index">
-       <ion-card text-center class="  card ion-no-margin mx-10px" (click)="onClick(i)">
-         <img class="h-340px" src="/assets/img/product/img_product.png" alt="">
-         <ion-card-header class="pt-37px pb-20px">
-           <ion-card-title color="success" class="fs-24px ">Awesome Title</ion-card-title>
-         </ion-card-header>
-         <ion-card-content class="px-xxl-40">
-           Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-           industry's standard
-         </ion-card-content>
-       </ion-card>
-     </ion-slide>
-   </ion-slides>
- </div>
+    AWESOME
+  </div>
+    <div class="position-relative">
+        <div class="layout-width flex-between">
+            <button class="pl-15px bg-gray-9 l-xl-1 l-xxl-15 top-145px position-absolute h-70px w-70px no-outline bg-trans white z-1000"
+              (click)="prev()">
+              <i class="arrow-left b-white-9  pl-70px w-50px h-50px "></i>
+            </button>
+            <button class="pr-70px bg-gray-9 r-xl-1 r-xxl-15 top-175px position-absolute h-70px w-70px no-outline bg-trans white z-1000"
+              (click)="next()">
+              <i class="arrow-right  b-white-9 w-50px h-50px"></i>
+            </button>
+          </div>
+      <ion-slides  class="px-xxl-150" mode="ios" [options]="options"  #slides>
+            <ion-slide  *ngFor="let x of [].constructor(10)">
+
+              <ion-card  class="card    mx-10px">
+                <div class="flex flex-center"> 
+                    <img  style="min-height: 350px;"  src="/assets/img/product/img_product.png" alt="">
+                </div>
+                  <ion-card-header class="pt-37px pb-20px">
+                    <ion-card-title color="success" class="fs-24px ">Awesome Title</ion-card-title>
+                  </ion-card-header>      
+                  <ion-card-content class="px-xxl-40" >
+                      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard
+                  </ion-card-content>
+              </ion-card> 
+            </ion-slide>
+          </ion-slides>
+    </div>
+
+
+    <div class="ion-text-center pt-65px pb-80px">
+        <ion-button class="w-200px h-60px "  fill="outline" color="success" >
+          <ion-label class="green">Label</ion-label>
+        </ion-button>
+      </div>
 
 
  <div class="ion-text-center pt-65px pb-80px">

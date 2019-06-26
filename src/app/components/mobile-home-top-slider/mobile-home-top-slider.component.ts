@@ -7,6 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MobileHomeTopSliderComponent implements OnInit {
 
+  options = {
+    initialSlide: 3 ,
+    speed: 400,
+    loop: true,
+  };
   constructor() { }
 
   ngOnInit() {}

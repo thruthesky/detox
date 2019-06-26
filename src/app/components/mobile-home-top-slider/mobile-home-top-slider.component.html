@@ -1,14 +1,6 @@
 <!-- banner slider -->
-<ion-slides pager="true" options="initialSlide: 1;speed: 100">
-  <ion-slide>
-    <ion-img src="http://www.sle.co.uk/blog/wp-content/uploads/2017/10/image1-lebanon-view-1000x500.jpg"></ion-img>
-  </ion-slide>
-  <ion-slide>
-    <ion-img src="https://voss-photography.com/wp-content/uploads/2015/12/berlin-rooftop-view.jpg?7f1c30"></ion-img>
-  </ion-slide>
-  <ion-slide>
-    <ion-img
-      src="https://static1.squarespace.com/static/571fb0c760b5e9a0a98cc71c/5c3cf3b9758d4640ed8e42f1/5c3cf47a1ae6cfa74d78926d/1549515177784/Santa-Barbara-Hotel-Photography-Mark-Skovorodko0003.jpg">
-    </ion-img>
+<ion-slides pager="true" options="options">
+  <ion-slide    *ngFor="let x of [].constructor(10)">
+        <img style="width: 100%;height: auto;"  src="/assets/img/desktop-home-top-slider/img-banner.png" alt="">
   </ion-slide>
 </ion-slides>
