@@ -7,10 +7,10 @@ import { IonSlides } from '@ionic/angular';
   styleUrls: ['./desktop-home-products.component.scss'],
 })
 export class DesktopHomeProductsComponent implements OnInit {
-    @ViewChild('slides') slides: IonSlides;
+  @ViewChild('slides') slides: IonSlides;
 
   options = {
-    initialSlide: 3 ,
+    initialSlide: 3,
     slidesPerView: 3,
     speed: 400,
     loop: true,
@@ -18,7 +18,7 @@ export class DesktopHomeProductsComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
   next() {
     this.slides.slideNext();
@@ -26,5 +26,9 @@ export class DesktopHomeProductsComponent implements OnInit {
 
   prev() {
     this.slides.slidePrev();
+  }
+
+  onClick(x) {
+    console.log('x: ', x);
   }
 }
