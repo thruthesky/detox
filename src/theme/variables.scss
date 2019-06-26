@@ -119,7 +119,7 @@
   color: #747474 !important;
 }
 .white-5 {
-  color: #ffffffde;
+  color: #ffffffea;
 }
 .white-9 {
   color:rgba(255, 255, 255, 0.897);
@@ -693,7 +693,7 @@ p {
 
 .top-xl-175px {
   @media all and (min-width: 1128px) {
-    top: 175px;
+    top: 140px;
   }
 }
 .fs-md-35px {
@@ -705,5 +705,10 @@ p {
 .right-md-200px {
   @media all and (max-width: 1128px) {
     right:200px;
+  }
+}
+.p-md-0 {
+  @media all and (max-width:1128px) {
+    padding: 0!important;
   }
 }
