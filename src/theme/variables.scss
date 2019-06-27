@@ -327,6 +327,19 @@
     margin-left: 5em;
   }
 }
+
+.mr-md-100px {
+  @media all and ( max-width: 1128px ) {
+    margin-right: 100px;
+  }
+}
+
+.mr-xl-150px {
+  @media all and ( min-width: 1400px ) {
+    margin-right: 150px;
+  }
+}
+
 .mr-5px {
   margin-right: 5px;
 }
