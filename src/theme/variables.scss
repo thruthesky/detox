@@ -91,6 +91,7 @@
 
 
 
+
 .bg-green {
   background-color: #7db262 !important;
 }
@@ -173,7 +174,15 @@
   font-weight: bold;
 }
 
-
+.white-trans {
+  color: rgba(255, 255, 255, 0.74);
+}
+.pt-0 {
+  padding-top: 0;
+}
+.pt-20px {
+  padding-top:30px;
+}
 .pt-5 {
   padding-top: 5px;
 }
@@ -205,6 +214,10 @@
   font-size: 12px !important;
   line-height: 12px !important;
 }
+.fs-18px {
+  font-size: 18px!important;
+}
+
 
 .fs-14 {
   font-size: 14px !important;
@@ -217,6 +230,9 @@
 
 .h-300 {
   height: 180px !important;
+}
+.h-21px {
+  height: 21px!important;
 }
 
 .black {
@@ -231,6 +247,10 @@
 
 .h-60 {
   height: 60px !important;
+}
+
+.h-65px {
+  height: 65px !important;
 }
 
 .mh-100 {
@@ -257,9 +277,14 @@
 .layout-width {
   margin-left: auto;
   margin-right: auto;
-  width: 982px;
+  width: 970px;
 }
-
+.w-110px {
+  width: 110px;
+}
+.w-50px {
+  width: 50px;
+} 
 
 .w-100 {
   width: 100% !important;
@@ -308,6 +333,30 @@
   }
 }
 
+.mr-md-100px {
+  @media all and ( max-width: 1128px ) {
+    margin-right: 100px;
+  }
+}
+
+.mr-xl-150px {
+  @media all and ( min-width: 1400px ) {
+    margin-right: 150px;
+  }
+}
+
+.mr-5px {
+  margin-right: 5px;
+}
+.mr-50px {
+  margin-right: 50px;
+}
+.mr-35px {
+  margin-right: 45px;
+}
+.ml-35px {
+  margin-left: 45px;
+}
 
 .mr-xl-5 {
   @media all and (min-width: 1128px) {
@@ -386,10 +435,19 @@
   }
 }
 
+.fs-20px {
+  font-size: 20px!important;
+}
 
-
-
-
+.mt-3px {
+  margin-top: 3px!important;
+}
+.mt-15px {
+  margin-top: 15px!important;
+}
+.mt-2px {
+  margin-top: 2px;
+}
 .h-620px {
   height: 550px !important;
 }
@@ -422,7 +480,9 @@
 .top-175px {
   top: 175px;
 }
-
+.dark-green {
+  color:#6e9d56;
+}
 
 .bg-trans {
   background-color: #00000000;
@@ -441,8 +501,8 @@
 }
 
 .arrow-left {
-  height: 40px;
-  width: 40px;
+  height: 35px;
+  width: 35px;
  
   border: solid #a7a672;
   border-width: 0 3px 3px 0;
@@ -451,8 +511,8 @@
   -webkit-transform: rotate(135deg);
 }
 .arrow-right {
-  height: 40px;
-  width: 40px;
+  height: 35px;
+  width: 35px;
   border: solid #a7a672;
   border-width: 0 3px 3px 0;
   display: inline-block;
@@ -469,17 +529,23 @@
 .w-400px {
   width: 400px;
 }
-.fs-16 {
-  font-size: 16px;
+.px-20px {
+  padding-right: 12px;
+  padding-left: 12px;
 }
 .fs-16px {
-  font-size: 20px;
-  line-height: 20px;
+  font-size: 16px;
 }
+
 .fs-45px {
-  font-size: 45px!important;
-  line-height: 45px!important;
+  font-size: 38px!important;
+  line-height: 38px!important;
 }
+.fs-38px {
+  font-size: 38px!important;
+  line-height: 38px!important;
+}
+
 
 .fw-100 {
   font-weight: 100;
@@ -490,8 +556,14 @@
 .h-60px {
   height: 60px;
 }
+.h-62px {
+  height: 62px;
+}
 .fw-500 {
   font-weight: 500;
+}
+.fw-600 {
+  font-weight: 600;
 }
 
 .top-175px {
@@ -524,6 +596,9 @@
 .i-bg-green {
   --background: #9ec38d ;
 }
+.i-green {
+  color: #91bd7c;
+}
 
 .i-btn-white {
   --background: #fff!important ;
@@ -549,6 +624,10 @@
 .mx-10px {
   margin-right: 10px;
   margin-left: 10px;
+}
+.mx-5px {
+  margin-right: 5px;
+  margin-left: 5px;
 }
 .m-0 {
   margin: 0;
@@ -603,14 +682,25 @@
 .pt-37px {
   padding-top: 37px!important;
 }
+.fs-22px {
+  font-size: 22px!important;
+}
+
 .fs-24px {
   font-size: 24px!important;
   line-height: 24px!important;
 }
+.px-25px {
+  padding-right: 25px;
+  padding-left: 25px;
+}
 .pb-20px {
   padding-bottom: 20px!important;
 }
-
+.px-32px {
+  padding-right: 32px;
+  padding-left: 32px;
+}
 .px-100px {
   padding-left: 150px;
   padding-right: 150px;
@@ -690,11 +780,15 @@ p {
 .top-60px {
   top:60px;
 }
-
-
-.top-xl-175px {
+.top-xl-160px {
   @media all and (min-width: 1128px) {
-    top: 140px;
+    top: 160px;
+  }
+}
+
+.top-xl-165px {
+  @media all and (min-width: 1128px) {
+    top: 155px;
   }
 }
 .fs-md-35px {
@@ -712,4 +806,28 @@ p {
   @media all and (max-width:1128px) {
     padding: 0!important;
   }
+}
+
+
+.green-dark {
+  color: #8aba72;
+}
+
+.letter-spacing-4px {
+  letter-spacing: -4px;
+}
+.letter-spacing-2px {
+  letter-spacing: -2px;
+}
+.letter-spacing-1px {
+  letter-spacing: -1px;
+}
+.letter-spacing-0 {
+  letter-spacing: 0;
+}
+.fw-700 {
+  font-weight: 700;
+}
+.fs-15px {
+  font-size: 15px;
 }
