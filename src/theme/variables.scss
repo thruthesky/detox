@@ -274,7 +274,12 @@
   margin-right: auto;
   width: 970px;
 }
-
+.w-110px {
+  width: 110px;
+}
+.w-50px {
+  width: 50px;
+} 
 
 .w-100 {
   width: 100% !important;
@@ -412,10 +417,12 @@
   }
 }
 
+.fs-20px {
+  font-size: 20px!important;
+}
 
-
-.mt-1px {
-  margin-top: 3 px;
+.mt-3px {
+  margin-top: 3px!important;
 }
 .mt-15px {
   margin-top: 15px!important;
@@ -504,6 +511,10 @@
 .w-400px {
   width: 400px;
 }
+.px-20px {
+  padding-right: 12px;
+  padding-left: 12px;
+}
 .fs-16px {
   font-size: 16px;
 }
@@ -589,6 +600,10 @@
 .mx-10px {
   margin-right: 10px;
   margin-left: 10px;
+}
+.mx-5px {
+  margin-right: 5px;
+  margin-left: 5px;
 }
 .m-0 {
   margin: 0;
@@ -767,6 +782,9 @@ p {
   letter-spacing: -4px;
 }
 .letter-spacing-1px {
+  letter-spacing: -1px;
+}
+.letter-spacing-0 {
   letter-spacing: -1px;
 }
 .fw-700 {
