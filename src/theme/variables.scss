@@ -345,6 +345,20 @@
   }
 }
 
+
+
+.ml-md-100px  {
+  @media all and ( min-width: 768px ) {
+    margin-left: 100px;
+  }
+}
+.ml-lg-200px {
+  @media all and ( min-width: 992px ) {
+  margin-left: 200px;    
+  }
+}
+
+
 .mr-5px {
   margin-right: 5px;
 }
@@ -547,9 +561,6 @@
 }
 
 
-.fw-100 {
-  font-weight: 100;
-}
 .w-200px {
   width: 200px;
 }
@@ -587,6 +598,9 @@
   border-radius: 6px;
 }
 
+.h-500px {
+  height: 500px;
+}
 .vh-100 {
   height: 100vh;
 }
@@ -743,6 +757,10 @@
 }
 .top-145px  {
   top: 145px;
+}
+.transform-y {
+  top:0; 
+  transform:translateY(50%)
 }
 
 
