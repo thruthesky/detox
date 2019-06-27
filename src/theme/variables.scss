@@ -91,6 +91,7 @@
 
 
 
+
 .bg-green {
   background-color: #7db262 !important;
 }
@@ -480,7 +481,7 @@
   top: 175px;
 }
 .dark-green {
-  color:rgb(137, 185, 111);
+  color:#6e9d56;
 }
 
 .bg-trans {
@@ -558,6 +559,9 @@
 .h-62px {
   height: 62px;
 }
+.fw-500 {
+  font-weight: 500;
+}
 .fw-600 {
   font-weight: 600;
 }
@@ -591,6 +595,9 @@
 }
 .i-bg-green {
   --background: #9ec38d ;
+}
+.i-green {
+  color: #91bd7c;
 }
 
 .i-btn-white {
@@ -683,10 +690,17 @@
   font-size: 24px!important;
   line-height: 24px!important;
 }
+.px-25px {
+  padding-right: 25px;
+  padding-left: 25px;
+}
 .pb-20px {
   padding-bottom: 20px!important;
 }
-
+.px-32px {
+  padding-right: 32px;
+  padding-left: 32px;
+}
 .px-100px {
   padding-left: 150px;
   padding-right: 150px;
@@ -795,8 +809,15 @@ p {
 }
 
 
+.green-dark {
+  color: #8aba72;
+}
+
 .letter-spacing-4px {
   letter-spacing: -4px;
+}
+.letter-spacing-2px {
+  letter-spacing: -2px;
 }
 .letter-spacing-1px {
   letter-spacing: -1px;
