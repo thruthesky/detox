@@ -248,6 +248,10 @@
   height: 60px !important;
 }
 
+.h-65px {
+  height: 65px !important;
+}
+
 .mh-100 {
   min-height: 100px !important;
 }
@@ -798,7 +802,7 @@ p {
   letter-spacing: -1px;
 }
 .letter-spacing-0 {
-  letter-spacing: -1px;
+  letter-spacing: 0;
 }
 .fw-700 {
   font-weight: 700;
