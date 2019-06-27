@@ -238,8 +238,11 @@
 }
 
 .card {
-  border-radius: 0 !important;
+  border-radius: 0 !important;  
   box-shadow: none !important;
+}
+.border-radius {
+  border-radius: 5px;
 }
 
 .flex-between {
