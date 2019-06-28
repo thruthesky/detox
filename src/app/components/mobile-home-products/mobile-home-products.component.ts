@@ -8,7 +8,14 @@ import { AppService } from 'src/app/services/app.service';
 })
 export class MobileHomeProductsComponent implements OnInit {
 
-  img = '/assets/img/no-image.png';
+  img = '/assets/img/product/product_mobile.png';
+  options = {
+    initialSlide: 3,
+    slidesPerView: 2,
+    speed: 400,
+    loop: true,
+  };
+
   constructor(
     public a: AppService
   ) { }

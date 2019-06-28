@@ -178,7 +178,10 @@
   padding-left: 15px;
   padding-right: 15px;
 }
-
+.px-5px {
+  padding-right: 5px;
+  padding-left: 5px;
+}
 .px-10 {
   padding-left: 10px;
   padding-right: 10px;
@@ -286,6 +289,8 @@
   border-radius: 0 !important;  
   box-shadow: none !important;
 }
+
+
 .border-radius {
   border-radius: 5px;
 }
@@ -838,7 +843,14 @@
   top:0; 
   transform:translateY(50%)
 }
-
+.mx-5px {
+  margin-right: 5px;
+  margin-left: 5px;
+}
+.my-10px {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
 
 .h-185px {
   height: 185px;
