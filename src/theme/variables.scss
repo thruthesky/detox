@@ -771,13 +771,11 @@
   height: 185px;
 }
 
-.vertical-center {
-  text-align: center;
-  position: relative;
+.xy-center {
+  position: absolute;
+  left: 50%;
   top: 50%;
-  -ms-transform: translateY(-50%);
-  -webkit-transform: translateY(-50%);
-  transform: translateY(-50%);
+  transform: translate(-50%, -50%);
 }
 .bg-f-white {
   background-color: #f4ffef;
