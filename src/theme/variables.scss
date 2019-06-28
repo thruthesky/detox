@@ -328,13 +328,13 @@
 
 
 .ml-xl-5 {
-  @media all and (min-width: 1128px) {
+  @media all and (min-width: 1200px) {
     margin-left: 5em;
   }
 }
 
 .mr-md-100px {
-  @media all and ( max-width: 1128px ) {
+  @media all and ( max-width: 1200px ) {
     margin-right: 100px;
   }
 }
@@ -347,16 +347,16 @@
 
 
 
-.ml-md-100px  {
-  @media all and ( min-width: 768px ) {
-    margin-left: 100px;
-  }
-}
-.ml-lg-200px {
-  @media all and ( min-width: 992px ) {
-  margin-left: 200px;    
-  }
-}
+// .ml-md-100px  {
+//   @media all and ( min-width: 768px ) {
+//     margin-left: 100px;
+//   }
+// }
+// .ml-lg-200px {
+//   @media all and ( min-width: 992px ) {
+//   margin-left: 200px;    
+//   }
+// }
 
 
 .mr-5px {
@@ -373,7 +373,7 @@
 }
 
 .mr-xl-5 {
-  @media all and (min-width: 1128px) {
+  @media all and (min-width: 1200px) {
     margin-right: 5em;
   }
 }
@@ -394,38 +394,38 @@
 
 
 .l-xl-1 {
-  @media all and (max-width: 1128px) {
+  @media all and (max-width: 1200px) {
     left: 10px;
   }
 }
 
 .r-xl-1 {
-  @media all and (max-width: 1128px) {
+  @media all and (max-width: 1200px) {
     right: 10px;
   }
 }
 
 
 .r-md-50px {
-  @media all and (max-width: 1128px) {
+  @media all and (max-width: 1200px) {
     right: 50px;
   }
 }
 
 
 .l-xxl-15 {
-  @media all and (min-width: 1128px) {
+  @media all and (min-width: 1200px) {
     left: 170px;
   }
 }
 
 .r-xxl-15 {
-  @media all and (min-width: 1128px) {
+  @media all and (min-width: 1200px) {
     right: 170px; 
   }
 }
 .r-xxl-270px {
-  @media all and (min-width: 1128px) {
+  @media all and (min-width: 1200px) {
     right: 270px;
   }
 }
@@ -434,7 +434,7 @@
 
 
 .r-xl-10 {
-  @media all and (min-width: 1128px) {
+  @media all and (min-width: 1200px) {
     right: 100px!important;
   }
 }
@@ -444,7 +444,7 @@
   right: 10px;
 }
 .r-xl-170px {
-  @media all and (min-width:1128px) {
+  @media all and (min-width:1200px) {
     right: 270px!important;
   }
 }
@@ -563,9 +563,35 @@
   line-height: 38px!important;
 }
 
+.ml-md-100px {
+  @media all and ( min-width: 768px ) {
+  margin-left: 100px;    
+  }
+}
 
+.ml-lg-150px {
+  @media all and ( min-width: 990px ) {
+  margin-left: 150px;    
+  }
+}
+.ml-xl-200px {
+  @media all and ( min-width: 1200px ) {
+  margin-left: 200px;    
+  }
+}
+
+
+.w-400px {
+  width: 400px;
+}
+.ml-200px {
+  margin-left: 200px;
+}
 .w-200px {
   width: 200px;
+}
+.w-400px {
+  width: 400px;
 }
 .h-60px {
   height: 60px;
@@ -601,8 +627,32 @@
   border-radius: 6px;
 }
 
-.h-500px {
-  height: 500px;
+
+.h-md-400px {
+  @media all and ( min-width: 768px  ) {
+    height: 400px!important;
+  }
+}
+
+.h-lg-450px {
+  @media all and ( min-width:992px ) {
+    height: 450px!important;
+  }
+}
+
+
+.max-h-550px {
+  max-height: 550px;
+}
+.h-xl-500px {
+  @media all and ( min-width:1200px	 ) {
+    height: 500px!important;
+  }
+}
+.h-xxl-550px {
+  @media all and ( min-width:1400px	 ) {
+    height: 550px!important;
+  }
 }
 .vh-100 {
   height: 100vh;
@@ -742,7 +792,7 @@
 }
 
 .px-xxl-150 {
-  @media all and (min-width: 1128px) {
+  @media all and (min-width: 1200px) {
     padding-right: 150px;
     padding-left: 150px;
   }
@@ -750,7 +800,7 @@
 
 
 .px-xxl-40 {
-  @media all and (min-width: 1128px) {
+  @media all and (min-width: 1200px) {
     padding-right: 40px;
     padding-left: 40px;
   }
@@ -770,6 +820,14 @@
 .h-185px {
   height: 185px;
 }
+
+.y-center {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+
 
 .xy-center {
   position: absolute;
@@ -800,29 +858,29 @@ p {
   top:60px;
 }
 .top-xl-160px {
-  @media all and (min-width: 1128px) {
+  @media all and (min-width: 1200px) {
     top: 160px;
   }
 }
 
 .top-xl-165px {
-  @media all and (min-width: 1128px) {
+  @media all and (min-width: 1200px) {
     top: 155px;
   }
 }
 .fs-md-35px {
-  @media all and (max-width: 1128px) {
+  @media all and (max-width: 1200px) {
     font-size: 35px!important;
   }
 }
 
 .right-md-200px {
-  @media all and (max-width: 1128px) {
+  @media all and (max-width: 1200px) {
     right:200px;
   }
 }
 .p-md-0 {
-  @media all and (max-width:1128px) {
+  @media all and (max-width:1200px) {
     padding: 0!important;
   }
 }
