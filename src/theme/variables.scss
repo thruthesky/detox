@@ -150,8 +150,13 @@
 .dark-gray {
   color: #2e393e;
 }
+.gray {
+  color: #a8a8a8;
+}
 
-
+.pt-3px {
+  padding-top: 3px!important;
+}
 .p-10 {
   padding: 10px;
 }
@@ -289,7 +294,9 @@
   border-radius: 0 !important;  
   box-shadow: none !important;
 }
-
+.lh-9px {
+  line-height: 10px;
+}
 
 .border-radius {
   border-radius: 5px;
@@ -744,6 +751,9 @@
 .fs-30px {
   font-size: 30px;
   line-height: 30px!important;
+}
+.pb-5px {
+  padding-bottom: 5px;
 }
 .pb-15px {
   padding-bottom: 15px; 
