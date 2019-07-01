@@ -108,11 +108,28 @@
   --ion-color-tint: #8aba72;
 }
 
+.m-width-72px {
+  min-width: 72px!important;
+}
+.m-height-56px {
+  height: 56px!important;
+
+}
 
 
+.pm-0 {
+  padding: 0!important;
+
+  margin: 0!important;
+}
 
 .bg-green {
   background-color: #7db262 !important;
+}
+
+.i-px-0 {
+  --padding-start: 0!important;
+  --padding-end: 0!important;
 }
 
 .bg-light-gray {
@@ -136,7 +153,10 @@
 }
 
 .gray {
-  color: #747474 !important;
+  color: #717171 !important;
+}
+.w-72px {
+  width: 72px;
 }
 .white-5 {
   color: #ffffffea;
@@ -150,9 +170,7 @@
 .dark-gray {
   color: #2e393e;
 }
-.gray {
-  color: #a8a8a8;
-}
+
 
 .pt-3px {
   padding-top: 3px!important;
@@ -260,6 +278,13 @@
 .fs-50px {
   font-size: 50px !important;
 }
+.h-56px {
+  height: 56px;
+}
+.no-bottom-line {
+  --indicator-color-checked: none!important;
+}
+
 
 .h-300 {
   height: 180px !important;
@@ -305,6 +330,11 @@
 .flex-between {
   display: flex;
   justify-content: space-between;
+}
+
+.flex-space-around {
+  display: flex;
+  justify-content: space-around;
 }
 
 .flex-center {
@@ -873,7 +903,9 @@
 }
 
 
-
+.h-28px {
+  height: 28px;
+}
 .xy-center {
   position: absolute;
   left: 50%;
