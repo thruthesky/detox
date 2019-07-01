@@ -425,7 +425,20 @@
 //   }
 // }
 
+.ion-color-medium {
+  color: var( --ion-color-medium,gray );
+}
 
+.h-43px {
+  height: 43px;
+}
+.border-bottom-gray {
+  border-bottom: 1px solid #989aa2;
+}
+
+.lh-43px {
+  line-height: 43px;
+}
 .mr-5px {
   margin-right: 5px;
 }
