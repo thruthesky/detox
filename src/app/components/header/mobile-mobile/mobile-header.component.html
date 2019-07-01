@@ -1,22 +1,39 @@
+<ion-toolbar color="green" mode="ios" class="i-box-shadow">
+  <ion-buttons slot="start">
 
-  <ion-toolbar color="green" mode="ios" class="i-box-shadow">
-    <ion-buttons slot="start">
-      <ion-button>
-        <ion-icon slot="icon-only" name="home"></ion-icon>
-      </ion-button>
-    </ion-buttons>
-    <ion-title class="ion-text-center">
-      <img src="/assets/img/logo/title-logo.png" alt="">
-    </ion-title>
-    <ion-buttons slot="end">
-      <ion-button>
-        <ion-icon slot="icon-only" name="search"></ion-icon>
-      </ion-button>
-    </ion-buttons>
-    <ion-buttons slot="primary">
-      <ion-button>
-        <ion-icon slot="icon-only" name="menu"></ion-icon>
-      </ion-button>
-    </ion-buttons>
-  </ion-toolbar>
-  
+
+    <ion-back-button></ion-back-button>
+
+
+    <ion-button *ngIf=" homeIcon ">
+      <ion-icon slot="icon-only" name="home"></ion-icon>
+    </ion-button>
+  </ion-buttons>
+
+
+  <ion-title class="ion-text-center">
+    <img src="/assets/img/logo/title-logo.png" alt="Site Logo Title - 7Detox" *ngIf=" ! title ">
+    <ion-label *ngIf=" title ">{{ title }}</ion-label>
+  </ion-title>
+
+
+
+
+
+  <ion-buttons slot="end">
+
+
+    <ion-button (click)="a.openSideMenu()">
+      <ion-icon slot="icon-only" name="menu"></ion-icon>
+    </ion-button>
+
+
+    <ion-button>
+      <ion-icon slot="icon-only" name="search"></ion-icon>
+    </ion-button>
+  </ion-buttons>
+
+</ion-toolbar>
+
+
+

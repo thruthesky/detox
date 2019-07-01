@@ -1,10 +1,15 @@
 import { Injectable } from '@angular/core';
+import { MenuController } from '@ionic/angular';
+import { WordpressApiService } from 'modules/wordpress-api/wordpress-api';
 
 @Injectable({ providedIn: 'root' })
 export class AppService {
 
     lang = 'en';
-    constructor() { }
+    constructor(
+        private sideMenu: MenuController,
+        public wp: WordpressApiService
+    ) { }
 
 
     t(obj: { en?: string, ko?: string }) {
@@ -33,6 +38,10 @@ export class AppService {
      */
     get isDesktop(): boolean {
         return !this.isMobile;
+    }
+
+    openSideMenu() {
+        this.sideMenu.open();
     }
 
 }

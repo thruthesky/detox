@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { AppService } from 'src/app/services/app.service';
 
 @Component({
@@ -8,6 +8,8 @@ import { AppService } from 'src/app/services/app.service';
 })
 export class HeaderComponent implements OnInit {
 
+  @Input() title = '';
+  @Input() homeIcon: boolean;
   constructor(
     public a: AppService
   ) { }
