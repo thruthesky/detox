@@ -4,10 +4,10 @@
 
 <!-- slider by two -->
 <div class="bg-light-gray">
-  <ion-slides [options]="options" style="padding: 0 20px;min-height: 200px">
+  <ion-slides [options]="options" class="min-height-200px px-20px">
     <ion-slide *ngFor="let items of [].constructor(10)">
       <ion-card class="card bg-white mx-5px my-10px" mode="ios">
-        <img [src]="img"  style="min-height: 100px" alt="">
+        <img [src]="img"  class="min-height-100px" alt="">
         <ion-card-content class="ion-text-start" no-padding>
           <div class="dark-gray pt-10  px-10 bold fs-14">TITLE</div>
           <div class="p-10 pt-5 fs-14">
