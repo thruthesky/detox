@@ -30,7 +30,7 @@ export class AppComponent implements AfterViewInit {
 
   ngAfterViewInit() {
     if (this.a.env.production === false) {
-      // this.menu.open();
+      this.menu.open();
     }
   }
 

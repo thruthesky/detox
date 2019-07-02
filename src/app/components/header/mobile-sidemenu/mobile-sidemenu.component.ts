@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuController } from '@ionic/angular';
 import { AppService } from 'src/app/services/app.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-mobile-sidemenu',
@@ -10,6 +11,7 @@ import { AppService } from 'src/app/services/app.service';
 export class MobileSidemenuComponent implements OnInit {
 
   constructor(
+    private router: Router,
     private menu: MenuController,
     public a: AppService
   ) { }
@@ -17,8 +19,9 @@ export class MobileSidemenuComponent implements OnInit {
   ngOnInit() {}
 
 
-  sideMenuCLose() {
+  open(url: string) {
     this.menu.close();
+    this.router.navigateByUrl(url);
   }
 
 }
