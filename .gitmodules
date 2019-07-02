@@ -1,0 +1,3 @@
+[submodule "modules/wordpress-api"]
+	path = modules/wordpress-api
+	url = https://github.com/thruthesky/wordpress-api
