@@ -1,32 +1,22 @@
-import { Component } from '@angular/core';
+import { Component, AfterViewInit } from '@angular/core';
 
-import { Platform } from '@ionic/angular';
+import { Platform, MenuController } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
+import { AppService } from './services/app.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html'
 })
-export class AppComponent {
+export class AppComponent implements AfterViewInit {
 
-  sideMenus = [
-    {
-      title: 'Register',
-      url: '/register',
-      icon: 'person-add'
-    },
-
-    {
-      title: 'Login',
-      url: '/login',
-      icon: 'person-add'
-    }
-  ];
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,
-    private statusBar: StatusBar
+    private statusBar: StatusBar,
+    public a: AppService,
+    public menu: MenuController
   ) {
     this.initializeApp();
   }
@@ -36,5 +26,9 @@ export class AppComponent {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
     });
+  }
+
+  ngAfterViewInit() {
+    this.menu.open();
   }
 }

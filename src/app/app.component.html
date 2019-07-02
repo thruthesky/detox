@@ -8,27 +8,61 @@
     </ion-header>
     <ion-content>
 
-      <ion-list>
 
-        <ion-item-divider>
-          <ion-label>
-            User Information
-          </ion-label>
-        </ion-item-divider>
+      <ion-item-divider>
+        <ion-label>
+          User Information
+        </ion-label>
+      </ion-item-divider>
 
-        <ng-container *ngFor="let m of sideMenus">
+      <ion-grid>
+        <ion-row>
+          <ion-col size="6">
+            <ion-menu-toggle auto-hide="false">
+              <ion-item lines="none" button class="pointer" data-role="sidemenu-options" routerLink="/about">
+                <ion-ripple-effect></ion-ripple-effect>
+                <ion-label>
+                  {{ a.t({en: 'About', ko: '세븐디톡스란?'}) }}
+                </ion-label>
+              </ion-item>
+            </ion-menu-toggle>
+          </ion-col>
+          <ion-col size="6">
+            <ion-menu-toggle auto-hide="false">
+              <ion-item lines="none" button class="pointer" data-role="sidemenu-options" routerLink="/login">
+                <ion-ripple-effect></ion-ripple-effect>
+                <ion-label>
+                  {{ a.t({en: 'Login', ko: '로그인'}) }}
+                </ion-label>
+              </ion-item>
+            </ion-menu-toggle>
+          </ion-col>
+          <ion-col size="6">
+            <ion-menu-toggle auto-hide="false">
+              <ion-item lines="none" button class="pointer" data-role="sidemenu-options" routerLink="/register">
+                <ion-ripple-effect></ion-ripple-effect>
+                <ion-label>
+                  {{ a.t({en: 'Register', ko: '회원가입'}) }}
+                </ion-label>
+              </ion-item>
+            </ion-menu-toggle>
+          </ion-col>
+          <ion-col size="6">
+            <ion-menu-toggle auto-hide="false">
+              <ion-item lines="none" button class="pointer" data-role="sidemenu-options" routerLink="/login">
+                <ion-ripple-effect></ion-ripple-effect>
+                <ion-label>
+                  {{ a.t({en: 'Login', ko: '로그인'}) }}
+                </ion-label>
+              </ion-item>
+            </ion-menu-toggle>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
 
-          <ion-menu-toggle auto-hide="false">
-            <ion-item button class="pointer" data-role="sidemenu-options" routerLink="/{{ m.url }}">
-              <ion-ripple-effect></ion-ripple-effect>
-              <ion-icon slot="start" [name]="m.icon" mode="md"></ion-icon>
-              <ion-label>
-                {{ m.title }}
-              </ion-label>
-            </ion-item>
-          </ion-menu-toggle>
-        </ng-container>
-      </ion-list>
+
+
+
 
     </ion-content>
   </ion-menu>
