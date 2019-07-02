@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  lang: '' // browser language on development
+  lang: 'en' // browser language on development
 };
 
 /*

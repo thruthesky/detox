@@ -19,7 +19,7 @@ export class RegisterPage implements OnInit {
 
   user: User = {} as User;
   constructor(
-    private fb: FormBuilder,
+    fb: FormBuilder,
     public a: AppService
   ) {
 
@@ -29,6 +29,7 @@ export class RegisterPage implements OnInit {
       user_email: ['', [Validators.required, Validators.minLength(8), Validators.maxLength(64)]],
       display_name: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(64)]]
     });
+
     this.formKeys = Object.keys(this.form.value);
     this.validationMessages = {
       user_login: {
