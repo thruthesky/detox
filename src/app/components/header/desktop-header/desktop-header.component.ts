@@ -15,7 +15,7 @@ export class DesktopHeaderComponent implements OnInit {
     public popoverController: PopoverController
   ) { }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
   async presentPopover(ev: any) {
     const popover = await this.popoverController.create({
@@ -23,7 +23,8 @@ export class DesktopHeaderComponent implements OnInit {
       event: ev,
       mode: 'md',
       translucent: true,
-      cssClass: 'i-pop-width-300px i-pop-mt-5px i-bg-white-trans' ,
+      cssClass: 'i-pop-width-300px i-pop-mt-5px i-bg-white-trans box-shadow-none',
+      showBackdrop: false
     });
     return await popover.present();
   }
