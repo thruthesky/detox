@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  lang: 'ko' // Korean only on production site
 };

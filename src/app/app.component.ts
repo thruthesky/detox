@@ -29,9 +29,9 @@ export class AppComponent implements AfterViewInit {
   }
 
   ngAfterViewInit() {
-    if (!this.a.env.production) {
-      this.menu.open();
+    if (this.a.env.production === false) {
+      // this.menu.open();
     }
-
   }
+
 }

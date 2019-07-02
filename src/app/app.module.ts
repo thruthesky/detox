@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { WordpressApiModule } from 'modules/wordpress-api/wordpress-api.module';
 import { WordpressApiService } from 'modules/wordpress-api/wordpress-api';
+import { MobileSidemenuModule } from './components/header/mobile-sidemenu/mobile-sidemenu.module';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { WordpressApiService } from 'modules/wordpress-api/wordpress-api';
   entryComponents: [],
   imports: [
     BrowserModule, IonicModule.forRoot(), AppRoutingModule,
-    WordpressApiModule
+    WordpressApiModule,
+    MobileSidemenuModule
   ],
   providers: [
     StatusBar,
