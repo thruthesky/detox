@@ -1,10 +1,12 @@
 import { Injectable } from '@angular/core';
 import { MenuController } from '@ionic/angular';
 import { WordpressApiService } from 'modules/wordpress-api/wordpress-api';
+import { environment } from 'src/environments/environment';
 
 @Injectable({ providedIn: 'root' })
 export class AppService {
 
+    env = environment;
     lang = 'en';
     constructor(
         private sideMenu: MenuController,
