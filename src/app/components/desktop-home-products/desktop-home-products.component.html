@@ -3,27 +3,27 @@
 </div>
     <div class="position-relative">
         <div class="layout-width flex-between">
-            <button class="pl-15px bg-gray-9 l-xl-1 l-xxl-15 top-145px position-absolute h-70px w-70px no-outline bg-trans white z-1000"
+            <button class="pl-15px bg-gray-9 l-xl-1 l-xxl-15 position-absolute y-md-20 y-lg-30    h-70px w-70px no-outline bg-trans white z-1000"
               (click)="prev()">
               <i class="arrow-left b-white-9  pl-70px w-50px h-50px "></i>
             </button>
-            <button class="pr-70px bg-gray-9 r-xl-1 r-xxl-15 top-175px position-absolute h-70px w-70px no-outline bg-trans white z-1000"
+            <button class="pr-70px bg-gray-9 r-xl-1 r-xxl-15 position-absolute  y-md-20 y-lg-30  position-absolute h-70px w-70px no-outline bg-trans white z-1000"
               (click)="next()">
               <i class="arrow-right  b-white-9 w-50px h-50px"></i>
             </button>
           </div>
-      <ion-slides  class="px-xxl-150" mode="ios" [options]="options"  #slides>
+      <ion-slides  class="px-100px px-xl-150px" mode="ios"  pager="true"  [options]="options"  #slides>
             <ion-slide  *ngFor="let x of [].constructor(10)">
 
               <ion-card  class="card    mx-10px">
                 <div class="flex flex-center"> 
-                    <img  style="height: 350px;"  src="/assets/img/product/img_product.png" alt="">
+                    <img   src="/assets/img/product/img_product.png" alt="">
                 </div>
-                  <ion-card-header class="pt-37px pb-20px">
-                    <ion-card-title color="success" class="fs-24px ">Awesome Title</ion-card-title>
+                  <ion-card-header class="pt-37px">
+                    <ion-card-title  mode="md" color="success" class="fs-22px fs-lg-26px ff-lora">long&Big Title</ion-card-title>
                   </ion-card-header>      
-                  <ion-card-content class="px-xxl-40" >
-                      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard
+                  <ion-card-content class="px-xxl-40 fs-14 lh-18px pt-0" >
+                      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
                   </ion-card-content>
               </ion-card> 
             </ion-slide>
@@ -32,7 +32,7 @@
 
 
     <div class="ion-text-center pt-65px pb-80px">
-      <ion-button class="w-200px h-65px bg-white"  fill="outline" color="success">
+      <ion-button mode="md" class="w-200px h-65px bg-white"  fill="outline" color="success">
         <ion-label class="dark-green letter-spacing-0 fs-16px bold">설명서</ion-label>
       </ion-button>
       </div>

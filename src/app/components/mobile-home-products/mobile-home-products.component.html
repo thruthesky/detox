@@ -4,30 +4,19 @@
 
 <!-- slider by two -->
 <div class="bg-light-gray">
-  <ion-slides options="initialSlide: 1;speed: 100">
+  <ion-slides [options]="options" class="min-height-200px px-20px">
     <ion-slide *ngFor="let items of [].constructor(10)">
-      <ion-grid fixed>
-        <ion-row>
-          <ion-col size="6">
-            <ion-card class="card bg-white">
-              <img [src]="img" class="mh-100" alt="">
-              <ion-card-content class="ion-text-start" no-padding>
-                <div class="dark-gray pt-10  px-10 bold fs-14">TITLE</div>
-                <div class="gray p-10 pt-5 fs-14">Card Details</div>
-              </ion-card-content>
-            </ion-card>
-          </ion-col>
-          <ion-col size="6">
-            <ion-card class="card bg-white">
-              <img [src]="img" class="mh-100" alt="">
-              <ion-card-content class="ion-text-start" no-padding>
-                <div class="dark-gray pt-10  px-10 bold fs-14">TITLE</div>
-                <div class="gray p-10 pt-5 fs-14">Card Details</div>
-              </ion-card-content>
-            </ion-card>
-          </ion-col>
-        </ion-row>
-      </ion-grid>
+      <ion-card class="card bg-white mx-5px my-10px" mode="ios">
+        <img [src]="img"  class="min-height-100px" alt="">
+        <ion-card-content class="ion-text-start" no-padding>
+          <div class="dark-gray pt-10  px-10 bold fs-14">TITLE</div>
+          <div class="p-10 pt-5 fs-14">
+            <ion-text color="medium">
+              <p>Casdasdasdasdasdasdasd</p>
+            </ion-text>
+          </div>
+        </ion-card-content>
+      </ion-card>
     </ion-slide>
   </ion-slides>
 </div>
