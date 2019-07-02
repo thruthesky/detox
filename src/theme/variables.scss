@@ -239,6 +239,8 @@
   padding-bottom: 15px !important;
 }
 
+
+
 .py-10 {
   padding-top: 10px;
   padding-bottom: 10px;
@@ -811,6 +813,9 @@
 .r-270px {
   right: 270px;
 }
+.no-outline {
+  outline: none;
+}
 
 .b-green {
   border: 2px solid #7db262;
@@ -820,7 +825,9 @@
   --border-color: #7db262;
 }
 
-
+.no-border {
+  --border: 0 !important;
+}
 .b-radius-5 {
   border-radius: 6px;
 }

@@ -1,11 +1,6 @@
 <ion-app>
-  <ion-menu data-role="sidemenu" contentId="routerOutlet" class="i-width-360px">
-    <!-- <ion-header>
-      <ion-toolbar class="ion-activatable pointer" mode="md">
-        <ion-ripple-effect></ion-ripple-effect>
-        <ion-title>Menu</ion-title>
-      </ion-toolbar>
-    </ion-header> -->
+  <ion-menu data-role="sidemenu" contentId="routerOutlet" class="i-width-360px" mode="md">
+   
     <ion-content>
 
 
@@ -21,7 +16,7 @@
             <ion-menu-toggle auto-hide="false">
               <ion-item lines="none" button class="pointer" data-role="sidemenu-options" routerLink="/about">
                 <ion-ripple-effect></ion-ripple-effect>
-                <ion-label>
+                <ion-label >
                   {{ a.t({en: 'About', ko: '세븐디톡스란?'}) }}
                 </ion-label>
               </ion-item>
@@ -82,15 +77,15 @@
 
         <ion-grid fixed class="ion-no-padding gray">
           <ion-row class="py-15px">
-            <ion-col size="6" class="ion-no-padding" (click)="sideMenuCLose()" routerLink="/about">
+            <ion-col size="6" class="ion-no-padding no-outline" (click)="sideMenuCLose()" routerLink="/about">
               {{ a.t({en: 'About', ko: '세븐디톡스란?'}) }}
             </ion-col>
-            <ion-col size="6" class="ion-no-padding" (click)="sideMenuCLose()" routerLink="/login">
+            <ion-col size="6" class="ion-no-padding no-outline" (click)="sideMenuCLose()" routerLink="/login">
               {{ a.t({en: 'Login', ko: '로그인'}) }}
             </ion-col>
           </ion-row>
           <ion-row>
-            <ion-col size="6" class="ion-no-padding" (click)="sideMenuCLose()" routerLink="/register">
+            <ion-col size="6" class="ion-no-padding no-outline" (click)="sideMenuCLose()" routerLink="/register">
               {{ a.t({en: 'Register', ko: '회원가입'}) }}
             </ion-col>
             <ion-col size="6" class="ion-no-padding">
@@ -107,23 +102,23 @@
 
         <ion-grid fixed class="ion-no-padding gray">
           <ion-row class="py-15px">
-            <ion-col size="6" class="ion-no-padding">
+            <ion-col size="6" class="ion-no-padding no-outline">
               플는텍스트는
             </ion-col>
-            <ion-col size="6" class="ion-no-padding">
+            <ion-col size="6" class="ion-no-padding no-outline">
               플는텍스트는
             </ion-col>
           </ion-row>
           <ion-row>
-            <ion-col size="6" class="ion-no-padding">
+            <ion-col size="6" class="ion-no-padding no-outline">
               플는텍스트는
             </ion-col>
-            <ion-col size="6" class="ion-no-padding">
+            <ion-col size="6" class="ion-no-padding no-outline">
               플는텍스트는
             </ion-col>
           </ion-row>
           <ion-row class="py-15px">
-            <ion-col size="6" class="ion-no-padding">
+            <ion-col size="6" class="ion-no-padding no-outline">
               플는텍스트는
             </ion-col>
           </ion-row>
@@ -138,26 +133,26 @@
 
         <ion-grid fixed class="ion-no-padding gray">
           <ion-row class="py-15px">
-            <ion-col size="6" class="ion-no-padding">
+            <ion-col size="6" class="ion-no-padding no-outline">
               플는텍스트는
             </ion-col>
-            <ion-col size="6" class="ion-no-padding">
+            <ion-col size="6" class="ion-no-padding no-outline">
               플는텍스트는
             </ion-col>
           </ion-row>
           <ion-row>
-            <ion-col size="6" class="ion-no-padding">
+            <ion-col size="6" class="ion-no-padding no-outline">
               플는텍스트는
             </ion-col>
-            <ion-col size="6" class="ion-no-padding">
+            <ion-col size="6" class="ion-no-padding no-outline">
               플는텍스트는
             </ion-col>
           </ion-row>
           <ion-row class="py-15px">
-            <ion-col size="6" class="ion-no-padding">
+            <ion-col size="6" class="ion-no-padding no-outline">
               플는텍스트는
             </ion-col>
-            <ion-col size="6" class="ion-no-padding">
+            <ion-col size="6" class="ion-no-padding no-outline">
               플는텍스트는
             </ion-col>
           </ion-row>
