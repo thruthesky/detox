@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AppService } from 'src/app/services/app.service';
+import { PopoverController } from '@ionic/angular';
+import { MenuPopoverComponent } from '../../menu-popover/menu-popover.component';
 
 @Component({
   selector: 'app-desktop-header',
@@ -9,10 +11,23 @@ import { AppService } from 'src/app/services/app.service';
 export class DesktopHeaderComponent implements OnInit {
 
   constructor(
-    public a: AppService
+    public a: AppService,
+    public popoverController: PopoverController
   ) { }
 
   ngOnInit() {}
 
+  async presentPopover(ev: any) {
+    const popover = await this.popoverController.create({
+      component: MenuPopoverComponent,
+      event: ev,
+      mode: 'md',
+      translucent: true,
+      cssClass: 'i-pop-width-300px i-pop-mt-5px i-bg-white-trans' ,
+    });
+    return await popover.present();
+  }
+
 }
+
 

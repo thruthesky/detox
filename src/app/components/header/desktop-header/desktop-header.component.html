@@ -22,7 +22,7 @@
     <ion-grid fixed class="layout-width ion-no-padding white ">
         <ion-row class="ion-no-padding" >
           <ion-col size="3" class="ion-no-padding">  
-              <ion-button  mode="md" fill >
+              <ion-button  mode="md" fill (click)="presentPopover($event)" >
                   <ion-icon slot="icon-only" name="menu" mode="md" class="white fs-22px"></ion-icon>
                 </ion-button>
           </ion-col>
