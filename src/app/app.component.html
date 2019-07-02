@@ -1,3 +1,37 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+  <ion-menu data-role="sidemenu" contentId="routerOutlet">
+    <ion-header>
+      <ion-toolbar class="ion-activatable pointer" mode="md">
+        <ion-ripple-effect></ion-ripple-effect>
+        <ion-title>Menu</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+
+      <ion-list>
+
+        <ion-item-divider>
+          <ion-label>
+            User Information
+          </ion-label>
+        </ion-item-divider>
+
+        <ng-container *ngFor="let m of sideMenus">
+
+          <ion-menu-toggle auto-hide="false">
+            <ion-item button class="pointer" data-role="sidemenu-options" routerLink="/{{ m.url }}">
+              <ion-ripple-effect></ion-ripple-effect>
+              <ion-icon slot="start" [name]="m.icon" mode="md"></ion-icon>
+              <ion-label>
+                {{ m.title }}
+              </ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+        </ng-container>
+      </ion-list>
+
+    </ion-content>
+  </ion-menu>
+
+  <ion-router-outlet id="routerOutlet" main></ion-router-outlet>
 </ion-app>
