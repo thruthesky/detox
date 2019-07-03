@@ -181,7 +181,9 @@
   --background: #ffffffd7 !important;
 }
 .box-shadow-none, .no-box-shadow {
+  box-shadow: none !important;
   --box-shadow: none !important;
+  --webkit-box-shadow: none !important;
 }
 
 .white {

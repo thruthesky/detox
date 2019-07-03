@@ -5,13 +5,13 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 
-import { PostViewPage } from './post-view.page';
+import { DetoxificationTipPage } from './detoxification-tip.page';
 import { HeaderModule } from 'src/app/components/header/header.module';
 
 const routes: Routes = [
   {
     path: '',
-    component: PostViewPage
+    component: DetoxificationTipPage
   }
 ];
 
@@ -23,6 +23,6 @@ const routes: Routes = [
     RouterModule.forChild(routes),
     HeaderModule
   ],
-  declarations: [PostViewPage]
+  declarations: [DetoxificationTipPage]
 })
-export class PostViewPageModule {}
+export class DetoxificationTipPageModule {}

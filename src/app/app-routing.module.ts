@@ -24,6 +24,8 @@ const routes: Routes = [
   { path: 'privacy-policy', loadChildren: './pages/privacy-policy/privacy-policy.module#PrivacyPolicyPageModule' },
   { path: 'child-protection', loadChildren: './pages/child-protection/child-protection.module#ChildProtectionPageModule' },
   { path: 'affiliate', loadChildren: './pages/affiliate/affiliate.module#AffiliatePageModule' },
+  { path: 'testimonial', loadChildren: './pages/testimonial/testimonial.module#TestimonialPageModule' },
+  { path: 'detoxification-tip', loadChildren: './pages/detoxification-tip/detoxification-tip.module#DetoxificationTipPageModule' },
 ];
 
 @NgModule({
