@@ -3,14 +3,14 @@
     {{ a.t({ en: 'Please login.', ko: '로그인 해주세요.' }) }}
   </div>
   <div class="text-align-right">
-    <ion-button (click)="open('/about')" size="small" fill="clear" class="white" mode="ios">
+    <ion-button (click)="open('')" size="small" fill="clear" class="white" mode="ios">
       <ion-icon slot="icon-only" name="close"></ion-icon>
     </ion-button>
   </div>
 </div>
 
 <div class="p-22px fs-14 ">
-
+  <!-- 1st-->
   <div class="pb-2 border-bottom-green">
     <ion-text color="success">
       <p>
@@ -35,7 +35,7 @@
         <ion-label (click)="open('/how-to-detox-my-body')">{{ a.t({en: 'Register', ko: '내 몸 해독 설명서'}) }}</ion-label>
       </ion-col>
       <ion-col size="6" class="ion-no-padding">
-        <ion-label (click)="open('/products')">제품소개</ion-label>
+        <ion-label (click)="open('/products')">{{ a.t({en: 'Product', ko: '제품소개'}) }}</ion-label>
       </ion-col>
     </ion-row>
 
@@ -50,45 +50,46 @@
 
   </ion-grid>
 
-  <div class="pt-3 pb-2 border-bottom-green">
+  <!-- 2nd -->
+  <div class="pt-4 pb-2 border-bottom-green">
     <ion-text color="success">
       <p>프로그램</p>
     </ion-text>
   </div>
 
   <ion-grid fixed class="ion-no-padding gray">
-    <ion-row class="py-15px">
+    <ion-row  class="pt-2" >
       <ion-col size="6" class="ion-no-padding no-outline">
-        <ion-label (click)="open('/measure-detox')">{{ a.t({en: '', ko: '독소지수,비만도측정'}) }}</ion-label>
+        <ion-label (click)="open('/measure-detox')">{{ a.t({en: 'Measure Detox', ko: '독소지수,비만도측정'}) }}</ion-label>
       </ion-col>
       <ion-col size="6" class="ion-no-padding no-outline">
-        <ion-label (click)="open('/alarm-list')">{{ a.t({en: '', ko: '참여하기'}) }}</ion-label>
+        <ion-label (click)="open('/alarm-list')">{{ a.t({en: 'Alarm list', ko: '참여하기'}) }}</ion-label>
       </ion-col>
     </ion-row>
     <ion-row>
       <ion-col size="6" class="ion-no-padding no-outline">
-        <ion-label (click)="open('/detoxification-diary')">{{ a.t({en: '', ko: '해독일지'}) }}</ion-label>
+        <ion-label (click)="open('/detoxification-diary')">{{ a.t({en: 'Detoxification Diary', ko: '해독일지'}) }}</ion-label>
       </ion-col>
       <ion-col size="6" class="ion-no-padding no-outline">
-        <ion-label (click)="open('/detoxification-recipe')">{{ a.t({en: '', ko: '해독레시피'}) }}</ion-label>
-      </ion-col>
+        <ion-label (click)="open('/detoxification-recipe')">{{ a.t({en: 'Detoxification Recipe', ko: '해독레시피'}) }}</ion-label>
+      </ion-col>
     </ion-row>
-    <ion-row class="py-15px">
+    <ion-row >
       <ion-col size="6" class="ion-no-padding no-outline">
-        <ion-label (click)="open('/home-training')">{{ a.t({en: '', ko: '홈트레이닝'}) }}</ion-label>
+        <ion-label (click)="open('/home-training')">{{ a.t({en: 'Home Training', ko: '홈트레이닝'}) }}</ion-label>
       </ion-col>
     </ion-row>
   </ion-grid>
 
-
-  <div class="border-bottom-green pb-2">
+  <!-- 3rd -->
+  <div class="pt-4 pb-2 border-bottom-green ">
     <ion-text color="success">
       <p>셀그린라이트</p>
     </ion-text>
   </div>
 
   <ion-grid fixed class="ion-no-padding gray">
-    <ion-row class="py-15px">
+    <ion-row  class="pt-2">
       <ion-col size="6" class="ion-no-padding no-outline">
         <ion-label (click)="open('/company-info')">{{ a.t({en: 'Company Intro', ko: '회사소개'}) }}</ion-label>
       </ion-col>
@@ -104,7 +105,7 @@
         <ion-label (click)="open('/privacy-policy')">{{ a.t({en: 'Privacy Policy', ko: '개인정보 처리방침'}) }}</ion-label>
       </ion-col>
     </ion-row>
-    <ion-row class="py-15px">
+    <ion-row >
       <ion-col size="6" class="ion-no-padding no-outline">
         <ion-label (click)="open('/child-protection')">{{ a.t({en: 'Child Protection', ko: '청소년보호정책'}) }}</ion-label>
       </ion-col>
@@ -113,5 +114,4 @@
       </ion-col>
     </ion-row>
   </ion-grid>
-
 </div>

@@ -5,16 +5,19 @@ import { IonicModule } from '@ionic/angular';
 import { MenuPopoverComponent } from '../../menu-popover/menu-popover.component';
 import { MenuPopoverModule } from '../../menu-popover/menu-popover.module';
 import { RouterModule } from '@angular/router';
+import { MobileSidemenuModule } from '../mobile-sidemenu/mobile-sidemenu.module';
+import { MobileSidemenuComponent } from '../mobile-sidemenu/mobile-sidemenu.component';
 
 @NgModule({
-  entryComponents: [MenuPopoverComponent],
+  entryComponents: [MobileSidemenuComponent],
   declarations: [ DesktopHeaderComponent ],
   exports: [ DesktopHeaderComponent ],
   imports: [
     CommonModule,
     RouterModule,
     IonicModule,
-    MenuPopoverModule
+    MenuPopoverModule,
+    MobileSidemenuModule,
     
   ]
 })

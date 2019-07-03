@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AppService } from 'src/app/services/app.service';
 import { PopoverController } from '@ionic/angular';
 import { MenuPopoverComponent } from '../../menu-popover/menu-popover.component';
+import { MobileSidemenuComponent } from '../mobile-sidemenu/mobile-sidemenu.component';
 
 @Component({
   selector: 'app-desktop-header',
@@ -19,7 +20,7 @@ export class DesktopHeaderComponent implements OnInit {
 
   async presentPopover(ev: any) {
     const popover = await this.popoverController.create({
-      component: MenuPopoverComponent,
+      component: MobileSidemenuComponent,
       event: ev,
       mode: 'md',
       translucent: true,

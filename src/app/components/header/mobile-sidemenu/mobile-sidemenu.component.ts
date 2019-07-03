@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MenuController } from '@ionic/angular';
+import { MenuController, PopoverController } from '@ionic/angular';
 import { AppService } from 'src/app/services/app.service';
 import { Router } from '@angular/router';
 
@@ -13,6 +13,7 @@ export class MobileSidemenuComponent implements OnInit {
   constructor(
     private router: Router,
     private menu: MenuController,
+    private popoverController: PopoverController,
     public a: AppService
   ) { }
 
@@ -21,8 +22,15 @@ export class MobileSidemenuComponent implements OnInit {
 
   open(url: string) {
     this.menu.close();
-    this.router.navigateByUrl(url);
+    this.popoverController.dismiss(); 
+    if(url){
+      this.router.navigateByUrl(url);
+    }
   }
+
+
+  
+
 
 }
 
