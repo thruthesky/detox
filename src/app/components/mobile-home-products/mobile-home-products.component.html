@@ -1,7 +1,7 @@
-<ion-toolbar class="i-min-height pl-2 ">
+<ion-toolbar class="i-min-height pl-2 " mode="md">
   <ion-title class="fs-14 bold pl-0  ">{{ a.t({ en: 'Products', ko: '제품 소개' }) }}</ion-title>
   <ion-buttons slot="end">
-    <ion-button routerLink="/products" class="green fs-12 i-pr-0">
+    <ion-button routerLink="/products" mode="md" class="green fs-12 i-pr-0">
       more
       <ion-icon name="arrow-forward" mode="ios"></ion-icon>
     </ion-button>
@@ -10,7 +10,7 @@
 
 <!-- slider by two -->
 <div class="bg-light-gray">
-  <ion-slides [options]="options" class="px-3 py-10px">
+  <ion-slides [options]="options" class="px-4 py-10px">
     <ion-slide *ngFor="let items of [].constructor(10)" class="px-1">
       <ion-card class="ion-no-margin  card bg-white fs-12" mode="ios" routerLink="/post-view">
         <ion-img src="\assets\img\product\product_mobile.png" class="min-height-100px" alt="product_image"></ion-img>
