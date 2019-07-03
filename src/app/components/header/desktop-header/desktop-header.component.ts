@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AppService } from 'src/app/services/app.service';
 import { PopoverController } from '@ionic/angular';
-import { MenuPopoverComponent } from '../../menu-popover/menu-popover.component';
 import { MobileSidemenuComponent } from '../mobile-sidemenu/mobile-sidemenu.component';
 
 @Component({

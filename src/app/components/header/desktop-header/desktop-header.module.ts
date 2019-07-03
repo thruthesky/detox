@@ -2,8 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DesktopHeaderComponent } from './desktop-header.component';
 import { IonicModule } from '@ionic/angular';
-import { MenuPopoverComponent } from '../../menu-popover/menu-popover.component';
-import { MenuPopoverModule } from '../../menu-popover/menu-popover.module';
 import { RouterModule } from '@angular/router';
 import { MobileSidemenuModule } from '../mobile-sidemenu/mobile-sidemenu.module';
 import { MobileSidemenuComponent } from '../mobile-sidemenu/mobile-sidemenu.component';
@@ -16,7 +14,6 @@ import { MobileSidemenuComponent } from '../mobile-sidemenu/mobile-sidemenu.comp
     CommonModule,
     RouterModule,
     IonicModule,
-    MenuPopoverModule,
     MobileSidemenuModule,
     
   ]
