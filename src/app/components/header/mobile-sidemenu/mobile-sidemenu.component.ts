@@ -21,8 +21,15 @@ export class MobileSidemenuComponent implements OnInit {
 
 
   open(url: string) {
-    this.menu.close();
-    this.popoverController.dismiss(); 
+
+    if(this.a.isDesktop) {
+      this.popoverController.dismiss(); 
+    } else {
+      this.menu.close();
+    }
+
+   
+    
     if(url){
       this.router.navigateByUrl(url);
     }
