@@ -215,9 +215,11 @@
 }
 
 .dark-gray {
-  color: #2e393e;
+  color: #868686;
 }
-
+.no-color-activate {
+  --color-activated: none !important;
+}
 
 .pt-3px {
   padding-top: 3px !important;
@@ -278,7 +280,7 @@
 }
 
 .bold {
-  font-weight: bold;
+  font-weight: bold!important;
 }
 
 .white-trans {
@@ -404,6 +406,16 @@
   box-shadow: none !important;
 }
 
+.no-border-radius {
+  border-radius: 0 !important;
+}
+
+.i-min-height {
+  --min-height: 42px!important;
+}
+
+
+
 .lh-9px {
   line-height: 10px;
 }
@@ -518,6 +530,10 @@
 
 .h-43px {
   height: 43px;
+}
+
+.h-48px {
+  height: 48px;
 }
 
 .border-bottom-gray {
@@ -750,7 +766,7 @@
 }
 
 .fs-16px {
-  font-size: 16px;
+  font-size: 16px !important;
 }
 
 .fs-45px {
@@ -874,11 +890,7 @@
   color: #91bd7c;
 }
 
-.i-btn-white {
-  --background: #fff !important;
-  --background-hover: white;
-  --ripple-color: #0ec254;
-}
+
 
 .i-pop-mt-5px {
   margin-top: 3px;
@@ -888,6 +900,11 @@
   --background: #fff !important;
 }
 
+.i-btn-white {
+  --background: #fff !important;
+  --color-activated: black !important;
+
+}
 .i-bg-hover-white {
   --background-hover: white;
 }

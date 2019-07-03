@@ -1,35 +1,22 @@
-<ion-toolbar>
-  <ion-title>{{ a.t({ en: 'Products', ko: '제품 소개' }) }}</ion-title>
+<ion-toolbar class="i-min-height pl-2 ">
+  <ion-title class="fs-14 bold pl-0  ">{{ a.t({ en: 'Products', ko: '제품 소개' }) }}</ion-title>
   <ion-buttons slot="end">
-    <ion-button routerLink="/products">
-      <span class="arrow-text">More </span>
-      <ion-icon class="arrow-icon" name="arrow-forward" mode="ios"></ion-icon>
+    <ion-button routerLink="/products" class="green fs-12 i-pr-0">
+      more
+      <ion-icon name="arrow-forward" mode="ios"></ion-icon>
     </ion-button>
   </ion-buttons>
 </ion-toolbar>
 
-
-
 <!-- slider by two -->
 <div class="bg-light-gray">
-  <ion-slides [options]="options" class="min-height-200px px-20px">
-    <ion-slide *ngFor="let items of [].constructor(10)">
-      <ion-card class="card bg-white mx-5px my-10px" mode="ios" routerLink="/post-view">
-        <ion-img [src]="img" class="min-height-100px" alt=""></ion-img>
-
-        <ion-card-header>
-          <ion-card-title class="ion-text-left">TITLE</ion-card-title>
-        </ion-card-header>
-
-        <ion-card-content class="ion-text-start" no-padding>
-          <p>Casdasdasdasdasdasdasd</p>
-
-          <!-- <div class="dark-gray pt-10  px-10 bold fs-14">TITLE</div> -->
-          <!-- <div class="p-10 pt-5 fs-14">
-            <ion-text color="medium"> -->
-          <!-- <p>Casdasdasdasdasdasdasd</p> -->
-          <!-- </ion-text>
-          </div> -->
+  <ion-slides [options]="options" class="px-3 py-10px">
+    <ion-slide *ngFor="let items of [].constructor(10)" class="px-1">
+      <ion-card class="ion-no-margin  card bg-white fs-12" mode="ios" routerLink="/post-view">
+        <ion-img src="\assets\img\product\product_mobile.png" class="min-height-100px" alt="product_image"></ion-img>
+        <ion-card-title class="pt-2 px-11px ion-text-start fs-14 bold  ">Detox 제품제</ion-card-title>
+        <ion-card-content class="ion-no-margin ion-no-padding px-11px pb-3 ion-text-start ">
+          <p class="m-0 pb-2 fs-12 gray ">Fox News Sunday with Chris Wallace</p>
         </ion-card-content>
       </ion-card>
     </ion-slide>
@@ -40,7 +27,7 @@
   상상상표상상상상표+
 </div> -->
 
-<ion-button class="no-box-shadow" color="light" expand="full" routerLink="/products">
-  <ion-label>{{ a.t({ en: '', ko: '더 많은 제품 보기' })}}</ion-label>
-  <ion-icon name="add-circle"></ion-icon>
+<ion-button class="m-0 no-box-shadow ion-no-margin dark-gray i-btn-white border-bottom-gray no-outline"  expand="full" routerLink="/products">
+  <ion-label>{{ a.t({ en: 'See more products', ko: '더 많은 제품 보기' })}}</ion-label>
+  <ion-icon name="ios-add-circle" color="green" slot="end"></ion-icon>
 </ion-button>
