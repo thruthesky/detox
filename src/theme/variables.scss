@@ -180,7 +180,7 @@
 .i-bg-white-trans {
   --background: #ffffffd7 !important;
 }
-.box-shadow-none {
+.box-shadow-none, .no-box-shadow {
   --box-shadow: none !important;
 }
 
@@ -1215,6 +1215,14 @@ p {
 }
 
 
+
 .popover-content.sc-ion-popover-md {
   border-radius: 0 !important;
 }
+
+
+
+.pointer {
+  cursor: pointer;
+}
+

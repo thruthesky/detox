@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  lang: 'en' // browser language on development
+  lang: '' // if you put empty string, then you will see the display language as in you browser language
 };
 
 /*
@@ -15,3 +15,5 @@ export const environment = {
  * on performance if an error is thrown.
  */
 // import 'zone.js/dist/zone-error';  // Included with Angular CLI.
+
+
