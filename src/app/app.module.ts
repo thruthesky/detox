@@ -11,6 +11,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { WordpressApiModule } from 'modules/wordpress-api/wordpress-api.module';
 import { WordpressApiService } from 'modules/wordpress-api/wordpress-api';
 import { MobileSidemenuModule } from './components/header/mobile-sidemenu/mobile-sidemenu.module';
+import { environment } from 'src/environments/environment';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { MobileSidemenuModule } from './components/header/mobile-sidemenu/mobile
 })
 export class AppModule {
   constructor( wp: WordpressApiService ) {
-    wp.serverUrl = 'http://local.wordpress.org/wordpress-api/wordpress-api.php';
+    wp.apiUrl = environment.apiUrl;
     console.log('wp:', wp);
   }
 }
+
