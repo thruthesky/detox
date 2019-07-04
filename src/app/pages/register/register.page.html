@@ -5,13 +5,13 @@
 
 <ion-content>
 
-  <section class="register px-23px pb-5 bg-light-gray vh-100"   >
+  <section class="register px-23px pb-5 pt-1 bg-light-gray vh-100"   >
 
-    <form [formGroup]=" form " (ngSubmit)=" onSubmit() ">
+    <form [formGroup]=" form " (ngSubmit)=" onSubmit() " >
 
       <ion-list class="ion-no-padding ion-no-margin bg-light-gray ">
 
-        <ion-item>
+        <ion-item  mode="ios">
           <!-- <ion-label position="floating" color="medium">{{ a.t({en: 'Email', ko: '이메일 주소'}) }}</ion-label> -->
           <ion-input name="loginid" placeholder="Email" mode="ios" formControlName="user_email"></ion-input>
         </ion-item>
@@ -19,25 +19,25 @@
         </ion-text>
 
 
-        <ion-item>
+        <ion-item mode="ios">
           <!-- <ion-label position="floating" color="medium">{{ a.t({en: 'Password', ko: '비밀번호'}) }}</ion-label> -->
-          <ion-input name="loginid" placeholder="Password" formControlName="user_pass"></ion-input>
+          <ion-input name="loginid" placeholder="Password"  mode="ios"  formControlName="user_pass"></ion-input>
         </ion-item>
         <ion-text class="d-block mt-2 fs-sm" color="danger" *ngIf=" errors.user_pass ">{{ errors.user_pass }}</ion-text>
 
 
 
-        <ion-item>
+        <ion-item mode="ios">
           <!-- <ion-label position="floating" color="medium">{{ a.t({en: 'Password Confirm', ko: '비밀번호 재확인'}) }}</ion-label> -->
-          <ion-input name="user_pass_confirm" placeholder="Confirm Password" formControlName="user_pass_confirm"></ion-input>
+          <ion-input name="user_pass_confirm" placeholder="Confirm Password"  mode="ios"  formControlName="user_pass_confirm"></ion-input>
         </ion-item>
         <ion-text class="d-block mt-2 fs-sm" color="danger" *ngIf=" errors.user_pass_confirm ">
           {{ errors.user_pass_confirm }}</ion-text>
 
 
-        <ion-item>
+        <ion-item mode="ios">
           <!-- <ion-label position="floating" color="medium">{{ a.t({en: 'Nickname', ko: '닉네임'}) }}</ion-label> -->
-          <ion-input name="display_name" placeholder="Nickname" formControlName="display_name"></ion-input>
+          <ion-input name="display_name" placeholder="Nickname"  mode="ios"  formControlName="display_name"></ion-input>
         </ion-item>
         <ion-text class="d-block mt-2 fs-sm" color="danger" *ngIf=" errors.display_name ">{{ errors.display_name }}
         </ion-text>
@@ -48,7 +48,7 @@
       <ion-radio-group name="gender" formControlName="gender" >
         <ion-grid class="mt-4">
           <ion-row>
-            <ion-col size="6" class="flex-column-center">
+            <ion-col size="6" class="flex-column-center ">
 
               <div class="flex-center">
                 <ion-radio color="success" value="male" mode="md"></ion-radio>
