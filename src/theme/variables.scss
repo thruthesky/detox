@@ -108,6 +108,11 @@
   --ion-color-tint: #8aba72;
 }
 
+
+.h-50px {
+  height: 50px;
+}
+
 .m-width-72px {
   min-width: 72px !important;
 }
@@ -145,6 +150,11 @@
   padding-top: 35px;
   padding-bottom: 35px;
 }
+
+.h-30px {
+  height: 30px !important;
+}
+
 
 .h-134px {
   height: 134px;
@@ -349,6 +359,9 @@
 .h-40px {
   height: 40px !important;
 }
+.h-45px {
+  height: 45px !important;
+}
 .h-56px {
   height: 56px;
 }
@@ -379,6 +392,10 @@
   color: black !important;
 }
 
+
+.underline {
+  text-decoration: underline !important;
+}
 .shadow {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
@@ -438,6 +455,7 @@
 .flex-center {
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 .flex-column-center {
   display: flex;
@@ -913,6 +931,9 @@
 
 .i-color-act-white {
   --color-activated: white !important;
+}
+.i-color-act-green {
+  --color-activated: var( --ion-color-success);
 }
 
 .i-bg-hover-white {
