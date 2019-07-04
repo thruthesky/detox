@@ -698,6 +698,14 @@
   top: 175px;
 }
 
+.i-bg-act-none {
+  --background-activated: rgba(255, 255, 255, 0) !important;
+ 
+}
+.ripple-trans {
+  --ripple-color:rgba(134, 134, 134, 0.301)!important;
+}
+
 .dark-green {
   color: #6e9d56;
 }
