@@ -138,8 +138,9 @@
   margin: 0 !important;
 }
 
-.i-pop-width-300px {
+.i-pop-width-360px {
   --width: 360px;
+
 }
 
 .text-align-right {
@@ -935,7 +936,7 @@
     i {
       width: 45px;
       height: 45px;
-      color: white;
+      border-color: rgba(255, 255, 255, 0.925);
     }
 
 
