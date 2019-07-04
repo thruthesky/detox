@@ -749,13 +749,16 @@
 .arrow-left {
   height: 35px;
   width: 35px;
-
   border: solid #a7a672;
   border-width: 0 3px 3px 0;
   display: inline-block;
   transform: rotate(135deg);
   -webkit-transform: rotate(135deg);
+
+
 }
+
+
 
 .arrow-right {
   height: 35px;
@@ -763,7 +766,6 @@
   border: solid #a7a672;
   border-width: 0 3px 3px 0;
   display: inline-block;
-
   transform: rotate(-45deg);
   -webkit-transform: rotate(-45deg);
 }
@@ -927,13 +929,28 @@
   --color-activated: black !important;
 
 }
+.hover-bg-black {
+  &:hover{
+    background-color: #00000041 !important;
+    i {
+      width: 45px;
+      height: 45px;
+      color: white;
+    }
 
 
+  }
+}
+.hover-bg-black2 {
+  &:hover{
+    background-color: #00000073!important;
+  }
+}
 .i-color-act-white {
   --color-activated: white !important;
 }
-.i-color-act-green {
-  --color-activated: var( --ion-color-success);
+.i-color-hov-green {
+  --color-hover: var( --ion-color-success)!important;
 }
 
 .i-bg-hover-white {
