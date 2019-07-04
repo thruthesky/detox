@@ -3,15 +3,15 @@
     {{ a.t({ en: 'Please login.', ko: '로그인 해주세요.' }) }}
   </div>
   <div class="text-align-right">
-    <ion-button (click)="open('')" size="small" fill="clear" class="white" mode="ios">
+    <ion-button fill="clear" no-margin mode="ios" (click)="open('')" size="small" fill="clear" class="p-2 h-40px white i-color-act-white " mode="ios">
       <ion-icon slot="icon-only" name="close"></ion-icon>
     </ion-button>
   </div>
 </div>
 
-<div class="p-22px fs-14 ">
+<div class="py-22px fs-14 ">
   <!-- 1st-->
-  <div class="pb-2 border-bottom-green">
+  <div class="pb-2 mx-22px  border-bottom-green">
     <ion-text color="success">
       <p>
         {{ a.t({ en: 'Information', ko: '안내' }) }}
@@ -19,73 +19,73 @@
     </ion-text>
   </div>
 
-  <ion-grid fixed class="ion-no-padding gray">
+  <ion-grid fixed class="ml-10px ion-no-padding gray ">
 
     <ion-row class="pt-2">
       <ion-col size="6" class="ion-no-padding no-outline">
-        <ion-label (click)="open('/about')">{{ a.t({en: 'About', ko: '세븐디톡스란?'}) }}</ion-label>
+        <ion-button fill="clear" no-margin mode="ios" (click)="open('/about')">{{ a.t({en: '세븐디톡스란?', ko: '세븐디톡스란?'}) }}</ion-button>
       </ion-col>
       <ion-col size="6" class="ion-no-padding">
-        <ion-label (click)="open('/about-detoxification')">{{ a.t({ en: 'About Detox?', ko: '해독이란?'})}}</ion-label>
+        <ion-button fill="clear" no-margin mode="ios" (click)="open('/about-detoxification')">{{ a.t({ en: 'About Detox?', ko: '해독이란?'})}}</ion-button>
       </ion-col>
     </ion-row>
 
     <ion-row>
       <ion-col size="6" class="ion-no-padding no-outline">
-        <ion-label (click)="open('/how-to-detox-my-body')">{{ a.t({en: 'Register', ko: '내 몸 해독 설명서'}) }}</ion-label>
+        <ion-button fill="clear" no-margin mode="ios" (click)="open('/how-to-detox-my-body')">{{ a.t({en: 'Register', ko: '내 몸 해독 설명서'}) }}</ion-button>
       </ion-col>
       <ion-col size="6" class="ion-no-padding">
-        <ion-label (click)="open('/products')">{{ a.t({en: 'Product', ko: '제품소개'}) }}</ion-label>
+        <ion-button fill="clear" no-margin mode="ios" (click)="open('/products')">{{ a.t({en: 'Product', ko: '제품소개'}) }}</ion-button>
       </ion-col>
     </ion-row>
 
     <ion-row >
       <ion-col size="6" class="ion-no-padding no-outline">
-        <ion-label (click)="open('/register')">{{ a.t({en: 'Register', ko: '회원가입'}) }}</ion-label>
+        <ion-button fill="clear" no-margin mode="ios" (click)="open('/register')">{{ a.t({en: 'Register', ko: '회원가입'}) }}</ion-button>
       </ion-col>
       <ion-col size="6" class="ion-no-padding no-outline">
-        <ion-label (click)="open('/login')">{{ a.t({en: 'Login', ko: '로그인'}) }}</ion-label>
+        <ion-button fill="clear" no-margin mode="ios" (click)="open('/login')">{{ a.t({en: 'Login', ko: '로그인'}) }}</ion-button>
       </ion-col>
     </ion-row>
 
   </ion-grid>
 
   <!-- 2nd -->
-  <div class="pt-4 pb-2 border-bottom-green">
+  <div class="pt-4 pb-2 mx-22px  border-bottom-green">
     <ion-text color="success">
       <p>프로그램</p>
     </ion-text>
   </div>
 
-  <ion-grid fixed class="ion-no-padding gray">
+  <ion-grid fixed class="ml-10px ion-no-padding gray">
     <ion-row  class="pt-2" >
       <ion-col size="6" class="ion-no-padding no-outline">
-        <ion-label (click)="open('/measure-detox')">{{ a.t({en: 'Measure Detox', ko: '독소지수,비만도측정'}) }}</ion-label>
+        <ion-button fill="clear" no-margin mode="ios" (click)="open('/measure-detox')">{{ a.t({en: 'Measure Detox', ko: '독소지수,비만도측정'}) }}</ion-button>
       </ion-col>
       <ion-col size="6" class="ion-no-padding no-outline">
-        <ion-label (click)="open('/alarm-list')">{{ a.t({en: 'Alarm list', ko: '참여하기'}) }}</ion-label>
+        <ion-button fill="clear" no-margin mode="ios" (click)="open('/alarm-list')">{{ a.t({en: 'Alarm list', ko: '참여하기'}) }}</ion-button>
       </ion-col>
     </ion-row>
     <ion-row>
       <ion-col size="6" class="ion-no-padding no-outline">
-        <ion-label (click)="open('/detoxification-diary')">{{ a.t({en: 'Detoxification Diary', ko: '해독일지'}) }}</ion-label>
+        <ion-button fill="clear" no-margin mode="ios" (click)="open('/detoxification-diary')">{{ a.t({en: 'Detoxification Diary', ko: '해독일지'}) }}</ion-button>
       </ion-col>
       <ion-col size="6" class="ion-no-padding no-outline">
-        <ion-label (click)="open('/detoxification-recipe')">{{ a.t({en: 'Detoxification Recipe', ko: '해독레시피'}) }}</ion-label>
+        <ion-button fill="clear" no-margin mode="ios" (click)="open('/detoxification-recipe')">{{ a.t({en: 'Detoxification Recipe', ko: '해독레시피'}) }}</ion-button>
       </ion-col>
     </ion-row>
     <ion-row >
         <ion-col size="6" class="ion-no-padding no-outline">
-          <ion-label (click)="open('/home-training')">{{ a.t({en: 'Home Training', ko: '홈트레이닝'}) }}</ion-label>
+          <ion-button fill="clear" no-margin mode="ios" (click)="open('/home-training')">{{ a.t({en: 'Home Training', ko: '홈트레이닝'}) }}</ion-button>
         </ion-col>
         <ion-col size="6" class="ion-no-padding no-outline">
-          <ion-label (click)="open('/testimonial')">{{ a.t({en: 'Testimonials', ko: '프로그램 후기'}) }}</ion-label>
+          <ion-button fill="clear" no-margin mode="ios" (click)="open('/testimonial')">{{ a.t({en: 'Testimonials', ko: '프로그램 후기'}) }}</ion-button>
         </ion-col>
     </ion-row>
 
     <ion-row >
         <ion-col size="6" class="ion-no-padding no-outline">
-          <ion-label (click)="open('/detoxification-tip')">{{ a.t({en: 'DetoxTips', ko: '해독꿀팁'}) }}</ion-label>
+          <ion-button fill="clear" no-margin mode="ios" (click)="open('/detoxification-tip')">{{ a.t({en: 'DetoxTips', ko: '해독꿀팁'}) }}</ion-button>
         </ion-col>
     </ion-row>
 
@@ -93,35 +93,35 @@
   </ion-grid>
 
   <!-- 3rd -->
-  <div class="pt-4 pb-2 border-bottom-green ">
+  <div class="pt-4 pb-2 mx-22px border-bottom-green ">
     <ion-text color="success">
       <p>셀그린라이트</p>
     </ion-text>
   </div>
 
-  <ion-grid fixed class="ion-no-padding gray">
+  <ion-grid fixed class="ml-10px ion-no-padding gray">
     <ion-row  class="pt-2">
       <ion-col size="6" class="ion-no-padding no-outline">
-        <ion-label (click)="open('/company-info')">{{ a.t({en: 'Company Intro', ko: '회사소개'}) }}</ion-label>
+        <ion-button fill="clear" no-margin mode="ios" (click)="open('/company-info')">{{ a.t({en: 'Company Intro', ko: '회사소개'}) }}</ion-button>
       </ion-col>
       <ion-col size="6" class="ion-no-padding no-outline">
-        <ion-label (click)="open('/customer-service')">{{ a.t({en: 'Customer Service', ko: '고객센터'}) }}</ion-label>
+        <ion-button fill="clear" no-margin mode="ios" (click)="open('/customer-service')">{{ a.t({en: 'Customer Service', ko: '고객센터'}) }}</ion-button>
       </ion-col>
     </ion-row>
     <ion-row>
       <ion-col size="6" class="ion-no-padding no-outline">
-        <ion-label (click)="open('/terms-and-conditions')">{{ a.t({en: 'Terms & Conditions', ko: '이용약관'}) }}</ion-label>
+        <ion-button fill="clear" no-margin mode="ios" (click)="open('/terms-and-conditions')">{{ a.t({en: 'Terms & Conditions', ko: '이용약관'}) }}</ion-button>
       </ion-col>
       <ion-col size="6" class="ion-no-padding no-outline">
-        <ion-label (click)="open('/privacy-policy')">{{ a.t({en: 'Privacy Policy', ko: '개인정보 처리방침'}) }}</ion-label>
+        <ion-button fill="clear" no-margin mode="ios" (click)="open('/privacy-policy')">{{ a.t({en: 'Privacy Policy', ko: '개인정보 처리방침'}) }}</ion-button>
       </ion-col>
     </ion-row>
     <ion-row >
       <ion-col size="6" class="ion-no-padding no-outline">
-        <ion-label (click)="open('/child-protection')">{{ a.t({en: 'Child Protection', ko: '청소년보호정책'}) }}</ion-label>
+        <ion-button fill="clear" no-margin mode="ios" (click)="open('/child-protection')">{{ a.t({en: 'Child Protection', ko: '청소년보호정책'}) }}</ion-button>
       </ion-col>
       <ion-col size="6" class="ion-no-padding no-outline">
-        <ion-label (click)="open('/affiliate')">{{ a.t({en: 'Affliates', ko: '제휴문의'}) }}</ion-label>
+        <ion-button fill="clear" no-margin mode="ios" (click)="open('/affiliate')">{{ a.t({en: 'Affliates', ko: '제휴문의'}) }}</ion-button>
       </ion-col>
     </ion-row>
   </ion-grid>

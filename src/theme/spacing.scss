@@ -15,9 +15,35 @@
 .p-10px {
     padding: 10px;
 }
-.p-22px {
-    padding: 22px !important;
+.py-22px {
+    padding-top: 22px !important;
+    padding-bottom: 22px !important;
 }
+
+.mx-22px {
+    margin-left: 22px !important;
+    margin-right: 22px !important;
+}
+
+.p-1 {
+    padding: .25em !important;
+} 
+
+.p-2 {
+    padding: .5em !important;
+} 
+
+.p-3 {
+    padding: 1em !important;
+} 
+
+.p-4 {
+    padding: 2em !important;
+} 
+
+.p-5 {
+    padding: 3em !important;
+} 
 
 .pt-11px {
     padding-top: 11px !important;
@@ -153,6 +179,15 @@
 
 
 // margin
+
+
+.ml-10px {
+    margin-left: 10px !important;
+}
+
+.mr-1 {
+    margin-right: .25em;
+}
 
 .mt-1 {
     margin-top: .25em !important

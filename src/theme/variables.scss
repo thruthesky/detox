@@ -346,7 +346,9 @@
 .fs-50px {
   font-size: 50px !important;
 }
-
+.h-40px {
+  height: 40px !important;
+}
 .h-56px {
   height: 56px;
 }
@@ -907,6 +909,12 @@
   --color-activated: black !important;
 
 }
+
+
+.i-color-act-white {
+  --color-activated: white !important;
+}
+
 .i-bg-hover-white {
   --background-hover: white;
 }

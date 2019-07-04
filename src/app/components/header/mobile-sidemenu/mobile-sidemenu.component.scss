@@ -1,5 +1,7 @@
-ion-label {
-    display: block;
-    padding-top: 8px !important;
-    padding-bottom: 8px !important;
+
+ion-col ion-button {
+    height: 28px !important;
+    font-size: 14px !important;
+    color: #707070;
+    --color-activated: var( --ion-color-success);
 }
