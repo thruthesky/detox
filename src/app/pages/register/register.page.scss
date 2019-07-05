@@ -10,7 +10,7 @@ ion-item {
     @media all and (min-width: 768px) {
         // background: url(https://ak1.picdn.net/shutterstock/videos/12296111/thumb/1.jpg) !important;
         // --background: url(https://ak1.picdn.net/shutterstock/videos/12296111/thumb/1.jpg) !important;
-        --background: url(/assets/img/bg_mainblur.png) 0 0/100% 100% no-repeat !important;
+        --background: url(/assets/img/bg_mainblur.png) 0 0/100% 1000px no-repeat !important;
     }
 }
 
@@ -23,7 +23,7 @@ ion-item {
 
 .mb-md-140px {
     @media all and (min-width: 768px) {
-        margin-bottom: 140px;
+        margin-bottom: 340px;
     }
 }
 
