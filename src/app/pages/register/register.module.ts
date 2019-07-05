@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 
 import { RegisterPage } from './register.page';
 import { HeaderModule } from 'src/app/components/header/header.module';
+import { DesktopHomeFooterModule } from 'src/app/components/desktop-home-footer/desktop-home-footer.module';
 
 const routes: Routes = [
   {
@@ -23,7 +24,8 @@ const routes: Routes = [
     RouterModule.forChild(routes),
     FormsModule,
     ReactiveFormsModule,
-    HeaderModule
+    HeaderModule,
+    DesktopHomeFooterModule,
   ],
   declarations: [RegisterPage]
 })
