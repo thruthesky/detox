@@ -44,7 +44,11 @@
         <ion-button  fill="clear" no-margin mode="ios" (click)="open('/register')">{{ a.t({en: 'Register', ko: '회원가입'}) }}</ion-button>
       </ion-col>
       <ion-col size="6" class="ion-no-padding no-outline">
-        <ion-button  fill="clear" no-margin mode="ios" (click)="open('/login')">{{ a.t({en: 'Login', ko: '로그인'}) }}</ion-button>
+
+          <ion-button *ngIf="a.wp.userIsLoggedOut"  fill="clear" no-margin mode="ios" (click)="open('/login')">{{ a.t({en: 'Login', ko: '로그인'}) }}</ion-button>
+
+          <ion-button *ngIf="a.wp.userIsLoggedIn"  fill="clear" no-margin mode="ios" (click)="a.logout()">{{ a.t({en: 'Logout', ko: '로그아웃'}) }}</ion-button>
+
       </ion-col>
     </ion-row>
 

@@ -3,55 +3,67 @@
 </ion-header>
 
 
-<ion-content>
+<ion-content class="bg-light-gray bg-md-background-image">
 
-  <section class="register px-23px pb-5 pt-1 bg-light-gray vh-100"   >
+  <section class="register mobile-width px-23px pb-5 pt-1">
 
-    <form [formGroup]=" form " (ngSubmit)=" onSubmit() " >
+    <form [formGroup]=" form " (ngSubmit)=" onSubmit() ">
 
       <ion-list class="ion-no-padding ion-no-margin bg-light-gray ">
 
-        <ion-item  mode="ios">
-          <!-- <ion-label position="floating" color="medium">{{ a.t({en: 'Email', ko: '이메일 주소'}) }}</ion-label> -->
-          <ion-input name="loginid" placeholder="Email" mode="ios" formControlName="user_email"></ion-input>
+        <ion-item mode="ios" lines="none">
+          <ion-label position="floating" color="medium">{{ a.t({en: 'Email', ko: '이메일 주소'}) }}</ion-label>
+          <ion-input class="no-border" name="user_email" formControlName="user_email"></ion-input>
         </ion-item>
         <ion-text class="d-block mt-2 fs-sm" color="danger" *ngIf=" errors.user_email ">{{ errors.user_email }}
         </ion-text>
 
 
+        <ng-container *ngIf=" a.wp.userIsLoggedOut ">
+
+          <ion-item mode="ios">
+            <ion-label position="floating" color="medium">{{ a.t({en: 'Password', ko: '비밀번호'}) }}</ion-label>
+            <ion-input name="user_pass" formControlName="user_pass"></ion-input>
+          </ion-item>
+          <ion-text class="d-block mt-2 fs-sm" color="danger" *ngIf=" errors.user_pass ">{{ errors.user_pass }}
+          </ion-text>
+
+
+
+          <ion-item mode="ios">
+            <ion-label position="floating" color="medium">{{ a.t({en: 'Password Confirm', ko: '비밀번호 재확인'}) }}
+            </ion-label>
+            <ion-input name="user_pass_confirm" formControlName="user_pass_confirm"></ion-input>
+          </ion-item>
+          <ion-text class="d-block mt-2 fs-sm" color="danger" *ngIf=" errors.user_pass_confirm ">
+            {{ errors.user_pass_confirm }}</ion-text>
+
+        </ng-container>
+
         <ion-item mode="ios">
-          <!-- <ion-label position="floating" color="medium">{{ a.t({en: 'Password', ko: '비밀번호'}) }}</ion-label> -->
-          <ion-input name="loginid" placeholder="Password"  mode="ios"  formControlName="user_pass"></ion-input>
-        </ion-item>
-        <ion-text class="d-block mt-2 fs-sm" color="danger" *ngIf=" errors.user_pass ">{{ errors.user_pass }}</ion-text>
+            <ion-label position="floating" color="medium">{{ a.t({en: 'Nickname', ko: '닉네임'}) }}</ion-label>
+            <ion-input name="display_name" formControlName="display_name"></ion-input>
+          </ion-item>
+          <ion-text class="d-block mt-2 fs-sm" color="danger" *ngIf=" errors.display_name ">{{ errors.display_name }}
+          </ion-text>
 
-
-
-        <ion-item mode="ios">
-          <!-- <ion-label position="floating" color="medium">{{ a.t({en: 'Password Confirm', ko: '비밀번호 재확인'}) }}</ion-label> -->
-          <ion-input name="user_pass_confirm" placeholder="Confirm Password"  mode="ios"  formControlName="user_pass_confirm"></ion-input>
-        </ion-item>
-        <ion-text class="d-block mt-2 fs-sm" color="danger" *ngIf=" errors.user_pass_confirm ">
-          {{ errors.user_pass_confirm }}</ion-text>
-
-
-        <ion-item mode="ios">
-          <!-- <ion-label position="floating" color="medium">{{ a.t({en: 'Nickname', ko: '닉네임'}) }}</ion-label> -->
-          <ion-input name="display_name" placeholder="Nickname"  mode="ios"  formControlName="display_name"></ion-input>
-        </ion-item>
-        <ion-text class="d-block mt-2 fs-sm" color="danger" *ngIf=" errors.display_name ">{{ errors.display_name }}
-        </ion-text>
-
+          <ion-item mode="ios">
+              <ion-label position="floating" color="medium">{{ a.t({en: 'Mobile No.', ko: '핸드폰 번호'}) }}</ion-label>
+              <ion-input name="mobile" formControlName="mobile"></ion-input>
+            </ion-item>
+            <ion-text class="d-block mt-2 fs-sm" color="danger" *ngIf=" errors.mobile ">{{ errors.mobile }}
+            </ion-text>
+      
       </ion-list>
 
 
-      <ion-radio-group name="gender" formControlName="gender" >
+      <ion-radio-group name="gender" formControlName="gender">
         <ion-grid class="mt-4">
           <ion-row>
             <ion-col size="6" class="flex-column-center ">
 
               <div class="flex-center">
-                <ion-radio color="success" value="male" mode="md"></ion-radio>
+                <ion-radio color="success" value="M" mode="md"></ion-radio>
                 <ion-text class="ml-1 dark-gray">{{ a.t({ en: 'Male', ko: '남자' }) }}</ion-text>
               </div>
               <div>
@@ -61,7 +73,7 @@
             </ion-col>
             <ion-col size="6" class="flex-column-center">
               <div class="flex-center">
-                <ion-radio  color="success" value="female" mode="md"></ion-radio>
+                <ion-radio color="success" value="F" mode="md"></ion-radio>
                 <ion-text class="ml-1 dark-gray">{{ a.t({ en: 'Female', ko: '여자' }) }}</ion-text>
               </div>
               <div>
@@ -73,35 +85,38 @@
       </ion-radio-group>
       <ion-text class="d-block mt-2 fs-sm" color="danger" *ngIf=" errors.gender ">{{ errors.gender }}</ion-text>
 
-      <!-- 
-      <div class="flex-center">
-        <ion-checkbox name="agree" formControlName="agree"></ion-checkbox>
-        <ion-label>
-          <ion-button fill="clear" mode="md" class="ion-no-padding ion-no-margin h-30px">이용약관</ion-button>
-           <ion-text  style="line-height: 30px!important" >및</ion-text>  
-           <ion-button class="ion-no-margin ion-no-padding" fill="clear" mode="ios">개인정보 수집</ion-button>에 동의(필수)
-        </ion-label>
-      </div> -->
 
-      <div class="flex-center mt-3">
-        <ion-checkbox name="agree" mode="md" color="green"  formControlName="agree"></ion-checkbox>
-        <ion-button fill="clear" mode="ios" class="ion-no-margin ion-no-padding mx-2 h-40px fs-14 black bold underline i-color-act-green">
-          이용약관</ion-button>
-        <ion-text style="display: inline-block;line-height: 40px">
-          및
+      <ng-container *ngIf=" a.wp.userIsLoggedOut ">
+
+
+        <div class="flex-center mt-3">
+
+          <ion-checkbox name="agree" mode="md" color="green" formControlName="agree"></ion-checkbox>
+          <ion-button fill="clear" mode="ios"
+            class="ion-no-margin ion-no-padding mx-2 h-40px fs-14 black bold underline i-color-act-green">
+            이용약관</ion-button>
+          <ion-text style="display: inline-block;line-height: 40px">
+            및
+          </ion-text>
+          <ion-button fill="clear" mode="ios"
+            class="ion-no-margin ion-no-padding mx-2 h-40px fs-14 black bold underline i-color-act-green">
+            개인정보 수집</ion-button>
+          <ion-text style="display: inline-block;line-height: 40px">
+            에 동의(필수)
+          </ion-text>
+
+        </div>
+
+        <ion-text class="d-block mt-2 fs-sm ion-text-center" color="danger" *ngIf=" errors.agree ">{{ errors.agree }}
         </ion-text>
-        <ion-button fill="clear"  mode="ios" class="ion-no-margin ion-no-padding mx-2 h-40px fs-14 black bold underline i-color-act-green">
-          개인정보 수집</ion-button>
-        <ion-text style="display: inline-block;line-height: 40px">
-          에 동의(필수)
-        </ion-text>
-      </div>
+
+      </ng-container>
 
 
 
 
 
-      <ion-button mode="md" type="submit" expand="full" color="success" class="h-50px mt-4 fs-14">
+      <ion-button mode="md" type="submit" expand="full" color="green" class="h-50px mt-4 fs-14">
         {{ a.t({en: 'Register', ko: '회원가입' })}}
       </ion-button>
 

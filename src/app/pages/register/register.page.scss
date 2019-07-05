@@ -4,3 +4,11 @@ ion-item {
     --border-width: 1px 1px 1px 1px;
 }
 
+
+
+.bg-md-background-image {
+    @media all and (min-width: 768px) {
+        background: url(https://file.philgo.com/data/upload/2/2198712) !important;
+        --background: url(https://file.philgo.com/data/upload/2/2198712) !important;
+    }
+}

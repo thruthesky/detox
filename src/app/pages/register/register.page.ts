@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AppService } from 'src/app/services/app.service';
-import { User, UserRegister } from 'modules/wordpress-api/wordpress-api.interface';
+import { UserRegisterOptions } from 'modules/wordpress-api/wordpress-api.interface';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { AlertController } from '@ionic/angular';
 
 
 @Component({
@@ -17,19 +18,36 @@ export class RegisterPage implements OnInit {
   errors: any = {};
   validationMessages: any = {};
 
-  user: User = {} as User;
   constructor(
     fb: FormBuilder,
-    public a: AppService
+    public a: AppService,
+    private alert: AlertController
   ) {
+
+    this.a.wp.userChange.subscribe(user => {
+      if (user) {
+        this.a.wp.profile().subscribe(profile => {
+          console.log('profile: ', profile);
+          this.form.patchValue({
+            user_email: profile.user_email,
+            display_name: profile.display_name,
+            gender: profile.gender
+          });
+        }, e => this.a.error(e));
+      } else {
+        this.resetForm();
+      }
+    });
+
 
     this.form = fb.group({
       user_pass: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(32)]],
       user_pass_confirm: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(32)]],
       user_email: ['', [Validators.required, Validators.minLength(8), Validators.maxLength(64)]],
       display_name: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(64)]],
+      mobile: ['', Validators.required],
       gender: ['', [Validators.required]],
-      agree: [null, [Validators.required]]
+      agree: [null, [Validators.required, Validators.requiredTrue]]
     });
 
     this.formKeys = Object.keys(this.form.value);
@@ -54,8 +72,11 @@ export class RegisterPage implements OnInit {
         minlength: a.t({ en: 'Nickname is too short.', ko: '닉네임이 너무 짧습니다.' }),
         maxlength: a.t({ en: 'Nickname is too long.', ko: '닉네임이 너무 깁니다.' })
       },
+      mobile: {
+        required: a.t({ en: 'Mobile No. is required.', ko: '핸드폰 번호는 필수 입력 항목입니다.' }),
+      },
       gender: {
-        required: a.t({ en: 'Gender selection is required.', ko: '성별 선택은 필수 항목입니다.' }),
+        required: a.t({ en: 'Gender selection is required.', ko: '성별 선택은 필수 선택 항목입니다.' }),
       },
       agree: {
         required: a.t({ en: 'Terms & Condition selection is required.', ko: '가입약관 동의 선택은 필수 항목입니다.' }),
@@ -75,10 +96,37 @@ export class RegisterPage implements OnInit {
 
   }
 
+  ionViewDidEnter() {
+    if (this.form) {
+      this.form.reset();
+    }
+  }
+
+  resetForm() {
+    /**
+     * This may be called before `this.form` is ready ( when `userChange` happens with `null` ).
+     */
+    if (this.form) {
+      this.form.setValue({
+        user_pass: '',
+        user_pass_confirm: '',
+        user_email: '',
+        display_name: '',
+        mobile: '',
+        gender: '',
+        agree: ''
+      });
+    }
+  }
 
   get title(): string {
-    return this.a.t({ en: 'Register', ko: '회원가입' });
+    if (this.a.wp.userIsLoggedIn) {
+      return this.a.t({ en: 'Profile', ko: '회원정보' });
+    } else {
+      return this.a.t({ en: 'Register', ko: '회원가입' });
+    }
   }
+
   // 폼을 검사한다.
   // 기본적으로 dirty 상태인 것만 검사를 한다.
   validate(dirty = true) {
@@ -89,7 +137,6 @@ export class RegisterPage implements OnInit {
       if (dirty) {
         if (control && control.dirty && !control.valid) {
           Object.keys(control.errors).map(key => this.errors[field] += this.validationMessages[field][key] + ' ');
-
         }
       } else {
         if (control && !control.valid) {
@@ -110,33 +157,55 @@ export class RegisterPage implements OnInit {
       return;
     }
 
-    // get form data.
-    // const form = this.formKeys.reduce((t, k) => {
-    //   t[k] = this.form.get(k).value;
-    //   return t;
-    // }, {});
-    // console.log('form values', form);
-
-
-    const data: UserRegister = {
+    const data: UserRegisterOptions = {
       user_login: this.form.value.user_email,
       user_pass: this.form.value.user_pass,
       user_email: this.form.value.user_email,
       display_name: this.form.value.display_name,
+      mobile: this.form.value.mobile,
+      gender: this.form.value.gender
     };
 
     console.log('request data: ', data);
-    this.a.wp.register(data).subscribe(res => {
-      console.log('register result: ', res);
-    }, e => console.error(e));
+    this.a.wp.register(data).subscribe(async (res) => {
+      console.log('register success: ', res);
+
+      (await this.alert.create({
+        header: this.a.t({ en: 'Register Success', ko: '회원가입을 축하드립니다.' }),
+        message: this.a.t({ en: 'Please upload your picture.', ko: '회원 사진을 업로드 해 주세요 ^^;' }),
+        buttons: [this.a.t({ en: 'Okay', ko: '확인' })]
+      })).present();
+
+
+    }, e => this.a.error(e));
 
   }
 
   ngOnInit() {
 
+    // this.a.wp.logout();
+
+    // setTimeout(() => {
+    //   this.form.setValue({
+    //     user_email: 'Yo.myemail' + ((new Date()).getTime() / 1000) + '@gmail.com',
+    //     user_pass: 'oooyohi',
+    //     user_pass_confirm: 'then',
+    //     display_name: 'di name',
+    //     mobile: '010-1234-4667',
+    //     gender: 'F',
+    //     agree: true
+    //   });
+
+
+    //   // this.form.patchValue({ user_email: 'hi@email.com' });
+
+    //   this.onSubmit();
+    // }, 100);
+
   }
 
 }
+
 
 
 

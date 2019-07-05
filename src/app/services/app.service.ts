@@ -2,12 +2,15 @@ import { Injectable } from '@angular/core';
 import { MenuController } from '@ionic/angular';
 import { WordpressApiService } from 'modules/wordpress-api/wordpress-api';
 import { environment } from 'src/environments/environment';
+import { ErrorObject } from 'modules/wordpress-api/wordpress-api.interface';
+import { Router } from '@angular/router';
 
 @Injectable({ providedIn: 'root' })
 export class AppService {
 
     env = environment;
     constructor(
+        private router: Router,
         private sideMenu: MenuController,
         public wp: WordpressApiService
     ) {
@@ -98,4 +101,20 @@ export class AppService {
         }
         return ln;
     }
+
+    error(e: ErrorObject): void {
+        console.error('Got error!', e);
+        alert(e.errstring);
+    }
+
+    open(url): void {
+        this.router.navigateByUrl(url);
+    }
+
+    logout(): void {
+        this.wp.logout();
+        this.open('/');
+    }
 }
+
+
