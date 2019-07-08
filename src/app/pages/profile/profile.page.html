@@ -41,84 +41,90 @@
       <ion-icon slot="end" name="arrow-forward" mode="ios" color="green"></ion-icon>
     </ion-item>
 
-    <ion-grid no-padding class="px-2  fs-14">
-      <ion-row class="mt-3">
-        <ion-col size="3" class="flex-center mt-0 bold d-gray">
-          {{ a.t({en: 'Nickname', ko: '닉네임'}) }}
-        </ion-col>
-        <ion-col class="mt-0 flex-center">
+    <form [formGroup]=" form " (ngSubmit)=" onSubmit()">
 
-          <ion-input type="text" color="medium"></ion-input>
-        </ion-col>
-      </ion-row>
+      <ion-grid no-padding class="px-2  fs-14">
 
-      <ion-row>
-        <ion-col size="3" class="flex-center bold d-gray">
-          {{ a.t({en: 'Email', ko: '이메일'}) }}
-        </ion-col>
-        <ion-col class="flex-center">
-          <ion-input type="text" color="medium"></ion-input>
-        </ion-col>
-      </ion-row>
+        <ion-row class="mt-3">
+          <ion-col size="3" class="flex-center mt-0 bold d-gray">
+            {{ a.t({en: 'Nickname', ko: '닉네임'}) }}
+          </ion-col>
+          <ion-col class="mt-0 flex-center">
+            <ion-input formControlName="display_name" name="display_name" type="text" color="medium"></ion-input>
+          </ion-col>
+        </ion-row>
 
-      <ion-row>
-        <ion-col size="3" class="flex-center bold d-gray">
-          {{ a.t({en: 'Mobile No.', ko: '전화번호'}) }}
-        </ion-col>
-        <ion-col class="flex-center">
-          <ion-input type="text" color="medium"></ion-input>
-        </ion-col>
-      </ion-row>
-      <ion-row>
-        <ion-col size="3" class="flex-center bold d-gray">
-          {{ a.t({en: 'Address', ko: '주소'}) }}
-        </ion-col>
-        <ion-col class="flex-center">
-          <ion-input type="text" color="medium"></ion-input>
-        </ion-col>
-      </ion-row>
+        <ion-row>
+          <ion-col size="3" class="flex-center bold d-gray">
+            {{ a.t({en: 'Email', ko: '이메일'}) }}
+          </ion-col>
+          <ion-col class="flex-center">
+            <ion-input formControlName="user_email" name="user_email" type="text" color="medium"></ion-input>
+          </ion-col>
+        </ion-row>
 
-      <ion-row class="mt-3">
-        <ion-col size="3" class="flex-center mt-0 bold d-gray">
-          {{ a.t({en: 'Gender', ko: '성별'}) }}
-        </ion-col>
-        <ion-col class="mt-0 flex-center">
-          <ion-input type="text" color="medium"></ion-input>
-        </ion-col>
-      </ion-row>
+        <ion-row>
+          <ion-col size="3" class="flex-center bold d-gray">
+            {{ a.t({en: 'Mobile No.', ko: '전화번호'}) }}
+          </ion-col>
+          <ion-col class="flex-center">
+            <ion-input formControlName="mobile" name="mobile" type="text" color="medium"></ion-input>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="3" class="flex-center bold d-gray">
+            {{ a.t({en: 'Address', ko: '주소'}) }}
+          </ion-col>
+          <ion-col class="flex-center">
+            <ion-input type="text" formArrayName="address" name="address" color="medium"></ion-input>
+          </ion-col>
+        </ion-row>
 
-      <ion-row>
-        <ion-col size="3" class="flex-center bold d-gray">
-          {{ a.t({en: 'Birthday', ko: '생년월일'}) }}
-        </ion-col>
-        <ion-col class="flex-center">
-          <ion-input type="text" color="medium"></ion-input>
-        </ion-col>
-      </ion-row>
 
-      <ion-row>
-        <ion-col size="3" class="flex-center bold d-gray">
-          {{ a.t({en: 'Height', ko: '키'}) }}
-        </ion-col>
-        <ion-col class="flex-center">
-          <ion-input type="text" color="medium"></ion-input>
-        </ion-col>
-      </ion-row>
+        <ion-row class="mt-3">
+          <ion-col size="3" class="flex-center mt-0 bold d-gray">
+            {{ a.t({en: 'Gender', ko: '성별'}) }}
+          </ion-col>
+          <ion-col class="mt-0 flex-center">
+            <ion-input formControlName="gender" name="gender" type="text" color="medium"></ion-input>
+          </ion-col>
+        </ion-row>
 
-      <ion-row>
-        <ion-col size="3" class="flex-center bold d-gray">
-          {{ a.t({en: 'Weight', ko: '몸무게'}) }}
-        </ion-col>
-        <ion-col class="flex-center">
-          <ion-input type="text" color="medium"></ion-input>
-        </ion-col>
-      </ion-row>
+        <ion-row>
+          <ion-col size="3" class="flex-center bold d-gray">
+            {{ a.t({en: 'Birthday', ko: '생년월일'}) }}
+          </ion-col>
+          <ion-col class="flex-center">
+            <ion-input type="text" formArrayName="birthday" name="birthday" color="medium"></ion-input>
+          </ion-col>
+        </ion-row>
 
-    </ion-grid>
+        <ion-row>
+          <ion-col size="3" class="flex-center bold d-gray">
+            {{ a.t({en: 'Height', ko: '키'}) }}
+          </ion-col>
+          <ion-col class="flex-center">
+            <ion-input type="text" formArrayName="height" name="height" color="medium"></ion-input>
+          </ion-col>
+        </ion-row>
 
-    <ion-button type="submit" expand="full" color="green" class="mx-4 mt-5 h-45px" text-center>
-      {{ a.t({en: 'Update', ko: '회원 정보 수정'}) }}
-    </ion-button>
+        <ion-row>
+          <ion-col size="3" class="flex-center bold d-gray">
+            {{ a.t({en: 'Weight', ko: '몸무게'}) }}
+          </ion-col>
+          <ion-col class="flex-center">
+            <ion-input formArrayName="weight" name="weight" type="text" color="medium"></ion-input>
+          </ion-col>
+        </ion-row>
+
+      </ion-grid>
+
+      <ion-button type="submit" expand="full" color="green" class="mx-4 mt-5 h-45px" text-center>
+        {{ a.t({en: 'Update', ko: '회원 정보 수정'}) }}
+      </ion-button>
+
+    </form>
+
 
   </section>
 

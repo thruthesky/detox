@@ -21,6 +21,7 @@ export class RegisterPage implements OnInit, OnDestroy {
 
 
   subscriptionUserChange = new Subscription();
+  
   constructor(
     fb: FormBuilder,
     public a: AppService,
