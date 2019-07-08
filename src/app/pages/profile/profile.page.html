@@ -1,11 +1,127 @@
 <ion-header no-border>
-    <app-header></app-header>
-  </ion-header>
-  
-  <ion-content>
-  
-  
-    profile page
-  </ion-content>
-  
-  
+  <app-header></app-header>
+</ion-header>
+
+<ion-content class="bg-md-background-image bg-light-gray">
+  <section class="profile mobile-width pb-5 mt-md-70px mb-md-340px bg-light-gray border-md-gray">
+
+    <ng-container *ngIf="a.isDesktop">
+      <ion-toolbar color="green" text-center>
+        <ion-title>Profile</ion-title>
+      </ion-toolbar>
+    </ng-container>
+
+    <ion-item color="green" style="border-top: 1px solid #8fbc78;" class="fs-14">
+      <ion-thumbnail slot="start">
+        <img src="https://content-static.upwork.com/uploads/2014/10/01073427/profilephoto1.jpg">
+      </ion-thumbnail>
+      <ion-label color="light">
+        <p>Jordan</p>
+        <p class="fs-12">email@7detox.com</p>
+      </ion-label>
+    </ion-item>
+
+
+    <ion-item lines="none" class="mx-2 mt-2 fs-14 ">
+      <ion-label color="medium">
+        <p class="green">일부텍</p>
+        <p>일부텍스트일부일부텍스트일부</p>
+      </ion-label>
+    </ion-item>
+
+
+    <ion-item lines="full" class="mx-2 mt-3" button>
+      <ion-label class="bold d-gray ">부텍스트일부</ion-label>
+      <ion-icon slot="end" name="arrow-forward" mode="ios" color="green"></ion-icon>
+    </ion-item>
+
+    <ion-item lines="none" class="mx-2" button>
+      <ion-label class="bold d-gray ">부텍스트일부</ion-label>
+      <ion-icon slot="end" name="arrow-forward" mode="ios" color="green"></ion-icon>
+    </ion-item>
+
+    <ion-grid no-padding class="px-2  fs-14">
+      <ion-row class="mt-3">
+        <ion-col size="3" class="flex-center mt-0 bold d-gray">
+          Label
+        </ion-col>
+        <ion-col class="mt-0 flex-center">
+          <ion-input type="text" color="medium"></ion-input>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col size="3" class="flex-center bold d-gray">
+          Email
+        </ion-col>
+        <ion-col class="flex-center">
+          <ion-input type="text" color="medium"></ion-input>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col size="3" class="flex-center bold d-gray">
+          Mobile
+        </ion-col>
+        <ion-col class="flex-center">
+          <ion-input type="text" color="medium"></ion-input>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="3" class="flex-center bold d-gray">
+          Label
+        </ion-col>
+        <ion-col class="flex-center">
+          <ion-input type="text" color="medium"></ion-input>
+        </ion-col>
+      </ion-row>
+
+      <ion-row class="mt-3">
+        <ion-col size="3" class="flex-center mt-0 bold d-gray">
+          Label
+        </ion-col>
+        <ion-col class="mt-0 flex-center">
+          <ion-input type="text" color="medium"></ion-input>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col size="3" class="flex-center bold d-gray">
+          Birthdate
+        </ion-col>
+        <ion-col class="flex-center">
+          <ion-input type="text" color="medium"></ion-input>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col size="3" class="flex-center bold d-gray">
+          Height
+        </ion-col>
+        <ion-col class="flex-center">
+          <ion-input type="text" color="medium"></ion-input>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col size="3" class="flex-center bold d-gray">
+          Weight
+        </ion-col>
+        <ion-col class="flex-center">
+          <ion-input type="text" color="medium"></ion-input>
+        </ion-col>
+      </ion-row>
+
+    </ion-grid>
+
+    <ion-button type="submit" expand="full" color="green" class="mx-4 mt-5 h-45px" text-center>
+      Update
+    </ion-button>
+
+  </section>
+
+  <ng-container *ngIf="a.isDesktop">
+    <app-desktop-home-footer></app-desktop-home-footer>
+  </ng-container>
+
+</ion-content>
