@@ -31,6 +31,7 @@ export class RegisterPage implements OnInit {
           this.form.patchValue({
             user_email: profile.user_email,
             display_name: profile.display_name,
+            mobile: profile.mobile,
             gender: profile.gender
           });
         }, e => this.a.error(e));
@@ -97,6 +98,13 @@ export class RegisterPage implements OnInit {
   }
 
   ionViewDidEnter() {
+    //
+    // if (this.form) {
+    //   this.form.reset();
+    // }
+  }
+
+  ionViewDidLeave() {
     if (this.form) {
       this.form.reset();
     }

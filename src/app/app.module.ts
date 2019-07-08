@@ -12,6 +12,7 @@ import { WordpressApiModule } from 'modules/wordpress-api/wordpress-api.module';
 import { WordpressApiService } from 'modules/wordpress-api/wordpress-api';
 import { MobileSidemenuModule } from './components/header/mobile-sidemenu/mobile-sidemenu.module';
 import { environment } from 'src/environments/environment';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { environment } from 'src/environments/environment';
   imports: [
     BrowserModule, IonicModule.forRoot(), AppRoutingModule,
     WordpressApiModule,
-    MobileSidemenuModule
+    MobileSidemenuModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [
     StatusBar,
