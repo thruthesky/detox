@@ -5,27 +5,22 @@
       <i class="arrow-left"></i>
     </button>
     <span class="spacer"></span>
-    <button
-      class="y-center pr-70px r-xl-1 r-xxl-15 w-100px h-150px no-outline bg-trans white z-1000 hover-bg-black"
+    <button class="y-center pr-70px r-xl-1 r-xxl-15 w-100px h-150px no-outline bg-trans white z-1000 hover-bg-black"
       (click)="next()">
       <i class="arrow-right"></i>
     </button>
   </div>
 
   <ion-slides mode="ios" pager="ios" scrollbar="ios" [options]="options" #slides>
-
     <ion-slide *ngFor="let x of [].constructor(10)">
-
       <div class="xy-center z-1000 ion-text-start w-400px ml-md-100px ml-lg-150px ml-xl-200px ">
         <p class="fs-10px ion-no-margin py-10  white-trans">1:1 멋진텍스트멋진</p>
         <p class="letter-spacing-1px fs-38px  ion-no-margin  white">멋진텍스트멋진멋진텍 </p>
         <p class="letter-spacing-1px fs-38px  ion-no-margin py-10 white bold">멋진텍스트</p>
-
         <ion-button mode="md" class="w-200px h-62px ion-no-margin mt-15px bg-white border-radius" color="success"
           fill="outline" routerLink="/post-view">
           <ion-label class="green bold fs-16px letter-spacing-1px dark-green ">자세히 보기</ion-label>
         </ion-button>
-
       </div>
 
       <div class="w-100 h-md-400px h-lg-450px  h-xl-500px  h-xxl-550px  cover"
