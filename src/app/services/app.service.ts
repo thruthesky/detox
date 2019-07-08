@@ -107,8 +107,12 @@ export class AppService {
         alert(e.errstring);
     }
 
-    open(url): void {
+    open(url: string): void {
         this.router.navigateByUrl(url);
+    }
+
+    openHome(): void {
+        this.open('/');
     }
 
     logout(): void {

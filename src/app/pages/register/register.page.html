@@ -6,7 +6,8 @@
 <ion-content class="bg-light-gray bg-md-background-image">
 
 
-  <ion-toolbar *ngIf="a.isDesktop" color="green" class="mobile-width mt-md-140px" text-center >
+
+  <ion-toolbar *ngIf="a.isDesktop" color="green" class="mobile-width mt-md-140px" text-center>
     <ion-title>이메일 주소</ion-title>
   </ion-toolbar>
 
@@ -46,19 +47,19 @@
         </ng-container>
 
         <ion-item mode="ios" lines="none">
-            <ion-label position="floating" color="medium">{{ a.t({en: 'Nickname', ko: '닉네임'}) }}</ion-label>
-            <ion-input name="display_name" formControlName="display_name"></ion-input>
-          </ion-item>
-          <ion-text class="d-block mt-2 fs-sm" color="danger" *ngIf=" errors.display_name ">{{ errors.display_name }}
-          </ion-text>
+          <ion-label position="floating" color="medium">{{ a.t({en: 'Nickname', ko: '닉네임'}) }}</ion-label>
+          <ion-input name="display_name" formControlName="display_name"></ion-input>
+        </ion-item>
+        <ion-text class="d-block mt-2 fs-sm" color="danger" *ngIf=" errors.display_name ">{{ errors.display_name }}
+        </ion-text>
 
-          <ion-item mode="ios" lines="none">
-              <ion-label position="floating" color="medium">{{ a.t({en: 'Mobile No.', ko: '핸드폰 번호'}) }}</ion-label>
-              <ion-input name="mobile" formControlName="mobile"></ion-input>
-            </ion-item>
-            <ion-text class="d-block mt-2 fs-sm" color="danger" *ngIf=" errors.mobile ">{{ errors.mobile }}
-            </ion-text>
-      
+        <ion-item mode="ios" lines="none">
+          <ion-label position="floating" color="medium">{{ a.t({en: 'Mobile No.', ko: '핸드폰 번호'}) }}</ion-label>
+          <ion-input name="mobile" formControlName="mobile"></ion-input>
+        </ion-item>
+        <ion-text class="d-block mt-2 fs-sm" color="danger" *ngIf=" errors.mobile ">{{ errors.mobile }}
+        </ion-text>
+
       </ion-list>
 
 
@@ -88,7 +89,8 @@
           </ion-row>
         </ion-grid>
       </ion-radio-group>
-      <ion-text text-center class="d-block mt-2 fs-sm" color="danger" *ngIf=" errors.gender ">{{ errors.gender }}</ion-text>
+      <ion-text text-center class="d-block mt-2 fs-sm" color="danger" *ngIf=" errors.gender ">{{ errors.gender }}
+      </ion-text>
 
 
       <ng-container *ngIf=" a.wp.userIsLoggedOut ">
@@ -128,5 +130,5 @@
     <app-desktop-home-footer></app-desktop-home-footer>
   </ng-container>
 
-  
+
 </ion-content>

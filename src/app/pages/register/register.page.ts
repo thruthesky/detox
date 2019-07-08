@@ -172,10 +172,11 @@ export class RegisterPage implements OnInit {
 
       (await this.alert.create({
         header: this.a.t({ en: 'Register Success', ko: '회원가입을 축하드립니다.' }),
-        message: this.a.t({ en: 'Please upload your picture.', ko: '회원 사진을 업로드 해 주세요 ^^;' }),
+        message: this.a.t({ en: 'Please upload your picture.', ko: '회원 정보를 업데이트 해 주시거나 프로그램에 참여를 해 보세요 ^^;' }),
         buttons: [this.a.t({ en: 'Okay', ko: '확인' })]
       })).present();
 
+      this.a.openHome();
 
     }, e => this.a.error(e));
 
