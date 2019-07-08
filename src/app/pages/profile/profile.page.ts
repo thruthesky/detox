@@ -69,22 +69,20 @@ export class ProfilePage implements OnInit {
         required: a.t({ en: 'Mobile No. is required.', ko: '핸드폰 번호는 필수 입력 항목입니다.' }),
       },
       gender: {
-        required: a.t({ en: 'Gender No. is required.', ko: '핸드폰 번호는 필수 입력 항목입니다.' }),
+        required: a.t({ en: 'Gender is required.', ko: '핸드폰 번호는 필수 입력 항목입니다.' }),
       },
       address: {
-        required: a.t({ en: 'Gender No. is required.', ko: '핸드폰 번호는 필수 입력 항목입니다.' }),
+        required: a.t({ en: 'Address is required.', ko: '핸드폰 번호는 필수 입력 항목입니다.' }),
       },
       birthday: {
-        required: a.t({ en: 'Gender No. is required.', ko: '핸드폰 번호는 필수 입력 항목입니다.' }),
+        required: a.t({ en: 'Birthday is required.', ko: '핸드폰 번호는 필수 입력 항목입니다.' }),
       },
       height: {
-        required: a.t({ en: 'Gender No. is required.', ko: '핸드폰 번호는 필수 입력 항목입니다.' }),
+        required: a.t({ en: 'Height is required.', ko: '핸드폰 번호는 필수 입력 항목입니다.' }),
       },
       weight: {
-        required: a.t({ en: 'Gender No. is required.', ko: '핸드폰 번호는 필수 입력 항목입니다.' }),
+        required: a.t({ en: 'Weight is required.', ko: '핸드폰 번호는 필수 입력 항목입니다.' }),
       },
-   
-   
    
     };
 
