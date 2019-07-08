@@ -16,7 +16,7 @@ const routes: Routes = [
   }
 ];
 
-  @NgModule({
+@NgModule({
   imports: [
     CommonModule,
     FormsModule,
@@ -28,4 +28,4 @@ const routes: Routes = [
   ],
   declarations: [ProfilePage]
 })
-export class ProfilePageModule {}
+export class ProfilePageModule { }

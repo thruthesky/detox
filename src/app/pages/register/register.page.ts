@@ -139,8 +139,10 @@ export class RegisterPage implements OnInit, OnDestroy {
     }
   }
 
-  // 폼을 검사한다.
-  // 기본적으로 dirty 상태인 것만 검사를 한다.
+  /**
+   * Validate the form.
+   * @param dirty to check only dirty inputs. if it is true, then it only checkes dirty inputs.
+   */
   validate(dirty = true) {
     const form = this.form;
     for (const field of this.formKeys) {

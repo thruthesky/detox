@@ -21,6 +21,9 @@ export class ProfilePage implements OnInit {
     a.wp.profile().subscribe(user => {
       console.log('user', user);
 
+      /**
+       * @todo set all the form data.
+       */
       this.form.patchValue({
         display_name: user.display_name,
         user_email: user.user_email,
@@ -28,7 +31,6 @@ export class ProfilePage implements OnInit {
         gender: user.gender,
       });
 
-  
     }, e => a.error(e));
 
 
@@ -37,19 +39,20 @@ export class ProfilePage implements OnInit {
 
 
 
+    /**
+     * @note
+     */
     this.form = fb.group({
       display_name: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(64)]],
       user_email: ['', [Validators.required, Validators.minLength(8), Validators.maxLength(64)]],
       mobile: ['', Validators.required],
       gender: ['', [Validators.required]],
-      address: [''],
-      birthday: [''],
-      height: ['' ],
-      weight: ['']
+      address: ['', [Validators.required]],
+      birthday: ['', [Validators.required]],
+      height: ['', [Validators.required]],
+      weight: ['', [Validators.required]]
     });
 
-
-    
   }
 
   ngOnInit() {
@@ -57,22 +60,19 @@ export class ProfilePage implements OnInit {
 
 
   onSubmit() {
+    console.log('onSubmit()');
 
-    this.a.wp.profile().subscribe( user => {
+    this.a.wp.profile().subscribe(user => {
 
-    user.display_name = this.form.value.display_name;
-    user.user_email = this.form.value.user_email;
-    user.gender = this.form.value.gender;
-    user.mobile = this.form.value.mobile;
-    console.log( 'user' , user );
-    },  e => this.a.error(e));
-
-
-  } 
+      user.display_name = this.form.value.display_name;
+      user.user_email = this.form.value.user_email;
+      user.gender = this.form.value.gender;
+      user.mobile = this.form.value.mobile;
+      console.log('user', user);
+    }, e => this.a.error(e));
 
 
-
-
+  }
 
 
 
