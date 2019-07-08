@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { AppService } from 'src/app/services/app.service';
 import { UserRegisterOptions } from 'modules/wordpress-api/wordpress-api.interface';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { AlertController } from '@ionic/angular';
+import { Subscription } from 'rxjs';
 
 
 @Component({
@@ -10,7 +11,7 @@ import { AlertController } from '@ionic/angular';
   templateUrl: './register.page.html',
   styleUrls: ['./register.page.scss'],
 })
-export class RegisterPage implements OnInit {
+export class RegisterPage implements OnInit, OnDestroy {
 
 
   form: FormGroup;
@@ -18,13 +19,15 @@ export class RegisterPage implements OnInit {
   errors: any = {};
   validationMessages: any = {};
 
+
+  subscriptionUserChange = new Subscription();
   constructor(
     fb: FormBuilder,
     public a: AppService,
     private alert: AlertController
   ) {
 
-    this.a.wp.userChange.subscribe(user => {
+    this.subscriptionUserChange = this.a.wp.userChange.subscribe(user => {
       if (user) {
         this.a.wp.profile().subscribe(profile => {
           console.log('profile: ', profile);
@@ -211,6 +214,13 @@ export class RegisterPage implements OnInit {
     //   this.onSubmit();
     // }, 100);
 
+  }
+
+
+  ngOnDestroy() {
+    if (this.subscriptionUserChange) {
+      this.subscriptionUserChange.unsubscribe();
+    }
   }
 
 }

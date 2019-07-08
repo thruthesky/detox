@@ -8,7 +8,13 @@ import { AppService } from 'src/app/services/app.service';
 })
 export class ProfilePage implements OnInit {
 
-  constructor(public a: AppService) { }
+  constructor(
+    public a: AppService
+  ) {
+    a.wp.profile().subscribe(user => {
+      console.log('user', user);
+    }, e => a.error(e));
+  }
 
   ngOnInit() {
   }
