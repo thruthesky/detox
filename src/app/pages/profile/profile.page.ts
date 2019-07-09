@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AppService } from 'src/app/services/app.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { UserProfile, User } from 'modules/wordpress-api/wordpress-api.interface';
+import { User } from 'modules/wordpress-api/wordpress-api.interface';
 import { AlertController } from '@ionic/angular';
 
 @Component({
@@ -14,7 +14,7 @@ export class ProfilePage implements OnInit {
   form: FormGroup;
   errors: any = {};
   formKeys: string[] = [];
-  user: any;
+  user: User;
   validationMessages: any = {};
 
   alertOptions: any = {
@@ -29,7 +29,7 @@ export class ProfilePage implements OnInit {
     private alert: AlertController
   ) {
 
-    this.user = JSON.parse(localStorage.getItem('user'));
+    // this.user = JSON.parse(localStorage.getItem('user'));
 
 
     a.wp.profile().subscribe(user => {
@@ -145,16 +145,14 @@ export class ProfilePage implements OnInit {
       this.validate(false);
       return;
     }
-    const data: UserProfile = {
-      user_login: this.form.value.user_email,
+    const data: User = {
       address: this.form.value.address,
-      user_email: this.form.value.user_email,
       display_name: this.form.value.display_name,
       mobile: this.form.value.mobile,
       gender: this.form.value.gender,
       birthday: this.form.value.birthday,
       height: this.form.value.height,
-      weight: this.form.value.weight,
+      weight: this.form.value.weight
     };
 
 
