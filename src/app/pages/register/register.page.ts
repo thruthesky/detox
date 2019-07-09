@@ -50,7 +50,7 @@ export class RegisterPage implements OnInit, OnDestroy {
       user_pass_confirm: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(32)]],
       user_email: ['', [Validators.required, Validators.minLength(8), Validators.maxLength(64)]],
       display_name: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(64)]],
-      mobile: ['', Validators.required],
+      mobile: ['', [Validators.required,Validators.pattern('[0-9+]*'),Validators.minLength(8),Validators.maxLength(15) ]],
       gender: ['', [Validators.required]],
       agree: [null, [Validators.required, Validators.requiredTrue]]
     });
@@ -79,6 +79,9 @@ export class RegisterPage implements OnInit, OnDestroy {
       },
       mobile: {
         required: a.t({ en: 'Mobile No. is required.', ko: '핸드폰 번호는 필수 입력 항목입니다.' }),
+        pattern: a.t({ en: 'Please input a valid number', ko: '핸드폰 번호는 필수 입력 항목입니다.' }),
+        minLength: a.t({ en: 'Mobile No. is too short.', ko: '핸드폰 번호는 필수 입력 항목입니다.' }),
+        maxLength: a.t({ en: 'Mobile No. is too long.', ko: '핸드폰 번호는 필수 입력 항목입니다.' }),
       },
       gender: {
         required: a.t({ en: 'Gender selection is required.', ko: '성별 선택은 필수 선택 항목입니다.' }),

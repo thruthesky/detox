@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AppService } from 'src/app/services/app.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { UserProfile } from 'modules/wordpress-api/wordpress-api.interface';
+import { UserProfile, User } from 'modules/wordpress-api/wordpress-api.interface';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-profile',
@@ -22,14 +23,14 @@ export class ProfilePage implements OnInit {
   constructor(
     public a: AppService,
     fb: FormBuilder,
-
+    private alert: AlertController
   ) {
 
     this.user = JSON.parse(localStorage.getItem('user'));
   
 
     a.wp.profile().subscribe(user => {
-    console.log(this.user);
+    
 
       /**
        * @todo set all the form data.
@@ -39,8 +40,12 @@ export class ProfilePage implements OnInit {
         user_email: user.user_email,
         mobile: user.mobile,
         gender: user.gender,  
+        address: user.address,  
+        birthday: user.birthday,  
+        height: user.height,  
+        weight: user.weight,  
+        
       });
-     
 
     }, e => a.error(e));
 
@@ -51,7 +56,7 @@ export class ProfilePage implements OnInit {
     this.form = fb.group({
       display_name: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(64)]],
       user_email: ['', [Validators.required, Validators.minLength(8), Validators.maxLength(64)]],
-      mobile: ['', [Validators.required ]],
+      mobile: ['', [Validators.required,Validators.pattern('[0-9+ ]*') ]],
       gender: ['', [Validators.required]],
       address: ['', [Validators.required]],
       birthday: ['', [Validators.required]],
@@ -74,6 +79,7 @@ export class ProfilePage implements OnInit {
       },
       mobile: {
         required: a.t({ en: 'Mobile No. is required.', ko: '핸드폰 번호는 필수 입력 항목입니다.' }),
+        pattern: a.t({ en: 'Please enter a valid number', ko: '핸드폰 번호는 필수 입력 항목입니다.' }),
       },
       gender: {
         required: a.t({ en: 'Gender is required.', ko: '핸드폰 번호는 필수 입력 항목입니다.' }),
@@ -130,11 +136,30 @@ export class ProfilePage implements OnInit {
       this.validate(false);
       return;
     }
+    const data: UserProfile = {
+      user_login: this.form.value.user_email,
+      address: this.form.value.address,
+      user_email: this.form.value.user_email,
+      display_name: this.form.value.display_name,
+      mobile: this.form.value.mobile,
+      gender: this.form.value.gender,
+      birthday: this.form.value.birthday,
+      height: this.form.value.height,
+      weight: this.form.value.weight,
+    };
+
+   
+    this.a.wp.updateProfile(data).subscribe(async (res) => {
+      (await this.alert.create({
+        header: this.a.t({ en: 'update Success', ko: '업데이트 성공.' }),
+        // message: this.a.t({ en: 'Please upload your picture.', ko: '회원 정보를 업데이트 해 주시거나 프로그램에 참여를 해 보세요 ^^;' }),
+        buttons: [this.a.t({ en: 'Okay', ko: '확인' })]
+      })).present();
+
+      this.a.openHome();
+    })
 
     console.log('onSubmit()');
-
- 
-
 
   }
 

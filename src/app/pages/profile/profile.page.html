@@ -144,7 +144,7 @@
 
       </ion-grid>
 
-      <ion-button type="submit" expand="full" color="green" class="mx-4 mt-5 h-45px" text-center>
+      <ion-button [disabled]="!form.valid"  type="submit" expand="full" color="green" class="mx-4 mt-5 h-45px" text-center>
         {{ a.t({en: 'Update', ko: '회원 정보 수정'}) }}
       </ion-button>
 
