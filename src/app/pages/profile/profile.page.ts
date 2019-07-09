@@ -63,8 +63,8 @@ export class ProfilePage implements OnInit {
       gender: ['', [Validators.required]],
       address: ['', [Validators.required]],
       birthday: ['', [Validators.required]],
-      height: ['', [Validators.required]],
-      weight: ['', [Validators.required]]
+      height: ['', [Validators.required,Validators.pattern('[0-9]*'), Validators.min(100), Validators.max(300)]],
+      weight: ['', [Validators.required, Validators.pattern('[0-9]*'), Validators.min(30),  Validators.max(200) ]]
     });
 
     this.formKeys = Object.keys(this.form.value);
@@ -95,9 +95,16 @@ export class ProfilePage implements OnInit {
       },
       height: {
         required: a.t({ en: 'Height is required.', ko: '핸드폰 번호는 필수 입력 항목입니다.' }),
+        pattern: a.t({ en: 'Please input number only.', ko: '핸드폰 번호는 필수 입력 항목입니다.' }),
+        min: a.t({ en: 'Height is too low.', ko: '핸드폰 번호는 필수 입력 항목입니다.' }),
+        max: a.t({ en: 'Height is too high.', ko: '핸드폰 번호는 필수 입력 항목입니다.' }),
       },
+
       weight: {
         required: a.t({ en: 'Weight is required.', ko: '핸드폰 번호는 필수 입력 항목입니다.' }),
+        pattern: a.t({ en: 'Please input number only.', ko: '핸드폰 번호는 필수 입력 항목입니다.' }),
+        min: a.t({ en: 'Weight is too low.', ko: '핸드폰 번호는 필수 입력 항목입니다.' }),
+        max: a.t({ en: 'Weight is too high.', ko: '핸드폰 번호는 필수 입력 항목입니다.' }),
       }
    
     };
