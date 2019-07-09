@@ -85,10 +85,10 @@
             {{ a.t({en: 'Address', ko: '주소'}) }}
           </ion-col>
           <ion-col class="flex-center">
-            <ion-input type="text" formArrayName="address" name="address" color="medium"></ion-input>
+            <ion-input type="text" formControlName="address" name="address" color="medium"></ion-input>
           </ion-col>
         </ion-row>
-        <ion-text class="d-block mt-2 fs-sm" color="danger" *ngIf=" errors.address ">{{ errors.address }}
+        <ion-text class="d-block mt-2 fs-sm ion-text-center" color="danger" *ngIf=" errors.address ">{{ errors.address }}
         </ion-text>
 
 
@@ -110,7 +110,7 @@
             {{ a.t({en: 'Birthday', ko: '생년월일'}) }}
           </ion-col>
           <ion-col class="flex-center">
-            <ion-input type="text" formArrayName="birthday" name="birthday" color="medium"></ion-input>
+            <ion-input type="text" formControlName="birthday" name="birthday" color="medium"></ion-input>
           </ion-col>
         </ion-row>
         <ion-text text-center class="d-block mt-2 fs-sm" color="danger" *ngIf=" errors.birthday ">{{ errors.birthday }}
@@ -122,7 +122,7 @@
             {{ a.t({en: 'Height', ko: '키'}) }}
           </ion-col>
           <ion-col class="flex-center">
-            <ion-input type="text" formArrayName="height" name="height" color="medium"></ion-input>
+            <ion-input type="text" formControlName="height" name="height" color="medium"></ion-input>
           </ion-col>
         </ion-row>
         <ion-text text-center class="d-block mt-2 fs-sm" color="danger" *ngIf=" errors.height ">{{ errors.height }}
@@ -134,7 +134,7 @@
             {{ a.t({en: 'Weight', ko: '몸무게'}) }}
           </ion-col>
           <ion-col class="flex-center">
-            <ion-input formArrayName="weight" name="weight" type="text" color="medium"></ion-input>
+            <ion-input formControlName="weight" name="weight" type="text" color="medium"></ion-input>
           </ion-col>
         </ion-row>
         <ion-text text-center class="d-block mt-2 fs-sm" color="danger" *ngIf=" errors.weight ">{{ errors.weight }}

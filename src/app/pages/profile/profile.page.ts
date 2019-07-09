@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AppService } from 'src/app/services/app.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { UserRegisterOptions, UserProfile } from 'modules/wordpress-api/wordpress-api.interface';
+import { UserProfile } from 'modules/wordpress-api/wordpress-api.interface';
 
 @Component({
   selector: 'app-profile',
@@ -13,7 +13,7 @@ export class ProfilePage implements OnInit {
   form: FormGroup;
   errors: any = {};
   formKeys: string[] = [];
-  user: UserProfile;
+  user: object;
   validationMessages: any = {};
 
   constructor(
@@ -21,8 +21,12 @@ export class ProfilePage implements OnInit {
     fb: FormBuilder,
 
   ) {
+
+    this.user = JSON.parse(localStorage.getItem('user'));
+  
+
     a.wp.profile().subscribe(user => {
-      console.log('user', user);
+    console.log(this.user);
 
       /**
        * @todo set all the form data.
@@ -31,9 +35,9 @@ export class ProfilePage implements OnInit {
         display_name: user.display_name,
         user_email: user.user_email,
         mobile: user.mobile,
-        gender: user.gender,
+        gender: user.gender,  
       });
-      this.user = user;
+     
 
     }, e => a.error(e));
 
@@ -82,12 +86,12 @@ export class ProfilePage implements OnInit {
       },
       weight: {
         required: a.t({ en: 'Weight is required.', ko: '핸드폰 번호는 필수 입력 항목입니다.' }),
-      },
+      }
    
     };
 
     this.form.valueChanges.subscribe(res => {
-      console.log('form: ', this.form.value);
+      // console.log('form: ', this.form.value);
       if (!this.form) {
         return;
       }
@@ -127,16 +131,6 @@ export class ProfilePage implements OnInit {
     console.log('onSubmit()');
 
  
-
-
-    // this.a.wp.profile().subscribe(user => {
-
-    //   user.display_name = this.form.value.display_name;
-    //   user.user_email = this.form.value.user_email;
-    //   user.gender = this.form.value.gender;
-    //   user.mobile = this.form.value.mobile;
-    //   console.log('user', user);
-    // }, e => this.a.error(e));
 
 
   }
