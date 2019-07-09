@@ -111,7 +111,7 @@
           </ion-col>
           <ion-col class="flex-center" class="ion-align-self-start">
             <!-- <ion-input type="text" formControlName="birthday" name="birthday" color="medium"></ion-input> -->
-            <ion-datetime displayFormat="MMM DD, YYYY" placeholder="Select Date" class="medium" ></ion-datetime>
+            <ion-datetime formControlName="birthday" name="birthday" displayFormat="MMM DD, YYYY" placeholder="Select Date" class="medium" ></ion-datetime>
           </ion-col>
         </ion-row>
         <ion-text text-center class="d-block mt-2 fs-sm" color="danger" *ngIf=" errors.birthday ">{{ errors.birthday }}
