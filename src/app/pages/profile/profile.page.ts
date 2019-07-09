@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AppService } from 'src/app/services/app.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { UserProfile, User } from 'modules/wordpress-api/wordpress-api.interface';
+import { User } from 'modules/wordpress-api/wordpress-api.interface';
 import { AlertController } from '@ionic/angular';
 
 @Component({
@@ -14,12 +14,12 @@ export class ProfilePage implements OnInit {
   form: FormGroup;
   errors: any = {};
   formKeys: string[] = [];
-  user: any;
+  user: User;
   validationMessages: any = {};
 
   alertOptions: any = {
     header: 'Choose Option',
-    
+
     translucent: true
   };
 
@@ -29,11 +29,11 @@ export class ProfilePage implements OnInit {
     private alert: AlertController
   ) {
 
-    this.user = JSON.parse(localStorage.getItem('user'));
-  
+    // this.user = JSON.parse(localStorage.getItem('user'));
+
 
     a.wp.profile().subscribe(user => {
-    
+
 
       /**
        * @todo set all the form data.
@@ -42,12 +42,11 @@ export class ProfilePage implements OnInit {
         display_name: user.display_name,
         user_email: user.user_email,
         mobile: user.mobile,
-        gender: user.gender,  
-        address: user.address,  
-        birthday: user.birthday,  
-        height: user.height,  
-        weight: user.weight,  
-        
+        gender: user.gender,
+        address: user.address,
+        birthday: user.birthday,
+        height: user.height,
+        weight: user.weight,
       });
 
     }, e => a.error(e));
@@ -59,12 +58,12 @@ export class ProfilePage implements OnInit {
     this.form = fb.group({
       display_name: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(64)]],
       user_email: ['', [Validators.required, Validators.minLength(8), Validators.maxLength(64)]],
-      mobile: ['', [Validators.required,Validators.pattern('[0-9+ ]*') ]],
+      mobile: ['', [Validators.required, Validators.pattern('[0-9+ ]*')]],
       gender: ['', [Validators.required]],
       address: ['', [Validators.required]],
       birthday: ['', [Validators.required]],
-      height: ['', [Validators.required,Validators.pattern('[0-9]*'), Validators.min(100), Validators.max(300)]],
-      weight: ['', [Validators.required, Validators.pattern('[0-9]*'), Validators.min(30),  Validators.max(200) ]]
+      height: ['', [Validators.required, Validators.pattern('[0-9]*'), Validators.min(100), Validators.max(300)]],
+      weight: ['', [Validators.required, Validators.pattern('[0-9]*'), Validators.min(30), Validators.max(200)]]
     });
 
     this.formKeys = Object.keys(this.form.value);
@@ -106,7 +105,7 @@ export class ProfilePage implements OnInit {
         min: a.t({ en: 'Weight is too low.', ko: '핸드폰 번호는 필수 입력 항목입니다.' }),
         max: a.t({ en: 'Weight is too high.', ko: '핸드폰 번호는 필수 입력 항목입니다.' }),
       }
-   
+
     };
 
     this.form.valueChanges.subscribe(res => {
@@ -146,19 +145,17 @@ export class ProfilePage implements OnInit {
       this.validate(false);
       return;
     }
-    const data: UserProfile = {
-      user_login: this.form.value.user_email,
+    const data: User = {
       address: this.form.value.address,
-      user_email: this.form.value.user_email,
       display_name: this.form.value.display_name,
       mobile: this.form.value.mobile,
       gender: this.form.value.gender,
       birthday: this.form.value.birthday,
       height: this.form.value.height,
-      weight: this.form.value.weight,
+      weight: this.form.value.weight
     };
 
-   
+
     this.a.wp.updateProfile(data).subscribe(async (res) => {
       (await this.alert.create({
         header: this.a.t({ en: 'update Success', ko: '업데이트 성공.' }),
