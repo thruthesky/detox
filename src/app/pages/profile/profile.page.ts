@@ -156,15 +156,15 @@ export class ProfilePage implements OnInit {
     };
 
 
-    this.a.wp.updateProfile(data).subscribe(async (res) => {
-      (await this.alert.create({
-        header: this.a.t({ en: 'update Success', ko: '업데이트 성공.' }),
-        // message: this.a.t({ en: 'Please upload your picture.', ko: '회원 정보를 업데이트 해 주시거나 프로그램에 참여를 해 보세요 ^^;' }),
-        buttons: [this.a.t({ en: 'Okay', ko: '확인' })]
-      })).present();
+    // this.a.wp.updateProfile(data).subscribe(async (res) => {
+    //   (await this.alert.create({
+    //     header: this.a.t({ en: 'update Success', ko: '업데이트 성공.' }),
+    //     // message: this.a.t({ en: 'Please upload your picture.', ko: '회원 정보를 업데이트 해 주시거나 프로그램에 참여를 해 보세요 ^^;' }),
+    //     buttons: [this.a.t({ en: 'Okay', ko: '확인' })]
+    //   })).present();
 
-      this.a.openHome();
-    })
+    //   this.a.openHome();
+    // })
 
     console.log('onSubmit()');
 
