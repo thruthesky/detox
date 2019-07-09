@@ -17,8 +17,11 @@ export class ProfilePage implements OnInit {
   user: any;
   validationMessages: any = {};
 
-
-
+  alertOptions: any = {
+    header: 'Choose Option',
+    
+    translucent: true
+  };
 
   constructor(
     public a: AppService,
