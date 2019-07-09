@@ -109,8 +109,9 @@
           <ion-col size="3" class="flex-center bold d-gray">
             {{ a.t({en: 'Birthday', ko: '생년월일'}) }}
           </ion-col>
-          <ion-col class="flex-center">
-            <ion-input type="text" formControlName="birthday" name="birthday" color="medium"></ion-input>
+          <ion-col class="flex-center" class="ion-align-self-start">
+            <!-- <ion-input type="text" formControlName="birthday" name="birthday" color="medium"></ion-input> -->
+            <ion-datetime displayFormat="MMM DD, YYYY" placeholder="Select Date" class="medium" ></ion-datetime>
           </ion-col>
         </ion-row>
         <ion-text text-center class="d-block mt-2 fs-sm" color="danger" *ngIf=" errors.birthday ">{{ errors.birthday }}

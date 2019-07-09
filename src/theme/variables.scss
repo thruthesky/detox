@@ -557,6 +557,11 @@
   }
 }
 
+
+.medium {
+  color: var( --ion-color-medium);
+}
+
 .ion-color-medium {
   color: var(--ion-color-medium, gray);
 }
