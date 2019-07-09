@@ -51,7 +51,7 @@ export class ProfilePage implements OnInit {
     this.form = fb.group({
       display_name: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(64)]],
       user_email: ['', [Validators.required, Validators.minLength(8), Validators.maxLength(64)]],
-      mobile: ['', [Validators.required , Validators.minLength(8), Validators.maxLength(15) ]],
+      mobile: ['', [Validators.required ]],
       gender: ['', [Validators.required]],
       address: ['', [Validators.required]],
       birthday: ['', [Validators.required]],
