@@ -36,7 +36,7 @@ export class ProfilePage implements OnInit {
        */
       this.form.patchValue({
         display_name: user.display_name,
-        // user_email: user.user_email,
+        user_email: user.user_email,
         mobile: user.mobile,
         gender: user.gender,
         address: user.address,

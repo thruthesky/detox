@@ -21,45 +21,85 @@
           <ion-label position="floating" color="medium">{{ a.t({en: 'Email', ko: '이메일 주소'}) }}</ion-label>
           <ion-input class="no-border" name="user_email" formControlName="user_email"></ion-input>
         </ion-item>
-        <ion-text class="d-block mt-2 fs-sm" color="danger" *ngIf=" errors.user_email ">{{ errors.user_email }}
-        </ion-text>
 
-
-        <ng-container *ngIf=" a.wp.userIsLoggedOut ">
-
-          <ion-item mode="ios" lines="none">
-            <ion-label position="floating" color="medium">{{ a.t({en: 'Password', ko: '비밀번호'}) }}</ion-label>
-            <ion-input name="user_pass" formControlName="user_pass"></ion-input>
-          </ion-item>
-          <ion-text class="d-block mt-2 fs-sm" color="danger" *ngIf=" errors.user_pass ">{{ errors.user_pass }}
-          </ion-text>
-
-
-
-          <ion-item mode="ios" lines="none">
-            <ion-label position="floating" color="medium">{{ a.t({en: 'Password Confirm', ko: '비밀번호 재확인'}) }}
-            </ion-label>
-            <ion-input name="user_pass_confirm" formControlName="user_pass_confirm"></ion-input>
-          </ion-item>
-          <ion-text class="d-block mt-2 fs-sm" color="danger" *ngIf=" errors.user_pass_confirm ">
-            {{ errors.user_pass_confirm }}</ion-text>
-
+        <ng-container *ngIf=" errors('user_email') ">
+          <ion-text *ngIf=" errors('user_email')?.required && submit" class="lh-30px" color="danger">
+            {{ validationMessages['user_email'].required }}</ion-text>
+          <ion-text *ngIf=" errors('user_email')?.minlength && submit " class="lh-30px" color="danger">
+            {{ validationMessages['user_email'].minlength }}</ion-text>
+          <ion-text *ngIf=" errors('user_email')?.maxlength " class="lh-30px" color="danger">
+            {{ validationMessages['user_email'].maxlength }}</ion-text>
         </ng-container>
+
+
+
+        <ion-item mode="ios" lines="none">
+          <ion-label position="floating" color="medium">{{ a.t({en: 'Password', ko: '비밀번호'}) }}</ion-label>
+          <ion-input name="user_pass" formControlName="user_pass"></ion-input>
+        </ion-item>
+        <!-- <ion-text class="d-block mt-2 fs-sm" color="danger" *ngIf=" errors.user_pass ">{{ errors.user_pass }}
+          </ion-text> -->
+        <ng-container *ngIf=" errors('user_pass') ">
+          <ion-text *ngIf=" errors('user_pass')?.required && submit" class="lh-30px" color="danger">
+            {{ validationMessages['user_pass'].required }}</ion-text>
+          <ion-text *ngIf=" errors('user_pass')?.minlength && submit " class="lh-30px" color="danger">
+            {{ validationMessages['user_pass'].minlength }} </ion-text>
+          <ion-text *ngIf=" errors('user_pass')?.maxlength " class="lh-30px" color="danger">
+            {{ validationMessages['user_pass'].maxlength }}</ion-text>
+        </ng-container>
+
+
+
+        <ion-item mode="ios" lines="none">
+          <ion-label position="floating" color="medium">{{ a.t({en: 'Password Confirm', ko: '비밀번호 재확인'}) }}
+          </ion-label>
+          <ion-input name="user_pass_confirm" formControlName="user_pass_confirm"></ion-input>
+        </ion-item>
+
+        <ng-container *ngIf=" errors('user_pass_confirm') ">
+          <ion-text *ngIf=" errors('user_pass_confirm')?.required && submit" color="danger">
+            {{ validationMessages['user_pass_confirm'].required }}</ion-text>
+          <ion-text *ngIf=" errors('user_pass_confirm')?.minlength && submit " color="danger">
+            {{ validationMessages['user_pass_confirm'].minlength }}</ion-text>
+          <ion-text *ngIf=" errors('user_pass_confirm')?.maxlength " color="danger">
+            {{ validationMessages['user_pass_confirm'].maxlength }}</ion-text>
+        </ng-container>
+
+
 
         <ion-item mode="ios" lines="none">
           <ion-label position="floating" color="medium">{{ a.t({en: 'Nickname', ko: '닉네임'}) }}</ion-label>
           <ion-input name="display_name" formControlName="display_name"></ion-input>
         </ion-item>
-        <ion-text class="d-block mt-2 fs-sm" color="danger" *ngIf=" errors.display_name ">{{ errors.display_name }}
-        </ion-text>
+        <ng-container *ngIf=" errors('display_name') ">
+          <ion-text *ngIf=" errors('display_name')?.required && submit" color="danger">
+            {{ validationMessages['display_name'].required }}</ion-text>
+          <ion-text *ngIf=" errors('display_name')?.minlength && submit " color="danger">
+            {{ validationMessages['display_name'].minlength }}</ion-text>
+          <ion-text *ngIf=" errors('display_name')?.maxlength " color="danger">
+            {{ validationMessages['display_name'].maxlength }}</ion-text>
+        </ng-container>
+
+
+
+
 
         <ion-item mode="ios" lines="none">
           <ion-label position="floating" color="medium">{{ a.t({en: 'Mobile No.', ko: '핸드폰 번호'}) }}</ion-label>
           <ion-input name="mobile" formControlName="mobile"></ion-input>
         </ion-item>
-        <ion-text class="d-block mt-2 fs-sm" color="danger" *ngIf=" errors.mobile ">{{ errors.mobile }}
-        </ion-text>
-
+        <!-- <ion-text class="d-block mt-2 fs-sm" color="danger" *ngIf=" errors.mobile ">{{ errors.mobile }}
+        </ion-text> -->
+        <ng-container *ngIf=" errors('mobile') ">
+          <ion-text *ngIf=" errors('mobile')?.required && submit" color="danger">
+            {{ validationMessages['mobile'].required }}</ion-text>
+          <ion-text *ngIf=" errors('mobile')?.minlength && submit " color="danger">
+            {{ validationMessages['mobile'].minlength }}</ion-text>
+          <ion-text *ngIf=" errors('mobile')?.maxlength " color="danger">
+            {{ validationMessages['mobile'].maxlength }}</ion-text>
+          <ion-text *ngIf=" errors('mobile')?.patter " color="danger">
+            {{ validationMessages['mobile'].pattern }}</ion-text>
+        </ng-container>
       </ion-list>
 
 
@@ -89,35 +129,39 @@
           </ion-row>
         </ion-grid>
       </ion-radio-group>
-      <ion-text text-center class="d-block mt-2 fs-sm" color="danger" *ngIf=" errors.gender ">{{ errors.gender }}
-      </ion-text>
+      <!-- <ion-text text-center class=" mt-2 fs-sm" color="danger" *ngIf=" errors.gender ">{{ errors.gender }}
+      </ion-text> -->
+
+       <ion-text class="d-block ion-text-center" *ngIf=" errors('gender')?.required && submit"color="danger" >
+          {{ validationMessages['gender'].required }}</ion-text>
+       
 
 
-      <ng-container *ngIf=" a.wp.userIsLoggedOut ">
 
+      <div class="flex-center mt-3">
 
-        <div class="flex-center mt-3">
-
-          <ion-checkbox name="agree" mode="md" color="green" formControlName="agree"></ion-checkbox>
-          <ion-button fill="clear" mode="ios"
-            class="ion-no-margin ion-no-padding mx-2 h-40px fs-14 black bold underline i-color-act-green">
-            이용약관</ion-button>
-          <ion-text style="display: inline-block;line-height: 40px">
-            및
-          </ion-text>
-          <ion-button fill="clear" mode="ios"
-            class="ion-no-margin ion-no-padding mx-2 h-40px fs-14 black bold underline i-color-act-green">
-            개인정보 수집</ion-button>
-          <ion-text style="display: inline-block;line-height: 40px">
-            에 동의(필수)
-          </ion-text>
-
-        </div>
-
-        <ion-text class="d-block mt-2 fs-sm ion-text-center" color="danger" *ngIf=" errors.agree ">{{ errors.agree }}
+        <ion-checkbox name="agree" mode="md" color="green" formControlName="agree"></ion-checkbox>
+        <ion-button fill="clear" mode="ios"
+          class="ion-no-margin ion-no-padding mx-2 h-40px fs-14 black bold underline i-color-act-green">
+          이용약관</ion-button>
+        <ion-text style="display: inline-block;line-height: 40px">
+          및
+        </ion-text>
+        <ion-button fill="clear" mode="ios"
+          class="ion-no-margin ion-no-padding mx-2 h-40px fs-14 black bold underline i-color-act-green">
+          개인정보 수집</ion-button>
+        <ion-text style="display: inline-block;line-height: 40px">
+          에 동의(필수)
         </ion-text>
 
-      </ng-container>
+      </div>
+      <!-- 
+        <ion-text class="d-block mt-2 fs-sm ion-text-center" color="danger" *ngIf=" errors.agree ">{{ errors.agree }}
+        </ion-text> -->
+        <ion-text class="d-block ion-text-center" *ngIf=" errors('agree')?.required && submit"color="danger" >
+            {{ validationMessages['agree'].required }}</ion-text>
+
+
 
       <ion-button mode="md" type="submit" expand="full" color="green" class="h-50px mt-4 fs-14">
         {{ a.t({en: 'Register', ko: '회원가입' })}}
