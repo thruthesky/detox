@@ -2,7 +2,8 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { AppService } from 'src/app/services/app.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { User } from 'modules/wordpress-api/wordpress-api.interface';
-import { AlertController, IonSelect } from '@ionic/angular';
+import { AlertController, PopoverController } from '@ionic/angular';
+import { MyPromiseComponent } from 'src/app/components/my-promise/my-promise.component';
 
 @Component({
   selector: 'app-profile',
@@ -30,7 +31,8 @@ export class ProfilePage implements OnInit {
   constructor(
     public a: AppService,
     fb: FormBuilder,
-    private alert: AlertController
+    private alert: AlertController,
+    public popoverController: PopoverController
   ) {
 
     a.wp.profile().subscribe(user => {
@@ -165,6 +167,17 @@ export class ProfilePage implements OnInit {
   }
 
 
+
+  async onClickMyPromise(ev: any) {
+    const popover = await this.popoverController.create({
+      component: MyPromiseComponent,
+      event: ev,
+      translucent: true
+    });
+    await popover.present();
+    const data = await popover.onWillDismiss();
+    console.log('data: ', data);
+  }
 
 }
 
