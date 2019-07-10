@@ -77,7 +77,7 @@ export class ProfilePage implements OnInit {
       },
       mobile: {
         required: a.t({ en: 'Mobile No. is required.', ko: '핸드폰 번호는 필수 입력 항목입니다.' }),
-        pattern: a.t({ en: 'Please enter a valid number', ko: '핸드폰 번호는 숫자와 +, - 기호만 사용 가능합니다.' }),
+     
       },
       gender: {
         required: a.t({ en: 'Gender is required.', ko: '성별은 필수 선택항목입니다.' }),
