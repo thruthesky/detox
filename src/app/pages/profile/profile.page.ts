@@ -11,9 +11,8 @@ import { AlertController } from '@ionic/angular';
 })
 export class ProfilePage implements OnInit {
 
+  submit = false;
   form: FormGroup;
-  errors: any = {};
-  formKeys: string[] = [];
   user: User;
   validationMessages: any = {};
 
@@ -29,9 +28,6 @@ export class ProfilePage implements OnInit {
     private alert: AlertController
   ) {
 
-    // this.user = JSON.parse(localStorage.getItem('user'));
-
-
     a.wp.profile().subscribe(user => {
 
 
@@ -40,7 +36,7 @@ export class ProfilePage implements OnInit {
        */
       this.form.patchValue({
         display_name: user.display_name,
-        user_email: user.user_email,
+        // user_email: user.user_email,
         mobile: user.mobile,
         gender: user.gender,
         address: user.address,
@@ -66,7 +62,7 @@ export class ProfilePage implements OnInit {
       weight: ['', [Validators.required, Validators.pattern('[0-9]*'), Validators.min(30), Validators.max(160)]]
     });
 
-    this.formKeys = Object.keys(this.form.value);
+    // this.formKeys = Object.keys(this.form.value);
 
     this.validationMessages = {
       user_email: {
@@ -108,41 +104,31 @@ export class ProfilePage implements OnInit {
 
     };
 
-    this.form.valueChanges.subscribe(res => {
-      // console.log('form: ', this.form.value);
-      if (!this.form) {
-        return;
+  }
+
+  allErrors() {
+    const err = [];
+    Object.keys(this.validationMessages).map(formName => {
+      const errors = this.form.get(formName).errors;
+      if (errors) {
+        Object.keys(errors).map(errorCode => {
+          err.push(this.validationMessages[formName][errorCode]);
+        });
       }
-      this.validate();
     });
+    return err;
   }
 
   ngOnInit() {
   }
 
-  validate(dirty = true) {
-    const form = this.form;
-    for (const field of this.formKeys) {
-      const control = form.get(field);
-      this.errors[field] = '';
-      if (dirty) {
-        if (control && control.dirty && !control.valid) {
-          Object.keys(control.errors).map(key => this.errors[field] += this.validationMessages[field][key] + ' ');
-        }
-      } else {
-        if (control && !control.valid) {
-          Object.keys(control.errors).map(key => this.errors[field] += this.validationMessages[field][key] + ' ');
-        }
-      }
-    }
-  }
 
   onSubmit() {
 
+    this.submit = true;
+
     if (this.form.invalid) {
-      // Display errors and return ( don't submit )
-      // Display errors on not-dirty elements also.
-      this.validate(false);
+      console.log('onSubmit() => form is invalid. just return. not submitting');
       return;
     }
     const reqData: User = {
@@ -173,6 +159,12 @@ export class ProfilePage implements OnInit {
     console.log('onSubmit()');
 
   }
+
+
+  errors(formName: string): any {
+    return this.form.get(formName).errors;
+  }
+
 
 }
 

@@ -60,7 +60,18 @@
             <ion-input formControlName="display_name" name="display_name" type="text" color="medium"></ion-input>
           </ion-col>
         </ion-row>
-        <ion-text class="d-block mt-2 fs-sm" color="danger" *ngIf=" errors.display_name ">{{ errors.display_name }}
+        <ion-text class="d-block mt-2 fs-sm" color="danger" *ngIf=" errors('display_name') ">
+
+          <ng-container *ngIf=" errors('display_name')?.required && submit">
+            {{ validationMessages['display_name'].required }}
+          </ng-container>
+          <ng-container *ngIf=" errors('display_name')?.minlength && submit ">
+            {{ validationMessages['display_name'].minlength }}
+          </ng-container>
+          <ng-container *ngIf=" errors('display_name')?.maxlength ">
+            {{ validationMessages['display_name'].maxlength }}
+          </ng-container>
+
         </ion-text>
 
         <ion-row>
@@ -71,8 +82,21 @@
             <ion-input formControlName="user_email" name="user_email" type="text" color="medium"></ion-input>
           </ion-col>
         </ion-row>
-        <ion-text class="d-block mt-2 fs-sm" color="danger" *ngIf=" errors.user_email ">{{ errors.user_email }}
+        <ion-text class="d-block mt-2 fs-sm" color="danger" *ngIf=" errors('user_email') ">
+
+          <ng-container *ngIf=" errors('user_email')?.required && submit ">
+            {{ validationMessages['user_email'].required }}
+          </ng-container>
+          <ng-container *ngIf=" errors('user_email')?.minlength && submit ">
+            {{ validationMessages['user_email'].minlength }}
+          </ng-container>
+          <ng-container *ngIf=" errors('user_email')?.maxlength ">
+            {{ validationMessages['user_email'].maxlength }}
+          </ng-container>
+
         </ion-text>
+
+
 
 
         <ion-row>
@@ -83,8 +107,9 @@
             <ion-input formControlName="mobile" name="mobile" type="text" color="medium"></ion-input>
           </ion-col>
         </ion-row>
-        <ion-text class="d-block mt-2 fs-sm" color="danger" *ngIf=" errors.mobile ">{{ errors.mobile }}
-        </ion-text>
+        <!-- <ion-text class="d-block mt-2 fs-sm" color="danger" *ngIf=" errors.mobile ">
+          {{ errors.mobile }}
+        </ion-text> -->
 
 
         <ion-row>
@@ -95,9 +120,9 @@
             <ion-input type="text" formControlName="address" name="address" color="medium"></ion-input>
           </ion-col>
         </ion-row>
-        <ion-text class="d-block mt-2 fs-sm ion-text-center" color="danger" *ngIf=" errors.address ">
+        <!-- <ion-text class="d-block mt-2 fs-sm ion-text-center" color="danger" *ngIf=" errors.address ">
           {{ errors.address }}
-        </ion-text>
+        </ion-text> -->
 
 
 
@@ -112,8 +137,9 @@
             </ion-select>
           </ion-col>
         </ion-row>
-        <ion-text text-center class="d-block mt-2 fs-sm" color="danger" *ngIf=" errors.gender ">{{ errors.gender }}
-        </ion-text>
+        <!-- <ion-text text-center class="d-block mt-2 fs-sm" color="danger" *ngIf=" errors.gender ">
+          {{ errors.gender }}
+        </ion-text> -->
 
 
         <ion-row>
@@ -126,8 +152,9 @@
               placeholder="Select Date" class="medium"></ion-datetime>
           </ion-col>
         </ion-row>
-        <ion-text text-center class="d-block mt-2 fs-sm" color="danger" *ngIf=" errors.birthday ">{{ errors.birthday }}
-        </ion-text>
+        <!-- <ion-text text-center class="d-block mt-2 fs-sm" color="danger" *ngIf=" errors.birthday ">
+          {{ errors.birthday }}
+        </ion-text> -->
 
 
         <ion-row>
@@ -136,11 +163,12 @@
           </ion-col>
           <ion-col class="flex-center">
             <ion-input type="text" formControlName="height" name="height" color="medium"></ion-input>
-            <ion-label position="fixed"  text-center>cm</ion-label>
+            <ion-label position="fixed" text-center>cm</ion-label>
           </ion-col>
         </ion-row>
-        <ion-text text-center class="d-block mt-2 fs-sm" color="danger" *ngIf=" errors.height ">{{ errors.height }}
-        </ion-text>
+        <!-- <ion-text text-center class="d-block mt-2 fs-sm" color="danger" *ngIf=" errors.height ">
+          {{ errors.height }}
+        </ion-text> -->
 
 
         <ion-row>
@@ -148,15 +176,21 @@
             {{ a.t({en: 'Weight', ko: '몸무게'}) }}
           </ion-col>
           <ion-col class="flex-center">
-            <ion-input formControlName="weight" name="weight" type="text" color="medium" ></ion-input>
-            <ion-label position="fixed"  text-center>kg</ion-label>
+            <ion-input formControlName="weight" name="weight" type="text" color="medium"></ion-input>
+            <ion-label position="fixed" text-center>kg</ion-label>
           </ion-col>
         </ion-row>
-        <ion-text text-center class="d-block mt-2 fs-sm" color="danger" *ngIf=" errors.weight ">{{ errors.weight }}
-        </ion-text>
+        <!-- <ion-text text-center class="d-block mt-2 fs-sm" color="danger" *ngIf=" errors.weight ">
+          {{ errors.weight }}
+        </ion-text> -->
 
 
       </ion-grid>
+
+
+      <ion-text text-center class="d-block mt-2 fs-sm" color="danger" *ngIf=" submit && allErrors() ">
+        {{ allErrors() | json }}
+      </ion-text>
 
       <ion-button type="submit" expand="full" color="green" class="mx-4 mt-5 h-45px" text-center>
         {{ a.t({en: 'Update', ko: '회원 정보 수정'}) }}

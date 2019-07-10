@@ -5,7 +5,7 @@
 export const environment = {
     production: false,
     apiUrl: 'http://local.wordpress.org/wordpress-api/wordpress-api.php',
-    lang: '' // if you put empty string, then you will see the display language as in you browser language
+    lang: 'en' // if you put empty string, then you will see the display language as in you browser language
 };
 
 /*

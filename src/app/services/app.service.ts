@@ -103,7 +103,7 @@ export class AppService {
     }
 
     error(e: ErrorObject): void {
-        console.error('Got error!', e);
+        console.error('Got error on app.service.ts::e => ', e);
         alert(e.errstring);
     }
 
