@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { AppService } from 'src/app/services/app.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { User } from 'modules/wordpress-api/wordpress-api.interface';
-import { AlertController } from '@ionic/angular';
+import { AlertController, IonSelect } from '@ionic/angular';
 
 @Component({
   selector: 'app-profile',
@@ -11,15 +11,19 @@ import { AlertController } from '@ionic/angular';
 })
 export class ProfilePage implements OnInit {
 
+
+
   submit = false;
   form: FormGroup;
   user: User;
   validationMessages: any = {};
 
-  alertOptions: any = {
+  imageOptions: any = {
     header: 'Choose Option',
-
-    translucent: true
+  };
+  
+  genderOptions: any = {
+    header: 'Choose Gender'
   };
 
   constructor(
@@ -101,7 +105,6 @@ export class ProfilePage implements OnInit {
         min: a.t({ en: 'Weight is too low.', ko: '몸무게가 너무 낮습니다.' }),
         max: a.t({ en: 'Weight is too high.', ko: '몸무게가 너무 높습니다.' }),
       }
-
     };
 
   }
