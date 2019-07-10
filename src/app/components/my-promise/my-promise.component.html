@@ -1,13 +1,20 @@
-<ion-list lines="full" class="ion-no-margin ion-no-padding">
+<div class="p-4">
 
-  <ion-item>
-    <ion-label position="stacked">Summary</ion-label>
-    <ion-textarea rows="6" cols="40" value="Ionic enables developers to build performant, high-quality mobile apps.">
-    </ion-textarea>
-  </ion-item>
 
-</ion-list>
+  <ion-label position="stacked" color="green">Summary</ion-label>
+  <ion-textarea class="bg-light-gray border-radius-5px" style="border: 1px solid rgba(206, 206, 206, 0.603);" rows="6" cols="30" value="Ionic enables developers to build performant, high-quality mobile apps.">
+  </ion-textarea>
 
-<div class="ion-padding">
-  <ion-button expand="block" type="submit" class="ion-no-margin" (click)=" popoverCtrl.dismiss({ result: 'Yo!'}, 'roleName') ">Create account</ion-button>
 </div>
+
+
+<ion-row class="pl-2 pr-4">
+  <ion-col size="6" >
+    <ion-button  mode="ios" class="no-box-shadow " color="primary" fill="clear"  mode="ios"  type="submit" class="ion-no-margin" (click)=" popoverCtrl.dismiss({ result: 'Yo!'}, 'roleName') ">Cancel</ion-button>
+  </ion-col>
+  <ion-col  size="6" text-right>
+  <ion-button  class="no-box-shadow" color="green"  type="submit" class="ion-no-margin" (click)=" popoverCtrl.dismiss({ result: 'Yo!'}, 'roleName') ">Submit</ion-button>
+  </ion-col>
+</ion-row>
+
+ 

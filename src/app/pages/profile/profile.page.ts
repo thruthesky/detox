@@ -172,6 +172,7 @@ async onClickMyPromise(ev: any) {
   const popover = await this.popoverController.create({
     component: MyPromiseComponent,
     event: ev,
+    cssClass: 'promise-pop-width promise-pop-height',
     translucent: true
   });
   await popover.present();
