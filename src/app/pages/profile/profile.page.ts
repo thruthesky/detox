@@ -109,6 +109,11 @@ export class ProfilePage implements OnInit {
 
   }
 
+
+  errors(formName: string): any {
+    return this.form.get(formName).errors;
+  }
+
   allErrors() {
     const err = [];
     Object.keys(this.validationMessages).map(formName => {
@@ -145,8 +150,6 @@ export class ProfilePage implements OnInit {
     };
 
 
-    console.log('reqData', reqData);
-
     this.a.wp.profileUpdate(reqData).subscribe(async (res) => {
 
       console.log('user update: ', res);
@@ -158,15 +161,8 @@ export class ProfilePage implements OnInit {
 
       this.a.openHome();
     });
-
-    console.log('onSubmit()');
-
   }
 
-
-  errors(formName: string): any {
-    return this.form.get(formName).errors;
-  }
 
 
 }
