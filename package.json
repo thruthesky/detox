@@ -10,6 +10,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
+    "serve:local": "ionic s --configuration local",
     "publish": "ionic build --prod && cd www && ssh detox@7detox.co.kr 'rm -f www/*.js www/*.css' && scp -r * detox@7detox.co.kr:./www"
   },
   "private": true,
