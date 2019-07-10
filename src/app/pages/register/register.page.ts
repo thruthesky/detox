@@ -21,7 +21,7 @@ export class RegisterPage implements OnInit, OnDestroy {
 
 
   subscriptionUserChange = new Subscription();
-  
+
   constructor(
     fb: FormBuilder,
     public a: AppService,
@@ -50,7 +50,7 @@ export class RegisterPage implements OnInit, OnDestroy {
       user_pass_confirm: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(32)]],
       user_email: ['', [Validators.required, Validators.minLength(8), Validators.maxLength(64)]],
       display_name: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(64)]],
-      mobile: ['', [Validators.required,Validators.pattern('[0-9+]*'),Validators.minLength(8),Validators.maxLength(15) ]],
+      mobile: ['', [Validators.required, Validators.pattern('[0-9+]*'), Validators.minLength(8), Validators.maxLength(15)]],
       gender: ['', [Validators.required]],
       agree: [null, [Validators.required, Validators.requiredTrue]]
     });
@@ -115,7 +115,7 @@ export class RegisterPage implements OnInit, OnDestroy {
     }
   }
 
-  
+
 
   onSubmit() {
     this.submit = true;
@@ -182,7 +182,7 @@ export class RegisterPage implements OnInit, OnDestroy {
     }
   }
 
-  
+
   errors(formName: string): any {
     return this.form.get(formName).errors;
   }
