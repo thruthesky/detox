@@ -54,12 +54,12 @@ export class ProfilePage implements OnInit {
     this.form = fb.group({
       display_name: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(64)]],
       user_email: ['', [Validators.required, Validators.minLength(8), Validators.maxLength(64)]],
-      mobile: ['', [Validators.required, Validators.pattern('[0-9+ ]*')]],
+      mobile: ['', [Validators.required, Validators.pattern(`[0-9+\\- ]*`)]],
       gender: ['', [Validators.required]],
       address: ['', [Validators.required]],
       birthday: ['', [Validators.required]],
-      height: ['', [Validators.required, Validators.pattern('[0-9]*'), Validators.min(100), Validators.max(220)]],
-      weight: ['', [Validators.required, Validators.pattern('[0-9]*'), Validators.min(30), Validators.max(160)]]
+      height: ['', [Validators.required, Validators.pattern('[0-9]+'), Validators.min(100), Validators.max(220)]],
+      weight: ['', [Validators.required, Validators.pattern('[0-9]+'), Validators.min(30), Validators.max(160)]]
     });
 
     // this.formKeys = Object.keys(this.form.value);
@@ -77,7 +77,7 @@ export class ProfilePage implements OnInit {
       },
       mobile: {
         required: a.t({ en: 'Mobile No. is required.', ko: '핸드폰 번호는 필수 입력 항목입니다.' }),
-     
+        pattern: a.t({ en: 'Mobile No. is malformed.', ko: '핸드폰 번호가 올바르지 않습니다.' }),
       },
       gender: {
         required: a.t({ en: 'Gender is required.', ko: '성별은 필수 선택항목입니다.' }),

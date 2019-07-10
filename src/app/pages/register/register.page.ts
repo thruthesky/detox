@@ -13,7 +13,7 @@ import { Subscription } from 'rxjs';
 })
 export class RegisterPage implements OnInit, OnDestroy {
 
-  submit: boolean = false;
+  submit = false;
   form: FormGroup;
   // formKeys: string[] = [];
   // errors: any = {};
@@ -115,26 +115,7 @@ export class RegisterPage implements OnInit, OnDestroy {
     }
   }
 
-  /**
-   * Validate the form.
-   * @param dirty to check only dirty inputs. if it is true, then it only checkes dirty inputs.
-   */
-  // validate(dirty = true) {
-  //   const form = this.form;
-  //   for (const field of this.formKeys) {
-  //     const control = form.get(field);
-  //     this.errors[field] = '';
-  //     if (dirty) {
-  //       if (control && control.dirty && !control.valid) {
-  //         Object.keys(control.errors).map(key => this.errors[field] += this.validationMessages[field][key] + ' ');
-  //       }
-  //     } else {
-  //       if (control && !control.valid) {
-  //         Object.keys(control.errors).map(key => this.errors[field] += this.validationMessages[field][key] + ' ');
-  //       }
-  //     }
-  //   }
-  // }
+  
 
   onSubmit() {
     this.submit = true;
