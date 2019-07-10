@@ -21,9 +21,10 @@ export class ProfilePage implements OnInit {
   imageOptions: any = {
     header: 'Choose Option',
   };
-  
+
   genderOptions: any = {
-    header: 'Choose Gender'
+    header: 'Choose Gender',
+    cssClass: 'no-underline-on-last-item'
   };
 
   constructor(

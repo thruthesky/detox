@@ -1340,3 +1340,11 @@ p {
 .pointer {
   cursor: pointer;
 }
+
+
+
+.no-underline-on-last-item {
+  ion-item:last-child {
+      --inner-border-width: 0 0 0 0 !important;
+  }
+}
