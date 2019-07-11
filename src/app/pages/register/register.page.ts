@@ -195,6 +195,7 @@ export class RegisterPage implements OnInit, OnDestroy {
       header: 'Terms and Conditions',
       message: 'By creating an account, you agree to the 7Detox  Terms of Service and Privacy Policy',
       cssClass: 'i-width-300px ',
+      mode: 'ios',
       buttons: [
         {
           text: 'Disagree',
