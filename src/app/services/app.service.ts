@@ -119,6 +119,8 @@ export class AppService {
         this.wp.logout();
         this.open('/');
     }
+    
 }
+
 
 
