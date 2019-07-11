@@ -52,7 +52,6 @@ export class RegisterPage implements OnInit, OnDestroy {
       display_name: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(64)]],
       mobile: ['', [Validators.required, Validators.pattern('[0-9+]*'), Validators.minLength(8), Validators.maxLength(15)]],
       gender: ['', [Validators.required]],
-      agree: [null, [Validators.required, Validators.requiredTrue]]
     });
 
     // this.formKeys = Object.keys(this.form.value);

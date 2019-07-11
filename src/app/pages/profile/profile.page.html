@@ -11,13 +11,13 @@
       </ion-toolbar>
     </ng-container>
 
-    <ion-item color="green" style="border-top: 1px solid #8fbc78;" class="fs-14">
+    <ion-item color="green" style="border-top: 1px solid #8fbc78;" class="fs-14"  >
 
-      <ion-thumbnail slot="start">
+      <ion-thumbnail slot="start"  >
 
         <img [src]="imgProfile">
 
-        <ion-select [interfaceOptions]="imageOptions" interface="popover" mode="md">
+        <ion-select [interfaceOptions]="imageOptions" interface="popover"  mode="md" (ionChange)="imgOption(imgSelect.value)" #imgSelect>
           <ion-select-option value="C" >Camera</ion-select-option>
           <ion-select-option value="U">Upload image</ion-select-option>
         </ion-select>
