@@ -12,18 +12,16 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 
 @Component({
-  selector: 'app-profile',  
+  selector: 'app-profile',
   templateUrl: './profile.page.html',
   styleUrls: ['./profile.page.scss'],
 })
 export class ProfilePage implements OnInit {
 
-  
+
 
   imgProfile: SafeResourceUrl;
-  @ViewChild('imgSelect') imgSelect: IonSelect;
-
-
+  
   submit = false;
   form: FormGroup;
   user: User;
@@ -41,7 +39,7 @@ export class ProfilePage implements OnInit {
   };
 
   constructor(
-    public a: AppService, 
+    public a: AppService,
     private sanitizer: DomSanitizer,
     fb: FormBuilder,
     private alert: AlertController,
@@ -197,31 +195,21 @@ export class ProfilePage implements OnInit {
   }
 
 
-  
-    async takePicture(source: CameraSource) {
-      const image = await Plugins.Camera.getPhoto({
-        quality: 100,
-        allowEditing: false,
-        resultType: CameraResultType.DataUrl,
-        source: source,
-        correctOrientation: true,
-     
-      });
-  
-      this.imgProfile = this.sanitizer.bypassSecurityTrustResourceUrl(image && (image.dataUrl));
-    }
-  
 
-    imgOption(val: string) {
-        if (val === 'C') {
-          this.takePicture(CameraSource.Camera);
-        } 
-        if (val === 'U') {
-          this.takePicture(CameraSource.Photos);
-        }
+  async onClickCamera(source: CameraSource) {
+    alert('yo');
+    alert('hi');
+    const image = await Plugins.Camera.getPhoto({
+      quality: 100,
+      allowEditing: false,
+      resultType: CameraResultType.DataUrl,
+      source: CameraSource.Camera,
+      correctOrientation: true,
+    });
 
-        this.imgSelect.value = '';
-    }
+    this.imgProfile = this.sanitizer.bypassSecurityTrustResourceUrl(image && (image.dataUrl));
+  }
+
 
 }
 

@@ -97,7 +97,7 @@
             {{ validationMessages['mobile'].minlength }}</ion-text>
           <ion-text *ngIf=" errors('mobile')?.maxlength " color="danger">
             {{ validationMessages['mobile'].maxlength }}</ion-text>
-          <ion-text *ngIf=" errors('mobile')?.patter " color="danger">
+          <ion-text *ngIf=" errors('mobile')?.pattern " color="danger">
             {{ validationMessages['mobile'].pattern }}</ion-text>
         </ng-container>
       </ion-list>
@@ -161,7 +161,7 @@
             {{ validationMessages['agree'].required }}</ion-text> -->
 
 
-            <ion-button mode="md" (click)="presentAlert()" expand="full" color="green" class="h-50px mt-4 fs-14">
+            <ion-button type="submit" mode="md" expand="full" color="green" class="h-50px mt-4 fs-14">
               {{ a.t({en: 'Register', ko: '회원가입' })}}
             </ion-button> 
             

@@ -114,7 +114,7 @@ export class RegisterPage implements OnInit, OnDestroy {
 
 
 
-  onSubmit() {
+  async onSubmit() {
     this.submit = true;
     console.log('onSubmit()');
 
@@ -123,6 +123,12 @@ export class RegisterPage implements OnInit, OnDestroy {
       // Display errors and return ( don't submit )
       // Display errors on not-dirty elements also.
       // this.validate(false);
+      return;
+    }
+
+    const re = await this.presentTermsAndConditionsAlert();
+    if ( re.role === 'cancel' ) {
+      // @todo : alert('You must agree to register');
       return;
     }
 
@@ -189,7 +195,7 @@ export class RegisterPage implements OnInit, OnDestroy {
     this.form.reset();
   }
 
-  async presentAlert() {
+  async presentTermsAndConditionsAlert() {
     const alert = await this.alert.create({
       header: 'Terms and Conditions',
       message: 'By creating an account, you agree to the 7Detox  <a href="/terms-and-conditions" target="_blank" >Terms of Service</a> and <a href="/privacy-policy">Privacy Policy</a>',
@@ -205,15 +211,17 @@ export class RegisterPage implements OnInit, OnDestroy {
           }
         }, {
           text: 'Agree',
+          role: 'agree',
           cssClass: 'green',
           handler: () => {
-            this.onSubmit();
+            // this.onSubmit();
           }
         }
       ]
     });
 
     await alert.present();
+    return await alert.onWillDismiss();
   }
 
 
