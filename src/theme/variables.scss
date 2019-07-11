@@ -1392,7 +1392,14 @@ p {
   }
 }
 .ion-item-pointer {
-  ion-item {
+  ion-item:hover {
     cursor: pointer;
+    --background:rgba(0, 0, 0, 0.082) !important;
   }
 }
+.pop-medium {
+  ion-item {
+    color: #636363 !important;
+  }
+} 
+

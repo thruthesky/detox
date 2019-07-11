@@ -26,12 +26,12 @@ export class ProfilePage implements OnInit {
 
   imageOptions: any = {
     header: 'Choose Option',
-    cssClass: 'no-underline-on-last-item no-radio-button list-header-bold list-header-fs-18px list-header-green list-header-bottom-border ion-item-pointer'
+    cssClass: 'no-underline-on-last-item no-radio-button list-header-bold list-header-fs-18px list-header-green pop-medium  list-header-bottom-border ion-item-pointer'
   };
 
   genderOptions: any = {
     header: 'Choose Gender',
-    cssClass: 'no-underline-on-last-item list-header-bold list-header-fs-18px list-header-green list-header-bottom-border ion-item-pointer'
+    cssClass: 'no-underline-on-last-item list-header-bold list-header-fs-18px list-header-green pop-medium  list-header-bottom-border ion-item-pointer'
 
   };
 
