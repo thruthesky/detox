@@ -138,8 +138,7 @@
 
 
 
-      <div class="flex-center mt-3">
-
+      <!-- <div class="flex-center mt-3">
         <ion-checkbox name="agree" mode="md" color="green" formControlName="agree"></ion-checkbox>
         <ion-button fill="clear" mode="ios"
           class="ion-no-margin ion-no-padding mx-2 h-40px fs-14 black bold underline i-color-act-green">
@@ -154,18 +153,22 @@
           에 동의(필수)
         </ion-text>
 
-      </div>
+      </div> -->
       <!-- 
         <ion-text class="d-block mt-2 fs-sm ion-text-center" color="danger" *ngIf=" errors.agree ">{{ errors.agree }}
         </ion-text> -->
-        <ion-text class="d-block ion-text-center" *ngIf=" errors('agree')?.required && submit"color="danger" >
-            {{ validationMessages['agree'].required }}</ion-text>
+        <!-- <ion-text class="d-block ion-text-center" *ngIf=" errors('agree')?.required && submit"color="danger" >
+            {{ validationMessages['agree'].required }}</ion-text> -->
 
 
-
+            <ion-button mode="md" (click)="presentAlert()" expand="full" color="green" class="h-50px mt-4 fs-14">
+              {{ a.t({en: 'Register', ko: '회원가입' })}}
+            </ion-button> 
+            
+<!-- 
       <ion-button mode="md" type="submit" expand="full" color="green" class="h-50px mt-4 fs-14">
         {{ a.t({en: 'Register', ko: '회원가입' })}}
-      </ion-button>
+      </ion-button> -->
 
     </form>
   </section>

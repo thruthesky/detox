@@ -86,9 +86,7 @@ export class RegisterPage implements OnInit, OnDestroy {
       gender: {
         required: a.t({ en: 'Gender selection is required.', ko: '성별 선택은 필수 선택 항목입니다.' }),
       },
-      agree: {
-        required: a.t({ en: 'Terms & Condition selection is required.', ko: '가입약관 동의 선택은 필수 항목입니다.' }),
-      }
+   
     };
 
     // 폼의 항목 중 하나라도 변경되면, 이 이벤트가 발생한다.
@@ -191,6 +189,35 @@ export class RegisterPage implements OnInit, OnDestroy {
   ionViewDidLeave() {
     this.form.reset();
   }
+
+  async presentAlert() {
+    const alert = await this.alert.create({
+      header: 'Terms and Conditions',
+      message: 'By creating an account, you agree to the 7Detox  Terms of Service and Privacy Policy',
+      cssClass: 'i-width-300px ',
+      buttons: [
+        {
+          text: 'Disagree',
+          role: 'cancel',
+          cssClass: 'secondary',
+          handler: () => {
+              return;
+          }
+        }, {
+          text: 'Agree',
+          cssClass: 'green',
+          handler: () => {
+            this.onSubmit();
+          }
+        }
+      ]
+    });
+
+    await alert.present();
+  }
+
+
+
 
 }
 

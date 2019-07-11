@@ -177,9 +177,15 @@
   --width: 300px !important;
 }
 
+.i-width-300px {
+  --min-width: 340px !important;
+}
+
 .promise-pop-height {
   --height: 280px !important;
 }
+
+
 
 .i-px-0 {
   --padding-start: 0 !important;
