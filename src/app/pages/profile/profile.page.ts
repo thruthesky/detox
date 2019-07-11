@@ -21,6 +21,8 @@ export class ProfilePage implements OnInit {
   
 
   imgProfile: SafeResourceUrl;
+  @ViewChild('imgSelect') imgSelect: IonSelect;
+
 
   submit = false;
   form: FormGroup;
@@ -217,6 +219,8 @@ export class ProfilePage implements OnInit {
         if (val === 'U') {
           this.takePicture(CameraSource.Photos);
         }
+
+        this.imgSelect.value = '';
     }
 
 }
