@@ -193,7 +193,7 @@ export class RegisterPage implements OnInit, OnDestroy {
   async presentAlert() {
     const alert = await this.alert.create({
       header: 'Terms and Conditions',
-      message: 'By creating an account, you agree to the 7Detox  Terms of Service and Privacy Policy',
+      message: 'By creating an account, you agree to the 7Detox  <a href="/terms-and-conditions" >Terms of Service</a> and <a href="/privacy-policy">Privacy Policy</a>',
       cssClass: 'i-width-300px ',
       mode: 'ios',
       buttons: [
