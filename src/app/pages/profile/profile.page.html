@@ -11,16 +11,16 @@
       </ion-toolbar>
     </ng-container>
 
-    <ion-item color="green" style="border-top: 1px solid #8fbc78;" class="fs-14"  >
+    <ion-item color="green" style="border-top: 1px solid #8fbc78;" class="fs-14"(click)="onClickCamera()" >
 
       <ion-thumbnail slot="start"  >
 
         <img [src]="imgProfile">
 
         <ion-select [interfaceOptions]="imageOptions" interface="popover"  mode="md">
-          <ion-select-option (ionSelect)="onClickCamera()"><ion-label>Camera</ion-label></ion-select-option>
-          <ion-select-option value="U">
-         Make it... as .... ion-popover..
+          <ion-select-option><ion-label>Camera</ion-label></ion-select-option>
+            <ion-select-option value="U">
+          Make it... as .... ion-popover..
           </ion-select-option>
         </ion-select>
 

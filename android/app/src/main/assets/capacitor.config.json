@@ -1,7 +1,0 @@
-{
-  "appId": "com.7detox.co.kr",
-  "appName": "7Detox",
-  "bundledWebRuntime": false,
-  "npmClient": "npm",
-  "webDir": "www"
-}
