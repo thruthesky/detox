@@ -16,6 +16,10 @@
       <ion-thumbnail slot="start"  (click)="showCameraOptions($event)">
         <img [src]="imgProfile">
       </ion-thumbnail>
+      
+      <input type="file" (change)="onChangeFile($event)" hidden #file>
+
+
       <ion-label color="light" *ngIf=" user ">
         <p>{{ user.display_name }}</p>
         <p class="fs-12">{{ user.user_email }}</p>

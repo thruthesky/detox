@@ -128,9 +128,9 @@ export class RegisterPage implements OnInit, OnDestroy {
 
     const re = await this.presentTermsAndConditionsAlert();
     if ( re.role === 'cancel' ) {
-      // @todo : alert('You must agree to register');
+      alert('You must agree to register');
       return;
-    }
+    } 
 
     const data: UserRegisterOptions = {
       user_login: this.form.value.user_email,
@@ -212,10 +212,7 @@ export class RegisterPage implements OnInit, OnDestroy {
         }, {
           text: 'Agree',
           role: 'agree',
-          cssClass: 'green',
-          handler: () => {
-            // this.onSubmit();
-          }
+          cssClass: 'green'
         }
       ]
     });
