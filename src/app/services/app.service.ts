@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
-import { MenuController } from '@ionic/angular';
-import { WordpressApiService } from 'modules/wordpress-api/wordpress-api';
+import { MenuController, AlertController } from '@ionic/angular';
+import { WordpressApiService } from 'modules/wordpress-api/wordpress-api.service';
 import { environment } from 'src/environments/environment';
 import { ErrorObject } from 'modules/wordpress-api/wordpress-api.interface';
 import { Router } from '@angular/router';
+import { AlertOptions } from '@ionic/core';
 
 @Injectable({ providedIn: 'root' })
 export class AppService {
@@ -12,7 +13,8 @@ export class AppService {
     constructor(
         private router: Router,
         private sideMenu: MenuController,
-        public wp: WordpressApiService
+        public wp: WordpressApiService,
+        private alertController: AlertController
     ) {
         if (!this.env.lang) {
             this.env.lang = this.getBrowserLanguage();
@@ -104,8 +106,21 @@ export class AppService {
 
     error(e: ErrorObject): void {
         console.error('Got error on app.service.ts::e => ', e);
-        alert(e.errstring);
+        this.alert({ header: e.errstring });
     }
+
+
+  /**
+   * This simply alerts.
+   * @param options Ionic Alert Options
+   */
+  async alert(options: AlertOptions) {
+    if (!options.buttons) {
+      options.buttons = [{ text: this.t({ en: 'Confirm', ko: '확인' }) }];
+    }
+    (await this.alertController.create(options)).present();
+  }
+
 
     open(url: string): void {
         this.router.navigateByUrl(url);
@@ -119,7 +134,7 @@ export class AppService {
         this.wp.logout();
         this.open('/');
     }
-    
+
 }
 
 

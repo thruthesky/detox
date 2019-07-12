@@ -9,8 +9,7 @@ import { ProfilePage } from './profile.page';
 import { HeaderModule } from 'src/app/components/header/header.module';
 import { DesktopHomeFooterModule } from 'src/app/components/desktop-home-footer/desktop-home-footer.module';
 import { MyPromiseModule } from 'src/app/components/my-promise/my-promise.module';
-import { CameraPopoverModule } from 'src/app/components/camera-popover/camera-popover.module';
-import { CameraPopoverComponent } from 'src/app/components/camera-popover/camera-popover.component';
+import { FileUploadPopoverModule } from 'src/app/components/file-upload-popover/file-upload-popover.module';
 
 const routes: Routes = [
   {
@@ -29,9 +28,8 @@ const routes: Routes = [
     HeaderModule,
     DesktopHomeFooterModule,
     MyPromiseModule,
-    CameraPopoverModule,
+    FileUploadPopoverModule,
   ],
-  entryComponents: [ CameraPopoverComponent ],
   declarations: [ProfilePage]
 })
 export class ProfilePageModule { }

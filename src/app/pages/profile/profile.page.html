@@ -13,11 +13,10 @@
 
     <ion-item color="green" style="border-top: 1px solid #8fbc78;" class="fs-14">
 
-      <ion-thumbnail class="pointer" slot="start" (click)="showCameraOptions($event)">
-        <img [src]="imgProfile">
+      <ion-thumbnail class="pointer" slot="start" (click)="onClickPrimaryPhoto($event)">
+        <img [src]=" profilePhotoUrl ">
       </ion-thumbnail>
 
-      <input type="file" (change)="onChangeFile($event)" hidden #file>
 
 
       <ion-label color="light" *ngIf=" user ">

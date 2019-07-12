@@ -118,13 +118,19 @@
 
             </ion-col>
             <ion-col size="6" class="flex-column-center">
-              <div class="flex-center">
-                <ion-radio color="success" value="F" mode="md" class="h-15px w-15px"></ion-radio>
-                <ion-text class="ml-1 dark-gray">{{ a.t({ en: 'Female', ko: '여자' }) }}</ion-text>
-              </div>
-              <div>
-                <ion-img src="/assets/img/icons/female.png"></ion-img>
-              </div>
+              <ion-item>
+                <ion-label>
+
+                  <div class="flex-center">
+                    <ion-radio color="success" value="F" mode="md" class="h-15px w-15px"></ion-radio>
+                    <ion-text class="ml-1 dark-gray">{{ a.t({ en: 'Female', ko: '여자' }) }}</ion-text>
+                  </div>
+                  <div>
+                    <ion-img src="/assets/img/icons/female.png"></ion-img>
+                  </div>
+                </ion-label>
+              </ion-item>
+
             </ion-col>
           </ion-row>
         </ion-grid>
@@ -132,9 +138,9 @@
       <!-- <ion-text text-center class=" mt-2 fs-sm" color="danger" *ngIf=" errors.gender ">{{ errors.gender }}
       </ion-text> -->
 
-       <ion-text class="d-block ion-text-center" *ngIf=" errors('gender')?.required && submit"color="danger" >
-          {{ validationMessages['gender'].required }}</ion-text>
-       
+      <ion-text class="d-block ion-text-center" *ngIf=" errors('gender')?.required && submit" color="danger">
+        {{ validationMessages['gender'].required }}</ion-text>
+
 
 
 
@@ -157,15 +163,15 @@
       <!-- 
         <ion-text class="d-block mt-2 fs-sm ion-text-center" color="danger" *ngIf=" errors.agree ">{{ errors.agree }}
         </ion-text> -->
-        <!-- <ion-text class="d-block ion-text-center" *ngIf=" errors('agree')?.required && submit"color="danger" >
+      <!-- <ion-text class="d-block ion-text-center" *ngIf=" errors('agree')?.required && submit"color="danger" >
             {{ validationMessages['agree'].required }}</ion-text> -->
 
 
-            <ion-button type="submit" mode="md" expand="full" color="green" class="h-50px mt-4 fs-14">
-              {{ a.t({en: 'Register', ko: '회원가입' })}}
-            </ion-button> 
-            
-<!-- 
+      <ion-button type="submit" mode="md" expand="full" color="green" class="h-50px mt-4 fs-14">
+        {{ a.t({en: 'Register', ko: '회원가입' })}}
+      </ion-button>
+
+      <!-- 
       <ion-button mode="md" type="submit" expand="full" color="green" class="h-50px mt-4 fs-14">
         {{ a.t({en: 'Register', ko: '회원가입' })}}
       </ion-button> -->

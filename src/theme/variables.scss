@@ -550,6 +550,27 @@
   right: 0;
 }
 
+.cover-parent {
+  position: absolute !important;
+  z-index: 123456;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+}
+
+.opacity-0 {
+  opacity: 0 !important;
+}
+
+.opacity-001 {
+  opacity: 0.01 !important;
+}
+
+.opacity-05 {
+  opacity: 0.5 !important;
+}
+
 .z-1000 {
   z-index: 1000;
 }
@@ -757,8 +778,9 @@
   background-attachment: center;
   background-size: cover;
   background-repeat: no-repeat;
-
 }
+
+
 
 
 
@@ -1439,3 +1461,4 @@ p {
     color: #636363 !important;
   }
 }
+
