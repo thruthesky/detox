@@ -130,7 +130,6 @@ export class ProfilePage implements OnInit {
 
   }
 
-
   errors(formName: string): any {
     return this.form.get(formName).errors;
   }
@@ -151,7 +150,6 @@ export class ProfilePage implements OnInit {
   ngOnInit() {
   }
 
-
   onSubmit() {
 
     this.submit = true;
@@ -169,7 +167,6 @@ export class ProfilePage implements OnInit {
       height: this.form.value.height,
       weight: this.form.value.weight
     };
-
 
     this.a.wp.profileUpdate(reqData).subscribe(async (res) => {
 
@@ -191,8 +188,7 @@ export class ProfilePage implements OnInit {
     const popover = await this.popoverController.create({
       component: MyPromiseComponent,
       event: ev,
-      cssClass: 'promise-pop-width promise-pop-height',
-      translucent: true
+      cssClass: 'promise-pop-width promise-pop-height popover-center  ',
     });
     await popover.present();
     const data = await popover.onWillDismiss();
@@ -202,19 +198,16 @@ export class ProfilePage implements OnInit {
 
 
   async onClickCamera() {
-     await Plugins.Camera.getPhoto({
+      await Plugins.Camera.getPhoto({
       quality: 100,
       allowEditing: false,
       resultType: CameraResultType.DataUrl,
       source: CameraSource.Camera,
       correctOrientation: true,
 
-    }
-    
-    ).then(
+    }).then(
       data => {
-        this.imgProfile = this.sanitizer.bypassSecurityTrustResourceUrl(data && (data.dataUrl));
-        
+          this.imgProfile = this.sanitizer.bypassSecurityTrustResourceUrl(data && (data.dataUrl));
       },err => {
         console.log('error:',err);
       }
@@ -227,21 +220,21 @@ export class ProfilePage implements OnInit {
       component: CameraPopoverComponent,
       event: ev,
       translucent: true,
+      cssClass: 'popover-center ',
+    
     });
     popover.present();
     return await popover.onDidDismiss().then(option => {
-      console.log(option);
       if( option.data === 'camera') {
         this.onClickCamera();
       } 
       if( option.data === 'upload') {
         this.file.nativeElement.click();
-      } 
-      
+      }  
     })
   }
 
-  onChangeFile(event) {
+  onChangeFile(event: any) {
     if (event.target.files && event.target.files[0]) {
       var reader = new FileReader();
       reader.readAsDataURL(event.target.files[0]); // read file as data url
@@ -250,7 +243,6 @@ export class ProfilePage implements OnInit {
       }
     }
   }
-  
 
 }
 

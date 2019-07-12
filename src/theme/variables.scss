@@ -609,6 +609,7 @@
 .border-bottom-green {
   border-bottom: 1px solid #7db262;
 }
+
 .border-bottom-light-gray {
   border-bottom: 1px solid #dedede;
 }
@@ -1196,6 +1197,23 @@
   height: 340px;
 }
 
+
+.popover-center {
+     .popover-content {
+
+      @media all and (min-width: 768px) {
+        top: 50% !important;
+        left: 50% !important;
+        transform: translate(-50%, -50%) !important;          
+      }
+
+        top: 10% !important;
+        left: 50% !important;
+        transform: translate(-50%, -10%) !important;          
+     }
+ }
+
+
 .top-145px {
   top: 145px;
 }
@@ -1372,7 +1390,7 @@ p {
 }
 
 .no-radio-button {
-  ion-radio{
+  ion-radio {
     height: 0 !important;
     width: 0 !important;
   }
@@ -1385,30 +1403,32 @@ p {
 }
 
 .list-header-green {
-  ion-list-header{
-    color: var( --ion-color-success);
+  ion-list-header {
+    color: var(--ion-color-success);
   }
 }
 
 .list-header-fs-18px {
-  ion-list-header{
+  ion-list-header {
     font-size: 18px !important;
   }
 }
+
 .list-header-bottom-border {
-  ion-list-header{
+  ion-list-header {
     border-bottom: 1px solid #dedede;
   }
 }
+
 .ion-item-pointer {
   ion-item:hover {
     cursor: pointer;
-    --background:rgba(0, 0, 0, 0.082) !important;
+    --background: rgba(0, 0, 0, 0.082) !important;
   }
 }
+
 .pop-medium {
   ion-item {
     color: #636363 !important;
   }
-} 
-
+}
