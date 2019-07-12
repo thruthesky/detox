@@ -1200,18 +1200,25 @@
 
 .popover-center {
      .popover-content {
-
-      @media all and (min-width: 768px) {
         top: 50% !important;
         left: 50% !important;
         transform: translate(-50%, -50%) !important;          
-      }
-
-        top: 10% !important;
-        left: 50% !important;
-        transform: translate(-50%, -10%) !important;          
      }
  }
+
+ .popover-center-promise {
+  .popover-content {
+
+   @media all and (min-width: 768px) {
+     top: 50% !important;
+     left: 50% !important;
+     transform: translate(-50%, -50%) !important;          
+   }
+     top: 10% !important;
+     left: 50% !important;
+     transform: translate(-50%, -10%) !important;          
+  }
+}
 
 
 .top-145px {

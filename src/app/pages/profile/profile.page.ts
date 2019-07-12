@@ -181,21 +181,17 @@ export class ProfilePage implements OnInit {
     });
   }
 
-
-
   async onClickMyPromise(ev: any) {
-
+    
     const popover = await this.popoverController.create({
       component: MyPromiseComponent,
       event: ev,
-      cssClass: 'promise-pop-width promise-pop-height popover-center  ',
+      cssClass: 'promise-pop-width promise-pop-height popover-center-promise  ',
     });
     await popover.present();
     const data = await popover.onWillDismiss();
     console.log('data: ', data);
   }
-
-
 
   async onClickCamera() {
       await Plugins.Camera.getPhoto({
