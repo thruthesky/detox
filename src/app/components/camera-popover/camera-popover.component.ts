@@ -9,11 +9,11 @@ import { PopoverController } from '@ionic/angular';
 export class CameraPopoverComponent implements OnInit {
 
   constructor(
-   
-    public popoverController: PopoverController,
-    ) { }
 
-  ngOnInit() {}
+    public popoverController: PopoverController,
+  ) { }
+
+  ngOnInit() { }
 
   onClickImgOption(option: string) {
     this.popoverController.dismiss(option);
