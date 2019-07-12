@@ -212,14 +212,13 @@ export class ProfilePage implements OnInit {
     }
     
     ).then(
-      e => {
-        this.imgProfile = this.sanitizer.bypassSecurityTrustResourceUrl(e && (e.dataUrl));
+      data => {
+        this.imgProfile = this.sanitizer.bypassSecurityTrustResourceUrl(data && (data.dataUrl));
         
       },err => {
         console.log('error:',err);
       }
-    ) ;
-
+    );
   }
 
 
