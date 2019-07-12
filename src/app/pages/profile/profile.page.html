@@ -11,19 +11,10 @@
       </ion-toolbar>
     </ng-container>
 
-    <ion-item color="green" style="border-top: 1px solid #8fbc78;" class="fs-14"(click)="onClickCamera()" >
+    <ion-item color="green" style="border-top: 1px solid #8fbc78;" class="fs-14" >
 
-      <ion-thumbnail slot="start"  >
-
+      <ion-thumbnail slot="start"  (click)="showCameraOptions($event)">
         <img [src]="imgProfile">
-
-        <ion-select [interfaceOptions]="imageOptions" interface="popover"  mode="md">
-          <ion-select-option><ion-label>Camera</ion-label></ion-select-option>
-            <ion-select-option value="U">
-          Make it... as .... ion-popover..
-          </ion-select-option>
-        </ion-select>
-
       </ion-thumbnail>
       <ion-label color="light" *ngIf=" user ">
         <p>{{ user.display_name }}</p>
