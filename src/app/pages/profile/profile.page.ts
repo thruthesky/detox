@@ -42,8 +42,10 @@ export class ProfilePage implements OnInit {
     a.wp.profile().subscribe(user => {
 
       console.log('user: ', user.photoURL);
+      if(user.photoURL) {
+        this.profilePhotoUrl = user.photoURL;
+      }
 
-      this.profilePhotoUrl = user.photoURL;
 
       /**
        * @todo set all the form data.

@@ -8,7 +8,7 @@
 
 
   <ion-toolbar *ngIf="a.isDesktop" color="green" class="mobile-width mt-md-70px" text-center>
-    <ion-title>이메일 주소</ion-title>
+    <ion-title>{{ a.t({ en: 'Register', ko: '레지스터' }) }}</ion-title>
   </ion-toolbar>
 
   <section class="register mb-md-340px mobile-width px-23px pb-5 pt-1 border-md-gray  bg-light-gray">
@@ -148,31 +148,30 @@
 
 
 
-      <div class="flex-center mt-3 ml-1 " >
+      <div class="flex-center mt-3  " >
       
         <ion-checkbox  checked="false" mode="md" color="green" formControlName="agree"></ion-checkbox>
         
-        <ion-label class="ml-2 fs-14">
+        <ion-label class="ml-2 fs-14 ion-text-justify">
           
           <ion-text class="bold underline pointer" color="dark">{{ a.t( {en: 'Terms of service', ko: '이용약관' }) }}</ion-text> 
           <ion-text color="dark"> {{ a.t( {en: 'and', ko: '및'}) }} </ion-text> 
           <ion-text class="bold underline pointer" color="dark">{{ a.t({en:'Privacy Policy' ,ko: '개인 정보 정책' }) }}</ion-text> 
-          <ion-text color="dark">{{ a.t({en: 'agreement' ,ko: '에 동의(필수)' }) }}</ion-text> 
+          <ion-text color="dark"> {{ a.t({en: 'Agreement' ,ko: '에 동의(필수)' }) }}</ion-text> 
         </ion-label>
     
       </div>
     
-      <ion-text class="d-block ion-text-center" *ngIf=" errors('agree')?.required && submit" color="danger">
-          {{ validationMessages['agree'].required }}</ion-text>
+      <ng-container *ngIf=" errors('agree') ">
+          <ion-text *ngIf=" errors('agree')?.required && submit" color="danger">
+            {{ validationMessages['agree'].required }}</ion-text>
+      </ng-container>
+
+
   
-  
 
 
-
-  
-
-
-      <ion-button type="submit" mode="md" expand="full" color="green" class="h-50px mt-5 fs-14">
+      <ion-button type="submit" mode="md" expand="full" color="green" class="h-50px mt-5 fs-14 no-box-shadow">
         {{ a.t({en: 'Register', ko: '회원가입' })}}
       </ion-button>
 
