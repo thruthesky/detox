@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { PopoverController } from '@ionic/angular';
+import { PopoverController, NavParams } from '@ionic/angular';
 
 
 @Component({
@@ -9,10 +9,19 @@ import { PopoverController } from '@ionic/angular';
 })
 export class MyPromiseComponent implements OnInit {
 
+  promiseMessage: string;
+
 
   constructor(
-    public popoverCtrl: PopoverController
-  ) { }
+    public popoverCtrl: PopoverController,
+    public navP: NavParams
+  ) { 
+
+    if (this.navP.get('msg'))  {
+      this.promiseMessage = this.navP.get('msg');
+    }
+    
+  }
 
   ngOnInit() { }
 

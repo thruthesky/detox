@@ -17,6 +17,9 @@ export class ProfilePage implements OnInit {
 
   //
   profilePhotoUrl = '/assets/img/photo.png';
+  promiseMessage: string;
+
+
 
   submit = false;
   form: FormGroup;
@@ -175,10 +178,13 @@ export class ProfilePage implements OnInit {
       component: MyPromiseComponent,
       event: ev,
       cssClass: 'promise-pop-width promise-pop-height popover-center-promise  ',
+      componentProps:{msg: this.promiseMessage}
     });
     await popover.present();
     const data = await popover.onWillDismiss();
-    console.log('data: ', data);
+    console.log('data: ', data.data);
+    this.promiseMessage = data.data;
+
   }
 
   async onClickPrimaryPhoto(ev: any) {
