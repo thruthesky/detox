@@ -157,7 +157,8 @@ export class ProfilePage implements OnInit {
       gender: this.form.value.gender,
       birthday: this.form.value.birthday,
       height: this.form.value.height,
-      weight: this.form.value.weight
+      weight: this.form.value.weight,
+      promise: this.promiseMessage,
     };
 
     this.a.wp.profileUpdate(reqData).subscribe(async (res) => {
