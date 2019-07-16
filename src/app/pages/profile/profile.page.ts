@@ -17,7 +17,7 @@ export class ProfilePage implements OnInit {
 
   //
   profilePhotoUrl = '/assets/img/photo.png';
-  promiseMessage: string;
+
 
 
 
@@ -31,6 +31,9 @@ export class ProfilePage implements OnInit {
     cssClass: 'no-underline-on-last-item list-header-bold list-header-fs-18px list-header-green pop-medium  list-header-bottom-border ion-item-pointer'
   };
 
+
+  // promise
+  promise = '';
   constructor(
     public a: AppService,
     public sanitizer: DomSanitizer,
@@ -42,8 +45,8 @@ export class ProfilePage implements OnInit {
 
     a.wp.profile().subscribe(user => {
 
-      console.log('user: ', user.photoURL);
-      if(user.photoURL) {
+      console.log('user: ', user);
+      if (user.photoURL) {
         this.profilePhotoUrl = user.photoURL;
       }
 
@@ -157,8 +160,7 @@ export class ProfilePage implements OnInit {
       gender: this.form.value.gender,
       birthday: this.form.value.birthday,
       height: this.form.value.height,
-      weight: this.form.value.weight,
-      promise: this.promiseMessage,
+      weight: this.form.value.weight
     };
 
     this.a.wp.profileUpdate(reqData).subscribe(async (res) => {
@@ -178,13 +180,12 @@ export class ProfilePage implements OnInit {
     const popover = await this.popoverController.create({
       component: MyPromiseComponent,
       event: ev,
-      cssClass: 'promise-pop-width promise-pop-height popover-center-promise  ',
-      componentProps:{msg: this.promiseMessage}
+      cssClass: 'promise-pop-width promise-pop-height popover-center-promise  '
     });
     await popover.present();
     const data = await popover.onWillDismiss();
     console.log('data: ', data.data);
-    this.promiseMessage = data.data;
+    this.promise = data.data;
 
   }
 

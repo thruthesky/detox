@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PopoverController, NavParams } from '@ionic/angular';
+import { AppService } from 'src/app/services/app.service';
 
 
 @Component({
@@ -9,20 +10,30 @@ import { PopoverController, NavParams } from '@ionic/angular';
 })
 export class MyPromiseComponent implements OnInit {
 
-  promiseMessage: string;
+  promise: string;
 
 
   constructor(
-    public popoverCtrl: PopoverController,
-    public navP: NavParams
-  ) { 
 
-    if (this.navP.get('msg'))  {
-      this.promiseMessage = this.navP.get('msg');
-    }
-    
+    public popoverCtrl: PopoverController,
+    public a: AppService
+
+  ) {
+
+
+
   }
 
   ngOnInit() { }
+
+
+  onSubmit() {
+    console.log('promise: ', this.promise);
+    this.a.wp.profileUpdate({ promise: this.promise }).subscribe(res => {
+      console.log('res: ', res);
+      this.popoverCtrl.dismiss(this.promise, 'success');
+    }, e => this.a.error(e));
+  }
+
 
 }

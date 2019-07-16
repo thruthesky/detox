@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MyPromiseComponent } from './my-promise.component';
 import { IonicModule } from '@ionic/angular';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [ MyPromiseComponent ],
@@ -9,7 +10,8 @@ import { IonicModule } from '@ionic/angular';
   entryComponents: [ MyPromiseComponent ],
   imports: [
     CommonModule,
-    IonicModule
+    IonicModule,
+    FormsModule
   ]
 })
 export class MyPromiseModule { }

@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { AppService } from 'src/app/services/app.service';
 import { UserRegisterOptions } from 'modules/wordpress-api/wordpress-api.interface';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators, AbstractControl } from '@angular/forms';
 import { AlertController } from '@ionic/angular';
 import { Subscription } from 'rxjs';
 
@@ -28,12 +28,20 @@ export class RegisterPage implements OnInit, OnDestroy {
     private alert: AlertController
   ) {
 
-    
 
 
     this.form = fb.group({
       user_pass: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(32)]],
-      user_pass_confirm: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(32)]],
+      user_pass_confirm: ['', [Validators.required, (el: AbstractControl) => {
+        if (el.dirty) {
+          if (el.value === this.form.get('user_pass').value) {
+            return null;
+          }
+          return { passwordNotMatch: true };
+        }
+        return null;
+      }
+      ]],
       user_email: ['', [Validators.required, Validators.minLength(8), Validators.maxLength(64)]],
       display_name: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(64)]],
       mobile: ['', [Validators.required, Validators.pattern('[0-9+]*'), Validators.minLength(8), Validators.maxLength(15)]],
@@ -41,7 +49,6 @@ export class RegisterPage implements OnInit, OnDestroy {
       agree: ['', [Validators.required]],
     });
 
-  
     this.validationMessages = {
       user_pass: {
         required: a.t({ en: 'Password is required.', ko: '비밀번호는 필수 입력 항목입니다.' }),
@@ -50,9 +57,10 @@ export class RegisterPage implements OnInit, OnDestroy {
       },
       user_pass_confirm: {
         required: a.t({ en: 'Password confirm is required.', ko: '비밀번호 확인은 필수 입력 항목입니다.' }),
-        minlength: a.t({ en: 'Password is too short.', ko: '비밀번호가 너무 짧습니다.' }),
-        maxlength: a.t({ en: 'Password is too long.', ko: '비밀번호가 너무 깁니다.' }),
-        pattern: a.t({ en: 'Password and Confirm Password does not match.', ko: '비밀번호가 너무 깁니다.' }),
+        // minlength: a.t({ en: 'Password is too short.', ko: '비밀번호가 너무 짧습니다.' }),
+        // maxlength: a.t({ en: 'Password is too long.', ko: '비밀번호가 너무 깁니다.' }),
+        // pattern: a.t({ en: 'Password and Confirm Password does not match.', ko: '비밀번호가 너무 깁니다.' }),
+        passwordNotMatch: 'Password confirm does not match to password!'
       },
       user_email: {
         required: a.t({ en: 'Email is required.', ko: '이메일 주소는 필수 입력 항목입니다.' }),
@@ -76,11 +84,13 @@ export class RegisterPage implements OnInit, OnDestroy {
       agree: {
         required: a.t({ en: 'Terms and Conditions is required.', ko: '이용 약관이 필요합니다.' }),
       },
-   
+
     };
 
-  
-
+    this.form.get('user_pass').valueChanges.subscribe(e => {
+      console.log('listen user_pass changes');
+      this.form.get('user_pass_confirm').updateValueAndValidity({ onlySelf: true });
+    });
 
 
   }
@@ -98,7 +108,7 @@ export class RegisterPage implements OnInit, OnDestroy {
 
 
 
-   onSubmit() {
+  onSubmit() {
     this.submit = true;
     console.log('onSubmit()');
 
@@ -110,7 +120,7 @@ export class RegisterPage implements OnInit, OnDestroy {
       return;
     }
 
- 
+
     const data: UserRegisterOptions = {
       user_login: this.form.value.user_email,
       user_pass: this.form.value.user_pass,
