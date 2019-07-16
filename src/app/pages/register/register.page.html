@@ -148,15 +148,16 @@
 
 
 
-      <div class="flex-center mt-3 ml-1" >
+      <div class="flex-center mt-3 ml-1 " >
       
-        <ion-checkbox checked="false" name="agree" mode="md" color="green" formControlName="agree"></ion-checkbox>
+        <ion-checkbox  checked="false" mode="md" color="green" formControlName="agree"></ion-checkbox>
         
-        <ion-label class="ml-2 fs-14" >
-          <ion-text class="bold underline pointer" color="dark"> {{ a.t( {en: 'Terms of service', ko: '이용약관' }) }}</ion-text> 
+        <ion-label class="ml-2 fs-14">
+          
+          <ion-text class="bold underline pointer" color="dark">{{ a.t( {en: 'Terms of service', ko: '이용약관' }) }}</ion-text> 
           <ion-text color="dark"> {{ a.t( {en: 'and', ko: '및'}) }} </ion-text> 
           <ion-text class="bold underline pointer" color="dark">{{ a.t({en:'Privacy Policy' ,ko: '개인 정보 정책' }) }}</ion-text> 
-          <ion-text color="dark">{{ a.t({en: 'Agreement' ,ko: '에 동의(필수)' }) }}</ion-text> 
+          <ion-text color="dark">{{ a.t({en: 'agreement' ,ko: '에 동의(필수)' }) }}</ion-text> 
         </ion-label>
     
       </div>

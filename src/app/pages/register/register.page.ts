@@ -28,21 +28,7 @@ export class RegisterPage implements OnInit, OnDestroy {
     private alert: AlertController
   ) {
 
-    // this.subscriptionUserChange = this.a.wp.userChange.subscribe(user => {
-    //   if (user) {
-    //     this.a.wp.profile().subscribe(profile => {
-    //       console.log('profile: ', profile);
-    //       this.form.patchValue({
-    //         user_email: profile.user_email,
-    //         display_name: profile.display_name,
-    //         mobile: profile.mobile,
-    //         gender: profile.gender
-    //       });
-    //     }, e => this.a.error(e));
-    //   } else {
-    //     this.form.reset()
-    //   }
-    // });
+    
 
 
     this.form = fb.group({
@@ -55,7 +41,7 @@ export class RegisterPage implements OnInit, OnDestroy {
       agree: ['', [Validators.required]],
     });
 
-    // this.formKeys = Object.keys(this.form.value);
+  
     this.validationMessages = {
       user_pass: {
         required: a.t({ en: 'Password is required.', ko: '비밀번호는 필수 입력 항목입니다.' }),
@@ -92,14 +78,7 @@ export class RegisterPage implements OnInit, OnDestroy {
    
     };
 
-    // 폼의 항목 중 하나라도 변경되면, 이 이벤트가 발생한다.
-    // this.form.valueChanges.subscribe(res => {
-    //   console.log('form: ', this.form.value);
-    //   if (!this.form) {
-    //     return;
-    //   }
-    //   // this.validate();
-    // });
+  
 
 
 
