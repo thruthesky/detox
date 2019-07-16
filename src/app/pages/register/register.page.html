@@ -53,7 +53,8 @@
         <ion-item mode="ios" lines="none">
           <ion-label position="floating" color="medium">{{ a.t({en: 'Password Confirm', ko: '비밀번호 재확인'}) }}
           </ion-label>
-          <ion-input pattern="{{password.value}}"  name="user_pass_confirm" formControlName="user_pass_confirm"></ion-input>
+          <ion-input pattern="{{password.value}}" name="user_pass_confirm" formControlName="user_pass_confirm">
+          </ion-input>
         </ion-item>
 
         <ng-container *ngIf=" errors('user_pass_confirm') ">
@@ -63,8 +64,8 @@
             {{ validationMessages['user_pass_confirm'].minlength }}</ion-text>
           <ion-text *ngIf=" errors('user_pass_confirm')?.maxlength " color="danger">
             {{ validationMessages['user_pass_confirm'].maxlength }}</ion-text>
-            <ion-text *ngIf=" errors('user_pass_confirm')?.pattern && submit " color="danger">
-                {{ validationMessages['user_pass_confirm'].pattern }}</ion-text>
+          <ion-text *ngIf=" errors('user_pass_confirm')?.pattern && submit " color="danger">
+            {{ validationMessages['user_pass_confirm'].pattern }}</ion-text>
         </ng-container>
 
 
@@ -106,7 +107,7 @@
 
 
       <ion-radio-group name="gender" formControlName="gender">
-        <ion-grid >
+        <ion-grid>
           <ion-row>
 
             <ion-col size="6" class="flex-column-center bg-light-gray">
@@ -114,7 +115,7 @@
                 <ion-label>
 
                   <div class="flex-center">
-                    <ion-radio class="h-15px w-15px" color="success" value="M" mode="md" ></ion-radio>
+                    <ion-radio class="h-15px w-15px" color="success" value="M" mode="md"></ion-radio>
                     <ion-text class="ml-1 dark-gray">{{ a.t({ en: 'Male', ko: '남성' }) }}</ion-text>
                   </div>
                   <div>
@@ -125,11 +126,11 @@
             </ion-col>
 
             <ion-col size="6" class="flex-column-center">
-              <ion-item class="mt-0 no-border bg-light-gray" lines="none" > 
+              <ion-item class="mt-0 no-border bg-light-gray" lines="none">
                 <ion-label>
 
                   <div class="flex-center">
-                    <ion-radio class="h-15px w-15px" color="success" value="F" mode="md" ></ion-radio>
+                    <ion-radio class="h-15px w-15px" color="success" value="F" mode="md"></ion-radio>
                     <ion-text class="ml-1 dark-gray">{{ a.t({ en: 'Female', ko: '여자' }) }}</ion-text>
                   </div>
                   <div>
@@ -149,35 +150,33 @@
 
 
 
-
-      <div class="flex-center mt-3  " >
-      
-        <ion-checkbox  checked="false" mode="md" color="green" formControlName="agree"></ion-checkbox>
-        
-        <ion-label class="ml-2 fs-14 ion-text-justify">
-          
-          <ion-text class="bold underline pointer" color="dark">{{ a.t( {en: 'Terms of service', ko: '이용약관' }) }}</ion-text> 
-          <ion-text color="dark"> {{ a.t( {en: 'and', ko: '및'}) }} </ion-text> 
-          <ion-text class="bold underline pointer" color="dark">{{ a.t({en:'Privacy Policy' ,ko: '개인 정보 정책' }) }}</ion-text> 
-          <ion-text color="dark"> {{ a.t({en: 'Agreement' ,ko: '에 동의(필수)' }) }}</ion-text> 
-        </ion-label>
     
-      </div>
+        <div class="flex-center mt-3  ">
+          <ion-checkbox class="mx-2 min-width-18px" checked="false" mode="md" color="green" formControlName="agree"></ion-checkbox>
+          <ion-label class="fs-14">
+            <ion-text class="bold underline pointer" color="dark">{{ a.t( {en: 'Terms of service', ko: '이용약관' }) }}
+            </ion-text>
+            <ion-text color="dark"> {{ a.t( {en: 'and', ko: '및'}) }} </ion-text>
+            <ion-text class="bold underline pointer" color="dark">{{ a.t({en:'Privacy Policy' ,ko: '개인 정보 정책' }) }}
+            </ion-text>
+            <ion-text color="dark"> {{ a.t({en: 'Agreement' ,ko: '에 동의(필수)' }) }}</ion-text>
+          </ion-label>
+        </div>
     
       <ng-container *ngIf=" errors('agree') ">
-          <ion-text *ngIf=" errors('agree')?.required && submit" color="danger">
-            {{ validationMessages['agree'].required }}</ion-text>
+        <ion-text class="d-block mt-1" *ngIf=" errors('agree')?.required && submit" color="danger" text-center>
+          {{ validationMessages['agree'].required }}</ion-text>
       </ng-container>
 
 
-  
+
 
 
       <ion-button type="submit" mode="md" expand="full" color="green" class="h-50px mt-5 fs-14 no-box-shadow">
         {{ a.t({en: 'Register', ko: '회원가입' })}}
       </ion-button>
 
-    
+
 
     </form>
   </section>

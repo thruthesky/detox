@@ -74,7 +74,7 @@ export class RegisterPage implements OnInit, OnDestroy {
         required: a.t({ en: 'Gender selection is required.', ko: '성별 선택은 필수 선택 항목입니다.' }),
       },
       agree: {
-        required: a.t({ en: 'You must agree in the terms and conditions.', ko: '이용 약관에 동의해야합니다.' }),
+        required: a.t({ en: 'Terms and Conditions is required.', ko: '이용 약관이 필요합니다.' }),
       },
    
     };
