@@ -9,8 +9,9 @@
   </ion-toolbar>
 
 
-  <section class="register mb-md-340px mobile-width px-23px pb-5 pt-1 border-md-gray  bg-light-gray">
+  <section class="register mb-md-340px md-mobile-width px-23px pb-5 pt-1 border-md-gray  bg-light-gray">
     <form [formGroup]=" form " (ngSubmit)=" onSubmit() ">
+     
       <ion-item mode="ios" lines="none">
         <ion-label position="floating" color="medium">{{ a.t({en: 'Email', ko: '이메일 주소'}) }}</ion-label>
         <ion-input class="no-border" formControlName="user_email"></ion-input>
@@ -25,13 +26,11 @@
         {{ a.t({en: 'Login', ko: '로그인' })}}
       </ion-button>
 
-
-      <ion-text class="d-block h-50px lh-50px  ion-text-center" color="dark">
-        Some texthere
+      <ion-text class="d-block h-50px lh-50px fs-14 underline bold  ion-text-center pointer">
+          로그인로그인
       </ion-text>
-
      
-      <ion-item class="kakao" no-padding button>
+      <ion-item class="kakao h-50px bold " no-padding button>
         <ion-thumbnail class="flex-column-center h-50px w-50px" style="border-right: 1px solid rgba(255, 255, 255, 0.2) " slot="start" no-margin>
           <img class="hw-30px" src="/assets/img/icons/kakao.png" />
         </ion-thumbnail>
@@ -42,7 +41,7 @@
       </ion-item>
 
        
-      <ion-item class="naver" no-padding button>
+      <ion-item class="naver h-50px  white" no-padding button>
           <ion-thumbnail class="flex-column-center h-50px w-50px" style="border-right: 1px solid rgba(255, 255, 255, 0.2) " slot="start" no-margin>
             <img class="hw-40px" src="/assets/img/icons/naver.png" />
           </ion-thumbnail>
@@ -53,10 +52,11 @@
         </ion-item>
 
       
-        <ion-button type="submit" mode="md" expand="full" fill="outline" color="green" class="h-50px mt-5 fs-14 no-box-shadow">
-            {{ a.t({en: 'Button', ko: '회원가입' })}}
-          </ion-button>
-    
+       
+
+    <ion-button class="mt-2 h-50px   bg-white" expand="block" mode="md" fill="outline" color="green">
+        {{ a.t({en: 'Login', ko: '로그인' })}}          
+    </ion-button>
 
      
    
