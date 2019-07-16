@@ -148,37 +148,34 @@
 
 
 
-      <!-- <div class="flex-center mt-3">
-        <ion-checkbox name="agree" mode="md" color="green" formControlName="agree"></ion-checkbox>
-        <ion-button fill="clear" mode="ios"
-          class="ion-no-margin ion-no-padding mx-2 h-40px fs-14 black bold underline i-color-act-green">
-          이용약관</ion-button>
-        <ion-text style="display: inline-block;line-height: 40px">
-          및
-        </ion-text>
-        <ion-button fill="clear" mode="ios"
-          class="ion-no-margin ion-no-padding mx-2 h-40px fs-14 black bold underline i-color-act-green">
-          개인정보 수집</ion-button>
-        <ion-text style="display: inline-block;line-height: 40px">
-          에 동의(필수)
-        </ion-text>
-
-      </div> -->
-      <!-- 
-        <ion-text class="d-block mt-2 fs-sm ion-text-center" color="danger" *ngIf=" errors.agree ">{{ errors.agree }}
-        </ion-text> -->
-      <!-- <ion-text class="d-block ion-text-center" *ngIf=" errors('agree')?.required && submit"color="danger" >
-            {{ validationMessages['agree'].required }}</ion-text> -->
+      <div class="flex-center mt-3 ml-1" >
+      
+        <ion-checkbox checked="false" name="agree" mode="md" color="green" formControlName="agree"></ion-checkbox>
+        
+        <ion-label class="ml-2 fs-14" >
+          <ion-text class="bold underline pointer" color="dark"> {{ a.t( {en: 'Terms of service', ko: '이용약관' }) }}</ion-text> 
+          <ion-text color="dark"> {{ a.t( {en: 'and', ko: '및'}) }} </ion-text> 
+          <ion-text class="bold underline pointer" color="dark">{{ a.t({en:'Privacy Policy' ,ko: '개인 정보 정책' }) }}</ion-text> 
+          <ion-text color="dark">{{ a.t({en: 'Agreement' ,ko: '에 동의(필수)' }) }}</ion-text> 
+        </ion-label>
+    
+      </div>
+    
+      <ion-text class="d-block ion-text-center" *ngIf=" errors('agree')?.required && submit" color="danger">
+          {{ validationMessages['agree'].required }}</ion-text>
+  
+  
 
 
-      <ion-button type="submit" mode="md" expand="full" color="green" class="h-50px mt-4 fs-14">
+
+  
+
+
+      <ion-button type="submit" mode="md" expand="full" color="green" class="h-50px mt-5 fs-14">
         {{ a.t({en: 'Register', ko: '회원가입' })}}
       </ion-button>
 
-      <!-- 
-      <ion-button mode="md" type="submit" expand="full" color="green" class="h-50px mt-4 fs-14">
-        {{ a.t({en: 'Register', ko: '회원가입' })}}
-      </ion-button> -->
+    
 
     </form>
   </section>

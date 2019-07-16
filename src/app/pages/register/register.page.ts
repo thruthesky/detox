@@ -52,6 +52,7 @@ export class RegisterPage implements OnInit, OnDestroy {
       display_name: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(64)]],
       mobile: ['', [Validators.required, Validators.pattern('[0-9+]*'), Validators.minLength(8), Validators.maxLength(15)]],
       gender: ['', [Validators.required]],
+      agree: ['', [Validators.required]],
     });
 
     // this.formKeys = Object.keys(this.form.value);
@@ -84,6 +85,9 @@ export class RegisterPage implements OnInit, OnDestroy {
       },
       gender: {
         required: a.t({ en: 'Gender selection is required.', ko: '성별 선택은 필수 선택 항목입니다.' }),
+      },
+      agree: {
+        required: a.t({ en: 'You must agree in the terms and conditions.', ko: '이용 약관에 동의해야합니다.' }),
       },
    
     };
