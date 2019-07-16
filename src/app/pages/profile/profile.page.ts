@@ -195,7 +195,7 @@ export class ProfilePage implements OnInit {
     });
     popover.present();
     const re = await popover.onWillDismiss();
-    console.log('re: ', re);
+    console.log('aasdasdasdre: ', re);
     this.profilePhotoUrl = re.data.url;
     this.a.wp.profileUpdate({ photoURL: re.data.url }).subscribe(res => {
       console.log('profile photo url update', res);

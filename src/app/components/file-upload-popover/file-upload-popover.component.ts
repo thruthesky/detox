@@ -11,6 +11,11 @@ import { AppService } from 'src/app/services/app.service';
 })
 export class FileUploadPopoverComponent implements OnInit {
 
+
+  
+
+  uploadPercent: number;
+
   constructor(
     public a: AppService,
     public popoverController: PopoverController,
@@ -61,6 +66,7 @@ export class FileUploadPopoverComponent implements OnInit {
 
   successOnFileUpload(res) {
     if (typeof res === 'number') {
+      this.a.uploadPercent = res;
       console.log('upload percentage: ', res);
     } else {
       // console.log('success: ', res);

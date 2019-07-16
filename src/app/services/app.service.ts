@@ -9,6 +9,9 @@ import { AlertOptions } from '@ionic/core';
 @Injectable({ providedIn: 'root' })
 export class AppService {
 
+
+    uploadPercent: number;
+
     env = environment;
     constructor(
         private router: Router,
@@ -134,6 +137,9 @@ export class AppService {
         this.wp.logout();
         this.open('/');
     }
+
+    
+
 
 }
 
