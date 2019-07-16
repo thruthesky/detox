@@ -35,7 +35,7 @@
 
         <ion-item mode="ios" lines="none">
           <ion-label position="floating" color="medium">{{ a.t({en: 'Password', ko: '비밀번호'}) }}</ion-label>
-          <ion-input name="user_pass" formControlName="user_pass"></ion-input>
+          <ion-input name="user_pass" formControlName="user_pass" #password></ion-input>
         </ion-item>
         <!-- <ion-text class="d-block mt-2 fs-sm" color="danger" *ngIf=" errors.user_pass ">{{ errors.user_pass }}
           </ion-text> -->
@@ -53,7 +53,7 @@
         <ion-item mode="ios" lines="none">
           <ion-label position="floating" color="medium">{{ a.t({en: 'Password Confirm', ko: '비밀번호 재확인'}) }}
           </ion-label>
-          <ion-input name="user_pass_confirm" formControlName="user_pass_confirm"></ion-input>
+          <ion-input pattern="{{password.value}}"  name="user_pass_confirm" formControlName="user_pass_confirm"></ion-input>
         </ion-item>
 
         <ng-container *ngIf=" errors('user_pass_confirm') ">
@@ -63,6 +63,8 @@
             {{ validationMessages['user_pass_confirm'].minlength }}</ion-text>
           <ion-text *ngIf=" errors('user_pass_confirm')?.maxlength " color="danger">
             {{ validationMessages['user_pass_confirm'].maxlength }}</ion-text>
+            <ion-text *ngIf=" errors('user_pass_confirm')?.pattern && submit " color="danger">
+                {{ validationMessages['user_pass_confirm'].pattern }}</ion-text>
         </ng-container>
 
 

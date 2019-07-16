@@ -51,7 +51,8 @@ export class RegisterPage implements OnInit, OnDestroy {
       user_pass_confirm: {
         required: a.t({ en: 'Password confirm is required.', ko: '비밀번호 확인은 필수 입력 항목입니다.' }),
         minlength: a.t({ en: 'Password is too short.', ko: '비밀번호가 너무 짧습니다.' }),
-        maxlength: a.t({ en: 'Password is too long.', ko: '비밀번호가 너무 깁니다.' })
+        maxlength: a.t({ en: 'Password is too long.', ko: '비밀번호가 너무 깁니다.' }),
+        pattern: a.t({ en: 'Password and Confirm Password does not match.', ko: '비밀번호가 너무 깁니다.' }),
       },
       user_email: {
         required: a.t({ en: 'Email is required.', ko: '이메일 주소는 필수 입력 항목입니다.' }),
@@ -130,6 +131,8 @@ export class RegisterPage implements OnInit, OnDestroy {
       })).present();
       this.a.openHome();
     }, e => this.a.error(e));
+
+
 
   }
 
