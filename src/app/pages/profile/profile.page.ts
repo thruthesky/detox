@@ -8,8 +8,6 @@ import { FileUploadPopoverComponent } from 'src/app/components/file-upload-popov
 import { DomSanitizer } from '@angular/platform-browser';
 
 
-
-
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.page.html',
@@ -46,7 +44,6 @@ export class ProfilePage implements OnInit {
         this.profilePhotoUrl = user.photoURL;
       }
 
-
       /**
        * @todo set all the form data.
        */
@@ -79,7 +76,7 @@ export class ProfilePage implements OnInit {
       weight: ['', [Validators.required, Validators.pattern('[0-9]+'), Validators.min(30), Validators.max(160)]]
     });
 
-    // this.formKeys = Object.keys(this.form.value);
+
 
     this.validationMessages = {
       user_email: {
@@ -140,7 +137,6 @@ export class ProfilePage implements OnInit {
   }
 
   ngOnInit() {
-    // this.onClickPrimaryPhoto(null);
   }
 
   onSubmit() {
@@ -166,7 +162,6 @@ export class ProfilePage implements OnInit {
       console.log('user update: ', res);
       (await this.alert.create({
         header: this.a.t({ en: 'update Success', ko: '업데이트 성공.' }),
-        // message: this.a.t({ en: 'Please upload your picture.', ko: '회원 정보를 업데이트 해 주시거나 프로그램에 참여를 해 보세요 ^^;' }),
         buttons: [this.a.t({ en: 'Okay', ko: '확인' })]
       })).present();
 
@@ -201,7 +196,6 @@ export class ProfilePage implements OnInit {
       console.log('profile photo url update', res);
     }, e => this.a.error(e));
   }
-
 
 }
 
