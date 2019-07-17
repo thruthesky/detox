@@ -3,6 +3,12 @@
     max-width: 360px;
 }
 
+.page-width-md {
+    margin: 0 auto;
+    max-width: 768px;
+}
+
+
 
 @media all and (min-width: 768px) {
     .md-mobile-width {
@@ -10,3 +16,4 @@
         max-width: 360px;
     }
 }
+

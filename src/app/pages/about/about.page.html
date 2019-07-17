@@ -2,37 +2,45 @@
   <app-header></app-header>
 </ion-header>
 
-<ion-content>
+<ion-content class="bg-md-background-image ">
+  <section class="mt-100px page-width-md dark-gray-2 mb-150px">
+    <h1 class="ion-text-center green-2">{{ postTopLeft?.post_title }}</h1>
+    <ion-grid>
+      <ion-row>
+        <ion-col class="px-4 pt-4" size="12" size-md="6">
+          <app-admin-page-edit-button [path]=" a.pageCode.aboutTopLeft "></app-admin-page-edit-button>
+          <app-page-post-content [post]=" postTopLeft "></app-page-post-content>
+        </ion-col>
+        <ion-col class="px-4 pt-4" size="12" size-md="6">
+          <app-admin-page-edit-button [path]=" a.pageCode.aboutTopRight "></app-admin-page-edit-button>
+          <app-page-post-content [post]=" postTopRight "></app-page-post-content>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  
+  
+    <ion-grid class="mt-50px">
+      <ion-row>
+        <ion-col class="px-4" size="12" size-md="6">
+            <app-admin-page-edit-button [path]=" a.pageCode.aboutBottomLeft "></app-admin-page-edit-button>
+            <h2 class="ion-text-center green-2">{{ postBottomLeft?.post_title }}</h2>
+            <div class="mt-4">
+                <app-page-post-content [post]=" postBottomLeft "></app-page-post-content>
+            </div>
+        </ion-col>
+        <ion-col class="px-4" size="12" size-md="6">
+            <app-admin-page-edit-button [path]=" a.pageCode.aboutBottomRight "></app-admin-page-edit-button>
+            <h2 class="ion-text-center green-2 ">{{ postBottomRight?.post_title }}</h2>
+            <app-page-post-content [post]=" postBottomRight "></app-page-post-content>
+        </ion-col>
+      </ion-row>
+    </ion-grid>  
+  </section>
+ 
 
-  <h1>{{ postTopLeft?.post_title }}</h1>
-  <ion-grid>
-    <ion-row>
-      <ion-col size="12" size-md="6">
-        <app-admin-page-edit-button [path]=" a.pageCode.aboutTopLeft "></app-admin-page-edit-button>
-        <app-page-post-content [post]=" postTopLeft "></app-page-post-content>
-      </ion-col>
-      <ion-col size="12" size-md="6">
-        <app-admin-page-edit-button [path]=" a.pageCode.aboutTopRight "></app-admin-page-edit-button>
-        <app-page-post-content [post]=" postTopRight "></app-page-post-content>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
-
-
-  <ion-grid>
-    <ion-row>
-      <ion-col size="12" size-md="6">
-          <app-admin-page-edit-button [path]=" a.pageCode.aboutBottomLeft "></app-admin-page-edit-button>
-          <h2>{{ postBottomLeft?.post_title }}</h2>
-          <app-page-post-content [post]=" postBottomLeft "></app-page-post-content>
-      </ion-col>
-      <ion-col size="12" size-md="6">
-          <app-admin-page-edit-button [path]=" a.pageCode.aboutBottomRight "></app-admin-page-edit-button>
-          <h2>{{ postBottomRight?.post_title }}</h2>
-          <app-page-post-content [post]=" postBottomRight "></app-page-post-content>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
+  <ng-container *ngIf="a.isDesktop">
+      <app-desktop-home-footer></app-desktop-home-footer>
+    </ng-container>
 
 
 </ion-content>
