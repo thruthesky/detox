@@ -1,7 +1,7 @@
 <div class="p-4">
   <ion-label class="fs-18px" position="stacked" color="green">
     {{ a.t({en: 'Say something to yourself...', ko: '자신에게 다짐 한마디 ...' }) }}</ion-label>
-  <ion-textarea [(ngModel)]="promise" placeholder="Enter your promise here..." class="bg-light-gray border-radius-5px"
+  <ion-textarea [(ngModel)]="promise"   placeholder="Enter your promise here..." class="bg-light-gray border-radius-5px"
     style="border: 1px solid rgba(206, 206, 206, 0.603);" rows="6" cols="30">
   </ion-textarea>
 </div>
@@ -9,7 +9,7 @@
 <ion-row class="pl-2 pr-4">
   <ion-col size="6">
     <ion-button mode="ios" class="no-box-shadow " color="primary" fill="clear" mode="ios" type="submit"
-      class="ion-no-margin" (click)=" popoverCtrl.dismiss({ result: 'Yo!'}, 'roleName') ">Cancel</ion-button>
+      class="ion-no-margin" (click)=" onCancel() ">Cancel</ion-button>
   </ion-col>
   <ion-col size="6" text-right>
     <ion-button class="no-box-shadow" color="green" type="submit" class="ion-no-margin" (click)=" onSubmit() ">Submit

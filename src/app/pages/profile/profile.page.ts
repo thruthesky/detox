@@ -15,11 +15,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 })
 export class ProfilePage implements OnInit {
 
-  //
   profilePhotoUrl = '/assets/img/photo.png';
-
-
-
 
   submit = false;
   form: FormGroup;
@@ -33,7 +29,7 @@ export class ProfilePage implements OnInit {
 
 
   // promise
-  promise = '';
+  promise = 'asd';
   constructor(
     public a: AppService,
     public sanitizer: DomSanitizer,
@@ -180,13 +176,15 @@ export class ProfilePage implements OnInit {
     const popover = await this.popoverController.create({
       component: MyPromiseComponent,
       event: ev,
+      componentProps: {promise: this.promise },
       cssClass: 'promise-pop-width promise-pop-height popover-center-promise  '
     });
     await popover.present();
     const data = await popover.onWillDismiss();
-    console.log('data: ', data.data);
-    this.promise = data.data;
-
+    console.log('data: ', data);
+    if ( data.role === 'success' ) {
+      this.promise = data.data;
+    }
   }
 
   async onClickPrimaryPhoto(ev: any) {

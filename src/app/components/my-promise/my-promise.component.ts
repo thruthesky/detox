@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { PopoverController, NavParams } from '@ionic/angular';
 import { AppService } from 'src/app/services/app.service';
+
+
 
 
 @Component({
@@ -9,6 +11,9 @@ import { AppService } from 'src/app/services/app.service';
   styleUrls: ['./my-promise.component.scss'],
 })
 export class MyPromiseComponent implements OnInit {
+
+
+  @Input('promise') promisefromParent: string;
 
   promise: string;
 
@@ -19,20 +24,31 @@ export class MyPromiseComponent implements OnInit {
     public a: AppService
 
   ) {
-
-
-
+    this.promise = this.promisefromParent;
+  
   }
 
-  ngOnInit() { }
+  ngOnInit() {
+ 
+  }
 
 
   onSubmit() {
-    console.log('promise: ', this.promise);
+
     this.a.wp.profileUpdate({ promise: this.promise }).subscribe(res => {
       console.log('res: ', res);
       this.popoverCtrl.dismiss(this.promise, 'success');
     }, e => this.a.error(e));
+  }
+
+  onCancel() {
+
+
+      const r = confirm('your changes is not saved!');
+      if (r) {
+        this.popoverCtrl.dismiss();
+      }
+    
   }
 
 
