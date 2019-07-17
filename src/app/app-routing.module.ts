@@ -27,6 +27,7 @@ const routes: Routes = [
   { path: 'testimonial', loadChildren: './pages/testimonial/testimonial.module#TestimonialPageModule' },
   { path: 'detoxification-tip', loadChildren: './pages/detoxification-tip/detoxification-tip.module#DetoxificationTipPageModule' },
   { path: 'profile', loadChildren: './pages/profile/profile.module#ProfilePageModule' },
+  { path: '**', loadChildren: './pages/page-not-found/page-not-found.module#PageNotFoundPageModule' },
 ];
 
 @NgModule({
