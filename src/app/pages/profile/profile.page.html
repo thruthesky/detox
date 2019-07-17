@@ -1,0 +1,229 @@
+<ion-header no-border>
+  <app-header></app-header>
+</ion-header>
+
+<ion-content class="bg-md-background-image bg-light-gray">
+  <section class="profile md-mobile-width pb-5 mt-md-70px mb-md-340px bg-light-gray border-md-gray">
+
+    <ng-container *ngIf="a.isDesktop">
+      <ion-toolbar color="green" text-center>
+        <ion-title>{{ a.t({ en: 'Profile', ko: '회원정보' }) }}</ion-title>
+      </ion-toolbar>
+    </ng-container>
+
+    <ion-item color="green" style="border-top: 1px solid #8fbc78;" class="fs-14">
+
+      <ion-thumbnail class="pointer" slot="start" (click)="onClickPrimaryPhoto($event)">
+        <img [src]=" profilePhotoUrl ">
+      </ion-thumbnail>
+
+      <ion-label color="light" *ngIf=" user ">
+        <p>{{ user.display_name }}</p>
+        <p class="fs-12">{{ user.user_email }}</p>
+      </ion-label>
+
+    </ion-item>
+    <ion-progress-bar *ngIf="a.uploadPercent != 100 && a.uploadPercent" [value]="a.uploadPercent/100">
+    </ion-progress-bar>
+
+
+
+    <ion-item class="mx-2 mt-2 fs-14" button lines="none" (click)=" onClickMyPromise($event) ">
+      <ion-label color="medium">
+        <p class="green">{{ a.t({en: 'Promise to myself', ko: '다짐'}) }}</p>
+        <p *ngIf="a.wp.user('promise')">{{ a.wp.user('promise') }}</p>
+        <p *ngIf="!a.wp.user('promise')">
+          {{ a.t({en: 'Say something to yourself to achieve the goal', ko: '각오 한마디를 작성해주세요.'}) }}</p>
+      </ion-label>
+      <ion-icon name="create"></ion-icon>
+    </ion-item>
+
+    <ion-item lines="full" class="mx-2 mt-3" button (click)=" a.open('/detoxification-diary') ">
+      <ion-label class="bold d-gray ">{{ a.t({en: 'Diary', ko: '해독일지'}) }}</ion-label>
+      <ion-icon slot="end" name="arrow-forward" mode="ios" color="green"></ion-icon>
+    </ion-item>
+
+    <ion-item lines="none" class="mx-2" button (click)=" a.open('/alarm-list') ">
+      <ion-label class="bold d-gray ">{{ a.t({en: 'Join the program', ko: '프로그램 참여'}) }}</ion-label>
+      <ion-icon slot="end" name="arrow-forward" mode="ios" color="green"></ion-icon>
+    </ion-item>
+
+    <form [formGroup]=" form " (ngSubmit)=" onSubmit()">
+
+      <ion-grid no-padding class="px-2  fs-14">
+
+        <ion-row class="mt-3">
+          <ion-col size="3" class="flex-center mt-0 bold d-gray">
+            {{ a.t({en: 'Nickname', ko: '닉네임'}) }}
+          </ion-col>
+          <ion-col class="mt-0 flex-center">
+            <ion-input formControlName="display_name" name="display_name" type="text" color="medium"></ion-input>
+          </ion-col>
+        </ion-row>
+
+        <ion-row *ngIf=" errors('display_name') ">
+          <ion-col offset="3" class="error">
+            <ion-text *ngIf=" errors('display_name')?.required && submit" class="lh-30px" color="danger">
+              {{ validationMessages['display_name'].required }}</ion-text>
+            <ion-text *ngIf=" errors('display_name')  ?.minlength && submit " class="lh-30px" color="danger">
+              {{ validationMessages['display_name'].minlength }}</ion-text>
+            <ion-text *ngIf=" errors('display_name')?.maxlength " class="lh-30px" color="danger">
+              {{ validationMessages['display_name'].maxlength }}</ion-text>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col size="3" class="flex-center bold d-gray">
+            {{ a.t({en: 'Email', ko: '이메일'}) }}
+          </ion-col>
+          <ion-col class="flex-center">
+            <ion-input formControlName="user_email" name="user_email" type="text" color="medium"></ion-input>
+          </ion-col>
+        </ion-row>
+
+        <ion-row *ngIf=" errors('user_email') ">
+          <ion-col offset="3" class="error">
+            <ion-text *ngIf=" errors('user_email')?.required && submit" class="lh-30px" color="danger">
+              {{ validationMessages['user_email'].required }}</ion-text>
+            <ion-text *ngIf=" errors('user_email')?.minlength && submit " class="lh-30px" color="danger">
+              {{ validationMessages['user_email'].minlength }}</ion-text>
+            <ion-text *ngIf=" errors('user_email')?.maxlength " class="lh-30px" color="danger">
+              {{ validationMessages['user_email'].maxlength }}</ion-text>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col size="3" class="flex-center bold d-gray">
+            {{ a.t({en: 'Mobile No.', ko: '전화번호'}) }}
+          </ion-col>
+          <ion-col class="flex-center">
+            <ion-input formControlName="mobile" name="mobile" type="text" color="medium"></ion-input>
+          </ion-col>
+        </ion-row>
+        <ion-row *ngIf=" errors('mobile') ">
+          <ion-col offset="3" class="error">
+            <ion-text *ngIf=" errors('mobile')?.required && submit" class="lh-30px" color="danger">
+              {{ validationMessages['mobile'].required }}</ion-text>
+            <ion-text *ngIf=" errors('mobile')?.pattern && submit" class="lh-30px" color="danger">
+              {{ validationMessages['mobile'].pattern }}</ion-text>
+          </ion-col>
+
+        </ion-row>
+
+        <ion-row>
+          <ion-col size="3" class="flex-center bold d-gray">
+            {{ a.t({en: 'Address', ko: '주소'}) }}
+          </ion-col>
+          <ion-col class="flex-center">
+            <ion-input type="text" formControlName="address" name="address" color="medium"></ion-input>
+          </ion-col>
+        </ion-row>
+        <ion-row *ngIf=" errors('address') ">
+          <ion-col offset="3" class="error">
+            <ion-text *ngIf=" errors('address')?.required && submit" class="lh-30px" color="danger">
+              {{ validationMessages['address'].required }}</ion-text>
+          </ion-col>
+        </ion-row>
+
+        <ion-row class="mt-3">
+          <ion-col size="3" class="flex-center mt-0 bold d-gray">
+            {{ a.t({en: 'Gender', ko: '성별'}) }}
+          </ion-col>
+          <ion-col class="mt-0 medium">
+            <ion-select class="ion-text-left" placeholder="Select Gender" okText="" cancelText="" mode="md"
+              formControlName="gender" [interfaceOptions]="genderOptions" interface="popover">
+              <ion-select-option value="F">Female</ion-select-option>
+              <ion-select-option value="M">Male</ion-select-option>
+            </ion-select>
+          </ion-col>
+        </ion-row>
+        <ion-row *ngIf=" errors('gender') ">
+          <ion-col offset="3" class="error">
+            <ion-text class="lh-30px" color="danger" *ngIf=" errors('gender')?.required && submit">
+              {{ validationMessages['gender'].required }}</ion-text>
+          </ion-col>
+        </ion-row>
+
+
+        <ion-row>
+          <ion-col size="3" class="flex-center bold d-gray">
+            {{ a.t({en: 'Birthday', ko: '생년월일'}) }}
+          </ion-col>
+          <ion-col class="flex-center" class="ion-align-self-start">
+            <ion-datetime formControlName="birthday" name="birthday" displayFormat="MMM DD, YYYY"
+              placeholder="Select Date" class="medium"></ion-datetime>
+          </ion-col>
+        </ion-row>
+        <ion-row *ngIf=" errors('birthday') ">
+          <ion-col offset="3" class="error">
+            <ion-text *ngIf=" errors('birthday')?.required && submit" class="lh-30px" color="danger">
+              {{ validationMessages['birthday'].required }}</ion-text>
+          </ion-col>
+        </ion-row>
+
+
+        <ion-row>
+          <ion-col size="3" class="flex-center bold d-gray">
+            {{ a.t({en: 'Height', ko: '키'}) }}
+          </ion-col>
+          <ion-col class="flex-center">
+            <ion-input type="text" formControlName="height" name="height" color="medium"></ion-input>
+            <ion-label position="fixed" text-center>cm</ion-label>
+          </ion-col>
+        </ion-row>
+        <ion-row *ngIf=" errors('height') ">
+          <ion-col offset="3" class="error">
+            <ion-text *ngIf=" errors('height')?.required && submit" class="lh-30px" color="danger">
+              {{ validationMessages['height'].required }}</ion-text>
+            <ion-text *ngIf=" errors('height')?.min && submit " class="lh-30px" color="danger">
+              {{ validationMessages['height'].min }}</ion-text>
+            <ion-text *ngIf=" errors('height')?.max " class="lh-30px" color="danger">
+              {{ validationMessages['height'].max }}</ion-text>
+            <ion-text *ngIf=" errors('height')?.pattern " class="lh-30px" color="danger">
+              {{ validationMessages['height'].pattern }}</ion-text>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col size="3" class="flex-center bold d-gray">
+            {{ a.t({en: 'Weight', ko: '몸무게'}) }}
+          </ion-col>
+          <ion-col class="flex-center">
+            <ion-input formControlName="weight" name="weight" type="text" color="medium"></ion-input>
+            <ion-label position="fixed" text-center>kg</ion-label>
+          </ion-col>
+        </ion-row>
+        <ion-row *ngIf=" errors('weight') ">
+          <ion-col offset="3" class="error">
+            <ion-text *ngIf=" errors('weight')?.required && submit" class="lh-30px" color="danger">
+              {{ validationMessages['weight'].required }}</ion-text>
+            <ion-text *ngIf=" errors('weight')?.min && submit " class="lh-30px" color="danger">
+              {{ validationMessages['weight'].min }}</ion-text>
+            <ion-text *ngIf=" errors('weight')?.max " class="lh-30px" color="danger">
+              {{ validationMessages['weight'].max }}</ion-text>
+            <ion-text *ngIf=" errors('weight')?.pattern " class="lh-30px" color="danger">
+              {{ validationMessages['weight'].pattern }}</ion-text>
+          </ion-col>
+        </ion-row>
+
+      </ion-grid>
+
+      <!-- <ion-text text-center class="d-block mt-2 fs-sm" color="danger" *ngIf=" submit && allErrors().length ">
+        {{ allErrors() | json }}
+      </ion-text> -->
+
+
+
+
+      <ion-button type="submit" expand="full" color="green" class="mx-4 mt-5 h-45px no-box-shadow" text-center>
+        {{ a.t({en: 'Update', ko: '회원 정보 수정'}) }}
+      </ion-button>
+
+    </form>
+  </section>
+
+  <ng-container *ngIf="a.isDesktop">
+    <app-desktop-home-footer></app-desktop-home-footer>
+  </ng-container>
+
+</ion-content>

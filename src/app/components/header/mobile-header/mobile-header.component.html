@@ -5,14 +5,14 @@
     <ion-back-button></ion-back-button>
 
 
-    <ion-button *ngIf=" homeIcon ">
+    <ion-button *ngIf="! homeIcon " routerLink="/"> 
       <ion-icon slot="icon-only" name="home"></ion-icon>
-    </ion-button>
+    </ion-button> 
   </ion-buttons>
 
 
   <ion-title class="ion-text-center">
-    <img routerLink="/" class="no-outline" src="/assets/img/logo/mobile_logo.png" alt="Site Logo Title - 7Detox" *ngIf=" ! title ">
+    <img routerLink="/" class="no-outline pointer" src="/assets/img/logo/mobile_logo.png" alt="Site Logo Title - 7Detox" *ngIf=" ! title ">
     <ion-label *ngIf=" title ">{{ title }}</ion-label>
   </ion-title>
 

@@ -1,0 +1,16 @@
+<ion-list>
+  <ion-list-header class="border-bottom-light-gray">
+    <ion-label color="green" class="fs-18px bold">{{ a.t({en: 'Choose an Option', ko: '옵션을 선택하세요'}) }}</ion-label>
+  </ion-list-header>
+  <ion-item (click)="onClickCamera()" lines="full" button>
+    <ion-icon slot="start" name="camera"></ion-icon>
+    <ion-label>Camera</ion-label>
+  </ion-item>
+  <div class="position-relative">
+    <input class="cover-parent opacity-001 bg-green" type="file" (change)="onChangeFile($event)" >
+    <ion-item lines="none" button>
+      <ion-icon slot="start" name="image"></ion-icon>
+      <ion-label>Upload Image</ion-label>
+    </ion-item>
+  </div>
+</ion-list>

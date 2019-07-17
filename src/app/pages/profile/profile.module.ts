@@ -1,18 +1,20 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 
-import { RegisterPage } from './register.page';
+import { ProfilePage } from './profile.page';
 import { HeaderModule } from 'src/app/components/header/header.module';
 import { DesktopHomeFooterModule } from 'src/app/components/desktop-home-footer/desktop-home-footer.module';
+import { MyPromiseModule } from 'src/app/components/my-promise/my-promise.module';
+import { FileUploadPopoverModule } from 'src/app/components/file-upload-popover/file-upload-popover.module';
 
 const routes: Routes = [
   {
     path: '',
-    component: RegisterPage
+    component: ProfilePage
   }
 ];
 
@@ -20,12 +22,14 @@ const routes: Routes = [
   imports: [
     CommonModule,
     FormsModule,
+    ReactiveFormsModule,
     IonicModule,
     RouterModule.forChild(routes),
-    ReactiveFormsModule,
     HeaderModule,
     DesktopHomeFooterModule,
+    MyPromiseModule,
+    FileUploadPopoverModule,
   ],
-  declarations: [RegisterPage]
+  declarations: [ProfilePage]
 })
-export class RegisterPageModule {}
+export class ProfilePageModule { }

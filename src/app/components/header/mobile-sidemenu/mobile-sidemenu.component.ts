@@ -24,8 +24,10 @@ export class MobileSidemenuComponent implements OnInit {
 
     if(this.a.isDesktop) {
       this.popoverController.dismiss(); 
+      console.log('popclose');
     } else {
       this.menu.close();
+      console.log('menuclose');
     }
 
    

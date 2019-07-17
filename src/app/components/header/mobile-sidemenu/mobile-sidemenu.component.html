@@ -46,8 +46,14 @@
 
     <ion-row>
       <ion-col size="6" class="ion-no-padding no-outline">
-        <ion-button fill="clear" no-margin mode="ios" (click)="open('/register')">
-          {{ a.t({en: 'Register', ko: '회원가입'}) }}</ion-button>
+          <ion-button fill="clear" no-margin mode="ios" (click)="open('/register')" *ngIf=" a.wp.userIsLoggedOut ">
+            {{ a.t({en: 'Register', ko: '회원가입'}) }}
+          </ion-button>
+
+          <ion-button fill="clear" no-margin mode="ios" (click)="open('/profile')" *ngIf=" a.wp.userIsLoggedIn ">
+            {{ a.t({en: 'Profile', ko: '회원정보'}) }}
+          </ion-button>
+
       </ion-col>
       <ion-col size="6" class="ion-no-padding no-outline">
 
@@ -63,7 +69,7 @@
   <!-- 2nd -->
   <div class="pt-4 pb-2 mx-22px  border-bottom-green">
     <ion-text color="success">
-      <p>프로그램</p>
+      <p> {{ a.t( { en: 'Program', ko: '프로그램' } ) }} </p>
     </ion-text>
   </div>
 
@@ -112,7 +118,7 @@
   <!-- 3rd -->
   <div class="pt-4 pb-2 mx-22px border-bottom-green ">
     <ion-text color="success">
-      <p>셀그린라이트</p>
+      <p> {{ a.t( { en: 'Cell Green Light', ko: '셀그린라이트' } ) }} </p>
     </ion-text>
   </div>
 

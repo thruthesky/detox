@@ -12,9 +12,7 @@ export class HomePage {
     public a: AppService
   ) { }
 
-  imgload() {
-    console.log('asda');
-  }
+ 
 
 
 }

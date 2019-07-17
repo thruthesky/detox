@@ -2,7 +2,35 @@
   <app-header></app-header>
 </ion-header>
 
-<ion-content>
+<ion-content class="bg-light-gray bg-md-background-image">
 
-  login page
+  <ion-toolbar *ngIf="a.isDesktop" color="green" class="mobile-width mt-md-70px" text-center>
+    <ion-title>{{ a.t({ en: 'Login', ko: '로그인' }) }}</ion-title>
+  </ion-toolbar>
+
+
+  <section class="register mb-md-340px md-mobile-width px-23px pb-5 pt-1 border-md-gray  bg-light-gray">
+    <form [formGroup]=" form " (ngSubmit)=" onSubmit() ">
+     
+      <ion-item mode="ios" lines="none">
+        <ion-label position="floating" color="medium">{{ a.t({en: 'Email', ko: '이메일 주소'}) }}</ion-label>
+        <ion-input class="no-border" formControlName="user_email"></ion-input>
+      </ion-item>
+
+      <ion-item mode="ios" lines="none">
+        <ion-label position="floating" color="medium">{{ a.t({en: 'Password', ko: '비밀번호'}) }}</ion-label>
+        <ion-input  formControlName="user_pass"></ion-input>
+      </ion-item>
+
+      <ion-button type="submit" mode="md" expand="full" color="green" class="h-50px mt-3 fs-14 no-box-shadow">
+        {{ a.t({en: 'Login', ko: '로그인' })}}
+      </ion-button>
+
+      <ion-text class="d-block h-50px lh-50px fs-14 underline bold  ion-text-center pointer">
+          로그인로그인
+      </ion-text>
+   
+    </form>
+
+  </section>
 </ion-content>

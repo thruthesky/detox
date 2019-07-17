@@ -14,14 +14,14 @@ ion-item {
     }
 }
 
-.mt-md-140px {
+.mt-md-70px {
     @media all and (min-width: 768px) {
-        margin-top: 140px;
+        margin-top: 70px;
     }
 }
 
 
-.mb-md-140px {
+.mb-md-340px {
     @media all and (min-width: 768px) {
         margin-bottom: 340px;
     }
@@ -32,11 +32,13 @@ ion-item {
     @media all and (min-width: 768px) {
         border: 1px solid #828280;
         border-top: 0;
-        -webkit-box-shadow: 4px 4px 8px 0px rgba(0, 0, 0, 0.2);
-        -moz-box-shadow: 4px 4px 8px 0px rgba(0, 0, 0, 0.2);
-        box-shadow: 4px 4px 8px 0px rgba(0, 0, 0, 0.2);
+        -webkit-box-shadow: 5px 5px 5px 5px rgba(0,0,0,0.04);
+        -moz-box-shadow: 5px 5px 5px 5px rgba(0,0,0,0.04);
+        box-shadow: 5px 5px 5px 5px rgba(0,0,0,0.04);
  }
+}
 
 
-
+.min-width-18px {
+    min-width: 18px !important;
 }

@@ -1,0 +1,51 @@
+ion-item {
+    margin-top: .5em;
+    --border-color: #eee;
+    --border-width: 1px 1px 1px 1px;
+}
+
+
+
+.bg-md-background-image {
+    @media all and (min-width: 768px) {
+        // background: url(https://ak1.picdn.net/shutterstock/videos/12296111/thumb/1.jpg) !important;
+        // --background: url(https://ak1.picdn.net/shutterstock/videos/12296111/thumb/1.jpg) !important;
+        --background: url(/assets/img/bg_mainblur.jpg) 0 0/100% 100% no-repeat !important;
+    }
+}
+
+.mt-md-70px {
+    @media all and (min-width: 768px) {
+        margin-top: 70px;
+    }
+}
+
+
+.mb-md-340px {
+    @media all and (min-width: 768px) {
+        margin-bottom: 340px;
+    }
+}
+
+
+.border-md-gray {
+    @media all and (min-width: 768px) {
+        border: 1px solid #828280;
+        border-top: 0;
+        -webkit-box-shadow: 5px 5px 5px 5px rgba(0,0,0,0.04);
+        -moz-box-shadow: 5px 5px 5px 5px rgba(0,0,0,0.04);
+        box-shadow: 5px 5px 5px 5px rgba(0,0,0,0.04);
+ }
+
+
+
+}
+
+
+
+
+
+
+
+
+
