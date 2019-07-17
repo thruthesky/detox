@@ -117,6 +117,7 @@ export class RegisterPage implements OnInit, OnDestroy {
       // Display errors and return ( don't submit )
       // Display errors on not-dirty elements also.
       // this.validate(false);
+      console.log('form invalid');
       return;
     }
 

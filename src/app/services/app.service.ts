@@ -109,20 +109,20 @@ export class AppService {
 
     error(e: ErrorObject): void {
         console.error('Got error on app.service.ts::e => ', e);
-        this.alert({ header: e.errstring });
+        this.alert({ header: this.t({ en: 'Ooh...!', ko: '앗...!' }), message: e.errstring });
     }
 
 
-  /**
-   * This simply alerts.
-   * @param options Ionic Alert Options
-   */
-  async alert(options: AlertOptions) {
-    if (!options.buttons) {
-      options.buttons = [{ text: this.t({ en: 'Confirm', ko: '확인' }) }];
+    /**
+     * This simply alerts.
+     * @param options Ionic Alert Options
+     */
+    async alert(options: AlertOptions) {
+        if (!options.buttons) {
+            options.buttons = [{ text: this.t({ en: 'Confirm', ko: '확인' }) }];
+        }
+        (await this.alertController.create(options)).present();
     }
-    (await this.alertController.create(options)).present();
-  }
 
 
     open(url: string): void {
@@ -138,7 +138,7 @@ export class AppService {
         this.open('/');
     }
 
-    
+
 
 
 }

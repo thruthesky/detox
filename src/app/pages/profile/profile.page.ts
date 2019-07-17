@@ -27,9 +27,14 @@ export class ProfilePage implements OnInit {
     cssClass: 'no-underline-on-last-item list-header-bold list-header-fs-18px list-header-green pop-medium  list-header-bottom-border ion-item-pointer'
   };
 
-
-  // promise
-  promise = 'asd';
+  /**
+   * Constructor
+   * @param a AppService
+   * @param sanitizer Sanitizer
+   * @param fb FormBuilder
+   * @param alert AlertController
+   * @param popoverController PopoverContorller
+   */
   constructor(
     public a: AppService,
     public sanitizer: DomSanitizer,
@@ -160,13 +165,11 @@ export class ProfilePage implements OnInit {
     };
 
     this.a.wp.profileUpdate(reqData).subscribe(async (res) => {
-
       console.log('user update: ', res);
       (await this.alert.create({
         header: this.a.t({ en: 'update Success', ko: '업데이트 성공.' }),
         buttons: [this.a.t({ en: 'Okay', ko: '확인' })]
       })).present();
-
       this.a.openHome();
     });
   }
@@ -176,14 +179,11 @@ export class ProfilePage implements OnInit {
     const popover = await this.popoverController.create({
       component: MyPromiseComponent,
       event: ev,
-      componentProps: {promise: this.promise },
       cssClass: 'promise-pop-width promise-pop-height popover-center-promise  '
     });
     await popover.present();
     const data = await popover.onWillDismiss();
-    console.log('data: ', data);
     if ( data.role === 'success' ) {
-      this.promise = data.data;
     }
   }
 
@@ -196,7 +196,7 @@ export class ProfilePage implements OnInit {
     });
     popover.present();
     const re = await popover.onWillDismiss();
-    console.log('aasdasdasdre: ', re);
+    console.log('file upload: ', re);
     this.profilePhotoUrl = re.data.url;
     this.a.wp.profileUpdate({ photoURL: re.data.url }).subscribe(res => {
       console.log('profile photo url update', res);

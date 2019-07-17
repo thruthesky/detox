@@ -51,7 +51,7 @@ export class FileUploadPopoverComponent implements OnInit {
         const file = new File([blob], name + '.jpg', { type: 'image/jpeg' });
         const files: FileList = [file] as any;
 
-        this.a.wp.fileUpload(files, {}).subscribe((res) => this.successOnFileUpload(res), e => this.errorOnFileUpload(e));
+        this.a.wp.fileUpload(files, {}).subscribe((res) => this.successOnFileUpload(res), e => this.a.error(e));
 
       }
     }, err => {
@@ -61,7 +61,7 @@ export class FileUploadPopoverComponent implements OnInit {
   }
 
   onChangeFile(event: any) {
-    this.a.wp.fileUpload(event.target.files, {}).subscribe((res) => this.successOnFileUpload(res), e => this.errorOnFileUpload(e));
+    this.a.wp.fileUpload(event.target.files, {}).subscribe((res) => this.successOnFileUpload(res), e => this.a.error(e));
   }
 
   successOnFileUpload(res) {
@@ -73,12 +73,12 @@ export class FileUploadPopoverComponent implements OnInit {
       this.popoverController.dismiss(res, 'fileUpload');
     }
   }
-  errorOnFileUpload(e: any) {
+  // errorOnFileUpload(e: any) {
 
-    console.log('onChangeFile() => error: ', e);
-    this.a.error(e);
+  //   console.log('onChangeFile() => error: ', e);
+  //   this.a.error(e);
 
-  }
+  // }
 
 
   /**
