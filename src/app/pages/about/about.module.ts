@@ -7,6 +7,8 @@ import { IonicModule } from '@ionic/angular';
 
 import { AboutPage } from './about.page';
 import { HeaderModule } from 'src/app/components/header/header.module';
+import { AdminPageEditButtonModule } from 'src/app/components/admin-page-edit-button/admin-page-edit-button.module';
+import { PagePostContentModule } from 'src/app/components/page-post-content/page-post-content.module';
 
 const routes: Routes = [
   {
@@ -21,7 +23,9 @@ const routes: Routes = [
     FormsModule,
     IonicModule,
     RouterModule.forChild(routes),
-    HeaderModule
+    HeaderModule,
+    AdminPageEditButtonModule,
+    PagePostContentModule
   ],
   declarations: [AboutPage]
 })

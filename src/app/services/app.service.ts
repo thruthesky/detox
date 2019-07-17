@@ -5,11 +5,14 @@ import { environment } from 'src/environments/environment';
 import { ErrorObject } from 'modules/wordpress-api/wordpress-api.interface';
 import { Router } from '@angular/router';
 import { AlertOptions } from '@ionic/core';
+import { DomSanitizer } from '@angular/platform-browser';
+import { pageCode } from './page-code';
 
 @Injectable({ providedIn: 'root' })
 export class AppService {
 
 
+    pageCode = pageCode;
     uploadPercent: number;
 
     env = environment;
@@ -17,7 +20,8 @@ export class AppService {
         private router: Router,
         private sideMenu: MenuController,
         public wp: WordpressApiService,
-        private alertController: AlertController
+        private alertController: AlertController,
+        private domSanitizer: DomSanitizer
     ) {
         if (!this.env.lang) {
             this.env.lang = this.getBrowserLanguage();
@@ -139,6 +143,10 @@ export class AppService {
     }
 
 
+
+    safeHtml(str: string) {
+        return this.domSanitizer.bypassSecurityTrustHtml(str);
+    }
 
 
 }
