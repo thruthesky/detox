@@ -29,6 +29,21 @@ export class AboutPage implements OnInit {
       this.postTopRight = res;
     }, e => this.a.error(e));
 
+    this.a.wp.postGet( a.pageCode.aboutBottomLeft ).subscribe(res => {
+      console.log('about page post: ', res);
+      this.postBottomLeft = res;
+    }, e => this.a.error(e));
+
+    this.a.wp.postGet( a.pageCode.aboutBottomRight ).subscribe(res => {
+      console.log('about page post: ', res);
+      this.postBottomRight = res;
+    }, e => this.a.error(e));
+
+
+
+
+
+
   }
 
   ngOnInit() {
