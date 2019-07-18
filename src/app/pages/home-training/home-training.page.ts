@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { AppService } from 'src/app/services/app.service';
+
+
+type TabName = 'meditation' | 'yoga' | 'stretcing' | 'core';
+
 
 @Component({
   selector: 'app-home-training',
@@ -7,9 +12,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeTrainingPage implements OnInit {
 
-  constructor() { }
+  tabName: TabName = 'meditation';
+  constructor(
+    public a: AppService
+  ) { }
 
   ngOnInit() {
+  }
+
+  onClickTab(name: TabName) {
+    this.tabName = name;
   }
 
 }

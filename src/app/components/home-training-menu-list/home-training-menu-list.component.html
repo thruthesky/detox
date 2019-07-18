@@ -1,0 +1,20 @@
+<!-- <h1>
+  Listing menus of {{ name }}
+</h1>
+ -->
+
+
+<ion-grid>
+  <ion-row *ngFor=" let post of posts; let i = index ">
+    <ion-col size="12" size-md="6" *ngIf="post?.ID">
+      <div class="photo position-relative">
+        <ion-img src="{{ post.featured_image_url }}" *ngIf="post.featured_image_url"></ion-img>
+        <h1 class="position-absolute bottom">{{ post.post_title }}</h1>
+      </div>
+      <app-admin-page-edit-button [path]=" name + '-' + i "></app-admin-page-edit-button>
+    </ion-col>
+    <ion-col size="12" size-md="6" *ngIf="post?.ID">
+      <p [innerHTML]=" a.safeHtml( post.post_content ) "></p>
+    </ion-col>
+  </ion-row>
+</ion-grid>

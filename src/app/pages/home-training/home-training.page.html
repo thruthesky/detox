@@ -1,7 +1,30 @@
 <ion-header no-border>
-    <app-header></app-header>
-  </ion-header>
-  
-  <ion-content>
-    home training page
-  </ion-content>
+  <app-header></app-header>
+</ion-header>
+
+<ion-content>
+
+  <ion-item color="lightgray" lines="none">
+
+    <ion-segment mode="md">
+      <ion-segment-button checked mode="md" (click)="onClickTab('meditation')">
+        <ion-label>{{ a.t({en: 'Meditation', ko: '명상'}) }}</ion-label>
+      </ion-segment-button>
+      <ion-segment-button mode="md" (click)="onClickTab('yoga')">
+        <ion-label>{{ a.t({en: 'Yoga', ko: '요가'}) }}</ion-label>
+      </ion-segment-button>
+      <ion-segment-button mode="md" (click)="onClickTab('stretching')">
+        <ion-label>{{ a.t({en: 'Stretching', ko: '스트레칭'}) }}</ion-label>
+      </ion-segment-button>
+      <ion-segment-button mode="md" (click)="onClickTab('core')">
+        <ion-label>{{ a.t({en: 'Core', ko: '코어'}) }}</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+
+  </ion-item>
+
+
+  <app-home-training-menu-list [name]=" tabName "></app-home-training-menu-list>
+
+</ion-content>
+
