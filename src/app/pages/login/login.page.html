@@ -57,7 +57,7 @@
         {{ a.t({en: 'Forgot Passwrod?', ko: '비밀번호 찾기' })}}
       </ion-text>
 
-      <ion-text class="pr-1 h-50px lh-50px fs-14 bold dark pointer">
+      <ion-text class="pr-1 h-50px lh-50px fs-14 bold dark pointer" (click)="a.open('/register')">
         {{ a.t({en: 'Register', ko: '회원 가입' })}}
       </ion-text>
     </div>
