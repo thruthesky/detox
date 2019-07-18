@@ -27,8 +27,8 @@
     .md-pt-30px {
         padding-top: 30px !important;
     }
-    .md-pr-30px {
-        padding-right: 30px !important;
+    .md-pr-60px {
+        padding-right: 60px !important;
     }
 
     .md-pb-100px {
@@ -36,6 +36,24 @@
     }
     .md-mb-145px {
         margin-bottom: 145px !important;
+    }
+
+}
+
+
+@media all and (max-width: 768px) {
+    
+    .xs-pt-4 {
+        padding-top: 1.5em;
+    }
+
+    .xs-pb-50px {
+        padding-bottom: 50px !important;
+    }
+
+    .xs-px-2 {
+        padding-left: .5em !important;
+        padding-right: .5em !important;
     }
 
 }

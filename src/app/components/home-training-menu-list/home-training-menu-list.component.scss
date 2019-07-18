@@ -5,7 +5,21 @@
         left: 50%;
         transform: translateX(-50%);
         width: 100% !important;
+
     }
+}
+
+ion-row:first-child {    
+    padding-top: 0 !important;
+}
+
+
+
+
+
+
+.photo {
+    min-height: 38px !important;
 }
 
 .page-width {
