@@ -4,35 +4,38 @@
 
 <ion-content>
 
-  <ion-item class="md-pt-30px " lines="none">
+  <section class="md-pb-100px">
 
-    <ion-segment class="bold" color="success" class="menu" mode="md">
-      <ion-segment-button checked mode="md" (click)="onClickTab('meditation')">
-        <ion-label>{{ a.t({en: 'Meditation', ko: '명상'}) }}</ion-label>
-      </ion-segment-button>
-      <ion-segment-button mode="md" (click)="onClickTab('yoga')">
-        <ion-label>{{ a.t({en: 'Yoga', ko: '요가'}) }}</ion-label>
-      </ion-segment-button>
-      <ion-segment-button mode="md" (click)="onClickTab('stretching')">
-        <ion-label>{{ a.t({en: 'Stretching', ko: '스트레칭'}) }}</ion-label>
-      </ion-segment-button>
-      <ion-segment-button mode="md" (click)="onClickTab('core')">
-        <ion-label>{{ a.t({en: 'Core', ko: '코어'}) }}</ion-label>
-      </ion-segment-button>
-    </ion-segment>
+    <ion-item class="md-pt-30px " lines="none">
 
-  </ion-item>
+      <ion-segment class="bold" color="success" class="menu" mode="md">
+        <ion-segment-button checked mode="md" (click)="onClickTab('meditation')">
+          <ion-label>{{ a.t({en: 'Meditation', ko: '명상'}) }}</ion-label>
+        </ion-segment-button>
+        <ion-segment-button mode="md" (click)="onClickTab('yoga')">
+          <ion-label>{{ a.t({en: 'Yoga', ko: '요가'}) }}</ion-label>
+        </ion-segment-button>
+        <ion-segment-button mode="md" (click)="onClickTab('stretching')">
+          <ion-label>{{ a.t({en: 'Stretching', ko: '스트레칭'}) }}</ion-label>
+        </ion-segment-button>
+        <ion-segment-button mode="md" (click)="onClickTab('core')">
+          <ion-label>{{ a.t({en: 'Core', ko: '코어'}) }}</ion-label>
+        </ion-segment-button>
+      </ion-segment>
+
+    </ion-item>
 
 
-  <app-home-training-menu-list [name]=" tabName "></app-home-training-menu-list>
+    <app-home-training-menu-list [name]=" tabName "></app-home-training-menu-list>
+
+  </section>
 
 
-  
+
   <ng-container *ngIf="a.isDesktop">
-      <app-desktop-home-footer></app-desktop-home-footer>
-    </ng-container>
-  
+    <app-desktop-home-footer></app-desktop-home-footer>
+  </ng-container>
+
 
 
 </ion-content>
-

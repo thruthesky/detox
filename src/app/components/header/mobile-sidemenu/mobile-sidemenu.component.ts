@@ -38,8 +38,14 @@ export class MobileSidemenuComponent implements OnInit {
   }
 
   onClickLogout() {
-    this.open('/login');
+    if(this.a.isDesktop) {
+      this.popoverController.dismiss(); 
+    } else {
+      this.menu.close();
+    }
+
     this.a.logout();
+    this.a.open('/login');
   }
 
 

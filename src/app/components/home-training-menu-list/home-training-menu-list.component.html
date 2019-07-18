@@ -9,15 +9,15 @@
     <ion-col class="md-pr-30px ion-align-self-center" size="12" size-md="5" *ngIf="post?.ID">
       <div class="photo position-relative">
         <ion-img src="{{ post.featured_image_url }}" *ngIf="post.featured_image_url"></ion-img>
-        <h1 class="fs-32px white" *ngIf="a.isMobile">{{ post.post_title }}</h1>
+        <div class="title-mobile">
+          <h1 class="fs-32px white ion-text-center" *ngIf="a.isMobile">{{ post.post_title }}</h1>
+        </div>
       </div>
       <app-admin-page-edit-button [path]=" name + '-' + i "></app-admin-page-edit-button>
     </ion-col>
-    <ion-col class="md-pl-5 "size="12" size-md="7" *ngIf="post?.ID">
-        <h1 class="mt-1 fs-32px green" *ngIf="a.isDesktop">{{ post.post_title }}</h1>
+    <ion-col class="md-pl-5 " size="12" size-md="7" *ngIf="post?.ID">
+      <h1 class="mt-1 fs-32px green" *ngIf="a.isDesktop">{{ post.post_title }}</h1>
       <p class="fs-14 lh-25px gray" [innerHTML]=" a.safeHtml( post.post_content ) "></p>
     </ion-col>
   </ion-row>
 </ion-grid>
-
-

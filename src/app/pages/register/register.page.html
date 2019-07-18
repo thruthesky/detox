@@ -16,12 +16,10 @@
     <form [formGroup]=" form " (ngSubmit)=" onSubmit() ">
 
       <ion-list class="ion-no-padding ion-no-margin bg-light-gray ">
-
         <ion-item mode="ios" lines="none">
           <ion-label position="floating" color="medium">{{ a.t({en: 'Email', ko: '이메일 주소'}) }}</ion-label>
-          <ion-input class="no-border" name="user_email" formControlName="user_email"></ion-input>
+          <ion-input  class="no-border" name="user_email" formControlName="user_email"></ion-input>
         </ion-item>
-
         <ng-container *ngIf=" errors('user_email') ">
           <ion-text *ngIf=" errors('user_email')?.required && submit" class="lh-30px" color="danger">
             {{ validationMessages['user_email'].required }}</ion-text>
@@ -31,11 +29,9 @@
             {{ validationMessages['user_email'].maxlength }}</ion-text>
         </ng-container>
 
-
-
         <ion-item mode="ios" lines="none">
           <ion-label position="floating" color="medium">{{ a.t({en: 'Password', ko: '비밀번호'}) }}</ion-label>
-          <ion-input name="user_pass" formControlName="user_pass"></ion-input>
+          <ion-input type="password" name="user_pass" formControlName="user_pass"></ion-input>
         </ion-item>
         <!-- <ion-text class="d-block mt-2 fs-sm" color="danger" *ngIf=" errors.user_pass ">{{ errors.user_pass }}
           </ion-text> -->
@@ -48,12 +44,10 @@
             {{ validationMessages['user_pass'].maxlength }}</ion-text>
         </ng-container>
 
-
-
         <ion-item mode="ios" lines="none">
           <ion-label position="floating" color="medium">{{ a.t({en: 'Password Confirm', ko: '비밀번호 재확인'}) }}
           </ion-label>
-          <ion-input name="user_pass_confirm" formControlName="user_pass_confirm">
+          <ion-input type="password" name="user_pass_confirm" formControlName="user_pass_confirm">
           </ion-input>
         </ion-item>
 
@@ -63,7 +57,6 @@
           <ion-text *ngIf=" errors('user_pass_confirm')?.passwordNotMatch " color="danger">
             {{ validationMessages['user_pass_confirm'].passwordNotMatch }}</ion-text>
         </ng-container>
-
 
 
         <ion-item mode="ios" lines="none">
@@ -81,14 +74,11 @@
 
 
 
-
-
         <ion-item mode="ios" lines="none">
           <ion-label position="floating" color="medium">{{ a.t({en: 'Mobile No.', ko: '핸드폰 번호'}) }}</ion-label>
           <ion-input name="mobile" formControlName="mobile"></ion-input>
         </ion-item>
-        <!-- <ion-text class="d-block mt-2 fs-sm" color="danger" *ngIf=" errors.mobile ">{{ errors.mobile }}
-        </ion-text> -->
+
         <ng-container *ngIf=" errors('mobile') ">
           <ion-text *ngIf=" errors('mobile')?.required && submit" color="danger">
             {{ validationMessages['mobile'].required }}</ion-text>
@@ -136,9 +126,7 @@
           </ion-row>
         </ion-grid>
       </ion-radio-group>
-      <!-- <ion-text text-center class=" mt-2 fs-sm" color="danger" *ngIf=" errors.gender ">{{ errors.gender }}
-      </ion-text> -->
-
+  
       <ion-text class="d-block ion-text-center" *ngIf=" errors('gender')?.required && submit" color="danger">
         {{ validationMessages['gender'].required }}</ion-text>
 
@@ -158,13 +146,10 @@
         </ion-label>
       </div>
 
-      <ng-container *ngIf=" errors('agree') ">
+    
         <ion-text class="d-block mt-1" *ngIf=" errors('agree')?.required && submit" color="danger" text-center>
           {{ validationMessages['agree'].required }}</ion-text>
-      </ng-container>
-
-
-
+    
 
 
       <ion-button type="submit" mode="md" expand="full" color="green" class="h-50px mt-5 fs-14 no-box-shadow">
