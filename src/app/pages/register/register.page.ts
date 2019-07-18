@@ -31,7 +31,7 @@ export class RegisterPage implements OnInit, OnDestroy {
 
 
     this.form = fb.group({
-      user_pass: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(32)]],
+      user_pass: ['', [Validators.required, Validators.minLength(5), Validators.maxLength(64)]],
       user_pass_confirm: ['', [Validators.required, (el: AbstractControl) => {
         if (el.dirty) {
           if (el.value === this.form.get('user_pass').value) {

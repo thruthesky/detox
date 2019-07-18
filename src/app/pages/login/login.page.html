@@ -11,26 +11,58 @@
 
   <section class="register mb-md-340px md-mobile-width px-23px pb-5 pt-1 border-md-gray  bg-light-gray">
     <form [formGroup]=" form " (ngSubmit)=" onSubmit() ">
-     
+
       <ion-item mode="ios" lines="none">
         <ion-label position="floating" color="medium">{{ a.t({en: 'Email', ko: '이메일 주소'}) }}</ion-label>
         <ion-input class="no-border" formControlName="user_email"></ion-input>
       </ion-item>
 
+      <ion-text class="form-validation-error" color="danger" *ngIf=" submitted && errors('user_email')?.email ">
+          {{ a.t({en: 'Please input correct email address.', ko: '올바른 메일 주소를 입력해주세요.' })}}
+      </ion-text>
+      <ion-text class="form-validation-error" color="danger" *ngIf=" submitted && errors('user_email')?.required ">
+          {{ a.t({en: 'Please input email address.', ko: '메일 주소를 입력해주세요.' })}}
+      </ion-text>
+
+
       <ion-item mode="ios" lines="none">
         <ion-label position="floating" color="medium">{{ a.t({en: 'Password', ko: '비밀번호'}) }}</ion-label>
-        <ion-input  formControlName="user_pass"></ion-input>
+        <ion-input formControlName="user_pass"></ion-input>
       </ion-item>
+
+
+      <ion-text class="form-validation-error" color="danger" *ngIf=" submitted && errors('user_pass')?.required ">
+          {{ a.t({en: 'Please input password.', ko: '비밀번호를 입력해주세요.' })}}
+      </ion-text>
+
+      <ion-text class="form-validation-error" color="danger" *ngIf=" submitted && errors('user_pass')?.minlength ">
+          {{ a.t({en: 'The password is too short.', ko: '비밀번호가 너무 짧습니다.' })}}
+      </ion-text>
+
+      <ion-text class="form-validation-error" color="danger" *ngIf=" submitted && errors('user_pass')?.maxlength ">
+          {{ a.t({en: 'The password is too long.', ko: '비밀번호 너무 깁니다.' })}}
+      </ion-text>
+
+
 
       <ion-button type="submit" mode="md" expand="full" color="green" class="h-50px mt-3 fs-14 no-box-shadow">
         {{ a.t({en: 'Login', ko: '로그인' })}}
       </ion-button>
 
-      <ion-text class="d-block h-50px lh-50px fs-14 underline bold  ion-text-center pointer">
-          로그인로그인
-      </ion-text>
-   
     </form>
+
+    <div class="flex-between">
+
+      <ion-text class="pl-1 h-50px lh-50px fs-14 underline bold  pointer">
+        {{ a.t({en: 'Forgot Passwrod?', ko: '비밀번호 찾기' })}}
+      </ion-text>
+
+      <ion-text class="pr-1 h-50px lh-50px fs-14 bold dark pointer">
+        {{ a.t({en: 'Register', ko: '회원 가입' })}}
+      </ion-text>
+    </div>
+
+
 
   </section>
 </ion-content>
