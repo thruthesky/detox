@@ -4,9 +4,9 @@
 
 <ion-content>
 
-  <ion-item color="lightgray" lines="none">
+  <ion-item class="md-pt-30px " lines="none">
 
-    <ion-segment mode="md">
+    <ion-segment class="bold" color="success" class="menu" mode="md">
       <ion-segment-button checked mode="md" (click)="onClickTab('meditation')">
         <ion-label>{{ a.t({en: 'Meditation', ko: '명상'}) }}</ion-label>
       </ion-segment-button>
@@ -25,6 +25,14 @@
 
 
   <app-home-training-menu-list [name]=" tabName "></app-home-training-menu-list>
+
+
+  
+  <ng-container *ngIf="a.isDesktop">
+      <app-desktop-home-footer></app-desktop-home-footer>
+    </ng-container>
+  
+
 
 </ion-content>
 

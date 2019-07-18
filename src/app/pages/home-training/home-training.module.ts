@@ -8,6 +8,7 @@ import { IonicModule } from '@ionic/angular';
 import { HomeTrainingPage } from './home-training.page';
 import { HeaderModule } from 'src/app/components/header/header.module';
 import { HomeTrainingMenuListModule } from 'src/app/components/home-training-menu-list/home-training-menu-list.module';
+import { DesktopHomeFooterModule } from 'src/app/components/desktop-home-footer/desktop-home-footer.module';
 
 const routes: Routes = [
   {
@@ -23,7 +24,8 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes),
     HeaderModule,
-    HomeTrainingMenuListModule
+    HomeTrainingMenuListModule,
+    DesktopHomeFooterModule
   ],
   declarations: [HomeTrainingPage]
 })

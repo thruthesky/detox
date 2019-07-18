@@ -59,7 +59,7 @@
 
         <ion-button *ngIf="a.wp.userIsLoggedOut" fill="clear" no-margin mode="ios" (click)="open('/login')">
           {{ a.t({en: 'Login', ko: '로그인'}) }}</ion-button>
-        <ion-button *ngIf="a.wp.userIsLoggedIn" fill="clear" no-margin mode="ios" (click)="a.logout()">
+        <ion-button *ngIf="a.wp.userIsLoggedIn" fill="clear" no-margin mode="ios" (click)="onClickLogout()">
           {{ a.t({en: 'Logout', ko: '로그아웃'}) }}</ion-button>
       </ion-col>
     </ion-row>

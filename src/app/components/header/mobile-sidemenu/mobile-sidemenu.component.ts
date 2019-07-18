@@ -37,6 +37,11 @@ export class MobileSidemenuComponent implements OnInit {
     }
   }
 
+  onClickLogout() {
+    this.open('/login');
+    this.a.logout();
+  }
+
 
   
 
