@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { AppService } from 'src/app/services/app.service';
+import { HomeTrainingMenuListComponent } from 'src/app/components/home-training-menu-list/home-training-menu-list.component';
 
 
-type TabName = 'meditation' | 'yoga' | 'stretcing' | 'core';
+type TabName = 'meditation' | 'yoga' | 'stretching' | 'core';
 
 
 @Component({
@@ -12,6 +13,7 @@ type TabName = 'meditation' | 'yoga' | 'stretcing' | 'core';
 })
 export class HomeTrainingPage implements OnInit {
 
+  @ViewChild(HomeTrainingMenuListComponent) list: HomeTrainingMenuListComponent;
   tabName: TabName = 'meditation';
   constructor(
     public a: AppService
@@ -21,7 +23,8 @@ export class HomeTrainingPage implements OnInit {
   }
 
   onClickTab(name: TabName) {
-    this.tabName = name;
+    this.list.name = name;
+    this.list.ngOnInit();
   }
 
 }

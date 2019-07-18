@@ -17,40 +17,30 @@ export class MobileSidemenuComponent implements OnInit {
     public a: AppService
   ) { }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
 
   open(url: string) {
 
-    if(this.a.isDesktop) {
-      this.popoverController.dismiss(); 
-      console.log('popclose');
+    if (this.a.isDesktop) {
+      this.popoverController.dismiss();
     } else {
       this.menu.close();
-      console.log('menuclose');
     }
 
-   
-    
-    if(url){
+    if (url) {
       this.router.navigateByUrl(url);
     }
   }
 
   onClickLogout() {
-    
-    if(this.a.isDesktop) {
-      this.popoverController.dismiss(); 
-    } else {
-      this.menu.close();
-    }
 
     this.a.logout();
-    this.a.open('/login');
+    this.open('/');
   }
 
 
-  
+
 
 
 }

@@ -22,7 +22,7 @@ export class HomeTrainingMenuListComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     console.log('posts: ', this.posts);
-
+    this.posts = Array(4);
     for (let i = 0; i < 4; i++) {
       this.subscription.add(this.a.wp.postGet(`${this.name}-${i}`).subscribe(post => {
         console.log('post', post);
