@@ -26,21 +26,23 @@
 
   </section>
 
-  <section class="md-pb-100px" style="background-color: #fafafa;">
+  <section class="md-pb-100px md-mb-145px" style="background-color: #fafafa;">
     <div class="page-width-md">
       <ion-grid class="pt-50px">
         <ion-row>
           <ion-col class="px-4" size="12" size-md="6">
             <app-admin-page-edit-button [path]=" a.pageCode.aboutBottomLeft "></app-admin-page-edit-button>
             <h2 class="ion-text-center green-2">{{ postBottomLeft?.post_title }}</h2>
-            <div class="mt-4">
+            <div class="mt-5">
               <app-page-post-content [post]=" postBottomLeft "></app-page-post-content>
             </div>
           </ion-col>
           <ion-col class="px-4" size="12" size-md="6">
             <app-admin-page-edit-button [path]=" a.pageCode.aboutBottomRight "></app-admin-page-edit-button>
             <h2 class="ion-text-center green-2 ">{{ postBottomRight?.post_title }}</h2>
-            <app-page-post-content [post]=" postBottomRight "></app-page-post-content>
+            <div class="mt-5">
+                <app-page-post-content [post]=" postBottomRight "></app-page-post-content>
+            </div>
           </ion-col>
         </ion-row>
       </ion-grid>
