@@ -38,6 +38,7 @@ export class MobileSidemenuComponent implements OnInit {
   }
 
   onClickLogout() {
+    
     if(this.a.isDesktop) {
       this.popoverController.dismiss(); 
     } else {
