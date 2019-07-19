@@ -24,7 +24,7 @@ export class HomeTrainingMenuListComponent implements OnInit, OnDestroy {
     console.log('posts: ', this.posts);
     this.posts = Array(4);
     for (let i = 0; i < 4; i++) {
-      this.subscription.add(this.a.wp.postGet(`${this.name}-${i}`).subscribe(post => {
+      this.subscription.add(this.a.wp.postGet({ guid: `${this.name}-${i}` }).subscribe(post => {
         console.log('post', post);
         this.posts[i] = post;
       }, e => this.a.error(e)));
