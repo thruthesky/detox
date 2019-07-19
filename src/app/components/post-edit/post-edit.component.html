@@ -7,9 +7,9 @@ Upload image: <input type="file"><br>
 
 </form> -->
 
-<section class="p-5">
+<section class="p-3">
 
-    <form>
+    <form [formGroup]=" form " (ngSubmit)="onSubmit()">
 
         <ion-item lines="none">
             <ion-label position="floating">{{ a.t( {en: 'Title',ko: '표제'})}}</ion-label>
@@ -21,8 +21,8 @@ Upload image: <input type="file"><br>
             <ion-textarea rows="6" cols="20"></ion-textarea>
         </ion-item>
 
-        <div class="position-relative">
-                <input class="cover-parent opacity-001 bg-green" type="file"  >
+        <div class="position-relative ">
+                <input class="cover-parent bg-green opacity-001 pointer" type="file"  >
                 <ion-item lines="none" button>
                   <ion-icon slot="start" name="image"></ion-icon>
                   <ion-label>Upload Image</ion-label>
