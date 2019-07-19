@@ -33,6 +33,14 @@ export class AppService {
         return obj[this.env.lang];
     }
 
+    keys(obj: any): any[] {
+        if (obj) {
+            return Object.keys(obj);
+        } else {
+            return [];
+        }
+    }
+
 
     /**
      * Returns app page width.

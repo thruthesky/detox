@@ -12,12 +12,12 @@ Upload image: <input type="file"><br>
     <form [formGroup]=" form " (ngSubmit)="onSubmit()">
 
         <ion-item lines="none">
-            <ion-label position="floating">{{ a.t( {en: 'Title',ko: '표제'})}}</ion-label>
+            <ion-label position="floating">{{ a.t( {en: 'Title',ko: '제목'})}}</ion-label>
             <ion-input type="text"></ion-input>
         </ion-item>
 
         <ion-item lines="none">
-            <ion-label position="floating">{{ a.t( {en: 'Content',ko: '함유량'})}}</ion-label>
+            <ion-label position="floating">{{ a.t( {en: 'Content',ko: '내용'})}}</ion-label>
             <ion-textarea rows="6" cols="20"></ion-textarea>
         </ion-item>
 
@@ -25,12 +25,12 @@ Upload image: <input type="file"><br>
                 <input class="cover-parent bg-green opacity-001 pointer" type="file"  >
                 <ion-item lines="none" button>
                   <ion-icon slot="start" name="image"></ion-icon>
-                  <ion-label>Upload Image</ion-label>
+                  <ion-label>{{ a.t({ en: 'Upload Image', ko: '사진 업로드' }) }}</ion-label>
                 </ion-item>
         </div>
         
         <ion-button type="submit" mode="md" expand="full" color="green" class="h-50px mt-5 mx-3 fs-14 no-box-shadow">
-                {{ a.t({en: 'Update', ko: '최신 정보' })}}
+                {{ a.t({en: 'Create Post', ko: '글 등록' })}}
         </ion-button>
      
     </form>

@@ -1,11 +1,18 @@
+<app-admin-page-edit-button [guid]=" a.pageCode.aboutBottomRight "></app-admin-page-edit-button>
 <article *ngIf=" post?.ID ">
   <div class="post_content" [innerHTML]=" a.safeHtml( post.post_content ) " *ngIf=" post "></div>
 </article>
 <div *ngIf=" ! post?.ID ">
-  Loading...
+
+  
+  <div *ngIf=" a.keys(post).length == 0 ">
+    Loading...
+  </div>
 
   <div *ngIf=" post['errcode'] ">
     Error: {{ post['errstring'] }}
   </div>
 
+
 </div>
+
