@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ViewChild } from '@angular/core';
+import { Component, OnInit, Input, ViewChild, Output, EventEmitter } from '@angular/core';
 import { Post } from 'modules/wordpress-api/wordpress-api.interface';
 import { AppService } from 'src/app/services/app.service';
 import { AdminPageEditButtonComponent } from '../admin-page-edit-button/admin-page-edit-button.component';
@@ -13,14 +13,15 @@ export class PagePostContentComponent implements OnInit {
   @ViewChild(AdminPageEditButtonComponent) editButton: AdminPageEditButtonComponent;
   @Input() post: Post;
   @Input() guid: string;
+  @Output() edited = new EventEmitter<Post>();
   constructor(
     public a: AppService
   ) { }
 
   ngOnInit() {
-    if (this.guid === 'about-page-top-left') {
-      this.editButton.onClickEdit();
-    }
+    // if (this.guid === 'about-page-top-left') {
+    //   this.editButton.onClickEdit();
+    // }
   }
 
 }

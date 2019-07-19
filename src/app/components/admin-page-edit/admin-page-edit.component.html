@@ -1,7 +1,6 @@
 <ion-header>
     <ion-toolbar>
         <ion-title>{{ a.t({ en: 'Page content edit', ko: '페이지 글 수정' }) }}</ion-title>
-
         <ion-buttons slot="end">
             <ion-button (click)="modalCtrl.dismiss()">
                 <ion-icon name="close"></ion-icon>
@@ -11,5 +10,6 @@
 </ion-header>
 <ion-content>
 
-    <app-post-edit></app-post-edit>
+    <app-post-edit [guid]="guid" (edited)=" modalCtrl.dismiss( $event, 'edited') "></app-post-edit>
+
 </ion-content>

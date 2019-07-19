@@ -35,4 +35,8 @@ export class AboutPage implements OnInit {
   ngOnInit() {
   }
 
+  onPageContentEdited(post: Post) {
+    console.log('Yeap! page conetnt edited: ', post);
+  }
+
 }

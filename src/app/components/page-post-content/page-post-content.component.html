@@ -1,4 +1,4 @@
-<app-admin-page-edit-button [guid]=" a.pageCode.aboutBottomRight "></app-admin-page-edit-button>
+<app-admin-page-edit-button [guid]=" guid " (edited)=" edited.emit( $event ) "></app-admin-page-edit-button>
 <article *ngIf=" post?.ID ">
   <div class="post_content" [innerHTML]=" a.safeHtml( post.post_content ) " *ngIf=" post "></div>
 </article>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { AppService } from 'src/app/services/app.service';
 import { ModalController } from '@ionic/angular';
 
@@ -9,12 +9,17 @@ import { ModalController } from '@ionic/angular';
 })
 export class AdminPageEditComponent implements OnInit {
 
+  @Input() ID: string;
+  @Input() guid: string;
   constructor(
     public a: AppService,
     public modalCtrl: ModalController
   ) { }
 
-  ngOnInit() { }
+  ngOnInit() {
+    console.log('ID: ', this.ID);
+    console.log('guid: ', this.guid);
+  }
 
 }
 
