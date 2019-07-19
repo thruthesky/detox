@@ -3,7 +3,7 @@
         <ion-title>{{ a.t({ en: 'Page content edit', ko: '페이지 글 수정' }) }}</ion-title>
 
         <ion-buttons slot="end">
-            <ion-button>
+            <ion-button (click)="modalCtrl.dismiss()">
                 <ion-icon name="close"></ion-icon>
             </ion-button>
         </ion-buttons>
