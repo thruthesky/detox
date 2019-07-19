@@ -1,3 +1,11 @@
-<article *ngIf=" post ">
-  <div class="post_content" [innerHTML]=" a.safeHtml( post.post_content ) "></div>
+<article *ngIf=" post?.ID ">
+  <div class="post_content" [innerHTML]=" a.safeHtml( post.post_content ) " *ngIf=" post "></div>
 </article>
+<div *ngIf=" ! post?.ID ">
+  Loading...
+
+  <div *ngIf=" post['errcode'] ">
+    Error: {{ post['errstring'] }}
+  </div>
+
+</div>

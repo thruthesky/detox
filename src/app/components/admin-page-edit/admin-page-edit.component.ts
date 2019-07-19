@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AppService } from 'src/app/services/app.service';
 
 @Component({
   selector: 'app-admin-page-edit',
@@ -7,8 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminPageEditComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    public a: AppService
+  ) { }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
 }
+

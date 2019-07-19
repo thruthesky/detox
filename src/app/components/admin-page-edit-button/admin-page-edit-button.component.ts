@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { AppService } from 'src/app/services/app.service';
-import { PopoverController } from '@ionic/angular';
+import { ModalController } from '@ionic/angular';
 import { AdminPageEditComponent } from '../admin-page-edit/admin-page-edit.component';
 
 @Component({
@@ -10,26 +10,33 @@ import { AdminPageEditComponent } from '../admin-page-edit/admin-page-edit.compo
 })
 export class AdminPageEditButtonComponent implements OnInit {
 
-  @Input() path: string;
+  @Input() guid: string;
   constructor(
     public a: AppService,
-    private popoverController: PopoverController
+    private modalController: ModalController
   ) {
   }
 
   ngOnInit() { }
 
-  onClickEdit() {
-    this.a.wp.postGet(this.path).subscribe(async res => {
-      console.log('post got for edit: ', res);
-      // window.open(this.a.wp.adminPagePostEditUrl(res.ID), '_system');
+  async onClickEdit() {
+    const res = await this.a.wp.postGet({ guid: this.guid }).toPromise().catch(e => e);
+    console.log('post got for edit: ', res);
 
-      const pop = await this.popoverController.create({
-        component: AdminPageEditComponent
-      });
-      pop.present();
-      await pop.onWillDismiss();
+    const data: any = {};
+    if (res.ID !== void 0) {
+      data.ID = res.ID;
+    } else {
+      data.guid = this.guid;
+    }
 
-    }, e => this.a.error(e));
+    const pop = await this.modalController.create({
+      component: AdminPageEditComponent,
+      componentProps: data
+    });
+    pop.present();
+    await pop.onWillDismiss();
+
   }
 }
+
