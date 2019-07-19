@@ -14,7 +14,7 @@ export class HomeTrainingMenuListComponent implements OnInit, OnDestroy {
   @Input() name = '';
 
   subscription = new Subscription();
-  posts: Post[] = Array(4);
+  posts: { [key: string]: Post } = {};
   constructor(
     public a: AppService
   ) {
@@ -22,19 +22,21 @@ export class HomeTrainingMenuListComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     console.log('posts: ', this.posts);
-    this.posts = Array(4);
+    this.posts = {};
     for (let i = 0; i < 4; i++) {
-      this.subscription.add(this.a.wp.postGet(`${this.name}-${i}`).subscribe(post => {
-        console.log('post', post);
-        this.posts[i] = post;
-      }, e => this.a.error(e)));
+      const guid = `${this.name}-${i}`;
+      this.posts[guid] = {} as any;
+      this.a.wp.postGetIn({ guid: guid }, this.posts[guid]);
     }
-
   }
 
   ngOnDestroy() {
     if (this.subscription) {
       this.subscription.unsubscribe();
     }
+  }
+
+  src(post: Post) {
+    return this.a.wp.getPostFileUrl(post);
   }
 }

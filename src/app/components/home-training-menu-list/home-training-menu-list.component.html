@@ -3,24 +3,28 @@
 </h1>
  -->
 <ion-grid class="px-2 md-pt-5 page-width ion-no-padding">
-  <ion-row class="xs-pt-4 md-mt-40px ion-no-padding" *ngFor=" let post of posts; let i = index ">
+  <ion-row class="xs-pt-4 md-mt-40px ion-no-padding" *ngFor=" let item of posts | keyvalue; let i = index ">
 
-    <ion-col class="md-pr-60px ion-align-self-center ion-no-padding" size="12" size-md="5" *ngIf="post?.ID">
+    <ion-col class="md-pr-60px ion-align-self-center ion-no-padding" size="12" size-md="5">
 
       <div class="photo position-relative">
-        <ion-text *ngIf="a.isMobile" class="title-mobile fs-32px white" text-center>
+        <ion-text *ngIf="a.isMobile" class="title-mobile fs-32px light" text-center>
           <h1>Awesome text</h1>
         </ion-text>
-        <ion-img src="{{ post.featured_image_url }}" *ngIf="post.featured_image_url"></ion-img>
+        <ion-img src="{{ src(item.value) }}" *ngIf=" src(item.value) "></ion-img>
       </div>
 
-      <app-admin-page-edit-button [path]=" name + '-' + i "></app-admin-page-edit-button>
+      <!-- <app-admin-page-edit-button [path]=" name + '-' + i "></app-admin-page-edit-button> -->
 
     </ion-col>
 
-    <ion-col class="smd-pl-5 " size="12" size-md="7" *ngIf="post?.ID">
-      <h1 class="mt-1 fs-32px green" *ngIf="a.isDesktop">{{ post.post_title }}</h1>
-      <p class="fs-14 lh-25px gray" [innerHTML]=" a.safeHtml( post.post_content ) "></p>
+    <ion-col class="smd-pl-5 " size="12" size-md="7">
+      <h1 class="mt-1 fs-32px green" *ngIf="a.isDesktop">{{ item.value?.post_title }}</h1>
+      <!-- <p class="fs-14 lh-25px gray" [innerHTML]=" a.safeHtml( item.value.post_content ) "></p> -->
+      <!-- {{ name + '-' + i | json }}
+      {{ item.value | json }} -->
+      <app-page-post-content [guid]=" name + '-' + i " [post]=" item.value " (edited)=" item.value = $event ">
+      </app-page-post-content>
     </ion-col>
 
   </ion-row>

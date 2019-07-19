@@ -1,5 +1,8 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { AppService } from 'src/app/services/app.service';
+import { ModalController } from '@ionic/angular';
+import { AdminPageEditComponent } from '../admin-page-edit/admin-page-edit.component';
+import { Post } from 'modules/wordpress-api/wordpress-api.interface';
 
 @Component({
   selector: 'app-admin-page-edit-button',
@@ -8,18 +11,28 @@ import { AppService } from 'src/app/services/app.service';
 })
 export class AdminPageEditButtonComponent implements OnInit {
 
-  @Input() path: string;
+  @Output() edited = new EventEmitter<Post>();
+  @Input() guid: string;
   constructor(
-    public a: AppService
+    public a: AppService,
+    private modalController: ModalController
   ) {
   }
 
   ngOnInit() { }
 
-  onClickEdit() {
-    this.a.wp.postGet(this.path).subscribe(res => {
-      console.log('post got for edit: ', res);
-      window.open(this.a.wp.adminPagePostEditUrl(res.ID), '_system');
-    }, e => this.a.error(e));
+  async onClickEdit() {
+    const pop = await this.modalController.create({
+      component: AdminPageEditComponent,
+      componentProps: {
+        guid: this.guid
+      }
+    });
+    pop.present();
+    const res = await pop.onWillDismiss();
+    if (res && res.data) {
+      this.edited.emit(res.data);
+    }
   }
 }
+
