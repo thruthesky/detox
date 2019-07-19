@@ -20,7 +20,7 @@ export class PagePostContentComponent implements OnInit {
 
   ngOnInit() {
     // if (this.guid === 'about-page-top-left') {
-    //   this.editButton.onClickEdit();
+    //   setTimeout(() => this.editButton.onClickEdit(), 200);
     // }
   }
 

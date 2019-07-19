@@ -30,7 +30,9 @@ export class AdminPageEditButtonComponent implements OnInit {
     });
     pop.present();
     const res = await pop.onWillDismiss();
-    this.edited.emit( res.data );
+    if (res && res.data) {
+      this.edited.emit(res.data);
+    }
   }
 }
 

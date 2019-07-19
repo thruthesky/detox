@@ -11,7 +11,7 @@
         <ion-text *ngIf="a.isMobile" class="title-mobile fs-32px light" text-center>
           <h1>Awesome text</h1>
         </ion-text>
-        <ion-img src="{{ item.value.featured_image_url }}" *ngIf="item.value.featured_image_url"></ion-img>
+        <ion-img src="{{ src(item.value) }}" *ngIf=" src(item.value) "></ion-img>
       </div>
 
       <!-- <app-admin-page-edit-button [path]=" name + '-' + i "></app-admin-page-edit-button> -->

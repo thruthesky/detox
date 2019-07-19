@@ -1,33 +1,32 @@
-
 <section class="p-3">
-
     <form [formGroup]=" form " (ngSubmit)="onSubmit()">
-
         <ion-item lines="none">
             <ion-label position="floating">{{ a.t( {en: 'Title',ko: '제목'})}}</ion-label>
             <ion-input type="text" formControlName="post_title"></ion-input>
         </ion-item>
         <ion-text class="form-validation-error" color="danger" *ngIf=" submitted && errors('post_title')?.required ">
             {{ a.t({ en: 'Please input title', ko: '제목을 입력하세요.' }) }}</ion-text>
-
         <ion-item lines="none">
             <ion-label position="floating">{{ a.t( {en: 'Content',ko: '내용'})}}</ion-label>
             <ion-textarea rows="6" cols="20" formControlName="post_content"></ion-textarea>
         </ion-item>
         <ion-text class="form-validation-error" color="danger" *ngIf=" submitted && errors('post_content')?.required ">
             {{ a.t({ en: 'Please input content', ko: '내용을 입력하세요.' }) }}</ion-text>
-
-        <div class="position-relative ">
-            <input class="cover-parent bg-green opacity-001 pointer" type="file">
-            <ion-item lines="none" button>
+        <div>
+            <ion-item lines="none" button (click)="onClickUploadImage( $event )">
                 <ion-icon slot="start" name="image"></ion-icon>
                 <ion-label>{{ a.t({ en: 'Upload Image', ko: '사진 업로드' }) }}</ion-label>
             </ion-item>
         </div>
-
+        <ion-grid>
+            <ion-row>
+                <ion-col size="3" size-lg="2" *ngFor=" let file of files ">
+                    <ion-img src="{{ file.thumbnail_url }}"></ion-img>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
         <ion-button type="submit" mode="md" expand="full" color="green" class="h-50px mt-5 mx-3 fs-14 no-box-shadow">
             {{ a.t({en: 'Create Post', ko: '글 등록' })}}
         </ion-button>
-
     </form>
 </section>

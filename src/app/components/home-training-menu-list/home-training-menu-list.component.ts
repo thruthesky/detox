@@ -35,4 +35,8 @@ export class HomeTrainingMenuListComponent implements OnInit, OnDestroy {
       this.subscription.unsubscribe();
     }
   }
+
+  src(post: Post) {
+    return this.a.wp.getPostFileUrl(post);
+  }
 }

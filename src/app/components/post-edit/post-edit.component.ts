@@ -1,7 +1,9 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { AppService } from 'src/app/services/app.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { Post, PostGetOptions, PostCreateOptions, PostUpdateOptions } from 'modules/wordpress-api/wordpress-api.interface';
+import { Post, PostGetOptions, PostCreateOptions, PostUpdateOptions, Files, UploadedFile } from 'modules/wordpress-api/wordpress-api.interface';
+import { PopoverController } from '@ionic/angular';
+import { FileUploadPopoverComponent } from '../file-upload-popover/file-upload-popover.component';
 
 @Component({
   selector: 'app-post-edit',
@@ -36,6 +38,13 @@ export class PostEditComponent implements OnInit {
   @Output() updated = new EventEmitter<Post>();
   @Output() edited = new EventEmitter<Post>();
 
+  /**
+   * files of uploaded image.
+   * @note these images will be shown on the template view.
+   * @note uploaded images and downloaded images must be saved here. And it must be copied into submit data.
+   */
+  files: Files = [];
+
   form: FormGroup;
 
   submitted = false;
@@ -47,6 +56,7 @@ export class PostEditComponent implements OnInit {
   constructor(
     public a: AppService,
     public fb: FormBuilder,
+    private popoverController: PopoverController
 
   ) {
 
@@ -89,10 +99,21 @@ export class PostEditComponent implements OnInit {
       this.post = post;
     }
 
+    /**
+     * Error handling.
+     * Just in case? or is this really happening?
+     * It's more likely 'jsut in case'
+     */
+    if ( ! this.post || ! this.post.ID ) {
+      return;
+    }
+
     this.form.patchValue({
       post_title: this.post.post_title,
       post_content: this.post.post_content
     });
+
+    this.files = post.files;
   }
 
 
@@ -119,6 +140,7 @@ export class PostEditComponent implements OnInit {
       if (this.guid) {
         req.guid = this.guid;
       }
+      req.files = this.getFileIDs();
       console.log('create req: ', req);
       this.a.wp.postCreate(req).subscribe(post => {
         console.log('a post has been created: ', post);
@@ -131,6 +153,7 @@ export class PostEditComponent implements OnInit {
        */
       const up: PostUpdateOptions = req as any;
       up.ID = this.post.ID;
+      up.files = this.getFileIDs();
       console.log('update req: ', req);
       this.a.wp.postUpdate(up).subscribe(post => {
         console.log('post updated: ', post);
@@ -142,10 +165,38 @@ export class PostEditComponent implements OnInit {
 
   }
 
+  getFileIDs(): Array<string> {
+    const IDs = [];
+    for (const file of this.files) {
+      IDs.push(file.ID);
+    }
+    return IDs;
+  }
 
   errors(formName: string): any {
     return this.form.get(formName).errors;
   }
+
+  async onClickUploadImage(ev: any) {
+    const popover = await this.popoverController.create({
+      component: FileUploadPopoverComponent,
+      event: ev,
+      translucent: true,
+      // cssClass: 'popover-center ',
+    });
+    popover.present();
+    const re = await popover.onWillDismiss();
+    console.log('file upload: ', re);
+    if (re && re.data && re.data.ID) {
+      this.files.push(re.data);
+    }
+
+    // this.profilePhotoUrl = re.data.url;
+    // this.a.wp.profileUpdate({ photoURL: re.data.url }).subscribe(res => {
+    //   console.log('profile photo url update', res);
+    // }, e => this.a.error(e));
+  }
+
 
 
 }
