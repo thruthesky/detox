@@ -18,6 +18,14 @@ export class AppComponent implements AfterViewInit {
     public a: AppService,
     public menu: MenuController
   ) {
+
+    // a.wp.call({ function: 'get_posts' }).subscribe(res => {
+    //   console.log('res: ', res);
+    // }, e => a.error(e));
+
+    a.wp.postSearch({ category_name: 'qna' }).subscribe(posts => {
+      console.log('posts: ', posts);
+    }, e => a.error(e));
     this.initializeApp();
   }
 
