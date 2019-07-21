@@ -1,6 +1,13 @@
-<ion-list>
+<ion-progress-bar   color="green" [value]="uploadPercent/100" *ngIf="uploadPercent && uploadPercent !==  100">
+</ion-progress-bar>
+
+<ion-list>  
   <ion-list-header class="border-bottom-light-gray">
     <ion-label color="green" class="fs-18px bold">{{ a.t({en: 'Choose an Option', ko: '옵션을 선택하세요'}) }}</ion-label>
+    <ion-text class="pr-2" color="primary" *ngIf="uploadPercent && uploadPercent !==  100">
+      {{ uploadPercent }}%
+    </ion-text>
+    
   </ion-list-header>
   <ion-item (click)="onClickCamera()" lines="full" button>
     <ion-icon slot="start" name="camera"></ion-icon>
@@ -14,3 +21,4 @@
     </ion-item>
   </div>
 </ion-list>
+

@@ -1,3 +1,18 @@
-<article *ngIf=" post ">
-  <div class="post_content" [innerHTML]=" a.safeHtml( post.post_content ) "></div>
+<app-admin-page-edit-button [guid]=" guid " (edited)=" edited.emit( $event ) "></app-admin-page-edit-button>
+<article *ngIf=" post?.ID ">
+  <div class="post_content" [innerHTML]=" a.safeHtml( post.post_content ) " *ngIf=" post "></div>
 </article>
+<div *ngIf=" ! post?.ID ">
+
+  
+  <div *ngIf=" a.keys(post).length == 0 ">
+    Loading...
+  </div>
+
+  <div *ngIf=" post['errcode'] ">
+    Error: {{ post['errstring'] }}
+  </div>
+
+
+</div>
+
