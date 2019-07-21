@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { AppService } from 'src/app/services/app.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { Post, PostGetOptions, PostCreateOptions, PostUpdateOptions, Files, UploadedFile } from 'modules/wordpress-api/wordpress-api.interface';
+import { Post, PostGetOptions, PostCreateOptions, PostUpdateOptions, Files, UploadedFile } from 'modules/wordpress-api/services/wordpress-api.interface';
 import { PopoverController } from '@ionic/angular';
 import { FileUploadPopoverComponent } from '../file-upload-popover/file-upload-popover.component';
 

@@ -8,8 +8,7 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { WordpressApiModule } from 'modules/wordpress-api/wordpress-api.module';
-import { WordpressApiService } from 'modules/wordpress-api/wordpress-api.service';
+import { WordpressApiModule } from 'modules/wordpress-api/services/wordpress-api.module';
 import { MobileSidemenuModule } from './components/header/mobile-sidemenu/mobile-sidemenu.module';
 import { environment } from 'src/environments/environment';
 import { ServiceWorkerModule } from '@angular/service-worker';
@@ -21,7 +20,9 @@ import { Camera } from '@ionic-native/camera/ngx';
   entryComponents: [],
   imports: [
     BrowserModule, IonicModule.forRoot(), AppRoutingModule,
-    WordpressApiModule,
+    WordpressApiModule.forRoot({
+      wordpressApiUrl: environment.apiUrl
+    }),
     MobileSidemenuModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
@@ -34,9 +35,7 @@ import { Camera } from '@ionic-native/camera/ngx';
   bootstrap: [AppComponent]
 })
 export class AppModule {
-  constructor( wp: WordpressApiService ) {
-    wp.apiUrl = environment.apiUrl;
-    console.log('wp:', wp);
+  constructor() {
   }
 }
 

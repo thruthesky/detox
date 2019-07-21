@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AppService } from 'src/app/services/app.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { User } from 'modules/wordpress-api/wordpress-api.interface';
+import { User } from 'modules/wordpress-api/services/wordpress-api.interface';
 import { AlertController, PopoverController } from '@ionic/angular';
 import { MyPromiseComponent } from 'src/app/components/my-promise/my-promise.component';
 import { FileUploadPopoverComponent } from 'src/app/components/file-upload-popover/file-upload-popover.component';

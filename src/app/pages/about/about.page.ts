@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AppService } from 'src/app/services/app.service';
 import { text } from 'src/app/services/text';
-import { Post } from 'modules/wordpress-api/wordpress-api.interface';
-
+import { Post } from 'modules/wordpress-api/services/wordpress-api.interface';
 
 @Component({
   selector: 'app-about',

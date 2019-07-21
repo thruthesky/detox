@@ -4,8 +4,8 @@
 
 export const environment = {
     production: false,
-    apiUrl: 'http://local.wordpress.org/wordpress-api/wordpress-api.php',
-    lang: 'en' // if you put empty string, then you will see the display language as in you browser language
+    wordpressApiUrl: 'http://local.wordpress.org/wordpress-api/wordpress-api.php',
+    lang: 'ko' // if you put empty string, then you will see the display language as in you browser language
 };
 
 /*

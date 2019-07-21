@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, OnDestroy } from '@angular/core';
-import { Post } from 'modules/wordpress-api/wordpress-api.interface';
+import { Post } from 'modules/wordpress-api/services/wordpress-api.interface';
 import { AppService } from 'src/app/services/app.service';
 import { Subscription } from 'rxjs';
 

@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { AppService } from 'src/app/services/app.service';
-import { UserRegisterOptions } from 'modules/wordpress-api/wordpress-api.interface';
+import { UserRegisterOptions } from 'modules/wordpress-api/services/wordpress-api.interface';
 import { FormGroup, FormBuilder, Validators, AbstractControl } from '@angular/forms';
 import { AlertController } from '@ionic/angular';
 import { Subscription } from 'rxjs';
