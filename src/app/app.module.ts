@@ -21,7 +21,7 @@ import { Camera } from '@ionic-native/camera/ngx';
   imports: [
     BrowserModule, IonicModule.forRoot(), AppRoutingModule,
     WordpressApiModule.forRoot({
-      wordpressApiUrl: environment.apiUrl
+      wordpressApiUrl: environment.wordpressApiUrl
     }),
     MobileSidemenuModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
