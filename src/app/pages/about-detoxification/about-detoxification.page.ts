@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AppService } from 'src/app/services/app.service';
 
 @Component({
   selector: 'app-about-detoxification',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AboutDetoxificationPage implements OnInit {
 
-  constructor() { }
+  constructor(public a: AppService) { }
 
   ngOnInit() {
   }
