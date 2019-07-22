@@ -4,8 +4,8 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { User } from 'modules/wordpress-api/services/wordpress-api.interface';
 import { AlertController, PopoverController } from '@ionic/angular';
 import { MyPromiseComponent } from 'src/app/components/my-promise/my-promise.component';
-import { FileUploadPopoverComponent } from 'src/app/components/file-upload-popover/file-upload-popover.component';
 import { DomSanitizer } from '@angular/platform-browser';
+import { IonFileUploadPopoverComponent } from 'modules/wordpress-api/components/shared/ion-file-upload-popover/ion-file-upload-popover.component';
 
 
 @Component({
@@ -189,7 +189,7 @@ export class ProfilePage implements OnInit {
 
   async onClickPrimaryPhoto(ev: any) {
     const popover = await this.popoverController.create({
-      component: FileUploadPopoverComponent,
+      component: IonFileUploadPopoverComponent,
       event: ev,
       translucent: true,
       // cssClass: 'popover-center ',

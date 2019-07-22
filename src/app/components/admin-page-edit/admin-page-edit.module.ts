@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AdminPageEditComponent } from './admin-page-edit.component';
-import { PostEditModule } from '../post-edit/post-edit.module';
 import { IonicModule } from '@ionic/angular';
+import { IonPostEditModule } from 'modules/wordpress-api/components/forum/ion-post-edit/ion-post-edit.module';
 
 @NgModule({
   declarations: [AdminPageEditComponent],
@@ -10,8 +10,8 @@ import { IonicModule } from '@ionic/angular';
   entryComponents: [AdminPageEditComponent],
   imports: [
     CommonModule,
-    PostEditModule,
-    IonicModule
+    IonicModule,
+    IonPostEditModule
   ]
 })
 export class AdminPageEditModule { }
