@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { AppService } from 'src/app/services/app.service';
-import { IonPostListComponent } from 'modules/wordpress-api/ionic/components/forum/ion-post-list/ion-post-list.component';
+import { IonPostListComponent } from 'modules/wordpress-api/components/forum/ion-post-list/ion-post-list.component';
 
 @Component({
   selector: 'app-post-list',

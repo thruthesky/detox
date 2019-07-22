@@ -7,7 +7,7 @@ import { IonicModule } from '@ionic/angular';
 
 import { PostListPage } from './post-list.page';
 import { HeaderModule } from 'src/app/components/header/header.module';
-import { IonPostListModule } from 'modules/wordpress-api/ionic/components/forum/ion-post-list/ion-post-list.module';
+import { IonPostListModule } from 'modules/wordpress-api/components/forum/ion-post-list/ion-post-list.module';
 
 const routes: Routes = [
   {
