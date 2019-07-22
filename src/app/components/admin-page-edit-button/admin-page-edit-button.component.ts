@@ -1,8 +1,9 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { AppService } from 'src/app/services/app.service';
 import { ModalController } from '@ionic/angular';
-import { AdminPageEditComponent } from '../admin-page-edit/admin-page-edit.component';
+// import { AdminPageEditComponent } from '../admin-page-edit/admin-page-edit.component';
 import { Post } from 'modules/wordpress-api/services/wordpress-api.interface';
+import { IonPostEditComponent } from 'modules/wordpress-api/components/forum/ion-post-edit/ion-post-edit.component';
 
 @Component({
   selector: 'app-admin-page-edit-button',
@@ -23,7 +24,7 @@ export class AdminPageEditButtonComponent implements OnInit {
 
   async onClickEdit() {
     const pop = await this.modalController.create({
-      component: AdminPageEditComponent,
+      component: IonPostEditComponent,
       componentProps: {
         guid: this.guid
       }
