@@ -56,6 +56,7 @@
     ],
     "object-literal-sort-keys": false,
     "object-literal-shorthand": false,
+    "no-string-literal": false,
     "ordered-imports": false,
     "quotemark": [
       true,
