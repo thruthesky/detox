@@ -26,7 +26,11 @@ export class AdminPageEditButtonComponent implements OnInit {
     const pop = await this.modalController.create({
       component: IonPostEditComponent,
       componentProps: {
-        guid: this.guid
+        guid: this.guid,
+        header: {
+          color: 'primary',
+          title: this.a.t({ en: 'Page content edit', ko: '페이지 글 수정' })
+        }
       }
     });
     pop.present();

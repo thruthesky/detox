@@ -14,6 +14,8 @@ import { environment } from 'src/environments/environment';
 import { ServiceWorkerModule } from '@angular/service-worker';
 
 import { Camera } from '@ionic-native/camera/ngx';
+import { WordpressApiService } from 'modules/wordpress-api/services/wordpress-api.service';
+import { AppService } from './services/app.service';
 
 @NgModule({
   declarations: [AppComponent],
@@ -35,7 +37,20 @@ import { Camera } from '@ionic-native/camera/ngx';
   bootstrap: [AppComponent]
 })
 export class AppModule {
-  constructor() {
+  constructor(
+    private wp: WordpressApiService,
+    private a: AppService
+  ) {
+    wp.addText({
+      title: a.t({ en: 'Title', ko: '제목' }),
+      content: a.t({ en: 'Content', ko: '내용' }),
+      inputTitle: a.t({ en: 'Please input title', ko: '제목을 입력하세요.' }),
+      inputContent: a.t({ en: 'Please input content', ko: '내용을 입력하세요.' }),
+      fileUpload: a.t({ en: 'Upload Image', ko: '사진 업로드' }),
+      submitPost: a.t({ en: 'Create Post', ko: '글 등록' }),
+      titleCreatePost: a.t({ en: 'Writing new post on #name forum', ko: '#name 게시판에 글쓰기' }),
+      discussion: a.t({ en: 'Discussion', ko: '자유토론' })
+    });
   }
 }
 
