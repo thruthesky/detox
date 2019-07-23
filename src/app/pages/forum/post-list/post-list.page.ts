@@ -15,11 +15,11 @@ export class PostListPage implements OnInit {
   ) { }
 
   ngOnInit() {
-    console.log('ngOnInit::');
+    // console.log('ngOnInit::');
   }
 
   onIonChangeForum(event: any) {
-    console.log('event value:', event.value);
+    // console.log('event value:', event.value);
 
     this.postList.slug = event.value;
     this.postList.ngOnInit();

@@ -58,7 +58,7 @@ export class AppModule {
       discussion: a.t({ en: 'Discussion', ko: '자유토론' }),
       postNotFoundToUpdateOnPostList: a.t({ en: 'Cannot find the post to update on the post list.', ko: '게시글 목록에서 업데이트 할 글을 찾을 수가 없습니다.' }),
       postNotFoundToDeleteOnPostList: a.t({ en: 'Cannot find the post to delete on the post list.', ko: '게시글 목록에서 삭제 할 글을 찾을 수가 없습니다.' }),
-
+      noMorePosts: a.t({en: 'There is no more post avaiable.', ko: '더 이상 글이 존재하지 않습니다.'}),
     });
   }
 }
