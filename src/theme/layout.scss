@@ -16,7 +16,9 @@
         max-width: 360px;
     }
 
-
+    .md-pt-3 {
+        margin-top: 1em !important; 
+    }
     .md-pl-5 {
         padding-left: 3em !important;
     }
@@ -42,6 +44,9 @@
     } 
     .md-pt-50px {
         margin-top: 50px !important;
+    }
+    .md-pt-80px {
+        margin-top: 80px !important;
     }
 
 }
