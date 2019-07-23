@@ -23,7 +23,8 @@ import { AppService } from './services/app.service';
   imports: [
     BrowserModule, IonicModule.forRoot(), AppRoutingModule,
     WordpressApiModule.forRoot({
-      wordpressApiUrl: environment.wordpressApiUrl
+      wordpressApiUrl: environment.wordpressApiUrl,
+      anonymousPhotoUrl: '/assets/img/anonymous.jpg'
     }),
     MobileSidemenuModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })

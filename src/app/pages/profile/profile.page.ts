@@ -15,7 +15,7 @@ import { IonFileUploadPopoverComponent } from 'modules/wordpress-api/components/
 })
 export class ProfilePage implements OnInit {
 
-  profilePhotoUrl = '/assets/img/photo.png';
+  profilePhotoUrl = this.a.anonymousPhotoUrl;
 
   submit = false;
   form: FormGroup;
@@ -183,7 +183,7 @@ export class ProfilePage implements OnInit {
     });
     await popover.present();
     const data = await popover.onWillDismiss();
-    if ( data.role === 'success' ) {
+    if (data.role === 'success') {
     }
   }
 
@@ -197,10 +197,13 @@ export class ProfilePage implements OnInit {
     popover.present();
     const re = await popover.onWillDismiss();
     console.log('file upload: ', re);
-    this.profilePhotoUrl = re.data.url;
-    this.a.wp.profileUpdate({ photoURL: re.data.url }).subscribe(res => {
-      console.log('profile photo url update', res);
-    }, e => this.a.error(e));
+    if (re && re.data && re.data.url) {
+      this.profilePhotoUrl = re.data.url;
+      this.a.wp.profileUpdate({ photoURL: re.data.url }).subscribe(res => {
+        console.log('profile photo url update', res);
+      }, e => this.a.error(e));
+    }
+
   }
 
 }
