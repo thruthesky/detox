@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AppService } from 'src/app/services/app.service';
 
 @Component({
   selector: 'app-alarm-list',
@@ -7,9 +8,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AlarmListPage implements OnInit {
 
-  constructor() { }
+  hide = true;
+  arrowIcon = "arrow-down";
+
+  constructor(
+      public a: AppService
+  ) { }
 
   ngOnInit() {
   }
+
+  onClickArrow() {
+    this.hide = !this.hide;
+    this.arrowIcon = this.arrowIcon === "arrow-down" ?  "arrow-up" : "arrow-down";
+
+  }
+
+
 
 }
