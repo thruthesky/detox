@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AppService } from 'src/app/services/app.service';
 
 @Component({
   selector: 'app-detoxification-recipe',
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DetoxificationRecipePage implements OnInit {
 
-  constructor() { }
+  constructor(public a: AppService) { }
 
   ngOnInit() {
   }
+
+  
 
 }
