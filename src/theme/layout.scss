@@ -1,3 +1,10 @@
+.layout-width {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 970px;
+}
+
+
 .mobile-width {
     margin: 0 auto;
     max-width: 360px;
@@ -25,6 +32,7 @@
     .md-pl-5 {
         padding-left: 3em !important;
     }
+
     .md-mt-40px {
         margin-top: 40px !important;
     }
@@ -32,6 +40,7 @@
     .md-pt-30px {
         padding-top: 30px !important;
     }
+
     .md-pr-60px {
         padding-right: 60px !important;
     }
@@ -42,6 +51,7 @@
     .md-pb-150px {
         padding-bottom: 150px !important;
     }
+
     .md-mb-145px {
         margin-bottom: 145px !important;
     }
@@ -62,7 +72,7 @@
 
 
 @media all and (max-width: 768px) {
-    
+
     .xs-pt-4 {
         padding-top: 1.5em;
     }
@@ -77,4 +87,3 @@
     }
 
 }
-

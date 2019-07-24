@@ -18,6 +18,7 @@ export class AppComponent implements AfterViewInit {
     public a: AppService,
     public menu: MenuController
   ) {
+
     this.initializeApp();
   }
 

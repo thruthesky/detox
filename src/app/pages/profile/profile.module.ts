@@ -9,7 +9,7 @@ import { ProfilePage } from './profile.page';
 import { HeaderModule } from 'src/app/components/header/header.module';
 import { DesktopHomeFooterModule } from 'src/app/components/desktop-home-footer/desktop-home-footer.module';
 import { MyPromiseModule } from 'src/app/components/my-promise/my-promise.module';
-import { FileUploadPopoverModule } from 'src/app/components/file-upload-popover/file-upload-popover.module';
+import { IonFileUploadPopoverModule } from 'modules/wordpress-api/components/shared/ion-file-upload-popover/ion-file-upload-popover.module';
 
 const routes: Routes = [
   {
@@ -28,7 +28,7 @@ const routes: Routes = [
     HeaderModule,
     DesktopHomeFooterModule,
     MyPromiseModule,
-    FileUploadPopoverModule,
+    IonFileUploadPopoverModule
   ],
   declarations: [ProfilePage]
 })

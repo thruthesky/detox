@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { AppService } from 'src/app/services/app.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { User } from 'modules/wordpress-api/wordpress-api.interface';
+import { User } from 'modules/wordpress-api/services/wordpress-api.interface';
 import { AlertController, PopoverController } from '@ionic/angular';
 import { MyPromiseComponent } from 'src/app/components/my-promise/my-promise.component';
-import { FileUploadPopoverComponent } from 'src/app/components/file-upload-popover/file-upload-popover.component';
 import { DomSanitizer } from '@angular/platform-browser';
+import { IonFileUploadPopoverComponent } from 'modules/wordpress-api/components/shared/ion-file-upload-popover/ion-file-upload-popover.component';
 
 
 @Component({
@@ -15,7 +15,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 })
 export class ProfilePage implements OnInit {
 
-  profilePhotoUrl = '/assets/img/photo.png';
+  profilePhotoUrl = this.a.anonymousPhotoUrl;
 
   submit = false;
   form: FormGroup;
@@ -183,13 +183,13 @@ export class ProfilePage implements OnInit {
     });
     await popover.present();
     const data = await popover.onWillDismiss();
-    if ( data.role === 'success' ) {
+    if (data.role === 'success') {
     }
   }
 
   async onClickPrimaryPhoto(ev: any) {
     const popover = await this.popoverController.create({
-      component: FileUploadPopoverComponent,
+      component: IonFileUploadPopoverComponent,
       event: ev,
       translucent: true,
       // cssClass: 'popover-center ',
@@ -197,10 +197,13 @@ export class ProfilePage implements OnInit {
     popover.present();
     const re = await popover.onWillDismiss();
     console.log('file upload: ', re);
-    this.profilePhotoUrl = re.data.url;
-    this.a.wp.profileUpdate({ photoURL: re.data.url }).subscribe(res => {
-      console.log('profile photo url update', res);
-    }, e => this.a.error(e));
+    if (re && re.data && re.data.url) {
+      this.profilePhotoUrl = re.data.url;
+      this.a.wp.profileUpdate({ photoURL: re.data.url }).subscribe(res => {
+        console.log('profile photo url update', res);
+      }, e => this.a.error(e));
+    }
+
   }
 
 }

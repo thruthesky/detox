@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { MenuController, AlertController } from '@ionic/angular';
-import { WordpressApiService } from 'modules/wordpress-api/wordpress-api.service';
+import { WordpressApiService } from 'modules/wordpress-api/services/wordpress-api.service';
 import { environment } from 'src/environments/environment';
-import { ErrorObject } from 'modules/wordpress-api/wordpress-api.interface';
+import { ErrorObject, Files } from 'modules/wordpress-api/services/wordpress-api.interface';
 import { Router } from '@angular/router';
 import { AlertOptions } from '@ionic/core';
 import { DomSanitizer } from '@angular/platform-browser';
@@ -16,6 +16,7 @@ export class AppService {
     uploadPercent: number;
 
     env = environment;
+    anonymousPhotoUrl = '/assets/img/anonymous.jpg';
     constructor(
         private router: Router,
         private sideMenu: MenuController,

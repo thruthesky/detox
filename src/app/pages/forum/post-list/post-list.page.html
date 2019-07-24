@@ -4,8 +4,45 @@
 
 <ion-content>
 
+  <div class="layout-width">
 
-  post list page
+
+    <!-- Scrollable Segment -->
+    <ion-segment scrollable #forum (ionChange)="onIonChangeForum( forum )">
+      <ion-segment-button checked value="discussion">
+        <ion-icon name="chatboxes"></ion-icon>
+        <ion-label>자유토론</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="qna">
+        <ion-icon name="help-circle"></ion-icon>
+        <ion-label>질문과답변</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="testimonial">
+        <ion-icon name="book"></ion-icon>
+        <ion-label>이용후기</ion-label>
+      </ion-segment-button>
+      <ion-segment-button>
+        <ion-icon name="done-all"></ion-icon>
+        <ion-label>공지사항</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="faq">
+        <ion-icon name="information-circle"></ion-icon>
+        <ion-label>자주묻는질문</ion-label>
+      </ion-segment-button>
+      <ion-segment-button>
+        <ion-icon name="school"></ion-icon>
+        <ion-label>노하우공유</ion-label>
+      </ion-segment-button>
+      <ion-segment-button>
+        <ion-icon name="basket"></ion-icon>
+        <ion-label>제품소개</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+
+
+    
+    <app-ion-post-list></app-ion-post-list>
+
+  </div>
 
 </ion-content>
-

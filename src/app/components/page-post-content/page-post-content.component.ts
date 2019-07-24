@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, ViewChild, Output, EventEmitter } from '@angular/core';
-import { Post } from 'modules/wordpress-api/wordpress-api.interface';
+import { Post } from 'modules/wordpress-api/services/wordpress-api.interface';
 import { AppService } from 'src/app/services/app.service';
 import { AdminPageEditButtonComponent } from '../admin-page-edit-button/admin-page-edit-button.component';
 
