@@ -616,7 +616,7 @@
 }
 
 .z-1000 {
-  z-index: 1000;
+  z-index: 1000 !important;
 }
 
 .align-items-center {
@@ -1519,3 +1519,22 @@ p {
   }
 }
 
+
+.top {
+  top: 0 !important;
+}
+
+.left {
+  left: 0 !important;
+}
+.right {
+  right: 0 !important
+}
+.bottom {
+  bottom: 0 !important;
+}
+
+
+.d-iblock {
+  display: inline-block;
+}

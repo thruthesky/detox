@@ -8,3 +8,38 @@
     max-width: 1000px !important;
     margin: 0 auto;
 }
+
+.max-w-550px {
+    max-width: 550px !important;
+}
+.m-0-auto {
+    margin: 0 auto !important;
+}
+
+.min-h-300px {
+    min-height: 100px !important;
+}
+.size-25px {
+    height: 25px !important;
+    width: 25px !important;
+}
+
+.size-15px {
+    height: 15px !important;
+    width: 15px !important;
+}
+.bg-md-background-image {
+    @media all and (min-width: 768px) {
+        background: url(/assets/img/companybottom.jpg) 0 0 /100% 100% no-repeat !important;
+    }
+}
+
+.bottom-circles {
+
+    margin: 0 auto !important;
+    margin-bottom: 100px !important;
+    height: 265px !important;
+    max-width: 735px !important;
+
+}
+
