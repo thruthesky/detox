@@ -1,7 +1,42 @@
 <ion-header no-border>
-    <app-header></app-header>
-  </ion-header>
-  
-  <ion-content>
-    company-info page
-  </ion-content>
+  <app-header></app-header>
+</ion-header>
+
+<ion-content>
+
+  <section class="px-4 pb-4 pt-0 page-width">
+
+    <ion-text class="title" color="green" *ngIf="a.isDesktop">
+      <h1 class="pt-3 pb-4 fw-600  fs-32px">이용 약관</h1>
+    </ion-text>
+
+
+
+
+    <ion-grid class="ion-no-padding">
+      <ion-row>
+        <ion-col class=" pr-60px" size="6" *ngIf="a.isDesktop">
+          <ion-img class="pt-62px"src="/assets/img/company.png"></ion-img>
+        </ion-col>
+        <ion-col class="md-pl-2" size="12" size-md="4" no-padding>
+
+          <ion-text color="green">
+            <h2 class="fs-16px bold">회사 프로필</h2>
+          </ion-text>
+
+          <div class="pt-3  fs-14 lh-25px">
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+            industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+            scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into
+            electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of
+            Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like
+            Aldus PageMaker including versions of Lorem Ips
+          </div>
+
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+  </section>
+
+</ion-content>
