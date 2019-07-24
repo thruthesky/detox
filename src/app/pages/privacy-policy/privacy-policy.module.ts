@@ -11,7 +11,7 @@ import { HeaderModule } from 'src/app/components/header/header.module';
 const routes: Routes = [
   {
     path: '',
-    component: PrivacyPolicyPage
+    component: PrivacyPolicyPage,
   }
 ];
 
