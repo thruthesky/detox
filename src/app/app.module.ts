@@ -16,6 +16,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { Camera } from '@ionic-native/camera/ngx';
 import { WordpressApiService } from 'modules/wordpress-api/services/wordpress-api.service';
 import { AppService } from './services/app.service';
+import { DesktopHomeFooterModule } from './components/desktop-home-footer/desktop-home-footer.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -27,6 +28,7 @@ import { AppService } from './services/app.service';
       anonymousPhotoUrl: '/assets/img/anonymous.jpg'
     }),
     MobileSidemenuModule,
+    DesktopHomeFooterModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [

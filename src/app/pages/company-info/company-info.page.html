@@ -95,6 +95,8 @@
     <ion-img src="/assets/img/companybottom2.jpg"></ion-img>
   </section>
 
-
+  <ng-container *ngIf="a.isDesktop">
+      <app-desktop-home-footer></app-desktop-home-footer>
+  </ng-container>
 
 </ion-content>

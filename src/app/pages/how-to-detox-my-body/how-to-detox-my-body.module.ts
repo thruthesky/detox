@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 
 import { HowToDetoxMyBodyPage } from './how-to-detox-my-body.page';
 import { HeaderModule } from 'src/app/components/header/header.module';
+import { DesktopHomeFooterModule } from 'src/app/components/desktop-home-footer/desktop-home-footer.module';
 
 const routes: Routes = [
   {
@@ -21,7 +22,8 @@ const routes: Routes = [
     FormsModule,
     IonicModule,
     RouterModule.forChild(routes),
-    HeaderModule
+    HeaderModule,
+    DesktopHomeFooterModule
   ],
   declarations: [HowToDetoxMyBodyPage]
 })

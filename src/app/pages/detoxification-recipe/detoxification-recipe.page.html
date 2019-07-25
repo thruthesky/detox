@@ -36,4 +36,8 @@
       </ion-row>
     </ion-grid>
   </section>
+
+  <ng-container *ngIf="a.isDesktop">
+      <app-desktop-home-footer></app-desktop-home-footer>
+  </ng-container>
 </ion-content>

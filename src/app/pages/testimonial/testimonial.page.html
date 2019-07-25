@@ -1,20 +1,28 @@
 <ion-header no-border>
-  <app-header></app-header>
-</ion-header>
+    <app-header></app-header>
+  </ion-header>
+  
+  <ion-content>
+  
+    <h1>testimonial page</h1>
+  
+    <p>
+      This should be a forum.
+    </p>
+  
+    <p>
+      Give some decoration on top of the page and load post-list child component to display posts of the 'testimonial'
+      forum.
+    </p>
+  
+    <app-ion-post-list [slug]=" 'testimonial' "></app-ion-post-list>
+  
 
-<ion-content>
+    <ng-container *ngIf="a.isDesktop">
+        <app-desktop-home-footer></app-desktop-home-footer>
+    </ng-container>
 
-  <h1>testimonial page</h1>
+  </ion-content>
+  
 
-  <p>
-    This should be a forum.
-  </p>
-
-  <p>
-    Give some decoration on top of the page and load post-list child component to display posts of the 'testimonial'
-    forum.
-  </p>
-
-  <app-ion-post-list [slug]=" 'testimonial' "></app-ion-post-list>
-
-</ion-content>
+  
