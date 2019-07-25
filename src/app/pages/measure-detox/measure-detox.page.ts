@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AppService } from 'src/app/services/app.service';
 
 @Component({
   selector: 'app-measure-detox',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MeasureDetoxPage implements OnInit {
 
-  constructor() { }
+  constructor(public a: AppService) { }
 
   ngOnInit() {
   }

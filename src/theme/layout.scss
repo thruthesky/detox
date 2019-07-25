@@ -108,10 +108,23 @@
         --border-width: 0 !important;
     }
 
+    .md-text-center {
+        text-align: center !important;
+    }
+    .md-w-100 {
+        width: 100% !important;
+    }
 }
 
 
 @media all and (max-width: 768px) {
+
+    .xs-p-5 {
+        padding: 3em !important;
+    }
+    .xs-pl-12px {
+        padding-left: 12px !important;
+    }
 
     .xs-pt-4 {
         padding-top: 1.5em;

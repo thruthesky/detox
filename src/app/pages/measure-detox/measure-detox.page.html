@@ -1,7 +1,53 @@
 <ion-header no-border>
-    <app-header></app-header>
-  </ion-header>
-  
-  <ion-content>
-    measure detox page
-  </ion-content>
+  <app-header></app-header>
+</ion-header>
+
+<ion-content>
+
+  <ion-segment class="menu md-pt-50px" color="success" mode="md">
+
+    <ion-segment-button mode="md">
+      <ion-label>label 1</ion-label>
+    </ion-segment-button>
+    <ion-segment-button mode="md">
+      <ion-label>label 2</ion-label>
+    </ion-segment-button>
+
+  </ion-segment>
+
+
+  <ion-text color="green" text-center *ngIf="a.isDesktop">
+    <h1 class="pt-50px mt-0">표제표제표제</h1>
+  </ion-text>
+
+  <ion-text color="medium" >
+    <p class="pt-4 xs-p-5 xs-pl-12px fs-14 md-text-center">표제표제표제표제표제표제표제표제표제표제표제표제표제표제표제표제</p>
+  </ion-text>
+
+
+  <section class="checklist pb-100px">
+
+
+    <ion-list lines="none">
+      <ion-item class="bg-green" *ngFor="let x of [].constructor(15); let i = index">
+        <ion-label class="fs-14" color="medium">{{ i + 1 }}. 표제표제표제표제표제표제표제표제표제표제표제표제표제표제</ion-label>
+        <ion-checkbox class="checkbox mr-3" slot="start" color="green" mode="ios"></ion-checkbox>
+      </ion-item>
+    </ion-list>
+
+    <div class="pt-60px ion-text-center">
+      <ion-button class="h-68px w-200px md-w-100 no-border-radius no-shadow" color="green">
+        표제표표
+      </ion-button>
+    </div>
+
+
+  </section>
+
+
+  <ng-container *ngIf="a.isDesktop">
+    <app-desktop-home-footer></app-desktop-home-footer>
+  </ng-container>
+
+
+</ion-content>

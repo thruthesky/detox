@@ -1,0 +1,30 @@
+.menu {
+    @media all and (min-width: 768px) {
+        margin: 0 auto;
+        max-width: 232px;
+    }
+}
+
+.checklist {
+    max-width: 520px !important;
+    margin: 0 auto !important;
+    padding-top: 50px !important;
+
+    @media all and ( max-width: 768px ) {
+        border-top: 1px solid #989aa2;
+    }
+
+}
+
+
+.checkbox {
+    --border-color: #ccdbc6 !important;
+    --border-width: 1px 1px 1px 1px !important; 
+    --checkmark-color: #7db262 !important;
+    --background: #fff !important;
+    --background-checked: #fff !important;
+    --size: 15px !important;
+    --border-radius: none !important;
+    height: 30px !important;
+    width: 30px !important;
+}
