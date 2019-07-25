@@ -5,30 +5,38 @@
 <ion-content>
 
 
-  <section class=" xs-px-2 page-width">
+  <section class="px-4 page-width">
 
 
-    <ion-text color="green" text-center>
-      <h1 class="md-pt-100px fs-32px">{{ a.t( {en: 'Title', ko: '표제' } ) }}</h1>
+    <ion-text color="green">
+      <h1 class="title bold">{{ a.t( {en: 'About Detoxification', ko: '해독에 관하여' } ) }}</h1>
     </ion-text>
 
     <ion-grid class="md-pt-50px pb-320px" no-padding>
       <ion-row no-padding>
-        <ion-col class="md-pr-60px" size="12" size-md="7" >
+        <ion-col class="md-pr-60px" size="12" size-md="7" *ngIf="a.isDesktop" no-padding>
           <ion-img src="/assets/img/aboutdetox.jpg"></ion-img>
         </ion-col>
-        <ion-col class="lh-25px" size="12" size-md="5" >
-          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
-          standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to
-          make a type specimen book. It has survived not only five centuries, but also the leap into electronic
-          typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset
-          sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus
-          PageMaker including versions of Lorem Ipsum
-          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
-          standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to
-          make a type specimen book. It has survived not only five centuries, but also the leap into electronic
-          typesetting, remaining essentially unchanged. 
-        
+        <ion-col class="lh-25px" size="12" size-md="5" no-padding>
+
+          <ion-text color="medium">
+            <p>
+              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+              industry's
+              standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it
+              to
+              make a type specimen book. It has survived not only five centuries, but also the leap into electronic
+              typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset
+              sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus
+              PageMaker including versions of Lorem Ipsum
+              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+              industry's
+              standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it
+              to
+              make a type specimen book. It has survived not only five centuries, but also the leap into electronic
+              typesetting, remaining essentially unchanged.
+            </p>
+          </ion-text>
         </ion-col>
       </ion-row>
     </ion-grid>
@@ -36,7 +44,7 @@
   </section>
 
   <ng-container *ngIf="a.isDesktop">
-      <app-desktop-home-footer></app-desktop-home-footer>
+    <app-desktop-home-footer></app-desktop-home-footer>
   </ng-container>
 
 </ion-content>
