@@ -4,8 +4,36 @@
 
 <ion-content>
 
+  <section class="pb-150px page-width">
+
+    <ion-text color="green" *ngIf="a.isDesktop">
+      <h1 class="pt-100px pb-5 ion-text-center fs-32px bold">표제표제표제</h1>
+    </ion-text>
+
+    <ion-grid no-padding>
+      <ion-row class="mr-10px md-mr-20px">
+        <ion-col size="6" size-md="4" no-padding *ngFor="let item of [].constructor(20)">
+
+          <ion-card class="card xs-mb-0 mr-0 md-ml-20px">
+            <ion-img src="/assets/img/mobile_product_sample.png" alt="image_product"></ion-img>
+            <ion-card-content class="white bg-color">
+
+              <h2 class="fs-16px bold" *ngIf="a.isMobile">표제표제표제</h2>
+              <p class="fs-12">표제 표제 표제</p>
+              <h2 class="fs-20px bold" *ngIf="a.isDesktop">표제표제표제</h2>
+            </ion-card-content>
+          </ion-card>
+
+
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+
+  </section>
+
+
 
 
 
 </ion-content>
-
