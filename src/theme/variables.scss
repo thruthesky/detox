@@ -112,6 +112,9 @@
   height: 15px;
 }
 
+.h-68px {
+  height: 68px !important;
+}
 .hw-30px {
   height: 30px !important;
   width: 30px !important;
@@ -516,6 +519,7 @@
 }
 
 .no-border-radius {
+  --border-radius: 0 !important;
   border-radius: 0 !important;
 }
 
@@ -573,7 +577,9 @@
 .w-100 {
   width: 100% !important;
 }
-
+.w-100px {
+  width: 100px !important;
+}
 .position-relative {
   position: relative;
 }
