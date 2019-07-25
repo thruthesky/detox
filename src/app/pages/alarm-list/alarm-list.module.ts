@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 
 import { AlarmListPage } from './alarm-list.page';
 import { HeaderModule } from 'src/app/components/header/header.module';
+import { AlarmSetPopoverModule } from 'src/app/components/alarm-set-popover/alarm-set-popover.module';
 
 const routes: Routes = [
   {
@@ -21,7 +22,8 @@ const routes: Routes = [
     FormsModule,
     IonicModule,
     RouterModule.forChild(routes),
-    HeaderModule
+    HeaderModule,
+    AlarmSetPopoverModule
   ],
   declarations: [AlarmListPage]
 })

@@ -40,15 +40,16 @@
 
 
   <!-- alarms -->
-  <section class="pb-4 border-top-gray" [ngClass]="{'pb-150px page-width no-border ': a.isDesktop}" >
-    <ion-item  [ngClass]="{'mt-3 py-20px shadow-2 ': a.isDesktop}"  lines="none"  *ngFor="let item of [].constructor(10)">
-      <ion-grid>
+<section class="b-4 md-pb-150px md-page-width md-no-border  border-top-gray">
+    <ion-item class="md-mt-3 md-shadow-2" lines="none" *ngFor="let item of [].constructor(10)">
+
+      <ion-grid class="md-py-20px">
         <ion-row>
 
-          <ion-col class="flex-column-center" size="3">
+          <ion-col class="flex-column-center" size="3" (click)="onClickAlarmItem()">
             <ion-label class="fs-22px" color="green">07:00</ion-label>
           </ion-col>
-          <ion-col class="fs-14" size="7">
+          <ion-col class="fs-14" size="7" (click)="onClickAlarmItem()">
             <p class="black bold">표제표제표제표</p>
             <p class="i-color-medium">제표표표제표표제표제표제</p>
           </ion-col>
@@ -57,11 +58,6 @@
           </ion-col>
         </ion-row>
       </ion-grid>
-
-
-
-
-
 
     </ion-item>
 

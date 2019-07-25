@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AppService } from 'src/app/services/app.service';
+import { PopoverController } from '@ionic/angular';
+import { AlarmSetPopoverComponent } from 'src/app/components/alarm-set-popover/alarm-set-popover.component';
 
 @Component({
   selector: 'app-alarm-list',
@@ -12,7 +14,8 @@ export class AlarmListPage implements OnInit {
   arrowIcon = "arrow-down";
 
   constructor(
-      public a: AppService
+      public a: AppService,
+      public popoverController: PopoverController,
   ) { }
 
   ngOnInit() {
@@ -25,5 +28,14 @@ export class AlarmListPage implements OnInit {
   }
 
 
+  
+    async onClickAlarmItem() {
+      const popover = await this.popoverController.create({
+        component: AlarmSetPopoverComponent,
+        cssClass: 'pop-alarm-set',
+      });
+      return await popover.present();
+    }
+  
 
 }
