@@ -4,7 +4,70 @@
 
 <ion-content>
 
+  <section *ngIf="a.isMobile">
+    <ion-toolbar>
+      <ion-title class="fs-14 bold green" slot="start">표제표제표제표</ion-title>
+      <ion-buttons slot="end">
+        <ion-button (click)="onClickArrow()">
+          <ion-icon slot="icon-only" name="{{ arrowIcon }}" mode="ios"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
 
-  alarm page
+    <div class="px-20px pb-3" *ngIf="!hide">
+      <ion-text color="medium">
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+        standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make
+      </ion-text>
+    </div>
+  </section>
+
+  <section *ngIf="a.isDesktop">
+
+    <ion-text color="green" text-center>
+      <h1 class="mb-0 pt-100px fs-32px">표제표제표제표</h1>
+    </ion-text>
+
+    <div class="pt-5 pb-5 w-478px lh-25px">
+      <ion-text color="medium">
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+        standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make
+      </ion-text>
+    </div>
+
+
+  </section>
+
+
+  <!-- alarms -->
+  <section class="pb-4 border-top-gray" [ngClass]="{'pb-150px page-width no-border ': a.isDesktop}" >
+    <ion-item  [ngClass]="{'mt-3 py-20px shadow-2 ': a.isDesktop}"  lines="none"  *ngFor="let item of [].constructor(10)">
+      <ion-grid>
+        <ion-row>
+
+          <ion-col class="flex-column-center" size="3">
+            <ion-label class="fs-22px" color="green">07:00</ion-label>
+          </ion-col>
+          <ion-col class="fs-14" size="7">
+            <p class="black bold">표제표제표제표</p>
+            <p class="i-color-medium">제표표표제표표제표제표제</p>
+          </ion-col>
+          <ion-col class="flex-column-center" size="2" no-padding>
+            <ion-toggle class="pl-1" color="success"></ion-toggle>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+
+
+
+
+
+    </ion-item>
+
+
+  </section>
+
+
 
 </ion-content>

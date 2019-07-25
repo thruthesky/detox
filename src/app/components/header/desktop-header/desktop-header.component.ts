@@ -23,7 +23,7 @@ export class DesktopHeaderComponent implements OnInit {
       event: ev,
       mode: 'md',
       translucent: true,
-      cssClass: 'i-pop-width-360px i-pop-mt-5px i-bg-white-trans box-shadow-none',
+      cssClass: 'i-pop-width-360px i-pop-mt-5px  box-shadow-none',
       showBackdrop: false
     });
     return await popover.present();

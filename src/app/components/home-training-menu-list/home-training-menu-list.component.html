@@ -9,7 +9,7 @@
 
       <div class="photo position-relative">
         <ion-text *ngIf="a.isMobile" class="title-mobile fs-32px light" text-center>
-          <h1>Awesome text</h1>
+          <h1>{{ item.value?.post_title }}</h1>
         </ion-text>
         <ion-img src="{{ src(item.value) }}" *ngIf=" src(item.value) "></ion-img>
       </div>
@@ -18,7 +18,7 @@
 
     </ion-col>
 
-    <ion-col class="smd-pl-5 " size="12" size-md="7">
+    <ion-col class="md-pl-5 " size="12" size-md="7">
       <h1 class="mt-1 fs-32px green" *ngIf="a.isDesktop">{{ item.value?.post_title }}</h1>
       <!-- <p class="fs-14 lh-25px gray" [innerHTML]=" a.safeHtml( item.value.post_content ) "></p> -->
       <!-- {{ name + '-' + i | json }}

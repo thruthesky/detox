@@ -1,0 +1,15 @@
+.bg-md-background-image {
+    @media all and (min-width: 768px) {
+        background: url(/assets/img/bg_mainblur.jpg) 0 0 /100% 100% no-repeat !important;
+    }
+}
+
+.title {
+    text-align: center !important;
+    font-size: 32px !important;
+
+}
+ion-col {
+    font-size: 14px !important;
+    line-height: 25px !important;
+}

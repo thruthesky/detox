@@ -22,8 +22,13 @@
         margin: 0 auto;
         max-width: 360px;
     }
-
-
+    .md-px-4 {
+        padding-left: 1.5em !important;
+        padding-right: 1.5em !important;
+    }
+    .md-pt-3 {
+        margin-top: 1em !important; 
+    }
     .md-pl-5 {
         padding-left: 3em !important;
     }
@@ -43,9 +48,24 @@
     .md-pb-100px {
         padding-bottom: 100px !important;
     }
+    .md-pb-150px {
+        padding-bottom: 150px !important;
+    }
 
     .md-mb-145px {
         margin-bottom: 145px !important;
+    }
+    .md-pt-100px {
+        padding-top: 100px !important;
+    } 
+    .md-pt-50px {
+        margin-top: 50px !important;
+    }
+    .md-pt-80px {
+        margin-top: 80px !important;
+    }
+    .md-pl-2 {
+        padding-left: .5em !important;
     }
 
 }
