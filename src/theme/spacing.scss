@@ -187,6 +187,10 @@
     padding-left: 1.5em !important;
 }
 
+.pl-60px {
+    padding-left: 60px !important;
+}
+
 .i-pr-0 {
     --padding-end: 0 !important;
 }
@@ -205,6 +209,9 @@
 
 .pr-4 {
     padding-right: 1.5em !important;
+}
+.pr-60px {
+    padding-right: 60px !important;
 }
 
 
@@ -225,10 +232,12 @@
 
 .pt-4 {
     padding-top: 1.5em !important;
+  
 }
 
 .pt-5 {
     padding-top: 3em !important;
+    --padding-top: 3em !important;
 }
 
 .py-1 {
@@ -475,4 +484,11 @@
 
 .pt-60px {
     padding-top: 60px !important;
+}
+
+.pt-30px {
+    padding-top: 30px !important;
+}
+.ml-12px {
+    margin-left: 12px !important;
 }

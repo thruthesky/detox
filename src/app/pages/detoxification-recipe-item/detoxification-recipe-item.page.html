@@ -1,0 +1,83 @@
+<ion-header>
+  <app-header></app-header>
+</ion-header>
+
+
+<ion-content>
+
+  <section class="section-top-width">
+
+    <ion-text color="green">
+      <h1 class="pt-100px mt-0 fs-34px ion-text-center"> 표제 표제표제 </h1>
+    </ion-text>
+
+    <ion-text color="medium">
+      <p class="pt-30px ion-text-center">표제표제표제표제표제표제표제표제표제표제표제표제표제표제표제표제표제</p>
+    </ion-text>
+
+    <ion-grid class="pt-5">
+      <ion-row>
+        <ion-col class="pr-60px" size="5">
+          <ion-img src="/assets/img/recipe_image_sample.png"></ion-img>
+        </ion-col>
+        <ion-col class="pl-60px" size="7">
+
+          <ion-text color="green">
+            <p class="fs-38px">Excepteur sint lorem</p>
+          </ion-text>
+
+          <p class="pt-4 fs-14 lh-22px gray">
+            Awesome textAwesome textAwesome textAwesome textAwesome textAwesome textAwesome textAwesome textAwesome
+            textAwesome textAwesome textAwesome textAwesome textAwesome textAwesome textAwesome textAwesome
+            textAwesome textAwesome textAwesome textAwesome textAwesome text textAwesome textAwesome textAwesome
+            textAwesome textAwesome text
+          </p>
+
+          <div class="pt-50px">
+
+            <ion-img class="size-15px" src="/assets/img/icons/quote_green.png"></ion-img>
+
+            <ion-text color="green">
+              <p class="pt-4 fs-18px lh-25px fw-300 italize">
+                Duis aute textAwesome textAwesome textAwesome textAwesome textAwesome textAwesome textAwesome text
+                Awesome textAwesome textAwesome textAwesome textAwesome textAwesome textAwesome textAwesome textAwesome
+              </p>
+            </ion-text>
+          </div>
+
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </section>
+
+  <section class="pt-30px pb-5 section-bottom-width">
+
+    <ion-grid no-padding>
+      <ion-row class="pt-50px" *ngFor="let x of [].constructor(5)">
+        <ion-col class="pr-2" size="1" no-padding>
+
+          <div class="mt-1 float-right size-30px  flex-center fs-18px lh-18px radius-15px  white"
+            style="background-color:#74b243">
+            1
+          </div>
+
+        </ion-col>
+
+        <ion-col size="6" no-padding>
+
+          <ion-text class="fs-22px dark-gray-2">
+            <p>표제표제표제표제표제표제표제표제표제표</p>
+          </ion-text>
+
+        </ion-col>
+
+        <ion-col class="pl-3" size="5">
+          <img class="border-radius-5px" src="/assets/img/recipe_item_sample.png">
+        </ion-col>
+        
+      </ion-row>
+    </ion-grid>
+
+  </section>
+
+</ion-content>

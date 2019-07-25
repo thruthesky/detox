@@ -135,6 +135,9 @@
 .lh-25px {
   line-height: 25px !important;
 }
+.lh-22px {
+  line-height: 22px !important;
+}
 
 
 
@@ -169,6 +172,14 @@
 .i-pop-width-360px {
   --width: 360px;
 
+}
+
+.italize {
+  font-style: italic !important;
+}
+
+.fw-300 {
+  font-weight: 300 !important;
 }
 
 .pop-alarm-set {
@@ -261,6 +272,9 @@
 .fs-sm {
   font-size: 14px;
 }
+.fs-28px {
+  font-size: 28px !important;
+}
 .fs-32px {
   font-size: 32px !important;
 }
@@ -269,7 +283,10 @@
   border-radius: 5px;
 }
 
-
+.size-30px {
+  height: 30px !important;
+  width: 30px !important;
+}
 .box-shadow-none,
 .no-box-shadow {
   box-shadow: none !important;
@@ -932,6 +949,9 @@ font-size: 16px !important;
   line-height: 38px !important;
 }
 
+.fs-34px {
+  font-size: 34px !important;
+}
 .fs-38px {
   font-size: 38px !important;
   line-height: 38px !important;
@@ -1170,6 +1190,7 @@ font-size: 16px !important;
   font-size: 30px;
   line-height: 30px !important;
 }
+
 
 .pb-5px {
   padding-bottom: 5px;
@@ -1550,4 +1571,14 @@ p {
 
 .d-iblock {
   display: inline-block;
+}
+
+.radius-15px {
+  border-radius: 15px !important;
+}
+.lh-18px {
+  line-height: 18px !important;
+}
+.float-right {
+  float: right !important;
 }
