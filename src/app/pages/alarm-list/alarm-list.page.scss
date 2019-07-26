@@ -21,3 +21,21 @@
     padding-top: 20px !important;
     padding-bottom: 20px !important;
 }
+
+
+.content {
+    height: auto;
+    max-height: 500px;
+    -webkit-transition: max-height 1s; /* Safari */
+    -webkit-transition-timing-function: linear; /* Safari */
+    transition: max-height .2s;
+    transition-timing-function: linear;
+
+}
+
+.content.collapsed {
+    max-height: 0 ;
+  }
+
+
+  

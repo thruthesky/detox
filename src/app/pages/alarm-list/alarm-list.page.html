@@ -14,13 +14,18 @@
       </ion-buttons>
     </ion-toolbar>
 
-    <div class="px-20px pb-3" *ngIf="!hide">
+    <div class="content" [ngClass]="{'collapsed': hide}" >
       <ion-text color="medium">
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
-        standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make
-      </ion-text>
+       <p class="px-20px pb-3 lh-25px">
+          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+          standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make  
+       </p>
+       </ion-text>
     </div>
   </section>
+
+  <!--  -->
+
 
   <section *ngIf="a.isDesktop">
 
@@ -63,6 +68,9 @@
 
 
   </section>
+
+
+
 
   <ng-container *ngIf="a.isDesktop">
       <app-desktop-home-footer></app-desktop-home-footer>
