@@ -4,60 +4,25 @@
 
 <ion-content>
 
-  <ion-segment class="menu md-pt-50px" color="success" mode="md">
+  <ion-segment class="menu md-pt-50px" color="success" mode="md" [value]=" segmentValue " (ionChange)="segmentChanged($event)"> 
 
-    <ion-segment-button mode="md" checked>
+    <ion-segment-button mode="md" value="toxins">
       <ion-label>label 1</ion-label>
     </ion-segment-button>
-    <ion-segment-button mode="md">
+    <ion-segment-button mode="md" value="beeman">
       <ion-label>label 2</ion-label>
     </ion-segment-button>
 
   </ion-segment>
 
+  <ng-container *ngIf="segmentValue === 'toxins'">
+      <app-toxin-test></app-toxin-test>
+  </ng-container> 
 
-  <ion-text color="green" text-center *ngIf="a.isDesktop">
-    <h1 class="pt-50px mt-0">표제표제표제</h1>
-  </ion-text>
-
-  <div class="flex-center xs-min-h-100px border-bottom">
-    <p class="pt-4 xs-p-3  xs-pl-15px  fs-14 md-text-center  medium">
-      표제표제표제표제표제표제표제표제표제표제표제표제표제표제표제표제
-    </p>
-  </div>
-
-
-
-  <section class="checklist pb-100px">
-
-    <!-- <div class="py-18px px-4 flex " *ngFor="let x of [].constructor(15); let i = index;">
-      <div>
-        <ion-checkbox class="mt-1 md-checkbox" color="green" mode="{{ a.isDesktop ? 'ios' : 'md'  }}">
-        </ion-checkbox>
-      </div>
-
-      <div class="pl-2 medium">
-        {{ (i + 1) + '. '}}표제표제표제표제표제표제표제표제표제표제표제표제표제표제
-      </div>
-
-    </div> -->
-
-    <ion-item  class="item" lines="none" *ngFor="let x of [].constructor(15); let i = index;">
-      <ion-checkbox class="mr-0 md-checkbox"  slot="start" color="green" mode="md">
-      </ion-checkbox>
-      <ion-text class="pl-2 md-pl-3" color="medium"> {{ (i + 1) + '. '}}표제표제표제표제표제표제표제표제표제표제표제표제표</ion-text>
-    </ion-item>
-
-
-    <div class="pt-3 md-pt-80px  md-flex-center">
-      <ion-button expand="full" class="m-0 h-68px xs-h-52px md-w-200px  no-border-radius no-shadow" color="green">
-        표제표표
-      </ion-button>
-    </div>
-
-
-  </section>
-
+  
+  <ng-container *ngIf="segmentValue === 'beeman'">
+     <app-beeman-test></app-beeman-test>
+  </ng-container> 
 
   <ng-container *ngIf="a.isDesktop">
     <app-desktop-home-footer></app-desktop-home-footer>

@@ -8,6 +8,8 @@ import { IonicModule } from '@ionic/angular';
 import { MeasureDetoxPage } from './measure-detox.page';
 import { HeaderModule } from 'src/app/components/header/header.module';
 import { DesktopHomeFooterModule } from 'src/app/components/desktop-home-footer/desktop-home-footer.module';
+import { ToxinTestModule } from 'src/app/components/toxin-test/toxin-test.module';
+import { BeemanTestModule } from 'src/app/components/beeman-test/beeman-test.module';
 
 const routes: Routes = [
   {
@@ -24,6 +26,8 @@ const routes: Routes = [
     RouterModule.forChild(routes),
     HeaderModule,
     DesktopHomeFooterModule,
+    ToxinTestModule,
+    BeemanTestModule,
   ],
   declarations: [MeasureDetoxPage]
 })
