@@ -8,6 +8,7 @@ import { IonicModule } from '@ionic/angular';
 import { PrivacyPolicyPage } from './privacy-policy.page';
 import { HeaderModule } from 'src/app/components/header/header.module';
 import { DesktopHomeFooterModule } from 'src/app/components/desktop-home-footer/desktop-home-footer.module';
+import { PrivacyModule } from 'src/app/components/privacy/privacy.module';
 
 const routes: Routes = [
   {
@@ -23,7 +24,8 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes),
     HeaderModule,
-    DesktopHomeFooterModule
+    DesktopHomeFooterModule,
+    PrivacyModule
   ],
   declarations: [PrivacyPolicyPage]
 })

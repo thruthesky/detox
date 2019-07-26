@@ -8,6 +8,8 @@ import { IonicModule } from '@ionic/angular';
 import { RegisterPage } from './register.page';
 import { HeaderModule } from 'src/app/components/header/header.module';
 import { DesktopHomeFooterModule } from 'src/app/components/desktop-home-footer/desktop-home-footer.module';
+import { TermsModule } from 'src/app/components/terms/terms.module';
+import { PrivacyModule } from 'src/app/components/privacy/privacy.module';
 
 const routes: Routes = [
   {
@@ -25,6 +27,8 @@ const routes: Routes = [
     ReactiveFormsModule,
     HeaderModule,
     DesktopHomeFooterModule,
+    TermsModule,
+    PrivacyModule
   ],
   declarations: [RegisterPage]
 })

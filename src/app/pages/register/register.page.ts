@@ -1,9 +1,11 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, ComponentRef } from '@angular/core';
 import { AppService } from 'src/app/services/app.service';
 import { UserRegisterOptions } from 'modules/wordpress-api/services/wordpress-api.interface';
 import { FormGroup, FormBuilder, Validators, AbstractControl } from '@angular/forms';
-import { AlertController } from '@ionic/angular';
+import { AlertController, PopoverController, ModalController } from '@ionic/angular';
 import { Subscription } from 'rxjs';
+import { TermsComponent } from 'src/app/components/terms/terms.component';
+import { PrivacyComponent } from 'src/app/components/privacy/privacy.component';
 
 
 @Component({
@@ -25,7 +27,8 @@ export class RegisterPage implements OnInit, OnDestroy {
   constructor(
     fb: FormBuilder,
     public a: AppService,
-    private alert: AlertController
+    private alert: AlertController,
+    public popoverController: PopoverController,
   ) {
 
 
@@ -187,7 +190,27 @@ export class RegisterPage implements OnInit, OnDestroy {
     this.form.reset();
   }
 
+  async openTermsPopover() {
+    const modal = await this.popoverController.create({
+      component: TermsComponent,
+      componentProps: {
+        'close': true,
+      },
+      cssClass: 'pop-page-width',
+    });
+    return await modal.present();
+  }
 
+  async openPrivacyPopover() {
+    const modal = await this.popoverController.create({
+      component: PrivacyComponent,
+      componentProps: {
+        'close': true,
+      },
+      cssClass: 'pop-page-width',
+    });
+    return await modal.present();
+  }
 
 
 

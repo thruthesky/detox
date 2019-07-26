@@ -8,6 +8,7 @@ import { IonicModule } from '@ionic/angular';
 import { TermsAndConditionsPage } from './terms-and-conditions.page';
 import { HeaderModule } from 'src/app/components/header/header.module';
 import { DesktopHomeFooterModule } from 'src/app/components/desktop-home-footer/desktop-home-footer.module';
+import { TermsModule } from 'src/app/components/terms/terms.module';
 
 const routes: Routes = [
   {
@@ -23,7 +24,8 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes),
     HeaderModule,
-    DesktopHomeFooterModule
+    DesktopHomeFooterModule,
+    TermsModule,
   ],
   declarations: [TermsAndConditionsPage]
 })

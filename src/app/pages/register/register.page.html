@@ -131,16 +131,16 @@
         {{ validationMessages['gender'].required }}</ion-text>
 
 
-
-
       <div class="flex-center mt-3  ">
         <ion-checkbox class="mx-2 min-width-18px" checked="false" mode="md" color="green" formControlName="agree">
         </ion-checkbox>
         <ion-label class="fs-14">
-          <ion-text class="bold underline pointer" color="dark">{{ a.t( {en: 'Terms of service', ko: '이용약관' }) }}
-          </ion-text>
+          <ion-text class="bold underline pointer" color="dark" (click)="openTermsPopover()">
+            {{ a.t( {en: 'Terms of service', ko: '이용약관' }) }}
+          </ion-text> 
           <ion-text color="dark"> {{ a.t( {en: 'and', ko: '및'}) }} </ion-text>
-          <ion-text class="bold underline pointer" color="dark">{{ a.t({en:'Privacy Policy' ,ko: '개인 정보 정책' }) }}
+          <ion-text class="bold underline pointer" color="dark" (click)="openPrivacyPopover()">
+            {{ a.t({en:'Privacy Policy' ,ko: '개인 정보 정책' }) }}
           </ion-text>
           <ion-text color="dark"> {{ a.t({en: 'Agreement' ,ko: '에 동의(필수)' }) }}</ion-text>
         </ion-label>
@@ -155,8 +155,6 @@
       <ion-button type="submit" mode="md" expand="full" color="green" class="h-50px mt-5 fs-14 no-box-shadow">
         {{ a.t({en: 'Register', ko: '회원가입' })}}
       </ion-button>
-
-
 
     </form>
   </section>

@@ -1585,3 +1585,13 @@ p {
 .float-right {
   float: right !important;
 }
+
+
+
+.pop-page-width {
+
+--min-width: 600px !important;
+  @media all and (max-width: 768px) {
+      --min-width: 340px !important ;
+  }
+}
