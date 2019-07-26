@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { AppService } from 'src/app/services/app.service';
+import { IonCheckbox } from '@ionic/angular';
 
 @Component({
   selector: 'app-measure-detox',
@@ -8,9 +9,19 @@ import { AppService } from 'src/app/services/app.service';
 })
 export class MeasureDetoxPage implements OnInit {
 
-  constructor(public a: AppService) { }
+
+  constructor(public a: AppService) {
+
+  
+
+   }
 
   ngOnInit() {
   }
+
+
+
+
+  
 
 }
