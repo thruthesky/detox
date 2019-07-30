@@ -12,14 +12,20 @@ export class TermsComponent implements OnInit {
 
   @Input() close : boolean; 
 
+  name = 'terms';
 
-  terms = {} as Post;
+  posts: { [key: string]: Post } = {};
   constructor(
     public a: AppService,
     public popoverController: PopoverController,
     ) { 
 
-      this.a.wp.postGetIn({ guid: a.pageCode.terms }, this.terms);
+      this.posts = {};
+      for (let i = 0; i < 4; i++) {
+        const guid = `${this.name}-${i}`;
+        this.posts[guid] = {} as any;
+        this.a.wp.postGetIn({ guid: guid }, this.posts[guid]);
+      }
     
     }
 

@@ -11,49 +11,18 @@
     </ion-text>
   </div>
 
-  <div class="position-relative pt-1">
+  <div class="position-relative pt-1"  *ngFor=" let item of posts | keyvalue; let i = index ">
     <ion-text class="bold red">
-      <p>{{ terms?.post_title }}</p>
+      <p>{{item.value?.post_title}}</p>
     </ion-text>
 
     <div>
-      <app-page-post-content [guid]=" a.pageCode.terms " [post]=" terms " (edited)=" terms = $event ">
-      </app-page-post-content>
+        <app-page-post-content [guid]=" name + '-' + i " [post]=" item.value " (edited)=" item.value = $event ">
+          </app-page-post-content>
     </div>
 
   </div>
 
-  <div class="pt-1">
-    <ion-text class="bold red">
-      <p>2. TEXT</p>
-    </ion-text>
-    <p class="pt-2">
-      개인개인개인개인개인개인개인개인개인개인개인개인개인개인개인개인
-      개인개인개인개인개인개인개인개인개인개인개인개인개인개인개인개인
-      개인개인개인개인개인개인개인개인
-    </p>
-  </div>
-
-  <div class="pt-1">
-    <ion-text class="bold red">
-      <p>3. TEXT</p>
-    </ion-text>
-    <p class="pt-2">
-      개인개인개인개인개인개인개인개인개인개인개인개인개인개인개인개인
-      개인개인개인개인개인개인개인개인개인개인개인개인개인개인개인개인
-      개인개인개인개인개인개인개인개인
-    </p>
-  </div>
-
-  <div class="pt-1">
-    <ion-text class="bold red">
-      <p>4. TEXT</p>
-    </ion-text>
-    <p class="pt-2">
-      개인개인개인개인개인개인개인개인개인개인개인개인개인개인개인개인
-      개인개인개인개인개인개인개인개인개인개인개인개인개인개인개인개인
-      개인개인개인개인개인개인개인개인
-    </p>
-  </div>
+ 
 
 </section>
