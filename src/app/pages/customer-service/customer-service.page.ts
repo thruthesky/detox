@@ -20,6 +20,8 @@ export class CustomerServicePage implements OnInit {
   ngOnInit() {
   }
 
-  
+  src(post: Post) {
+    return this.a.wp.getPostFileUrl(post);
+  }
 
 }
