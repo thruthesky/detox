@@ -2,9 +2,9 @@
   <app-header></app-header>
 </ion-header>
 
-<ion-content>
+<ion-content class="bg-color">
 
-  <ion-segment class="menu md-pt-50px" color="success" mode="md" [value]=" segmentValue " (ionChange)="segmentChanged($event)"> 
+  <ion-segment class="menu md-pt-50px bg-white" color="success" mode="md" [value]=" segmentValue " (ionChange)="segmentChanged($event)"> 
 
     <ion-segment-button mode="md" value="toxins">
       <ion-label>Toxin Test</ion-label>
@@ -15,15 +15,18 @@
 
   </ion-segment>
 
-  <ng-container *ngIf="segmentValue === 'toxins'">
-      <app-toxin-test></app-toxin-test>
-  </ng-container> 
-
+  <section> 
+      <ng-container *ngIf="segmentValue === 'toxins'">
+          <app-toxin-test></app-toxin-test>
+      </ng-container> 
+    
+      
+      <ng-container *ngIf="segmentValue === 'beeman'">
+         <app-beeman-test></app-beeman-test>
+      </ng-container> 
+    
+  </section>
   
-  <ng-container *ngIf="segmentValue === 'beeman'">
-     <app-beeman-test></app-beeman-test>
-  </ng-container> 
-
   <ng-container *ngIf="a.isDesktop">
     <app-desktop-home-footer></app-desktop-home-footer>
   </ng-container>

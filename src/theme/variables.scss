@@ -478,7 +478,9 @@
 .h-45px {
   height: 45px !important;
 }
-
+.h-52px {
+  height: 52px !important;
+}
 .h-56px {
   height: 56px;
 }
@@ -575,6 +577,11 @@
 .flex-center {
   display: flex;
   justify-content: center;
+  align-items: center;
+}
+.flex-start {
+  display: flex;
+  justify-content: flex-start;
   align-items: center;
 }
 
