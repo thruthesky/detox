@@ -11,18 +11,18 @@
     </ion-text>
   </div>
 
-  <div class="position-relative pt-1"  *ngFor=" let item of posts | keyvalue; let i = index ">
+  <div class="position-relative pt-1" *ngFor=" let item of posts | keyvalue; let i = index ">
     <ion-text class="bold red">
       <p>{{item.value?.post_title}}</p>
     </ion-text>
 
-    <div>
-        <app-page-post-content [guid]=" name + '-' + i " [post]=" item.value " (edited)=" item.value = $event ">
-          </app-page-post-content>
+    <div class="content">
+      <app-page-post-content [guid]=" name + '-' + i " [post]=" item.value " (edited)=" item.value = $event ">
+      </app-page-post-content>
     </div>
 
   </div>
 
- 
+
 
 </section>
