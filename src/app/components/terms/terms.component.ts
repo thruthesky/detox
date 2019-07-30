@@ -15,6 +15,7 @@ export class TermsComponent implements OnInit {
   name = 'terms';
 
   posts: { [key: string]: Post } = {};
+  
   constructor(
     public a: AppService,
     public popoverController: PopoverController,
