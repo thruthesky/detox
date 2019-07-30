@@ -1610,3 +1610,8 @@ p {
 .post_content p {
   margin: 15px 0 !important;
 }
+
+
+.post_content p:first-child {
+  margin-top: 0 !important;
+}

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AppService } from 'src/app/services/app.service';
+import { Post } from 'modules/wordpress-api/services/wordpress-api.interface';
 
 @Component({
   selector: 'app-affiliate',
@@ -8,9 +9,16 @@ import { AppService } from 'src/app/services/app.service';
 })
 export class AffiliatePage implements OnInit {
 
-  constructor(public a: AppService) { }
+  affiliate = {} as Post;
+
+
+  constructor(public a: AppService) { 
+    this.a.wp.postGetIn({ guid: a.pageCode.affiliate }, this.affiliate);
+
+  }
 
   ngOnInit() {
+
   }
 
 }
