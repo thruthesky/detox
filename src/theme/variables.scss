@@ -171,9 +171,12 @@
 
 .i-pop-width-360px {
   --width: 360px;
-
 }
 
+
+.i-pop-width-340px {
+  --width: 340px;
+}
 .italize {
   font-style: italic !important;
 }
@@ -1594,4 +1597,9 @@ p {
   @media all and (max-width: 768px) {
       --min-width: 340px !important ;
   }
+}
+
+
+.post_content p {
+  margin: 15px 0 !important;
 }

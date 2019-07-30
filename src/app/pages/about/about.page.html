@@ -8,10 +8,10 @@
     <div class="page-width-md">
 
 
-      <h1 class="ion-text-center green-2">{{ posts.topLeft?.post_title }}</h1>
-      <ion-grid>
+      <h1 class="ion-text-center fs-28px bold green">{{ posts.topLeft?.post_title }}</h1>
+      <ion-grid class="dark-gray">
         <ion-row>
-          <ion-col class="px-4 pt-4" size="12" size-md="6">
+          <ion-col class="px-4 pt-4"  size="12" size-md="6">
             <app-page-post-content [guid]=" a.pageCode.aboutTopLeft " [post]=" posts.topLeft " (edited)=" posts.topLeft = $event "></app-page-post-content>
           </ion-col>
           <ion-col class="px-4 pt-4" size="12" size-md="6">
@@ -27,18 +27,18 @@
   
   <section class="md-pb-100px md-mb-145px" style="background-color: #fafafa;">
     <div class="page-width-md">
-      <ion-grid class="pt-50px">
+      <ion-grid class="pt-50px dark-gray">
         <ion-row>
           <ion-col class="px-4" size="12" size-md="6">
             
-            <h2 class="ion-text-center green-2">{{ posts.bottomLeft?.post_title }}</h2>
+            <h2 class="ion-text-center fs-28px bold green">{{ posts.bottomLeft?.post_title }}</h2>
             <div class="mt-5">
               <app-page-post-content [guid]=" a.pageCode.aboutBottomLeft " [post]=" posts.bottomLeft " (edited)=" posts.bottomLeft = $event "></app-page-post-content>
             </div>
           </ion-col>
           <ion-col class="px-4" size="12" size-md="6">
             
-            <h2 class="ion-text-center green-2 ">{{ posts.bottomRight?.post_title }}</h2>
+            <h2 class="ion-text-center fs-28px bold green ">{{ posts.bottomRight?.post_title }}</h2>
             <div class="mt-5">
                 <app-page-post-content [guid]=" a.pageCode.aboutBottomRight " [post]=" posts.bottomRight " (edited)=" posts.bottomRight = $event "></app-page-post-content>
             </div>

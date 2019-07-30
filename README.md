@@ -10,4 +10,19 @@
 
 ## Content Making Rules
 
-* Images in home training menu list page should be in 360 px of width and 180 px of height for the best view.
+
+* Images in home training menu list page should be in 360 px of width and 210 px of height for the best view.
+
+* Images in products menu list page should be in 165 px of width and 150 px of height for the best view.
+
+* Images in about detoxification page  should be in 360 px of width and 360 px of height for the best view.
+
+* Images in detoxification diary page  should be in 360 px of width and 236 px of height for the best view.
+
+* Images in how-to-detox-my-body page  should be in 360 px of width and 360 px of height for the best view.
+
+* Images in detoxification-recipe page  should be in 360 px of width and 251 px of height for the best view.
+
+* Images in company page  should be in 360 px of width and 240 px of height for the best view.
+
+* Images in customer service page  should be in 360 px of width and 210 px of height for the best view.
