@@ -4,7 +4,8 @@
 
 <ion-content>
 
-  <section class="pt-100px">
+
+  <section class="pt-100px" *ngIf="a.isDesktop">
 
     <ion-text color="green">
       <h1 class="fs-32px ion-text-center bold">Awesome text</h1>
@@ -27,9 +28,10 @@
 
     <ion-grid no-padding>
       <ion-row>
-        <ion-col class="pt-50px" size="4" no-padding *ngFor="let x of [].constructor(20)">
+        <ion-col class="xs-px-2 xs-py-1 md-pt-50px" size="12" size-md="4" no-padding
+          *ngFor="let x of [].constructor(20)" routerLink="/detoxification-recipe-item">
 
-          <ion-card class="card">
+          <ion-card class="card" *ngIf="a.isDesktop">
             <ion-img src="/assets/img/sample_image_diary.png" alt="image_diary"></ion-img>
             <ion-card-content no-padding>
 
@@ -37,15 +39,53 @@
                 <ion-row class="fs-14px">
                   <ion-col class="green" no-padding>표제표제</ion-col>
                   <ion-col class="ion-text-center green" size="5" no-padding>표제표제표제표제</ion-col>
-                  <ion-col class="ion-text-right medium"  no-padding>표제표제</ion-col>
+                  <ion-col class="ion-text-right medium" no-padding>표제표제</ion-col>
                 </ion-row>
               </ion-grid>
 
-              <h2 class="py-2 fs-22px fw-600 green ">표제표제표제표제표제표제</h2>
+              <h2 class=" py-2 fs-22px fw-600 green ">표제표제표제표제표제표제</h2>
+
               <p class="fs-12 medium">표제표제표제표제표제표제표제표제표제표제표제표제표제표제표제표제표제표제</p>
 
             </ion-card-content>
           </ion-card>
+
+          <div class="mobile position-relative" *ngIf="a.isMobile">
+            <ion-img src="/assets/img/sample_image_diary.png" alt="image_diary"></ion-img>
+
+            <div class="position-absolute top  p-3 h-100 w-100 bg-light-black z-1000 "
+              routerLink="/detoxification-recipe-item">
+
+              <ion-grid class="pt-2" no-padding>
+                <ion-row class="fs-12px">
+                  <ion-col no-padding>표제표제/표제표제</ion-col>
+
+                  <ion-col class="ion-text-right" no-padding>표제표제</ion-col>
+                </ion-row>
+              </ion-grid>
+
+              <div class="position-absolute bottom ">
+                <h2 class="m-0 fs-22px fw-600 white ">표제표제표제표제표제표제</h2>
+                <p class="fs-14 medium">표제표제표제표제표제표제표제표제표제표제표제표제표제표제표제표제표제표제</p>
+                <div class="flex-start">
+                  <ion-button class="ion-no-margin my-2 white border-gray" fill="clear">
+                    표제표
+                  </ion-button>
+                  <ion-button class="ion-no-margin my-2 white border-gray" fill="clear">
+                    표제
+                  </ion-button>
+                </div>
+
+
+              </div>
+
+            </div>
+
+
+          </div>
+
+
+
 
         </ion-col>
       </ion-row>
@@ -58,7 +98,7 @@
 
 
   <ng-container *ngIf="a.isDesktop">
-      <app-desktop-home-footer></app-desktop-home-footer>
+    <app-desktop-home-footer></app-desktop-home-footer>
   </ng-container>
 
 </ion-content>

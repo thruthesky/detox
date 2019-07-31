@@ -21,7 +21,7 @@
 
 * Images in how-to-detox-my-body page  should be in 360 px of width and 360 px of height for the best view.
 
-* Images in detoxification-recipe page  should be in 360 px of width and 251 px of height for the best view.
+* Images in detoxification-recipe page  should be in 340 px of width and 250 px of height for the best view.
 
 * Images in company page  should be in 360 px of width and 240 px of height for the best view.
 
