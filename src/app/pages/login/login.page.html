@@ -25,7 +25,7 @@
 
       <ion-item mode="ios" lines="none">
         <ion-label position="floating" color="medium">{{ a.t({en: 'Password', ko: '비밀번호'}) }}</ion-label>
-        <ion-input formControlName="user_pass"></ion-input>
+        <ion-input type="password" formControlName="user_pass"></ion-input>
       </ion-item>
 
       <ion-text class="form-validation-error" color="danger" *ngIf=" submitted && errors('user_pass')?.required ">
