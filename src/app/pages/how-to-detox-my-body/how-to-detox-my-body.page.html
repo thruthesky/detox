@@ -61,7 +61,8 @@
 
       <ion-row>
         <ion-col class="px-4  pt-4 lh-30px" size="12" size-md="6" no-padding>
-        <ion-img class="mb-3" src=" {{ src(posts[name + '-' + 4]) }}  "></ion-img>
+          <ion-img class="mb-3" src=" {{ src(posts[name + '-' + 4]) }}  " *ngIf=" src(posts[name + '-' + 4]) ">
+          </ion-img>
 
           <app-page-post-content [guid]=" name + '-' + 4 " [post]=" posts[name + '-' + 4] "
             (edited)=" posts[name + '-' + 4] = $event "></app-page-post-content>
@@ -90,7 +91,7 @@
         </ion-col>
 
         <ion-col class="px-4   lh-30px" size="12" size-md="6" no-padding>
-          <ion-img class="mb-32px" src=" {{ src(posts[name + '-' + 7]) }} " *ngIf=" src(posts[name + '-' + 7])  " >
+          <ion-img class="mb-32px" src=" {{ src(posts[name + '-' + 7]) }} " *ngIf=" src(posts[name + '-' + 7])  ">
           </ion-img>
           <app-page-post-content [guid]=" name + '-' + 7 " [post]=" posts[name + '-' + 7] "
             (edited)=" posts[name + '-' + 7] = $event "></app-page-post-content>

@@ -16,7 +16,7 @@
     <ion-grid class="ion-no-padding">
       <ion-row>
         <ion-col class=" pr-60px" size="6" *ngIf="a.isDesktop">
-          <ion-img class="pt-62px" src="{{ src(companyInfo.topPost) }}"></ion-img>
+          <ion-img class="pt-62px" src="{{ src(companyInfo.topPost) }}" *ngIf=" src(companyInfo.topPost)"></ion-img>
         </ion-col>
         <ion-col class="md-pl-2" size="12" size-md="4" no-padding>
 

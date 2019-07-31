@@ -1,2 +1,26 @@
 
-    
+ion-row {
+    border-top: 1px solid rgba(0,0,0,0.13);
+}
+
+
+// .select ion-item {
+//     border-left: 1px solid  rgba(0,0,0,0.13); 
+
+// }
+
+// .select ion-col:first-child {
+//     ion-item {
+//         border-left: none !important;
+//     }
+// } 
+
+.line {
+    position: absolute !important;
+    top: 50% ;
+    right: 0;
+    transform: translateY(-50%) ;
+    height: 30px !important;
+    border-right: 1px solid #e7e7e7;
+    margin: auto  !important;
+}

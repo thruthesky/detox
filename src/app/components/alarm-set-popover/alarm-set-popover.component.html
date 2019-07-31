@@ -1,23 +1,85 @@
+<div class="position-absolute top right z-1000">
+  <ion-button class="h-40px" color="green" mode="ios" size="small" fill="clear" no-margin (click)="pop.dismiss()">
+    <ion-icon slot="icon-only" name="close"></ion-icon>
+  </ion-button>
+</div>
+
+
 <section class="p-3">
 
 
 
-  <ion-item >
-    <ion-label position="floating">Floating Label</ion-label>
+  <ion-item no-padding>
+    <ion-label color="medium" position="floating">Floating Label</ion-label>
     <ion-input></ion-input>
   </ion-item>
 
-  <ion-item>
-    <ion-textarea #text maxlength="120" type="text" rows="4" cols="20" placeholder="Enter any notes here...">
+  <ion-item no-padding>
+    <ion-label color="medium" position="floating">Enter any notes here...</ion-label>
+    <ion-textarea class="fs-14" #text maxlength="120" type="text" rows="4" cols="20">
     </ion-textarea>
   </ion-item>
 
   <ion-text color="medium">
-    <p class="ion-text-right">{{ text.value.length }}/120</p>
+    <p class=" fs-12 ion-text-right">{{ !text.value ? 0 : text.value.length   }}/120</p>
   </ion-text>
 
-  <div class="ion-text-center">
-    <ion-button type="submit" color="green">
+
+  <ion-grid class="select  p-0 pt-50px ">
+    <ion-row>
+      <ion-col no-padding>
+        <ion-item>
+          <ion-label position="floating">Select</ion-label>
+          <ion-select interface="popover">
+              <ion-select-option>Mon</ion-select-option>
+              <ion-select-option>Tue</ion-select-option>
+              <ion-select-option>Wed</ion-select-option>
+              <ion-select-option>Thu</ion-select-option>
+              <ion-select-option>Fri</ion-select-option>
+              <ion-select-option>Sat</ion-select-option>
+              <ion-select-option>Sun</ion-select-option>
+          </ion-select>
+        </ion-item>
+        <div class="line"></div>
+      </ion-col>
+      <ion-col  no-padding>
+        <ion-item>
+          <ion-label position="floating">Select</ion-label>
+          <ion-select interface="popover">
+            <ion-select-option>Mon</ion-select-option>
+            <ion-select-option>Tue</ion-select-option>
+            <ion-select-option>Wed</ion-select-option>
+            <ion-select-option>Thu</ion-select-option>
+            <ion-select-option>Fri</ion-select-option>
+            <ion-select-option>Sat</ion-select-option>
+            <ion-select-option>Sun</ion-select-option>
+          </ion-select>
+        </ion-item>
+        <div class="line"></div>
+      </ion-col>
+      <ion-col  no-padding>
+        <ion-item>
+          <ion-label position="floating">Select</ion-label>
+          <ion-select interface="popover">
+              <ion-select-option>Mon</ion-select-option>
+              <ion-select-option>Tue</ion-select-option>
+              <ion-select-option>Wed</ion-select-option>
+              <ion-select-option>Thu</ion-select-option>
+              <ion-select-option>Fri</ion-select-option>
+              <ion-select-option>Sat</ion-select-option>
+              <ion-select-option>Sun</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+
+
+
+  <div class="pt-50px ion-text-center">
+    <ion-button class="ion-no-margin h-52px  no-border no-box-shadow " expand="full" type="submit" color="green">
       Submit
     </ion-button>
   </div>
