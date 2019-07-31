@@ -46,19 +46,19 @@
 
   <!-- alarms -->
 <section class="pb-5 md-pb-150px md-page-width md-no-border  border-top-gray">
-    <ion-item class="md-mt-3 md-shadow-2" lines="none" *ngFor="let item of [].constructor(10)">
+    <ion-item class="md-mt-3 md-shadow-2 pointer" lines="none" *ngFor="let item of [].constructor(10)">
 
-      <ion-grid class="md-py-20px">
+      <ion-grid no-padding>
         <ion-row>
 
-          <ion-col class="flex-column-center" size="3" (click)="onClickAlarmItem()">
+          <ion-col class="flex-column-center md-py-20px " size="3" (click)="onClickAlarmItem()">
             <ion-label class="fs-22px" color="green">07:00</ion-label>
           </ion-col>
-          <ion-col class="fs-14" size="7" (click)="onClickAlarmItem()">
+          <ion-col class="fs-14 md-py-20px" size="7" (click)="onClickAlarmItem()">
             <p class="black bold">표제표제표제표</p>
             <p class="i-color-medium">제표표표제표표제표제표제</p>
           </ion-col>
-          <ion-col class="flex-column-center" size="2" no-padding>
+          <ion-col class="flex-column-center md-py-20px" size="2" no-padding>
             <ion-toggle class="pl-1" color="success"></ion-toggle>
           </ion-col>
         </ion-row>
