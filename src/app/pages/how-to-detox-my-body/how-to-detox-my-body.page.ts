@@ -28,4 +28,8 @@ export class HowToDetoxMyBodyPage implements OnInit {
 
   }
 
+  src(post: Post) {
+    return this.a.wp.getPostFileUrl(post);
+  }
+
 }

@@ -3,112 +3,97 @@
 </ion-header>
 
 <ion-content>
-  <section class="pb-150px md-pt-100px  bg-md-background-image dark-gray-2 ">
+  <section class="xs-pb-4 gray">
+    <div class=" md-pt-100px  bg-md-background-image dark-gray-2 ">
 
-    <div class="page-width-md">
+      <div class="page-width-md">
 
-      <h1 class="title mb-3 px-4 fs-16px green-2"  >내 몸을 해독하는 법</h1>
-      <ion-grid no-padding>
-        <ion-row>
-          <ion-col  class="px-4 pt-4" size="12" size-md="6"  no-padding>
-              <app-page-post-content [guid]=" name + '-' + 0 " [post]=" posts[name + '-' + 0] " (edited)=" posts[name + '-' + 0] = $event "></app-page-post-content>
+        <h1 class="title mb-3 px-4 fs-16px green fw-600">내 몸을 해독하는 법</h1>
+        <ion-grid no-padding>
+          <ion-row>
+            <ion-col class="px-4 pt-4 lh-30px" size="12" size-md="6" no-padding>
+              <app-page-post-content [guid]=" name + '-' + 0 " [post]=" posts[name + '-' + 0] "
+                (edited)=" posts[name + '-' + 0] = $event "></app-page-post-content>
 
-          </ion-col>
-          <ion-col  class="px-4 pt-4" size="12" size-md="6" no-padding >
-              <app-page-post-content [guid]=" name + '-' + 1 " [post]=" posts[name + '-' + 1] " (edited)=" posts[name + '-' + 1] = $event "></app-page-post-content>
-          </ion-col>
-        </ion-row>
-      </ion-grid>
-
+            </ion-col>
+            <ion-col class="px-4 pt-4 lh-30px" size="12" size-md="6" no-padding>
+              <app-page-post-content [guid]=" name + '-' + 1 " [post]=" posts[name + '-' + 1] "
+                (edited)=" posts[name + '-' + 1] = $event "></app-page-post-content>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
     </div>
 
+    <div class="line"></div>
+
+
   </section>
 
-  <section class="md-pt-100px md-pb-150px">
+
+  <section class="xs-pb-4 md-pt-100px gray">
     <ion-grid class="page-width-md">
       <ion-row>
-        <ion-col  class="px-4 pt-4 lh-25px"size="12" size-md="6"  no-padding>
-            <app-page-post-content [guid]=" name + '-' + 2 " [post]=" posts[name + '-' + 2] " (edited)=" posts[name + '-' + 2] = $event "></app-page-post-content>
-        
-        </ion-col>
-        <ion-col   class="px-4  pt-4 lh-25px" size="12" size-md="6" no-padding>
-         
-          <app-page-post-content [guid]=" name + '-' + 3 " [post]=" posts[name + '-' + 3] " (edited)=" posts[name + '-' + 3] = $event "></app-page-post-content>
+        <ion-col class="px-4 pt-4 lh-30px" size="12" size-md="6" no-padding>
+          <app-page-post-content [guid]=" name + '-' + 2 " [post]=" posts[name + '-' + 2] "
+            (edited)=" posts[name + '-' + 2] = $event "></app-page-post-content>
 
-          <ion-img class="mt-2" src="/assets/img/no-img.png"></ion-img>
+        </ion-col>
+        <ion-col class="px-4  pt-4 lh-30px" size="12" size-md="6" no-padding>
+
+          <app-page-post-content [guid]=" name + '-' + 3 " [post]=" posts[name + '-' + 3] "
+            (edited)=" posts[name + '-' + 3] = $event "></app-page-post-content>
+
+          <ion-img class="mt-2" src="{{ src( posts[name + '-' + 3] ) }}" *ngIf=" src( posts[name + '-' + 3] )">
+          </ion-img>
 
         </ion-col>
       </ion-row>
     </ion-grid>
 
+    <div class="line"></div>
   </section>
 
 
-  <section class="md-pt-100px  md-pb-150px ">
+  <section class="xs-pb-4 gray">
 
-    <ion-grid class="page-width-md">
+    <ion-grid class="page-width-md  md-pt-100px" no-padding>
 
       <ion-row>
-        <ion-col  class="px-4  pt-4 lh-25px" size="12" size-md="6" no-padding >
-          <ion-img class="pb-2" src="/assets/img/aboutdetox3.jpg"></ion-img>
-          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-          industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
-          scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into
-          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-          industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
-          industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
-          scrambled it to make a type specimen book. It has survived
+        <ion-col class="px-4  pt-4 lh-30px" size="12" size-md="6" no-padding>
+        <ion-img class="mb-3" src=" {{ src(posts[name + '-' + 4]) }}  "></ion-img>
+
+          <app-page-post-content [guid]=" name + '-' + 4 " [post]=" posts[name + '-' + 4] "
+            (edited)=" posts[name + '-' + 4] = $event "></app-page-post-content>
+
         </ion-col>
 
-        <ion-col  class="px-4  pt-4 lh-25px" size="12" size-md="6" no-padding >
-          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-          industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
-          scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into
-          electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of
-          Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like
-          Aldus PageMaker including versions of Lorem Ipsum
-          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-          industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
-          scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into
-          electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of
-          Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like
-          Aldus PageMaker including versions of Lorem Ipsum
+        <ion-col class="px-4  pt-4 lh-30px" size="12" size-md="6" no-padding>
+          <app-page-post-content [guid]=" name + '-' + 5 " [post]=" posts[name + '-' + 5] "
+            (edited)=" posts[name + '-' + 5] = $event "></app-page-post-content>
         </ion-col>
       </ion-row>
     </ion-grid>
 
+    <div class="line"></div>
   </section>
 
 
-  <section class="pb-4 pt-4 md-pt-100px md-pb-150px">
+  <section class="xs-pb-4 md-pt-100px md-pb-150px gray">
 
-    <ion-grid class="page-width-md">
+    <ion-grid class="page-width-md" no-padding>
 
       <ion-row>
-        <ion-col  class="px-4   lh-25px" size="12" size-md="6" no-padding >
-          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-          industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
-          scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into
-          electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of
-          Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like
-          Aldus PageMaker including versions of Lorem Ipsum
-          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-          industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
-          scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into
-          electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of
-          Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like
-          Aldus PageMaker including versions of Lorem Ipsum
+        <ion-col class="px-4  lh-30px" size="12" size-md="6" no-padding>
+          <app-page-post-content [guid]=" name + '-' + 6 " [post]=" posts[name + '-' + 6] "
+            (edited)=" posts[name + '-' + 6] = $event "></app-page-post-content>
         </ion-col>
 
-        <ion-col   class="px-4   lh-25px"size="12" size-md="6" no-padding>
-          <ion-img class="pb-2" src="/assets/img/aboutdetox3.jpg"></ion-img>
-          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-          industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
-          scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into
-          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-          industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
-          industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
-          scrambled it to make a type specimen book. It has survived
+        <ion-col class="px-4   lh-30px" size="12" size-md="6" no-padding>
+          <ion-img class="mb-32px" src=" {{ src(posts[name + '-' + 7]) }} " *ngIf=" src(posts[name + '-' + 7])  " >
+          </ion-img>
+          <app-page-post-content [guid]=" name + '-' + 7 " [post]=" posts[name + '-' + 7] "
+            (edited)=" posts[name + '-' + 7] = $event "></app-page-post-content>
         </ion-col>
       </ion-row>
     </ion-grid>
@@ -117,7 +102,7 @@
 
 
   <ng-container *ngIf="a.isDesktop">
-      <app-desktop-home-footer></app-desktop-home-footer>
+    <app-desktop-home-footer></app-desktop-home-footer>
   </ng-container>
 
 
