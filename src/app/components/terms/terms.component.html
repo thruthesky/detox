@@ -3,7 +3,7 @@
     <ion-icon slot="icon-only" name="close"></ion-icon>
   </ion-button>
 </div>
-<section class="page-width pb-100px md-pb-150px p-4 fs-12">
+<section class="page-width pb-50px p-4 fs-12">
 
   <div class="pb-4">
     <ion-text color="green">
@@ -23,6 +23,11 @@
 
   </div>
 
-
+  <div class="flex-center mt-4" *ngIf="close">
+      <ion-button color="danger" (click)="popoverController.dismiss()" >
+        Close
+      </ion-button>
+    </div>
 
 </section>
+

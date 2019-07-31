@@ -242,6 +242,8 @@
 
 
 
+
+
 .i-px-0 {
   --padding-start: 0 !important;
   --padding-end: 0 !important;
@@ -1612,10 +1614,16 @@ p {
 .pop-page-width {
 
 --min-width: 600px !important;
+--height: 400px !important;
+
   @media all and (max-width: 768px) {
       --min-width: 340px !important ;
+      --height: 400px !important;
   }
 }
+
+
+
 
 
 .post_content p {

@@ -3,11 +3,13 @@
 </ion-header>
 
 <ion-content>
- 
-  <ng-container>
-    <app-privacy></app-privacy>
-  </ng-container>
 
+  <section class="md-pb-150px">
+      <ng-container>
+          <app-privacy></app-privacy>
+        </ng-container>      
+  </section>
+  
 
   <ng-container *ngIf="a.isDesktop">
       <app-desktop-home-footer></app-desktop-home-footer>

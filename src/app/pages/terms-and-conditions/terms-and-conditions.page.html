@@ -1,17 +1,19 @@
 <ion-header no-border>
-    <app-header></app-header>
-  </ion-header>
-  
-  <ion-content>
-    
-      <ng-container>
-        <app-terms></app-terms>
-      </ng-container>
-  
-  
-    <ng-container *ngIf="a.isDesktop">
-        <app-desktop-home-footer></app-desktop-home-footer>
-    </ng-container>
+  <app-header></app-header>
+</ion-header>
 
-  
-  </ion-content>
+<ion-content>
+
+  <section class="md-pb-150px">
+    <ng-container>
+      <app-terms></app-terms>
+    </ng-container>
+  </section>
+
+
+  <ng-container *ngIf="a.isDesktop">
+    <app-desktop-home-footer></app-desktop-home-footer>
+  </ng-container>
+
+
+</ion-content>

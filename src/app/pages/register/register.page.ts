@@ -207,7 +207,8 @@ export class RegisterPage implements OnInit, OnDestroy {
       componentProps: {
         'close': true,
       },
-      cssClass: 'pop-page-width',
+      cssClass: 'pop-page-width ',
+      mode: 'md',
     });
     return await modal.present();
   }
