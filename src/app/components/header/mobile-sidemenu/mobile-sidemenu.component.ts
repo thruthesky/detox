@@ -10,12 +10,27 @@ import { Router } from '@angular/router';
 })
 export class MobileSidemenuComponent implements OnInit {
 
+  user: User;
+  profilePhotoUrl = this.a.anonymousPhotoUrl;
+
   constructor(
     private router: Router,
     private menu: MenuController,
     private popoverController: PopoverController,
     public a: AppService
-  ) { }
+  ) {
+
+    a.wp.profile().subscribe(user => {
+      this.user = user;
+
+      if (user.photoURL) {
+        this.profilePhotoUrl = user.photoURL;
+      }
+      
+    });
+
+
+   }
 
   ngOnInit() { }
 
