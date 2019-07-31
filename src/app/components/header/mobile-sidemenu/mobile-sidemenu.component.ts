@@ -21,14 +21,11 @@ export class MobileSidemenuComponent implements OnInit {
     public a: AppService
   ) {
 
-    a.wp.profile().subscribe(user => {
-      this.user = user;
+ 
+    if(a.wp.getUserData()) {
+      this.user = a.wp.getUserData();
+    }
 
-      if (user.photoURL) {
-        this.profilePhotoUrl = user.photoURL;
-      }
-      
-    });
 
 
    }

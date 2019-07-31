@@ -8,18 +8,18 @@
     </ion-button>
   </div>
 
-  <div class="white fs-14 xy-center " *ngIf=" a.wp.userIsLoggedOut ">
+  <div class="white fs-14 xy-center " *ngIf=" !user ">
     {{ a.t({ en: 'Please login.', ko: '로그인 해주세요.' }) }}
   </div>
 
 
-  <ion-item  class="y-center fs-14" lines="none" color="green"  *ngIf=" a.wp.userIsLoggedIn ">
+  <ion-item  class="y-center fs-14" lines="none" color="green"  *ngIf=" user ">
 
     <ion-thumbnail class="pointer" slot="start" >
       <img [src]=" profilePhotoUrl ">
     </ion-thumbnail>
 
-    <ion-label color="light" *ngIf=" user ">
+    <ion-label color="light">
       <p>{{ user.display_name }}</p>
       <p class="fs-12">{{ user.user_email }}</p>
     </ion-label>
