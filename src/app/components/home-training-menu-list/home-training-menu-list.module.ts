@@ -4,6 +4,7 @@ import { HomeTrainingMenuListComponent } from './home-training-menu-list.compone
 import { IonicModule } from '@ionic/angular';
 import { AdminPageEditButtonModule } from '../admin-page-edit-button/admin-page-edit-button.module';
 import { PagePostContentModule } from '../page-post-content/page-post-content.module';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [HomeTrainingMenuListComponent],
@@ -12,7 +13,8 @@ import { PagePostContentModule } from '../page-post-content/page-post-content.mo
     CommonModule,
     IonicModule,
     AdminPageEditButtonModule,
-    PagePostContentModule
+    PagePostContentModule,
+    RouterModule,
   ]
 })
 export class HomeTrainingMenuListModule { }

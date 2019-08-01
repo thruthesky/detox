@@ -40,8 +40,5 @@ export class HomeTrainingMenuListComponent implements OnInit, OnDestroy {
     return this.a.wp.getPostFileUrl(post);
   }
 
-  itemClick(item : Post ) {
-    console.log(item);
-  }
 
 }
