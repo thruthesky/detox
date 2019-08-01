@@ -4,12 +4,88 @@
 
 <ion-content>
 
+  <ion-text color="green" *ngIf="a.isDesktop">
+    <h1 class="pt-100px pb-5 ion-text-center fs-32px bold">표제표제표제</h1>
+  </ion-text>
 
-  <section class="pb-150px page-width">
+  <section class="page-width" *ngIf="a.isDesktop && posts">
+    <ion-grid class="grid-1" no-padding>
+      <ion-row>
+        <ion-col size="6" no-padding>
 
-    <ion-text color="green" *ngIf="a.isDesktop">
-      <h1 class="pt-100px pb-5 ion-text-center fs-32px bold">표제표제표제</h1>
-    </ion-text>
+          <ion-card class="card m-0">
+            <app-ion-file-display [post]=" posts[0] "></app-ion-file-display>
+            <ion-card-content class="white bg-color">
+              <h2 class="fs-16px bold" *ngIf="a.isMobile">{{ posts[0].post_title }}</h2>
+              <p class="fs-12">{{ posts[0].post_content }}</p>
+              <h2 class="fs-20px bold" *ngIf="a.isDesktop">{{ posts[0].post_title }}</h2>
+            </ion-card-content>
+          </ion-card>
+
+        </ion-col>
+        <ion-col size="6" no-padding>
+          <ion-grid class="grid-2" no-padding>
+            <ion-row>
+              <ion-col size="6" no-padding>
+                <ion-card class="card m-0">
+                  <app-ion-file-display [post]=" posts[2] "></app-ion-file-display>
+                  <ion-card-content class="white bg-color">
+                    <h2 class="fs-16px bold" *ngIf="a.isMobile">{{ posts[2].post_title }}</h2>
+                    <p class="fs-12">{{ posts[0].post_content }}</p>
+                    <h2 class="fs-20px bold" *ngIf="a.isDesktop">{{ posts[2].post_title }}</h2>
+                  </ion-card-content>
+                </ion-card>
+              </ion-col>
+              <ion-col size="6" no-padding>
+                <ion-card class="card m-0">
+                  <app-ion-file-display [post]=" posts[2] "></app-ion-file-display>
+                  <ion-card-content class="white bg-color">
+                    <h2 class="fs-16px bold" *ngIf="a.isMobile">{{ posts[2].post_title }}</h2>
+                    <p class="fs-12">{{ posts[0].post_content }}</p>
+                    <h2 class="fs-20px bold" *ngIf="a.isDesktop">{{ posts[2].post_title }}</h2>
+                  </ion-card-content>
+                </ion-card>
+              </ion-col>
+
+            </ion-row>
+            <ion-row>
+              <ion-col size="6" no-padding>
+                <ion-card class="card m-0">
+                  <app-ion-file-display [post]=" posts[2] "></app-ion-file-display>
+                  <ion-card-content class="white bg-color">
+                    <h2 class="fs-16px bold" *ngIf="a.isMobile">{{ posts[2].post_title }}</h2>
+                    <p class="fs-12">{{ posts[0].post_content }}</p>
+                    <h2 class="fs-20px bold" *ngIf="a.isDesktop">{{ posts[2].post_title }}</h2>
+                  </ion-card-content>
+                </ion-card>
+              </ion-col>
+              <ion-col size="6" no-padding>
+                <ion-card class="card m-0">
+                  <app-ion-file-display [post]=" posts[3] "></app-ion-file-display>
+                  <ion-card-content class="white bg-color">
+                    <h2 class="fs-16px bold" *ngIf="a.isMobile">{{ posts[3].post_title }}</h2>
+                    <p class="fs-12">{{ posts[0].post_content }}</p>
+                    <h2 class="fs-20px bold" *ngIf="a.isDesktop">{{ posts[3].post_title }}</h2>
+                  </ion-card-content>
+                </ion-card>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </section>
+
+
+
+
+
+
+
+
+  <section class="pt-100px  pb-150px page-width" *ngIf="posts">
+
+
 
     <ion-grid no-padding>
       <ion-row class="mr-10px md-mr-20px">
