@@ -6,8 +6,6 @@ import { WordpressApiService } from 'modules/wordpress-api/services/wordpress-ap
 import { IonService } from 'modules/wordpress-api/components/shared/ion-service/ion-service';
 import { DomSanitizer } from '@angular/platform-browser';
 import { Subscription } from 'rxjs';
-import { IonPostEditComponent } from 'modules/wordpress-api/components/forum/ion-post-edit/ion-post-edit.component';
-import { IonPopoverButtonsComponent } from 'modules/wordpress-api/components/shared/ion-popover-buttons/ion-popover-buttons.component';
 
 @Component({
   selector: 'app-products',
@@ -24,7 +22,7 @@ export class ProductsPage implements OnInit {
 
 
   page = 1;
-  posts_per_page = 10;
+  posts_per_page = 6;
   error = '';
 
   subscriptions = new Subscription();
@@ -33,8 +31,6 @@ export class ProductsPage implements OnInit {
     public wp: WordpressApiService,
     private ion: IonService,
     private domSanitizer: DomSanitizer,
-    private modalController: ModalController,
-    private popoverController: PopoverController
     )
    { 
   }
@@ -99,108 +95,7 @@ export class ProductsPage implements OnInit {
       });
     }
   }
-
-  updatePost(post: Post) {
-    const i = this.posts.findIndex(v => v.ID === post.ID);
-    if (i === -1) {
-      return this.ion.error({ errcode: '-510', errstring: this.wp.t('postNotFoundToUpdateOnPostList') });
-    }
-    this.posts.splice(i, 1, post);
-  }
-
-  deletePost(ID: string) {
-    const i = this.posts.findIndex(v => v.ID === ID);
-    if (i === -1) {
-      return this.ion.error({ errcode: '-510', errstring: this.wp.t('postNotFoundToDeleteOnPostList') });
-    }
-    this.posts.splice(i, 1);
-  }
-
-
-  async onClickPost() {
-    const modal = await this.modalController.create({
-      component: IonPostEditComponent,
-      componentProps: {
-        slug: this.slug,
-        header: {
-          color: 'primary',
-          title: this.wp.t('Add Product', { name: this.wp.t(this.slug) })
-        }
-      }
-    });
-    modal.present();
-    const res = await modal.onWillDismiss();
-    if (res && res.data) {
-      this.pre(res.data);
-      console.log('post created: ', res.data);
-      this.posts.unshift(res.data);
-    }
-  }
-
-  async onEdit(post: Post) {
-    // console.log('Going to edit post: ', post);
-    const modal = await this.modalController.create({
-      component: IonPostEditComponent,
-      componentProps: {
-        post: post,
-        header: {
-          color: 'primary',
-          title: this.wp.t('titleEditPost')
-        }
-      }
-    });
-    modal.present();
-    const res = await modal.onWillDismiss();
-    if (res && res.data) {
-      console.log('post updated', res.data);
-      this.pre(res.data);
-      this.updatePost(res.data);
-    }
-  }
-
-  async onDelete(post: Post) {
-    const sub = this.wp.postDelete(post.ID).subscribe(res => {
-      console.log('post delete: ', res);
-      this.deletePost(res.ID);
-    }, e => this.ion.error(e));
-    this.subscriptions.add(sub);
-  }
-
-  async onClickMore(post: Post, event: Event) {
-    const popover = await this.popoverController.create({
-      component: IonPopoverButtonsComponent,
-      event: event,
-      translucent: true,
-      mode: 'ios',
-      componentProps: {
-        data: post,
-        items: [
-          { label: this.wp.t('Edit'), icon: 'create', role: 'edit' },
-          { label: this.wp.t('Delete'), icon: 'trash', role: 'delete' },
-          { label: this.wp.t('Close'), icon: 'close', role: 'close' },
-        ]
-      }
-    });
-    popover.present();
-    const re = await popover.onWillDismiss();
-    if (re.role === 'backdrop' || re.role === 'close') {
-      return;
-    } else if (re.role === 'edit') {
-      if (this.wp.isMyPost(post)) {
-        await this.onEdit(re.data);
-      } else {
-        this.ion.error({ errcode: '-4', errstring: this.wp.t('notYourPost') });
-      }
-
-    } else if (re.role === 'delete') {
-      if (this.wp.isMyPost(post)) {
-        await this.onDelete(re.data);
-      } else {
-        this.ion.error({ errcode: '-4', errstring: this.wp.t('notYourPost') });
-      }
-    }
-  }
-
+  
 
   loadMore(event: any) {
     console.log('load more event: ', event);
