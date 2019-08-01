@@ -1,0 +1,29 @@
+
+.title {
+    font-size: 16px !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    margin-bottom: 0 ;
+
+    @media all and (min-width:576px) {
+       
+        font-size: 28px !important;
+        padding-top: 22px !important;
+        padding-bottom: 22px !important;
+        margin-bottom: 10px !important;
+
+    }
+}
+
+.page-width {
+    max-width: 567px !important;
+    margin: 0 auto !important;
+}
+
+.border-top {
+    border-top: 2px solid rgba(238, 238, 238, 0.589);
+}
+
+.border-bottom {
+    border-bottom: 2px solid rgba(238, 238, 238, 0.589);
+}
