@@ -1,8 +1,30 @@
 <ion-header no-border>
-    <app-header></app-header>
-  </ion-header>
-  
-  <ion-content>
-    tip page
-  </ion-content>
-  
+  <app-header></app-header>
+</ion-header>
+
+<ion-content>
+
+  <section class="page-width">
+    <ion-grid>
+      <ion-row>
+        <ion-col size="12" size-sm="6" size-md="4" *ngFor="let item of [].constructor(10)">
+
+          <ion-card class="card">
+            <ion-img src="/assets/img/post-image.png"></ion-img>
+            <ion-card-header class="py-2">
+              <ion-card-title>Awesome Title</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+              Awesome content
+            </ion-card-content>
+          </ion-card>
+
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </section>
+
+
+
+
+</ion-content>
