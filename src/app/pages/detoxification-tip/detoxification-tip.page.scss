@@ -2,3 +2,23 @@
     max-width: 900px !important;
     margin: 0 auto !important;
 }
+
+.border {
+    border: 1px solid #f0f0f094 !important;
+}
+
+.title {
+    font-size: 16px !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    margin-bottom: 0 ;
+
+    @media all and (min-width:576px) {
+        text-align: center !important;
+        font-size: 32px !important;
+        padding-top: 22px !important;
+        padding-bottom: 22px !important;
+        margin-bottom: 10px !important;
+
+    }
+}
