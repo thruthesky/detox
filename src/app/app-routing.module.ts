@@ -28,9 +28,10 @@ const routes: Routes = [
   { path: 'detoxification-tip', loadChildren: './pages/detoxification-tip/detoxification-tip.module#DetoxificationTipPageModule' },
   { path: 'profile', loadChildren: './pages/profile/profile.module#ProfilePageModule' },
   { path: 'detoxification-recipe-item', loadChildren: './pages/detoxification-recipe-item/detoxification-recipe-item.module#DetoxificationRecipeItemPageModule' },
-
   { path: 'detoxification-tip-detail', loadChildren: './pages/detoxification-tip-detail/detoxification-tip-detail.module#DetoxificationTipDetailPageModule' },
+  { path: 'home-training-item', loadChildren: './pages/home-training-item/home-training-item.module#HomeTrainingItemPageModule' },
   { path: '**', loadChildren: './pages/page-not-found/page-not-found.module#PageNotFoundPageModule' },
+
 
 ];
 
