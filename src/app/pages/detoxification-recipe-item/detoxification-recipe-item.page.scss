@@ -13,3 +13,20 @@
     height: 15px !important;
     width: 15px !important;
 }
+
+
+.title {
+    font-size: 16px !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    margin-bottom: 0 ;
+
+    @media all and (min-width:768px) {
+        font-size: 28px !important;
+        padding-top: 22px !important;
+        padding-bottom: 22px !important;
+        margin-bottom: 10px !important;
+        text-align: center !important;
+
+    }
+}

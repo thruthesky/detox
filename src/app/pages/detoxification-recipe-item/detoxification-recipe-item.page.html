@@ -8,37 +8,38 @@
   <section class="section-top-width">
 
     <ion-text color="green">
-      <h1 class="pt-100px mt-0 fs-34px ion-text-center"> 표제 표제표제 </h1>
+      <h1 class="title"> 표제 표제표제 </h1>
     </ion-text>
 
     <ion-text color="medium">
-      <p class="pt-30px ion-text-center">표제표제표제표제표제표제표제표제표제표제표제표제표제표제표제표제표제</p>
+      <p class="pt-30px px-20px md-text-center">표제표제표제표제표제표제표제표제표제표제표제표제표제표제표제표제표제</p>
     </ion-text>
 
-    <ion-grid class="pt-5">
+    <ion-grid class="px-20px pt-5">
       <ion-row>
-        <ion-col class="pr-60px" size="5">
-          <ion-img src="/assets/img/recipe_image_sample.png"></ion-img>
-        </ion-col>
-        <ion-col class="pl-60px" size="7">
 
+        <ion-col class="flex-center md-pr-10px  lg-pr-60px" size="12" size-md="5">
+          <ion-img class="w-375px " src="/assets/img/recipe_image_sample.png"></ion-img>
+        </ion-col>
+
+        <ion-col class="md-pl-10px lg-pl-60px" size="12" size-md="7">
           <ion-text color="green">
-            <p class="fs-38px">Excepteur sint lorem</p>
+            <p class="pt-4 fs-16px md-fs-38px">Excepteur sint lorem</p>
           </ion-text>
 
-          <p class="pt-4 fs-14 lh-22px gray">
+          <p class="pt-2 md-pt-4 fs-14 lh-22px gray">
             Awesome textAwesome textAwesome textAwesome textAwesome textAwesome textAwesome textAwesome textAwesome
             textAwesome textAwesome textAwesome textAwesome textAwesome textAwesome textAwesome textAwesome
             textAwesome textAwesome textAwesome textAwesome textAwesome text textAwesome textAwesome textAwesome
             textAwesome textAwesome text
           </p>
 
-          <div class="pt-50px">
+          <div class="pt-3 lg-pt-50px">
 
             <ion-img class="size-15px" src="/assets/img/icons/quote_green.png"></ion-img>
 
             <ion-text color="green">
-              <p class="pt-4 fs-18px lh-25px fw-300 italize">
+              <p class=" pt-4 fs-18px xs-text-center lh-25px fw-300 italize">
                 Duis aute textAwesome textAwesome textAwesome textAwesome textAwesome textAwesome textAwesome text
                 Awesome textAwesome textAwesome textAwesome textAwesome textAwesome textAwesome textAwesome textAwesome
               </p>
@@ -50,11 +51,19 @@
     </ion-grid>
   </section>
 
-  <section class="pt-30px pb-5 section-bottom-width">
+  <section class="xs-px-20px pt-30px pb-5 section-bottom-width">
 
     <ion-grid no-padding>
-      <ion-row class="pt-50px" *ngFor="let x of [].constructor(5)">
-        <ion-col class="pr-2" size="1" no-padding>
+      <ion-row class="pt-3 md-pt-50px" *ngFor="let x of [].constructor(5)">
+
+
+
+        <ion-col class="flex-center pl-3" push-sm="7" size="12" size-sm="5">
+          <img class="border-radius-5px" src="/assets/img/recipe_item_sample.png">
+        </ion-col>
+
+
+        <ion-col class="pr-2" pull-sm="5" size="2" size-sm="1" no-padding>
 
           <div class="mt-1 float-right size-30px  flex-center fs-18px lh-18px radius-15px  white"
             style="background-color:#74b243">
@@ -63,7 +72,7 @@
 
         </ion-col>
 
-        <ion-col size="6" no-padding>
+        <ion-col size="10" pull-sm="5" size-sm="6" no-padding>
 
           <ion-text class="fs-22px dark-gray-2">
             <p>표제표제표제표제표제표제표제표제표제표</p>
@@ -71,9 +80,7 @@
 
         </ion-col>
 
-        <ion-col class="pl-3" size="5">
-          <img class="border-radius-5px" src="/assets/img/recipe_item_sample.png">
-        </ion-col>
+
 
       </ion-row>
     </ion-grid>
