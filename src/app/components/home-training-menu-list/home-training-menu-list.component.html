@@ -3,7 +3,8 @@
 </h1>
  -->
 <ion-grid class="px-2 md-pt-5 page-width ion-no-padding">
-  <ion-row class="xs-pt-4 md-mt-40px ion-no-padding" *ngFor=" let item of posts | keyvalue; let i = index ">
+  <ion-row class="xs-pt-4 md-mt-40px ion-no-padding pointer" *ngFor=" let item of posts | keyvalue; let i = index " 
+  (click)="itemClick( item.value )">
 
     <ion-col class="md-pr-60px ion-align-self-center ion-no-padding" size="12" size-md="5">
 
@@ -18,7 +19,7 @@
 
     </ion-col>
 
-    <ion-col class="md-pl-5 " size="12" size-md="7">
+    <ion-col class="md-pl-5 " size="12" size-md="7"  >
       <h1 class="mt-1 fs-32px green" *ngIf="a.isDesktop">{{ item.value?.post_title }}</h1>
       <!-- <p class="fs-14 lh-25px gray" [innerHTML]=" a.safeHtml( item.value.post_content ) "></p> -->
       <!-- {{ name + '-' + i | json }}

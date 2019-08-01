@@ -127,6 +127,9 @@
 .h-50px {
   height: 50px;
 }
+.h-100px {
+  height: 100px !important;
+}
 
 .lh-50px {
   line-height: 50px;
@@ -171,9 +174,12 @@
 
 .i-pop-width-360px {
   --width: 360px;
-
 }
 
+
+.i-pop-width-340px {
+  --width: 340px;
+}
 .italize {
   font-style: italic !important;
 }
@@ -233,6 +239,8 @@
 .promise-pop-height {
   --height: 280px !important;
 }
+
+
 
 
 
@@ -470,12 +478,15 @@
 
 .h-40px {
   height: 40px !important;
+  --height: 40px !important;
 }
 
 .h-45px {
   height: 45px !important;
 }
-
+.h-52px {
+  height: 52px !important;
+}
 .h-56px {
   height: 56px;
 }
@@ -574,6 +585,11 @@
   justify-content: center;
   align-items: center;
 }
+.flex-start {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
 
 
 
@@ -596,6 +612,9 @@
 
 .w-100 {
   width: 100% !important;
+}
+.h-100 {
+  height: 100% !important;
 }
 .w-100px {
   width: 100px !important;
@@ -1030,7 +1049,12 @@ font-size: 16px !important;
   border-width: 0 !important;
   --border-width: 0 !important;
 }
-
+.border-gray {
+  --border: 1px solid #bababa !important;
+  border: 1px solid #bababa !important;
+  border-width: 1px 1px 1px 1px !important;
+  --border-width: 1px 1px 1px 1px !important;
+}
 
 .b-radius-5 {
   border-radius: 6px;
@@ -1164,6 +1188,11 @@ font-size: 16px !important;
 
 .m-0 {
   margin: 0;
+}
+
+.m-auto {
+  margin-left: auto !important;
+  margin-right: auto !important;
 }
 
 .pt-5px {
@@ -1585,13 +1614,38 @@ p {
 .float-right {
   float: right !important;
 }
+.float-left {
+  float: left !important;
+}
 
 
 
 .pop-page-width {
 
 --min-width: 600px !important;
+--height: 400px !important;
+
   @media all and (max-width: 768px) {
       --min-width: 340px !important ;
+      --height: 400px !important;
   }
+}
+
+
+
+
+
+.post_content p {
+  margin: 15px 0 !important;
+}
+
+
+.post_content p:first-child {
+  margin-top: 0 !important;
+}
+
+.company-info-bottom .post_content p:first-child {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+
 }

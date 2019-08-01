@@ -12,8 +12,10 @@ p {
 }
 
 .title {
-    font-size: 32px !important;
-    text-align: center;
-    padding-top: 12px !important;
-    padding-bottom: 1.5em !important;
+    @media all and (min-width: 768px) {
+        font-size: 32px !important;
+        text-align: center;
+        padding-top: 12px !important;
+        padding-bottom: 1.5em !important;
+    }
 }

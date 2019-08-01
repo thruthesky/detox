@@ -8,6 +8,7 @@
     @media all and (min-width:768px) {
         text-align: center !important;
         font-size: 32px !important;
+        margin-top: 0 !important;
     }
 
 }
@@ -15,4 +16,13 @@
 ion-col {
     font-size: 14px !important;
     line-height: 25px !important;
+}
+
+.line {
+    @media all and (min-width:768px) {
+        max-width: 200px !important;
+        margin: 0 auto !important;
+        margin-top: 90px !important;
+        border-top: 1px solid black;
+    }
 }

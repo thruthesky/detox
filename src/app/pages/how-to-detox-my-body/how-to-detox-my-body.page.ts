@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AppService } from 'src/app/services/app.service';
+import { Post } from 'modules/wordpress-api/services/wordpress-api.interface';
 
 @Component({
   selector: 'app-how-to-detox-my-body',
@@ -8,9 +9,27 @@ import { AppService } from 'src/app/services/app.service';
 })
 export class HowToDetoxMyBodyPage implements OnInit {
 
-  constructor(public a: AppService) { }
+  name = 'how-detox';
+
+  posts: { [key: string]: Post } = {};
+
+  constructor(public a: AppService) {
+    
+    this.posts = {};
+    for (let i = 0; i < 8; i++) {
+      const guid = `${this.name}-${i}`;
+      this.posts[guid] = {} as any;
+      this.a.wp.postGetIn({ guid: guid }, this.posts[guid]);
+    }
+  
+   }
 
   ngOnInit() {
+
+  }
+
+  src(post: Post) {
+    return this.a.wp.getPostFileUrl(post);
   }
 
 }

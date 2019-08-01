@@ -17,6 +17,7 @@ export class ProfilePage implements OnInit {
 
   profilePhotoUrl = this.a.anonymousPhotoUrl;
 
+  
   submit = false;
   form: FormGroup;
   user: User;
@@ -46,7 +47,8 @@ export class ProfilePage implements OnInit {
 
     a.wp.profile().subscribe(user => {
 
-      console.log('user: ', user);
+      this.user = user;
+
       if (user.photoURL) {
         this.profilePhotoUrl = user.photoURL;
       }

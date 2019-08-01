@@ -8,6 +8,10 @@ import { IonicModule } from '@ionic/angular';
 import { ProductsPage } from './products.page';
 import { HeaderModule } from 'src/app/components/header/header.module';
 import { DesktopHomeFooterModule } from 'src/app/components/desktop-home-footer/desktop-home-footer.module';
+import { IonPostEditModule } from 'modules/wordpress-api/components/forum/ion-post-edit/ion-post-edit.module';
+import { IonPopoverButtonsModule } from 'modules/wordpress-api/components/shared/ion-popover-buttons/ion-popover-buttons.module';
+import { IonFileDisplayModule } from 'modules/wordpress-api/components/shared/ion-file-display/ion-file-display.module';
+import { IonCommentEditBoxModule } from 'modules/wordpress-api/components/forum/ion-comment-edit-box/ion-comment-edit-box.module';
 
 const routes: Routes = [
   {
@@ -23,7 +27,11 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes),
     HeaderModule,
-    DesktopHomeFooterModule
+    DesktopHomeFooterModule,
+    IonPostEditModule,
+    IonPopoverButtonsModule,
+    IonFileDisplayModule,
+    IonCommentEditBoxModule
   ],
   declarations: [ProductsPage]
 })

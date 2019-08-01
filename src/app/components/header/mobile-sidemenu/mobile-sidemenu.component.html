@@ -1,13 +1,33 @@
-<div class="bg-green py-35px h-140px bold position-relative">
-  <div class="white fs-14 xy-center ">
-    {{ a.t({ en: 'Please login.', ko: '로그인 해주세요.' }) }}
-  </div>
-  <div class="text-align-right">
+<div class="bg-green h-140px bold position-relative">
+
+
+  <div class="float-right">
     <ion-button fill="clear" no-margin mode="ios" (click)="open('')" size="small" fill="clear"
-      class="h-40px white i-color-act-white " mode="ios">
+      class="h-40px white i-color-act-white ">
       <ion-icon slot="icon-only" name="close"></ion-icon>
     </ion-button>
   </div>
+
+  <div class="white fs-14 xy-center " *ngIf=" !user ">
+    {{ a.t({ en: 'Please login.', ko: '로그인 해주세요.' }) }}
+  </div>
+
+
+  <ion-item  class="y-center fs-14" lines="none" color="green"  *ngIf=" user ">
+
+    <ion-thumbnail class="pointer" slot="start" >
+      <img [src]=" profilePhotoUrl ">
+    </ion-thumbnail>
+
+    <ion-label color="light">
+      <p>{{ user.display_name }}</p>
+      <p class="fs-12">{{ user.user_email }}</p>
+    </ion-label>
+
+  </ion-item>
+
+
+
 </div>
 
 <div class="py-22px  fs-14 ">
@@ -20,7 +40,7 @@
     </ion-text>
   </div>
 
-  <ion-grid fixed class="ml-10px ion-no-padding gray ">
+  <ion-grid fixed class="pl-10px ion-no-padding gray ">
 
     <ion-row class="pt-2">
       <ion-col size="6" class="ion-no-padding no-outline">
@@ -46,13 +66,13 @@
 
     <ion-row>
       <ion-col size="6" class="ion-no-padding no-outline">
-          <ion-button fill="clear" no-margin mode="ios" (click)="open('/register')" *ngIf=" a.wp.userIsLoggedOut ">
-            {{ a.t({en: 'Register', ko: '회원가입'}) }}
-          </ion-button>
+        <ion-button fill="clear" no-margin mode="ios" (click)="open('/register')" *ngIf=" a.wp.userIsLoggedOut ">
+          {{ a.t({en: 'Register', ko: '회원가입'}) }}
+        </ion-button>
 
-          <ion-button fill="clear" no-margin mode="ios" (click)="open('/profile')" *ngIf=" a.wp.userIsLoggedIn ">
-            {{ a.t({en: 'Profile', ko: '회원정보'}) }}
-          </ion-button>
+        <ion-button fill="clear" no-margin mode="ios" (click)="open('/profile')" *ngIf=" a.wp.userIsLoggedIn ">
+          {{ a.t({en: 'Profile', ko: '회원정보'}) }}
+        </ion-button>
 
       </ion-col>
       <ion-col size="6" class="ion-no-padding no-outline">
@@ -73,7 +93,7 @@
     </ion-text>
   </div>
 
-  <ion-grid fixed class="ml-10px ion-no-padding gray">
+  <ion-grid fixed class="pl-10px ion-no-padding gray">
     <ion-row class="pt-2">
       <ion-col size="6" class="ion-no-padding no-outline">
         <ion-button fill="clear" no-margin mode="ios" (click)="open('/measure-detox')">
@@ -122,7 +142,7 @@
     </ion-text>
   </div>
 
-  <ion-grid fixed class="ml-10px ion-no-padding gray">
+  <ion-grid fixed class="pl-10px ion-no-padding gray">
     <ion-row class="pt-2">
       <ion-col size="6" class="ion-no-padding no-outline">
         <ion-button fill="clear" no-margin mode="ios" (click)="open('/company-info')">

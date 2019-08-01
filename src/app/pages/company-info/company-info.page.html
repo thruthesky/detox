@@ -7,7 +7,7 @@
   <section class="px-4 pb-4 pt-0 page-width">
 
     <ion-text class="title" color="green" *ngIf="a.isDesktop">
-      <h1 class="pt-3 pb-4 fw-600  fs-32px">회사 정보</h1>
+      <h1 class="pt-3 pb-4 fw-600  fs-32px">회사 소개</h1>
     </ion-text>
 
 
@@ -16,23 +16,18 @@
     <ion-grid class="ion-no-padding">
       <ion-row>
         <ion-col class=" pr-60px" size="6" *ngIf="a.isDesktop">
-          <ion-img class="pt-62px" src="/assets/img/company.jpg"></ion-img>
+          <ion-img class="pt-62px" src="{{ src(companyInfo.topPost) }}" *ngIf=" src(companyInfo.topPost)"></ion-img>
         </ion-col>
         <ion-col class="md-pl-2" size="12" size-md="4" no-padding>
 
           <ion-text color="green">
-            <h2 class="fs-16px bold">회사 프로필</h2>
+            <h2 class="fs-16px bold">{{ companyInfo.topPost?.post_title }}</h2>
           </ion-text>
 
-          <div class="pt-3  fs-14 lh-25px">
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-            industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
-            scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into
-            electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of
-            Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like
-            Aldus PageMaker including versions of Lorem Ips
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-            industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+          <div class="pt-3  fs-14 lh-25px gray">
+
+            <app-page-post-content [guid]=" pageCode.top_post " [post]=" companyInfo.topPost "
+            (edited)=" companyInfo.topPost = $event "></app-page-post-content>
           </div>
 
         </ion-col>
@@ -43,49 +38,43 @@
 
   <section class="mb-5 page-width" *ngIf="a.isDesktop">
 
-    <h3 class="ion-text-center fw-600" style="color: #024c7f;">THIS IS A SAMPLE TEXT</h3>
+    <h3 class="ion-text-center fs-32px fw-600" style="color: #024c7f;">{{ companyInfo.bottomPost?.post_title }}</h3>
 
 
-    <div class="position-relative ion-text-center max-w-550px  m-0-auto">
+    <div class="position-relative  mt-50px m-auto  ion-text-center max-w-600px  ">
 
-      <p class="py-3 z-1000">
-        <img class="d-iblock size-25px " src="/assets/img/icons/quote.png">
-        THIS IS A SAMPLE TEXT THIS IS A SAMPLE TEXTTHIS IS A SAMPLE TEXT
-        THIS IS A SAMPLE TEXT THIS IS A SAMPLE TEXT
-        <img class="d-iblock size-15px " src="/assets/img/icons/quote2.png">
-      </p>
+      <div class="px-5">
+          <img class="position-absolute top left size-25px " src="/assets/img/icons/quote.png">
+        
+          <div class="company-info-bottom fs-18px">
+        
+          <app-page-post-content [guid]=" pageCode.bottom_post " [post]=" companyInfo.bottomPost "
+            (edited)=" companyInfo.bottomPost = $event "></app-page-post-content>
+       
+
+        </div>
+        <img class="position-absolute bottom right size-15px " src="/assets/img/icons/quote2.png">
+      </div>
     </div>
 
   </section>
 
   <section class="bottom-circles ion-text-center bg-md-background-image" *ngIf="a.isDesktop">
-    
+
     <ion-grid class="px-3 pt-120px">
       <ion-row>
-        <ion-col no-padding>
+        <ion-col no-padding *ngFor=" let item of posts | keyvalue; let i = index ">
           <ion-text color="dark">
-            <p class="bold fs-18px">인쇄및조판</p>
+            <p class="bold fs-18px">{{item.value?.post_title}}</p>
           </ion-text>
           <ion-text color="medium">
-            <p class="px-28px pt-2 letter-spacing-0">은단순히인쇄및조판업계에대한가짜텍스트입니다은알수없는프린터가유 프린터가유</p>
+            <div class="px-28px pt-2 letter-spacing-0">
+              <app-page-post-content [guid]=" name + '-' + i " [post]=" item.value " (edited)=" item.value = $event ">
+              </app-page-post-content>
+            </div>
           </ion-text>
         </ion-col>
-        <ion-col no-padding>
-          <ion-text color="dark">
-              <p class="bold fs-18px">인쇄및조판</p>
-          </ion-text>
-          <ion-text color="medium">
-              <p class="px-28px pt-2 letter-spacing-0">은단순히인쇄및조판업계에대한가짜텍스트입니다은알수없는프린터가유 프린터가유</p>
-          </ion-text>
-        </ion-col>
-        <ion-col no-padding>
-          <ion-text color="dark">
-              <p class="bold fs-18px">인쇄및조판</p>
-          </ion-text>
-          <ion-text color="medium">
-            <p class="px-28px pt-2 letter-spacing-0">은단순히인쇄및조판업계에대한가짜텍스트입니다은알수없는프린터가유 프린터가유</p>
-          </ion-text>
-        </ion-col>
+
 
       </ion-row>
     </ion-grid>
@@ -96,7 +85,7 @@
   </section>
 
   <ng-container *ngIf="a.isDesktop">
-      <app-desktop-home-footer></app-desktop-home-footer>
+    <app-desktop-home-footer></app-desktop-home-footer>
   </ng-container>
 
 </ion-content>

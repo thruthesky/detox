@@ -6,7 +6,12 @@
 
   
   <div *ngIf=" a.keys(post).length == 0 ">
-    Loading...
+
+      <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+      <ion-skeleton-text animated></ion-skeleton-text>
+      <ion-skeleton-text animated style="width: 88%"></ion-skeleton-text>
+      <ion-skeleton-text animated style="width: 70%"></ion-skeleton-text>
+      <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
   </div>
 
   <div *ngIf=" post['errcode'] ">
