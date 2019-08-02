@@ -521,8 +521,11 @@
 
 .black {
   color: black !important;
+  --color: black !important;
 }
-
+.border-light {
+  --border-color: #f4f5f8 !important;
+}
 
 .underline {
   text-decoration: underline !important;
