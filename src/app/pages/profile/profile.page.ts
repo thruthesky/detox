@@ -181,6 +181,7 @@ export class ProfilePage implements OnInit {
     const popover = await this.popoverController.create({
       component: MyPromiseComponent,
       event: ev,
+      mode: 'md',
       cssClass: 'promise-pop-width promise-pop-height popover-center-promise  '
     });
     await popover.present();
@@ -193,6 +194,7 @@ export class ProfilePage implements OnInit {
     const popover = await this.popoverController.create({
       component: IonFileUploadPopoverComponent,
       event: ev,
+      mode: 'md',
       translucent: true,
       // cssClass: 'popover-center ',
     });

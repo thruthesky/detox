@@ -7,20 +7,21 @@
   <section *ngIf="a.isMobile">
     <ion-toolbar>
       <ion-title class="fs-14 bold green" slot="start">표제표제표제표</ion-title>
-      <ion-buttons slot="end">
-        <ion-button (click)="onClickArrow()">
+      <ion-buttons slot="end" mode="md">
+        <ion-button (click)="onClickArrow()" mode="md">
           <ion-icon slot="icon-only" name="{{ arrowIcon }}" mode="ios"></ion-icon>
         </ion-button>
       </ion-buttons>
     </ion-toolbar>
 
-    <div class="content" [ngClass]="{'collapsed': hide}" >
+    <div class="content" [ngClass]="{'collapsed': hide}">
       <ion-text color="medium">
-       <p class="px-20px pb-3 lh-25px">
+        <p class="px-20px pb-3 lh-25px">
           Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
-          standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make  
-       </p>
-       </ion-text>
+          standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to
+          make
+        </p>
+      </ion-text>
     </div>
   </section>
 
@@ -45,12 +46,11 @@
 
 
   <!-- alarms -->
-<section class="pb-5 md-pb-150px md-page-width md-no-border  border-top-gray">
+  <section class="pb-5 md-pb-150px md-page-width md-no-border  border-top-gray">
     <ion-item class="md-mt-3 md-shadow-2 pointer" lines="none" *ngFor="let item of [].constructor(10)">
 
       <ion-grid no-padding>
         <ion-row>
-
           <ion-col class="flex-column-center md-py-20px " size="3" (click)="onClickAlarmItem()">
             <ion-label class="fs-22px" color="green">07:00</ion-label>
           </ion-col>
@@ -59,7 +59,7 @@
             <p class="i-color-medium">제표표표제표표제표제표제</p>
           </ion-col>
           <ion-col class="flex-column-center md-py-20px" size="2" no-padding>
-            <ion-toggle class="pl-1" color="success"></ion-toggle>
+            <ion-toggle class="pl-1" color="success" mode="md"></ion-toggle>
           </ion-col>
         </ion-row>
       </ion-grid>
@@ -73,7 +73,7 @@
 
 
   <ng-container *ngIf="a.isDesktop">
-      <app-desktop-home-footer></app-desktop-home-footer>
+    <app-desktop-home-footer></app-desktop-home-footer>
   </ng-container>
 
 </ion-content>
