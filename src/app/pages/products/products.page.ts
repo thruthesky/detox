@@ -14,7 +14,7 @@ import { Subscription } from 'rxjs';
 })
 export class ProductsPage implements OnInit {
 
-  @ViewChild(IonInfiniteScroll) infiniteScroll: IonInfiniteScroll;
+  @ViewChild(IonInfiniteScroll, { static: true }) infiniteScroll: IonInfiniteScroll;
   
   slug = 'products';
 

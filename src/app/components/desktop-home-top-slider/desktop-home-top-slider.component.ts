@@ -7,7 +7,7 @@ import { IonSlides } from '@ionic/angular';
   styleUrls: ['./desktop-home-top-slider.component.scss'],
 })
 export class DesktopHomeTopSliderComponent implements OnInit {
-  @ViewChild('slides') slides: IonSlides;
+  @ViewChild('slides', { static: true }) slides: IonSlides;
 
   options = {
     initialSlide: 3 ,

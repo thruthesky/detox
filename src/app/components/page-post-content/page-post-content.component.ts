@@ -10,7 +10,7 @@ import { AdminPageEditButtonComponent } from '../admin-page-edit-button/admin-pa
 })
 export class PagePostContentComponent implements OnInit {
 
-  @ViewChild(AdminPageEditButtonComponent) editButton: AdminPageEditButtonComponent;
+  @ViewChild(AdminPageEditButtonComponent, { static: true }) editButton: AdminPageEditButtonComponent;
   @Input() post: Post;
   @Input() guid: string;
   @Output() edited = new EventEmitter<Post>();
