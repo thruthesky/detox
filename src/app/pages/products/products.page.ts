@@ -22,7 +22,7 @@ export class ProductsPage implements OnInit {
 
 
   page = 1;
-  posts_per_page = 6;
+  posts_per_page = 10;
   error = '';
 
   subscriptions = new Subscription();

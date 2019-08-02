@@ -10,3 +10,103 @@
     max-width: 1024px !important;
     margin: 0 auto !important;
 }
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-auto-rows: minmax(auto,auto);
+    grid-gap: 10px;
+    padding: 10px;
+}
+
+.grid > div {
+    background: #7db262;
+   
+}
+
+.grid > div:nth-child(odd) {
+    background: red;
+}
+
+.box1 {
+    grid-column: 1/3;
+
+}
+.box2 {
+    grid-column: 3/5;
+}
+
+@media all and (max-width:768px) {
+    .grid {
+        grid-auto-rows: minmax(268px,auto);
+        grid-gap: 10px;
+    }
+    .box3 {
+        grid-column: 1/3;
+    }
+    .box4 {
+        grid-column: 3/5;
+    }
+    .grid {
+        padding-bottom: 0;
+    }
+}
+
+
+
+
+@media all and (min-width:768px) {
+  
+    .grid {
+        grid-auto-rows: minmax(268px,auto);
+        grid-gap: 1px;
+    }
+    
+    .box1 {
+        grid-column: 1/3;
+        grid-row:1/3;
+    }
+    .box2 {
+        grid-column: 3/5;
+    }
+
+}
+
+
+// .box3 {
+//     img {
+//         max-height: 70%;
+//     }
+// }
+
+// .box4 {
+//     img {
+//         max-height: 70%;
+//     }
+//     ion-card-content {
+//         --max-height: 30%;
+//     }
+// }
+
+.card-content {
+    position: absolute;
+    bottom: 0;
+
+    
+    height: 72px !important;
+    width: 100%;
+    background-color: #7db262;
+    padding-top: 13px;
+    padding-bottom: 13px;
+    padding-right: 16px;
+    padding-left: 16px;
+    color: white;
+}
+
+@media all and (max-width:768px) {
+    .card-content {
+        background-color: #76858c !important;
+    }
+}
+
+
