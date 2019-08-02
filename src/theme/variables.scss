@@ -885,11 +885,11 @@ font-size: 16px !important;
 }
 
 .cover {
-  background-attachment: center;
-  background-size: cover;
-  background-repeat: no-repeat;
+  background-position: center !important;
+  background-attachment: center !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
 }
-
 
 
 
