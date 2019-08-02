@@ -9,7 +9,7 @@ import { IonPostListComponent } from 'modules/wordpress-api/components/forum/ion
 })
 export class PostListPage implements OnInit {
 
-  @ViewChild(IonPostListComponent) postList: IonPostListComponent;
+  @ViewChild(IonPostListComponent, { static: true }) postList: IonPostListComponent;
   constructor(
     public a: AppService
   ) { }

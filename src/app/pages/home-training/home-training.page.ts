@@ -13,7 +13,7 @@ type TabName = 'meditation' | 'yoga' | 'stretching' | 'core';
 })
 export class HomeTrainingPage implements OnInit {
 
-  @ViewChild(HomeTrainingMenuListComponent) list: HomeTrainingMenuListComponent;
+  @ViewChild(HomeTrainingMenuListComponent, { static: true }) list: HomeTrainingMenuListComponent;
   tabName: TabName = 'meditation';
   constructor(
     public a: AppService
