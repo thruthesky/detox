@@ -10,6 +10,7 @@ export class BeemanTestComponent implements OnInit {
 
 
   form : FormGroup;
+  submit = false;
 
   constructor(public fb: FormBuilder ) {
     this.form = fb.group({
@@ -23,7 +24,11 @@ export class BeemanTestComponent implements OnInit {
   ngOnInit() {}
 
   onSubmit() {
-    
+    this.submit = true;
+  }
+
+  errors(formName: string): any {
+    return this.form.get(formName).errors;
   }
 
 }
