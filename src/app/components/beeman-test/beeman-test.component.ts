@@ -9,22 +9,28 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 export class BeemanTestComponent implements OnInit {
 
 
-  form : FormGroup;
+  form: FormGroup;
   submit = false;
 
-  constructor(public fb: FormBuilder ) {
+  constructor(public fb: FormBuilder) {
     this.form = fb.group({
-      gender: ['',[Validators.required]],
-      birthday: ['',[Validators.required]],
-      height: ['',[Validators.required]],
-      weight: ['',[Validators.required]],
-    }); 
-   }
+      gender: ['', [Validators.required]],
+      birthday: ['', [Validators.required]],
+      height: ['', [Validators.required]],
+      weight: ['', [Validators.required]],
+    });
+  }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
   onSubmit() {
     this.submit = true;
+
+    if (this.form.invalid) {
+      console.log('onSubmit() => form is invalid. just return. not submitting');
+      return;
+    }
+
   }
 
   errors(formName: string): any {
