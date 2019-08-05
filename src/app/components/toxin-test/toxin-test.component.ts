@@ -22,6 +22,9 @@ export class ToxinTestComponent implements OnInit {
       }
       this.resetQueries(post);
     }, e => a.error(e));
+
+    this.showResult = true;
+
   }
 
   ngOnInit() { }

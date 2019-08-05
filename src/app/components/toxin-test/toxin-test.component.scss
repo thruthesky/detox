@@ -1,3 +1,34 @@
+.page-width {
+    max-width: 441px !important;
+    margin: 0 auto !important;
+
+    @media all and (max-width: 768px) {
+        max-width: 360px !important;
+        margin: 0 auto !important;
+    }
+
+
+}
+
+.title {
+    font-size: 16px !important;
+    color: black;
+    margin-bottom: 0;
+    font-weight: bold;
+    // pt-50px mt-0 fs-32px fw-500
+    @media all and (min-width: 768px) {
+        padding-top: 50px !important;
+        margin-top: 0 !important;
+        font-size: 32px !important;
+        color: #7db262;
+    }
+
+}
+
+
+
+
+
 .checklist {
     max-width: 520px !important;
     margin: 0 auto !important;
@@ -8,6 +39,18 @@
     }
 
 }
+
+
+
+
+.border {
+
+    @media all and (min-width: 768px) {
+        border: 2px solid #7db262;
+    }
+
+}
+
 
 .border-bottom {
     @media all and (max-width: 768px) {
@@ -34,7 +77,10 @@
 
 
 .graph-outer {
-    padding: 1em .5em;
+    // padding: 1em .5em;
+    margin: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
     background-color: white;
 
     .graph {
@@ -77,6 +123,7 @@
     header {
         position: absolute;
         left: -14px;
+
         &>div {
             float: left;
             margin-left: 2px;
@@ -117,10 +164,12 @@
                 color: rgb(255, 174, 0);
                 border-color: rgb(255, 174, 0) !important;
             }
+
             &.danger {
                 color: red;
                 border-color: red !important;
             }
+
             &.patient {
                 width: 100px;
                 color: red;
