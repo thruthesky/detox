@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-beeman-test',
@@ -7,8 +8,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BeemanTestComponent implements OnInit {
 
-  constructor( ) { }
+
+  form : FormGroup;
+
+  constructor(public fb: FormBuilder ) {
+    this.form = fb.group({
+      gender: ['',[Validators.required]],
+      birthday: ['',[Validators.required]],
+      height: ['',[Validators.required]],
+      weight: ['',[Validators.required]],
+    }); 
+   }
 
   ngOnInit() {}
+
+  onSubmit() {
+    
+  }
 
 }

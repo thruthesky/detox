@@ -7,7 +7,7 @@
 
     <section class="form">
 
-        <form>
+        <form [formGroup]="form" (ngSubmit)=" onSubmit() ">
 
             <ion-grid class="  mx-2  fs-14 bg-light-gray">
 
@@ -16,7 +16,7 @@
                         Gender
                     </ion-col>
                     <ion-col>
-                        <ion-radio-group class="flex-start">
+                        <ion-radio-group formControlName="gender" class="flex-start">
 
                             <ion-item lines="none">
                                 <ion-radio class="mr-1" value="Male"></ion-radio>
@@ -37,7 +37,8 @@
                         Birthday
                     </ion-col>
                     <ion-col class="flex-center" class="ion-align-self-start">
-                        <ion-datetime displayFormat="MMM DD, YYYY" placeholder="Select Date" class="medium">
+                        <ion-datetime class="medium" displayFormat="MMM DD, YYYY" placeholder="Select Date"
+                            formControlName="birthday">
                         </ion-datetime>
                     </ion-col>
                 </ion-row>
@@ -47,7 +48,7 @@
                         Height
                     </ion-col>
                     <ion-col class="flex-start">
-                        <ion-input type="text" color="medium"></ion-input>
+                        <ion-input type="text" formControlName="height" color="medium"></ion-input>
                         <ion-label color="medium" position="fixed">cm</ion-label>
                     </ion-col>
                 </ion-row>
@@ -57,7 +58,7 @@
                         Weight
                     </ion-col>
                     <ion-col class="flex-center">
-                        <ion-input type="text" color="medium"></ion-input>
+                        <ion-input type="text" formControlName="weight" color="medium"></ion-input>
                         <ion-label color="medium" position="fixed">kg</ion-label>
                     </ion-col>
                 </ion-row>
