@@ -1,16 +1,15 @@
 <section>
-  <ion-text text-center >
-    <h1 class="title ">{{ a.t({en: 'Test Toxins', ko: '독소지수 측정'}) }}</h1>
+  <ion-text text-center *ngIf="a.isDesktop">
+    <h1 class="title">{{ a.t({en: 'Test Toxins', ko: '독소지수 측정'}) }}</h1>
   </ion-text>
-  <p class="pt-4 xs-p-3  xs-pl-15px  fs-14 md-text-center  medium" *ngIf="a.isDesktop">
-    {{ a.t({en: 'Check if you have symtoms of the question. Each checkboxes are equivalent to score 1.', ko: '아래의 질문에 해당하면 체크하세요. 해당되면 +1점. 안되면 0점입니다.'})}}
-  </p>
 
-  <section  *ngIf="!showResult">
-
-    <div class="flex-center xs-min-h-100px border-bottom bg-white">
+  <section *ngIf="!showResult">
 
 
+    <div class="xs-min-h-100px border-bottom bg-white">
+      <p class="subtitle pt-4 xs-p-3  xs-pl-15px  fs-14 md-text-center  medium">
+        {{ a.t({en: 'Check if you have symtoms of the question. Each checkboxes are equivalent to score 1.', ko: '아래의 질문에 해당하면 체크하세요. 해당되면 +1점. 안되면 0점입니다.'})}}
+      </p>
       <app-admin-page-edit-button [guid]=" guid " (edited)=" resetQueries( $event ) "></app-admin-page-edit-button>
     </div>
 
@@ -33,13 +32,18 @@
     </form>
   </section>
 
-  <section class="result  page-width" *ngIf="showResult">
+  <section class="result " *ngIf="showResult">
     <!-- Result<br>
     {{ scoreWidth | json }} -->
+    <ion-text text-center *ngIf="a.isMobile">
+      <h1 class="title">{{ a.t({en: 'Test Toxins', ko: '독소지수 측정'}) }}</h1>
+    </ion-text>
+    <p class="pt-4 xs-p-3 pb-5 xs-pl-15px  fs-14 md-text-center  medium " *ngIf="a.isDesktop">
+      {{ a.t({en: 'Check if you have symtoms of the question. Each checkboxes are equivalent to score 1.', ko: '아래의 질문에 해당하면 체크하세요. 해당되면 +1점. 안되면 0점입니다.'})}}
+    </p>
 
-    <div class="border md-mt-40px pt-3">
+    <div class="border page-width md-mt-40px pt-3">
       <div class="graph-outer">
-
         <footer class="graph">
           <header>
             <div class="normal">정상</div>
@@ -81,7 +85,8 @@
         </footer>
       </div>
 
-      <p class="pt-5 pb-3 md-pb-5 xs-fs-16px fs-18px bold ion-text-center">고위험고위험고위험고위험 <ion-text class="xs-fs-18px fs-22px" color="danger">"고위험"
+      <p class="pt-5 pb-3 md-pb-5 xs-fs-16px fs-18px bold ion-text-center">고위험고위험고위험고위험 <ion-text
+          class="xs-fs-18px fs-22px" color="danger">"고위험"
         </ion-text>고위험 </p>
 
 
