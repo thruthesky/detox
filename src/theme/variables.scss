@@ -521,8 +521,11 @@
 
 .black {
   color: black !important;
+  --color: black !important;
 }
-
+.border-light {
+  --border-color: #f4f5f8 !important;
+}
 
 .underline {
   text-decoration: underline !important;
@@ -885,11 +888,11 @@ font-size: 16px !important;
 }
 
 .cover {
-  background-attachment: center;
-  background-size: cover;
-  background-repeat: no-repeat;
+  background-position: center !important;
+  background-attachment: center !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
 }
-
 
 
 

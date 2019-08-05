@@ -17,7 +17,7 @@ export class ChildProtectionPage implements OnInit {
   constructor(public a: AppService) { 
     
     this.posts = {};
-    for (let i = 0; i < 4; i++) {
+    for (let i = 0; i < 20; i++) {
       const guid = `${this.name}-${i}`;
       this.posts[guid] = {} as any;
       this.a.wp.postGetIn({ guid: guid }, this.posts[guid]);
