@@ -11,7 +11,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "serve:local": "ionic s --configuration local",
-    "publish": "ionic build --prod && cd www && ssh detox@7detox.co.kr 'rm -f www/*.js www/*.css' && scp -r * detox@7detox.co.kr:./www"
+    "publish": "ionic build --prod && ssh detox@7detox.co.kr 'rm -f www/*.js www/*.css' && cd www &&  scp -r * detox@7detox.co.kr:./www"
   },
   "private": true,
   "dependencies": {
