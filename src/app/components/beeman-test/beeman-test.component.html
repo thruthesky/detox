@@ -32,7 +32,7 @@
                     </ion-col>
                 </ion-row>
                 <ion-text *ngIf=" errors('gender')?.required && submit" class="lh-30px" color="danger">
-                        Gender is Required</ion-text>
+                    Gender is Required</ion-text>
 
 
 
@@ -61,7 +61,12 @@
                 </ion-row>
                 <ion-text *ngIf=" errors('height')?.required && submit" class="lh-30px" color="danger">
                         Height is Required</ion-text>
-
+                    <ion-text *ngIf=" errors('height')?.pattern && submit" class="lh-30px" color="danger">
+                        Please Input number Only</ion-text>
+                    <ion-text *ngIf=" errors('height')?.min && submit" class="lh-30px" color="danger">
+                        Height is too low</ion-text>
+                    <ion-text *ngIf=" errors('height')?.max && submit" class="lh-30px" color="danger">
+                        Height is too high</ion-text>
 
                 <ion-row>
                     <ion-col size="3" class="flex-center bold d-gray">
@@ -73,7 +78,13 @@
                     </ion-col>
                 </ion-row>
                 <ion-text *ngIf=" errors('weight')?.required && submit" class="lh-30px" color="danger">
-                        Weight is Required</ion-text>
+                    Weight is Required</ion-text>
+                <ion-text *ngIf=" errors('weight')?.pattern && submit" class="lh-30px" color="danger">
+                    Please Input number Only</ion-text>
+                <ion-text *ngIf=" errors('weight')?.min && submit" class="lh-30px" color="danger">
+                    Weight is too low</ion-text>
+                <ion-text *ngIf=" errors('weight')?.max && submit" class="lh-30px" color="danger">
+                    Weight is too high</ion-text>
 
             </ion-grid>
 

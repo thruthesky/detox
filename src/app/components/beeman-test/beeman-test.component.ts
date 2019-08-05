@@ -16,8 +16,8 @@ export class BeemanTestComponent implements OnInit {
     this.form = fb.group({
       gender: ['', [Validators.required]],
       birthday: ['', [Validators.required]],
-      height: ['', [Validators.required]],
-      weight: ['', [Validators.required]],
+      height: ['', [Validators.required, Validators.pattern('[0-9]+'), Validators.min(100), Validators.max(220)]],
+      weight: ['', [Validators.required, Validators.pattern('[0-9]+'), Validators.min(30), Validators.max(160)]]
     });
   }
 
