@@ -29,8 +29,8 @@ export class BeemanTestComponent implements OnInit {
       weight: ['', [Validators.required, Validators.pattern('[0-9]+'), Validators.min(30), Validators.max(160)]]
     });
 
-    // this.showResult = true;
-    // this.bmi = 25;
+    this.showResult = true;
+    this.bmi = 25;
 
   }
 
