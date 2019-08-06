@@ -29,7 +29,8 @@ export class BeemanTestComponent implements OnInit {
       weight: ['', [Validators.required, Validators.pattern('[0-9]+'), Validators.min(30), Validators.max(160)]]
     });
 
-
+    this.showResult = true;
+    this.bmi = 27;
 
   }
 
@@ -72,10 +73,10 @@ export class BeemanTestComponent implements OnInit {
       if (score > 14 && score <= 19) {
         return '#0996ff';
       }
-      if (score > 19 && score <= 28) {
+      if (score > 19 && score <= 27) {
         return '#ffc300';
       }
-      if (score > 28 && score <= 33) {
+      if (score > 27 && score <= 33) {
         return '#e55d33';
       }
       if (score > 33) {
