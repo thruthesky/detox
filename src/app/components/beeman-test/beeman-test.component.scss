@@ -3,11 +3,12 @@
     margin: 0 auto;
 }
 
-
-.form {
-    max-width: 400px !important;
-    margin: 0 auto !important;
+.md-page-width {
+    max-width: 440px;
+    margin: 0 auto;
 }
+
+
 
 
 ion-col {
@@ -41,10 +42,11 @@ ion-col {
 
     .form {
         padding: 25px !important;
-        border: 1px  solid #7db262 !important;
     }
 
-
+    .border {
+        border: 2px  solid #7db262 !important;
+    }
     
 
 }
@@ -112,7 +114,7 @@ ion-input {
     color: #0996ff;
 }
 .yellow {
-    color: #d1a000;
+    color: #ffc300;
 }
 .orange {
     color: #e55d33;

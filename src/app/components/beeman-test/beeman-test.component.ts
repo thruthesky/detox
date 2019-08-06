@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { AppService } from 'src/app/services/app.service';
 
 @Component({
   selector: 'app-beeman-test',
@@ -9,16 +10,24 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 export class BeemanTestComponent implements OnInit {
 
 
+  showResult = false;
+
   form: FormGroup;
   submit = false;
 
-  constructor(public fb: FormBuilder) {
+  constructor(
+    public fb: FormBuilder,
+    public a: AppService,
+    ) {
     this.form = fb.group({
       gender: ['', [Validators.required]],
       birthday: ['', [Validators.required]],
       height: ['', [Validators.required, Validators.pattern('[0-9]+'), Validators.min(100), Validators.max(220)]],
       weight: ['', [Validators.required, Validators.pattern('[0-9]+'), Validators.min(30), Validators.max(160)]]
     });
+
+
+   
   }
 
   ngOnInit() { }
@@ -31,6 +40,7 @@ export class BeemanTestComponent implements OnInit {
       return;
     }
 
+    this.showResult = true;
   }
 
   errors(formName: string): any {
