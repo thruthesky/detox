@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { AppService } from 'src/app/services/app.service';
+import { BmiForm } from 'src/app/services/bmi-form';
 
 @Component({
   selector: 'app-beeman-test',
@@ -30,7 +31,7 @@ export class BeemanTestComponent implements OnInit {
     });
 
     // this.showResult = true;
-    // this.bmi = 25;
+    // this.bmi = -100;
 
   }
 
@@ -47,13 +48,13 @@ export class BeemanTestComponent implements OnInit {
     this.showResult = true;
 
 
-    const data = {
+    const data: BmiForm = {
       gender: this.form.value.gender,
       birthday: this.form.value.birthday,
       height: this.form.value.height,
       weight: this.form.value.weight,
     };
-    console.log('data', data);
+
 
 
     this.bmi = this.getScore(data);
@@ -64,22 +65,23 @@ export class BeemanTestComponent implements OnInit {
     return this.form.get(formName).errors;
   }
 
-  getColor(score: number): string {
+  getColor(): string {
 
-    if (score) {
-      if (score <= 14) {
+    if (this.bmi) {
+
+      if (this.bmi <= 18.5) {
         return '#7db262';
       }
-      if (score > 14 && score <= 19) {
+      else if (this.bmi <= 23) {
         return '#0996ff';
       }
-      if (score > 19 && score <= 27) {
+      else if (this.bmi <= 25) {
         return ' #E6E600';
       }
-      if (score > 27 && score <= 33) {
+      else if (this.bmi <= 30) {
         return 'orange';
       }
-      if (score > 33) {
+      else {
         return 'red';
       }
 
@@ -107,7 +109,7 @@ export class BeemanTestComponent implements OnInit {
   }
 
 
-  getScore(data: any): number {
+  getScore(data: BmiForm): number {
 
     const h = data.height / 100;
     const w = data.weight;
@@ -117,6 +119,15 @@ export class BeemanTestComponent implements OnInit {
 
 
 
+  getWidth(): number {
+    const x = this.bmi * 12 - 100;
+
+    if (x > 320) {
+      return 320;
+    }
+    return x;
+
+  }
 
 }
 

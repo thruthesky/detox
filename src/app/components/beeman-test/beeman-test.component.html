@@ -4,8 +4,11 @@
     <ion-text color="green" text-center *ngIf=" !showResult ">
         <h1 class="title m-0 py-3 bold">기본 정보</h1>
     </ion-text>
+    
+    <ion-text color="green" text-center *ngIf=" showResult ">
+        <h1 class="title m-0 py-3 bold">비만도 결과</h1>
+    </ion-text>
 
-    <p class="py-1 md-pt-3 ion-text-center bold" *ngIf=" showResult ">비만도 결과</p>
 
 
     <section class="md-mb-150px border">
@@ -13,7 +16,6 @@
         <form class="form" [formGroup]="form" (ngSubmit)=" onSubmit() ">
 
             <ion-grid class="  mx-2  fs-14 bg-light-gray">
-
                 <ion-row>
                     <ion-col size="3" class="flex-center bold d-gray no-border-right">
                         성별
@@ -104,8 +106,6 @@
 
 
         <section *ngIf="showResult">
-            <!-- {{ bmi }} -->
-
             <div class="graph-outer">
 
                 <footer class="graph">
@@ -117,9 +117,9 @@
                         <div class="float-right red">고도비만</div>
                     </header>
                     <div class="content lines">
-                        <div class="warning-line" [ngStyle]="{ 'border-bottom-color' : getColor( bmi ) }"
-                            [style.width.px]="  bmi * 12 - 100">
-                            <div class="circle-button" [ngStyle]="{ 'background-color': getColor( bmi ) }"></div>
+                        <div class="warning-line" [ngStyle]="{ 'border-bottom-color' : getColor() }"
+                            [style.width.px]=" getWidth() ">
+                            <div class="circle-button" [ngStyle]="{ 'background-color': getColor() }"></div>
                         </div>
                         <div class="base-line"></div>
                     </div>
@@ -142,9 +142,8 @@
 
             <p class="py-1 md-pt-3 ion-text-center bold gray">
                 당신의 비만도 체중은 {{ bmi }} 로
-                <ion-text class="yellow fs-18px">
-                    {{ getText() }}
-                </ion-text>
+                
+                    <span class="fs-18px" [ngStyle]="{color: getColor() }" >"{{ getText() }}"</span>  
                 입니다.
             </p>
 
