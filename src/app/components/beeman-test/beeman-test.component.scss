@@ -54,3 +54,69 @@ ion-input {
     border: 1px solid rgb(196, 196, 196) !important;
     margin-right: 10px !important;
 }
+
+
+
+.graph-outer {
+    // padding: 1em .5em;
+    margin: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: white;
+
+    .graph {
+        position: relative;
+        margin: 0 auto;
+        width: 320px;
+
+        .lines {
+            position: relative;
+            padding: 16px 0;
+
+            .base-line {
+                width: 100%;
+                border-top: 0;
+                border-left: 0;
+                border-right: 0;
+                border-bottom: 2px solid blue;
+            }
+
+            .warning-line {
+                position: absolute;
+                border-top: 0;
+                border-left: 0;
+                border-right: 0;
+                border-bottom: 2px solid red;
+
+                .circle-button {
+                    position: absolute;
+                    top: -10px;
+                    right: -10px;
+                    width: 20px;
+                    height: 20px;
+                    border-radius: 50%;
+                    background-color: red;
+                }
+            }
+        }
+    }
+
+    
+
+    .hide {
+        color: white;
+    }
+}
+
+.blue {
+    color: #0996ff;
+}
+.yellow {
+    color: #d1a000;
+}
+.orange {
+    color: #e55d33;
+}
+.red {
+    color: #fe201f;
+}

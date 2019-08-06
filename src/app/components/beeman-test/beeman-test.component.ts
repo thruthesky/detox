@@ -37,4 +37,31 @@ export class BeemanTestComponent implements OnInit {
     return this.form.get(formName).errors;
   }
 
+  getColor( score: number)  : string {
+    
+    if(score) {
+      if( score <= 14 ) {
+        return 'green';
+      }
+      if( score > 14 && score <= 19 ) {
+        return 'blue';
+      }
+      if( score > 19  && score <= 28) {
+        return 'yellow';
+      }
+      if( score > 28 && score <= 33 ) {
+        return 'orange';
+      }
+      if( score > 33 ) {
+        return 'red';
+      }
+
+
+
+    }
+
+  }
+
+
+
 }
