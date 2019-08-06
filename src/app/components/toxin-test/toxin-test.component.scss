@@ -1,3 +1,42 @@
+.page-width {
+    max-width: 441px !important;
+    margin: 0 auto !important;
+
+    @media all and (max-width: 768px) {
+        max-width: 360px !important;
+        margin: 0 auto !important;
+    }
+
+
+}
+
+.title {
+    font-size: 16px !important;
+    color: black;
+    margin-bottom: 0;
+    font-weight: bold;
+    // pt-50px mt-0 fs-32px fw-500
+    @media all and (min-width: 768px) {
+        padding-top: 50px !important;
+        margin-top: 0 !important;
+        font-size: 32px !important;
+        color: #7db262;
+    }
+
+}
+
+.subtitle {
+    @media all and (max-width: 768px) {
+        max-width: 300px !important;
+        text-align: left;
+        line-height: 25px;
+    }
+
+
+}
+
+
+
 
 .checklist {
     max-width: 520px !important;
@@ -9,6 +48,18 @@
     }
 
 }
+
+
+
+
+.border {
+
+    @media all and (min-width: 768px) {
+        border: 2px solid #7db262;
+    }
+
+}
+
 
 .border-bottom {
     @media all and (max-width: 768px) {
@@ -32,3 +83,117 @@
 
 }
 
+
+
+.graph-outer {
+    // padding: 1em .5em;
+    margin: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: white;
+
+    .graph {
+        position: relative;
+        margin: 0 auto;
+        width: 260px;
+
+        .lines {
+            position: relative;
+            padding: 16px 0;
+
+            .base-line {
+                width: 100%;
+                border-top: 0;
+                border-left: 0;
+                border-right: 0;
+                border-bottom: 2px solid blue;
+            }
+
+            .warning-line {
+                position: absolute;
+                border-top: 0;
+                border-left: 0;
+                border-right: 0;
+                border-bottom: 2px solid red;
+
+                .circle-button {
+                    position: absolute;
+                    top: -10px;
+                    right: -10px;
+                    width: 20px;
+                    height: 20px;
+                    border-radius: 50%;
+                    background-color: red;
+                }
+            }
+        }
+    }
+
+    header {
+        position: absolute;
+        left: -14px;
+
+        &>div {
+            float: left;
+            margin-left: 2px;
+            font-size: 12px;
+
+            &.box {
+                position: relative;
+                width: 50px;
+                height: 16px;
+                border: 1px solid gray;
+                border-bottom: 0px !important;
+
+                .text {
+                    position: absolute;
+                    top: -8px;
+                    left: 0;
+                    right: 0;
+
+                    display: flex;
+                    justify-content: center;
+
+                    .text-inner {
+                        display: inline-block;
+                        margin: 0 auto;
+                        padding: 0 2px;
+                        background-color: white;
+                    }
+                }
+            }
+
+            &.bad {
+                width: 40px;
+                color: green;
+                border-color: green !important;
+            }
+
+            &.warn {
+                color: rgb(255, 174, 0);
+                border-color: rgb(255, 174, 0) !important;
+            }
+
+            &.danger {
+                color: red;
+                border-color: red !important;
+            }
+
+            &.patient {
+                width: 100px;
+                color: red;
+                border-color: red !important;
+            }
+        }
+
+        &:after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+    }
+
+    .hide {
+        color: white;
+    }
+}

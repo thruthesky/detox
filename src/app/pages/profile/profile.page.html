@@ -6,12 +6,12 @@
   <section class="profile md-mobile-width pb-5 mt-md-70px mb-md-340px bg-light-gray border-md-gray">
 
     <ng-container *ngIf="a.isDesktop">
-      <ion-toolbar color="green" text-center>
+      <ion-toolbar mode="md" color="green" text-center>
         <ion-title>{{ a.t({ en: 'Profile', ko: '회원정보' }) }}</ion-title>
       </ion-toolbar>
     </ng-container>
 
-    <ion-item lines="none" color="green" style="border-top: 1px solid #8fbc78;" class="fs-14">
+    <ion-item lines="none" color="green" mode="md" style="border-top: 1px solid #8fbc78;" class="fs-14">
 
       <ion-thumbnail class="pointer" slot="start" (click)="onClickPrimaryPhoto($event)">
         <img [src]=" profilePhotoUrl ">
@@ -21,25 +21,24 @@
         <p>{{ user.display_name }}</p>
         <p class="fs-12">{{ user.user_email }}</p>
       </ion-label>
-
     </ion-item>
 
-    <ion-item class="mx-2 mt-2 fs-14" button lines="none" (click)=" onClickMyPromise($event) ">
+    <ion-item class="mx-2 mt-2 fs-14" button mode="md" lines="none" (click)=" onClickMyPromise($event) ">
       <ion-label color="medium">
         <p class="green">{{ a.t({en: 'Promise to myself', ko: '다짐'}) }}</p>
         <p *ngIf="a.wp.user('promise')">{{ a.wp.user('promise') }}</p>
         <p *ngIf="!a.wp.user('promise')">
           {{ a.t({en: 'Say something to yourself to achieve the goal', ko: '각오 한마디를 작성해주세요.'}) }}</p>
       </ion-label>
-      <ion-icon name="create"></ion-icon>
+      <ion-icon name="create" mode="md"></ion-icon>
     </ion-item>
 
-    <ion-item lines="full" class="mx-2 mt-3" button (click)=" a.open('/detoxification-diary') ">
+    <ion-item lines="full" class="mx-2 mt-3" mode="md" button (click)=" a.open('/detoxification-diary') ">
       <ion-label class="bold d-gray ">{{ a.t({en: 'Diary', ko: '해독일지'}) }}</ion-label>
       <ion-icon slot="end" name="arrow-forward" mode="ios" color="green"></ion-icon>
     </ion-item>
 
-    <ion-item lines="none" class="mx-2" button (click)=" a.open('/alarm-list') ">
+    <ion-item lines="none" class="mx-2" mode="md" button (click)=" a.open('/alarm-list') ">
       <ion-label class="bold d-gray ">{{ a.t({en: 'Join the program', ko: '프로그램 참여'}) }}</ion-label>
       <ion-icon slot="end" name="arrow-forward" mode="ios" color="green"></ion-icon>
     </ion-item>
@@ -126,7 +125,7 @@
             {{ a.t({en: 'Gender', ko: '성별'}) }}
           </ion-col>
           <ion-col class="mt-0 medium">
-            <ion-select class="ion-text-left" placeholder="Select Gender" okText="" cancelText="" mode="md"
+            <ion-select class="ion-text-left"  placeholder="Select Gender" okText="" cancelText="" mode="md"
               formControlName="gender" [interfaceOptions]="genderOptions" interface="popover">
               <ion-select-option value="F">Female</ion-select-option>
               <ion-select-option value="M">Male</ion-select-option>

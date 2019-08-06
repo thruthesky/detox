@@ -9,7 +9,7 @@
   </ion-text>
 
 
-  <section class="page-width">
+  <section class="page-width pb-100px">
     <ion-grid no-padding>
       <ion-row>
         <ion-col size="12" size-sm="6" size-md="4" *ngFor="let item of [].constructor(10)">
@@ -35,9 +35,19 @@
         </ion-col>
       </ion-row>
     </ion-grid>
+    
+    <div class="ion-text-center pt-4">
+      <ion-button class="h-52px w-200px black border-light no-box-shadow bold"  mode="md" fill="outline">
+        목멋진
+      </ion-button>
+    </div>
+
+
   </section>
 
 
-
+  <ng-container *ngIf="a.isDesktop">
+    <app-desktop-home-footer></app-desktop-home-footer>
+  </ng-container>
 
 </ion-content>
