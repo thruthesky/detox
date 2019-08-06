@@ -107,31 +107,31 @@
             <div class="graph-outer">
 
                 <footer class="graph">
-                    <header  class="label fs-12 bold">
-                        <div class="green" style="padding-left: 50px">표제표</div>
-                        <div class="blue" style="padding-left: 23px">표제</div>
-                        <div class="yellow" style="padding-left: 28px">표제표</div>
-                        <div class="orange" style="padding-left: 20px">표제</div>
-                        <div class="red" style="padding-left: 25px">표제표표</div>
+                    <header class="label fs-12 ">
+                        <div class="green">표제표</div>
+                        <div class="blue" style="padding-left: 33px">표제</div>
+                        <div class="yellow" style="padding-left: 47px">표제표</div>
+                        <div class="orange" style="padding-left: 50px">표제</div>
+                        <div class="float-right red">표제표표</div>
                     </header>
                     <div class="content lines">
                         <div class="warning-line" [ngStyle]="{ 'border-bottom-color' : getColor( bmi ) }"
-                            [style.width.px]="  bmi * 8 ">
+                            [style.width.px]="  bmi * 12 - 100">
                             <div class="circle-button" [ngStyle]="{ 'background-color': getColor( bmi ) }"></div>
                         </div>
                         <div class="base-line"></div>
                     </div>
 
-                    <footer class="flex-between fs-12">
-                        <div class="hide">0</div>
-                        <div><i class="hide">0</i>5</div>
-                        <div>10</div>
-                        <div>15</div>
-                        <div>20</div>
-                        <div>25</div>
-                        <div>30</div>
-                        <div>35</div>
-                        <div class="hide">0</div>
+                    <footer class="label-bottom  fs-12 medium">
+                       
+                        <div style="padding-left:12px">10</div>
+                        <div style="padding-left:47px">15</div>
+                        <div style="padding-left:48px">20</div>
+                        <div style="padding-left:47px">25</div>
+                        <div style="padding-left:46px">30</div>
+                        <div class="float-right">35</div>
+                    
+
 
                     </footer>
                 </footer>
@@ -165,8 +165,8 @@
 
 
 
-            <ion-button class="xs-mb-100px mt-5 h-52px md-h-68px no-box-shadow" (click)="form.reset();submit=false;showResult=false"
-                expand="full" color="green" no-margin>
+            <ion-button class="xs-mb-100px mt-5 h-52px md-h-68px no-box-shadow"
+                (click)="form.reset();submit=false;showResult=false" expand="full" color="green" no-margin>
                 Try Again
             </ion-button>
 

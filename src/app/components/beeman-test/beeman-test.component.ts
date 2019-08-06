@@ -30,7 +30,7 @@ export class BeemanTestComponent implements OnInit {
     });
 
     this.showResult = true;
-    this.bmi = 27;
+    this.bmi = 25;
 
   }
 
