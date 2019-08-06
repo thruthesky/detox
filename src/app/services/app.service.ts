@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { MenuController, AlertController } from '@ionic/angular';
 import { WordpressApiService } from 'modules/wordpress-api/services/wordpress-api.service';
 import { environment } from 'src/environments/environment';
-import { ErrorObject, Files } from 'modules/wordpress-api/services/wordpress-api.interface';
+import { ErrorObject } from 'modules/wordpress-api/services/wordpress-api.interface';
 import { Router } from '@angular/router';
 import { AlertOptions } from '@ionic/core';
 import { DomSanitizer } from '@angular/platform-browser';
