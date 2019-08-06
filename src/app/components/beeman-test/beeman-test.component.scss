@@ -17,7 +17,9 @@ ion-col {
     --background: #ffffff !important;
 
 }
-
+.no-border-right {
+    border-right: none;
+}
 
 
 
@@ -45,7 +47,7 @@ ion-col {
     }
 
     .border {
-        border: 2px  solid #7db262 !important;
+        border: 2px  solid #84b66a !important;
     }
     
 
@@ -121,4 +123,15 @@ ion-input {
 }
 .red {
     color: #fe201f;
+}
+
+.border-right {
+
+  
+    border-right-color: #82b569 !important;
+    border-right-width: 1px !important;
+}
+
+.flex-1 {
+    flex-grow: 1;
 }
