@@ -33,6 +33,7 @@ export class AlarmListPage implements OnInit {
       const popover = await this.popoverController.create({
         component: AlarmSetPopoverComponent,
         cssClass: 'pop-alarm-set',
+        mode: 'md'
       });
       return await popover.present();
     }

@@ -1,13 +1,13 @@
-<section class="md-pb-150px pb-5 mt-md-70px mb-md-340px bg-color border-md-gray">
+<section class="  mt-md-70px mb-md-340px bg-color border-md-gray">
 
 
     <ion-text color="green" text-center>
-        <h1 class="title m-0 py-3 fw-500">표제표제</h1>
+        <h1 class="title m-0 py-3 bold">표제표제</h1>
     </ion-text>
 
-    <section class="form">
+    <section class="md-page-width border">
 
-        <form>
+        <form class="form" [formGroup]="form" (ngSubmit)=" onSubmit() ">
 
             <ion-grid class="  mx-2  fs-14 bg-light-gray">
 
@@ -16,7 +16,7 @@
                         Gender
                     </ion-col>
                     <ion-col>
-                        <ion-radio-group class="flex-start">
+                        <ion-radio-group formControlName="gender" class="flex-start">
 
                             <ion-item lines="none">
                                 <ion-radio class="mr-1" value="Male"></ion-radio>
@@ -31,47 +31,159 @@
                         </ion-radio-group>
                     </ion-col>
                 </ion-row>
+                <ion-text *ngIf=" errors('gender')?.required && submit" class="lh-30px" color="danger">
+                    Gender is Required</ion-text>
+
+
 
                 <ion-row>
                     <ion-col size="3" class="flex-center bold d-gray">
                         Birthday
                     </ion-col>
                     <ion-col class="flex-center" class="ion-align-self-start">
-                        <ion-datetime displayFormat="MMM DD, YYYY" placeholder="Select Date" class="medium">
+                        <ion-datetime class="medium" displayFormat="MMM DD, YYYY" placeholder="Select Date"
+                            formControlName="birthday">
                         </ion-datetime>
                     </ion-col>
                 </ion-row>
+                <ion-text *ngIf=" errors('birthday')?.required && submit" class="lh-30px" color="danger">
+                    Birthday is Required</ion-text>
+
 
                 <ion-row>
                     <ion-col size="3" class="flex-center bold d-gray">
                         Height
                     </ion-col>
                     <ion-col class="flex-start">
-                        <ion-input type="text" color="medium"></ion-input>
+                        <ion-input type="text" formControlName="height" color="medium"></ion-input>
                         <ion-label color="medium" position="fixed">cm</ion-label>
                     </ion-col>
                 </ion-row>
+                <ion-text *ngIf=" errors('height')?.required && submit" class="lh-30px" color="danger">
+                    Height is Required</ion-text>
+                <ion-text *ngIf=" errors('height')?.pattern && submit" class="lh-30px" color="danger">
+                    Please Input number Only</ion-text>
+                <ion-text *ngIf=" errors('height')?.min && submit" class="lh-30px" color="danger">
+                    Height is too low</ion-text>
+                <ion-text *ngIf=" errors('height')?.max && submit" class="lh-30px" color="danger">
+                    Height is too high</ion-text>
 
                 <ion-row>
                     <ion-col size="3" class="flex-center bold d-gray">
                         Weight
                     </ion-col>
                     <ion-col class="flex-center">
-                        <ion-input type="text" color="medium"></ion-input>
+                        <ion-input type="text" formControlName="weight" color="medium"></ion-input>
                         <ion-label color="medium" position="fixed">kg</ion-label>
                     </ion-col>
                 </ion-row>
+                <ion-text *ngIf=" errors('weight')?.required && submit" class="lh-30px" color="danger">
+                    Weight is Required</ion-text>
+                <ion-text *ngIf=" errors('weight')?.pattern && submit" class="lh-30px" color="danger">
+                    Please Input number Only</ion-text>
+                <ion-text *ngIf=" errors('weight')?.min && submit" class="lh-30px" color="danger">
+                    Weight is too low</ion-text>
+                <ion-text *ngIf=" errors('weight')?.max && submit" class="lh-30px" color="danger">
+                    Weight is too high</ion-text>
 
             </ion-grid>
 
-            <div class="mt-3 md-pt-80px  md-flex-center bg-white">
-                <ion-button expand="full" class="m-0 h-68px xs-h-52px md-w-200px  no-border-radius no-shadow"
-                    color="green">
+            <div class="mt-3   md-flex-center bg-white" *ngIf="!showResult">
+                <ion-button class="m-0 h-68px xs-h-52px md-w-200px  no-border-radius no-box-shadow" type="submit"
+                    color="green" expand="full">
                     표제표표
                 </ion-button>
             </div>
         </form>
+
+
+
+        <section *ngIf="showResult">
+
+            <p class="py-1 md-pt-3 ion-text-center bold">표제표표</p>
+
+            <div class="graph-outer">
+
+                <footer class="graph">
+                    <header class="flex-between fs-12 bold">
+                        <div class="green">표제표</div>
+                        <div class="blue">표제</div>
+                        <div class="yellow">표제표</div>
+                        <div class="orange">표제</div>
+                        <div class="red">표제표표</div>
+                    </header>
+                    <div class="content lines">
+                        <div class="warning-line" [ngStyle]="{ 'border-bottom-color' : getColor( bmi ) }"
+                            [style.width.px]="  bmi * 7 ">
+                            <div class="circle-button" [ngStyle]="{ 'background-color': getColor( bmi ) }"></div>
+                        </div>
+                        <div class="base-line"></div>
+                    </div>
+
+                    <footer class="flex-between fs-12">
+                        <div class="hide">0</div>
+                        <div><i class='hide'>0</i>5</div>
+                        <div>10</div>
+                        <div>15</div>
+                        <div>20</div>
+                        <div>25</div>
+                        <div>30</div>
+                        <div>35</div>
+                        <div class="hide">0</div>
+
+                    </footer>
+                </footer>
+
+            </div>
+
+            <p class="py-1 md-pt-3 ion-text-center bold gray">
+                표제표표표제표표
+                <ion-text class="yellow fs-18px">
+                    "표제표"
+                </ion-text>
+                표제표
+            </p>
+
+            <ion-grid class="mt-4" no-padding>
+                <ion-row>
+                    <ion-col  size="12" size-md="6" no-padding>
+                        <ion-button class="h-52px md-h-68px no-box-shadow no-border" (click)="form.reset();submit=false;showResult=false" expand="full" color="green" no-margin>
+                           Try Again
+                        </ion-button>
+                    </ion-col>
+                    <ion-col  size="6" *ngIf="a.isDesktop" no-padding>
+                        <ion-button class="   h-52px md-h-68px  no-box-shadow no-border " expand="full" color="green" no-margin>
+                            Click me
+                        </ion-button>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+
+        
+        </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     </section>
+
+
+
 
 
 </section>
