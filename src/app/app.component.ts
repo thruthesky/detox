@@ -33,6 +33,18 @@ export class AppComponent implements AfterViewInit {
     if (this.a.env.production === false) {
       // this.menu.open();
     }
+
+    this.removeAppShellIfExist();
+  }
+
+  removeAppShellIfExist() {
+    const appShell = document.getElementById('app-shell');
+    if (appShell) {
+      console.log('removing appShell');
+      appShell.remove();
+    } else {
+      console.log('appshell not exists');
+    }
   }
 
 }
