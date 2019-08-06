@@ -67,19 +67,19 @@ export class BeemanTestComponent implements OnInit {
 
     if (score) {
       if (score <= 14) {
-        return 'green';
+        return '#7db262';
       }
       if (score > 14 && score <= 19) {
-        return 'blue';
+        return '#0996ff';
       }
       if (score > 19 && score <= 28) {
-        return 'yellow';
+        return '#ffc300';
       }
       if (score > 28 && score <= 33) {
-        return 'orange';
+        return '#e55d33';
       }
       if (score > 33) {
-        return 'red';
+        return '#fe201f';
       }
 
     }
