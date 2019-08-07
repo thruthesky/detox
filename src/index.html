@@ -2,20 +2,21 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8"/>
+  <meta charset="utf-8" />
   <title>7Detox</title>
 
-  <base href="/"/>
+  <base href="/" />
 
-  <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
-  <meta name="format-detection" content="telephone=no"/>
-  <meta name="msapplication-tap-highlight" content="no"/>
+  <meta name="viewport"
+    content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="msapplication-tap-highlight" content="no" />
 
-  <link rel="icon" type="image/png" href="assets/icon/favicon.png"/>
+  <link rel="icon" type="image/png" href="assets/icon/favicon.png" />
 
   <!-- add to homescreen for ios -->
-  <meta name="apple-mobile-web-app-capable" content="yes"/>
-  <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
 
   <!-- add to pwa -->
   <link rel="manifest" href="manifest.json">
@@ -27,9 +28,114 @@
 </head>
 
 <body>
-  <app-root></app-root>
+  <app-root>
+    <section id="app-shell">
+
+      <style>
+        body {
+          display: block !important;
+        }
+
+        #app-shell {
+          margin: 0 auto;
+          padding: 0;
+          position: fixed;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          text-align: center;
+          background-color: #ffffff;
+          font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        #app-shell a {
+          text-decoration: none;
+        }
+
+        .shell {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          height: 100%;
+        }
+
+        .loader {
+          position: relative;
+          margin: 0 auto;
+          width: 100px;
+          height: 100px;
+        }
+
+        .loader:before {
+          content: '';
+          display: block;
+          padding-top: 100%;
+        }
+
+        .circular-loader {
+          -webkit-animation: rotate 2s linear infinite;
+          animation: rotate 2s linear infinite;
+          height: 100%;
+          -webkit-transform-origin: center center;
+          -ms-transform-origin: center center;
+          transform-origin: center center;
+          width: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+          margin: auto;
+        }
+
+        .loader-path {
+          stroke-dasharray: 150, 200;
+          stroke-dashoffset: -10;
+          -webkit-animation: dash 1.5s ease-in-out infinite, color 6s ease-in-out infinite;
+          animation: dash 1.5s ease-in-out infinite, color 6s ease-in-out infinite;
+          stroke-linecap: round;
+        }
+
+        @-webkit-keyframes rotate {
+          100% {
+            -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+          }
+        }
+
+        @-webkit-keyframes dash {
+          0% {
+            stroke-dasharray: 1, 200;
+            stroke-dashoffset: 0;
+          }
+
+          50% {
+            stroke-dasharray: 89, 200;
+            stroke-dashoffset: -35;
+          }
+
+          100% {
+            stroke-dasharray: 89, 200;
+            stroke-dashoffset: -124;
+          }
+        }
+      </style>
+      <div class="shell">
+
+        <div class="loader">
+          <svg class="circular-loader" viewBox="25 25 50 50">
+            <circle class="loader-path" cx="50" cy="50" r="20" fill="none" stroke="#70c542" stroke-width="2" />
+          </svg>
+        </div>
+
+
+        <img
+        style="width: 300px;"
+          src="data:image/jpeg;charset=utf-8;base64,/9j/4QAYRXhpZgAASUkqAAgAAAAAAAAAAAAAAP/sABFEdWNreQABAAQAAAAeAAD/4QMfaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLwA8P3hwYWNrZXQgYmVnaW49Iu+7vyIgaWQ9Ilc1TTBNcENlaGlIenJlU3pOVGN6a2M5ZCI/PiA8eDp4bXBtZXRhIHhtbG5zOng9ImFkb2JlOm5zOm1ldGEvIiB4OnhtcHRrPSJBZG9iZSBYTVAgQ29yZSA1LjYtYzE0MCA3OS4xNjA0NTEsIDIwMTcvMDUvMDYtMDE6MDg6MjEgICAgICAgICI+IDxyZGY6UkRGIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyI+IDxyZGY6RGVzY3JpcHRpb24gcmRmOmFib3V0PSIiIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIiB4bWxuczpzdFJlZj0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlUmVmIyIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOkU4QTFDNzZDQUY2QzExRTk5NjFCRkUyODUzNTRDOTBEIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOkU4QTFDNzZCQUY2QzExRTk5NjFCRkUyODUzNTRDOTBEIiB4bXA6Q3JlYXRvclRvb2w9IkFkb2JlIFBob3Rvc2hvcCBDQyAyMDE4IE1hY2ludG9zaCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSIwOEUwQTI5OTM5ODhERkJFRTEzMjNFMDBEMUVGRTRDMyIgc3RSZWY6ZG9jdW1lbnRJRD0iMDhFMEEyOTkzOTg4REZCRUUxMzIzRTAwRDFFRkU0QzMiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz7/7gAOQWRvYmUAZMAAAAAB/9sAhAAQCwsLDAsQDAwQFw8NDxcbFBAQFBsfFxcXFxcfHhcaGhoaFx4eIyUnJSMeLy8zMy8vQEBAQEBAQEBAQEBAQEBAAREPDxETERUSEhUUERQRFBoUFhYUGiYaGhwaGiYwIx4eHh4jMCsuJycnLis1NTAwNTVAQD9AQEBAQEBAQEBAQED/wAARCAAYAHgDASIAAhEBAxEB/8QAgAABAAMBAQEAAAAAAAAAAAAAAAECAwQFBgEBAQEBAAAAAAAAAAAAAAAAAAEDAhAAAgECBAIHCAMBAAAAAAAAAQIAEQMhMRIEQVGBkSKSUxQFYXGhwdEyUhOx4UJiEQACAgIBAwQDAAAAAAAAAAAAARESIQIxUWEy8EGBE3GRA//aAAwDAQACEQMRAD8A+4G3umpe8wJOS5U6RB27AVN+4AM8R9J0TNu1cVOA7TfKSESClsG1qe7dOg0ChyBTp9st5nb+KneEXgCbdce2P4MvoT8R1RnhAhLlt/sYNTkQZZmVRViAOZwmd5VFsuKKyiqsOYkAsXY6NRBoMRgKV4xIkt5ix4i94QL1kgkOpAzNRhFW8L4iStTWqaer5Rn0gV8xY8Re8I8xY8Re8JN5R+psBlL6V5CMjJnd3Fiwn7L1xbaHJmIAMyHqW0DXFdxbFtlTW5AVi66xpNeU59rat7nf7u9uFD3LDi1aRqEImkMCB/1XOaWNmfM7w37atZvMhQGjAgJpOE2ropWzcrVP9xwZX/ptD1Sh7PXrxOX8o7dS4GoocvbJnm+nItu/vdmgrtrLqbQJqFLrqZB7jOwu6nSvbXi34+/nM91Vxzw185O9N7ay1GWn+U4ZqSBnxiVRV+4HUT/qJDsvKhQGLcSAOqIgEXE1gYlSpqCP7kaLniHqH0iJMEAtVILsXpkDQD4SzLXEHSeYiIwCuh/EPUJZVYZtq6BEQAyhlKnI4S0RKU5Nz6et66NxauNt9xTSbiU7Q5MpwMy8j6gcG9QfTx020U9dIiar7IXj2tWY7WMNvqs/OZzS8T3rg6Nvs7O2s/ptVCklnJNWdjmzNzM3AAFBgBwiJntNnby95Nda1VYrGI6EBAG1DCuY4GIic4Oj/9k=">
+      </div>
+    </section>
+  </app-root>
   <noscript>Please enable JavaScript to continue using this application.</noscript>
 </body>
 
 </html>
-

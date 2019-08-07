@@ -26,3 +26,15 @@
 * Images in company page  should be in 360 px of width and 240 px of height for the best view.
 
 * Images in customer service page  should be in 360 px of width and 210 px of height for the best view.
+
+## Firebase setup
+
+  var firebaseConfig = {
+    apiKey: "AIzaSyCcUlrZllRxUnlILzE8xWXqImV-iWclE_8",
+    authDomain: "detox-withcenter.firebaseapp.com",
+    databaseURL: "https://detox-withcenter.firebaseio.com",
+    projectId: "detox-withcenter",
+    storageBucket: "",
+    messagingSenderId: "206606581195",
+    appId: "1:206606581195:web:2f2d95bf05330162"
+  };
