@@ -4,7 +4,7 @@
     <ion-text color="green" text-center *ngIf=" !showResult ">
         <h1 class="title m-0 py-3 bold">기본 정보</h1>
     </ion-text>
-    
+
     <ion-text color="green" text-center *ngIf=" showResult ">
         <h1 class="title m-0 py-3 bold">비만도 결과</h1>
     </ion-text>
@@ -133,17 +133,14 @@
                         <div style="padding-left:46px">30</div>
                         <div class="float-right">35</div>
 
-
-
                     </footer>
                 </footer>
 
             </div>
 
-            <p class="py-1 md-pt-3 ion-text-center bold gray">
+            <p class="pt-5 pb-3 md-pb-5 xs-fs-16px fs-18px bold ion-text-center">
                 당신의 비만도 체중은 {{ bmi }} 로
-                
-                    <span class="fs-18px" [ngStyle]="{color: getColor() }" >"{{ getText() }}"</span>  
+                <span class="xs-fs-18px fs-22px" [ngStyle]="{color: getColor() }">"{{ getText() }}"</span>
                 입니다.
             </p>
 
