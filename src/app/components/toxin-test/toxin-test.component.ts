@@ -60,5 +60,13 @@ export class ToxinTestComponent implements OnInit {
     console.log(this.checkes.filter(v => v));
     return this.checkes.filter(v => v).length * 10;
   }
-}
+
+  scrollTop(target: Element) {
+    target.scrollIntoView({behavior: "auto", block: "center", inline: "nearest"});
+    // target.scrollIntoView();
+  }
+
+
+
+} 
 

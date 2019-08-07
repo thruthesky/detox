@@ -12,7 +12,7 @@
 
 .title {
     font-size: 16px !important;
-    color: black;
+    padding-top: 10px !important;
     margin-bottom: 0;
     font-weight: bold;
     // pt-50px mt-0 fs-32px fw-500
@@ -26,10 +26,11 @@
 }
 
 .subtitle {
-    @media all and (max-width: 768px) {
-        max-width: 300px !important;
+    @media all and (max-width: 576px) {
+        max-width: 340px !important;
         text-align: left;
         line-height: 25px;
+        padding-left: 30px !important;
     }
 
 
