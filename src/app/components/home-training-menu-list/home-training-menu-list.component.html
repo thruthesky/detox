@@ -6,7 +6,7 @@
     <ion-col class="md-pr-60px ion-align-self-center ion-no-padding" size="12" size-md="5"  routerLink="/home-training-item">
       <div class="photo position-relative">
         <ion-text *ngIf="a.isMobile" class="title-mobile fs-32px light" text-center>
-          <h1>{{ item.value?.post_title }}</h1>
+          <h1> {{ item.value?.post_title }}</h1>
         </ion-text>
         <ion-img src="{{ src(item.value) }}" *ngIf=" src(item.value) "></ion-img>
       </div>
