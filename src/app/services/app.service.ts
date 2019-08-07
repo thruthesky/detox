@@ -7,6 +7,7 @@ import { Router } from '@angular/router';
 import { AlertOptions } from '@ionic/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { pageCode } from './page-code';
+import { FirebaseService } from './firebase.service';
 
 @Injectable({ providedIn: 'root' })
 export class AppService {
@@ -22,11 +23,17 @@ export class AppService {
         private sideMenu: MenuController,
         public wp: WordpressApiService,
         private alertController: AlertController,
-        private domSanitizer: DomSanitizer
+        private domSanitizer: DomSanitizer,
+        public firebase: FirebaseService
     ) {
         if (!this.env.lang) {
             this.env.lang = this.getBrowserLanguage();
         }
+
+        // initialize firebase
+        this.firebase.init();
+
+        // console.log(`production`, this.env.production);
     }
 
 

@@ -17,6 +17,9 @@ import { Camera } from '@ionic-native/camera/ngx';
 import { WordpressApiService } from 'modules/wordpress-api/services/wordpress-api.service';
 import { AppService } from './services/app.service';
 import { DesktopHomeFooterModule } from './components/desktop-home-footer/desktop-home-footer.module';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireMessagingModule } from '@angular/fire/messaging';
+import { FirebaseService } from './services/firebase.service';
 
 @NgModule({
   declarations: [AppComponent],
@@ -29,12 +32,15 @@ import { DesktopHomeFooterModule } from './components/desktop-home-footer/deskto
     }),
     MobileSidemenuModule,
     DesktopHomeFooterModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireMessagingModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [
     StatusBar,
     SplashScreen,
     Camera,
+    FirebaseService,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
   ],
   bootstrap: [AppComponent]
