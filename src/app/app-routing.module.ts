@@ -12,7 +12,7 @@ const routes: Routes = [
   { path: 'post-list', loadChildren: () => import('./pages/forum/post-list/post-list.module').then(m => m.PostListPageModule) },
   { path: 'post-list/:slug', loadChildren: () => import('./pages/forum/post-list/post-list.module').then(m => m.PostListPageModule) },
   { path: 'post-create', loadChildren: () => import('./pages/forum/post-create/post-create.module').then(m => m.PostCreatePageModule) },
-  { path: 'post-view', loadChildren: () => import('./pages/forum/post-view/post-view.module').then(m => m.PostViewPageModule) },
+  { path: 'post-view/:ID', loadChildren: () => import('./pages/forum/post-view/post-view.module').then(m => m.PostViewPageModule) },
   { path: 'about-detoxification', loadChildren: () => import('./pages/about-detoxification/about-detoxification.module').then(m => m.AboutDetoxificationPageModule) },
   { path: 'how-to-detox-my-body', loadChildren: () => import('./pages/how-to-detox-my-body/how-to-detox-my-body.module').then(m => m.HowToDetoxMyBodyPageModule) },
   { path: 'measure-detox', loadChildren: () => import('./pages/measure-detox/measure-detox.module').then(m => m.MeasureDetoxPageModule) },
