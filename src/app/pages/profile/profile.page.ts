@@ -15,9 +15,9 @@ import { IonFileUploadPopoverComponent } from 'modules/wordpress-api/components/
 })
 export class ProfilePage implements OnInit {
 
-  profilePhotoUrl = this.a.anonymousPhotoUrl;
+  profilePhotoUrl = this.a.wp.myPhotoUrl;
 
-  
+
   submit = false;
   form: FormGroup;
   user: User;
@@ -153,7 +153,7 @@ export class ProfilePage implements OnInit {
     this.submit = true;
 
     if (this.form.invalid) {
-      console.log('onSubmit() => form is invalid. just return. not submitting');
+      //console.log('onSubmit() => form is invalid. just return. not submitting');
       return;
     }
     const reqData: User = {
@@ -167,7 +167,7 @@ export class ProfilePage implements OnInit {
     };
 
     this.a.wp.profileUpdate(reqData).subscribe(async (res) => {
-      console.log('user update: ', res);
+      //console.log('user update: ', res);
       (await this.alert.create({
         header: this.a.t({ en: 'update Success', ko: '업데이트 성공.' }),
         buttons: [this.a.t({ en: 'Okay', ko: '확인' })]
@@ -200,11 +200,11 @@ export class ProfilePage implements OnInit {
     });
     popover.present();
     const re = await popover.onWillDismiss();
-    console.log('file upload: ', re);
+    //console.log('file upload: ', re);
     if (re && re.data && re.data.url) {
       this.profilePhotoUrl = re.data.url;
       this.a.wp.profileUpdate({ photoURL: re.data.url }).subscribe(res => {
-        console.log('profile photo url update', res);
+        //console.log('profile photo url update', res);
       }, e => this.a.error(e));
     }
 

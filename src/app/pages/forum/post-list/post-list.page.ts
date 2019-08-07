@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { AppService } from 'src/app/services/app.service';
 import { IonPostListComponent } from 'modules/wordpress-api/components/forum/ion-post-list/ion-post-list.component';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-post-list',
@@ -9,19 +10,31 @@ import { IonPostListComponent } from 'modules/wordpress-api/components/forum/ion
 })
 export class PostListPage implements OnInit {
 
+
   @ViewChild(IonPostListComponent, { static: true }) postList: IonPostListComponent;
+
+  slug: string;
   constructor(
-    public a: AppService
-  ) { }
+    public a: AppService,
+    activiatedRoute: ActivatedRoute
+  ) {
+    activiatedRoute.paramMap.subscribe( params => {
+      this.slug = params.get('slug');
+    });
+  }
 
   ngOnInit() {
     // console.log('ngOnInit::');
   }
 
   onIonChangeForum(event: any) {
+    if ( this.slug ) {
+      return;
+    }
     // console.log('event value:', event.value);
-
     this.postList.slug = event.value;
     this.postList.ngOnInit();
   }
+
+
 }

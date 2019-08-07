@@ -29,6 +29,6 @@ export class DesktopHomeProductsComponent implements OnInit {
   }
 
   onClick(x) {
-    console.log('x: ', x);
+    //console.log('x: ', x);
   }
 }

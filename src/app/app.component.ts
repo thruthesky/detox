@@ -40,10 +40,10 @@ export class AppComponent implements AfterViewInit {
   removeAppShellIfExist() {
     const appShell = document.getElementById('app-shell');
     if (appShell) {
-      console.log('removing appShell');
+      //console.log('removing appShell');
       appShell.remove();
     } else {
-      console.log('appshell not exists');
+      //console.log('appshell not exists');
     }
   }
 

@@ -35,7 +35,7 @@ export class AboutPage implements OnInit {
   }
 
   onPageContentEdited(post: Post) {
-    console.log('Yeap! page conetnt edited: ', post);
+    //console.log('Yeap! page conetnt edited: ', post);
   }
 
 }

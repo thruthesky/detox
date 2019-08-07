@@ -22,6 +22,7 @@
     <ion-label color="light">
       <p>{{ user.display_name }}</p>
       <p class="fs-12">{{ user.user_email }}</p>
+      <p class="pointer"  (click)=" open('/admin') " *ngIf=" a.wp.isAdmin ">Admin Page</p>
     </ion-label>
 
   </ion-item>

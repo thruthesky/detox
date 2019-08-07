@@ -39,7 +39,7 @@ export class ToxinTestComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log('onSubmit ', this.checkes);
+    //console.log('onSubmit ', this.checkes);
     this.showResult = true;
     this.score = this.checkes.filter(v => v).length;
   }
@@ -60,7 +60,7 @@ export class ToxinTestComponent implements OnInit {
 
 
     // ]; // TEST
-    console.log(this.checkes.filter(v => v));
+    //console.log(this.checkes.filter(v => v));
     return this.checkes.filter(v => v).length * 10;
   }
 

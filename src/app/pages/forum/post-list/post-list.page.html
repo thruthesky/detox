@@ -8,7 +8,7 @@
 
 
     <!-- Scrollable Segment -->
-    <ion-segment scrollable #forum (ionChange)="onIonChangeForum( forum )">
+    <ion-segment scrollable #forum (ionChange)="onIonChangeForum( forum )" *ngIf=" ! slug ">
       <ion-segment-button checked value="discussion">
         <ion-icon name="chatboxes"></ion-icon>
         <ion-label>자유토론</ion-label>
@@ -40,8 +40,8 @@
     </ion-segment>
 
 
-    
-    <app-ion-post-list></app-ion-post-list>
+
+    <app-ion-post-list [slug]="slug"></app-ion-post-list>
 
   </div>
 

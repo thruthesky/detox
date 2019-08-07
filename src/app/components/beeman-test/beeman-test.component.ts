@@ -41,7 +41,7 @@ export class BeemanTestComponent implements OnInit {
     this.submit = true;
 
     if (this.form.invalid) {
-      console.log('onSubmit() => form is invalid. just return. not submitting');
+      //console.log('onSubmit() => form is invalid. just return. not submitting');
       return;
     }
 

@@ -10,7 +10,6 @@
 
 ## Content Making Rules
 
-
 * Images in home training menu list page should be in 360 px of width and 210 px of height for the best view.
 
 * Images in products menu list page should be in 360 px of width and 327 px of height for the best view.

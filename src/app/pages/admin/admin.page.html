@@ -1,0 +1,29 @@
+<ion-header no-border>
+  <app-header></app-header>
+</ion-header>
+
+<ion-content>
+
+  <section class="page layout-width">
+
+    <h1>관리자 페이지</h1>
+
+    <h2>관리자 매뉴얼</h2>
+    <ul>
+      <li>
+        <a href="https://docs.google.com/document/d/14DdzWlJCrC0Ts99rNEioGXDfW2GfU2_6g-IphDMbCE8/edit?usp=sharing"
+          target="_blank">
+          상세 관리자 문서 (구글 문서)
+        </a>
+      </li>
+    </ul>
+
+
+    <h2>{{ a.t({en: 'Forum List', ko: '관리 게시판 목록'}) }}</h2>
+    <ul>
+      <li>
+        <a routerLink="/post-list/main-top-banner">{{ a.t({en: 'Top Banner on Main page', ko: '메인 페이지 상단 배너 모음 게시판'}) }}</a>
+      </li>
+    </ul>
+  </section>
+</ion-content>

@@ -91,7 +91,7 @@ export class RegisterPage implements OnInit, OnDestroy {
     };
 
     this.form.get('user_pass').valueChanges.subscribe(e => {
-      console.log('listen user_pass changes');
+      //console.log('listen user_pass changes');
       this.form.get('user_pass_confirm').updateValueAndValidity({ onlySelf: true });
     });
 
@@ -113,14 +113,14 @@ export class RegisterPage implements OnInit, OnDestroy {
 
   onSubmit() {
     this.submit = true;
-    console.log('onSubmit()');
+    //console.log('onSubmit()');
 
     // If there is any invalid form element
     if (this.form.invalid) {
       // Display errors and return ( don't submit )
       // Display errors on not-dirty elements also.
       // this.validate(false);
-      console.log('form invalid');
+      //console.log('form invalid');
       return;
     }
 
@@ -134,9 +134,9 @@ export class RegisterPage implements OnInit, OnDestroy {
       gender: this.form.value.gender
     };
 
-    console.log('request data: ', data);
+    //console.log('request data: ', data);
     this.a.wp.register(data).subscribe(async (res) => {
-      console.log('register success: ', res);
+      //console.log('register success: ', res);
 
       (await this.alert.create({
         header: this.a.t({ en: 'Register Success', ko: '회원가입을 축하드립니다.' }),
