@@ -13,6 +13,8 @@ export class ToxinTestComponent implements OnInit {
   guid = 'toxin-test';
   queries = [];
   checkes = [];
+  score: number;
+
 
   showResult = false;
   constructor(public a: AppService) {
@@ -39,6 +41,7 @@ export class ToxinTestComponent implements OnInit {
   onSubmit() {
     console.log('onSubmit ', this.checkes);
     this.showResult = true;
+    this.score = this.checkes.filter(v => v).length;
   }
 
 
@@ -49,16 +52,56 @@ export class ToxinTestComponent implements OnInit {
     //   true,
     //   true,
     //   true,
-      
+
     //   true,
     //   true,
     //   true,
     //   true,
-      
-      
+
+
     // ]; // TEST
     console.log(this.checkes.filter(v => v));
     return this.checkes.filter(v => v).length * 10;
+  }
+
+  scrollTop(target: Element) {
+    target.scrollIntoView({ behavior: "auto", block: "center", inline: "nearest" });
+    // target.scrollIntoView();
+  }
+
+
+  getCategory(): string {
+
+    const n = this.checkes.filter(v => v).length;
+
+    if (n === 0) {
+      return '정상';
+    } else if (n <= 5) {
+      return '나쁨';
+    } else if (n <= 10) {
+      return '위험';
+    } else if (n <= 15) {
+      return '고위험';
+    } else {
+      return '환자';
+    }
+  }
+
+  getColor(): string {
+
+    const n = this.checkes.filter(v => v).length;
+  
+    if (n === 0) {
+      return 'blue';
+    } else if (n <= 5) {
+      return 'green';
+    } else if (n <= 10) {
+      return 'yellow';
+    } else if (n <= 15) {
+      return 'orange';
+    } else {
+      return 'red';
+    }
   }
 }
 

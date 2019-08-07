@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { AppService } from 'src/app/services/app.service';
+import { BmiForm } from 'src/app/services/bmi-form';
 
 @Component({
   selector: 'app-beeman-test',
@@ -14,7 +15,7 @@ export class BeemanTestComponent implements OnInit {
 
   form: FormGroup;
   submit = false;
-  
+
   bmi: number;
 
 
@@ -25,11 +26,12 @@ export class BeemanTestComponent implements OnInit {
     this.form = fb.group({
       gender: ['', [Validators.required]],
       birthday: ['', [Validators.required]],
-      height: ['', [Validators.required, Validators.pattern('[0-9]+'), Validators.min(100), Validators.max(220)]],
-      weight: ['', [Validators.required, Validators.pattern('[0-9]+'), Validators.min(30), Validators.max(160)]]
+      height: ['', [Validators.required, Validators.pattern('[0-9\.]+'), Validators.min(100), Validators.max(220)]],
+      weight: ['', [Validators.required, Validators.pattern('[0-9\.]+'), Validators.min(30), Validators.max(160)]]
     });
 
-
+    // this.showResult = true;
+    // this.bmi = 22.5;
 
   }
 
@@ -44,15 +46,15 @@ export class BeemanTestComponent implements OnInit {
     }
 
     this.showResult = true;
-    
 
-    const data = {
+
+    const data: BmiForm = {
       gender: this.form.value.gender,
       birthday: this.form.value.birthday,
       height: this.form.value.height,
       weight: this.form.value.weight,
     };
-    console.log('data',data);
+
 
 
     this.bmi = this.getScore(data);
@@ -63,22 +65,23 @@ export class BeemanTestComponent implements OnInit {
     return this.form.get(formName).errors;
   }
 
-  getColor(score: number): string {
+  getColor(): string {
 
-    if (score) {
-      if (score <= 14) {
-        return 'green';
+    if (this.bmi) {
+
+      if (this.bmi <= 18.5) {
+        return '#7db262';
       }
-      if (score > 14 && score <= 19) {
-        return 'blue';
+      else if (this.bmi <= 23) {
+        return '#0996ff';
       }
-      if (score > 19 && score <= 28) {
-        return 'yellow';
+      else if (this.bmi <= 25) {
+        return ' #E6E600';
       }
-      if (score > 28 && score <= 33) {
+      else if (this.bmi <= 30) {
         return 'orange';
       }
-      if (score > 33) {
+      else {
         return 'red';
       }
 
@@ -86,15 +89,45 @@ export class BeemanTestComponent implements OnInit {
 
   }
 
+  getText(): string {
 
-  getScore(data): number {
-    
-  return (data.weight/data.height/data.height) * 10000;
+    if (this.bmi) {
+      if (this.bmi <= 18.5) {
+        return '저체중';
+      } else if (this.bmi <= 23) {
+        return '정상';
+      } else if (this.bmi <= 25) {
+        return '과체중';
+      } else if (this.bmi <= 30) {
+        return '비만';
+      } else {
+        return '고도비만';
+      }
+
+    }
 
   }
 
 
+  getScore(data: BmiForm): number {
 
+    const h = data.height / 100;
+    const w = data.weight;
+
+    return Math.round(w / (h * h) * 100) / 100;
+  }
+
+
+
+  getWidth(): number {
+    const x = this.bmi * 12 - 100;
+
+    if (x > 320) {
+      return 320;
+    }
+    return x;
+
+  }
 
 }
 

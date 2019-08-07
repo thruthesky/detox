@@ -1,21 +1,17 @@
 .title-mobile {
-    @media all and (max-width: 768px)  {
         position: absolute;
         bottom: 0;
         left: 50%;
         transform: translateX(-50%);
         width: 100% !important;
-
-    }
+        background-color: rgba(0, 0, 0, 0.6);
+    
+   
 }
 
 ion-row:first-child {    
     padding-top: 0 !important;
 }
-
-
-
-
 
 
 .photo {

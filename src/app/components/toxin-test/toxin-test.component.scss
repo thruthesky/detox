@@ -12,31 +12,24 @@
 
 .title {
     font-size: 16px !important;
-    color: black;
+    padding-top: 10px !important;
     margin-bottom: 0;
     font-weight: bold;
+    color: #7db262;
+
     // pt-50px mt-0 fs-32px fw-500
     @media all and (min-width: 768px) {
         padding-top: 50px !important;
         margin-top: 0 !important;
         font-size: 32px !important;
-        color: #7db262;
+       
     }
 
 }
 
 .subtitle {
-    @media all and (max-width: 768px) {
-        max-width: 300px !important;
-        text-align: left;
-        line-height: 25px;
-    }
-
-
+    line-height: 25px;
 }
-
-
-
 
 .checklist {
     max-width: 520px !important;
@@ -106,7 +99,7 @@
                 border-top: 0;
                 border-left: 0;
                 border-right: 0;
-                border-bottom: 2px solid blue;
+                border-bottom: 2px solid #bcbcbc;
             }
 
             .warning-line {
@@ -169,14 +162,20 @@
                 border-color: green !important;
             }
 
+            &.normal {
+                width: auto;
+                color: blue;
+               
+            }
+
             &.warn {
-                color: rgb(255, 174, 0);
-                border-color: rgb(255, 174, 0) !important;
+                color: yellow;
+                border-color: yellow !important;
             }
 
             &.danger {
-                color: red;
-                border-color: red !important;
+                color: orange;
+                border-color: orange !important;
             }
 
             &.patient {

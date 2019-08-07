@@ -17,7 +17,9 @@ ion-col {
     --background: #ffffff !important;
 
 }
-
+.no-border-right {
+    border-right: none;
+}
 
 
 
@@ -27,7 +29,7 @@ ion-col {
 
 .title {
     font-size: 16px !important;
-    color: black !important;
+    // color: black !important;
     font-weight: bold;
 
     @media all and (min-width: 768px) {
@@ -45,7 +47,7 @@ ion-col {
     }
 
     .border {
-        border: 2px  solid #7db262 !important;
+        border: 2px  solid #84b66a !important;
     }
     
 
@@ -80,7 +82,7 @@ ion-input {
                 border-top: 0;
                 border-left: 0;
                 border-right: 0;
-                border-bottom: 2px solid blue;
+                border-bottom: 2px solid #bcbcbc;
             }
 
             .warning-line {
@@ -92,10 +94,10 @@ ion-input {
 
                 .circle-button {
                     position: absolute;
-                    top: -10px;
-                    right: -10px;
-                    width: 20px;
-                    height: 20px;
+                    top: -6px;
+                    right: -6px;
+                    width: 12px;
+                    height: 12px;
                     border-radius: 50%;
                     background-color: red;
                 }
@@ -114,11 +116,33 @@ ion-input {
     color: #0996ff;
 }
 .yellow {
-    color: #ffc300;
+    color: #E6E600;
 }
 .orange {
-    color: #e55d33;
+    color: orange;
 }
 .red {
-    color: #fe201f;
+    color: red;
 }
+
+.border-right {
+
+  
+    border-right-color: #82b569 !important;
+    border-right-width: 1px !important;
+}
+
+.label {
+    padding-bottom: 10px;
+    div {
+        float:left;
+    }
+}
+
+.label-bottom {
+    div {
+        float: left;
+    }
+
+}
+
