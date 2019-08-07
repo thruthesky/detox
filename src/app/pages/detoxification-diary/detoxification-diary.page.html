@@ -29,7 +29,7 @@
     <ion-grid no-padding>
       <ion-row>
         <ion-col class="xs-px-2 xs-py-1 md-pt-50px" size="12" size-md="6" size-lg="4" no-padding
-          *ngFor="let x of [].constructor(20)" >
+          *ngFor="let x of [].constructor(20)">
 
           <ion-card class="card" *ngIf="a.isDesktop" button>
             <ion-img src="/assets/img/sample_image_diary.png" alt="image_diary"></ion-img>
@@ -45,7 +45,7 @@
 
               <h2 class=" py-2 fs-22px fw-600 green ">표제표제표제표제표제표제</h2>
 
-              <p class="fs-12 medium">표제표제표제표제표제표제표제표제표제표제표제표제표제표제표제표제표제표제</p>
+              <p class=" fs-12 medium">표제표제표제표제표제표제표제표제표제표제표제표제표제표제표제표제표제표제</p>
 
             </ion-card-content>
           </ion-card>
@@ -53,20 +53,18 @@
           <div class="mobile position-relative" *ngIf="a.isMobile">
             <ion-img src="/assets/img/sample_image_diary.png" alt="image_diary"></ion-img>
 
-            <div class="position-absolute top  p-3 h-100 w-100 bg-light-black z-1000 "
-              >
+            <div class="position-absolute top  p-3 h-100 w-100 bg-light-black z-1000 ">
 
               <ion-grid class="pt-2" no-padding>
-                <ion-row class="fs-12px">
-                  <ion-col no-padding>표제표제/표제표제</ion-col>
-
-                  <ion-col class="ion-text-right" no-padding>표제표제</ion-col>
+                <ion-row class="fs-12px ">
+                  <ion-col class="color-gray" no-padding>표제표제/표제표제</ion-col>
+                  <ion-col class="ion-text-right color-gray" no-padding>표제표제</ion-col>
                 </ion-row>
               </ion-grid>
 
               <div class="position-absolute bottom ">
                 <h2 class="m-0 fs-22px fw-600 white ">표제표제표제표제표제표제</h2>
-                <p class="fs-14 medium">표제표제표제표제표제표제표제표제표제표제표제표제표제표제표제표제표제표제</p>
+                <p class="pr-2 fs-14  color-gray">표제표제표제표제표제표제표제표제표제표제표제표제표제표제표제표제표제표제</p>
                 <div class="flex-start">
                   <ion-button class="ion-no-margin my-2 white border-gray" fill="clear">
                     표제표
@@ -75,7 +73,6 @@
                     표제
                   </ion-button>
                 </div>
-
 
               </div>
 
@@ -92,9 +89,6 @@
     </ion-grid>
 
   </section>
-
-
-
 
 
   <ng-container *ngIf="a.isDesktop">
