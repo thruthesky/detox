@@ -28,11 +28,20 @@ import { FirebaseService } from './services/firebase.service';
     BrowserModule, IonicModule.forRoot(), AppRoutingModule,
     WordpressApiModule.forRoot({
       wordpressApiUrl: environment.wordpressApiUrl,
-      anonymousPhotoUrl: '/assets/img/anonymous.jpg'
+      anonymousPhotoUrl: '/assets/img/anonymous.jpg',
+      urlToSendPushNotification: 'push-notifications-to-all-users',
     }),
     MobileSidemenuModule,
     DesktopHomeFooterModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireModule.initializeApp({
+      apiKey: 'AIzaSyCcUlrZllRxUnlILzE8xWXqImV-iWclE_8',
+      authDomain: 'detox-withcenter.firebaseapp.com',
+      databaseURL: 'https://detox-withcenter.firebaseio.com',
+      projectId: 'detox-withcenter',
+      storageBucket: '',
+      messagingSenderId: '206606581195',
+      appId: '1:206606581195:web:2f2d95bf05330162'
+    }),
     AngularFireMessagingModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
@@ -66,8 +75,9 @@ export class AppModule {
       discussion: a.t({ en: 'Discussion', ko: '자유토론' }),
       postNotFoundToUpdateOnPostList: a.t({ en: 'Cannot find the post to update on the post list.', ko: '게시글 목록에서 업데이트 할 글을 찾을 수가 없습니다.' }),
       postNotFoundToDeleteOnPostList: a.t({ en: 'Cannot find the post to delete on the post list.', ko: '게시글 목록에서 삭제 할 글을 찾을 수가 없습니다.' }),
-      noMorePosts: a.t({en: 'There is no more post avaiable.', ko: '더 이상 글이 존재하지 않습니다.'}),
+      noMorePosts: a.t({ en: 'There is no more post avaiable.', ko: '더 이상 글이 존재하지 않습니다.' }),
     });
+  
   }
 }
 

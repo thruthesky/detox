@@ -7,15 +7,6 @@ export const environment = {
   wordpressApiUrl: 'https://7detox.co.kr/wordpress-api/wordpress-api.php',
   // api: 'http://local.wordpress.org/wordpress-api/wordpress-api.php',
   lang: 'en', // if you put empty string, then you will see the display language as in you browser language,
-  firebaseConfig: {
-    apiKey: 'AIzaSyCcUlrZllRxUnlILzE8xWXqImV-iWclE_8',
-    authDomain: 'detox-withcenter.firebaseapp.com',
-    databaseURL: 'https://detox-withcenter.firebaseio.com',
-    projectId: 'detox-withcenter',
-    storageBucket: '',
-    messagingSenderId: '206606581195',
-    appId: '1:206606581195:web:2f2d95bf05330162'
-  }
 };
 
 /*
