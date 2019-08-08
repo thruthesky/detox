@@ -22,7 +22,7 @@ export class PushNotificationsToAllUsersPage implements OnInit {
         return;
       }
       a.wp.postGet({ ID: params.get('ID'), autop: false }).subscribe(post => {
-        console.log('post: ', post);
+        // consoe.log('post: ', post);
         this.title = post.post_title;
         this.body = post.post_content;
         this.url = 'https://7detox.co.kr/post/view/' + post.ID;
@@ -41,7 +41,7 @@ export class PushNotificationsToAllUsersPage implements OnInit {
       click_action: this.url
     };
     this.a.wp.sendMessageToTopic(data).subscribe(res => {
-      console.log('message sent: ', res);
+      // consoe.log('message sent: ', res);
     });
   }
 
