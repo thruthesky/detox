@@ -20,9 +20,14 @@ export class DesktopHomeTopSliderComponent implements OnInit {
 
 
   options = {
-
-    speed: 400,
+    initialSlide: 1,
+    speed: 800,
     loop: true,
+    autoplay: {
+      delay: 6000,
+      disableOnInteraction: false,
+    },
+  
   };
 
   posts: Posts;
