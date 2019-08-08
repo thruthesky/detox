@@ -4,14 +4,23 @@
 
   <ion-grid class="ion-no-padding layout-width" fixed>
     <ion-row>
-      <ion-col class="i-col-padding-10" *ngFor="let x of [].constructor(4)">
-        <ion-card class="ion-no-margin card" mode="ios" routerLink="/post-view">
+      <ion-col class="i-col-padding-10" size="3" *ngFor="let p of posts">
+        <ion-card style="height: 310px !important;" class="ion-no-margin card" mode="ios" routerLink="/post-view">
+
           <ion-card-header class="py-25px px-12px i-bg-green ">
-            <ion-card-title class="white   bold fs-14"> 명서설명서설명서 </ion-card-title>
-            <ion-card-subtitle color="light" class=" fs-12 m-0 letter-spacing-0 pt-5px">명서설명 명서설명 명서설명 명서설명
+            <ion-card-title class=" white   bold fs-14 ellipsis"> {{ p.post_title }} </ion-card-title>
+            <ion-card-subtitle class=" fs-12 m-0 letter-spacing-0 pt-5px ellipsis" color="light">
+              {{ p.post_content }}
             </ion-card-subtitle>
           </ion-card-header>
-          <img src="/assets/img/no-image.png">
+
+          <!-- <ion-card-content class="py-25px px-12px bg-green ">
+            <p class=" white   bold fs-14">title</p>
+            <p style="text-overflow: ellipsis !important" class=" fs-12 m-0 letter-spacing-0 pt-5px">
+              contentasdhfljahfjadasfffffffffffffffffffffffffdhfajflasfhj</p>
+          </ion-card-content> -->
+
+          <img style="height: 238px; width: 254px" src="{{ p.files[0].url }}">
         </ion-card>
       </ion-col>
     </ion-row>
