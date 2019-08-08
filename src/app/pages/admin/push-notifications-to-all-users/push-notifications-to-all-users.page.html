@@ -1,0 +1,29 @@
+<ion-header no-border>
+  <app-header></app-header>
+</ion-header>
+
+<ion-content>
+
+  <section class="page layout-width">
+    <ion-list>
+
+      <ion-item>
+        <ion-label position="float">{{ a.t({ en: 'Title', ko: '제목' }) }}</ion-label>
+        <ion-input name="title" [(ngModel)]="title"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="float">{{ a.t({ en: 'Body', ko: '내용' }) }}</ion-label>
+        <ion-input name="body" [(ngModel)]="body"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="float">{{ a.t({ en: 'URL', ko: '랜딩 페이지 URL' }) }}</ion-label>
+        <ion-input name="url" [(ngModel)]="url"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-button (click)="onClickSendMessage()">{{ a.t({en: 'Send', ko: '전송하기'}) }}</ion-button>
+      </ion-item>
+    </ion-list>
+  </section>
+</ion-content>

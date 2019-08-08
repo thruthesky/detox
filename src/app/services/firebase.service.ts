@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFireMessaging } from '@angular/fire/messaging';
 import { Router } from '@angular/router';
+import { WordpressApiService } from 'modules/wordpress-api/services/wordpress-api.service';
 
 
 @Injectable()
@@ -9,8 +10,26 @@ export class FirebaseService {
     token = '';
     constructor(
         private afMessaging: AngularFireMessaging,
-        public router: Router
+        public router: Router,
+        public wp: WordpressApiService
     ) {
+        wp.userChange.subscribe(user => {
+            if (!user) {
+                console.log('user is null');
+                return;
+            }
+
+            console.log('user.eventType: ', user.eventType);
+
+            if (this.token) {
+                wp.tokenUpdate(this.token).subscribe(res => {
+                    console.log('token subscribe', res);
+                }, e => {
+                    console.error(e);
+                    alert('푸시 알림 토큰 업데이트 실패!');
+                });
+            }
+        });
     }
 
     init() {
@@ -24,16 +43,30 @@ export class FirebaseService {
 
     /**
      * Saves token to backend.
+     * @note This method is called on every app bootting(refresh)
      * @note this runs on every app-boot & when token changes.
      *
      */
-    async saveTokenToBackend(token: string, topic = '7detox') {
-        console.log(`save token:`, token);
+    async saveNewTokenToBackend() {
+        console.log(`save token:`, this.token);
+
+        //
+        this.wp.tokenUpdate(this.token).subscribe(res => {
+            console.log('res: ', res);
+        }, e => {
+            console.error(e);
+            alert('푸시 알림 토큰 등록 실패!');
+        });
+        this.wp.subscribeTopic('7detox', this.token).subscribe( res => {
+            console.log('subscribe topic res: ', res);
+        }, e => {
+            console.error(e);
+        });
     }
 
-    async deleteTokenFromBackend(token: string, topic = '7detox') {
-        console.log(`delete token`, token);
-    }
+    // async deleteTokenFromBackend() {
+    //     console.log(`delete token`, token);
+    // }
 
 
     listenMessage() {
@@ -59,7 +92,8 @@ export class FirebaseService {
         this.afMessaging.requestToken
             .subscribe(
                 (token) => {
-                    this.saveTokenToBackend(token);
+                    this.token = token;
+                    this.saveNewTokenToBackend();
                 },
                 (error) => { console.log(error); },
             );
