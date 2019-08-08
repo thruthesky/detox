@@ -11,21 +11,24 @@
     </button>
   </div>
 
-  <ion-slides mode="ios" pager="ios" scrollbar="ios" [options]="options" #slides *ngIf="posts">
-    <ion-slide *ngFor="let p of posts">
-      <div class="xy-center z-1000 ion-text-start w-400px ml-md-100px ml-lg-150px ml-xl-200px ">
-        <p class="fs-10px ion-no-margin py-10  white-trans">{{ p['string1'] }}</p>
-        <p class="letter-spacing-1px fs-38px  ion-no-margin  white">{{ p['string2'] }} </p>
-        <p class="letter-spacing-1px fs-38px  ion-no-margin py-10 white bold">{{ p['string3'] }}</p>
-        <ion-button mode="md" class="w-200px h-62px ion-no-margin mt-15px bg-white border-radius" color="success"
-          fill="outline" routerLink="/post-view/{{ p.ID }}">
-          <ion-label class="green bold fs-16px letter-spacing-1px dark-green ">자세히 보기</ion-label>
-        </ion-button>
-      </div>
+   
+    <ion-slides mode="ios" pager="ios" scrollbar="ios" [options]="options" #slides *ngIf="posts">
+      <ion-slide *ngFor="let p of posts">
+        <div class="xy-center z-1000 ion-text-start w-400px ml-md-100px ml-lg-150px ml-xl-200px ">
+          <p class="fs-10px ion-no-margin py-10  white-trans">{{ p['string1'] }}</p>
+          <p class="letter-spacing-1px fs-38px  ion-no-margin  white">{{ p['string2'] }} </p>
+          <p class="letter-spacing-1px fs-38px  ion-no-margin py-10 white bold">{{ p['string3'] }}</p>
+          <ion-button mode="md" class="w-200px h-62px ion-no-margin mt-15px bg-white border-radius" color="success"
+            fill="outline" routerLink="/post-view/{{ p.ID }}">
+            <ion-label class="green bold fs-16px letter-spacing-1px dark-green ">자세히 보기</ion-label>
+          </ion-button>
+        </div>
 
-      <div class="w-100 h-md-400px h-lg-450px  h-xl-500px  h-xxl-550px  cover"
-        [style.background]="'url(' + p.files[0].url + ')'" *ngIf="p.files.length">
-      </div>
-    </ion-slide>
-  </ion-slides>
+        <div class="w-100 h-md-400px h-lg-450px  h-xl-500px  h-xxl-550px  cover-top-center"
+          [style.background]="'url(' + p.files[0].url + ')'" *ngIf="p.files.length">
+        </div>
+      </ion-slide>
+
+    </ion-slides>
+
 </div>

@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, AfterViewInit, ElementRef, AfterViewChecked } from '@angular/core';
 import { IonSlides } from '@ionic/angular';
 import { AppService } from 'src/app/services/app.service';
 import { PostSearchOptions, Posts } from 'modules/wordpress-api/services/wordpress-api.interface';
@@ -11,8 +11,12 @@ import { PostSearchOptions, Posts } from 'modules/wordpress-api/services/wordpre
 export class DesktopHomeTopSliderComponent implements OnInit {
   @ViewChild('slides', { static: true }) slides: IonSlides;
 
+
+
+
+
   options = {
-    initialSlide: 3,
+
     speed: 400,
     loop: true,
   };
@@ -27,6 +31,7 @@ export class DesktopHomeTopSliderComponent implements OnInit {
     this.a.wp.postSearch(req).subscribe(res => {
       console.log('res; ', res);
       this.posts = res;
+    
     });
   }
 
@@ -35,6 +40,8 @@ export class DesktopHomeTopSliderComponent implements OnInit {
 
   }
 
+
+
   next() {
     this.slides.slideNext();
   }
@@ -42,4 +49,5 @@ export class DesktopHomeTopSliderComponent implements OnInit {
   prev() {
     this.slides.slidePrev();
   }
+
 }
