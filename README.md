@@ -26,6 +26,11 @@
 
 * Images in customer service page  should be in 360 px of width and 210 px of height for the best view.
 
+* Images in top banner in the home page  should be in 1920 px of width and 900 px of height for the best view.
+
+
+
+
 ## Firebase setup
 
   var firebaseConfig = {

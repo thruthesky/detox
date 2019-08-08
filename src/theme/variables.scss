@@ -887,13 +887,19 @@ font-size: 16px !important;
   overflow: hidden;
 }
 
-.cover {
-  background-position: center !important;
+.cover-top-center {
+  background-position: center top !important;
   background-attachment: center !important;
   background-size: cover !important;
   background-repeat: no-repeat !important;
 }
 
+.cover {
+  background-position: top !important;
+  background-attachment: center !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+}
 
 
 
@@ -1664,3 +1670,11 @@ p {
   margin-bottom: 0 !important;
 
 }
+
+.post-view-content p {
+  color: #7f8188 !important;
+  line-height: 25px !important;
+  padding-top: .5em;
+  padding-bottom: .5em;
+}
+

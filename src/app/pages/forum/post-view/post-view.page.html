@@ -4,15 +4,15 @@
 
 <ion-content>
 
-  <section class="page post-view layout-width" *ngIf="post">
+  <section class="page post-view page-width px-2 pt-20px pb-100px mb-20px" *ngIf="post">
 
-    <div>
+    <!-- <div>
       Edit / Delete / Like / Post List
-    </div>
+    </div> -->
 
     <main>
 
-      <h1>
+      <h1 class="fs-32px bold green ion-text-center">
         {{ post.post_title }}
       </h1>
       <div class="photos" *ngIf=" post.files.length ">
@@ -21,7 +21,7 @@
         </div>
       </div>
       <article>
-        <div [innerHTML]="a.safeHtml(post.post_content)"></div>
+        <div class="post-view-content" [innerHTML]="a.safeHtml(post.post_content)"></div>
       </article>
     </main>
   </section>

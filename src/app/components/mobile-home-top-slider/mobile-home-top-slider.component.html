@@ -1,6 +1,7 @@
 <!-- banner slider -->
 <ion-slides pager="true" options="options">
-  <ion-slide    *ngFor="let x of [].constructor(10)">
-        <img style="width: 100%;height: auto;"  src="/assets/img/desktop-home-top-slider/img_mainbanner.jpg" alt="">
+  <ion-slide    *ngFor="let p of posts">
+        <img style="width: 100%;height: 100%;"  [src]="p.files[0].url" alt="">
+        
   </ion-slide>
 </ion-slides>
