@@ -1,5 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { IonSlides } from '@ionic/angular';
+import { AppService } from 'src/app/services/app.service';
+import { PostSearchOptions, Posts } from 'modules/wordpress-api/services/wordpress-api.interface';
 
 @Component({
   selector: 'app-desktop-home-top-slider',
@@ -10,30 +12,27 @@ export class DesktopHomeTopSliderComponent implements OnInit {
   @ViewChild('slides', { static: true }) slides: IonSlides;
 
   options = {
-    initialSlide: 3 ,
+    initialSlide: 3,
     speed: 400,
     loop: true,
   };
-  // moving = false;
-  constructor() { }
+
+  posts: Posts;
+  constructor(
+    public a: AppService
+  ) {
+    const req: PostSearchOptions = {
+      category_name: 'main-top-banner'
+    };
+    this.a.wp.postSearch(req).subscribe(res => {
+      console.log('res; ', res);
+      this.posts = res;
+    });
+  }
 
   ngOnInit() {
-    // this.slides.ionSlideTransitionStart.subscribe(res => {
-    //   this.moving = true;
-    //   console.log('transition start');
-    // });
-    // this.slides.ionSlideTransitionEnd.subscribe(res => {
-    //   this.moving = false;
-    //   console.log('transition ended');
-    // });
 
-    // this.slides.ionSlideDrag.subscribe(res => {
-    //   this.moving = true;
-    //   console.log('drag event');
-    // });
 
-    // this.slides.ionSlideTouchStart.subscribe( () => this.moving = true );
-    // this.slides.ionSlideTouchEnd.subscribe( () => this.moving = false );
   }
 
   next() {

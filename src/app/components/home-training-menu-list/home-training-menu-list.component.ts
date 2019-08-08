@@ -21,7 +21,7 @@ export class HomeTrainingMenuListComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    console.log('posts: ', this.posts);
+    //console.log('posts: ', this.posts);
     this.posts = {};
     for (let i = 0; i < 4; i++) {
       const guid = `${this.name}-${i}`;

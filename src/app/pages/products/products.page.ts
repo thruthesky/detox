@@ -98,7 +98,7 @@ export class ProductsPage implements OnInit {
   
 
   loadMore(event: any) {
-    console.log('load more event: ', event);
+    //console.log('load more event: ', event);
 
     this.page++;
     this.loadPage(posts => {

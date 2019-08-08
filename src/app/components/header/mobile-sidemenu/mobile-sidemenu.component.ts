@@ -12,7 +12,7 @@ import { User } from 'modules/wordpress-api/services/wordpress-api.interface';
 export class MobileSidemenuComponent implements OnInit {
 
   user: User;
-  profilePhotoUrl = this.a.anonymousPhotoUrl;
+  profilePhotoUrl = this.a.wp.myPhotoUrl;
 
   constructor(
     private router: Router,

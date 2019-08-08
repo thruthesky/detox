@@ -1,13 +1,28 @@
 <ion-header no-border>
-    <app-header></app-header>
-  </ion-header>
-  
-  <ion-content>
-  
-  
-    post view page
-  
-  </ion-content>
-  
-  
-  
+  <app-header></app-header>
+</ion-header>
+
+<ion-content>
+
+  <section class="page post-view layout-width" *ngIf="post">
+
+    <div>
+      Edit / Delete / Like / Post List
+    </div>
+
+    <main>
+
+      <h1>
+        {{ post.post_title }}
+      </h1>
+      <div class="photos" *ngIf=" post.files.length ">
+        <div *ngFor=" let photo of post.files ">
+          <ion-img src="{{ photo.url }}"></ion-img>
+        </div>
+      </div>
+      <article>
+        <div [innerHTML]="a.safeHtml(post.post_content)"></div>
+      </article>
+    </main>
+  </section>
+</ion-content>
