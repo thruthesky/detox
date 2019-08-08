@@ -1,0 +1,43 @@
+.right-3 {
+right: 1em !important;
+}
+
+@media all and (max-width:500px) {
+  
+  .xs-py-1 {
+    padding-top: .25em !important;
+    padding-bottom: .25em !important;
+  }
+    
+  .xs-fs-14px {
+      font-size: 14px ;
+  }
+  
+  .xs-fs-16px {
+    font-size: 16px;
+}
+
+.xs-fs-18px {
+    font-size: 18px;
+}
+}
+
+@media all and (min-width:500px) {
+  
+    .xs-py-1 {
+      padding-top: .25em !important;
+      padding-bottom: .25em !important;
+    }
+      
+    .sm-fs-18px {
+        font-size: 14px ;
+    }
+    
+    .sm-fs-20px {
+      font-size: 20px !important;
+  }
+  
+  .xs-fs-22px {
+      font-size: 22px !important;
+  }
+  }

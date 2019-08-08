@@ -20,9 +20,14 @@ export class DesktopHomeTopSliderComponent implements OnInit {
 
 
   options = {
-
-    speed: 400,
+    initialSlide: 1,
+    speed: 800,
     loop: true,
+    autoplay: {
+      delay: 6000,
+      disableOnInteraction: false,
+    },
+  
   };
 
   posts: Posts;
@@ -33,7 +38,7 @@ export class DesktopHomeTopSliderComponent implements OnInit {
       category_name: 'main-top-banner'
     };
     this.a.wp.postSearch(req).subscribe(res => {
-      console.log('res; ', res);
+      // consoe.log('res; ', res);
       this.posts = res;
 
     });

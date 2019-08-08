@@ -15,9 +15,9 @@
 
     <ion-slides mode="ios" pager="ios" scrollbar="ios" [options]="options" #slides>
       <ng-container *ngFor="let p of posts">
-        <ion-slide *ngIf="p">
+        <ion-slide>
           <div class="xy-center z-1000 ion-text-start w-400px ml-md-100px ml-lg-150px ml-xl-200px ">
-            <p class="fs-10px ion-no-margin py-10  white-trans">{{ p['string1'] }}</p>
+            <p class="fs-10px ion-no-margin py-10  white">{{ p['string1'] }}</p>
             <p class="letter-spacing-1px fs-38px  ion-no-margin  white">{{ p['string2'] }} </p>
             <p class="letter-spacing-1px fs-38px  ion-no-margin py-10 white bold">{{ p['string3'] }}</p>
             <ion-button mode="md" class="w-200px h-62px ion-no-margin mt-15px bg-white border-radius" color="success"
