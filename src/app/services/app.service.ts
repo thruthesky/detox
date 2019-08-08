@@ -2,11 +2,12 @@ import { Injectable } from '@angular/core';
 import { MenuController, AlertController } from '@ionic/angular';
 import { WordpressApiService } from 'modules/wordpress-api/services/wordpress-api.service';
 import { environment } from 'src/environments/environment';
-import { ErrorObject, Files } from 'modules/wordpress-api/services/wordpress-api.interface';
+import { ErrorObject } from 'modules/wordpress-api/services/wordpress-api.interface';
 import { Router } from '@angular/router';
 import { AlertOptions } from '@ionic/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { pageCode } from './page-code';
+import { FirebaseService } from './firebase.service';
 
 @Injectable({ providedIn: 'root' })
 export class AppService {
@@ -22,11 +23,17 @@ export class AppService {
         private sideMenu: MenuController,
         public wp: WordpressApiService,
         private alertController: AlertController,
-        private domSanitizer: DomSanitizer
+        private domSanitizer: DomSanitizer,
+        public firebase: FirebaseService
     ) {
         if (!this.env.lang) {
             this.env.lang = this.getBrowserLanguage();
         }
+
+        // initialize firebase
+        this.firebase.init();
+
+        // console.log(`production`, this.env.production);
     }
 
 
