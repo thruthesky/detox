@@ -1,6 +1,19 @@
 <!-- banner slider -->
 <ion-slides pager="true" options="options">
   <ion-slide    *ngFor="let p of posts">
+
+        <div class="position-absolute bg-trans-2 left-3 p-3 ion-text-start white">
+          <p class="fs-14">this is sample text</p>
+          <h1 class="m-0 ">this is a sometext</h1>
+          <p class="fs-16px">this is sample text</p>
+
+          <ion-button class="  no-border no-box-shadow" color="light">
+            click
+          </ion-button>
+
+        </div>
+
+
         <img style="width: 100%;height: 100%;"  [src]="p.files[0].url" alt="">
         
   </ion-slide>

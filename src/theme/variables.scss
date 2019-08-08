@@ -931,7 +931,9 @@ font-size: 16px !important;
 .bg-trans {
   background-color:rgba(0, 0, 0, 0.15);
 }
-
+.bg-trans-2 {
+  background-color:rgba(0, 0, 0, 0.25);
+}
 .w-150px {
   width: 150px;
 }
@@ -1409,7 +1411,9 @@ font-size: 16px !important;
   top: 50%;
   transform: translateY(-50%);
 }
-
+.left-3 {
+  left: 1em !important;
+}
 
 .h-28px {
   height: 28px;
