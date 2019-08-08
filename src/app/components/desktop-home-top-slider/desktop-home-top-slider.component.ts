@@ -1,7 +1,9 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { IonSlides } from '@ionic/angular';
 import { AppService } from 'src/app/services/app.service';
 import { PostSearchOptions, Posts } from 'modules/wordpress-api/services/wordpress-api.interface';
+
+
 
 @Component({
   selector: 'app-desktop-home-top-slider',
@@ -9,12 +11,23 @@ import { PostSearchOptions, Posts } from 'modules/wordpress-api/services/wordpre
   styleUrls: ['./desktop-home-top-slider.component.scss'],
 })
 export class DesktopHomeTopSliderComponent implements OnInit {
-  @ViewChild('slides', { static: true }) slides: IonSlides;
+  @ViewChild('slides', { static: false }) slides: IonSlides;
+
+
+
+
+
+
 
   options = {
-    initialSlide: 3,
-    speed: 400,
+    initialSlide: 1,
+    speed: 800,
     loop: true,
+    autoplay: {
+      delay: 6000,
+      disableOnInteraction: false,
+    },
+  
   };
 
   posts: Posts;
@@ -27,6 +40,7 @@ export class DesktopHomeTopSliderComponent implements OnInit {
     this.a.wp.postSearch(req).subscribe(res => {
       console.log('res; ', res);
       this.posts = res;
+
     });
   }
 
@@ -35,6 +49,8 @@ export class DesktopHomeTopSliderComponent implements OnInit {
 
   }
 
+
+
   next() {
     this.slides.slideNext();
   }
@@ -42,4 +58,6 @@ export class DesktopHomeTopSliderComponent implements OnInit {
   prev() {
     this.slides.slidePrev();
   }
+
+
 }

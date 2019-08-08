@@ -1,6 +1,25 @@
 <!-- banner slider -->
-<ion-slides pager="true" options="options">
-  <ion-slide    *ngFor="let x of [].constructor(10)">
-        <img style="width: 100%;height: auto;"  src="/assets/img/desktop-home-top-slider/img_mainbanner.jpg" alt="">
+<ion-slides pager="true" [options]="options">
+  <ion-slide *ngFor="let p of posts">
+    <div class="position-absolute w-100 h-100 bg-trans z-1000">
+    </div>
+    <div class="position-absolute pb-3 ion-text-start p-3 white  z-2000">
+
+
+      <p class="xs-fs-14px fs-12px ion-no-margin white">{{ p['string1'] }}</p>
+      <p class="letter-spacing-1px fs-24px xs-fs-14px   ion-no-margin  white">{{ p['string2'] }} </p>
+      <p class="letter-spacing-1px fs-24px xs-fs-14px   ion-no-margin  white bold">{{ p['string3'] }}</p>
+
+
+      <div>
+        <ion-button class="float-right bold bg-white no-box-shadow border-radius" fill="outline" color="success"
+          routerLink="/post-view/{{ p.ID }}">
+          <ion-icon slot="end" name="arrow-forward" mode="ios"></ion-icon>
+          자세히 보기
+        </ion-button>
+      </div>
+
+    </div>
+    <img style="width: 100%;height: 100%;" [src]="p.files[0].url" alt="banner">
   </ion-slide>
 </ion-slides>
