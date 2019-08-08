@@ -11,9 +11,7 @@
     </button>
   </div>
 
-  <div *ngIf="posts">
-
-    <ion-slides mode="ios" pager="ios" scrollbar="ios" [options]="options" #slides>
+    <ion-slides mode="ios" pager="ios" scrollbar="ios" [options]="options" #slides *ngIf="posts">
       <ng-container *ngFor="let p of posts">
         <ion-slide>
           <div class="xy-center z-1000 ion-text-start w-400px ml-md-100px ml-lg-150px ml-xl-200px ">
@@ -34,7 +32,7 @@
 
 
     </ion-slides>
-  </div>
+
 
 
 </div>
