@@ -4,9 +4,13 @@
 
 <ion-content>
 
-  <ion-text color="green">
-    <h1 class="title ion-text-center">표제표제표제</h1>
-  </ion-text>
+  <div class="position-relative page-width">
+    <ion-text color="green">
+      <h1 class="title ion-text-center">{{ tipTitle?.post_title }}</h1>
+    </ion-text>
+    <app-page-post-content [guid]=" 'tipTitle' " [post]=" tipTitle " (edited)=" tipTitle = $event ">
+    </app-page-post-content>
+  </div>
 
 
   <section class="page-width pb-100px">
@@ -35,9 +39,9 @@
         </ion-col>
       </ion-row>
     </ion-grid>
-    
+
     <div class="ion-text-center pt-4">
-      <ion-button class="h-52px w-200px black border-light no-box-shadow bold"  mode="md" fill="outline">
+      <ion-button class="h-52px w-200px black border-light no-box-shadow bold" mode="md" fill="outline">
         목멋진
       </ion-button>
     </div>

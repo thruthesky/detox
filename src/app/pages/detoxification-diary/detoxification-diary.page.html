@@ -7,13 +7,20 @@
 
   <section class="pt-100px" *ngIf="a.isDesktop">
 
-    <ion-text color="green">
-      <h1 class="fs-32px ion-text-center bold">Awesome text</h1>
-    </ion-text>
+    <div class="position-relative page-width">
+      <ion-text color="green">
+        <h1 class="fs-32px ion-text-center bold">{{ diaryTitle?.post_title }}</h1>
+      </ion-text>
 
-    <ion-text color="medium">
-      <p class="pt-4 ion-text-center">Awesome textAwesome textAwesome textAwesome textAwesome text</p>
-    </ion-text>
+      <ion-text color="medium">
+        <p class="pt-4 ion-text-center">
+          <app-page-post-content [guid]=" 'diaryTitle' " [post]=" diaryTitle " (edited)=" diaryTitle = $event ">
+          </app-page-post-content>
+        </p>
+      </ion-text>
+
+    </div>
+
 
     <div class="ion-text-center">
       <ion-button class="mt-5 h-68px w-200px no-border-radius fs-16px no-box-shadow " mode="md" color="green">
