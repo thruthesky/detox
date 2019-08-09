@@ -19,7 +19,7 @@ export class FirebaseService {
                 return;
             }
 
-            console.log('user.eventType: ', user.eventType);
+            // console.log('user.eventType: ', user.eventType);
 
             if (this.token) {
                 wp.tokenUpdate(this.token).subscribe(res => {
@@ -48,17 +48,17 @@ export class FirebaseService {
      *
      */
     async saveNewTokenToBackend() {
-        console.log(`save token:`, this.token);
+        // console.log(`save token:`, this.token);
 
         //
         this.wp.tokenUpdate(this.token).subscribe(res => {
-            console.log('res: ', res);
+            // console.log('res: ', res);
         }, e => {
             console.error(e);
             alert('푸시 알림 토큰 등록 실패!');
         });
         this.wp.subscribeTopic('7detox', this.token).subscribe( res => {
-            console.log('subscribe topic res: ', res);
+            // console.log('subscribe topic res: ', res);
         }, e => {
             console.error(e);
         });
@@ -121,7 +121,7 @@ export class FirebaseService {
         }
         this.afMessaging.messages
             .subscribe((res) => {
-                console.log('webListenMessage::', res);
+                // console.log('webListenMessage::', res);
                 this.toastNotificationMessage(res['notification']);
             });
     }

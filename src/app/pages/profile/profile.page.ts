@@ -46,7 +46,7 @@ export class ProfilePage implements OnInit {
 
 
     a.wp.profile().subscribe(user => {
-
+      console.log('profile:', user);
       this.user = user;
 
       if (user.photoURL) {
