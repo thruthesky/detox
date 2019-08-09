@@ -11,12 +11,12 @@
 <!-- slider by two -->
 <div class="bg-light-gray">
   <ion-slides [options]="options" class="px-4 py-10px">
-    <ion-slide *ngFor="let items of [].constructor(10)" class="px-1">
-      <ion-card class="ion-no-margin  card bg-white fs-12" mode="ios" routerLink="/post-view">
-        <ion-img src="\assets\img\product\product_mobile.png" class="min-height-100px" alt="product_image"></ion-img>
-        <ion-card-title class="pt-2 px-11px ion-text-start fs-14 bold  ">Detox 제품제</ion-card-title>
+    <ion-slide *ngFor="let p of posts" class="px-1">
+      <ion-card class="ion-no-margin  card bg-white fs-12" mode="ios" routerLink="/post-view/{{ p.ID }}">
+        <ion-img src="{{ p.files[0].url }}" class="min-height-100px" alt="product_image"></ion-img>
+        <ion-card-title class="pt-2 px-11px ion-text-start fs-14 bold ellipsis ">{{ p.post_title }}</ion-card-title>
         <ion-card-content class="ion-no-margin ion-no-padding px-11px pb-3 ion-text-start ">
-          <p class="m-0 pb-2 fs-12 gray ">Fox News Sunday with Chris Wallace</p>
+          <p class="m-0 pb-2 fs-12 gray ellipsis ">{{ p.post_content }}</p>
         </ion-card-content>
       </ion-card>
     </ion-slide>

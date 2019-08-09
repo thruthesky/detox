@@ -41,7 +41,7 @@ export class PushNotificationsToAllUsersPage implements OnInit {
       click_action: this.url
     };
     this.a.wp.sendMessageToTopic(data).subscribe(res => {
-      console.log('message sent: ', res);
+      // consoe.log('message sent: ', res);
     });
   }
 

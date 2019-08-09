@@ -1,5 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { IonSlides } from '@ionic/angular';
+import { AppService } from 'src/app/services/app.service';
+import { PostSearchOptions, Posts } from 'modules/wordpress-api/services/wordpress-api.interface';
 
 @Component({
   selector: 'app-desktop-home-products',
@@ -7,16 +9,26 @@ import { IonSlides } from '@ionic/angular';
   styleUrls: ['./desktop-home-products.component.scss'],
 })
 export class DesktopHomeProductsComponent implements OnInit {
-  @ViewChild('slides', { static: true }) slides: IonSlides;
+  @ViewChild('slides', { static: false }) slides: IonSlides;
 
   options = {
-    initialSlide: 3,
+    initialSlide: 0,
     slidesPerView: 3,
-    speed: 400,
-    loop: true,
+    speed: 800,
   };
 
-  constructor() { }
+  posts: Posts;
+
+  constructor(public a: AppService) {
+    const req: PostSearchOptions = {
+      category_name: 'products',
+      posts_per_page: 8
+    };
+    this.a.wp.postSearch(req).subscribe(res => {
+      this.posts = res;
+    });
+
+  }
 
   ngOnInit() { }
 

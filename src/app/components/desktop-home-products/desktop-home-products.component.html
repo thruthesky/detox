@@ -13,16 +13,16 @@
       <i class="arrow-right  b-white-9 w-50px h-50px"></i>
     </button>
   </div>
-  <ion-slides class="px-100px px-xl-150px" mode="ios" pager="true" [options]="options" #slides>
-    <ion-slide *ngFor="let x of [].constructor(10)">
+  <ion-slides class="px-100px px-xl-150px" mode="ios" pager="true" [options]="options" #slides *ngIf="posts">
+    <ion-slide *ngFor="let p of posts">
 
-      <ion-card class="card mx-10px" routerLink="/post-view">
-        <ion-img src="/assets/img/product/img_product.png" alt="image_product"></ion-img>
+      <ion-card class="card mx-10px" routerLink="/post-view/{{ p.ID }}">
+        <ion-img src="{{ p.files[0].url }}" alt="image_product"></ion-img>
         <ion-card-header class="pt-37px">
-          <ion-card-title mode="md" color="success" class="fs-22px fs-lg-26px ff-lora">long&Big Title</ion-card-title>
+          <ion-card-title class="fs-22px fs-lg-26px ff-lora ellipsis" mode="md" color="success" >{{ p.post_title }}</ion-card-title>
         </ion-card-header>
-        <ion-card-content class="px-xxl-40 fs-14 lh-18px pt-0">
-          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+        <ion-card-content class="px-xxl-40 fs-14 lh-18px pt-0 ellipsis">
+          {{ p.post_content }}
         </ion-card-content>
       </ion-card>
     </ion-slide>
