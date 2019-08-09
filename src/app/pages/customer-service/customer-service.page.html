@@ -8,7 +8,7 @@
   <section class="pb-150px page-width ion-text-center">
 
     <ion-text color="green" *ngIf="a.isDesktop">
-      <h1 class="pt-5 pb-5">고객 서비스</h1>
+      <h1 class="pt-5 pb-5">{{ customerService?.post_title }}</h1>
     </ion-text>
 
     <ion-grid>
@@ -21,19 +21,21 @@
                 <ion-label color="green">전화 번호</ion-label>
               </ion-col>
               <ion-col class="xs-pt-4" size="12" size-md="6" text-start>
-                <ion-label color="medium">{{ customerService?.post_title }}</ion-label>
+                <ion-label color="medium">
+                  <app-page-post-content [guid]=" guid " [post]=" customerService "
+                    (edited)=" customerService = $event ">
+                  </app-page-post-content>
+                </ion-label>
               </ion-col>
 
             </ion-row>
             <ion-row class="md-pt-3">
               <ion-col class="xs-pt-4" size="12" size-md="5" text-start>
                 <ion-label color="green">이메일 주소</ion-label>
-
               </ion-col>
               <ion-col class="xs-pt-4" size="12" size-md="6" text-start>
                 <ion-label color="medium">
-                    <app-page-post-content [guid]=" guid " [post]=" customerService " (edited)=" customerService = $event ">
-                      </app-page-post-content>
+                  {{ customerService['string1'] }}
                 </ion-label>
 
               </ion-col>
@@ -44,15 +46,15 @@
 
         </ion-col>
         <ion-col *ngIf="a.isDesktop" size="7">
-            <ion-img src="{{ src(customerService) }}" *ngIf=" src(customerService) "></ion-img>
-          </ion-col>
+          <ion-img src="{{ src(customerService) }}" *ngIf=" src(customerService) "></ion-img>
+        </ion-col>
       </ion-row>
     </ion-grid>
 
   </section>
 
   <ng-container *ngIf="a.isDesktop">
-      <app-desktop-home-footer></app-desktop-home-footer>
+    <app-desktop-home-footer></app-desktop-home-footer>
   </ng-container>
 
 

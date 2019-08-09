@@ -5,10 +5,12 @@
 </div>
 <section class="page-width pb-50px p-4 fs-12">
 
-  <div class="pb-4">
+  <div class="position-relative pb-4">
     <ion-text color="green">
-      <h1 class="title fs-16px bold">이용 약관</h1>
+      <h1 class="title fs-16px bold">{{ privacyTitle?.post_title }}</h1>
     </ion-text>
+    <app-page-post-content [guid]=" 'privacyTitle' " [post]=" privacyTitle " (edited)=" privacyTitle = $event ">
+    </app-page-post-content>
   </div>
 
   <div class="position-relative pt-1" *ngFor=" let item of posts | keyvalue; let i = index ">
@@ -24,9 +26,9 @@
   </div>
 
   <div class="flex-center mt-4" *ngIf="close">
-      <ion-button color="danger" (click)="popoverController.dismiss()" >
-        Close
-      </ion-button>
-    </div>
+    <ion-button color="danger" (click)="popoverController.dismiss()">
+      Close
+    </ion-button>
+  </div>
 
 </section>

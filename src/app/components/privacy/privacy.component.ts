@@ -16,6 +16,8 @@ export class PrivacyComponent implements OnInit {
 
   posts: { [key: string]: Post } = {};
 
+  privacyTitle = {} as Post ;
+
   constructor(
     public a: AppService,
     public popoverController: PopoverController,
@@ -26,6 +28,9 @@ export class PrivacyComponent implements OnInit {
         this.posts[guid] = {} as any;
         this.a.wp.postGetIn({ guid: guid }, this.posts[guid]);
       }
+      this.a.wp.postGetIn( { guid: 'privacyTitle' }  , this.privacyTitle);
+
+
     }
 
   ngOnInit() {}
