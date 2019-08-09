@@ -1,9 +1,9 @@
 <!-- banner slider -->
 <ion-slides pager="true" [options]="options">
   <ion-slide *ngFor="let p of posts">
-    <div class="position-absolute w-100 h-100 bg-trans z-1000">
+    <div class="position-absolute w-100 h-100 bg-trans-2 z-1000">
     </div>
-    <div class="position-absolute pb-3 ion-text-start p-3 white  z-2000">
+    <div class="position-absolute w-340px  p-3   ion-text-end white  z-2000">
 
 
       <p class="xs-fs-14px fs-12px ion-no-margin white">{{ p['string1'] }}</p>
@@ -12,7 +12,7 @@
 
 
       <div>
-        <ion-button class="float-right bold bg-white no-box-shadow border-radius" fill="outline" color="success"
+        <ion-button class="float-right bold  no-box-shadow border-radius" fill="outline" color="light"
           routerLink="/post-view/{{ p.ID }}">
           <ion-icon slot="end" name="arrow-forward" mode="ios"></ion-icon>
           자세히 보기

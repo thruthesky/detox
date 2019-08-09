@@ -45,29 +45,36 @@ export class ProfilePage implements OnInit {
   ) {
 
 
-    a.wp.profile().subscribe(user => {
 
-      this.user = user;
+    // console.log(a.wp.getUserData());
 
-      if (user.photoURL) {
-        this.profilePhotoUrl = user.photoURL;
+    if (a.wp.getUserData()) {
+      this.user = a.wp.getUserData();
+      if (this.user.photoURL) {
+        this.profilePhotoUrl = this.user.photoURL;
       }
+    }
 
-      /**
-       * @todo set all the form data.
-       */
-      this.form.patchValue({
-        display_name: user.display_name,
-        user_email: user.user_email,
-        mobile: user.mobile,
-        gender: user.gender,
-        address: user.address,
-        birthday: user.birthday,
-        height: user.height,
-        weight: user.weight,
-      });
 
-    }, e => a.error(e));
+
+    // a.wp.profile().subscribe(user => {
+    //   console.log(this.user);
+
+    //   /**
+    //    * @todo set all the form data.
+    //    */
+    //   this.form.patchValue({
+    //     display_name: user.display_name,
+    //     user_email: user.user_email,
+    //     mobile: user.mobile,
+    //     gender: user.gender,
+    //     address: user.address,
+    //     birthday: user.birthday,
+    //     height: user.height,
+    //     weight: user.weight,
+    //   });
+
+    // }, e => a.error(e));
 
 
     /**
@@ -84,6 +91,20 @@ export class ProfilePage implements OnInit {
       height: ['', [Validators.required, Validators.pattern('[0-9]+'), Validators.min(100), Validators.max(220)]],
       weight: ['', [Validators.required, Validators.pattern('[0-9]+'), Validators.min(30), Validators.max(160)]]
     });
+
+
+    this.form.patchValue({
+      display_name: this.user.display_name,
+      user_email: this.user.user_email,
+      mobile: this.user.mobile,
+      gender: this.user.gender,
+      address: this.user.address,
+      birthday: this.user.birthday,
+      height: this.user.height,
+      weight: this.user.weight,
+    });
+
+
 
 
 
@@ -146,6 +167,7 @@ export class ProfilePage implements OnInit {
   }
 
   ngOnInit() {
+
   }
 
   onSubmit() {
