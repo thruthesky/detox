@@ -45,7 +45,7 @@ export class ProfilePage implements OnInit {
   ) {
 
 
-    console.log(a.wp.getUserData());
+    // console.log(a.wp.getUserData());
 
     if (a.wp.getUserData()) {
       this.user = a.wp.getUserData();
@@ -54,13 +54,10 @@ export class ProfilePage implements OnInit {
 
 
     // a.wp.profile().subscribe(user => {
-
-
     //   console.log(this.user);
     //   if (user.photoURL) {
     //     this.profilePhotoUrl = user.photoURL;
     //   }
-
     //   /**
     //    * @todo set all the form data.
     //    */
@@ -92,6 +89,20 @@ export class ProfilePage implements OnInit {
       height: ['', [Validators.required, Validators.pattern('[0-9]+'), Validators.min(100), Validators.max(220)]],
       weight: ['', [Validators.required, Validators.pattern('[0-9]+'), Validators.min(30), Validators.max(160)]]
     });
+
+    
+    this.form.patchValue({
+      display_name: this.user.display_name,
+      user_email: this.user.user_email,
+      mobile: this.user.mobile,
+      gender: this.user.gender,
+      address: this.user.address,
+      birthday: this.user.birthday,
+      height: this.user.height,
+      weight: this.user.weight,
+    });
+
+
 
 
 
@@ -155,16 +166,6 @@ export class ProfilePage implements OnInit {
 
   ngOnInit() {
 
-    this.form.patchValue({
-      display_name: this.user.display_name,
-      user_email: this.user.user_email,
-      mobile: this.user.mobile,
-      gender: this.user.gender,
-      address: this.user.address,
-      birthday: this.user.birthday,
-      height: this.user.height,
-      weight: this.user.weight,
-    });
   }
 
   onSubmit() {
