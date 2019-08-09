@@ -7,12 +7,12 @@
   <section class="page-width-md md-pb-100px medium" text-center>
     <div class="position-relative">
       <ion-text color="green">
-        <h1 class="pt-50px fs-32px bold">샘플 제목</h1>
+        <h1 class="pt-50px fs-32px bold">{{ affiliate?.post_title }}</h1>
       </ion-text>
 
       <ion-label>
         <ion-text color="green">
-          <p class="pt-80px bold">{{ affiliate?.post_title }}</p>
+          <p class="pt-80px bold">{{ affiliate['string1'] }}</p>
         </ion-text>
 
           <div class="pt-3 gray">
@@ -37,8 +37,8 @@
       </ion-button>
     </div>
 
-    <ion-label>LabelLabelLabel</ion-label>
-    <ion-label class="pl-4">Label</ion-label>
+    <ion-label>{{ affiliate['string2'] }}</ion-label>
+    <ion-label class="pl-4">{{ affiliate['string3'] }}</ion-label>
 
   </section>
 
