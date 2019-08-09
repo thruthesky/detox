@@ -49,15 +49,17 @@ export class ProfilePage implements OnInit {
 
     if (a.wp.getUserData()) {
       this.user = a.wp.getUserData();
+
+      if (this.user.photoURL) {
+        this.profilePhotoUrl = this.user.photoURL;
+      }
     }
 
 
 
     // a.wp.profile().subscribe(user => {
     //   console.log(this.user);
-    //   if (user.photoURL) {
-    //     this.profilePhotoUrl = user.photoURL;
-    //   }
+
     //   /**
     //    * @todo set all the form data.
     //    */
@@ -90,7 +92,7 @@ export class ProfilePage implements OnInit {
       weight: ['', [Validators.required, Validators.pattern('[0-9]+'), Validators.min(30), Validators.max(160)]]
     });
 
-    
+
     this.form.patchValue({
       display_name: this.user.display_name,
       user_email: this.user.user_email,
