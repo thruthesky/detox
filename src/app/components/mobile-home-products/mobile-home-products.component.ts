@@ -11,9 +11,10 @@ export class MobileHomeProductsComponent implements OnInit {
 
 
   options = {
-    initialSlide: 0,
+    initialSlide: 1,
     slidesPerView: 2,
     speed: 800,
+    centeredSlides: true,
   };
 
   posts: Posts;
