@@ -14,7 +14,7 @@
       <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
   </div>
 
-  <div *ngIf=" post['errcode'] ">
+  <div *ngIf=" post['errcode'] && a.wp.isAdmin ">
     Error: {{ post['errstring'] }}
   </div>
 
