@@ -45,29 +45,37 @@ export class ProfilePage implements OnInit {
   ) {
 
 
-    a.wp.profile().subscribe(user => {
+    console.log(a.wp.getUserData());
 
-      this.user = user;
+    if (a.wp.getUserData()) {
+      this.user = a.wp.getUserData();
+    }
 
-      if (user.photoURL) {
-        this.profilePhotoUrl = user.photoURL;
-      }
 
-      /**
-       * @todo set all the form data.
-       */
-      this.form.patchValue({
-        display_name: user.display_name,
-        user_email: user.user_email,
-        mobile: user.mobile,
-        gender: user.gender,
-        address: user.address,
-        birthday: user.birthday,
-        height: user.height,
-        weight: user.weight,
-      });
 
-    }, e => a.error(e));
+    // a.wp.profile().subscribe(user => {
+
+
+    //   console.log(this.user);
+    //   if (user.photoURL) {
+    //     this.profilePhotoUrl = user.photoURL;
+    //   }
+
+    //   /**
+    //    * @todo set all the form data.
+    //    */
+    //   this.form.patchValue({
+    //     display_name: user.display_name,
+    //     user_email: user.user_email,
+    //     mobile: user.mobile,
+    //     gender: user.gender,
+    //     address: user.address,
+    //     birthday: user.birthday,
+    //     height: user.height,
+    //     weight: user.weight,
+    //   });
+
+    // }, e => a.error(e));
 
 
     /**
@@ -146,6 +154,17 @@ export class ProfilePage implements OnInit {
   }
 
   ngOnInit() {
+
+    this.form.patchValue({
+      display_name: this.user.display_name,
+      user_email: this.user.user_email,
+      mobile: this.user.mobile,
+      gender: this.user.gender,
+      address: this.user.address,
+      birthday: this.user.birthday,
+      height: this.user.height,
+      weight: this.user.weight,
+    });
   }
 
   onSubmit() {

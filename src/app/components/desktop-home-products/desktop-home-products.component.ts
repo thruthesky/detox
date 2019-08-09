@@ -25,7 +25,6 @@ export class DesktopHomeProductsComponent implements OnInit {
       posts_per_page: 8
     };
     this.a.wp.postSearch(req).subscribe(res => {
-      console.log('res; ', res);
       this.posts = res;
     });
 
