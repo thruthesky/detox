@@ -12,6 +12,8 @@ export class ChildProtectionPage implements OnInit {
   
   name = 'child-protection';
 
+  childTitle = {} as Post;
+
   posts: { [key: string]: Post } = {};
 
   constructor(public a: AppService) { 
@@ -22,6 +24,8 @@ export class ChildProtectionPage implements OnInit {
       this.posts[guid] = {} as any;
       this.a.wp.postGetIn({ guid: guid }, this.posts[guid]);
     }
+    this.a.wp.postGetIn( { guid: 'chidTitle' }  , this.childTitle);
+
 
   }
 
