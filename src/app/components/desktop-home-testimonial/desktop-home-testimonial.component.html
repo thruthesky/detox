@@ -2,19 +2,19 @@
 
   <h2 class="pm-0 pt-85px pb-45px ion-text-center fs-30px green">프로그램 후기</h2>
 
-  <ion-grid class="ion-no-padding layout-width" fixed>
+  <ion-grid class="ion-no-padding page-width">
     <ion-row>
       <ion-col class="i-col-padding-10" size="3" *ngFor="let p of posts">
         <ion-card  class="ion-no-margin card" mode="ios" routerLink="/post-view/{{ p.ID }}">
 
           <ion-card-header class="py-25px px-12px i-bg-green ">
             <ion-card-title class=" white   bold fs-14 ellipsis"> {{ p.post_title }} </ion-card-title>
-            <ion-card-subtitle class=" fs-12 m-0 letter-spacing-0 pt-5px ellipsis" color="light">
+            <ion-card-subtitle class=" fs-12  m-0 letter-spacing-0 pt-5px ellipsis" color="light">
               {{ p.post_content }}
             </ion-card-subtitle>
           </ion-card-header>
 
-          <img style="height:238px ; width: 254px;object-fit: cover" src="{{ p.files[0].url }}">
+          <img style="height:238px ;object-fit: cover" src="{{ p.files[0].url }}">
         </ion-card>
       </ion-col>
     </ion-row>
