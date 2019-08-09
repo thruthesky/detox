@@ -48,26 +48,49 @@
   <!-- alarms -->
   <section class="pb-5 md-pb-150px md-page-width md-no-border  border-top-gray">
 
-    <ion-button (click)="onClickAlarmItem($event)">Create</ion-button>
-    <ion-item class="md-mt-3 md-shadow-2 pointer" lines="none" *ngFor="let item of [].constructor(10)">
+    <ion-button (click)="onClickAlarmUpdate($event, null)">Create</ion-button>
 
-      <ion-grid no-padding>
-        <ion-row>
-          <ion-col class="flex-column-center md-py-20px " size="3" (click)="onClickAlarmItem($event)">
-            <ion-label class="fs-22px" color="green">07:00</ion-label>
-          </ion-col>
-          <ion-col class="fs-14 md-py-20px" size="7" (click)="onClickAlarmItem($event)">
-            <p class="black bold">표제표제표제표</p>
-            <p class="i-color-medium">제표표표제표표제표제표제</p>
-          </ion-col>
-          <ion-col class="flex-column-center md-py-20px" size="2" no-padding>
-            <ion-toggle class="pl-1" color="success" mode="md"></ion-toggle>
-          </ion-col>
-        </ion-row>
-      </ion-grid>
+    <ion-list *ngIf=" alarms?.length ">
+      <ion-item class="md-mt-3 md-shadow-2 pointer" lines="none" *ngFor="let alarm of alarms">
+        <ion-grid no-padding>
+          <ion-row>
+            <ion-col class="flex-column-center md-py-20px " size="3" (click)="onClickAlarmUpdate($event, alarm)">
+              <ion-label class="fs-22px" color="green">{{ a.add0(alarm.hour) }}:{{ a.add0(alarm.minute) }}</ion-label>
+            </ion-col>
+            <ion-col class="fs-14 md-py-20px" size="7" (click)="onClickAlarmUpdate($event, alarm)">
+              <p class="black bold">{{ alarm.title }}</p>
+              <p class="i-color-medium">{{ alarm.content }}</p>
+              <p>
+                {{ alarm.sunday == 'Y' ? '일' : ''}}
+                {{ alarm.monday == 'Y' ? '월' : ''}}
+                {{ alarm.tuesday == 'Y' ? '화' : ''}}
+                {{ alarm.wednesday == 'Y' ? '수' : ''}}
+                {{ alarm.thursday == 'Y' ? '목' : ''}}
+                {{ alarm.friday == 'Y' ? '금' : ''}}
+                {{ alarm.saturday == 'Y' ? '토' : ''}}
+              </p>
+            </ion-col>
+            <ion-col class="flex-column-center md-py-20px" size="2" no-padding>
 
+              <ion-buttons>
+                <ion-toggle class="pl-1" color="success" mode="md" [checked]=" alarm.enabled == 'Y' "
+                  (ionChange)="onToggleAlarm(alarm)"></ion-toggle>
+                <ion-button (click)="onClickDelete(alarm)">
+                  <ion-icon name="close"></ion-icon>
+                </ion-button>
+              </ion-buttons>
+
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+
+      </ion-item>
+    </ion-list>
+
+    <ion-item button *ngIf="! alarms?.length" (click)="onClickAlarmUpdate($event, null)">
+      <ion-icon name="create" slot="start"></ion-icon>
+      <ion-label>앗, 알림 스케쥴이 없습니다. [알림 스케쥴 생성하기]</ion-label>
     </ion-item>
-
 
   </section>
 

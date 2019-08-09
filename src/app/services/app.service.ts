@@ -141,9 +141,21 @@ export class AppService {
         if (!options.buttons) {
             options.buttons = [{ text: this.t({ en: 'Confirm', ko: '확인' }) }];
         }
-        (await this.alertController.create(options)).present();
+        const popup = await this.alertController.create(options);
+        popup.present();
+        return popup.onWillDismiss();
     }
 
+
+    async confirm(options: AlertOptions) {
+        if (!options.buttons) {
+            options.buttons = [
+                { text: this.t({ en: 'Yes', ko: '예' }), role: 'yes' },
+                { text: this.t({ en: 'No', ko: '아니오' }), role: 'no' },
+            ];
+        }
+        return this.alert(options);
+    }
 
     open(url: string): void {
         this.router.navigateByUrl(url);
@@ -164,6 +176,21 @@ export class AppService {
         return this.domSanitizer.bypassSecurityTrustHtml(str);
     }
 
+
+    /**
+     * Adds '0' infront of the `n` if the `n` is smaller than 10.
+     * @param n numbre
+     * @example
+     *      add0(1);
+     *      - input:  1
+     *      - output: 01
+     */
+    add0(n: number): string {
+        if (isNaN(n)) {
+            return '00';
+        }
+        return n < 10 ? '0' + n : n.toString();
+    }
 
 }
 
