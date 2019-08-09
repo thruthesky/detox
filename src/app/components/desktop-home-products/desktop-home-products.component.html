@@ -19,7 +19,7 @@
       <ion-card class="card mx-10px" routerLink="/post-view/{{ p.ID }}">
         <ion-img src="{{ p.files[0].url }}" alt="image_product"></ion-img>
         <ion-card-header class="pt-37px">
-          <ion-card-title class="fs-22px fs-lg-26px ff-lora " mode="md" color="success" >{{ p.post_title }}</ion-card-title>
+          <ion-card-title class="fs-22px fs-lg-26px ff-lora ellipsis" mode="md" color="success" >{{ p.post_title }}</ion-card-title>
         </ion-card-header>
         <ion-card-content class="px-xxl-40 fs-14 lh-18px pt-0 ellipsis">
           {{ p.post_content }}
