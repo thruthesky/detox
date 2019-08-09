@@ -5,11 +5,11 @@
 <ion-content>
 
   <section class="px-4 pb-4 pt-0 page-width">
-    <div class="position-relative page-width">
+    <div class="position-relative">
       <ion-text class="title" color="green" *ngIf="a.isDesktop">
         <h1 class="pt-3 pb-4 fw-600  fs-32px">{{ companyInfo.title?.post_title }}</h1>
       </ion-text>
-      <app-page-post-content [guid]=" pageCode.title " [post]=" companyInfo.title "
+      <app-page-post-content [guid]=" 'companyTitle' " [post]=" companyInfo.title "
         (edited)=" companyInfo.title = $event ">
       </app-page-post-content>
     </div>

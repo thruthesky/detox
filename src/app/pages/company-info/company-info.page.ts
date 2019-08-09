@@ -22,7 +22,6 @@ export class CompanyInfoPage implements OnInit {
   pageCode = {
     top_post : 'top-post',
     bottom_post : 'bottom-post',
-    title : 'title',
   };
 
 
@@ -39,7 +38,7 @@ export class CompanyInfoPage implements OnInit {
 
     this.a.wp.postGetIn( { guid: this.pageCode.top_post }  , this.companyInfo.topPost);
     this.a.wp.postGetIn( { guid: this.pageCode.bottom_post }  , this.companyInfo.bottomPost);
-    this.a.wp.postGetIn( { guid: 'title' }  , this.companyInfo.title);
+    this.a.wp.postGetIn( { guid: 'companyTitle' }  , this.companyInfo.title);
 
    }
 

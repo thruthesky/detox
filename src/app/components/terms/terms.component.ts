@@ -16,6 +16,9 @@ export class TermsComponent implements OnInit {
 
   posts: { [key: string]: Post } = {};
 
+
+  termsTitle = {} as Post;
+
   constructor(
     public a: AppService,
     public popoverController: PopoverController,
@@ -27,6 +30,9 @@ export class TermsComponent implements OnInit {
       this.posts[guid] = {} as any;
       this.a.wp.postGetIn({ guid: guid }, this.posts[guid]);
     }
+
+    this.a.wp.postGetIn( { guid: 'termsTitle' }  , this.termsTitle);
+
   }
 
   ngOnInit() { }
