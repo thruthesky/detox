@@ -5,11 +5,12 @@
 <ion-content>
   <section class="page-width" *ngIf="a.isDesktop">
     <ion-text color="green" text-center>
-      <h1 class="pt-100px fs-32px">Awesome text</h1>
+      <h1 class="pt-100px fs-32px">{{ recipeTitle?.post_title }}</h1>
     </ion-text>
 
     <ion-text color="medium" text-center>
-      <p class="pt-4 fs-14">Awesome textAwesome textAwesome textAwesome text</p>
+      <app-page-post-content [guid]=" 'recipeTitle' " [post]=" recipeTitle " (edited)=" recipeTitle = $event ">
+      </app-page-post-content>
     </ion-text>
   </section>
 
@@ -30,7 +31,7 @@
           <div class="pt-2 fs-14 lh-20px medium">
             Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
           </div>
-        
+
         </ion-col>
 
       </ion-row>
@@ -38,6 +39,6 @@
   </section>
 
   <ng-container *ngIf="a.isDesktop">
-      <app-desktop-home-footer></app-desktop-home-footer>
+    <app-desktop-home-footer></app-desktop-home-footer>
   </ng-container>
 </ion-content>

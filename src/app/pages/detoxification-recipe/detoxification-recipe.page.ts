@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AppService } from 'src/app/services/app.service';
+import { Post } from 'modules/wordpress-api/services/wordpress-api.interface';
 
 @Component({
   selector: 'app-detoxification-recipe',
@@ -8,7 +9,15 @@ import { AppService } from 'src/app/services/app.service';
 })
 export class DetoxificationRecipePage implements OnInit {
 
-  constructor(public a: AppService) { }
+
+
+
+  recipeTitle = {} as Post;
+
+  constructor(public a: AppService) { 
+    this.a.wp.postGetIn( { guid: 'recipeTitle' }  , this.recipeTitle);
+
+  }
 
   ngOnInit() {
   }
