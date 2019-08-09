@@ -14,29 +14,33 @@ export class AlarmListPage implements OnInit {
   arrowIcon = "arrow-down";
 
   constructor(
-      public a: AppService,
-      public popoverController: PopoverController,
-  ) { }
+    public a: AppService,
+    public popoverController: PopoverController,
+  ) {
+    this.onClickAlarmItem(null);
+  }
 
   ngOnInit() {
   }
 
   onClickArrow() {
     this.hide = !this.hide;
-    this.arrowIcon = this.arrowIcon === "arrow-down" ?  "arrow-up" : "arrow-down";
+    this.arrowIcon = this.arrowIcon === "arrow-down" ? "arrow-up" : "arrow-down";
 
   }
 
 
-  
-    async onClickAlarmItem() {
-      const popover = await this.popoverController.create({
-        component: AlarmSetPopoverComponent,
-        cssClass: 'pop-alarm-set',
-        mode: 'md'
-      });
-      return await popover.present();
-    }
-  
+
+  async onClickAlarmItem(event) {
+    const popover = await this.popoverController.create({
+      event: event,
+      component: AlarmSetPopoverComponent,
+      cssClass: 'pop-alarm-set',
+      mode: 'md'
+    });
+    return await popover.present();
+  }
+
+
 
 }

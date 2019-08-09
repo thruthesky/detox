@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AlarmSetPopoverComponent } from './alarm-set-popover.component';
 import { IonicModule } from '@ionic/angular';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [AlarmSetPopoverComponent],
@@ -10,6 +11,7 @@ import { IonicModule } from '@ionic/angular';
   imports: [
     CommonModule,
     IonicModule,
+    ReactiveFormsModule
   ]
 })
 export class AlarmSetPopoverModule { }
