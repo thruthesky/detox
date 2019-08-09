@@ -5,11 +5,14 @@
 <ion-content>
 
   <section class="px-4 pb-4 pt-0 page-width">
-
-    <ion-text class="title" color="green" *ngIf="a.isDesktop">
-      <h1 class="pt-3 pb-4 fw-600  fs-32px">회사 소개</h1>
-    </ion-text>
-
+    <div class="position-relative page-width">
+      <ion-text class="title" color="green" *ngIf="a.isDesktop">
+        <h1 class="pt-3 pb-4 fw-600  fs-32px">{{ companyInfo.title?.post_title }}</h1>
+      </ion-text>
+      <app-page-post-content [guid]=" pageCode.title " [post]=" companyInfo.title "
+        (edited)=" companyInfo.title = $event ">
+      </app-page-post-content>
+    </div>
 
 
 
@@ -27,7 +30,7 @@
           <div class="pt-3  fs-14 lh-25px gray">
 
             <app-page-post-content [guid]=" pageCode.top_post " [post]=" companyInfo.topPost "
-            (edited)=" companyInfo.topPost = $event "></app-page-post-content>
+              (edited)=" companyInfo.topPost = $event "></app-page-post-content>
           </div>
 
         </ion-col>
@@ -44,13 +47,13 @@
     <div class="position-relative  mt-50px m-auto  ion-text-center max-w-600px  ">
 
       <div class="px-5">
-          <img class="position-absolute top left size-25px " src="/assets/img/icons/quote.png">
-        
-          <div class="company-info-bottom fs-18px">
-        
+        <img class="position-absolute top left size-25px " src="/assets/img/icons/quote.png">
+
+        <div class="company-info-bottom fs-18px">
+
           <app-page-post-content [guid]=" pageCode.bottom_post " [post]=" companyInfo.bottomPost "
             (edited)=" companyInfo.bottomPost = $event "></app-page-post-content>
-       
+
 
         </div>
         <img class="position-absolute bottom right size-15px " src="/assets/img/icons/quote2.png">

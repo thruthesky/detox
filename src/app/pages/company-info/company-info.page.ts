@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AppService } from 'src/app/services/app.service';
 import { Post } from 'modules/wordpress-api/services/wordpress-api.interface';
+import { PostCreatePage } from '../forum/post-create/post-create.page';
 
 @Component({
   selector: 'app-company-info',
@@ -13,13 +14,15 @@ export class CompanyInfoPage implements OnInit {
   name = 'circle';
 
   companyInfo = {
+    title : {} as Post,
     topPost : {} as Post,
     bottomPost : {} as Post
   };
 
   pageCode = {
     top_post : 'top-post',
-    bottom_post : 'bottom-post'
+    bottom_post : 'bottom-post',
+    title : 'title',
   };
 
 
@@ -36,6 +39,7 @@ export class CompanyInfoPage implements OnInit {
 
     this.a.wp.postGetIn( { guid: this.pageCode.top_post }  , this.companyInfo.topPost);
     this.a.wp.postGetIn( { guid: this.pageCode.bottom_post }  , this.companyInfo.bottomPost);
+    this.a.wp.postGetIn( { guid: 'title' }  , this.companyInfo.title);
 
    }
 
