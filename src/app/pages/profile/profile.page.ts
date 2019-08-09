@@ -45,11 +45,11 @@ export class ProfilePage implements OnInit {
   ) {
 
 
+
     // console.log(a.wp.getUserData());
 
     if (a.wp.getUserData()) {
       this.user = a.wp.getUserData();
-
       if (this.user.photoURL) {
         this.profilePhotoUrl = this.user.photoURL;
       }

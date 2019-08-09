@@ -22,7 +22,7 @@ export class PushNotificationsToAllUsersPage implements OnInit {
         return;
       }
       a.wp.postGet({ ID: params.get('ID'), autop: false }).subscribe(post => {
-        // consoe.log('post: ', post);
+        // console.log('post: ', post);
         this.title = post.post_title;
         this.body = post.post_content;
         this.url = 'https://7detox.co.kr/post/view/' + post.ID;

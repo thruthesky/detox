@@ -18,8 +18,7 @@ export class FirebaseService {
                 // consoe.log('user is null');
                 return;
             }
-
-            // consoe.log('user.eventType: ', user.eventType);
+            // console.log('user.eventType: ', user.eventType);
 
             if (this.token) {
                 wp.tokenUpdate(this.token).subscribe(res => {
@@ -48,9 +47,8 @@ export class FirebaseService {
      *
      */
     async saveNewTokenToBackend() {
-        // consoe.log(`save token:`, this.token);
+        // console.log(`save token:`, this.token);
 
-        //
         this.wp.tokenUpdate(this.token).subscribe(res => {
             // consoe.log('res: ', res);
         }, e => {
@@ -58,6 +56,7 @@ export class FirebaseService {
             alert('푸시 알림 토큰 등록 실패!');
         });
         this.wp.subscribeTopic('7detox', this.token).subscribe( res => {
+            // console.log('subscribe topic res: ', res);
             // consoe.log('subscribe topic res: ', res);
         }, e => {
             console.error(e);
@@ -121,7 +120,7 @@ export class FirebaseService {
         }
         this.afMessaging.messages
             .subscribe((res) => {
-                // consoe.log('webListenMessage::', res);
+                // console.log('webListenMessage::', res);
                 this.toastNotificationMessage(res['notification']);
             });
     }
