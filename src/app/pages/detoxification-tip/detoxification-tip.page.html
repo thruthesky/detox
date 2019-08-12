@@ -19,13 +19,13 @@
         <ion-col size="12" size-sm="6" size-md="4" *ngFor="let p of posts">
           <ion-card class="card border">
             <ion-img src="{{ p.files[0].url }}"></ion-img>
-            <ion-card-subtitle class="px-10px pt-2 fs-12">{{ p['string1'] }}</ion-card-subtitle>
+            <ion-card-subtitle class="px-10px pt-2 fs-12 ellipsis">{{ p['string1'] }}</ion-card-subtitle>
             <ion-card-header class="px-10px py-2">
-              <ion-card-title class="fs-16px green bold">{{ p.post_title }}</ion-card-title>
+              <ion-card-title class="fs-16px green bold ellipsis">{{ p.post_title }}</ion-card-title>
             </ion-card-header>
-            <ion-card-content class="px-10px fs-14">
+            <ion-card-content class="px-10px fs-14 ">
 
-              {{  p.post_content }}
+              <p>{{  p.post_content.substring(0 , 90) }} ...</p>  
 
               <p class="pt-4 fs-10 underline">{{ p['string2'] }}</p>
 

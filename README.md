@@ -28,6 +28,8 @@
 
 * Images in top banner in the home page  should be in 1920 px of width and 900 px of height for the best view.
 
+* Images in detoxification-tip page  should be in 400 px of width and 265 px of height for the best view.
+
 
 
 

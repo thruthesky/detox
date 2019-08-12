@@ -135,6 +135,7 @@
 
 .h-100px {
   height: 100px !important;
+  --height: 100px !important;
 }
 
 .lh-50px {
@@ -180,6 +181,11 @@
   text-overflow: ellipsis;
  
 }
+
+
+
+
+
 
 .pm-0 {
   padding: 0 !important;
