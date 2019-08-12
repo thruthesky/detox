@@ -4,6 +4,7 @@ import { PopoverController } from '@ionic/angular';
 import { AlarmSetPopoverComponent } from 'src/app/components/alarm-set-popover/alarm-set-popover.component';
 import { map } from 'rxjs/operators';
 import { Alarm } from 'src/app/services/interface';
+import { Post } from 'modules/wordpress-api/services/wordpress-api.interface';
 
 @Component({
   selector: 'app-alarm-list',
@@ -17,11 +18,15 @@ export class AlarmListPage implements OnInit {
 
   alarms: Alarm[] = [];
 
+  alarmsTitle = {} as Post;
+
   constructor(
     public a: AppService,
     public popoverController: PopoverController,
   ) {
     // this.onClickAlarmItem(null);
+    this.a.wp.postGetIn( { guid: 'alarmsTitle' }  , this.alarmsTitle);
+
   }
 
   ngOnInit() {

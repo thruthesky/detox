@@ -6,7 +6,7 @@
 
   <section *ngIf="a.isMobile">
     <ion-toolbar>
-      <ion-title class="fs-14 bold green" slot="start">표제표제표제표</ion-title>
+      <ion-title class="fs-14 bold green" slot="start">{{ alarmsTitle.post_title }}</ion-title>
       <ion-buttons slot="end" mode="md">
         <ion-button (click)="onClickArrow()" mode="md">
           <ion-icon slot="icon-only" name="{{ arrowIcon }}" mode="ios"></ion-icon>
@@ -14,12 +14,11 @@
       </ion-buttons>
     </ion-toolbar>
 
-    <div class="content" [ngClass]="{'collapsed': hide}">
+    <div class="position-relative content" [ngClass]="{'collapsed': hide}">
       <ion-text color="medium">
         <p class="px-20px pb-3 lh-25px">
-          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
-          standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to
-          make
+          <app-page-post-content [guid]=" 'alarmsTitle' " [post]=" alarmsTitle " (edited)=" alarmsTitle = $event ">
+          </app-page-post-content>
         </p>
       </ion-text>
     </div>
@@ -29,16 +28,18 @@
 
 
   <section *ngIf="a.isDesktop">
-
+   
     <ion-text color="green" text-center>
-      <h1 class="mb-0 pt-100px fs-32px">표제표제표제표</h1>
+      <h1 class="mb-0 pt-100px fs-32px">{{ alarmsTitle.post_title }}</h1>
     </ion-text>
 
     <div class="pt-5 pb-5 w-478px lh-25px">
-      <ion-text color="medium">
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
-        standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make
-      </ion-text>
+
+        <ion-text color="medium">
+          <app-page-post-content [guid]=" 'alarmsTitle' " [post]=" alarmsTitle " (edited)=" alarmsTitle = $event ">
+          </app-page-post-content>
+        </ion-text>
+
     </div>
 
 
@@ -46,9 +47,16 @@
 
 
   <!-- alarms -->
-  <section class="pb-5 md-pb-150px md-page-width md-no-border  border-top-gray">
+  <section class="pb-5 md-pb-150px md-page-width md-no-border  border-top-gray z-1000  ">
 
-    <ion-button (click)="onClickAlarmUpdate($event, null)">Create</ion-button>
+    <!-- <ion-button  (click)="onClickAlarmUpdate($event, null)">Create</ion-button> -->
+    <div class="ion-text-end">
+      <ion-button (click)="onClickAlarmUpdate($event, null)">
+        <ion-icon slot="icon-only" name="add"></ion-icon>
+      </ion-button>
+    </div>
+
+
 
     <ion-list *ngIf=" alarms?.length ">
       <ion-item class="md-mt-3 md-shadow-2 pointer" lines="none" *ngFor="let alarm of alarms">

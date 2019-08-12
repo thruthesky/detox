@@ -16,18 +16,18 @@
   <section class="page-width pb-100px">
     <ion-grid no-padding>
       <ion-row>
-        <ion-col size="12" size-sm="6" size-md="4" *ngFor="let item of [].constructor(10)">
+        <ion-col size="12" size-sm="6" size-md="4" *ngFor="let p of posts">
           <ion-card class="card border">
-            <ion-img src="/assets/img/post-image.png"></ion-img>
-            <ion-card-subtitle class="px-10px pt-2 fs-12">제목멋진제목멋진</ion-card-subtitle>
+            <ion-img src="{{ p.files[0].url }}"></ion-img>
+            <ion-card-subtitle class="px-10px pt-2 fs-12 ellipsis">{{ p['string1'] }}</ion-card-subtitle>
             <ion-card-header class="px-10px py-2">
-              <ion-card-title class="fs-16px green bold">제목멋진제목멋진</ion-card-title>
+              <ion-card-title class="fs-16px green bold ellipsis">{{ p.post_title }}</ion-card-title>
             </ion-card-header>
-            <ion-card-content class="px-10px fs-14">
+            <ion-card-content class="px-10px fs-14 ">
 
-              멋진 제목멋진 제목멋진 제목멋진 제목멋진 제목멋진 제목멋진 제목멋진 제목멋진 제목멋진 제목멋진 제목 멋진 제목멋진 제목
+              <p>{{  p.post_content.substring(0 , 90) }} ...</p>  
 
-              <p class="pt-4 fs-10 underline">2019/01/01</p>
+              <p class="pt-4 fs-10 underline">01/01/19</p>
 
               <ion-button class="position-absolute bottom right m-0 z-1000 no-box-shadow no-border-radius "
                 color="light" routerLink="/detoxification-tip-detail">

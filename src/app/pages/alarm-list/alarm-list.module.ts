@@ -9,6 +9,7 @@ import { AlarmListPage } from './alarm-list.page';
 import { HeaderModule } from 'src/app/components/header/header.module';
 import { AlarmSetPopoverModule } from 'src/app/components/alarm-set-popover/alarm-set-popover.module';
 import { DesktopHomeFooterModule } from 'src/app/components/desktop-home-footer/desktop-home-footer.module';
+import { PagePostContentModule } from 'src/app/components/page-post-content/page-post-content.module';
 
 const routes: Routes = [
   {
@@ -25,7 +26,8 @@ const routes: Routes = [
     RouterModule.forChild(routes),
     HeaderModule,
     AlarmSetPopoverModule,
-    DesktopHomeFooterModule
+    DesktopHomeFooterModule,
+    PagePostContentModule,
   ],
   declarations: [AlarmListPage]
 })
