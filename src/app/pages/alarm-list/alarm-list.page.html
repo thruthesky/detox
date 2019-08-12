@@ -46,9 +46,16 @@
 
 
   <!-- alarms -->
-  <section class="pb-5 md-pb-150px md-page-width md-no-border  border-top-gray">
+  <section class="pb-5 md-pb-150px md-page-width md-no-border  border-top-gray z-1000  ">
 
-    <ion-button (click)="onClickAlarmUpdate($event, null)">Create</ion-button>
+    <!-- <ion-button  (click)="onClickAlarmUpdate($event, null)">Create</ion-button> -->
+    <div class="ion-text-end">
+      <ion-button  (click)="onClickAlarmUpdate($event, null)">
+        <ion-icon slot="icon-only" name="add"></ion-icon>
+      </ion-button>
+    </div>
+
+
 
     <ion-list *ngIf=" alarms?.length ">
       <ion-item class="md-mt-3 md-shadow-2 pointer" lines="none" *ngFor="let alarm of alarms">
