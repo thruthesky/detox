@@ -5,14 +5,14 @@
 
 <ion-content>
 
-  <section class="section-top-width">
+  <section class="section-top-width" *ngIf=" post ">
 
     <ion-text color="green">
-      <h1 class="title"> 표제 표제표제 </h1>
+      <h1 class="title">{{ post.post_title }}</h1>
     </ion-text>
 
     <ion-text color="medium">
-      <p class="pt-30px px-20px md-text-center">표제표제표제표제표제표제표제표제표제표제표제표제표제표제표제표제표제</p>
+      <p class="pt-30px px-20px md-text-center"> {{ post.post_content }}</p>
     </ion-text>
 
     <ion-grid class="px-20px pt-5">
