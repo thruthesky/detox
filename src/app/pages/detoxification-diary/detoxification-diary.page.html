@@ -39,7 +39,7 @@
         <ion-col class="xs-px-2 xs-py-1 md-pt-50px" size="12" size-md="6" size-lg="4" no-padding
           *ngFor="let p of posts">
 
-          <ion-card class="card" *ngIf="a.isDesktop" button>
+          <ion-card class="card" *ngIf="a.isDesktop" button (click)=" onEdit( p ) ">
 
             <img class="diary-image" src="{{ p.files[0].url }}" alt="image_diary">
             <ion-card-content no-padding>

@@ -122,6 +122,34 @@ export class DetoxificationDiaryPage implements OnInit {
   }
 
   
+  updatePost(post: Post) {
+    const i = this.posts.findIndex(v => v.ID === post.ID);
+    if (i === -1) {
+      return this.ion.error({ errcode: '-510', errstring: this.wp.t('postNotFoundToUpdateOnPostList') });
+    }
+    this.posts.splice(i, 1, post);
+  }
+
+  async onEdit(post: Post) {
+    // console.log('Going to edit post: ', post);
+    const modal = await this.modalController.create({
+      component: IonPostEditComponent,
+      componentProps: {
+        post: post,
+        header: {
+          color: 'primary',
+          title: this.wp.t('titleEditPost')
+        }
+      }
+    });
+    modal.present();
+    const res = await modal.onWillDismiss();
+    if (res && res.data) {
+      //console.log('post updated', res.data);
+      this.pre(res.data);
+      this.updatePost(res.data);
+    }
+  }
 
 
 
