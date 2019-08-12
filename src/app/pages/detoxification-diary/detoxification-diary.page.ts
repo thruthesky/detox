@@ -151,6 +151,20 @@ export class DetoxificationDiaryPage implements OnInit {
     }
   }
 
+  async onDelete(post: Post) {
+    const sub = this.wp.postDelete(post.ID).subscribe(res => {
+      //console.log('post delete: ', res);
+      this.deletePost(res.ID);
+    }, e => this.ion.error(e));
+    this.subscriptions.add(sub);
+  }
 
+  deletePost(ID: string) {
+    const i = this.posts.findIndex(v => v.ID === ID);
+    if (i === -1) {
+      return this.ion.error({ errcode: '-510', errstring: this.wp.t('postNotFoundToDeleteOnPostList') });
+    }
+    this.posts.splice(i, 1);
+  }
 
 }
