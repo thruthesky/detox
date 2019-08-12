@@ -14,7 +14,7 @@
       </ion-buttons>
     </ion-toolbar>
 
-    <div class="content" [ngClass]="{'collapsed': hide}">
+    <div class="position-relative content" [ngClass]="{'collapsed': hide}">
       <ion-text color="medium">
         <p class="px-20px pb-3 lh-25px">
           <app-page-post-content [guid]=" 'alarmsTitle' " [post]=" alarmsTitle " (edited)=" alarmsTitle = $event ">
@@ -28,16 +28,18 @@
 
 
   <section *ngIf="a.isDesktop">
-
+   
     <ion-text color="green" text-center>
       <h1 class="mb-0 pt-100px fs-32px">{{ alarmsTitle.post_title }}</h1>
     </ion-text>
 
     <div class="pt-5 pb-5 w-478px lh-25px">
-      <ion-text color="medium">
-        <app-page-post-content [guid]=" 'alarmsTitle' " [post]=" alarmsTitle " (edited)=" alarmsTitle = $event ">
-        </app-page-post-content>
-      </ion-text>
+
+        <ion-text color="medium">
+          <app-page-post-content [guid]=" 'alarmsTitle' " [post]=" alarmsTitle " (edited)=" alarmsTitle = $event ">
+          </app-page-post-content>
+        </ion-text>
+
     </div>
 
 
@@ -49,7 +51,7 @@
 
     <!-- <ion-button  (click)="onClickAlarmUpdate($event, null)">Create</ion-button> -->
     <div class="ion-text-end">
-      <ion-button  (click)="onClickAlarmUpdate($event, null)">
+      <ion-button (click)="onClickAlarmUpdate($event, null)">
         <ion-icon slot="icon-only" name="add"></ion-icon>
       </ion-button>
     </div>
