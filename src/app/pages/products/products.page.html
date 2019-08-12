@@ -8,51 +8,51 @@
     <h1 class="pt-100px pb-5 ion-text-center fs-32px bold">표제표제표제</h1>
   </ion-text>
 
-  <div class="grid page-width">
-    <div class="box box1 position-relative"
-      style="background: url(/assets/img/detox.jpg) 0 0 /100% 87% no-repeat !important;">
+  <div class="grid page-width" >
+    <div class="box box1 position-relative cover"
+    [style.background]="'url(' + posts[0].files[0].url + ')'" *ngIf="posts[0] &&  posts[0].files.length">
 
 
       <div class="position-absolute h-100 w-100  z-1000">
         <div class="card-content">
-          <h2 class="mt-1 fs-16px bold" *ngIf="a.isMobile">Product Name</h2>
-          <p class="fs-12">Product Details</p>
-          <h2 class="mt-1 fs-20px bold" *ngIf="a.isDesktop">Product Name</h2>
+          <h2 class="mt-1 fs-16px bold ellipsis" *ngIf="a.isMobile">{{ posts[0].post_title }}</h2>
+          <p class="fs-12 ellipsis">{{ posts[0].post_content }}</p>
+          <h2 class="mt-1 fs-20px bold ellipsis" *ngIf="a.isDesktop">{{ posts[0].post_title }}</h2>
         </div>
       </div>
     </div>
 
 
     <div class="box box2 position-relative cover"
-      style="background: url(/assets/img/detox.jpg);">
+    [style.background]="'url(' + posts[1].files[0].url + ')'" *ngIf="posts[1] &&  posts[1].files.length">
       <div class="position-absolute h-100 w-100  z-1000">
         <div class="card-content">
-          <h2 class="mt-1 fs-16px bold" *ngIf="a.isMobile">Product isMobile</h2>
-          <p class="fs-12">Product Details</p>
-          <h2 class="mt-1 fs-20px bold" *ngIf="a.isDesktop">Product Desktop</h2>
+          <h2 class="mt-1 fs-16px bold ellipsis" *ngIf="a.isMobile">{{ posts[1].post_title }}</h2>
+          <p class="fs-12 ellipsis">{{ posts[1].post_content }}</p>
+          <h2 class="mt-1 fs-20px bold ellipsis" *ngIf="a.isDesktop">{{ posts[1].post_title }}</h2>
         </div>
       </div>
     </div>
 
-    <div class="box box3 position-relative"
-      style="background: url(/assets/img/detox.jpg) 0 0 /100% 74% no-repeat !important;">
+    <div class="box box3 position-relative cover"
+    [style.background]="'url(' + posts[2].files[0].url + ')'" *ngIf="posts[2] &&  posts[2].files.length">
       <div class="position-absolute h-100 w-100  z-1000">
 
         <div class="card-content">
-          <h2 class="mt-1 fs-16px bold" *ngIf="a.isMobile">Product Name</h2>
-          <p class="fs-12">Product Details</p>
-          <h2 class="mt-1 fs-20px bold" *ngIf="a.isDesktop">Product Name</h2>
+          <h2 class="mt-1 fs-16px bold ellipsis " *ngIf="a.isMobile">{{ posts[2].post_title }}</h2>
+          <p class="fs-12 ellipsis">{{ posts[2].post_content }}</p>
+          <h2 class="mt-1 fs-20px bold ellipsis" *ngIf="a.isDesktop">{{ posts[2].post_title }}</h2>
         </div>
       </div>
     </div>
 
     <div class="box box4 position-relative"
-      style="background: url(/assets/img/detox.jpg) 0 0 /100% 74% no-repeat !important;">
+    [style.background]="'url(' + posts[3].files[0].url + ')'" *ngIf="posts[3] &&  posts[3].files.length">
       <div class="position-absolute h-100 w-100  z-1000">
         <div class="card-content">
-          <h2 class="mt-1 fs-16px bold" *ngIf="a.isMobile">Product Name</h2>
-          <p class="fs-12">Product Details</p>
-          <h2 class="mt-1 fs-20px bold" *ngIf="a.isDesktop">Product Name</h2>
+          <h2 class="mt-1 fs-16px bold ellipsis" *ngIf="a.isMobile">{{ posts[3].post_title }}</h2>
+          <p class="fs-12 ellipsis">{{ posts[3].post_content }}</p>
+          <h2 class="mt-1 fs-20px bold ellipsis" *ngIf="a.isDesktop">{{ posts[3].post_title }}</h2>
         </div>
       </div>
     </div>
@@ -70,9 +70,9 @@
           <ion-card class="card xs-mb-0 mr-0 md-ml-20px">
             <app-ion-file-display [post]=" post "></app-ion-file-display>
             <ion-card-content class="white bg-color">
-              <h2 class="fs-16px bold" *ngIf="a.isMobile">{{ post.post_title }}</h2>
-              <p class="fs-12">{{ post.post_content }}</p>
-              <h2 class="fs-20px bold" *ngIf="a.isDesktop">{{ post.post_title }}</h2>
+              <h2 class="fs-16px bold ellipsis" *ngIf="a.isMobile">{{ post.post_title }}</h2>
+              <p class="fs-12 ellipsis">{{ post.post_content }}</p>
+              <h2 class="fs-20px bold ellipsis" *ngIf="a.isDesktop">{{ post.post_title }}</h2>
             </ion-card-content>
           </ion-card>
 
