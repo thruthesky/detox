@@ -37,7 +37,7 @@ export class AlarmSetPopoverComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log('ngOnInit(): ', this.alarm);
+    // console.log('ngOnInit(): ', this.alarm);
     if (this.alarm) {
 
       const days = [];
@@ -77,9 +77,9 @@ export class AlarmSetPopoverComponent implements OnInit {
 
     console.log('values', this.form.value);
     if (this.form.invalid) {
-      console.log('errors', this.form.errors);
+      // console.log('errors', this.form.errors);
       for (const k of Object.keys(this.form.value)) {
-        console.log('errors:', this.form.get(k).errors);
+        // console.log('errors:', this.form.get(k).errors);
         if (this.form.get(k).errors) {
           this.a.alert({ message: this.a.t({ en: `Please input the information of ${k}.`, ko: `${k} 정보가 입력되지 않았습니다.` }) });
           return;
@@ -105,7 +105,7 @@ export class AlarmSetPopoverComponent implements OnInit {
       minute: this.form.get('minute').value
     };
     this.a.wp.post(req).pipe(map(r => r.data)).subscribe(res => {
-      console.log('alramCreate: ', res);
+      // console.log('alramCreate: ', res);
       this.pop.dismiss(res, 'create');
     }, e => this.a.error(e));
   }
@@ -120,7 +120,7 @@ export class AlarmSetPopoverComponent implements OnInit {
       minute: this.form.get('minute').value
     };
     this.a.wp.post(req).pipe(map(r => r.data)).subscribe(res => {
-      console.log('alramUpdate: ', res);
+      // console.log('alramUpdate: ', res);
       this.pop.dismiss(res, 'update');
     }, e => this.a.error(e));
   }

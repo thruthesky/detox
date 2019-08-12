@@ -26,7 +26,7 @@ export class AlarmListPage implements OnInit {
 
   ngOnInit() {
     this.a.wp.post({ method: 'alarmList' }).pipe(map(r => r.data)).subscribe(res => {
-      console.log('alarmList;', res);
+      // console.log('alarmList:', res);
       this.alarms = res as any;
     }, e => this.a.error(e));
   }

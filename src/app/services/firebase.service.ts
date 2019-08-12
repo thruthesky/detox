@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { AngularFireMessaging } from '@angular/fire/messaging';
 import { Router } from '@angular/router';
 import { WordpressApiService } from 'modules/wordpress-api/services/wordpress-api.service';
+import {ComponentService} from "./component.service";
 
 
 @Injectable()
@@ -11,7 +12,8 @@ export class FirebaseService {
     constructor(
         private afMessaging: AngularFireMessaging,
         public router: Router,
-        public wp: WordpressApiService
+        public wp: WordpressApiService,
+        public cs: ComponentService
     ) {
         wp.userChange.subscribe(user => {
             if (!user) {
@@ -103,14 +105,38 @@ export class FirebaseService {
         if (!message || !message.click_action) {
             return;
         }
-        // consoe.log(`toast notification`, message);
+
+        // console.log(`toast notification`, message);
+        this.cs.toast({
+            message: message['title'],
+            duration: 12000,
+            buttons: [
+                {
+                    side: 'start',
+                    icon: 'notifications',
+                    handler: () => {
+                        // console.log('icon:notifications::');
+                        this.onClick_Action(message);
+                    }
+                },
+                {
+                    text: 'View',
+                    role: 'view',
+                    handler: () => {
+                        // console.log('role:view::');
+                        this.onClick_Action(message);
+                    }
+                }
+            ]
+        });
     }
 
     onClick_Action(message) {
         if (!message.click_action) {
             return;
         }
-        // consoe.log(`navigate notification`, message);
+        const clickAction = message.click_action.split('/').pop();
+        this.router.navigateByUrl(clickAction);
     }
 
 
