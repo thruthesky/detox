@@ -28,10 +28,16 @@
     </ion-button>
 
 
-    <ion-button>
+    <ion-button (click)=" hide = !hide ">
       <ion-icon slot="icon-only" name="search"></ion-icon>
     </ion-button>
   </ion-buttons>
+ 
+  <div class="mobile-width" *ngIf=" !hide ">
+    <ion-searchbar placeholder="Filter Pizza"  [debounce]="250"></ion-searchbar>
+  </div>
+
+
 
 </ion-toolbar>
 

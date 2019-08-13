@@ -11,6 +11,9 @@ export class MobileHeaderComponent implements OnInit {
 
   @Input() title: string;
   @Input() homeIcon: boolean;
+
+  hide = true;
+
   constructor(
     public a: AppService
   ) { }
