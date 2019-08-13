@@ -29,7 +29,7 @@ const routes: Routes = [
   { path: 'detoxification-tip', loadChildren: () => import('./pages/detoxification-tip/detoxification-tip.module').then(m => m.DetoxificationTipPageModule) },
   { path: 'profile', loadChildren: () => import('./pages/profile/profile.module').then(m => m.ProfilePageModule) },
   { path: 'detoxification-recipe-item/:ID', loadChildren: () => import('./pages/detoxification-recipe-item/detoxification-recipe-item.module').then(m => m.DetoxificationRecipeItemPageModule) },
-  { path: 'detoxification-tip-detail', loadChildren: () => import('./pages/detoxification-tip-detail/detoxification-tip-detail.module').then(m => m.DetoxificationTipDetailPageModule) },
+  { path: 'detoxification-tip-detail/:ID', loadChildren: () => import('./pages/detoxification-tip-detail/detoxification-tip-detail.module').then(m => m.DetoxificationTipDetailPageModule) },
   { path: 'home-training-item', loadChildren: () => import('./pages/home-training-item/home-training-item.module').then(m => m.HomeTrainingItemPageModule) },
   { path: 'push-notifications-to-all-users/:ID', loadChildren: './pages/admin/push-notifications-to-all-users/push-notifications-to-all-users.module#PushNotificationsToAllUsersPageModule' },
   { path: 'admin', loadChildren: './pages/admin/admin.module#AdminPageModule' },
