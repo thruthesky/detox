@@ -29,9 +29,8 @@ export class DetoxificationRecipeItemPage implements OnInit {
      
         // console.log(this.post);
         this.posts = {};
-        for (let i = 0; i < 7; i++) {
+        for (let i = 0; i < 2; i++) {
           const guid = `${this.post.ID}-${i}`;
-        
           this.posts[guid] = {} as any;
           this.a.wp.postGetIn({ guid: guid }, this.posts[guid]);
         }
@@ -46,8 +45,12 @@ export class DetoxificationRecipeItemPage implements OnInit {
   ngOnInit() {
   }
 
-  steps() : object {
-    return Object.entries(this.posts).splice(2).map(entry => entry[1]);
-  }
+  // steps() : object {
+  //   // console.log(Object.entries(this.posts).splice(2).map(entry => entry[1])) ;
+  //   return Object.entries(this.posts).splice(2).map(entry => entry[1]);
+
+
+
+  // }
 
 }

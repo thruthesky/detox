@@ -52,45 +52,41 @@
     </ion-grid>
   </section>
 
-  <section class="xs-px-20px pt-30px pb-5 section-bottom-width">
+  <section class="xs-px-20px pt-30px pb-5 section-bottom-width" *ngIf="post">
 
     <ion-grid no-padding>
-      
-        <ion-row class="position-relative pt-3 md-mt-50px" *ngFor=" let item of steps() | keyvalue; let i = index ">
+
+      <ion-row class="position-relative pt-3 md-mt-50px" *ngFor=" let item of post.comments; let i = index ">
+
+        <ion-col class="flex-center pl-3" push-sm="7" size="12" size-sm="5" *ngIf="item.files[0].url">
+
+            <img  class="border-radius-5px" [src]="item.files[0].url" alt="step_image"  >
+
+        </ion-col>
 
 
 
-          <ion-col class="flex-center pl-3" push-sm="7" size="12" size-sm="5" *ngIf="item.value"  >
+        <ion-col class="pr-2" pull-sm="5" size="2" size-sm="1" no-padding>
 
-            <!-- <img class="border-radius-5px" src=" {{   item.value.files[0].url }}   " > -->
-        
-          </ion-col>
+          <div class="mt-1 float-right size-30px  flex-center fs-18px lh-18px radius-15px  white"
+            style="background-color:#74b243">
+            {{   i + 1 }}
+          </div>
 
+        </ion-col>
 
+        <ion-col size="10" pull-sm="5" size-sm="6" no-padding>
 
-          <ion-col class="pr-2" pull-sm="5" size="2" size-sm="1" no-padding *ngIf="item.value?.post_content">
-
-            <div class="mt-1 float-right size-30px  flex-center fs-18px lh-18px radius-15px  white"
-              style="background-color:#74b243">
-              {{   i + 1 }}
-            </div>
-
-          </ion-col>
-
-          <ion-col size="10" pull-sm="5" size-sm="6" no-padding>
-
-            <div class="fs-22px dark-gray-2">
-              <app-page-post-content [guid]="   post.ID + '-' +   (i*1 + 2) " [post]="  item.value "
-                (edited)=" item.value = $event ">
-              </app-page-post-content>
-            </div>
+          <div class="fs-22px dark-gray-2">
+              {{ item.comment_content }}
+          </div>
 
 
-          </ion-col>
+        </ion-col>
 
 
 
-        </ion-row>
+      </ion-row>
 
     </ion-grid>
 
