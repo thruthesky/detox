@@ -12,41 +12,39 @@
         <h1 class="title">{{ post.post_title }}</h1>
       </ion-text>
 
-      <div class=" px-20px md-text-center">
-        <app-page-post-content [guid]=" post.guid " [post]=" post " (edited)=" post = $event ">
-        </app-page-post-content>
-      </div>
+      <div class=" px-20px md-text-center" [innerHTML]=" post.post_content "></div>
+
     </div>
 
 
-    <ion-grid class="px-20px pt-5">
+    <ion-grid class="px-20px pt-5" *ngIf="posts">
+
+
       <ion-row>
         <ion-col class="flex-center md-pr-10px  lg-pr-60px" size="12" size-md="5">
-          <ion-img class="w-375px " src="{{ post.files[0].url }}"></ion-img>
+          <ion-img class="w-375px " src="{{ post.files[0].url }}" *ngIf=" post.files[0].url "></ion-img>
         </ion-col>
 
         <ion-col class="md-pl-10px lg-pl-60px" size="12" size-md="7">
           <ion-text color="green">
-            <p class="pt-4 fs-16px md-fs-38px">Excepteur sint lorem</p>
+            <p class="pt-4 fs-16px md-fs-38px">{{ posts[post.ID + '-' + 0].post_title }}</p>
           </ion-text>
 
-          <p class="pt-2 md-pt-4 fs-14 lh-22px gray">
-            Awesome textAwesome textAwesome textAwesome textAwesome textAwesome textAwesome textAwesome textAwesome
-            textAwesome textAwesome textAwesome textAwesome textAwesome textAwesome textAwesome textAwesome
-            textAwesome textAwesome textAwesome textAwesome textAwesome text textAwesome textAwesome textAwesome
-            textAwesome textAwesome text
-          </p>
+          <div class="position-relative pt-2 md-pt-4 fs-14 lh-22px gray">
+            <app-page-post-content [guid]=" post.ID + '-' + 0 " [post]=" posts[post.ID + '-' + 0] "
+              (edited)=" posts[post.ID + '-' + 0] = $event ">
+            </app-page-post-content>
+          </div>
 
           <div class="pt-3 lg-pt-50px">
 
             <ion-img class="size-15px" src="/assets/img/icons/quote_green.png"></ion-img>
 
-            <ion-text color="green">
-              <p class=" pt-4 fs-18px xs-text-center lh-25px fw-300 italize">
-                Duis aute textAwesome textAwesome textAwesome textAwesome textAwesome textAwesome textAwesome text
-                Awesome textAwesome textAwesome textAwesome textAwesome textAwesome textAwesome textAwesome textAwesome
-              </p>
-            </ion-text>
+            <div class="position-relative pt-4 fs-18px xs-text-center lh-25px fw-300 italize green">
+              <app-page-post-content [guid]=" post.ID + '-' + 1 " [post]=" posts[post.ID + '-' + 1] "
+                (edited)=" posts[post.ID + '-' + 1] = $event ">
+              </app-page-post-content>
+            </div>
           </div>
 
         </ion-col>
