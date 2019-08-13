@@ -4,14 +4,13 @@
 
 <ion-content>
 
-  <div class="page-width-md position-relative">
-    <ion-text color="green">
-      <h1 class="title ion-text-center ">{{ tipTitle.post_title }}</h1>
-    </ion-text>
-
-    <app-page-post-content [guid]=" 'tipTitle' " [post]=" tipTitle " (edited)=" tipTitle = $event ">
-    </app-page-post-content>
+  <div class="page-width-md mt-5 flex-center">
+      <h1 class="normal fs-lg green">
+        {{ tipTitle.post_title }}
+      </h1>
+      <app-admin-page-edit-button class="d-block ml-5" [guid]=" guid " (edited)=" tipTitle = $event "></app-admin-page-edit-button>
   </div>
+
 
 
   <section class="page-width p-20px md-pb-150px" *ngIf=" post ">

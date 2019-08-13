@@ -23,6 +23,7 @@ export class DetoxificationTipPage implements OnInit {
   posts: Posts = [];
 
 
+  guid = 'tipTitle';
   page = 1;
   posts_per_page = 10;
   error = '';
@@ -33,17 +34,17 @@ export class DetoxificationTipPage implements OnInit {
     public wp: WordpressApiService,
     private ion: IonService,
     private domSanitizer: DomSanitizer,
-    ) {
-    this.a.wp.postGetIn( { guid: 'tipTitle' }  , this.tipTitle);
-    
-   }
+  ) {
+    this.a.wp.postGetIn({ guid: this.guid }, this.tipTitle);
 
-   reset() {
+  }
+
+  reset() {
     this.posts = [];
     this.error = '';
     this.page = 1;
   }
-   
+
 
 
   ngOnInit() {
@@ -55,7 +56,7 @@ export class DetoxificationTipPage implements OnInit {
 
     this.loadPage();
 
-    console.log(this.posts,'this posts');
+    console.log(this.posts, 'this posts');
 
   }
 
@@ -75,7 +76,7 @@ export class DetoxificationTipPage implements OnInit {
     this.subscriptions.add(sub);
   }
 
-  
+
   displayPosts(posts: Posts) {
     if (!posts || !posts.length) {
       return;

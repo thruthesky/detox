@@ -4,12 +4,9 @@
 
 <ion-content>
 
-  <div class="position-relative page-width">
-    <ion-text color="green">
-      <h1 class="title ion-text-center">{{ tipTitle?.post_title }}</h1>
-    </ion-text>
-    <app-page-post-content [guid]=" 'tipTitle' " [post]=" tipTitle " (edited)=" tipTitle = $event ">
-    </app-page-post-content>
+  <div class="page-width mt-5 flext-center">
+    <h1 class="normal green fs-lg ion-text-center">{{ tipTitle?.post_title }}</h1>
+    <app-admin-page-edit-button class="d-block ml-5" [guid]=" guid " (edited)=" tipTitle = $event "></app-admin-page-edit-button>
   </div>
 
 
@@ -25,7 +22,7 @@
             </ion-card-header>
             <ion-card-content class="px-10px fs-14 ">
 
-              <p>{{  p.post_content.substring(0 , 90) }} ...</p>  
+              <p>{{  p.post_content.substring(0 , 90) }} ...</p>
 
               <p class="pt-4 fs-10 underline">{{ p.short_date_time }}</p>
 
