@@ -21,17 +21,17 @@
       <ion-row class="xs-pt-4 pb-150px ion-no-padding">
 
         <ion-col class="md-px-4 pt-60px ion-align-self-center ion-no-padding pointer" size="12" size-md="6"
-          *ngFor="let x of [].constructor(6)" routerLink="/detoxification-recipe-item">
+          *ngFor="let p of posts" routerLink="/detoxification-recipe-item/{{ p.ID }}">
 
           <div class="photo position-relative">
-            <ion-img src="/assets/img/aboutdetox3.jpg"></ion-img>
-            <h1 class="title-mobile fs-22px  green">TITLE</h1>
+            <ion-img src="{{ p.files[0].url }}" *ngIf=" p.files[0].url "></ion-img>
+            <h1 class="title-mobile fs-22px  green">{{ p.post_title }}</h1>
           </div>
 
           <div class="pt-2 fs-14 lh-20px medium">
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+           {{ p.post_content }}
           </div>
-
+          
         </ion-col>
 
       </ion-row>

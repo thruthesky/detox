@@ -5,21 +5,24 @@
 
 <ion-content>
 
-  <section class="section-top-width">
+  <section class="section-top-width" *ngIf=" post ">
 
-    <ion-text color="green">
-      <h1 class="title"> 표제 표제표제 </h1>
-    </ion-text>
+    <div class="position-relative page-width-md">
+      <ion-text color="green">
+        <h1 class="title">{{ post.post_title }}</h1>
+      </ion-text>
 
-    <ion-text color="medium">
-      <p class="pt-30px px-20px md-text-center">표제표제표제표제표제표제표제표제표제표제표제표제표제표제표제표제표제</p>
-    </ion-text>
+      <div class=" px-20px md-text-center">
+        <app-page-post-content [guid]=" post.guid " [post]=" post " (edited)=" post = $event ">
+        </app-page-post-content>
+      </div>
+    </div>
+
 
     <ion-grid class="px-20px pt-5">
       <ion-row>
-
         <ion-col class="flex-center md-pr-10px  lg-pr-60px" size="12" size-md="5">
-          <ion-img class="w-375px " src="/assets/img/recipe_image_sample.png"></ion-img>
+          <ion-img class="w-375px " src="{{ post.files[0].url }}"></ion-img>
         </ion-col>
 
         <ion-col class="md-pl-10px lg-pl-60px" size="12" size-md="7">

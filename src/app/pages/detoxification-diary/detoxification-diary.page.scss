@@ -21,3 +21,21 @@
 .color-gray {
     color: #ddd;
 }
+
+.diary-image {
+    @media all and (min-width: 768px) {
+        height: 227px !important;
+        width: 100% !important;
+        object-fit: cover !important;
+    }
+
+    @media all and (max-width:768px) {
+
+        height: 400px !important;
+        width: 100% !important;
+        object-fit: cover !important;
+    }
+
+
+}
+
