@@ -47,11 +47,7 @@ export class DetoxificationRecipeItemPage implements OnInit {
   }
 
   steps() : object {
-
-
     return Object.entries(this.posts).splice(2).map(entry => entry[1]);
   }
-
-
 
 }
