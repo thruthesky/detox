@@ -20,6 +20,7 @@ export class DetoxificationRecipeItemPage implements OnInit {
     activatedRoute.paramMap.subscribe(params => {
       this.a.wp.postGet({ ID: params.get('ID') }).subscribe(post => {
         this.post = post;
+        console.log(this.post);
       }, e => this.a.error(e));
     });
   
