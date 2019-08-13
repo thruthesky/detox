@@ -16,7 +16,7 @@ export class DetoxificationRecipeItemPage implements OnInit {
 
   posts: { [key: string]: Post } = {};
 
-  sample = {} as Post;
+  recipeTitle = {} as Post;
 
 
   constructor(
@@ -27,9 +27,9 @@ export class DetoxificationRecipeItemPage implements OnInit {
       this.a.wp.postGet({ ID: params.get('ID') }).subscribe(post => {
         this.post = post;
      
-        // console.log(this.post);
+        console.log(this.post);
         this.posts = {};
-        for (let i = 0; i < 2; i++) {
+        for (let i = 0; i < 1; i++) {
           const guid = `${this.post.ID}-${i}`;
           this.posts[guid] = {} as any;
           this.a.wp.postGetIn({ guid: guid }, this.posts[guid]);
@@ -37,6 +37,7 @@ export class DetoxificationRecipeItemPage implements OnInit {
       }, e => this.a.error(e));
     });
 
+    this.a.wp.postGetIn( { guid: 'recipeTitle' }  , this.recipeTitle);
  
   
 
