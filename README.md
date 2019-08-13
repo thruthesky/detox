@@ -16,7 +16,7 @@
 
 * Images in about detoxification page  should be in 360 px of width and 360 px of height for the best view.
 
-* Images in detoxification diary page  should be in 360 px of width and 236 px of height for the best view.
+* Images in detoxification diary page  should be in 500 px of width and 355 px of height for the best view.
 
 * Images in how-to-detox-my-body page  should be in 360 px of width and 360 px of height for the best view.
 
@@ -29,6 +29,9 @@
 * Images in top banner in the home page  should be in 1920 px of width and 900 px of height for the best view.
 
 * Images in detoxification-tip page  should be in 400 px of width and 265 px of height for the best view.
+
+
+* Images in detoxification-recipe-item page in steps  should be in 250 px of width and 135 px of height for the best view.
 
 
 

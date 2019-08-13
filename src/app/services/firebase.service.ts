@@ -120,7 +120,7 @@ export class FirebaseService {
                     }
                 },
                 {
-                    text: 'View',
+                    text: '보기',
                     role: 'view',
                     handler: () => {
                         // console.log('role:view::');

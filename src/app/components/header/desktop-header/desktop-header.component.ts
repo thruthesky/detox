@@ -10,6 +10,9 @@ import { MobileSidemenuComponent } from '../mobile-sidemenu/mobile-sidemenu.comp
 })
 export class DesktopHeaderComponent implements OnInit {
 
+
+  hide = true;
+
   constructor(
     public a: AppService,
     public popoverController: PopoverController

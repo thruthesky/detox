@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 
 import { DetoxificationTipDetailPage } from './detoxification-tip-detail.page';
 import { HeaderModule } from 'src/app/components/header/header.module';
+import { PagePostContentModule } from 'src/app/components/page-post-content/page-post-content.module';
 
 const routes: Routes = [
   {
@@ -21,7 +22,8 @@ const routes: Routes = [
     FormsModule,
     IonicModule,
     RouterModule.forChild(routes),
-    HeaderModule
+    HeaderModule,
+    PagePostContentModule,
   ],
   declarations: [DetoxificationTipDetailPage]
 })

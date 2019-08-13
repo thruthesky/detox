@@ -1,5 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { AppService } from 'src/app/services/app.service';
+import { Post, Posts } from 'modules/wordpress-api/services/wordpress-api.interface';
+import { ActivatedRoute } from '@angular/router';
+import { $ } from 'protractor';
 
 @Component({
   selector: 'app-detoxification-recipe-item',
@@ -8,9 +11,43 @@ import { AppService } from 'src/app/services/app.service';
 })
 export class DetoxificationRecipeItemPage implements OnInit {
 
-  constructor(public a: AppService) { }
+
+  post:Post;
+
+  posts: { [key: string]: Post } = {};
+
+  sample = {} as Post;
+
+
+  constructor(
+    public a: AppService,
+    public activatedRoute: ActivatedRoute
+    ) { 
+    activatedRoute.paramMap.subscribe(params => {
+      this.a.wp.postGet({ ID: params.get('ID') }).subscribe(post => {
+        this.post = post;
+     
+        // console.log(this.post);
+        this.posts = {};
+        for (let i = 0; i < 7; i++) {
+          const guid = `${this.post.ID}-${i}`;
+        
+          this.posts[guid] = {} as any;
+          this.a.wp.postGetIn({ guid: guid }, this.posts[guid]);
+        }
+      }, e => this.a.error(e));
+    });
+
+ 
+  
+
+  }
 
   ngOnInit() {
+  }
+
+  steps() : object {
+    return Object.entries(this.posts).splice(2).map(entry => entry[1]);
   }
 
 }
