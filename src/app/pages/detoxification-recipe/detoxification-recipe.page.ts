@@ -51,7 +51,7 @@ export class DetoxificationRecipePage implements OnInit {
     }
 
     this.loadPage();
-
+    console.log(this.posts);
    
   }
 
