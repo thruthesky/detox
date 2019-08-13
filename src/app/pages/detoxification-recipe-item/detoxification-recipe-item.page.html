@@ -55,35 +55,43 @@
   <section class="xs-px-20px pt-30px pb-5 section-bottom-width">
 
     <ion-grid no-padding>
-      <ion-row class="pt-3 md-pt-50px" *ngFor="let x of [].constructor(5)">
+      
+        <ion-row class="position-relative pt-3 md-mt-50px" *ngFor=" let item of steps() | keyvalue; let i = index ">
 
 
 
-        <ion-col class="flex-center pl-3" push-sm="7" size="12" size-sm="5">
-          <img class="border-radius-5px" src="/assets/img/recipe_item_sample.png">
-        </ion-col>
+          <ion-col class="flex-center pl-3" push-sm="7" size="12" size-sm="5" *ngIf="item.value"  >
 
-
-        <ion-col class="pr-2" pull-sm="5" size="2" size-sm="1" no-padding>
-
-          <div class="mt-1 float-right size-30px  flex-center fs-18px lh-18px radius-15px  white"
-            style="background-color:#74b243">
-            1
-          </div>
-
-        </ion-col>
-
-        <ion-col size="10" pull-sm="5" size-sm="6" no-padding>
-
-          <ion-text class="fs-22px dark-gray-2">
-            <p>표제표제표제표제표제표제표제표제표제표</p>
-          </ion-text>
-
-        </ion-col>
+            <!-- <img class="border-radius-5px" src=" {{   item.value.files[0].url }}   " > -->
+        
+          </ion-col>
 
 
 
-      </ion-row>
+          <ion-col class="pr-2" pull-sm="5" size="2" size-sm="1" no-padding *ngIf="item.value?.post_content">
+
+            <div class="mt-1 float-right size-30px  flex-center fs-18px lh-18px radius-15px  white"
+              style="background-color:#74b243">
+              {{   i + 1 }}
+            </div>
+
+          </ion-col>
+
+          <ion-col size="10" pull-sm="5" size-sm="6" no-padding>
+
+            <div class="fs-22px dark-gray-2">
+              <app-page-post-content [guid]="   post.ID + '-' +   (i*1 + 2) " [post]="  item.value "
+                (edited)=" item.value = $event ">
+              </app-page-post-content>
+            </div>
+
+
+          </ion-col>
+
+
+
+        </ion-row>
+
     </ion-grid>
 
   </section>

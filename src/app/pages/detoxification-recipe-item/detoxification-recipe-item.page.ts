@@ -1,6 +1,6 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { AppService } from 'src/app/services/app.service';
-import { Post } from 'modules/wordpress-api/services/wordpress-api.interface';
+import { Post, Posts } from 'modules/wordpress-api/services/wordpress-api.interface';
 import { ActivatedRoute } from '@angular/router';
 import { $ } from 'protractor';
 
@@ -29,7 +29,7 @@ export class DetoxificationRecipeItemPage implements OnInit {
      
         // console.log(this.post);
         this.posts = {};
-        for (let i = 0; i < 8; i++) {
+        for (let i = 0; i < 7; i++) {
           const guid = `${this.post.ID}-${i}`;
         
           this.posts[guid] = {} as any;
@@ -44,6 +44,12 @@ export class DetoxificationRecipeItemPage implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  steps() : object {
+
+
+    return Object.entries(this.posts).splice(2).map(entry => entry[1]);
   }
 
 

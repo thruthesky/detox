@@ -31,6 +31,9 @@
 * Images in detoxification-tip page  should be in 400 px of width and 265 px of height for the best view.
 
 
+* Images in detoxification-recipe-item page in steps  should be in 250 px of width and 135 px of height for the best view.
+
+
 
 
 ## Firebase setup
