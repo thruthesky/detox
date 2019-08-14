@@ -5,7 +5,7 @@
 <ion-content>
 
 
-  <section class="pt-100px">
+  <section class="md-pt-100px">
 
     <div class="position-relative page-width">
       <ion-text color="green">
@@ -23,7 +23,7 @@
 
 
     <div class="ion-text-center">
-      <ion-button class="mt-5 h-68px w-200px no-border-radius fs-16px no-box-shadow " mode="md" color="green"
+      <ion-button class="mt-2  md-mt-5 h-68px w-200px no-border-radius fs-16px no-box-shadow " mode="md" color="green"
         (click)="onClickPost()">
         {{ a.t( {en: 'Write Diary', ko: '일기 쓰기'} ) }}
       </ion-button>
@@ -32,9 +32,9 @@
   </section>
 
 
-  <section class="pb-5 page-width">
+  <section class=" pb-5 page-width">
 
-    <ion-grid no-padding>
+    <ion-grid class="xs-mt-3 " no-padding>
       <ion-row>
         <ion-col class="xs-px-2 xs-py-1 md-pt-50px" size="12" size-md="6" size-lg="4" no-padding
           *ngFor="let p of posts">
@@ -88,9 +88,6 @@
 
 
           </div>
-
-
-
 
         </ion-col>
       </ion-row>
