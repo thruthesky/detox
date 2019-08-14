@@ -1627,15 +1627,17 @@ ion-slides {
 }
 
 .diary-popup {
-  @media all and (min-width:768px) {
-  --width: 400px !important;
-    
-  }
   --width: 360px !important;
 
-  .popover-content {
-    top: 50% !important;
-    left: 50% !important;
-    transform: translate(-50%, -50%) !important;
+  @media all and (min-width:768px) {
+  --width: 450px !important;
+    
   }
+
+
+  // .popover-content {
+  //   top: 50% !important;
+  //   left: 50% !important;
+  //   transform: translate(-50%, -50%) !important;
+  // }
 }

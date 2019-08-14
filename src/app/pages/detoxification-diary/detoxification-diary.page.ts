@@ -35,7 +35,7 @@ export class DetoxificationDiaryPage implements OnInit, OnDestroy {
     private ion: IonService,
     private domSanitizer: DomSanitizer,
     public modalController: ModalController,
-    public popoverController: PopoverController,
+    // public popoverController: PopoverController,
   ) {
     this.a.wp.postGetIn({ guid: 'diaryTitle' }, this.diaryTitle);
 
@@ -102,7 +102,7 @@ export class DetoxificationDiaryPage implements OnInit, OnDestroy {
   }
 
   async onClickPost() {
-    const modal = await this.popoverController.create({
+    const modal = await this.modalController.create({
       component: IonPostEditComponent,
       componentProps: {
         layout: 'diary',
@@ -112,7 +112,8 @@ export class DetoxificationDiaryPage implements OnInit, OnDestroy {
           title: this.wp.t('Diary', { name: this.wp.t(this.slug) })
         }
       },
-      cssClass: 'diary-popup'
+      mode: 'md',
+      cssClass: 'diary-popup i-pop-mt-5px  box-shadow-none',
     });
     modal.present();
     const res = await modal.onWillDismiss();
