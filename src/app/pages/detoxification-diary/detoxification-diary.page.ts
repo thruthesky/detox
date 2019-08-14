@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, OnDestroy } from '@angular/core';
 import { AppService } from 'src/app/services/app.service';
 import { Post, Posts } from 'modules/wordpress-api/services/wordpress-api.interface';
 import { IonInfiniteScroll, ModalController } from '@ionic/angular';
@@ -13,9 +13,9 @@ import { IonPostEditComponent } from 'modules/wordpress-api/components/forum/ion
   templateUrl: './detoxification-diary.page.html',
   styleUrls: ['./detoxification-diary.page.scss'],
 })
-export class DetoxificationDiaryPage implements OnInit {
+export class DetoxificationDiaryPage implements OnInit, OnDestroy {
 
-  
+
   slug = 'diary';
 
   posts: Posts = [];
@@ -29,15 +29,14 @@ export class DetoxificationDiaryPage implements OnInit {
 
   diaryTitle = {} as Post;
 
-  constructor( 
+  constructor(
     public a: AppService,
     public wp: WordpressApiService,
     private ion: IonService,
     private domSanitizer: DomSanitizer,
     public modalController: ModalController,
-    )
-   { 
-    this.a.wp.postGetIn( { guid: 'diaryTitle' }  , this.diaryTitle);
+  ) {
+    this.a.wp.postGetIn({ guid: 'diaryTitle' }, this.diaryTitle);
 
   }
 
@@ -56,7 +55,7 @@ export class DetoxificationDiaryPage implements OnInit {
     this.loadPage();
 
     /// This is for test
-    // setTimeout(() => this.onClickPost(), 200);
+    setTimeout(() => this.onClickPost(), 200);
 
   }
 
@@ -105,6 +104,7 @@ export class DetoxificationDiaryPage implements OnInit {
     const modal = await this.modalController.create({
       component: IonPostEditComponent,
       componentProps: {
+        layout: 'diary',
         slug: this.slug,
         header: {
           color: 'primary',
@@ -116,18 +116,9 @@ export class DetoxificationDiaryPage implements OnInit {
     const res = await modal.onWillDismiss();
     if (res && res.data) {
       this.pre(res.data);
-      //console.log('post created: ', res.data);
+      // console.log('post created: ', res.data);
       this.posts.unshift(res.data);
     }
-  }
-
-  
-  updatePost(post: Post) {
-    const i = this.posts.findIndex(v => v.ID === post.ID);
-    if (i === -1) {
-      return this.ion.error({ errcode: '-510', errstring: this.wp.t('postNotFoundToUpdateOnPostList') });
-    }
-    this.posts.splice(i, 1, post);
   }
 
   async onEdit(post: Post) {
@@ -135,6 +126,7 @@ export class DetoxificationDiaryPage implements OnInit {
     const modal = await this.modalController.create({
       component: IonPostEditComponent,
       componentProps: {
+        layout: 'diary',
         post: post,
         header: {
           color: 'primary',
@@ -145,15 +137,26 @@ export class DetoxificationDiaryPage implements OnInit {
     modal.present();
     const res = await modal.onWillDismiss();
     if (res && res.data) {
-      //console.log('post updated', res.data);
+      // console.log('post updated', res.data);
       this.pre(res.data);
       this.updatePost(res.data);
     }
   }
 
+
+
+  updatePost(post: Post) {
+    const i = this.posts.findIndex(v => v.ID === post.ID);
+    if (i === -1) {
+      return this.ion.error({ errcode: '-510', errstring: this.wp.t('postNotFoundToUpdateOnPostList') });
+    }
+    this.posts.splice(i, 1, post);
+  }
+
+
   async onDelete(post: Post) {
     const sub = this.wp.postDelete(post.ID).subscribe(res => {
-      //console.log('post delete: ', res);
+      // console.log('post delete: ', res);
       this.deletePost(res.ID);
     }, e => this.ion.error(e));
     this.subscriptions.add(sub);
