@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild, OnDestroy } from '@angular/core';
 import { AppService } from 'src/app/services/app.service';
 import { Post, Posts } from 'modules/wordpress-api/services/wordpress-api.interface';
-import { IonInfiniteScroll, ModalController } from '@ionic/angular';
+import { IonInfiniteScroll, ModalController, PopoverController } from '@ionic/angular';
 import { Subscription } from 'rxjs';
 import { WordpressApiService } from 'modules/wordpress-api/services/wordpress-api.service';
 import { IonService } from 'modules/wordpress-api/components/shared/ion-service/ion-service';
@@ -35,6 +35,7 @@ export class DetoxificationDiaryPage implements OnInit, OnDestroy {
     private ion: IonService,
     private domSanitizer: DomSanitizer,
     public modalController: ModalController,
+    public popoverController: PopoverController,
   ) {
     this.a.wp.postGetIn({ guid: 'diaryTitle' }, this.diaryTitle);
 
@@ -101,7 +102,7 @@ export class DetoxificationDiaryPage implements OnInit, OnDestroy {
   }
 
   async onClickPost() {
-    const modal = await this.modalController.create({
+    const modal = await this.popoverController.create({
       component: IonPostEditComponent,
       componentProps: {
         layout: 'diary',
@@ -110,7 +111,8 @@ export class DetoxificationDiaryPage implements OnInit, OnDestroy {
           color: 'primary',
           title: this.wp.t('Diary', { name: this.wp.t(this.slug) })
         }
-      }
+      },
+      cssClass: 'diary-popup'
     });
     modal.present();
     const res = await modal.onWillDismiss();
