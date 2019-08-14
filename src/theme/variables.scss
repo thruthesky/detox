@@ -1627,6 +1627,10 @@ ion-slides {
 }
 
 .diary-popup {
+  @media all and (min-width:768px) {
+  --width: 400px !important;
+    
+  }
   --width: 360px !important;
 
   .popover-content {
