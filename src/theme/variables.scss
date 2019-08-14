@@ -1641,3 +1641,7 @@ ion-slides {
   //   transform: translate(-50%, -50%) !important;
   // }
 }
+
+.diary-content .native-textarea {
+    min-height: 30px !important;
+}
