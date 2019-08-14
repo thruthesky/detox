@@ -40,8 +40,7 @@
           *ngFor="let p of posts">
 
           <ion-card class="card" *ngIf="a.isDesktop" >
-
-            <img class="diary-image" src="{{ p.files[0].url }}" alt="image_diary">
+            <img class="diary-image" src="{{ p.files[0].url }}" alt="image_diary" *ngIf="p.files.length">
             <ion-card-content no-padding>
 
               <ion-grid class="pt-2" no-padding>
@@ -60,7 +59,7 @@
           </ion-card>
 
           <div class="mobile position-relative" *ngIf="a.isMobile" >
-            <img class="diary-image" src="{{ p.files[0].url }}" alt="image_diary">
+            <!-- <img class="diary-image" src="{{ p.files[0].url }}" alt="image_diary"> -->
 
             <div class="position-absolute top  p-3 h-100 w-100 bg-light-black z-1000 ">
 
