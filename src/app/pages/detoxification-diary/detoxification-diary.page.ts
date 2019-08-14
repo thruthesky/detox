@@ -22,13 +22,18 @@ export class DetoxificationDiaryPage implements OnInit, OnDestroy {
 
 
   page = 1;
-  posts_per_page = 10;
+  posts_per_page = 15;
   error = '';
 
   subscriptions = new Subscription();
 
   diaryTitle = {} as Post;
 
+  defaultDiaryImage = '/assets/img/no-img.png';
+
+
+  inLoading = false;
+  noMorePosts = false;
   constructor(
     public a: AppService,
     public wp: WordpressApiService,
@@ -56,26 +61,47 @@ export class DetoxificationDiaryPage implements OnInit, OnDestroy {
     this.loadPage();
 
     /// This is for test
-    setTimeout(() => this.onClickPost(), 200);
+    // setTimeout(() => this.onClickPost(), 200);
 
   }
 
+  get loadOptions(): any {
+    return {
+      category_name: this.slug,
+      paged: this.page,
+      posts_per_page: this.posts_per_page,
+    };
+  }
+
+  hasNoMorePosts(posts: Posts): boolean {
+    if (posts && posts.length && posts.length === this.posts_per_page) {
+      return false;
+    } else {
+      return true;
+    }
+  }
 
   ngOnDestroy() {
     this.subscriptions.unsubscribe();
   }
 
 
-  loadPage(callback?: (posts: Posts) => void): void {
-    const sub = this.wp.postSearch({
-      category_name: this.slug,
-      paged: this.page,
-      posts_per_page: this.posts_per_page,
-    }).subscribe((posts: Posts) => {
-      // console.log('posts: ', posts);
+  loadPage(options?: any): void {
+    if (this.inLoading || this.noMorePosts) {
+      return;
+    }
+    const sub = this.wp.postSearch(this.loadOptions).subscribe((posts: Posts) => {
+      this.inLoading = false;
       this.displayPosts(posts);
-      if (callback) {
-        callback(posts);
+      this.page++;
+      if (this.hasNoMorePosts(posts)) {
+        this.noMorePosts = true;
+      }
+      if (options) {
+        options.scroll.complete();
+        if (this.hasNoMorePosts(posts)) {
+          options.scroll.disabled = true;
+        }
       }
     }, e => this.ion.error({ errcode: '-500', errstring: 'Failed to load post search data' }));
     this.subscriptions.add(sub);
@@ -173,4 +199,25 @@ export class DetoxificationDiaryPage implements OnInit, OnDestroy {
     this.posts.splice(i, 1);
   }
 
+
+  diaryImage(p: Post): string {
+    console.log('p: ', p);
+    if (p && p.files && p.files.length) {
+      return p.files[0].url;
+    } else {
+      return this.defaultDiaryImage;
+    }
+
+  }
+
+
+
+  loadData(event: any) {
+    if (this.noMorePosts) {
+      event.target.complete();
+      return;
+    }
+    this.loadPage({ scroll: event.target });
+  }
 }
+
