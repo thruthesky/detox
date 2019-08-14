@@ -35,6 +35,28 @@
 
 
 
+## how to create recipe?
+
+recipe title = recipe name
+recipe content = recipe details
+upload 1 image.
+
+  --creating steps to make the recipe
+
+  create a comment and then upload a picture in order
+
+  comment = step content
+  comment image = step image
+
+  ex. comment = this is the 1st step in making this recipe.
+      image upload = upload the 1st step image.
+
+
+
+
+
+
+
 
 ## Firebase setup
 

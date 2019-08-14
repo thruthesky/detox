@@ -4,11 +4,13 @@
 
 <ion-content>
 
-  <div class="page-width mt-5 flext-center">
-    <h1 class="normal green fs-lg ion-text-center">{{ tipTitle?.post_title }}</h1>
-    <app-admin-page-edit-button class="d-block ml-5" [guid]=" guid " (edited)=" tipTitle = $event "></app-admin-page-edit-button>
+  <div class="page-width-md mt-5 mb-4 flex-center">
+    <h1 class="normal fs-lg green">
+      {{ tipTitle.post_title }}
+    </h1>
+    <app-admin-page-edit-button class="d-block ml-5" [guid]=" guid " (edited)=" tipTitle = $event ">
+    </app-admin-page-edit-button>
   </div>
-
 
   <section class="page-width pb-100px">
     <ion-grid no-padding>
