@@ -15,7 +15,7 @@
       <ion-row>
         <ion-col size="12" size-sm="6" size-md="4" *ngFor="let p of posts">
           <ion-card class="card border">
-            <ion-img src="{{ p.files[0].url }}"></ion-img>
+            <ion-img src="{{ p.files[0].url }}" *ngIf=" p.files.length "></ion-img>
             <ion-card-subtitle class="px-10px pt-2 fs-12 ellipsis">{{ p['string1'] }}</ion-card-subtitle>
             <ion-card-header class="px-10px py-2">
               <ion-card-title class="fs-16px green bold ellipsis">{{ p.post_title }}</ion-card-title>
