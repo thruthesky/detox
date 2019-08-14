@@ -5,7 +5,7 @@
 <ion-content>
 
 
-  <section class="pt-100px" *ngIf="a.isDesktop">
+  <section class="md-pt-100px">
 
     <div class="position-relative page-width">
       <ion-text color="green">
@@ -23,7 +23,7 @@
 
 
     <div class="ion-text-center">
-      <ion-button class="mt-5 h-68px w-200px no-border-radius fs-16px no-box-shadow " mode="md" color="green"
+      <ion-button class="mt-2  md-mt-5 h-68px w-200px no-border-radius fs-16px no-box-shadow " mode="md" color="green"
         (click)="onClickPost()">
         {{ a.t( {en: 'Write Diary', ko: '일기 쓰기'} ) }}
       </ion-button>
@@ -32,22 +32,22 @@
   </section>
 
 
-  <section class="pb-5 page-width">
+  <section class=" pb-5 page-width">
 
-    <ion-grid no-padding>
+    <ion-grid class="xs-mt-3 " no-padding>
       <ion-row>
         <ion-col class="xs-px-2 xs-py-1 md-pt-50px" size="12" size-md="6" size-lg="4" no-padding
           *ngFor="let p of posts">
 
-          <ion-card class="card" *ngIf="a.isDesktop" >
-
-            <img class="diary-image" src="{{ p.files[0].url }}" alt="image_diary">
+          <ion-card class="card" *ngIf="a.isDesktop">
+            <img class="diary-image" src="{{ diaryImage(p) }}" alt="image_diary">
             <ion-card-content no-padding>
 
               <ion-grid class="pt-2" no-padding>
                 <ion-row class="fs-14px">
-                  <ion-col class="green pointer" no-padding  (click)=" onEdit( p ) ">Edit</ion-col>
-                  <ion-col class="ion-text-center green pointer" size="5" no-padding>표제표제표제표제</ion-col>
+                  <ion-col class="green pointer" no-padding (click)=" onEdit( p ) ">Edit</ion-col>
+                  <ion-col class="ion-text-center green pointer" size="5" no-padding>
+                    {{ p['target'] }}/{{ p['current'] }}</ion-col>
                   <ion-col class="ion-text-right medium pointer" no-padding (click)="onDelete( p )">Delete</ion-col>
                 </ion-row>
               </ion-grid>
@@ -59,15 +59,15 @@
             </ion-card-content>
           </ion-card>
 
-          <div class="mobile position-relative" *ngIf="a.isMobile" >
-            <img class="diary-image" src="{{ p.files[0].url }}" alt="image_diary">
+          <div class="mobile position-relative" *ngIf="a.isMobile">
+            <img class="diary-image" src="{{ diaryImage(p) }}" alt="image_diary">
 
             <div class="position-absolute top  p-3 h-100 w-100 bg-light-black z-1000 ">
 
               <ion-grid class="pt-2" no-padding>
                 <ion-row class="fs-12px ">
-                  <ion-col class="color-gray" no-padding>표제표제/표제표제</ion-col>
-                  <ion-col class="ion-text-right color-gray" no-padding>표제표제</ion-col>
+                  <ion-col class="color-gray" no-padding>{{ p['target'] }}/{{ p['current'] }}</ion-col>
+                  <ion-col class="ion-text-right color-gray" no-padding>{{ p['days'] }}일</ion-col>
                 </ion-row>
               </ion-grid>
 
@@ -75,10 +75,10 @@
                 <h2 class="m-0 fs-22px fw-600 white ">{{ p.post_title }}</h2>
                 <p class="pr-2 fs-14  color-gray">{{ p.post_content }}</p>
                 <div class="flex-start">
-                  <ion-button class="ion-no-margin my-2 white border-gray" fill="clear"  (click)=" onEdit( p ) ">
+                  <ion-button class="ion-no-margin my-2 white border-gray" fill="clear" (click)=" onEdit( p ) ">
                     Edit
                   </ion-button>
-                  <ion-button class="ion-no-margin my-2 white border-gray" fill="clear"  (click)=" onDelete( p ) ">
+                  <ion-button class="ion-no-margin my-2 white border-gray" fill="clear" (click)=" onDelete( p ) ">
                     Delete
                   </ion-button>
                 </div>
@@ -89,15 +89,24 @@
 
           </div>
 
-
-
-
         </ion-col>
       </ion-row>
     </ion-grid>
 
   </section>
 
+
+  <div class="layout-width mb-5 flex-center" *ngIf="noMorePosts">
+    <ion-item color="light" lines="none">
+      <ion-icon name="warning" slot="start"></ion-icon>
+      <ion-label>더 이상 다이어트 일기가 없습니다.</ion-label>
+    </ion-item>
+  </div>
+
+  <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
+    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Loading more data...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
 
   <ng-container *ngIf="a.isDesktop">
     <app-desktop-home-footer></app-desktop-home-footer>
