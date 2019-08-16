@@ -2,11 +2,11 @@
 
 
     <ion-text color="green" text-center *ngIf=" !showResult ">
-        <h1 class="title m-0 py-3 bold">기본 정보</h1>
+        <h1 class="title m-0 py-3 bold"> {{ a.t( {en:'Basic Information',ko: '기본 정보' } ) }} </h1>
     </ion-text>
 
     <ion-text color="green" text-center *ngIf=" showResult ">
-        <h1 class="title m-0 py-3 bold">비만도 결과</h1>
+        <h1 class="title m-0 py-3 bold">{{ a.t( {en:'Obesity Results',ko:'비만도 결과'} ) }} </h1>
     </ion-text>
 
 
