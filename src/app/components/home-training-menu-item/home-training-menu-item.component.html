@@ -1,72 +1,68 @@
+<section *ngIf="post">
 
-  <section *ngIf="a.isDesktop">
+  <div class="page-width position-relative" *ngIf="a.isDesktop">
 
-  ID: {{ ID }}
-      <ion-text color="green" text-center>
-        <h1 class="mt-0 fs-32px bold ">스트레칭</h1>
-      </ion-text>
-  
-      <p class="w-460px m-auto fs-14 ion-text-center gray">스트레칭 스트레칭스트레칭스트레칭레칭스트레칭스트레칭스트레칭스트레칭스트레칭스트레칭스트트레칭</p>
-    </section>
-  
+    <ion-text color="green" text-center>
+      <h1 class="mt-0 mt-4 fs-32px bold ">{{ posts[post.ID + '-' + 0].post_title }}</h1>
+    </ion-text>
 
-    <section class="page-width grid md-pt-70px">
-  
-      <ion-grid>
-        <ion-row>
-          <ion-col class="md-pr-10px lg-pr-44px" size="12"  size-md="5">
-            <ion-img src="/assets/img/home_item.jpg"></ion-img>
-          </ion-col>
-          <ion-col class="md-pl-10px lg-pl-44px" size="12" size-md="7">
-            <ion-text color="green">
-              <h2 class="m-0 xs-fs-22px fs-38px">Awesome text</h2>
-            </ion-text>
-  
-            <p class="md-pt-2 lg-pt-40px lh-25px fs-14 gray">It is a long established fact that a reader will be distracted by the
-              readable content of a page when
-              looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of
-              letters, as opposed stablished fact that a reader will be distr to using 'Content here, content It is a
-              long established fact that a reader willut. The point of using Lorem Ipsum is that it has a more-o b</p>
-  
-          </ion-col>
-        </ion-row>
-      </ion-grid>
-    </section>
-  
-    <section class="grid md-pt-100px pb-150px">
-  
-      <ion-grid>
-        <ion-row>
-          <ion-col class="md-pr-10px lg-pr-44px" size="12" size-md="6">
-            <ion-text color="green">
-              <h2 class="m-0 xs-fs-22px  fs-38px">Awesome text</h2>
-            </ion-text>
-  
-            <p class="md-pt-2 lg-pt-40px lh-25px fs-14 gray">It is a long established fact that a reader will be distracted by the
-              readable content of a page when
-              looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of
-              letters, as opposed stablished fact that a reader will be dist The point of using Lorem Ipsum is that it
-              has a more-o b</p>
-            <p class="md-pt-2 lg-pt-40px lh-25px fs-14 gray">It is a long established fact that a reader will be distracted by the
-              readable content of a page when
-              looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of
-              letters, as opposed stablished fact that a reader will be dist The point of using Lorem Ipsum is that it
-              has a more-o b</p>
-  
-          </ion-col>
-          <ion-col class="md-pl-10px lg-pl-44px" size="12" size-md="6">
-            <ion-text color="green">
-              <h2 class="m-0 xs-fs-22px  fs-38px">Awesome text</h2>
-            </ion-text>
-  
-            <p class="md-pt-2 lg-pt-40px lh-25px fs-14 gray">It is a long established fact that a reader will be distracted by the
-              readable content of a page when
-              looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of
-              letters, as opposed stablished fact that a reader will be dist The point of using Lorem Ipsum is that it
-              has a more-o b</p>
-  
-          </ion-col>
-        </ion-row>
-      </ion-grid>
-  
-    </section>
+    <div class="w-460px m-auto fs-14 ion-text-center gray">
+      <app-page-post-content [guid]=" post.ID + '-' + 0 " [post]=" posts[post.ID + '-' + 0] "
+        (edited)=" posts[post.ID + '-' + 0] = $event ">
+      </app-page-post-content>
+    </div>
+  </div>
+
+
+  <section class="page-width grid md-pt-70px">
+
+    <ion-grid>
+      <ion-row>
+        <ion-col class="md-pr-10px lg-pr-44px" size="12" size-md="5">
+          <ion-img src="{{ post.files[0].url }}"></ion-img>
+        </ion-col>
+        <ion-col class="md-pl-10px lg-pl-44px" size="12" size-md="7">
+          <ion-text color="green">
+            <h2 class="m-0 xs-fs-22px fs-38px">{{ post.post_title}}</h2>
+          </ion-text>
+
+          <div class="md-pt-2 lg-pt-40px lh-25px fs-14 gray" [innerHTML]=" a.safeHtml(post.post_content)  "></div>
+
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </section>
+
+  <section class="grid md-pt-100px pb-150px">
+
+    <ion-grid>
+      <ion-row>
+        <ion-col class="md-pr-10px lg-pr-44px" size="12" size-md="6">
+          <ion-text color="green">
+            <h2 class="m-0 xs-fs-22px  fs-38px">{{  posts[post.ID + '-' + 1].post_title }}</h2>
+          </ion-text>
+
+          <div class="md-pt-2 lg-pt-40px lh-25px fs-14 gray">
+            <app-page-post-content [guid]=" post.ID + '-' + 1 " [post]=" posts[post.ID + '-' + 1] "
+              (edited)=" posts[post.ID + '-' + 1] = $event ">
+            </app-page-post-content>
+          </div>
+
+
+        </ion-col>
+        <ion-col class="md-pl-10px lg-pl-44px" size="12" size-md="6">
+          <ion-text color="green">
+            <h2 class="m-0 xs-fs-22px  fs-38px">{{ posts[post.ID + '-' + 2].post_title }}</h2>
+          </ion-text>
+
+          <div class="md-pt-2 lg-pt-40px lh-25px fs-14 gray">
+            <app-page-post-content [guid]=" post.ID + '-' + 2 " [post]=" posts[post.ID + '-' + 2] "
+              (edited)=" posts[post.ID + '-' + 2] = $event "> </app-page-post-content>
+          </div>
+
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+  </section>
+</section>
