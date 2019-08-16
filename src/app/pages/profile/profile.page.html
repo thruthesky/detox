@@ -125,7 +125,7 @@
             {{ a.t({en: 'Gender', ko: '성별'}) }}
           </ion-col>
           <ion-col class="mt-0 medium">
-            <ion-select class="ion-text-left"  placeholder="Select Gender" okText="" cancelText="" mode="md"
+            <ion-select class="ion-text-left" placeholder="Select Gender" okText="" cancelText="" mode="md"
               formControlName="gender" [interfaceOptions]="genderOptions" interface="popover">
               <ion-select-option value="F">Female</ion-select-option>
               <ion-select-option value="M">Male</ion-select-option>
@@ -214,7 +214,18 @@
         {{ a.t({en: 'Update', ko: '회원 정보 수정'}) }}
       </ion-button>
 
+
+
     </form>
+
+
+    <div class="flex-center" *ngIf="a.wp.userIsLoggedIn">
+      <ion-item color="light" lines="none" (click)="a.resign()">
+        <ion-label>
+          {{ a.t({en: 'Resign', ko: '회원탈퇴' }) }}
+        </ion-label>
+      </ion-item>
+    </div>
   </section>
 
   <ng-container *ngIf="a.isDesktop">

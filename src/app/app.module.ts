@@ -20,6 +20,7 @@ import { DesktopHomeFooterModule } from './components/desktop-home-footer/deskto
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireMessagingModule } from '@angular/fire/messaging';
 import { FirebaseService } from './services/firebase.service';
+import { IonServiceModule } from 'modules/wordpress-api/components/shared/ion-service/ion-service.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -31,6 +32,7 @@ import { FirebaseService } from './services/firebase.service';
       anonymousPhotoUrl: '/assets/img/anonymous.jpg',
       urlToSendPushNotification: 'push-notifications-to-all-users',
     }),
+    IonServiceModule,
     MobileSidemenuModule,
     DesktopHomeFooterModule,
     AngularFireModule.initializeApp({
@@ -61,8 +63,11 @@ export class AppModule {
   ) {
     wp.addText({
       ok: a.t({ en: 'OK', ko: '확인' }),
+      yes: a.t({ en: 'Yes', ko: '예' }),
+      no: a.t({ en: 'No', ko: '아니오' }),
       error: a.t({ en: 'ERROR #code', ko: '에러 #code' }),
       chooseOption: this.a.t({ en: 'Choose an Option', ko: '옵션을 선택하세요' }),
+      confirmDelete: this.a.t({ en: 'Do you want to delete?', ko: '정말로 삭제를 하시겠습니까?'}),
       notYourPost: this.a.t({ en: 'This is not your post.', ko: '회원님의 글이 아닙니다.' }),
       notYourComment: this.a.t({ en: 'This is not your comment.', ko: '회원님이 작성한 코멘트가 아닙니다.' }),
       title: a.t({ en: 'Title', ko: '제목' }),

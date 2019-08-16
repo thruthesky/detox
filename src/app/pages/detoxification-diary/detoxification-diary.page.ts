@@ -184,6 +184,9 @@ export class DetoxificationDiaryPage implements OnInit, OnDestroy {
 
 
   async onDelete(post: Post) {
+    if ( ! await this.ion.confirmDelete() ) {
+      return;
+    }
     const sub = this.wp.postDelete(post.ID).subscribe(res => {
       // console.log('post delete: ', res);
       this.deletePost(res.ID);
@@ -201,7 +204,7 @@ export class DetoxificationDiaryPage implements OnInit, OnDestroy {
 
 
   diaryImage(p: Post): string {
-    console.log('p: ', p);
+    // console.log('p: ', p);
     if (p && p.files && p.files.length) {
       return p.files[0].url;
     } else {
