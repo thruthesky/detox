@@ -35,26 +35,35 @@
 
 
 
-## how to create recipe?
-
-recipe title = recipe name
-recipe content = recipe details
-upload 1 image.
-
-  --creating steps to make the recipe
-
-  create a comment and then upload a picture in order
-
-  comment = step content
-  comment image = step image
-
-  ex. comment = this is the 1st step in making this recipe.
-      image upload = upload the 1st step image.
+## how to create recipes?
 
 
+  admin->recipe Forum ->create Post
+
+  -input title
+  -input content
+  -upload image
+
+  then other details can be edited in the recipe item page
+
+    how to add steps on the recipe
+      - simply add a comment on that recipe and the comments  will be the steps of that recipe 
+      for example 5 comments = 5 steps
+
+      recipe title = recipe name
+      recipe content = recipe details
+      upload 1 image.
 
 
+## how to create tips?
 
+  admin->tips Forum->create post
+
+  input title = title
+  input content = content
+  upload image = image
+  input string1 = subtitle on the top of title
+  input string2 = bottom label 
 
 
 
