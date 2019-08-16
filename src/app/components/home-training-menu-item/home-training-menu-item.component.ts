@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AppService } from 'src/app/services/app.service';
 
 @Component({
   selector: 'app-home-training-menu-item',
@@ -7,8 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeTrainingMenuItemComponent implements OnInit {
 
-  constructor() { }
+  ID = '';
+  constructor(
+    public a: AppService
+  ) { }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
+
+  onLoad(ID: string) {
+    this.ID = ID;
+  }
 }

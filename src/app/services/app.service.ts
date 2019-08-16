@@ -1,9 +1,9 @@
-import { Injectable } from '@angular/core';
-import { MenuController, AlertController } from '@ionic/angular';
+import { Injectable, ViewChild } from '@angular/core';
+import { MenuController, AlertController, IonContent } from '@ionic/angular';
 import { WordpressApiService } from 'modules/wordpress-api/services/wordpress-api.service';
 import { environment } from 'src/environments/environment';
 import { ErrorObject } from 'modules/wordpress-api/services/wordpress-api.interface';
-import { Router } from '@angular/router';
+import { Router, NavigationEnd } from '@angular/router';
 import { AlertOptions } from '@ionic/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { pageCode } from './page-code';
@@ -36,6 +36,8 @@ export class AppService {
         this.firebase.init();
 
         // console.log(`production`, this.env.production);
+
+
     }
 
 
@@ -206,6 +208,8 @@ export class AppService {
             this.openHome();
         }, e => this.error(e));
     }
+
+
 }
 
 

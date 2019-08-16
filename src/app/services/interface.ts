@@ -15,3 +15,7 @@ export interface Alarm {
     user_ID: string;
     wednesday: '' | 'Y';
 }
+
+
+export type TabName = 'meditation' | 'yoga' | 'stretching' | 'core';
+

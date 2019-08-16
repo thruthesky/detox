@@ -1,9 +1,10 @@
 
+
 <ion-grid class="px-2 md-pt-5 page-width ion-no-padding">
   <ion-row class="xs-pt-4 md-mt-40px ion-no-padding pointer"  
-  *ngFor=" let item of posts | keyvalue; let i = index " routerLink="/home-training-item">
+  *ngFor=" let item of posts | keyvalue; let i = index " (click)="selected.emit(item.value.ID)">
 
-    <ion-col class="md-pr-60px ion-align-self-center ion-no-padding" size="12" size-md="5"  routerLink="/home-training-item">
+    <ion-col class="md-pr-60px ion-align-self-center ion-no-padding" size="12" size-md="5">
       <div class="photo position-relative">
         <ion-text *ngIf="a.isMobile" class="title-mobile fs-32px light" text-center>
           <h1 class="my-1"> {{ item.value?.post_title }}</h1>
@@ -21,3 +22,4 @@
 
   </ion-row>
 </ion-grid>
+
