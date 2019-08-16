@@ -1,9 +1,9 @@
-import { Injectable } from '@angular/core';
-import { MenuController, AlertController } from '@ionic/angular';
+import { Injectable, ViewChild } from '@angular/core';
+import { MenuController, AlertController, IonContent, IonSearchbar } from '@ionic/angular';
 import { WordpressApiService } from 'modules/wordpress-api/services/wordpress-api.service';
 import { environment } from 'src/environments/environment';
 import { ErrorObject } from 'modules/wordpress-api/services/wordpress-api.interface';
-import { Router } from '@angular/router';
+import { Router, NavigationEnd } from '@angular/router';
 import { AlertOptions } from '@ionic/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { pageCode } from './page-code';
@@ -13,6 +13,11 @@ import { IonService } from 'modules/wordpress-api/components/shared/ion-service/
 @Injectable({ providedIn: 'root' })
 export class AppService {
 
+    state: any = {
+        searchbar: {
+            show: false
+        }
+    };
 
     pageCode = pageCode;
     uploadPercent: number;
@@ -36,6 +41,8 @@ export class AppService {
         this.firebase.init();
 
         // console.log(`production`, this.env.production);
+
+
     }
 
 
@@ -205,6 +212,24 @@ export class AppService {
             this.alert({ message: this.t({ ko: '회원 탈퇴를 하였습니다.', en: 'You have resigned.' }) });
             this.openHome();
         }, e => this.error(e));
+    }
+
+
+    onChangeSearchKeyword(keyword: string) {
+        this.open(`/search/${keyword}`);
+        this.onToggleSearch();
+    }
+    onToggleSearch(search?: IonSearchbar) {
+        // console.log('earch: ', search);
+        if (this.state.searchbar.show) {
+            this.state.searchbar.show = !this.state.searchbar.show;
+        } else {
+            this.state.searchbar.show = true;
+        }
+        if (search && this.state.searchbar.show) {
+            search.setFocus();
+        }
+
     }
 }
 

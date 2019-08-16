@@ -14,12 +14,16 @@ export class PostListPage implements OnInit {
   @ViewChild(IonPostListComponent, { static: true }) postList: IonPostListComponent;
 
   slug: string;
+  keyword: string;
   constructor(
     public a: AppService,
     activiatedRoute: ActivatedRoute
   ) {
-    activiatedRoute.paramMap.subscribe( params => {
+    activiatedRoute.paramMap.subscribe(params => {
       this.slug = params.get('slug');
+      this.keyword = params.get('keyword');
+      console.log('slug: ', this.slug);
+      console.log('keyword: ', this.keyword);
     });
   }
 
@@ -28,7 +32,7 @@ export class PostListPage implements OnInit {
   }
 
   onIonChangeForum(event: any) {
-    if ( this.slug ) {
+    if (this.slug) {
       return;
     }
     // console.log('event value:', event.value);

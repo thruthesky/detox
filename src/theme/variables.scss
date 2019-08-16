@@ -995,6 +995,12 @@
   width: 200px !important;
 }
 
+.max-w-600px {
+  max-width: 600px !important;
+  margin: 0 auto !important;
+}
+
+
 .w-400px {
   width: 400px;
 }
@@ -1603,6 +1609,7 @@ p {
 
 .post_content p {
   margin: 15px 0 !important;
+  line-height: 25px !important;
 }
 
 .post_content p:first-child {
@@ -1644,4 +1651,12 @@ ion-slides {
 
 .diary-content .native-textarea {
     min-height: 30px !important;
+}
+
+
+.show {
+  display: block !important;
+}
+.hide {
+  display: none !important;
 }

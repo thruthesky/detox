@@ -12,7 +12,7 @@ import { $ } from 'protractor';
 export class DetoxificationRecipeItemPage implements OnInit {
 
 
-  post:Post;
+  post: Post;
 
   posts: { [key: string]: Post } = {};
 
@@ -22,11 +22,11 @@ export class DetoxificationRecipeItemPage implements OnInit {
   constructor(
     public a: AppService,
     public activatedRoute: ActivatedRoute
-    ) { 
+  ) {
     activatedRoute.paramMap.subscribe(params => {
       this.a.wp.postGet({ ID: params.get('ID') }).subscribe(post => {
         this.post = post;
-     
+
         console.log(this.post);
         this.posts = {};
         for (let i = 0; i < 1; i++) {
@@ -37,9 +37,9 @@ export class DetoxificationRecipeItemPage implements OnInit {
       }, e => this.a.error(e));
     });
 
-    this.a.wp.postGetIn( { guid: 'recipeTitle' }  , this.recipeTitle);
- 
-  
+    this.a.wp.postGetIn({ guid: 'recipeTitle' }, this.recipeTitle);
+
+
 
   }
 

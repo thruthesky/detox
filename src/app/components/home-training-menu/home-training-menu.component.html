@@ -1,0 +1,14 @@
+<ion-segment class="menu bold" color="success"  mode="md">
+  <ion-segment-button value="meditation" checked="true" mode="md" (click)="onClick($event, 'meditation')">
+    <ion-label>{{ a.t({en: 'Meditation', ko: '명상'}) }}</ion-label>
+  </ion-segment-button>
+  <ion-segment-button value="yoga" mode="md" (click)="onClick($event, 'yoga')">
+    <ion-label>{{ a.t({en: 'Yoga', ko: '요가'}) }}</ion-label>
+  </ion-segment-button>
+  <ion-segment-button value="stretching" mode="md" (click)="onClick($event, 'stretching')">
+    <ion-label>{{ a.t({en: 'Stretching', ko: '스트레칭'}) }}</ion-label>
+  </ion-segment-button>
+  <ion-segment-button value="core" mode="md" (click)="onClick($event, 'core')">
+    <ion-label>{{ a.t({en: 'Core', ko: '코어'}) }}</ion-label>
+  </ion-segment-button>
+</ion-segment>

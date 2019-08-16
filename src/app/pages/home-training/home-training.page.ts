@@ -1,9 +1,10 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { AppService } from 'src/app/services/app.service';
 import { HomeTrainingMenuListComponent } from 'src/app/components/home-training-menu-list/home-training-menu-list.component';
+import { HomeTrainingMenuItemComponent } from 'src/app/components/home-training-menu-item/home-training-menu-item.component';
+import { IonContent } from '@ionic/angular';
+// import { ActivatedRoute } from '@angular/router';
 
-
-type TabName = 'meditation' | 'yoga' | 'stretching' | 'core';
 
 
 @Component({
@@ -13,18 +14,51 @@ type TabName = 'meditation' | 'yoga' | 'stretching' | 'core';
 })
 export class HomeTrainingPage implements OnInit {
 
-  @ViewChild(HomeTrainingMenuListComponent, { static: true }) list: HomeTrainingMenuListComponent;
-  tabName: TabName = 'meditation';
+  @ViewChild('list', { static: false }) list: HomeTrainingMenuListComponent;
+  @ViewChild('item', { static: false }) item: HomeTrainingMenuItemComponent;
+
+
+  @ViewChild(IonContent, { static: true }) content: IonContent;
+
+  show: 'item' | 'list' = 'list';
+
   constructor(
-    public a: AppService
-  ) { }
+    public a: AppService,
+    // activatedRoute: ActivatedRoute
+  ) {
+    // activatedRoute.paramMap.subscribe(parmas => {
+    //   // console.log('route change: ');
+    // });
+  }
 
   ngOnInit() {
   }
 
-  onClickTab(name: TabName) {
-    this.list.name = name;
-    this.list.ngOnInit();
+  showList() {
+    this.show = 'list';
+  }
+  showItem() {
+    this.show = 'item';
   }
 
+  onSelected(ID: string) {
+    // console.log('item: ', this.item);
+    this.showItem();
+    // history.pushState({}, 'item title', `/home-training/item/${ID}`);
+    this.item.onLoad(ID);
+    this.scrollToTop();
+  }
+
+  onChangeTab(name: string) {
+    console.log('list', this.list);
+    this.showList();
+    this.list.loadItems(name);
+    this.scrollToTop();
+  }
+
+  scrollToTop() {
+    this.content.scrollToTop(100);
+  }
 }
+
+

@@ -9,6 +9,8 @@ import { HomeTrainingPage } from './home-training.page';
 import { HeaderModule } from 'src/app/components/header/header.module';
 import { HomeTrainingMenuListModule } from 'src/app/components/home-training-menu-list/home-training-menu-list.module';
 import { DesktopHomeFooterModule } from 'src/app/components/desktop-home-footer/desktop-home-footer.module';
+import { HomeTrainingMenuModule } from 'src/app/components/home-training-menu/home-training-menu.module';
+import { HomeTrainingMenuItemModule } from 'src/app/components/home-training-menu-item/home-training-menu-item.module';
 
 const routes: Routes = [
   {
@@ -25,7 +27,9 @@ const routes: Routes = [
     RouterModule.forChild(routes),
     HeaderModule,
     HomeTrainingMenuListModule,
-    DesktopHomeFooterModule
+    HomeTrainingMenuItemModule,
+    DesktopHomeFooterModule,
+    HomeTrainingMenuModule
   ],
   declarations: [HomeTrainingPage]
 })

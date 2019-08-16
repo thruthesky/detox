@@ -22,7 +22,9 @@ export class AdminPageEditButtonComponent implements OnInit {
 
   ngOnInit() { }
 
-  async onClickEdit() {
+
+  async onClickEdit(event: Event) {
+    event.stopPropagation();
     const pop = await this.modalController.create({
       component: IonPostEditComponent,
       componentProps: {
