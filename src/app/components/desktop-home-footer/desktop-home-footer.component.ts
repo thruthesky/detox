@@ -16,7 +16,7 @@ export class DesktopHomeFooterComponent implements OnInit {
 
 
   constructor(
-    private a: AppService
+    public a: AppService
   ) {
     this.posts = {};
     for (let i = 0; i < 4; i++) {
