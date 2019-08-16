@@ -1660,3 +1660,9 @@ ion-slides {
 .hide {
   display: none !important;
 }
+
+.no-margin {
+  .post_content p {
+    margin-bottom: 0 !important;
+}
+}

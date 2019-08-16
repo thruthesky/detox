@@ -1,32 +1,59 @@
 <div style="height: 180px" class="bg-f-white">
-   <ion-grid  class="page-width ion-no-padding px-3">
+   <ion-grid class="page-width ion-no-padding px-3">
       <ion-row>
          <ion-col class="ion-no-padding">
-               <p class="fs-9 pt-60px pb-28px f-green">START A PROJECT</p>
-               <p class="fs-12 f-green">We are ready for the challenge</p>
-               <p class="fs-12 f-green pt-10px">adobexd@gmail.com</p>
+            <p class="fs-9 pt-60px  f-green">{{ posts[name + '-' + 0].post_title }}</p>
+            <p class="no-margin pb-2 pt-28px  fs-12 f-green">
+               <app-page-post-content [guid]="  name + '-' + 0 " [post]=" posts[name + '-' + 0] "
+                  (edited)=" posts[name + '-' + 0] = $event ">
+               </app-page-post-content>
+            </p>
+            <p class="fs-12 f-green">{{ posts[name + '-' + 0].string1 }}</p>
          </ion-col>
          <ion-col class="ion-no-padding">
-               <p class="fs-10 pt-60px pb-28px f-green">SAY HELLO</p>
-               <p class="fs-12 f-green">497 Evergreen Rd. Roseville, CA 95673</p>
-               <p class="fs-12 f-green pt-10px">+44 345 678 903</p>
+            <p class="fs-9 pt-60px  f-green">{{ posts[name + '-' + 1].post_title }}</p>
+            <p class="no-margin pb-2 pt-28px  fs-12 f-green">
+               <app-page-post-content [guid]="  name + '-' + 1 " [post]=" posts[name + '-' + 1] "
+                  (edited)=" posts[name + '-' + 1] = $event ">
+               </app-page-post-content>
+            </p>
+            <p class="fs-12 f-green">{{ posts[name + '-' + 1].string1 }}</p>
          </ion-col>
          <ion-col class="ion-no-padding">
-               <p class="fs-10 pt-60px pb-28px f-green">JOBS</p>
-               <p class="fs-12 f-green">We are always looking for talent</p>
-               <p class="fs-12 f-green pt-10px">adobexd@gmail.com</p>
+            <p class="fs-9 pt-60px  f-green">{{ posts[name + '-' + 2].post_title }}</p>
+            <p class="no-margin pb-2 pt-28px  fs-12 f-green">
+               <app-page-post-content [guid]="  name + '-' + 2 " [post]=" posts[name + '-' + 2] "
+                  (edited)=" posts[name + '-' + 2] = $event ">
+               </app-page-post-content>
+            </p>
+            <p class="fs-12 f-green">{{ posts[name + '-' + 2].string1 }}</p>
          </ion-col>
-         <ion-col class="ion-text-end  i-py-5px ion-no-padding" size="2" >
+
+
+         <ion-col class="ion-text-end  i-py-5px ion-no-padding" size="2">
             <div class="pt-60px pb-15px">
-               <ion-button  mode="ios" fill="clear" size="small" class="i-py-5px" routerLink="https://instatram.com">
+               <ion-button class="i-py-5px" target="_blank" mode="ios" fill="clear" size="small"
+                  href="{{ posts[name + '-' + 3].string1 }}">
                   <ion-icon color="success" slot="icon-only" name="logo-instagram"></ion-icon>
                </ion-button>
-               <ion-button mode="ios" fill="clear" size="small" class="i-py-5px" routerLink="https://twitter.com">
+               <ion-button class="i-py-5px" mode="ios" fill="clear" size="small"
+                  href="{{ posts[name + '-' + 3].string2 }}" target="_blank">
                   <ion-icon color="success" slot="icon-only" name="logo-twitter"></ion-icon>
                </ion-button>
-               <ion-button mode="ios" fill="clear" size="small" class="i-py-5px" routerLink="https://facebook.com">
+               <ion-button class="i-py-5px" mode="ios" fill="clear" size="small"
+                  href="{{ posts[name + '-' + 3].string3 }}" target="_blank">
                   <ion-icon color="success" slot="icon-only" name="logo-facebook"></ion-icon>
                </ion-button>
+
+               <ion-button class="i-py-5px" mode="ios" fill="clear" size="small" *ngIf="a.wp.isAdmin">
+                  <app-admin-page-edit-button [guid]="  name + '-' + 3 "
+                     (edited)="  posts[name + '-' + 3].emit( $event ) ">
+                  </app-admin-page-edit-button>
+               </ion-button>
+
+
+
+
             </div>
             <ion-img src="/assets/img/footer/logo_footer@2x.png" alt="footer logo"></ion-img>
          </ion-col>
