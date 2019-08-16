@@ -17,23 +17,19 @@ export class HomeTrainingMenuItemComponent implements OnInit {
 
   constructor(
     public a: AppService
-  ) {
-
-
-
-
-  }
+  ) {}
 
   ngOnInit() { }
 
 
   onLoad(ID: string) {
+
     this.ID = ID;
 
     if (this.ID) {
       this.a.wp.postGet({ ID: this.ID }).subscribe(post => {
         this.post = post;
-        console.log(this.post);
+        // console.log(this.post);
 
         this.posts = {};
         for (let i = 0; i < 3; i++) {
@@ -42,7 +38,6 @@ export class HomeTrainingMenuItemComponent implements OnInit {
           this.a.wp.postGetIn({ guid: guid }, this.posts[guid]);
         }
 
-        console.log('posts', this.posts);
 
       }, e => this.a.error(e));
 
