@@ -8,6 +8,7 @@ import { AlertOptions } from '@ionic/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { pageCode } from './page-code';
 import { FirebaseService } from './firebase.service';
+import { IonService } from 'modules/wordpress-api/components/shared/ion-service/ion-service';
 
 @Injectable({ providedIn: 'root' })
 export class AppService {
@@ -24,7 +25,8 @@ export class AppService {
         public wp: WordpressApiService,
         private alertController: AlertController,
         private domSanitizer: DomSanitizer,
-        public firebase: FirebaseService
+        public firebase: FirebaseService,
+        private ion: IonService
     ) {
         if (!this.env.lang) {
             this.env.lang = this.getBrowserLanguage();
@@ -192,6 +194,18 @@ export class AppService {
         return n < 10 ? '0' + n : n.toString();
     }
 
+
+    async resign() {
+        const re = await this.ion.alertConfirm({ message: this.t({ en: 'Ooh! Do you want to resign?', ko: '앗! 정말 회원 탈퇴를 하시겠습니까?' }) });
+        if (!re) {
+            return;
+        }
+        this.wp.resign().subscribe(user => {
+            console.log('resigned user: ', user);
+            this.alert({ message: this.t({ ko: '회원 탈퇴를 하였습니다.', en: 'You have resigned.' }) });
+            this.openHome();
+        }, e => this.error(e));
+    }
 }
 
 
