@@ -5,14 +5,15 @@
     <ion-back-button></ion-back-button>
 
 
-    <ion-button *ngIf="! homeIcon " routerLink="/"> 
+    <ion-button *ngIf="! homeIcon " routerLink="/">
       <ion-icon slot="icon-only" name="home"></ion-icon>
-    </ion-button> 
+    </ion-button>
   </ion-buttons>
 
 
   <ion-title class="ion-text-center">
-    <img routerLink="/" class="no-outline pointer" src="/assets/img/logo/mobile_logo.png" alt="Site Logo Title - 7Detox" *ngIf=" ! title ">
+    <img routerLink="/" class="no-outline pointer" src="/assets/img/logo/mobile_logo.png" alt="Site Logo Title - 7Detox"
+      *ngIf=" ! title ">
     <ion-label *ngIf=" title ">{{ title }}</ion-label>
   </ion-title>
 
@@ -28,18 +29,16 @@
     </ion-button>
 
 
-    <ion-button (click)=" hide = !hide ">
+    <ion-button (click)=" a.onToggleSearch(search); ">
       <ion-icon slot="icon-only" name="search"></ion-icon>
     </ion-button>
   </ion-buttons>
- 
-  <div class="mobile-width" *ngIf=" !hide ">
-    <ion-searchbar placeholder="Filter Pizza"  [debounce]="250"></ion-searchbar>
+
+  <div class="mobile-width" [ngClass]="{show: a.state.searchbar?.show, hide: !a.state.searchbar?.show }">
+    <ion-searchbar placeholder="검색어를 입력하세요." #search (keyup.enter)="a.onChangeSearchKeyword(search.value)">
+    </ion-searchbar>
   </div>
 
 
 
 </ion-toolbar>
-
-
-

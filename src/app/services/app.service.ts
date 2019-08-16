@@ -1,5 +1,5 @@
 import { Injectable, ViewChild } from '@angular/core';
-import { MenuController, AlertController, IonContent } from '@ionic/angular';
+import { MenuController, AlertController, IonContent, IonSearchbar } from '@ionic/angular';
 import { WordpressApiService } from 'modules/wordpress-api/services/wordpress-api.service';
 import { environment } from 'src/environments/environment';
 import { ErrorObject } from 'modules/wordpress-api/services/wordpress-api.interface';
@@ -13,6 +13,11 @@ import { IonService } from 'modules/wordpress-api/components/shared/ion-service/
 @Injectable({ providedIn: 'root' })
 export class AppService {
 
+    state: any = {
+        searchbar: {
+            show: false
+        }
+    };
 
     pageCode = pageCode;
     uploadPercent: number;
@@ -210,6 +215,22 @@ export class AppService {
     }
 
 
+    onChangeSearchKeyword(keyword: string) {
+        this.open(`/search/${keyword}`);
+        this.onToggleSearch();
+    }
+    onToggleSearch(search?: IonSearchbar) {
+        // console.log('earch: ', search);
+        if (this.state.searchbar.show) {
+            this.state.searchbar.show = !this.state.searchbar.show;
+        } else {
+            this.state.searchbar.show = true;
+        }
+        if (search && this.state.searchbar.show) {
+            search.setFocus();
+        }
+
+    }
 }
 
 

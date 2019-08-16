@@ -17,12 +17,14 @@ export class HomeTrainingMenuItemComponent implements OnInit {
 
   constructor(
     public a: AppService
-  ) {}
+  ) { }
 
   ngOnInit() { }
 
 
   onLoad(ID: string) {
+
+    this.post = undefined;
 
     this.ID = ID;
 
