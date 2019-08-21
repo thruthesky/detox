@@ -8,9 +8,9 @@
     <h1 class="pt-100px pb-5 ion-text-center fs-32px bold">표제표제표제</h1>
   </ion-text>
 
-  <div class="grid page-width" >
-    <div class="box box1 position-relative cover"
-    [style.background]="'url(' + posts[0].files[0].url + ')'" *ngIf="posts[0] &&  posts[0].files.length">
+  <div class="grid page-width">
+    <div class="box box1 position-relative cover" [style.background]="'url(' + posts[0].files[0].url + ')'"
+      *ngIf="posts[0] &&  posts[0].files.length">
 
 
       <div class="position-absolute h-100 w-100  z-1000">
@@ -23,8 +23,8 @@
     </div>
 
 
-    <div class="box box2 position-relative cover"
-    [style.background]="'url(' + posts[1].files[0].url + ')'" *ngIf="posts[1] &&  posts[1].files.length">
+    <div class="box box2 position-relative cover" [style.background]="'url(' + posts[1].files[0].url + ')'"
+      *ngIf="posts[1] &&  posts[1].files.length">
       <div class="position-absolute h-100 w-100  z-1000">
         <div class="card-content">
           <h2 class="mt-1 fs-16px bold ellipsis" *ngIf="a.isMobile">{{ posts[1].post_title }}</h2>
@@ -34,8 +34,8 @@
       </div>
     </div>
 
-    <div class="box box3 position-relative cover"
-    [style.background]="'url(' + posts[2].files[0].url + ')'" *ngIf="posts[2] &&  posts[2].files.length">
+    <div class="box box3 position-relative cover" [style.background]="'url(' + posts[2].files[0].url + ')'"
+      *ngIf="posts[2] &&  posts[2].files.length">
       <div class="position-absolute h-100 w-100  z-1000">
 
         <div class="card-content">
@@ -46,8 +46,8 @@
       </div>
     </div>
 
-    <div class="box box4 position-relative"
-    [style.background]="'url(' + posts[3].files[0].url + ')'" *ngIf="posts[3] &&  posts[3].files.length">
+    <div class="box box4 position-relative" [style.background]="'url(' + posts[3].files[0].url + ')'"
+      *ngIf="posts[3] &&  posts[3].files.length">
       <div class="position-absolute h-100 w-100  z-1000">
         <div class="card-content">
           <h2 class="mt-1 fs-16px bold ellipsis" *ngIf="a.isMobile">{{ posts[3].post_title }}</h2>
@@ -67,9 +67,10 @@
       <ion-row class="mr-10px md-mr-20px">
         <ion-col size="6" size-md="4" no-padding *ngFor="let post of posts.slice(4)">
 
-          <ion-card class="card xs-mb-0 mr-0 md-ml-20px">
-            <app-ion-file-display [post]=" post "></app-ion-file-display>
-            <ion-card-content class="white bg-color">
+          <ion-card class="product card xs-mb-0 mr-0 md-ml-20px">
+            <ion-img src=" {{ post.files[0].url }} "></ion-img>
+
+            <ion-card-content class="d-block white bg-color">
               <h2 class="fs-16px bold ellipsis" *ngIf="a.isMobile">{{ post.post_title }}</h2>
               <p class="fs-12 ellipsis">{{ post.post_content }}</p>
               <h2 class="fs-20px bold ellipsis" *ngIf="a.isDesktop">{{ post.post_title }}</h2>
@@ -80,6 +81,17 @@
       </ion-row>
     </ion-grid>
 
+    <div class="layout-width mb-5 flex-center" *ngIf="noMorePosts">
+      <ion-item color="light" lines="none">
+        <ion-icon name="warning" slot="start"></ion-icon>
+        <ion-label>더 이상 다이어트 일기가 없습니다.</ion-label>
+      </ion-item>
+    </div>
+
+    <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
+      <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Loading more data...">
+      </ion-infinite-scroll-content>
+    </ion-infinite-scroll>
 
   </section>
 

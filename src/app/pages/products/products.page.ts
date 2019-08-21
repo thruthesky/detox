@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ViewChild } from '@angular/core';
+import { Component, OnInit, Input, ViewChild, OnDestroy } from '@angular/core';
 import { AppService } from 'src/app/services/app.service';
 import { Posts, Post } from 'modules/wordpress-api/services/wordpress-api.interface';
 import { IonInfiniteScroll, ModalController, PopoverController } from '@ionic/angular';
@@ -12,27 +12,34 @@ import { Subscription } from 'rxjs';
   templateUrl: './products.page.html',
   styleUrls: ['./products.page.scss'],
 })
-export class ProductsPage implements OnInit {
+export class ProductsPage implements OnInit, OnDestroy {
 
-  @ViewChild(IonInfiniteScroll, { static: true }) infiniteScroll: IonInfiniteScroll;
-  
+
+  // @ViewChild(IonInfiniteScroll, { static: true }) infiniteScroll: IonInfiniteScroll;
+
   slug = 'products';
 
+
+
   posts: Posts = [];
+
 
 
   page = 1;
   posts_per_page = 10;
   error = '';
 
+
+  inLoading = false;
+  noMorePosts = false;
+
   subscriptions = new Subscription();
-  constructor( 
+  constructor(
     public a: AppService,
     public wp: WordpressApiService,
     private ion: IonService,
     private domSanitizer: DomSanitizer,
-    )
-   { 
+  ) {
   }
 
   reset() {
@@ -61,19 +68,42 @@ export class ProductsPage implements OnInit {
   }
 
 
-  loadPage(callback?: (posts: Posts) => void): void {
-    const sub = this.wp.postSearch({
+  get loadOptions(): any {
+    return {
       category_name: this.slug,
       paged: this.page,
       posts_per_page: this.posts_per_page,
-    }).subscribe((posts: Posts) => {
-      // console.log('posts: ', posts);
+    };
+  }
+
+  loadPage(options?: any): void {
+    if (this.inLoading || this.noMorePosts) {
+      return;
+    }
+    const sub = this.wp.postSearch(this.loadOptions).subscribe((posts: Posts) => {
+      this.inLoading = false;
       this.displayPosts(posts);
-      if (callback) {
-        callback(posts);
+      this.page++;
+      if (this.hasNoMorePosts(posts)) {
+        this.noMorePosts = true;
+      }
+      if (options) {
+        options.scroll.complete();
+        if (this.hasNoMorePosts(posts)) {
+          options.scroll.disabled = true;
+        }
       }
     }, e => this.ion.error({ errcode: '-500', errstring: 'Failed to load post search data' }));
     this.subscriptions.add(sub);
+  }
+
+
+  hasNoMorePosts(posts: Posts): boolean {
+    if (posts && posts.length && posts.length === this.posts_per_page) {
+      return false;
+    } else {
+      return true;
+    }
   }
 
 
@@ -95,26 +125,32 @@ export class ProductsPage implements OnInit {
       });
     }
   }
-  
 
-  loadMore(event: any) {
-    //console.log('load more event: ', event);
 
-    this.page++;
-    this.loadPage(posts => {
+  // loadMore(event: any) {
+  //   // console.log('load more event: ', event);
+
+  //   this.page++;
+  //   this.loadPage(posts => {
+  //     event.target.complete();
+  //     if (posts.length) {
+  //       if (posts.length < this.posts_per_page) {
+  //         this.disableInfiniteScroll();
+  //       }
+  //     } else {
+  //       this.disableInfiniteScroll();
+  //     }
+  //   });
+  // }
+
+
+
+  loadData(event: any) {
+    if (this.noMorePosts) {
       event.target.complete();
-      if (posts.length) {
-        if (posts.length < this.posts_per_page) {
-          this.disableInfiniteScroll();
-        }
-      } else {
-        this.disableInfiniteScroll();
-      }
-    });
-  }
-
-  disableInfiniteScroll() {
-    this.infiniteScroll.disabled = true;
+      return;
+    }
+    this.loadPage({ scroll: event.target });
   }
 
 }

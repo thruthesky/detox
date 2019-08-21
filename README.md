@@ -12,7 +12,7 @@
 
 * Images in home training menu list page should be in 360 px of width and 210 px of height for the best view.
 
-* Images in products menu list page should be in 360 px of width and 327 px of height for the best view.
+* Images in products  list page should be in 800 px of width and 727 px of height for the best view.
 
 * Images in about detoxification page  should be in 360 px of width and 360 px of height for the best view.
 
@@ -42,7 +42,7 @@
 
   -input title
   -input content
-  -upload image
+  -upload image (only one image)
 
   then other details can be edited in the recipe item page
 
@@ -61,7 +61,7 @@
 
   input title = title
   input content = content
-  upload image = image
+  upload image = image (only one image)
   input string1 = subtitle on the top of title
   input string2 = bottom label 
 
