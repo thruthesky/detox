@@ -74,11 +74,28 @@
 
 
 
+        <ion-button  class="h-28px fs-12 border-1px-white bold white" mode="md" fill="outline"   routerLink="/post-list">
+          <!-- login -->
+          {{ a.t( { en: 'Login', ko: '로그인' } ) }}
+        </ion-button>
+
+        <ion-button  class="h-28px fs-12 border-1px-white bold white" mode="md" fill="outline"  routerLink="/post-list">
+          <!-- register -->
+          {{ a.t( { en: 'Register', ko: '레지스터' } ) }}
+        </ion-button>
+
+
+
+
+
+
+
+<!-- 
         <span class="inline-block" routerLink="/login"
           *ngIf="a.wp.userIsLoggedOut">{{ a.t( { en: 'Login', ko: '로그인' } ) }}</span>
 
         <span class="inline-block" routerLink="/register"
-          *ngIf="a.wp.userIsLoggedOut">{{ a.t( { en: 'Register', ko: '회원가입' } ) }}</span>
+          *ngIf="a.wp.userIsLoggedOut">{{ a.t( { en: 'Register', ko: '회원가입' } ) }}</span> -->
 
 
 
