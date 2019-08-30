@@ -1,0 +1,14 @@
+<ion-toolbar>
+  <!-- Segment with secondary color -->
+  <ion-segment (ionChange)="onIonChange( $event.target.value )" color="green">
+    <ion-segment-button value="/alarm-list" [checked]="tab == 0">
+      <ion-label>{{ a.t( {en: 'Alaram Settings', ko: '알람 설정'} ) }}</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="home-training/meditation" [checked]="tab == 1">
+      <ion-label>{{ a.t( {en: 'Home Training', ko: '홈트레이닝'} ) }}</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="/detoxification-diary" [checked]="tab == 2">
+      <ion-label>{{ a.t( {en: 'Detox Diary', ko: '해독 일지'} ) }}</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+</ion-toolbar>

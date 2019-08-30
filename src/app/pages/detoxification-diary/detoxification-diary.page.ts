@@ -7,6 +7,7 @@ import { WordpressApiService } from 'modules/wordpress-api/services/wordpress-ap
 import { IonService } from 'modules/wordpress-api/components/shared/ion-service/ion-service';
 import { DomSanitizer } from '@angular/platform-browser';
 import { IonPostEditComponent } from 'modules/wordpress-api/components/forum/ion-post-edit/ion-post-edit.component';
+import { JoinMenuComponent } from 'src/app/components/join-menu/join-menu.component';
 
 @Component({
   selector: 'app-detoxification-diary',
