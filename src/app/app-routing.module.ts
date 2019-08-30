@@ -33,6 +33,7 @@ const routes: Routes = [
   { path: 'detoxification-tip-detail/:ID', loadChildren: () => import('./pages/detoxification-tip-detail/detoxification-tip-detail.module').then(m => m.DetoxificationTipDetailPageModule) },
   { path: 'push-notifications-to-all-users/:ID', loadChildren: './pages/admin/push-notifications-to-all-users/push-notifications-to-all-users.module#PushNotificationsToAllUsersPageModule' },
   { path: 'admin', loadChildren: './pages/admin/admin.module#AdminPageModule' },
+  { path: 'password-find', loadChildren: './pages/password-find/password-find.module#PasswordFindPageModule' },
   { path: '**', loadChildren: () => import('./pages/page-not-found/page-not-found.module').then(m => m.PageNotFoundPageModule) },
 
 
