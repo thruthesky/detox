@@ -15,6 +15,7 @@ import { DesktopHomeTopSliderModule } from 'src/app/components/desktop-home-top-
 import { DesktopHomeTestimonialModule } from 'src/app/components/desktop-home-testimonial/desktop-home-testimonial.module';
 import { DesktopHomeProductsModule } from 'src/app/components/desktop-home-products/desktop-home-products.module';
 import { DesktopHomeFooterModule } from 'src/app/components/desktop-home-footer/desktop-home-footer.module';
+import { DesktopHomeCalcButtonModule } from 'src/app/components/desktop-home-calc-button/desktop-home-calc-button.module';
 
 @NgModule({
   imports: [
@@ -34,10 +35,11 @@ import { DesktopHomeFooterModule } from 'src/app/components/desktop-home-footer/
     MobileHomeProductsModule,
     MobileHomeBottomButtonsModule,
     DesktopHomeTopSliderModule,
+    DesktopHomeCalcButtonModule,
     DesktopHomeTestimonialModule,
     DesktopHomeProductsModule,
     DesktopHomeFooterModule,
   ],
   declarations: [HomePage]
 })
-export class HomePageModule {}
+export class HomePageModule { }
