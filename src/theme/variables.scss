@@ -542,7 +542,7 @@
   box-shadow: none !important;
 }
 
-.no-border-radius {
+.no-border-radius, .no-radius {
   --border-radius: 0 !important;
   border-radius: 0 !important;
 }
