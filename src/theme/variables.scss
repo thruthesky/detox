@@ -447,6 +447,10 @@
   font-size: 12px !important;
 }
 
+.fs-13 {
+  font-size: 13px !important;
+}
+
 .fs-18px {
   font-size: 18px !important;
 }
@@ -1637,8 +1641,8 @@ ion-slides {
   --width: 360px !important;
 
   @media all and (min-width:768px) {
-  --width: 450px !important;
-    
+    --width: 450px !important;
+
   }
 
 
@@ -1650,13 +1654,14 @@ ion-slides {
 }
 
 .diary-content .native-textarea {
-    min-height: 30px !important;
+  min-height: 30px !important;
 }
 
 
 .show {
   display: block !important;
 }
+
 .hide {
   display: none !important;
 }
@@ -1664,11 +1669,19 @@ ion-slides {
 .no-margin {
   .post_content p {
     margin-bottom: 0 !important;
-}
+  }
 }
 
 .product {
   ion-img {
-      height: 200px !important;
+    height: 200px !important;
   }
+}
+
+.text-center {
+  text-align: center;
+}
+
+.inline-block {
+  display: inline-block;
 }

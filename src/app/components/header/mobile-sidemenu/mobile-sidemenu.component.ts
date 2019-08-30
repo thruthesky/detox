@@ -33,7 +33,10 @@ export class MobileSidemenuComponent implements OnInit {
   ngOnInit() { }
 
 
-  open(url: string) {
+  open(url: string, event?: Event) {
+    if ( event ) {
+      event.stopPropagation();
+    }
 
     if (this.a.isDesktop) {
       this.popoverController.dismiss();
@@ -46,10 +49,9 @@ export class MobileSidemenuComponent implements OnInit {
     }
   }
 
-  onClickLogout() {
-
+  onClickLogout(event?: any) {
     this.a.logout();
-    this.open('/');
+    this.open('/', event);
   }
 
 
