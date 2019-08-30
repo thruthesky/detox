@@ -115,6 +115,10 @@
   width: 15px;
 }
 
+
+.h-28px {
+  height: 28px !important;
+}
 .h-50px {
   height: 50px;
 }
@@ -538,7 +542,7 @@
   box-shadow: none !important;
 }
 
-.no-border-radius {
+.no-border-radius, .no-radius {
   --border-radius: 0 !important;
   border-radius: 0 !important;
 }
@@ -911,7 +915,7 @@
 }
 
 .h-150px {
-  height: 150px;
+  height: 150px !important;
 }
 
 .no-outline {
