@@ -27,7 +27,7 @@
 
     <ion-grid class="select  p-0 pt-50px ">
       <ion-row>
-        <ion-col no-padding>
+        <!-- <ion-col no-padding>
           <ion-item>
             <ion-label position="floating">Days</ion-label>
             <ion-select name="days" multiple interface="popover" formControlName="days">
@@ -41,26 +41,29 @@
             </ion-select>
           </ion-item>
           <div class="line"></div>
-        </ion-col>
+        </ion-col> -->
         <ion-col no-padding>
           <ion-item>
             <ion-label position="floating">Hour</ion-label>
-            <ion-select name="hour" interface="popover" formControlName="hour">
+            <ion-input name="hour" formControlName="hour"></ion-input>
+            <!-- <ion-select name="hour" interface="popover" formControlName="hour">
               <ng-container *ngFor="let h of hours; let i = index; ">
                 <ion-select-option value="{{ i }}">{{ i }}</ion-select-option>
               </ng-container>
-            </ion-select>
+            </ion-select> -->
           </ion-item>
           <div class="line"></div>
         </ion-col>
         <ion-col no-padding>
           <ion-item>
             <ion-label position="floating">Minute</ion-label>
-            <ion-select name="minute" interface="popover" formControlName="minute">
+
+            <ion-input name="minute" formControlName="minute"></ion-input>
+            <!-- <ion-select name="minute" interface="popover" formControlName="minute">
               <ng-container *ngFor="let h of minutes; let i = index; ">
                 <ion-select-option value="{{ i }}">{{ i }}</ion-select-option>
               </ng-container>
-            </ion-select>
+            </ion-select> -->
           </ion-item>
         </ion-col>
       </ion-row>

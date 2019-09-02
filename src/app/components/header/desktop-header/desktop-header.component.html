@@ -8,7 +8,7 @@
     </ion-col>
     <ion-col text-end align-self-center no-padding>
 
-      <ion-button mode="md" fill="clear" routerLink="/about" class="ion-no-margin bold fs-10  green no-color-activate">
+      <!-- <ion-button mode="md" fill="clear" routerLink="/about" class="ion-no-margin bold fs-10  green no-color-activate">
         {{ a.t({ en: 'ABOUT', ko: '7디톡스'}) }}
       </ion-button>
       <ion-button mode="md" fill="clear" routerLink="/alarm-list" class=" bold fs-10 w-40px green no-color-activate">
@@ -17,7 +17,7 @@
       <ion-button mode="md" fill="clear" routerLink="/products" class=" bold fs-10 w-40px green no-color-activate">
         {{ a.t({ en: 'PRODUCTS', ko: '제품소개'}) }}</ion-button>
       <ion-button mode="md" fill="clear" routerLink="/post-list" class="bold fs-10 w-40px green no-color-activate">
-        {{ a.t({ en: 'FORUM', ko: '게시판'}) }}</ion-button>
+        {{ a.t({ en: 'FORUM', ko: '게시판'}) }}</ion-button> -->
     </ion-col>
   </ion-row>
 </ion-grid>
@@ -39,19 +39,76 @@
 
       </ion-col>
 
-      <ion-col class="ion-no-padding">
+      <!-- <ion-col class="ion-no-padding">
         <ion-button mode="md" fill="clear" class="white" (click)=" a.onToggleSearch(search) ">
           <ion-icon slot="icon-only" name="search" mode="md" class="white fs-22px"></ion-icon>
         </ion-button>
-      </ion-col>
-      <div class="position-absolute top-43px  z-2000"
+      </ion-col> -->
+      <!-- <div class="position-absolute top-43px  z-2000"
         [ngClass]="{show: a.state.searchbar?.show, hide: !a.state.searchbar?.show }">
         <ion-searchbar placeholder="검색어를 입력하세요." #search (keyup.enter)="a.onChangeSearchKeyword(search.value)">
         </ion-searchbar>
-      </div>
+      </div> -->
 
       <ion-col size="10" class="ion-text-end ion-no-padding ">
 
+        <ion-button mode="md" fill="clear" class="mt-3px w-110px fs-12 white no-radius " routerLink="/about"
+          routerLinkActive="active">
+
+          {{ a.t( {en: '7Detox', ko: '7디톡스'} ) }}
+        </ion-button>
+
+        <ion-button mode="md" fill="clear" class="mt-3px w-110px fs-12 white no-radius" routerLink="/join/"
+          routerLinkActive="active">
+
+          {{ a.t( {en: 'Join', ko: '참여하기'} ) }}
+        </ion-button>
+
+        <ion-button mode="md" fill="clear" class="mt-3px w-110px fs-12 white no-radius" routerLink="/products"
+          routerLinkActive="active">
+
+          {{ a.t( { en: 'Products', ko: ' 제품소개'} ) }}
+        </ion-button>
+
+        <ion-button mode="md" fill="clear" class="w-110px mt-3px mr-3 fs-12 white no-radius" routerLink="/post-list"
+          routerLinkActive="active">
+
+          {{ a.t( { en: 'forum', ko: '게시판' } ) }}
+        </ion-button>
+
+        <ng-container *ngIf=" a.wp.userIsLoggedOut ">
+
+
+
+          <ion-button class="h-28px fs-12 border-1px-white bold white" mode="md" fill="outline" routerLink="/login">
+            {{ a.t( { en: 'Login', ko: '로그인' } ) }}
+          </ion-button>
+
+          <ion-button class="h-28px fs-12 border-1px-white bold white" mode="md" fill="outline" routerLink="/register">
+
+            {{ a.t( { en: 'Register', ko: '회원가입' } ) }}
+          </ion-button>
+
+        </ng-container>
+
+
+
+
+
+
+        <!-- 
+        <span class="inline-block" routerLink="/login"
+          *ngIf="a.wp.userIsLoggedOut">{{ a.t( { en: 'Login', ko: '로그인' } ) }}</span>
+
+        <span class="inline-block" routerLink="/register"
+          *ngIf="a.wp.userIsLoggedOut">{{ a.t( { en: 'Register', ko: '회원가입' } ) }}</span> -->
+
+
+
+
+
+
+        <!-- 
         <ion-button mode="md" fill="clear" class="mt-3px w-110px fs-12 white " routerLink="/how-to-detox-my-body">
           <ion-icon name="document" slot="start" mode="ios" class="fs-20px"></ion-icon>
           {{ a.t( {en: 'Manual', ko: '설명서'} ) }}
@@ -75,7 +132,7 @@
         <ion-button mode="md" fill="clear" class="w-110px mt-3px fs-12 white" routerLink="/detoxification-recipe">
           <ion-icon name="book" slot="start" mode="ios" class="fs-20px"></ion-icon>
           {{ a.t( { en: 'Recipe', ko: '해독레시피' } ) }}
-        </ion-button>
+        </ion-button> -->
 
       </ion-col>
     </ion-row>

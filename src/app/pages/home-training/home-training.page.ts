@@ -3,6 +3,7 @@ import { AppService } from 'src/app/services/app.service';
 import { HomeTrainingMenuListComponent } from 'src/app/components/home-training-menu-list/home-training-menu-list.component';
 import { HomeTrainingMenuItemComponent } from 'src/app/components/home-training-menu-item/home-training-menu-item.component';
 import { IonContent } from '@ionic/angular';
+import { JoinMenuComponent } from 'src/app/components/join-menu/join-menu.component';
 // import { ActivatedRoute } from '@angular/router';
 
 
@@ -19,6 +20,7 @@ export class HomeTrainingPage implements OnInit {
 
 
   @ViewChild(IonContent, { static: true }) content: IonContent;
+
 
   show: 'item' | 'list' = 'list';
 

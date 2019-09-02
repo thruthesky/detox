@@ -1,8 +1,13 @@
 <ion-header no-border>
   <app-header></app-header>
+  <app-join-menu></app-join-menu>
+
 </ion-header>
 
 <ion-content>
+
+
+
 
   <section *ngIf="a.isMobile">
     <ion-toolbar>
@@ -28,17 +33,17 @@
 
 
   <section *ngIf="a.isDesktop">
-   
+
     <ion-text color="green" text-center>
       <h1 class="mb-0 pt-100px fs-32px">{{ alarmsTitle.post_title }}</h1>
     </ion-text>
 
     <div class="pt-5 pb-5 w-478px lh-25px">
 
-        <ion-text color="medium">
-          <app-page-post-content [guid]=" 'alarmsTitle' " [post]=" alarmsTitle " (edited)=" alarmsTitle = $event ">
-          </app-page-post-content>
-        </ion-text>
+      <ion-text color="medium">
+        <app-page-post-content [guid]=" 'alarmsTitle' " [post]=" alarmsTitle " (edited)=" alarmsTitle = $event ">
+        </app-page-post-content>
+      </ion-text>
 
     </div>
 
@@ -50,12 +55,19 @@
   <section class="pb-5 md-pb-150px md-page-width md-no-border  border-top-gray z-1000  ">
 
     <!-- <ion-button  (click)="onClickAlarmUpdate($event, null)">Create</ion-button> -->
-    <div class="ion-text-end">
+    <!-- <div class="ion-text-end">
       <ion-button (click)="onClickAlarmUpdate($event, null)">
         <ion-icon slot="icon-only" name="add"></ion-icon>
       </ion-button>
-    </div>
+    </div> -->
 
+
+
+  <div class="mt-3 flex-center" *ngIf="creatingDefaultAlarms">
+      <ion-spinner></ion-spinner>
+      <div class="ml-3">{{ a.t({en: 'Creating default alarams. Please wait.', ko: '기본 알람 설정을 하는 중입니다. 잠시만 기다려주세요.'}) }}</div>
+    </div>
+  
 
 
     <ion-list *ngIf=" alarms?.length ">
@@ -68,7 +80,7 @@
             <ion-col class="fs-14 md-py-20px" size="7" (click)="onClickAlarmUpdate($event, alarm)">
               <p class="black bold">{{ alarm.title }}</p>
               <p class="i-color-medium">{{ alarm.content }}</p>
-              <p>
+              <!-- <p>
                 {{ alarm.sunday == 'Y' ? '일' : ''}}
                 {{ alarm.monday == 'Y' ? '월' : ''}}
                 {{ alarm.tuesday == 'Y' ? '화' : ''}}
@@ -76,7 +88,7 @@
                 {{ alarm.thursday == 'Y' ? '목' : ''}}
                 {{ alarm.friday == 'Y' ? '금' : ''}}
                 {{ alarm.saturday == 'Y' ? '토' : ''}}
-              </p>
+              </!-->
             </ion-col>
             <ion-col class="flex-column-center md-py-20px" size="2" no-padding>
 
@@ -95,10 +107,10 @@
       </ion-item>
     </ion-list>
 
-    <ion-item button *ngIf="! alarms?.length" (click)="onClickAlarmUpdate($event, null)">
+    <!-- <ion-item button *ngIf="! alarms?.length" (click)="onClickAlarmUpdate($event, null)">
       <ion-icon name="create" slot="start"></ion-icon>
       <ion-label>앗, 알림 스케쥴이 없습니다. [알림 스케쥴 생성하기]</ion-label>
-    </ion-item>
+    </ion-item> -->
 
   </section>
 

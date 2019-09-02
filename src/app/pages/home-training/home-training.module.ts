@@ -11,6 +11,7 @@ import { HomeTrainingMenuListModule } from 'src/app/components/home-training-men
 import { DesktopHomeFooterModule } from 'src/app/components/desktop-home-footer/desktop-home-footer.module';
 import { HomeTrainingMenuModule } from 'src/app/components/home-training-menu/home-training-menu.module';
 import { HomeTrainingMenuItemModule } from 'src/app/components/home-training-menu-item/home-training-menu-item.module';
+import { JoinMenuModule } from 'src/app/components/join-menu/join-menu.module';
 
 const routes: Routes = [
   {
@@ -29,7 +30,8 @@ const routes: Routes = [
     HomeTrainingMenuListModule,
     HomeTrainingMenuItemModule,
     DesktopHomeFooterModule,
-    HomeTrainingMenuModule
+    HomeTrainingMenuModule,
+    JoinMenuModule
   ],
   declarations: [HomeTrainingPage]
 })
