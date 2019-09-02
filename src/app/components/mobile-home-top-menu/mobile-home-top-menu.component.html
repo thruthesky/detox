@@ -1,15 +1,15 @@
- <!-- menu bar -->
- <ion-segment  color="green" mode="md">
-    <ion-segment-button class="letter-spacing-0" checked mode="md" routerLink="/about">
-      {{ a.t({en: 'About', ko: '7디톡스'}) }}
-    </ion-segment-button>
-    <ion-segment-button class="letter-spacing-0" mode="md" routerLink="/join/alarm-list">
-      {{ a.t({en: 'Alarm', ko: '참여하기'}) }}
-    </ion-segment-button>
-    <ion-segment-button class="letter-spacing-0" mode="md" routerLink="/products">
-      {{ a.t({en: 'Products', ko: '제품소개'}) }}
-    </ion-segment-button>
-    <ion-segment-button class="letter-spacing-0" mode="md" routerLink="/post-list">
-      {{ a.t({en: 'Forum', ko: '게시판'}) }}
-    </ion-segment-button>
-  </ion-segment>
+<!-- menu bar -->
+<ion-segment mode="md">
+  <ion-segment-button class="segment-not-active  letter-spacing-0" mode="md" routerLink="/about">
+    <ion-label color="green">{{ a.t({en: 'About', ko: '7디톡스'}) }}</ion-label>
+  </ion-segment-button>
+  <ion-segment-button class="segment-not-active letter-spacing-0" mode="md" routerLink="/join/alarm-list">
+    <ion-label color="green">{{ a.t({en: 'Alarm', ko: '참여하기'}) }}</ion-label>
+  </ion-segment-button>
+  <ion-segment-button class=" segment-not-active  letter-spacing-0" mode="md" routerLink="/products">
+    <ion-label color="green">{{ a.t({en: 'Products', ko: '제품소개'}) }}</ion-label>
+  </ion-segment-button>
+  <ion-segment-button class=" segment-not-active letter-spacing-0" mode="md" routerLink="/post-list">
+    <ion-label color="green">{{ a.t({en: 'Forum', ko: '게시판'}) }}</ion-label>
+  </ion-segment-button>
+</ion-segment>
