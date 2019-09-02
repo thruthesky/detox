@@ -10,6 +10,10 @@ export class HomeTrainingMenuComponent implements OnInit {
 
   @Output() change = new EventEmitter<string>();
 
+  selected = 'meditation';
+
+
+
   constructor(
     public a: AppService
   ) {
@@ -21,6 +25,7 @@ export class HomeTrainingMenuComponent implements OnInit {
 
   onClick(event: Event, name: string) {
     this.change.emit(name);
+    this.selected = name;
   }
 
 
