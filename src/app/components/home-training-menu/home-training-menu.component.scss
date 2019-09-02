@@ -5,13 +5,29 @@
   }
 }
 ion-label {
+ 
+  font-size: 12px !important;
   @media all and (max-width: 768px) {
     letter-spacing: 0;
-    font-size: 12px !important;
   }
 }
 
 ion-segment-button {
     --padding-start: 0 !important;
     --padding-end: 0 !important;
+}
+
+
+ion-item {
+  --padding-start: 8px !important; 
+}
+
+
+ion-radio {
+  margin-right: 5px !important;
+  margin-left: 0 !important;
+}
+
+ion-text {
+  font-size: 10px !important;
 }

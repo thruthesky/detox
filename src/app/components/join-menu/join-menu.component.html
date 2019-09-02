@@ -1,13 +1,11 @@
-<ion-toolbar>
-  <ion-segment>
-    <ion-segment-button class="segment-not-active" routerLink="/join/alarm-list" routerLinkActive="active">
-      <ion-label>{{ a.t( {en: 'Alaram Settings', ko: '알람 설정'} ) }}</ion-label>
-    </ion-segment-button>
-    <ion-segment-button class="segment-not-active"  routerLink="/join/home-training/meditation"  routerLinkActive="active" >
-      <ion-label>{{ a.t( {en: 'Home Training', ko: '홈트레이닝'} ) }}</ion-label>
-    </ion-segment-button>
-    <ion-segment-button class="segment-not-active"  routerLink="/join/detoxification-diary"  routerLinkActive="active" >
-      <ion-label>{{ a.t( {en: 'Detox Diary', ko: '해독 일지'} ) }}</ion-label>
-    </ion-segment-button>
-  </ion-segment>
-</ion-toolbar>
+<ion-segment class="layout-600px md-mt-5">
+  <ion-segment-button class="segment-not-active" routerLink="/join/alarm-list" routerLinkActive="active" no-padding checked>
+    <ion-label>{{ a.t( {en: 'Alaram Settings', ko: '알람 설정'} ) }}</ion-label>
+  </ion-segment-button>
+  <ion-segment-button class="segment-not-active" routerLink="/join/home-training/meditation" routerLinkActive="active" no-padding>
+    <ion-label>{{ a.t( {en: 'Home Training', ko: '홈트레이닝'} ) }}</ion-label>
+  </ion-segment-button>
+  <ion-segment-button class="segment-not-active" routerLink="/join/detoxification-diary" routerLinkActive="active" no-padding>
+    <ion-label>{{ a.t( {en: 'Detox Diary', ko: '해독 일지'} ) }}</ion-label>
+  </ion-segment-button>
+</ion-segment>

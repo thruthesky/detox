@@ -1,12 +1,12 @@
 <ion-header no-border>
   <app-header></app-header>
-  <app-join-menu></app-join-menu>
 
 </ion-header>
 
 <ion-content>
 
 
+  <app-join-menu></app-join-menu>
 
 
   <section *ngIf="a.isMobile">
@@ -63,11 +63,12 @@
 
 
 
-  <div class="mt-3 flex-center" *ngIf="creatingDefaultAlarms">
+    <div class="mt-3 flex-center" *ngIf="creatingDefaultAlarms">
       <ion-spinner></ion-spinner>
-      <div class="ml-3">{{ a.t({en: 'Creating default alarams. Please wait.', ko: '기본 알람 설정을 하는 중입니다. 잠시만 기다려주세요.'}) }}</div>
+      <div class="ml-3">{{ a.t({en: 'Creating default alarams. Please wait.', ko: '기본 알람 설정을 하는 중입니다. 잠시만 기다려주세요.'}) }}
+      </div>
     </div>
-  
+
 
 
     <ion-list *ngIf=" alarms?.length ">
