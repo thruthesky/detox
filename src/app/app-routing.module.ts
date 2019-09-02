@@ -7,7 +7,7 @@ const routes: Routes = [
   { path: 'register', loadChildren: () => import('./pages/register/register.module').then(m => m.RegisterPageModule) },
   { path: 'login', loadChildren: () => import('./pages/login/login.module').then(m => m.LoginPageModule) },
   { path: 'about', loadChildren: () => import('./pages/about/about.module').then(m => m.AboutPageModule) },
-  { path: 'join', loadChildren: () => import('./pages/alarm-list/alarm-list.module').then(m => m.AlarmListPageModule) },
+  { path: 'join', redirectTo: 'join/alarm-list', pathMatch: 'full' },
   { path: 'join/alarm-list', loadChildren: () => import('./pages/alarm-list/alarm-list.module').then(m => m.AlarmListPageModule) },
   { path: 'products', loadChildren: () => import('./pages/products/products.module').then(m => m.ProductsPageModule) },
   { path: 'post-list', loadChildren: () => import('./pages/forum/post-list/post-list.module').then(m => m.PostListPageModule) },
