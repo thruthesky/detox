@@ -104,6 +104,7 @@ export class AlarmListPage implements OnInit {
     public a: AppService,
     public popoverController: PopoverController,
   ) {
+    window['comp'] = this;
     // this.onClickAlarmItem(null);
     this.a.wp.postGetIn({ guid: 'alarmsTitle' }, this.alarmsTitle);
 
@@ -116,7 +117,7 @@ export class AlarmListPage implements OnInit {
         // console.log('No alaram exists. ');
         this.createAlarams();
       } else {
-        // console.log('res.length', res.length);
+        console.log('res.length', res.length, res);
         this.creatingDefaultAlarms = false;
         this.alarms = res as any;
 
