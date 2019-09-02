@@ -26,16 +26,17 @@
 .content {
     height: auto;
     max-height: 500px;
-    -webkit-transition: max-height 1s; /* Safari */
+    -webkit-transition: max-height .2s; /* Safari */
     -webkit-transition-timing-function: linear; /* Safari */
     transition: max-height .2s;
     transition-timing-function: linear;
+    overflow: hidden;
 
 }
 
 .content.collapsed {
     max-height: 0 ; 
-    display: none !important;
+
   }
 
 

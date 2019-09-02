@@ -9,7 +9,10 @@ import { AppService } from 'src/app/services/app.service';
 export class PasswordFindPage implements OnInit {
 
   email = '';
-  constructor(public a: AppService) { }
+  title: string;
+  constructor(public a: AppService) {
+    this.title = a.t({ en: 'Password Find', ko: '비밀번호 찾기' });
+   }
 
   ngOnInit() {
   }
