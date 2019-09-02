@@ -21,20 +21,20 @@ export class MobileSidemenuComponent implements OnInit {
     public a: AppService
   ) {
 
- 
-    if(a.wp.getUserData()) {
+
+    if (a.wp.getUserData()) {
       this.user = a.wp.getUserData();
     }
 
 
 
-   }
+  }
 
   ngOnInit() { }
 
 
   open(url: string, event?: Event) {
-    if ( event ) {
+    if (event) {
       event.stopPropagation();
     }
 
