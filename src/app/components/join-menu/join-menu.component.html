@@ -1,14 +1,33 @@
 <ion-toolbar>
-  <!-- Segment with secondary color -->
-  <ion-segment (ionChange)="onIonChange( $event.target.value )" color="green">
-    <ion-segment-button value="/alarm-list" [checked]="tab == 0">
+  <ion-segment>
+    <ion-segment-button class="segment-not-active" routerLink="/join/alarm-list" routerLinkActive="active">
       <ion-label>{{ a.t( {en: 'Alaram Settings', ko: '알람 설정'} ) }}</ion-label>
     </ion-segment-button>
-    <ion-segment-button value="home-training/meditation" [checked]="tab == 1">
+    <ion-segment-button class="segment-not-active"  routerLink="/join/home-training/meditation"  routerLinkActive="active" >
       <ion-label>{{ a.t( {en: 'Home Training', ko: '홈트레이닝'} ) }}</ion-label>
     </ion-segment-button>
-    <ion-segment-button value="/detoxification-diary" [checked]="tab == 2">
+    <ion-segment-button class="segment-not-active"  routerLink="/join/detoxification-diary"  routerLinkActive="active" >
       <ion-label>{{ a.t( {en: 'Detox Diary', ko: '해독 일지'} ) }}</ion-label>
     </ion-segment-button>
   </ion-segment>
 </ion-toolbar>
+
+<!-- <ion-toolbar>
+
+  <ion-buttons slot="start">
+    <ion-button routerLink="/alarm-list" routerLinkActive="active">
+      <ion-icon slot="start" name="add" ></ion-icon>
+      ht
+    </ion-button>
+    <ion-button routerLink="/home-training/meditation"  routerLinkActive="active">
+      <ion-icon slot="start" name="add"></ion-icon>
+      dd
+    </ion-button>
+    <ion-button routerLink="/detoxification-diary"  routerLinkActive="active">
+      <ion-icon slot="start" name="add"></ion-icon>
+      aa
+    </ion-button>
+  </ion-buttons>
+
+
+</ion-toolbar> -->

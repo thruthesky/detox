@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { JoinMenuComponent } from './join-menu.component';
 import { IonicModule } from '@ionic/angular';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -10,7 +11,8 @@ import { IonicModule } from '@ionic/angular';
   exports: [JoinMenuComponent],
   imports: [
     CommonModule,
-    IonicModule
+    IonicModule,
+    RouterModule
   ]
 })
 export class JoinMenuModule { }
