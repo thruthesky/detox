@@ -6,4 +6,16 @@
 .segment-not-active {
   --indicator-color-checked: none !important;
   --color-checked: none !important;
+  outline: none !important;
 }
+
+ion-label {
+  @media all and (max-width: 768px) {
+    letter-spacing: 0 !important;
+    font-size: 10px !important;
+  }
+}
+
+
+
+
