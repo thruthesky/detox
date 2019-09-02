@@ -23,7 +23,7 @@ export class PasswordFindPage implements OnInit {
       this.a.wp.sendEmail({
         email: this.email,
         title: `7Detox - Your password has been changed.`,
-        body: `Your new password in 7Detox website is ${res.new_password}`,
+        body: `Your new password in 7Detox is ${res.new_password}`,
       }).subscribe(re => {
         console.log('email sent!', re);
       }, e => this.a.error(e));
