@@ -9,6 +9,8 @@ import { AppService } from 'src/app/services/app.service';
 export class MobileHeaderComponent implements OnInit {
 
 
+
+
   @Input() title: string;
   @Input() homeIcon: boolean;
 
@@ -18,7 +20,7 @@ export class MobileHeaderComponent implements OnInit {
     public a: AppService
   ) { }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
 }
 

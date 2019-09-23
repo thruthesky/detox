@@ -2,12 +2,10 @@
   <ion-buttons slot="start">
 
 
-    <ion-back-button></ion-back-button>
+    <ion-back-button mode="md"></ion-back-button>
 
 
-    <ion-button *ngIf="! homeIcon " routerLink="/">
-      <ion-icon slot="icon-only" name="home"></ion-icon>
-    </ion-button>
+
   </ion-buttons>
 
 
@@ -18,20 +16,11 @@
   </ion-title>
 
 
-
-
-
   <ion-buttons slot="end">
-
-
     <ion-button (click)="a.openSideMenu()">
       <ion-icon slot="icon-only" name="menu"></ion-icon>
     </ion-button>
 
-
-    <!-- <ion-button (click)=" a.onToggleSearch(search); ">
-      <ion-icon slot="icon-only" name="search"></ion-icon>
-    </ion-button> -->
   </ion-buttons>
 
   <div class="mobile-width" [ngClass]="{show: a.state.searchbar?.show, hide: !a.state.searchbar?.show }">
