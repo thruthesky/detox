@@ -682,7 +682,11 @@
 }
 
 .align-items-center {
-  align-items: center;
+  align-items: center !important;
+}
+
+.d-flex {
+  display: flex !important;
 }
 
 .ml-5 {
