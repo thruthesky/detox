@@ -115,7 +115,6 @@
   width: 15px;
 }
 
-
 .h-28px {
   height: 28px !important;
 }
@@ -476,6 +475,11 @@
   --height: 40px !important;
 }
 
+.h-42px {
+  height: 42px !important;
+  --height: 42px !important;
+}
+
 .h-45px {
   height: 45px !important;
 }
@@ -542,7 +546,8 @@
   box-shadow: none !important;
 }
 
-.no-border-radius, .no-radius {
+.no-border-radius,
+.no-radius {
   --border-radius: 0 !important;
   border-radius: 0 !important;
 }
@@ -964,7 +969,6 @@
   line-height: 100px !important;
 }
 
-
 .fs-34px {
   font-size: 34px !important;
 }
@@ -1008,7 +1012,6 @@
   max-width: 600px !important;
   margin: 0 auto !important;
 }
-
 
 .w-400px {
   width: 400px;
@@ -1645,11 +1648,9 @@ ion-slides {
 .diary-popup {
   --width: 360px !important;
 
-  @media all and (min-width:768px) {
+  @media all and (min-width: 768px) {
     --width: 450px !important;
-
   }
-
 
   // .popover-content {
   //   top: 50% !important;
@@ -1661,7 +1662,6 @@ ion-slides {
 .diary-content .native-textarea {
   min-height: 30px !important;
 }
-
 
 .show {
   display: block !important;

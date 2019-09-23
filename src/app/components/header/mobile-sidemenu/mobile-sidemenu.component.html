@@ -2,7 +2,7 @@
 
 
   <div class="float-right">
-    <ion-button fill="clear" no-margin mode="ios" (click)="open('', $event)" size="small" fill="clear"
+    <ion-button class="close" fill="clear" no-margin mode="ios" (click)="open('', $event)" size="small" fill="clear"
       class="h-40px white i-color-act-white ">
       <ion-icon slot="icon-only" name="close"></ion-icon>
     </ion-button>
@@ -10,15 +10,26 @@
 
   <div class="px-4 w-100 fs-14 xy-center white" *ngIf=" a.wp.userIsLoggedOut ">
     <div class="text-center"><b>로그인</b> 해주세요.</div>
-    <div class="flex-between mt-3">
-      <div (click)="open('/register', $event)">
-        {{ a.t({ en: 'Register', ko: '회원가입' }) }}
-      </div>
-      <div class="pl-2" (click)=" open('/login', $event) ">
-        {{ a.t({ en: 'Login', ko: '로그인' }) }}
-      </div>
-    </div>
+
   </div>
+
+  <ion-grid class="button-login position-absolute bottom w-100" no-padding>
+    <ion-row>
+      <ion-col size="6" no-padding>
+        <ion-button class="h-42px  bold" (click)="open('/register', $event)" fill="clear" color="light" expand="full"
+          mode="ios" no-margin>
+          <ion-label class="fs-12"> {{ a.t({ en: 'Register', ko: '회원가입' }) }}</ion-label>
+        </ion-button>
+      </ion-col>
+      <ion-col size="6" no-padding>
+        <ion-button class="h-42px bold" (click)=" open('/login', $event) " fill="clear" color="light" expand="full"
+          mode="ios" no-margin>
+          <ion-label class="fs-12"> {{ a.t({ en: 'Login', ko: '로그인' }) }}</ion-label>
+
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 
 
   <div class="flex-between w-100 y-center" *ngIf=" a.wp.userIsLoggedIn && user">
@@ -96,47 +107,6 @@
       </ion-col>
     </ion-row>
 
-    <!-- <ion-row class="pt-2">
-      <ion-col size="6" class="ion-no-padding no-outline">
-        <ion-button fill="clear" no-margin mode="ios" (click)="open('/about')">{{ a.t({en: 'About?', ko: '세븐디톡스란?'}) }}
-        </ion-button>
-      </ion-col>
-      <ion-col size="6" class="ion-no-padding">
-        <ion-button fill="clear" no-margin mode="ios" (click)="open('/about-detoxification')">
-          {{ a.t({ en: 'About Detox?', ko: '해독이란?'})}}</ion-button>
-      </ion-col>
-    </ion-row> -->
-
-    <!-- <ion-row>
-      <ion-col size="6" class="ion-no-padding no-outline">
-        <ion-button fill="clear" no-margin mode="ios" (click)="open('/how-to-detox-my-body')">
-          {{ a.t({en: 'How to detox my body', ko: '내 몸 해독 설명서'}) }}</ion-button>
-      </ion-col>
-      <ion-col size="6" class="ion-no-padding">
-        <ion-button fill="clear" no-margin mode="ios" (click)="open('/products')">{{ a.t({en: 'Product', ko: '제품소개'}) }}
-        </ion-button>
-      </ion-col>
-    </ion-row> -->
-
-    <!-- <ion-row>
-      <ion-col size="6" class="ion-no-padding no-outline">
-        <ion-button fill="clear" no-margin mode="ios" (click)="open('/register')" *ngIf=" a.wp.userIsLoggedOut ">
-          {{ a.t({en: 'Register', ko: '회원가입'}) }}
-        </ion-button>
-
-        <ion-button fill="clear" no-margin mode="ios" (click)="open('/profile')" *ngIf=" a.wp.userIsLoggedIn ">
-          {{ a.t({en: 'Profile', ko: '회원정보'}) }}
-        </ion-button>
-
-      </ion-col>
-      <ion-col size="6" class="ion-no-padding no-outline">
-
-        <ion-button *ngIf="a.wp.userIsLoggedOut" fill="clear" no-margin mode="ios" (click)="open('/login')">
-          {{ a.t({en: 'Login', ko: '로그인'}) }}</ion-button>
-        <ion-button *ngIf="a.wp.userIsLoggedIn" fill="clear" no-margin mode="ios" (click)="onClickLogout()">
-          {{ a.t({en: 'Logout', ko: '로그아웃'}) }}</ion-button>
-      </ion-col>
-    </ion-row> -->
 
   </ion-grid>
 
