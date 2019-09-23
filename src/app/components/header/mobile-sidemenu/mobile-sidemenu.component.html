@@ -9,12 +9,12 @@
   </div>
 
   <div class="px-4 w-100 fs-14 xy-center white" *ngIf=" a.wp.userIsLoggedOut ">
-    <div class="text-center"><b>로그인</b> 해주세요.</div>
+    <div class="pb-4 text-center"><b>로그인</b> 해주세요.</div>
 
   </div>
 
   <ion-grid class="button-login position-absolute bottom w-100" no-padding>
-    <ion-row>
+    <ion-row *ngIf="a.wp.userIsLoggedOut">
       <ion-col size="6" no-padding>
         <ion-button class="h-42px  bold" (click)="open('/register', $event)" fill="clear" color="light" expand="full"
           mode="ios" no-margin>
@@ -22,46 +22,65 @@
         </ion-button>
       </ion-col>
       <ion-col size="6" no-padding>
-        <ion-button class="h-42px bold" (click)=" open('/login', $event) " fill="clear" color="light" expand="full"
+        <ion-button class="h-42px bold" (click)="open('/login', $event) " fill="clear" color="light" expand="full"
           mode="ios" no-margin>
           <ion-label class="fs-12"> {{ a.t({ en: 'Login', ko: '로그인' }) }}</ion-label>
 
         </ion-button>
       </ion-col>
     </ion-row>
+
+    <ion-row *ngIf="a.wp.userIsLoggedIn">
+      <ion-col size="6" no-padding>
+        <ion-button class="h-42px  bold" (click)="open('/profile', $event)" fill="clear" color="light" expand="full"
+          mode="ios" no-margin>
+          <ion-label class="fs-12">{{ a.t({ en: 'Profile', ko: '회원정보' }) }}</ion-label>
+        </ion-button>
+      </ion-col>
+      <ion-col size="6" no-padding>
+        <ion-button class="h-42px bold" (click)="onClickLogout($event)" fill="clear" color="light" expand="full"
+          mode="ios" no-margin>
+          <ion-label class="fs-12"> {{ a.t({ en: 'Logout', ko: '로그아웃' }) }}</ion-label>
+
+        </ion-button>
+      </ion-col>
+    </ion-row>
+
+
+
   </ion-grid>
 
 
-  <div class="flex-between w-100 y-center" *ngIf=" a.wp.userIsLoggedIn && user">
+  <div class="flex-between w-100 y-center pb-30px" *ngIf=" a.wp.userIsLoggedIn">
 
-    <div class="flex pl-3">
+    <div class="flex pl-3 ">
       <ion-thumbnail class="pointer" slot="start">
         <img [src]=" profilePhotoUrl ">
       </ion-thumbnail>
 
       <div class="pl-3 fs-14 white">
-        <p class="bold">{{ user.display_name }}</p>
+        <p class="bold pb-2 pt-3">{{ user.display_name }}</p>
         <p class="fs-12">{{ user.user_email }}</p>
-        <p class="pointer" (click)=" open('/admin', $event) " *ngIf=" a.wp.isAdmin ">Admin Page</p>
+        <p class="pointer py-2" (click)=" open('/admin', $event) " *ngIf=" a.wp.isAdmin ">Admin Page</p>
       </div>
     </div>
 
-    <div class="pr-3 fs-13 bold white">
+    <!-- <div class="pr-3 fs-13 bold white">
       <div (click)="open('profile', $event)">{{ a.t({ en: 'Profile', ko: '회원정보' }) }}</div>
       <div (click)="onClickLogout($event)">{{ a.t({ en: 'Logout', ko: '로그아웃' }) }}</div>
-    </div>
+    </div> -->
   </div>
 </div>
 
 <div class="py-22px  fs-14 ">
   <!-- 1st-->
-  <div class="mx-4 pb-2   border-bottom-green">
+  <!-- <div class="mx-4 pb-2   border-bottom-green">
     <ion-text color="success">
       <p>
         {{ a.t({ en: 'Information', ko: '안내' }) }}
       </p>
     </ion-text>
-  </div>
+  </div> -->
 
   <ion-grid fixed class="pl-10px ion-no-padding gray ">
 
@@ -111,11 +130,11 @@
   </ion-grid>
 
   <!-- 2nd -->
-  <div class="mx-4 pt-4 pb-2   border-bottom-green">
+  <!-- <div class="mx-4 pt-4 pb-2   border-bottom-green">
     <ion-text color="success">
       <p> {{ a.t( { en: 'Program', ko: '프로그램' } ) }} </p>
     </ion-text>
-  </div>
+  </div> -->
 
   <ion-grid fixed class="pl-10px ion-no-padding gray">
     <ion-row class="pt-2">
@@ -160,11 +179,11 @@
   </ion-grid>
 
   <!-- 3rd -->
-  <div class="mx-4 pt-4 pb-2  border-bottom-green ">
+  <!-- <div class="mx-4 pt-4 pb-2  border-bottom-green ">
     <ion-text color="success">
       <p> {{ a.t( { en: 'Cell Green Light', ko: '셀그린라이트' } ) }} </p>
     </ion-text>
-  </div>
+  </div> -->
 
   <ion-grid fixed class="pl-10px ion-no-padding gray">
     <ion-row class="pt-2">
