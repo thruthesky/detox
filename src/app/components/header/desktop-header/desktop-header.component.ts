@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AppService } from 'src/app/services/app.service';
 import { PopoverController } from '@ionic/angular';
 import { MobileSidemenuComponent } from '../mobile-sidemenu/mobile-sidemenu.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-desktop-header',
@@ -15,7 +16,8 @@ export class DesktopHeaderComponent implements OnInit {
 
   constructor(
     public a: AppService,
-    public popoverController: PopoverController
+    public popoverController: PopoverController,
+    public router: Router
   ) { }
 
   ngOnInit() { }
@@ -31,6 +33,12 @@ export class DesktopHeaderComponent implements OnInit {
     });
     return await popover.present();
   }
+
+  onClickLogout() {
+    this.a.logout();
+    this.router.navigateByUrl('/');
+  }
+
 
 }
 
