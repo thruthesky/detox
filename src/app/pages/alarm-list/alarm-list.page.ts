@@ -165,9 +165,8 @@ export class AlarmListPage implements OnInit {
 
 
 
-  async onClickAlarmUpdate(event: Event, alarm: Alarm) {
+  async onClickAlarmUpdate(alarm: Alarm) {
     const popover = await this.popoverController.create({
-      event: event,
       component: AlarmSetPopoverComponent,
       cssClass: 'pop-alarm-set',
       mode: 'md',
