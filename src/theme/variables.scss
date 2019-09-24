@@ -1722,11 +1722,16 @@ ion-slides {
   .action-sheet-group-cancel {
     span {
       justify-content: center !important;
-    color: #4d76ba;
-
+      color: #4d76ba;
     }
   }
 }
 .comment-text p {
   word-break: break-all !important;
+}
+
+ion-back-button {
+  ion-icon {
+    font-size: 18px !important;
+  }
 }
