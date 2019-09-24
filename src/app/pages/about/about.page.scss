@@ -29,3 +29,12 @@ ion-segment {
     box-shadow: 0 2px 1px -1px rgba(128, 128, 128, 0.144);
   }
 }
+.segment-not-active {
+  --indicator-color-checked: none !important;
+  --color-checked: none !important;
+  outline: none !important;
+}
+.active {
+  --color: #7db262 !important;
+  border-bottom: 2px solid #7db262 !important;
+}

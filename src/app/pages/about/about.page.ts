@@ -16,7 +16,6 @@ export class AboutPage implements OnInit {
   // postBottomLeft: Post;
   // postBottomRight: Post;
 
-  segment = 0;
 
   posts = {
     topLeft: {} as Post,
