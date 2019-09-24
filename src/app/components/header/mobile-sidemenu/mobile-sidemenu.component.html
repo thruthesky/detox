@@ -69,7 +69,7 @@
   </div>
 </div>
 <!-- start cut -->
-<div class="py-22px  fs-14 ">
+<!-- <div class="py-22px  fs-14 ">
   <ion-grid fixed class="pl-10px ion-no-padding gray ">
 
 
@@ -194,7 +194,7 @@
       </ion-col>
     </ion-row>
   </ion-grid>
-</div> 
+</div> -->
 
 <!-- end cut -->
 
@@ -202,37 +202,54 @@
 <ion-grid class="pb-4" no-padding>
   <ion-row>
     <ion-col size="6" no-padding>
-      <div class="d-flex align-items-center h-42px pl-4 w-100 fs-14 pointer bold green">Menu 1</div>
-      <div class="d-flex align-items-center h-42px pl-4 w-100 fs-14 pointer bold dark">-청소년보호정책</div>
+      <div class="d-flex align-items-center h-42px pl-4 w-100 fs-14 pointer bold green">
+        {{ a.t({en: '7Detox', ko: '7디톡스'}) }}</div>
+      <div class="d-flex align-items-center h-42px pl-4 w-100 fs-14 pointer bold dark">-submenu 1</div>
       <div class="d-flex align-items-center h-42px pl-4 w-100 fs-14 pointer bold dark">-subMenu 2</div>
       <div class="d-flex align-items-center h-42px pl-4 w-100 fs-14 pointer bold dark">-subMenu 3</div>
       <div class="d-flex align-items-center h-42px pl-4 w-100 fs-14 pointer bold dark">-subMenu 4</div>
-      <div class="d-flex align-items-center h-42px pl-4 w-100 fs-14 pointer bold green">Menu 1</div>
-      <div class="d-flex align-items-center h-42px pl-4 w-100 fs-14 pointer bold dark">-subMenu 1</div>
-      <div class="d-flex align-items-center h-42px pl-4 w-100 fs-14 pointer bold dark">-subMenu 2</div>
-      <div class="d-flex align-items-center h-42px pl-4 w-100 fs-14 pointer bold dark">-subMenu 3</div>
+      <div class="d-flex align-items-center h-42px pl-4 w-100 fs-14 pointer bold green">
+        {{ a.t({en: 'Forum', ko: '게시판'}) }}</div>
+      <div class="d-flex align-items-center h-42px pl-4 w-100 fs-14 pointer bold dark">
+        -{{ a.t({en: 'Discussion', ko: '자유게시판'}) }}</div>
+      <div class="d-flex align-items-center h-42px pl-4 w-100 fs-14 pointer bold dark">
+        -{{ a.t({en: 'Testimonial', ko: '후기'}) }}</div>
+      <div class="d-flex align-items-center h-42px pl-4 w-100 fs-14 pointer bold dark">
+        -{{ a.t({en: 'Knowhow', ko: '노하우'}) }}</div>
     </ion-col>
     <ion-col size="6" no-padding>
-      <div class="d-flex align-items-center h-42px pl-4 w-100 fs-14 pointer bold green">Menu 2</div>
-      <div class="d-flex align-items-center h-42px pl-4 w-100 fs-14 pointer bold dark">-subMenu 1</div>
-      <div class="d-flex align-items-center h-42px pl-4 w-100 fs-14 pointer bold dark">-subMenu 2</div>
-      <div class="d-flex align-items-center h-42px pl-4 w-100 fs-14 pointer bold dark">-subMenu 3</div>
+      <div class="d-flex align-items-center h-42px pl-4 w-100 fs-14 pointer bold green">
+        {{ a.t({en: 'Join', ko: '참여하기'}) }}</div>
+      <div class="d-flex align-items-center h-42px pl-4 w-100 fs-14 pointer bold dark">
+        -{{ a.t({en: 'Alarm Settings', ko: '알람설정'}) }}</div>
+      <div class="d-flex align-items-center h-42px pl-4 w-100 fs-14 pointer bold dark">
+        -{{ a.t({en: 'Home Training', ko: '홈트레이닝'}) }}</div>
+      <div class="d-flex align-items-center h-42px pl-4 w-100 fs-14 pointer bold dark">
+        -{{ a.t({en: 'Detox diary', ko: '해독일지'}) }} </div>
       <div class="d-flex align-items-center h-42px pl-4 w-100 fs-14 pointer bold dark">-subMenu 4</div>
-      <div class="d-flex align-items-center h-42px pl-4 w-100 fs-14 pointer bold green">Menu 2</div>
-      <div class="d-flex align-items-center h-42px pl-4 w-100 fs-14 pointer bold green">Menu 3</div>
+      <div class="d-flex align-items-center h-42px pl-4 w-100 fs-14 pointer bold green">
+        {{ a.t({ en: 'Products', ko: '제품소개'})}}</div>
+      <div class="d-flex align-items-center h-42px pl-4 w-100 fs-14 pointer bold green">
+        {{ a.t({en: 'Measure Detox', ko: '독소지수,비만도측정'}) }}</div>
     </ion-col>
   </ion-row>
   <div class="line"></div>
   <ion-row>
     <ion-col size="6" no-padding>
-      <div class="d-flex align-items-center h-42px pl-4 w-100 fs-14 pointer bold dark">subMenu 1</div>
-      <div class="d-flex align-items-center h-42px pl-4 w-100 fs-14 pointer bold dark">subMenu 2</div>
-      <div class="d-flex align-items-center h-42px pl-4 w-100 fs-14 pointer bold dark">subMenu 3</div>
+      <div class="d-flex align-items-center h-42px pl-4 w-100 fs-14 pointer bold dark">
+        {{ a.t({en: 'Company Intro', ko: '회사소개'}) }}</div>
+      <div class="d-flex align-items-center h-42px pl-4 w-100 fs-14 pointer bold dark">
+        {{ a.t({en: 'Terms & Conditions', ko: '이용약관'}) }}</div>
+      <div class="d-flex align-items-center h-42px pl-4 w-100 fs-14 pointer bold dark">
+        {{ a.t({en: 'Child Protection', ko: '청소년보호정책'}) }}</div>
     </ion-col>
     <ion-col size="6" no-padding>
-      <div class="d-flex align-items-center h-42px pl-4 w-100 fs-14 pointer bold dark">subMenu 1</div>
-      <div class="d-flex align-items-center h-42px pl-4 w-100 fs-14 pointer bold dark">subMenu 2</div>
-      <div class="d-flex align-items-center h-42px pl-4 w-100 fs-14 pointer bold dark"> subMenu 3</div>
+      <div class="d-flex align-items-center h-42px pl-4 w-100 fs-14 pointer bold dark">
+        {{ a.t({en: 'Customer Service', ko: '고객센터'}) }}</div>
+      <div class="d-flex align-items-center h-42px pl-4 w-100 fs-14 pointer bold dark">
+        {{ a.t({en: 'Privacy Policy', ko: '개인정보 처리방침'}) }}</div>
+      <div class="d-flex align-items-center h-42px pl-4 w-100 fs-14 pointer bold dark">
+        {{ a.t({en: 'Affliates', ko: '제휴문의'}) }}</div>
     </ion-col>
   </ion-row>
 </ion-grid>
