@@ -1,14 +1,14 @@
 .page-width {
-    max-width: 1020px !important;
-    margin: 0 auto !important;
+  max-width: 1020px !important;
+  margin: 0 auto !important;
 }
 
 .mobile {
-    color: #bababa !important;
+  color: #bababa !important;
 }
 
 .bg-light-black {
-    background-color: rgba(0, 0, 0, 0.568) !important;
+  background-color: rgba(0, 0, 0, 0.568) !important;
 }
 
 // .text-limit {
@@ -19,23 +19,52 @@
 // }
 
 .color-gray {
-    color: #ddd;
+  color: #ddd;
 }
 
 .diary-image {
-    @media all and (min-width: 768px) {
-        height: 227px !important;
-        width: 100% !important;
-        object-fit: cover !important;
-    }
+  @media all and (max-width: 768px) {
+    height: 250px !important;
+    width: 100% !important;
+    object-fit: cover !important;
+  }
 
-    @media all and (max-width:768px) {
-
-        height: 400px !important;
-        width: 100% !important;
-        object-fit: cover !important;
-    }
-
-
+  @media all and (min-width: 768px) {
+    height: 227px !important;
+    width: 100% !important;
+    object-fit: cover !important;
+  }
 }
 
+.title {
+  margin-top: 10px;
+  font-size: 14px;
+
+  font-weight: bold;
+}
+.subtitle-diary {
+  font-size: 12px;
+}
+
+.write-button {
+  height: 42px !important;
+  width: 300px;
+}
+
+.item-subtitle {
+  height: 50px;
+}
+@media all and (min-width: 768px) {
+  .title {
+    font-size: 32px;
+    text-align: center;
+  }
+  .subtitle-diary {
+    font-size: 16px;
+    text-align: center;
+  }
+  .write-button {
+    height: 68px !important;
+    width: 200px;
+  }
+}

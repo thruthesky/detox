@@ -9,14 +9,14 @@
 
   <section class="md-pt-100px">
 
-    <div class="position-relative page-width">
+    <div class="position-relative page-width px-3">
       <ion-text color="green">
-        <h1 class="fs-32px ion-text-center bold">{{ diaryTitle?.post_title }}</h1>
+        <h1 class="title">{{ diaryTitle?.post_title }}</h1>
       </ion-text>
 
       <ion-text color="medium">
-        <p class="pt-4 ion-text-center">
-          <app-page-post-content [guid]=" 'diaryTitle' " [post]=" diaryTitle " (edited)=" diaryTitle = $event ">
+        <p class="subtitle-diary pt-2 mb-0  ">
+          <app-page-post-content [guid]=" 'diaryTitle' " [post]=" diaryTitle " (edited)=" diaryTitle=$event ">
           </app-page-post-content>
         </p>
       </ion-text>
@@ -24,9 +24,9 @@
     </div>
 
 
-    <div class="ion-text-center">
-      <ion-button class="mt-2  md-mt-5 h-68px w-200px no-border-radius fs-16px no-box-shadow " mode="md" color="green"
-        (click)="onClickPost()">
+    <div class=" ion-text-center">
+      <ion-button class="write-button mt-2 md-mt-5 no-border-radius fs-14 md-fs-16px no-box-shadow " mode="md"
+        color="green" (click)="onClickPost()">
         {{ a.t( {en: 'Write Diary', ko: '일기 쓰기'} ) }}
       </ion-button>
     </div>
@@ -36,16 +36,17 @@
 
   <section class=" pb-5 page-width">
 
-    <ion-grid class="xs-mt-3 " no-padding>
+    <ion-grid class="mt-1 " no-padding>
       <ion-row>
         <ion-col class="xs-px-2 xs-py-1 md-pt-50px" size="12" size-md="6" size-lg="4" no-padding
           *ngFor="let p of posts">
 
           <ion-card class="card" *ngIf="a.isDesktop">
-            <img class="diary-image" src="{{ diaryImage(p) }}" alt="image_diary">
-            <ion-card-content no-padding>
 
-              <ion-grid class="pt-2" no-padding>
+            <img class="diary-image" src="{{ diaryImage(p) }}" alt="image_diary">
+            <ion-card-content no-padding (click)=" onEdit( p )">
+
+              <ion-grid class=" pt-2" no-padding>
                 <ion-row class="fs-14px">
                   <ion-col class="green pointer" no-padding (click)=" onEdit( p ) ">Edit</ion-col>
                   <ion-col class="ion-text-center green pointer" size="5" no-padding>
@@ -54,42 +55,43 @@
                 </ion-row>
               </ion-grid>
 
-              <h2 class=" py-2 fs-22px fw-600 green ">{{ p.post_title }}</h2>
+              <h2 class="item-title  py-2 fs-16px fw-600 green ellipsis">{{ p.post_title }}</h2>
 
-              <p class=" fs-12 medium">{{ p.post_content }}</p>
+              <p class="item-subtitle fs-12 medium">{{ p.post_content }}</p>
 
             </ion-card-content>
           </ion-card>
 
-          <div class="mobile position-relative" *ngIf="a.isMobile">
-            <img class="diary-image" src="{{ diaryImage(p) }}" alt="image_diary">
 
-            <div class="position-absolute top  p-3 h-100 w-100 bg-light-black z-1000 ">
 
-              <ion-grid class="pt-2" no-padding>
-                <ion-row class="fs-12px ">
-                  <ion-col class="color-gray" no-padding>{{ p['target'] }}/{{ p['current'] }}</ion-col>
-                  <ion-col class="ion-text-right color-gray" no-padding>{{ p['days'] }}일</ion-col>
-                </ion-row>
-              </ion-grid>
+          <div class="mobile-card" (click)=" onEdit( p )" *ngIf="a.isMobile">
 
-              <div class="position-absolute bottom ">
-                <h2 class="m-0 fs-22px fw-600 white ">{{ p.post_title }}</h2>
-                <p class="pr-2 fs-14  color-gray">{{ p.post_content }}</p>
-                <div class="flex-start">
-                  <ion-button class="ion-no-margin my-2 white border-gray" fill="clear" (click)=" onEdit( p ) ">
-                    Edit
-                  </ion-button>
-                  <ion-button class="ion-no-margin my-2 white border-gray" fill="clear" (click)=" onDelete( p ) ">
-                    Delete
-                  </ion-button>
-                </div>
+            <div class="position-relative">
+
+              <img class="diary-image" src="{{ diaryImage(p) }}" alt="image_diary">
+
+              <div class="position-absolute top  h-100 w-100 bg-light-black z-1000 "> </div>
+
+              <div class="position-absolute top z-1000 w-100 p-3">
+                <ion-grid class="pt-2" no-padding>
+                  <ion-row class="fs-12px ">
+                    <ion-col class="color-gray" no-padding>{{ p['target'] }}/{{ p['current'] }}</ion-col>
+                    <ion-col class="ion-text-right color-gray" no-padding>{{ p['days'] }}일</ion-col>
+                  </ion-row>
+                </ion-grid>
+              </div>
+
+
+              <div class="position-absolute bottom z-1000 w-100 p-3">
+                <h2 class="fs-22px fw-600 white ellipsis">{{ p.post_title }}</h2>
+                <p class="pr-2 fs-14  color-gray ellipsis">{{ p.post_content }}</p>
               </div>
 
             </div>
 
-
           </div>
+
+
 
         </ion-col>
       </ion-row>
