@@ -1,7 +1,5 @@
-<div class="bg-green h-140px position-relative pointer" (click)="open( a.wp.userIsLoggedIn ? '/profile' : '/login' )">
-
-
-  <div class="float-right">
+<div class="bg-green h-140px position-relative pointer">
+  <div class="position-absolute top right z-2000">
     <ion-button class="close" fill="clear" no-margin mode="ios" (click)="open('', $event)" size="small" fill="clear"
       class="h-40px white i-color-act-white ">
       <ion-icon slot="icon-only" name="close"></ion-icon>
@@ -13,7 +11,7 @@
 
   </div>
 
-  <ion-grid class="button-login position-absolute bottom w-100" no-padding>
+  <ion-grid class="button-login position-absolute bottom w-100 z-1000" no-padding>
     <ion-row *ngIf="a.wp.userIsLoggedOut">
       <ion-col size="6" no-padding>
         <ion-button class="h-42px  bold" (click)="open('/register', $event)" fill="clear" color="light" expand="full"
@@ -53,7 +51,7 @@
 
   <div class="flex-between w-100 y-center pb-30px" *ngIf=" a.wp.userIsLoggedIn">
 
-    <div class="flex pl-3 ">
+    <div class="flex pl-3 " (click)="open('/profile')">
       <ion-thumbnail class="pointer" slot="start">
         <img [src]=" profilePhotoUrl ">
       </ion-thumbnail>
