@@ -9,12 +9,12 @@
   <form [formGroup]="form" (ngSubmit)="onSubmit()">
 
     <ion-item no-padding>
-      <ion-label color="medium" position="floating">Title</ion-label>
+      <ion-label color="medium" position="floating">@tTitle</ion-label>
       <ion-input name="title" formControlName="title"></ion-input>
     </ion-item>
 
     <ion-item no-padding>
-      <ion-label color="medium" position="floating">Enter any notes here...</ion-label>
+      <ion-label color="medium" position="floating">@tEnter any notes here...</ion-label>
       <ion-textarea class="fs-14" name="content" formControlName="content" #text maxlength="255" type="text" rows="4"
         cols="20">
       </ion-textarea>
@@ -25,8 +25,34 @@
     </ion-text>
 
 
-    <ion-grid class="select  p-0 pt-50px ">
-      <ion-row>
+    <ion-radio-group name="auto">
+
+      <ion-grid class="mb-2" no-padding>
+        <ion-row>
+          <ion-col size="4" offset="2" no-padding>
+            <ion-item lines="none">
+              <ion-label>@tAM</ion-label>
+              <ion-radio slot="start" mode="ios"></ion-radio>
+            </ion-item>
+          </ion-col>
+          <ion-col size="4" no-padding>
+            <ion-item lines="none">
+              <ion-label>@tPM</ion-label>
+              <ion-radio slot="start" mode="ios"></ion-radio>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+
+
+    </ion-radio-group>
+
+
+
+
+    <ion-grid class="select  p-0 pt-20px ">
+      <ion-row class="border-top">
         <!-- <ion-col no-padding>
           <ion-item>
             <ion-label position="floating">Days</ion-label>
@@ -44,7 +70,7 @@
         </ion-col> -->
         <ion-col no-padding>
           <ion-item>
-            <ion-label position="floating">Hour</ion-label>
+            <ion-label position="floating">@tHour</ion-label>
             <ion-input name="hour" formControlName="hour"></ion-input>
             <!-- <ion-select name="hour" interface="popover" formControlName="hour">
               <ng-container *ngFor="let h of hours; let i = index; ">
@@ -56,7 +82,7 @@
         </ion-col>
         <ion-col no-padding>
           <ion-item>
-            <ion-label position="floating">Minute</ion-label>
+            <ion-label position="floating">@tMinute</ion-label>
 
             <ion-input name="minute" formControlName="minute"></ion-input>
             <!-- <ion-select name="minute" interface="popover" formControlName="minute">
@@ -74,7 +100,7 @@
 
     <div class="pt-50px ion-text-center">
       <ion-button class="ion-no-margin h-52px  no-border no-box-shadow " expand="full" type="submit" color="green">
-        Submit
+        @tSubmit
       </ion-button>
     </div>
 
