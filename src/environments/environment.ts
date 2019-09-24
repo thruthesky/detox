@@ -6,7 +6,7 @@ export const environment = {
   production: false,
   wordpressApiUrl: 'https://7detox.co.kr/wordpress-api/wordpress-api.php',
   // api: 'http://local.wordpress.org/wordpress-api/wordpress-api.php',
-  lang: 'en', // if you put empty string, then you will see the display language as in you browser language,
+  lang: 'ko', // if you put empty string, then you will see the display language as in you browser language,
 };
 
 /*
