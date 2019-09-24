@@ -23,3 +23,9 @@ ion-content {
     background-color: #fafafa !important;
   }
 }
+
+ion-segment {
+  @media all and (max-width: 768px) {
+    box-shadow: 0 2px 1px -1px rgba(128, 128, 128, 0.144);
+  }
+}
