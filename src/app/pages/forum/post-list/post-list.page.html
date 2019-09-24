@@ -8,17 +8,17 @@
 
 
     <!-- Scrollable Segment -->
-    <ion-segment scrollable #forum (ionChange)="onIonChangeForum( forum )" *ngIf=" !slug && !keyword " mode="ios">
-      <ion-segment-button checked value="discussion" mode="ios">
-        <ion-icon name="chatboxes"></ion-icon>
+    <ion-segment class="layout-600px md-pt-5" #forum (ionChange)="onIonChangeForum( forum )"
+      *ngIf=" !slug && !keyword " mode="md" color="green">
+      <ion-segment-button checked value="discussion" mode="md">
         <ion-label>자유게시판</ion-label>
       </ion-segment-button>
       <!-- <ion-segment-button value="qna">
         <ion-icon name="help-circle"></ion-icon>
         <ion-label>질문과답변</ion-label>
       </ion-segment-button> -->
-      <ion-segment-button value="testimonial" mode="ios">
-        <ion-icon name="book"></ion-icon>
+      <ion-segment-button value="testimonial" mode="md">
+
         <ion-label>후기</ion-label>
       </ion-segment-button>
       <!-- <ion-segment-button value="reminder">
@@ -29,8 +29,7 @@
         <ion-icon name="information-circle"></ion-icon>
         <ion-label>자주묻는질문</ion-label>
       </ion-segment-button> -->
-      <ion-segment-button value="knowhow" mode="ios">
-        <ion-icon name="school"></ion-icon>
+      <ion-segment-button value="knowhow" mode="md">
         <ion-label>노하우</ion-label>
       </ion-segment-button>
       <!-- <ion-segment-button value="products">
