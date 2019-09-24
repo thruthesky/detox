@@ -1701,3 +1701,27 @@ ion-slides {
 .w-300px {
   width: 300px !important;
 }
+.action-sheet {
+  // .action-sheet-button {
+  //   display: flex;
+  //   --background: red !important;
+  //   background-color: red !important;
+  // }
+  ion-icon {
+    position: absolute;
+    right: 10px;
+
+    --color: #4d76ba !important;
+    color: #4d76ba !important;
+  }
+
+  span {
+    color: black;
+    justify-content: start !important;
+  }
+  .action-sheet-group-cancel {
+    span {
+      justify-content: center !important;
+    }
+  }
+}
