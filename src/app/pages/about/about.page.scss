@@ -1,25 +1,25 @@
 .page-width {
-    margin: 0 auto !important;
-    max-width: 780px !important;
+  margin: 0 auto !important;
+  max-width: 780px !important;
 }
 
-.bg-md-background-image {
-    @media all and (min-width: 768px) {
-        background: url(/assets/img/bg_transparent.jpg) 0 0 /100% 100% no-repeat !important;
-    }
+ion-content {
+  @media all and (min-width: 768px) {
+    --background: url(/assets/img/bg_transparent.jpg) 0 0 /100% 100% no-repeat !important;
+  }
 }
 
 .title {
-    font-size: 16px !important;
+  font-size: 16px !important;
 
-    @media all and (min-width: 768px) {
-        font-size: 28px  !important;
-        text-align: center !important;
-    }
+  @media all and (min-width: 768px) {
+    font-size: 28px !important;
+    text-align: center !important;
+  }
 }
 
 .md-bg-color {
-    @media all and (min-width:768px) {
-        background-color: #fafafa !important;        
-    }
+  @media all and (min-width: 768px) {
+    background-color: #fafafa !important;
+  }
 }

@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { AppService } from 'src/app/services/app.service';
 import { text } from 'src/app/services/text';
 import { Post } from 'modules/wordpress-api/services/wordpress-api.interface';
+import { IonSlides } from '@ionic/angular';
 
 @Component({
   selector: 'app-about',
@@ -14,6 +15,8 @@ export class AboutPage implements OnInit {
   // postTopRight: Post;
   // postBottomLeft: Post;
   // postBottomRight: Post;
+
+  segment = 0;
 
   posts = {
     topLeft: {} as Post,
@@ -35,7 +38,8 @@ export class AboutPage implements OnInit {
   }
 
   onPageContentEdited(post: Post) {
-    //console.log('Yeap! page conetnt edited: ', post);
+    // console.log('Yeap! page conetnt edited: ', post);
   }
+
 
 }
