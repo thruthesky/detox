@@ -58,12 +58,7 @@ export class DetoxificationDiaryPage implements OnInit, OnDestroy {
       this.error = this.wp.t('NoSlug');
       return;
     }
-
-
     this.loadPage();
-    // this.onEdit(this.posts[0]);
-    /// This is for test
-    // setTimeout(() => this.onClickPost(), 200);
 
   }
 
