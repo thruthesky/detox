@@ -43,7 +43,7 @@
 
           <ion-card class="card" *ngIf="a.isDesktop">
 
-            <img class="diary-image" src="{{ diaryImage(p) }}" alt="image_diary">
+            <img class="diary-image" src="{{ diaryImage(p) }}" alt="image_diary" (click)="onView()">
             <ion-card-content no-padding>
 
               <ion-grid class=" pt-2" no-padding>
