@@ -58,9 +58,10 @@ export class DetoxificationDiaryPage implements OnInit, OnDestroy {
       this.error = this.wp.t('NoSlug');
       return;
     }
+    
 
     this.loadPage();
-
+    this.onEdit(this.posts[0]);
     /// This is for test
     // setTimeout(() => this.onClickPost(), 200);
 
@@ -140,7 +141,7 @@ export class DetoxificationDiaryPage implements OnInit, OnDestroy {
         }
       },
       mode: 'md',
-      cssClass: 'diary-popup i-pop-mt-5px  box-shadow-none',
+      // cssClass: 'diary-popup i-pop-mt-5px  box-shadow-none',
     });
     modal.present();
     const res = await modal.onWillDismiss();
@@ -173,8 +174,6 @@ export class DetoxificationDiaryPage implements OnInit, OnDestroy {
     }
   }
 
-
-
   updatePost(post: Post) {
     const i = this.posts.findIndex(v => v.ID === post.ID);
     if (i === -1) {
@@ -185,7 +184,7 @@ export class DetoxificationDiaryPage implements OnInit, OnDestroy {
 
 
   async onDelete(post: Post) {
-    if ( ! await this.ion.confirmDelete() ) {
+    if (! await this.ion.confirmDelete()) {
       return;
     }
     const sub = this.wp.postDelete(post.ID).subscribe(res => {
