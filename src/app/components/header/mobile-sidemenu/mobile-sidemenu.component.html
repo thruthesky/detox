@@ -231,22 +231,31 @@
         {{ a.t({en: 'Measure Detox', ko: '독소지수,비만도측정'}) }}</div>
     </ion-col>
   </ion-row>
+
+
+
+
+
   <div class="line"></div>
   <ion-row>
     <ion-col size="6" no-padding>
-      <div class="d-flex align-items-center h-42px pl-4 w-100 fs-14 pointer bold dark">
+      <div class="d-flex align-items-center h-42px pl-4 w-100 fs-14 pointer bold dark" (click)="open('/company-info')">
         {{ a.t({en: 'Company Intro', ko: '회사소개'}) }}</div>
-      <div class="d-flex align-items-center h-42px pl-4 w-100 fs-14 pointer bold dark">
+      <div class="d-flex align-items-center h-42px pl-4 w-100 fs-14 pointer bold dark"
+        (click)="open('/terms-and-conditions')">
         {{ a.t({en: 'Terms & Conditions', ko: '이용약관'}) }}</div>
-      <div class="d-flex align-items-center h-42px pl-4 w-100 fs-14 pointer bold dark">
+      <div class="d-flex align-items-center h-42px pl-4 w-100 fs-14 pointer bold dark"
+        (click)="open('/child-protection')">
         {{ a.t({en: 'Child Protection', ko: '청소년보호정책'}) }}</div>
     </ion-col>
     <ion-col size="6" no-padding>
-      <div class="d-flex align-items-center h-42px pl-4 w-100 fs-14 pointer bold dark">
+      <div class="d-flex align-items-center h-42px pl-4 w-100 fs-14 pointer bold dark"
+        (click)="open('/customer-service')">
         {{ a.t({en: 'Customer Service', ko: '고객센터'}) }}</div>
-      <div class="d-flex align-items-center h-42px pl-4 w-100 fs-14 pointer bold dark">
+      <div class="d-flex align-items-center h-42px pl-4 w-100 fs-14 pointer bold dark"
+        (click)="open('/privacy-policy')">
         {{ a.t({en: 'Privacy Policy', ko: '개인정보 처리방침'}) }}</div>
-      <div class="d-flex align-items-center h-42px pl-4 w-100 fs-14 pointer bold dark">
+      <div class="d-flex align-items-center h-42px pl-4 w-100 fs-14 pointer bold dark" (click)="open('/affiliate')">
         {{ a.t({en: 'Affliates', ko: '제휴문의'}) }}</div>
     </ion-col>
   </ion-row>
