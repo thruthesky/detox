@@ -169,6 +169,31 @@ export class DetoxificationDiaryPage implements OnInit, OnDestroy {
     }
   }
 
+  async onView(post: Post) {
+    // console.log('Going to edit post: ', post);
+    const modal = await this.modalController.create({
+      component: IonPostEditComponent,
+      componentProps: {
+        layout: 'diary-view',
+        post: post,
+        header: {
+          color: 'primary',
+          title: this.wp.t('titleEditPost')
+        }
+      }
+    });
+    modal.present();
+    const res = await modal.onWillDismiss();
+
+    console.log(res);
+    if (res && res.data) {
+      if (res.role === 'edit') {
+        this.onEdit(res.data);
+      }
+    }
+  }
+
+
   updatePost(post: Post) {
     const i = this.posts.findIndex(v => v.ID === post.ID);
     if (i === -1) {
