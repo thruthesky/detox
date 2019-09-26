@@ -25,20 +25,20 @@
     </ion-text>
 
 
-    <ion-radio-group name="auto">
+    <ion-radio-group name="auto" formControlName="timeSetting">
 
       <ion-grid class="mb-2" no-padding>
         <ion-row>
           <ion-col size="5" offset="1" no-padding>
             <ion-item lines="none">
               <ion-label>@tAM</ion-label>
-              <ion-radio slot="start" mode="ios" no-padding></ion-radio>
+              <ion-radio  value="AM" slot="start" mode="ios" no-padding></ion-radio>
             </ion-item>
           </ion-col>
           <ion-col size="5" no-padding>
             <ion-item lines="none">
               <ion-label>@tPM</ion-label>
-              <ion-radio slot="start" mode="ios"></ion-radio>
+              <ion-radio value="PM" slot="start" mode="ios"></ion-radio>
             </ion-item>
           </ion-col>
         </ion-row>

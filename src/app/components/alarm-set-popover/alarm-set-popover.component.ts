@@ -27,6 +27,7 @@ export class AlarmSetPopoverComponent implements OnInit {
     // days: ['', [Validators.required]],
     hour: ['', [Validators.required]],
     minute: ['', [Validators.required]],
+    timeSetting: ['', [Validators.required]],
   });
   constructor(
     public fb: FormBuilder,
@@ -37,7 +38,7 @@ export class AlarmSetPopoverComponent implements OnInit {
   }
 
   ngOnInit() {
-    // console.log('ngOnInit(): ', this.alarm);
+    console.log(this.alarm);
     if (this.alarm) {
 
       // const days = [];
@@ -67,7 +68,7 @@ export class AlarmSetPopoverComponent implements OnInit {
         content: this.alarm.content,
         hour: this.alarm.hour,
         minute: this.alarm.minute,
-        // days: days
+        timeSetting: this.alarm.timeSetting,
       });
     }
   }
@@ -75,7 +76,7 @@ export class AlarmSetPopoverComponent implements OnInit {
   onSubmit() {
 
 
-    console.log('values', this.form.value);
+    // console.log('values', this.form.value);
     if (this.form.invalid) {
       // console.log('errors', this.form.errors);
       for (const k of Object.keys(this.form.value)) {
@@ -88,6 +89,8 @@ export class AlarmSetPopoverComponent implements OnInit {
     }
 
     if (this.alarm && this.alarm.ID) {
+
+
       this.alarmUpdate();
     } else {
       this.alarmCreate();
@@ -117,7 +120,9 @@ export class AlarmSetPopoverComponent implements OnInit {
       content: this.form.get('content').value,
       // days: this.form.get('days').value,
       hour: this.form.get('hour').value,
-      minute: this.form.get('minute').value
+      minute: this.form.get('minute').value,
+      timeSetting: this.form.get('timeSetting').value,
+
     };
     this.a.wp.post(req).pipe(map(r => r.data)).subscribe(res => {
       // console.log('alramUpdate: ', res);

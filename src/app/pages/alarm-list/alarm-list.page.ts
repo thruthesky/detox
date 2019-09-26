@@ -111,6 +111,7 @@ export class AlarmListPage implements OnInit {
   }
 
   ngOnInit() {
+    console.log(this.alarms);
     this.a.wp.post({ method: 'alarmList' }).pipe(map(r => r.data)).subscribe(res => {
       // console.log('alarmList:', res);
       if (res && res.length === 0) {
@@ -148,6 +149,7 @@ export class AlarmListPage implements OnInit {
         days: ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'],
         hour: '0',
         minute: '0',
+        timeSetting: 'AM',
         enabled: ''
       };
       promise.push(this.a.wp.post(req).pipe(map(r => r.data)).toPromise());
@@ -166,6 +168,7 @@ export class AlarmListPage implements OnInit {
 
 
   async onClickAlarmUpdate(alarm: Alarm) {
+    // console.log(alarm);
     const popover = await this.popoverController.create({
       component: AlarmSetPopoverComponent,
       cssClass: 'pop-alarm-set',

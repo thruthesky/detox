@@ -14,6 +14,7 @@ export interface Alarm {
     // tuesday: '' | 'Y';
     user_ID?: string;
     // wednesday: '' | 'Y';
+    timeSetting?: string;
 }
 
 
