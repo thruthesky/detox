@@ -15,6 +15,8 @@ export class AlarmSetPopoverComponent implements OnInit {
 
   @Input() alarm: Alarm;
 
+  timeSetting;
+
   hours = new Array(24).fill(true);
   minutes = new Array(60).fill(true);
 
@@ -25,7 +27,7 @@ export class AlarmSetPopoverComponent implements OnInit {
     title: ['', [Validators.required]],
     content: ['', [Validators.required]],
     // days: ['', [Validators.required]],
-    hour: ['', [Validators.required]],
+    hour: ['', [Validators.required, Validators.min(1), Validators.max(12)]],
     minute: ['', [Validators.required]],
     timeSetting: ['', [Validators.required]],
   });
@@ -38,37 +40,27 @@ export class AlarmSetPopoverComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log(this.alarm);
+    // console.log(this.alarm);
     if (this.alarm) {
 
-      // const days = [];
-      // if (this.alarm.sunday === 'Y') {
-      //   days.push('sunday');
-      // }
-      // if (this.alarm.monday === 'Y') {
-      //   days.push('monday');
-      // }
-      // if (this.alarm.tuesday === 'Y') {
-      //   days.push('tuesday');
-      // }
-      // if (this.alarm.wednesday === 'Y') {
-      //   days.push('wednesday');
-      // }
-      // if (this.alarm.thursday === 'Y') {
-      //   days.push('thursday');
-      // }
-      // if (this.alarm.friday === 'Y') {
-      //   days.push('friday');
-      // }
-      // if (this.alarm.saturday === 'Y') {
-      //   days.push('saturday');
-      // }
+      let t = this.alarm.hour as any;
+
+      if (t > 12) {
+        t = t - 12;
+        this.form.patchValue({
+          timeSetting: 'PM'
+        });
+      } else {
+        this.form.patchValue({
+          timeSetting: 'AM'
+        });
+      }
+
       this.form.patchValue({
         title: this.alarm.title,
         content: this.alarm.content,
-        hour: this.alarm.hour,
+        hour: t,
         minute: this.alarm.minute,
-        timeSetting: this.alarm.timeSetting,
       });
     }
   }
@@ -90,7 +82,6 @@ export class AlarmSetPopoverComponent implements OnInit {
 
     if (this.alarm && this.alarm.ID) {
 
-
       this.alarmUpdate();
     } else {
       this.alarmCreate();
@@ -105,14 +96,19 @@ export class AlarmSetPopoverComponent implements OnInit {
       content: this.form.get('content').value,
       days: this.form.get('days').value,
       hour: this.form.get('hour').value,
-      minute: this.form.get('minute').value
+      minute: this.form.get('minute').value,
     };
     this.a.wp.post(req).pipe(map(r => r.data)).subscribe(res => {
       // console.log('alramCreate: ', res);
       this.pop.dismiss(res, 'create');
     }, e => this.a.error(e));
   }
+
   alarmUpdate() {
+
+
+
+
     const req = {
       method: 'alarmUpdate',
       ID: this.alarm.ID,
@@ -121,9 +117,16 @@ export class AlarmSetPopoverComponent implements OnInit {
       // days: this.form.get('days').value,
       hour: this.form.get('hour').value,
       minute: this.form.get('minute').value,
-      timeSetting: this.form.get('timeSetting').value,
-
+      // timeSetting: ,
     };
+
+    const t = this.form.get('timeSetting').value;
+
+    if (t === 'PM') {
+      req.hour = req.hour * 1 + 12;
+    }
+
+
     this.a.wp.post(req).pipe(map(r => r.data)).subscribe(res => {
       // console.log('alramUpdate: ', res);
       this.pop.dismiss(res, 'update');

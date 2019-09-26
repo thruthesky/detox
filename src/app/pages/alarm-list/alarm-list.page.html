@@ -74,11 +74,12 @@
     <ion-list *ngIf=" alarms?.length ">
       <ion-item class="md-mt-3 md-shadow-2 pointer" lines="none" *ngFor="let alarm of alarms">
 
-        <h1> {{ alarm.timeSetting}}</h1>
         <ion-grid no-padding>
           <ion-row>
             <ion-col class="flex-column-center md-py-20px " size="3" (click)="onClickAlarmUpdate(alarm)">
-              <ion-label class="fs-22px" color="green">{{ a.add0(alarm.hour) }}:{{ a.add0(alarm.minute) }}
+              <ion-label class="fs-18px" color="green">{{  displayHour(alarm.hour) }}:{{ a.add0(alarm.minute) }}
+                <span *ngIf="!checkHour(alarm.hour)">AM</span>
+                <span *ngIf="checkHour(alarm.hour)">PM</span>
               </ion-label>
             </ion-col>
             <ion-col class="fs-14 md-py-20px" size="7" (click)="onClickAlarmUpdate(alarm)">

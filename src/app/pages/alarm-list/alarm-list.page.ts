@@ -147,9 +147,8 @@ export class AlarmListPage implements OnInit {
         title: a.title,
         content: a.content,
         days: ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'],
-        hour: '0',
+        hour: '1',
         minute: '0',
-        timeSetting: 'AM',
         enabled: ''
       };
       promise.push(this.a.wp.post(req).pipe(map(r => r.data)).toPromise());
@@ -185,7 +184,6 @@ export class AlarmListPage implements OnInit {
       this.alarms.splice(this.alarms.findIndex(a => a.ID === re.data.ID), 1);
       this.updateAlarmList(re.data);
     }
-
   }
 
   updateAlarmList(newAlarm: Alarm) {
@@ -228,5 +226,16 @@ export class AlarmListPage implements OnInit {
   }
 
 
+  checkHour(n: number): boolean {
+    return n > 12 ? true : false;
+  }
+
+  displayHour(n: number): number {
+    if (n > 12) {
+      n = n - 12;
+    }
+    this.a.add0(n);
+    return n;
+  }
 
 }

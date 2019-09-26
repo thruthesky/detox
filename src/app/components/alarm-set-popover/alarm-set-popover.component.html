@@ -32,7 +32,7 @@
           <ion-col size="5" offset="1" no-padding>
             <ion-item lines="none">
               <ion-label>@tAM</ion-label>
-              <ion-radio  value="AM" slot="start" mode="ios" no-padding></ion-radio>
+              <ion-radio value="AM" slot="start" mode="ios" no-padding></ion-radio>
             </ion-item>
           </ion-col>
           <ion-col size="5" no-padding>
@@ -43,7 +43,6 @@
           </ion-col>
         </ion-row>
       </ion-grid>
-
 
 
     </ion-radio-group>
@@ -71,7 +70,7 @@
         <ion-col no-padding>
           <ion-item>
             <ion-label position="floating">@tHour</ion-label>
-            <ion-input name="hour" formControlName="hour"></ion-input>
+            <ion-input name="hour" maxlength="" type="number" formControlName="hour"></ion-input>
             <!-- <ion-select name="hour" interface="popover" formControlName="hour">
               <ng-container *ngFor="let h of hours; let i = index; ">
                 <ion-select-option value="{{ i }}">{{ i }}</ion-select-option>
