@@ -66,8 +66,6 @@ export class AlarmSetPopoverComponent implements OnInit {
   }
 
   onSubmit() {
-
-
     // console.log('values', this.form.value);
     if (this.form.invalid) {
       // console.log('errors', this.form.errors);
