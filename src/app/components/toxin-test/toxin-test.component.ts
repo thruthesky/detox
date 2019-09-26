@@ -61,7 +61,7 @@ export class ToxinTestComponent implements OnInit {
 
     // ]; // TEST
     //console.log(this.checkes.filter(v => v));
-    return this.checkes.filter(v => v).length * 10;
+    return this.checkes.filter(v => v).length * 4;
   }
 
   scrollTop(target: Element) {
@@ -90,17 +90,17 @@ export class ToxinTestComponent implements OnInit {
   getColor(): string {
 
     const n = this.checkes.filter(v => v).length;
-  
+
     if (n === 0) {
-      return 'blue';
+      return '#24a1fc';
     } else if (n <= 5) {
-      return 'green';
+      return '#7db262';
     } else if (n <= 10) {
-      return 'yellow';
+      return '#ffd13a';
     } else if (n <= 15) {
-      return 'orange';
+      return '#d6572f';
     } else {
-      return 'red';
+      return '#ff5353';
     }
   }
 }

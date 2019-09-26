@@ -47,10 +47,10 @@
     </p>
 
     <div class="border page-width md-mt-40px pt-3">
-      <div class="graph-outer">
+      <!-- <div class="graph-outer">
         <footer class="graph">
           <header>
-            <div class="normal">
+            <div class="normal" style="line-height: 5px;">
               정상
             </div>
             <div class="box bad">
@@ -90,8 +90,21 @@
           </footer>
         </footer>
       </div>
+ -->
 
-      <p class="pt-5 pb-3 md-pb-5 xs-fs-16px fs-18px bold ion-text-center">
+      <div class="position-relative">
+        <img src="assets\img\scale.png" alt="scale">
+
+        <div class="line">
+          <div class="line-mark" [style.width.%]=" scoreWidth " [ngStyle]="{ 'background-color': getColor() }">
+            <div class="circle" [ngStyle]="{ 'background-color': getColor() }"></div>
+          </div>
+
+        </div>
+      </div>
+
+
+      <p class=" pt-5 pb-3 md-pb-5 xs-fs-16px fs-18px bold ion-text-center">
         독소 점수는 {{ score }} 점
         <ion-text class="xs-fs-18px fs-22px" [ngStyle]="{ 'color': getColor() }">
           "{{ getCategory() }}"
