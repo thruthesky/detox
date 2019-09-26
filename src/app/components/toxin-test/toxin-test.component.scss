@@ -192,12 +192,12 @@
 }
 
 .circle {
-  height: 14px;
-  width: 14px;
+  height: 12px;
+  width: 12px;
   //   background-color: #24a1fc;
   position: absolute;
-  top: -7px;
-  right: -2%;
+  top: -5px;
+  right: -2px;
   border-radius: 50%;
   z-index: 3000;
 }
@@ -209,5 +209,4 @@
   height: 2px;
   width: 100px;
   z-index: 2000;
-  background-color: red;
 }
