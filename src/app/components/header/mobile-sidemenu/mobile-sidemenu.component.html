@@ -64,22 +64,23 @@
 <ion-grid class="pb-4" no-padding>
   <ion-row>
     <ion-col size="6" no-padding>
-      <div class="d-flex align-items-center h-42px pl-4 w-100 fs-14 pointer bold green" (click)="open('/about')">
+      <div class="d-flex align-items-center h-42px pl-4 w-100 fs-14 pointer bold green">
         {{ a.t({en: '7Detox', ko: '7디톡스'}) }}</div>
-      <div class="d-flex align-items-center h-42px pl-4 w-100 fs-14 pointer bold dark" (click)="open('/about')">
+      <div class="d-flex align-items-center h-42px pl-4 w-100 fs-14 pointer bold dark" (click)="open('/7detox/about')">
         {{ a.t( { en:'About 7Detox', ko:'7디톡스란'} )}}</div>
       <div class="d-flex align-items-center h-42px pl-4 w-100 fs-14 pointer bold dark"
-        (click)="open('/about-detoxification')">
+        (click)="open('/7detox/about-detoxification')">
         {{ a.t( { en:'About Detox', ko:'해독이란'} )}}</div>
-      <div class="d-flex align-items-center h-42px pl-4 w-100 fs-14 pointer bold dark" (click)="open('/about-toxic')">
+      <div class="d-flex align-items-center h-42px pl-4 w-100 fs-14 pointer bold dark"
+        (click)="open('/7detox/about-toxic')">
         {{ a.t( { en:'About Toxine', ko:'독소란'} )}}</div>
 
       <div class="d-flex align-items-center h-42px pl-4 w-100 fs-14 pointer bold dark"
-        (click)="open('/detoxification-tip')">
+        (click)="open('/7detox/detoxification-tip')">
         {{ a.t( { en:'Detox tip', ko:'해독설명서'} )}}</div>
 
 
-      <div class="d-flex align-items-center h-42px pl-4 w-100 fs-14 pointer bold green" (click)="open('/post-list')">
+      <div class="d-flex align-items-center h-42px pl-4 w-100 fs-14 pointer bold green">
         {{ a.t({en: 'Forum', ko: '게시판'}) }}</div>
       <div class="d-flex align-items-center h-42px pl-4 w-100 fs-14 pointer bold dark"
         (click)="open('/post-list/discussion')">
