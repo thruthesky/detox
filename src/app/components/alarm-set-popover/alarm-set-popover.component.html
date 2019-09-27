@@ -9,12 +9,13 @@
   <form [formGroup]="form" (ngSubmit)="onSubmit()">
 
     <ion-item no-padding>
-      <ion-label color="medium" position="floating">@tTitle</ion-label>
+      <ion-label color="medium" position="floating">@t {{ a.t({ en:'Title',ko:'표제' }) }}</ion-label>
       <ion-input name="title" formControlName="title"></ion-input>
     </ion-item>
 
     <ion-item no-padding>
-      <ion-label color="medium" position="floating">@tEnter any notes here...</ion-label>
+      <ion-label color="medium" position="floating">@t
+        {{ a.t({ en:'Enter any notes here...', ko:'여기에 메모를 입력하십시오...' }) }}</ion-label>
       <ion-textarea class="fs-14" name="content" formControlName="content" #text maxlength="255" type="text" rows="4"
         cols="20">
       </ion-textarea>
@@ -31,13 +32,13 @@
         <ion-row>
           <ion-col size="5" offset="1" no-padding>
             <ion-item lines="none">
-              <ion-label>@tAM</ion-label>
+              <ion-label>@t {{ a.t({ en:'AM',ko: '오전' }) }}</ion-label>
               <ion-radio value="AM" slot="start" mode="ios" no-padding></ion-radio>
             </ion-item>
           </ion-col>
           <ion-col size="5" no-padding>
             <ion-item lines="none">
-              <ion-label>@tPM</ion-label>
+              <ion-label>@t {{ a.t({ en:'PM',ko: '오후' }) }}</ion-label>
               <ion-radio value="PM" slot="start" mode="ios"></ion-radio>
             </ion-item>
           </ion-col>
@@ -69,7 +70,7 @@
         </ion-col> -->
         <ion-col no-padding>
           <ion-item>
-            <ion-label position="floating">@tHour</ion-label>
+            <ion-label position="floating"> {{ a.t({ en:'Hour', ko: '시' }) }} </ion-label>
             <ion-input name="hour" maxlength="" type="number" formControlName="hour"></ion-input>
             <!-- <ion-select name="hour" interface="popover" formControlName="hour">
               <ng-container *ngFor="let h of hours; let i = index; ">
@@ -81,8 +82,7 @@
         </ion-col>
         <ion-col no-padding>
           <ion-item>
-            <ion-label position="floating">@tMinute</ion-label>
-
+            <ion-label position="floating"> {{ a.t({ en:'Minute', ko:'분' })  }}</ion-label>
             <ion-input name="minute" formControlName="minute"></ion-input>
             <!-- <ion-select name="minute" interface="popover" formControlName="minute">
               <ng-container *ngFor="let h of minutes; let i = index; ">
@@ -99,7 +99,7 @@
 
     <div class="pt-50px ion-text-center">
       <ion-button class="ion-no-margin h-52px  no-border no-box-shadow " expand="full" type="submit" color="green">
-        @tSubmit
+        {{ a.t({ en:'Submit', ko: '제출하다' }) }}
       </ion-button>
     </div>
 
