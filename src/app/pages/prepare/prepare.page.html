@@ -7,7 +7,7 @@
 
 
 
-    <app-join-menu></app-join-menu>
+  <app-join-menu></app-join-menu>
 
 
 
@@ -18,27 +18,22 @@
 
     <h1>Prepare Page</h1>
 
-    <ion-text color="green">
-      <!-- <h1 class="title bold">{{ aboutDetox?.post_title }}</h1> -->
-    </ion-text>
-
-    <ion-grid class="md-pt-50px pb-320px" no-padding>
-      <ion-row no-padding>
-        <ion-col class="md-pr-60px" size="12" size-md="7" *ngIf="a.isDesktop" no-padding>
-          <!-- <ion-img src=" {{ src(null) }} " *ngIf=" 0 "></ion-img> -->
+    <!-- <h1 class="title px-4 mb-4 bold green">{{ posts.topLeft?.post_title }}</h1>
+    <ion-grid class="page-width-md md-pb-50px dark-gray" no-padding>
+      <ion-row>
+        <ion-col class="px-4 pt-4" size="12" size-md="6">
+          <app-page-post-content [guid]=" a.pageCode.aboutTopLeft " [post]=" posts.topLeft "
+            (edited)=" posts.topLeft = $event "></app-page-post-content>
         </ion-col>
-        <ion-col class="lh-25px" size="12" size-md="5" no-padding>
-
-          <!-- <div class="gray">
-            <app-page-post-content [guid]=" a.pageCode.aboutDetox " [post]=" aboutDetox " (edited)=" aboutDetox = $event "></app-page-post-content>
-         </div> -->
-
+        <ion-col class="px-4 pt-4" size="12" size-md="6">
+          <app-page-post-content [guid]=" a.pageCode.aboutTopRight " [post]=" posts.topRight "
+            (edited)=" posts.topRight = $event "></app-page-post-content>
         </ion-col>
       </ion-row>
-    </ion-grid>
+    </ion-grid> -->
+
 
   </section>
-
   <ng-container *ngIf="a.isDesktop">
     <app-desktop-home-footer></app-desktop-home-footer>
   </ng-container>
