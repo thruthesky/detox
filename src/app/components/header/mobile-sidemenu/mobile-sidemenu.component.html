@@ -79,11 +79,11 @@
         -@tsubMenu 4</div>
       <div class="d-flex align-items-center h-42px pl-4 w-100 fs-14 pointer bold green" (click)="open('/post-list')">
         @t {{ a.t({en: 'Forum', ko: '게시판'}) }}</div>
-      <div class="d-flex align-items-center h-42px pl-4 w-100 fs-14 pointer bold dark" (click)="open('/post-list')">
+      <div class="d-flex align-items-center h-42px pl-4 w-100 fs-14 pointer bold dark" (click)="open('/post-list/discussion')">
         @t-{{ a.t({en: 'Discussion', ko: '자유게시판'}) }}</div>
-      <div class="d-flex align-items-center h-42px pl-4 w-100 fs-14 pointer bold dark" (click)="open('/post-list')">
+      <div class="d-flex align-items-center h-42px pl-4 w-100 fs-14 pointer bold dark" (click)="open('/post-list/testimonial')">
         @t -{{ a.t({en: 'Testimonial', ko: '후기'}) }}</div>
-      <div class="d-flex align-items-center h-42px pl-4 w-100 fs-14 pointer bold dark" (click)="open('/post-list')">
+      <div class="d-flex align-items-center h-42px pl-4 w-100 fs-14 pointer bold dark" (click)="open('/post-list/knowhow')">
         @t -{{ a.t({en: 'Knowhow', ko: '노하우'}) }}</div>
     </ion-col>
     <ion-col size="6" no-padding>

@@ -10,7 +10,7 @@ const routes: Routes = [
   { path: 'join', redirectTo: 'join/alarm-list', pathMatch: 'full' },
   { path: 'join/alarm-list', loadChildren: () => import('./pages/alarm-list/alarm-list.module').then(m => m.AlarmListPageModule) },
   { path: 'products', loadChildren: () => import('./pages/products/products.module').then(m => m.ProductsPageModule) },
-  { path: 'post-list', loadChildren: () => import('./pages/forum/post-list/post-list.module').then(m => m.PostListPageModule) },
+  { path: 'post-list', redirectTo: 'post-list/discussion', pathMatch: 'full' },
   { path: 'post-list/:slug', loadChildren: () => import('./pages/forum/post-list/post-list.module').then(m => m.PostListPageModule) },
   { path: 'search/:keyword', loadChildren: () => import('./pages/forum/post-list/post-list.module').then(m => m.PostListPageModule) },
   { path: 'post-create', loadChildren: () => import('./pages/forum/post-create/post-create.module').then(m => m.PostCreatePageModule) },
