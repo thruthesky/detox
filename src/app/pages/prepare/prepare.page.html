@@ -1,0 +1,36 @@
+<ion-header no-border>
+  <app-header></app-header>
+</ion-header>
+
+<ion-content>
+
+
+
+
+  <app-join-menu></app-join-menu>
+
+
+
+  <section class="px-4 pb-50px md-pb-150px page-width">
+
+
+    <ion-text color="green">
+      <h1 class="title bold ion-text-center mb-4">{{ prepare?.post_title }}</h1>
+    </ion-text>
+
+
+
+    <section class="newspaper">
+      <ion-img class="mb-4" src=" {{ src(prepare) }} " *ngIf=" src(prepare) "></ion-img>
+      <app-page-post-content [guid]=" a.pageCode.prepare " [post]=" prepare " (edited)=" prepare = $event ">
+      </app-page-post-content>
+    </section>
+
+
+
+  </section>
+  <ng-container *ngIf="a.isDesktop">
+    <app-desktop-home-footer></app-desktop-home-footer>
+  </ng-container>
+
+</ion-content>

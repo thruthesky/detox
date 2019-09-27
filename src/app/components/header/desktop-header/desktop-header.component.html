@@ -52,7 +52,7 @@
 
       <ion-col size="10" class="ion-text-end ion-no-padding ">
 
-        <ion-button mode="md" fill="clear" class="mt-3px w-110px fs-12 white no-radius " routerLink="/about"
+        <ion-button mode="md" fill="clear" class="mt-3px w-110px fs-12 white no-radius " routerLink="/7detox"
           routerLinkActive="active">
 
           {{ a.t( {en: '7Detox', ko: '7디톡스'} ) }}
@@ -76,18 +76,39 @@
           {{ a.t( { en: 'forum', ko: '게시판' } ) }}
         </ion-button>
 
-        <ng-container *ngIf=" a.wp.userIsLoggedOut ">
+        <ng-container>
 
 
 
-          <ion-button class="h-28px fs-12 border-1px-white bold white" mode="md" fill="outline" routerLink="/login">
+
+
+          <ion-button class="h-28px fs-12 border-1px-white  white" mode="md" fill="clear" (click)="onClickLogout()"
+            *ngIf=" a.wp.userIsLoggedIn ">
+            {{ a.t( {en: 'Logout', ko: '로그 아웃'} ) }}
+          </ion-button>
+
+
+          <ion-button class="h-28px fs-12 border-1px-white  white" mode="md" fill="clear" routerLink="/login"
+            *ngIf=" a.wp.userIsLoggedOut ">
             {{ a.t( { en: 'Login', ko: '로그인' } ) }}
           </ion-button>
 
-          <ion-button class="h-28px fs-12 border-1px-white bold white" mode="md" fill="outline" routerLink="/register">
+          <div class="line y-center"></div>
+
+
+          <ion-button class="h-28px fs-12 border-1px-white  white" mode="md" fill="clear" routerLink="/register"
+            *ngIf=" a.wp.userIsLoggedOut ">
 
             {{ a.t( { en: 'Register', ko: '회원가입' } ) }}
           </ion-button>
+
+
+          <ion-button class="h-28px fs-12 border-1px-white bold white" mode="md" fill="clear" routerLink="/profile"
+            *ngIf=" a.wp.userIsLoggedIn ">
+            {{ a.t( {en: 'Profile', ko: '회원정보'} ) }}
+          </ion-button>
+
+
 
         </ng-container>
 

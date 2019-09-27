@@ -5,16 +5,16 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 
-import { AboutPage } from './about.page';
+import { PreparePage } from './prepare.page';
 import { HeaderModule } from 'src/app/components/header/header.module';
-import { PagePostContentModule } from 'src/app/components/page-post-content/page-post-content.module';
 import { DesktopHomeFooterModule } from 'src/app/components/desktop-home-footer/desktop-home-footer.module';
-import { AdminPageEditButtonModule } from 'src/app/components/admin-page-edit-button/admin-page-edit-button.module';
+import { PagePostContentModule } from 'src/app/components/page-post-content/page-post-content.module';
+import { JoinMenuModule } from 'src/app/components/join-menu/join-menu.module';
 
 const routes: Routes = [
   {
     path: '',
-    component: AboutPage
+    component: PreparePage
   }
 ];
 
@@ -24,11 +24,12 @@ const routes: Routes = [
     FormsModule,
     IonicModule,
     RouterModule.forChild(routes),
+
     HeaderModule,
-    PagePostContentModule,
     DesktopHomeFooterModule,
-    AdminPageEditButtonModule
+    PagePostContentModule,
+    JoinMenuModule
   ],
-  declarations: [AboutPage]
+  declarations: [PreparePage]
 })
-export class AboutPageModule {}
+export class PreparePageModule { }

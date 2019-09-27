@@ -5,16 +5,15 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 
-import { AboutPage } from './about.page';
+import { AboutToxicPage } from './about-toxic.page';
 import { HeaderModule } from 'src/app/components/header/header.module';
-import { PagePostContentModule } from 'src/app/components/page-post-content/page-post-content.module';
 import { DesktopHomeFooterModule } from 'src/app/components/desktop-home-footer/desktop-home-footer.module';
-import { AdminPageEditButtonModule } from 'src/app/components/admin-page-edit-button/admin-page-edit-button.module';
+import { PagePostContentModule } from 'src/app/components/page-post-content/page-post-content.module';
 
 const routes: Routes = [
   {
     path: '',
-    component: AboutPage
+    component: AboutToxicPage
   }
 ];
 
@@ -25,10 +24,9 @@ const routes: Routes = [
     IonicModule,
     RouterModule.forChild(routes),
     HeaderModule,
-    PagePostContentModule,
     DesktopHomeFooterModule,
-    AdminPageEditButtonModule
+    PagePostContentModule,
   ],
-  declarations: [AboutPage]
+  declarations: [AboutToxicPage]
 })
-export class AboutPageModule {}
+export class AboutToxicPageModule {}

@@ -1,198 +1,212 @@
 .page-width {
-    max-width: 441px !important;
+  max-width: 441px !important;
+  margin: 0 auto !important;
+
+  @media all and (max-width: 768px) {
+    max-width: 360px !important;
     margin: 0 auto !important;
-
-    @media all and (max-width: 768px) {
-        max-width: 360px !important;
-        margin: 0 auto !important;
-    }
-
-
+  }
 }
 
 .title {
-    font-size: 16px !important;
-    padding-top: 10px !important;
-    margin-bottom: 0;
-    font-weight: bold;
-    color: #7db262;
+  font-size: 16px !important;
+  padding-top: 10px !important;
+  margin-bottom: 0;
+  font-weight: bold;
+  color: #7db262;
 
-    // pt-50px mt-0 fs-32px fw-500
-    @media all and (min-width: 768px) {
-        padding-top: 50px !important;
-        margin-top: 0 !important;
-        font-size: 32px !important;
-       
-    }
-
+  // pt-50px mt-0 fs-32px fw-500
+  @media all and (min-width: 768px) {
+    padding-top: 50px !important;
+    margin-top: 0 !important;
+    font-size: 32px !important;
+  }
 }
 
 .subtitle {
-    line-height: 25px;
+  line-height: 25px;
 }
 
 .checklist {
-    max-width: 520px !important;
-    margin: 0 auto !important;
-    padding-top: 50px !important;
+  max-width: 520px !important;
+  margin: 0 auto !important;
+  padding-top: 50px !important;
 
-    @media all and (max-width: 768px) {
-        padding-top: 0 !important;
-    }
-
+  @media all and (max-width: 768px) {
+    padding-top: 0 !important;
+  }
 }
-
-
-
 
 .border {
-
-    @media all and (min-width: 768px) {
-        border: 2px solid #7db262;
-    }
-
+  @media all and (min-width: 768px) {
+    border: 2px solid #7db262;
+  }
 }
 
-
 .border-bottom {
-    @media all and (max-width: 768px) {
-        border-bottom: 1px solid #989aa265;
-    }
+  @media all and (max-width: 768px) {
+    border-bottom: 1px solid #989aa265;
+  }
 }
 
 .md-checkbox {
-
-    @media all and (min-width: 768px) {
-        --border-color: #ccdbc6 !important;
-        --border-width: 1px 1px 1px 1px !important;
-        --checkmark-color: #7db262 !important;
-        --background: #fff !important;
-        --background-checked: #fff !important;
-        --size: 15px !important;
-        --border-radius: none !important;
-        height: 30px !important;
-        width: 30px !important;
-    }
-
+  @media all and (min-width: 768px) {
+    --border-color: #ccdbc6 !important;
+    --border-width: 1px 1px 1px 1px !important;
+    --checkmark-color: #7db262 !important;
+    --background: #fff !important;
+    --background-checked: #fff !important;
+    --size: 15px !important;
+    --border-radius: none !important;
+    height: 30px !important;
+    width: 30px !important;
+  }
 }
 
-
-
 .graph-outer {
-    // padding: 1em .5em;
-    margin: 10px;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    background-color: white;
+  // padding: 1em .5em;
+  margin: 10px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: white;
 
-    .graph {
-        position: relative;
-        margin: 0 auto;
-        width: 260px;
+  .graph {
+    position: relative;
+    margin: 0 auto;
+    width: 260px;
 
-        .lines {
-            position: relative;
-            padding: 16px 0;
+    .lines {
+      position: relative;
+      padding: 20px 0;
 
-            .base-line {
-                width: 100%;
-                border-top: 0;
-                border-left: 0;
-                border-right: 0;
-                border-bottom: 2px solid #bcbcbc;
-            }
+      .base-line {
+        width: 100%;
+        border-top: 0;
+        border-left: 0;
+        border-right: 0;
+        border-bottom: 2px solid #bcbcbc;
+      }
 
-            .warning-line {
-                position: absolute;
-                border-top: 0;
-                border-left: 0;
-                border-right: 0;
-                border-bottom: 2px solid red;
-
-                .circle-button {
-                    position: absolute;
-                    top: -10px;
-                    right: -10px;
-                    width: 20px;
-                    height: 20px;
-                    border-radius: 50%;
-                    background-color: red;
-                }
-            }
-        }
-    }
-
-    header {
+      .warning-line {
         position: absolute;
-        left: -14px;
+        border-top: 0;
+        border-left: 0;
+        border-right: 0;
+        border-bottom: 2px solid red;
 
-        &>div {
-            float: left;
-            margin-left: 2px;
-            font-size: 12px;
-
-            &.box {
-                position: relative;
-                width: 50px;
-                height: 16px;
-                border: 1px solid gray;
-                border-bottom: 0px !important;
-
-                .text {
-                    position: absolute;
-                    top: -8px;
-                    left: 0;
-                    right: 0;
-
-                    display: flex;
-                    justify-content: center;
-
-                    .text-inner {
-                        display: inline-block;
-                        margin: 0 auto;
-                        padding: 0 2px;
-                        background-color: white;
-                    }
-                }
-            }
-
-            &.bad {
-                width: 40px;
-                color: green;
-                border-color: green !important;
-            }
-
-            &.normal {
-                width: auto;
-                color: blue;
-               
-            }
-
-            &.warn {
-                color: yellow;
-                border-color: yellow !important;
-            }
-
-            &.danger {
-                color: orange;
-                border-color: orange !important;
-            }
-
-            &.patient {
-                width: 100px;
-                color: red;
-                border-color: red !important;
-            }
+        .circle-button {
+          position: absolute;
+          top: -8px;
+          right: -8px;
+          width: 16px;
+          height: 16px;
+          border-radius: 50%;
+          background-color: red;
         }
+      }
+    }
+  }
 
-        &:after {
-            content: '';
-            display: block;
-            clear: both;
+  header {
+    position: absolute;
+    left: -14px;
+
+    & > div {
+      float: left;
+      margin-left: 2px;
+      font-size: 12px;
+
+      &.box {
+        position: relative;
+        width: 50px;
+        height: 16px;
+        border: 1px solid gray;
+        border-bottom: 0px !important;
+
+        .text {
+          position: absolute;
+          top: -8px;
+          left: 0;
+          right: 0;
+
+          display: flex;
+          justify-content: center;
+
+          .text-inner {
+            display: inline-block;
+            margin: 0 auto;
+            padding: 0 2px;
+            background-color: white;
+          }
         }
+      }
+
+      &.bad {
+        width: 40px;
+        color: var(--ion-color-success);
+        border-color: green !important;
+      }
+
+      &.normal {
+        width: auto;
+        color: #24a1fc;
+      }
+
+      &.warn {
+        color: #ffd13a;
+        border-color: yellow !important;
+      }
+
+      &.danger {
+        color: #d6572f;
+        border-color: orange !important;
+      }
+
+      &.patient {
+        width: 100px;
+        color: #ff5353;
+        border-color: red !important;
+      }
     }
 
-    .hide {
-        color: white;
+    &:after {
+      content: "";
+      display: block;
+      clear: both;
     }
+  }
+
+  .hide {
+    color: white;
+  }
+}
+
+.line {
+  height: 2px;
+  width: 100%;
+  position: absolute;
+  background-color: #bcbcbc;
+  border-left: 26px solid white;
+  border-right: 22px solid white;
+  top: 50%;
+}
+
+.circle {
+  height: 12px;
+  width: 12px;
+  //   background-color: #24a1fc;
+  position: absolute;
+  top: -5px;
+  right: -2px;
+  border-radius: 50%;
+  z-index: 3000;
+}
+
+.line-mark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 2px;
+  width: 100px;
+  z-index: 2000;
 }

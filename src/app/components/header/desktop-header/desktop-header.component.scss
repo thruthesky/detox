@@ -1,19 +1,32 @@
 .button-bottom ion-button {
-    --color-activated: white!important;
-    --ripple-color: rgba(0, 0, 0, 0.3) !important;
-    --background-hover: rgba(0, 0, 0, 0.05) !important;
+  --color-activated: white !important;
+  --ripple-color: rgba(0, 0, 0, 0.3) !important;
+  --background-hover: rgba(0, 0, 0, 0.05) !important;
 }
 
 .top-43px {
-    top: 38px ;
+  top: 38px;
 }
 
-
 .border-1px-white {
-    --border-width: 1px 1px 1px 1px !important;
-    --border-color: #fff !important;
+  --border-width: 1px 1px 1px 1px !important;
+  --border-color: #fff !important;
 }
 
 .active {
-    --background: rgba(0, 0, 0, 0.1);
+  --background: rgba(0, 0, 0, 0.1);
+}
+
+// .divider {
+//   border: 1px solid white;
+//   width: 1px;
+//   height: 40px;
+// }
+
+.line {
+  display: inline-block;
+
+  height: 18px;
+  width: 1px;
+  background-color: rgba(255, 255, 255, 0.582);
 }

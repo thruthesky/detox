@@ -1,37 +1,26 @@
 <ion-toolbar color="green" mode="ios">
-  <ion-buttons slot="start">
+  <ion-buttons slot="start" mode="md">
 
 
-    <ion-back-button></ion-back-button>
+    <ion-back-button mode="md"></ion-back-button>
 
 
-    <ion-button *ngIf="! homeIcon " routerLink="/">
-      <ion-icon slot="icon-only" name="home"></ion-icon>
-    </ion-button>
+
   </ion-buttons>
 
 
-  <ion-title class="ion-text-center">
+  <ion-title class="ion-text-center" mode="md">
     <img routerLink="/" class="no-outline pointer" src="/assets/img/logo/mobile_logo.png" alt="Site Logo Title - 7Detox"
       *ngIf=" ! title ">
     <ion-label *ngIf=" title ">{{ title }}</ion-label>
   </ion-title>
 
 
-
-
-
-  <ion-buttons slot="end">
-
-
+  <ion-buttons slot="end" mode="md">
     <ion-button (click)="a.openSideMenu()">
       <ion-icon slot="icon-only" name="menu"></ion-icon>
     </ion-button>
 
-
-    <!-- <ion-button (click)=" a.onToggleSearch(search); ">
-      <ion-icon slot="icon-only" name="search"></ion-icon>
-    </ion-button> -->
   </ion-buttons>
 
   <div class="mobile-width" [ngClass]="{show: a.state.searchbar?.show, hide: !a.state.searchbar?.show }">

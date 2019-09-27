@@ -58,12 +58,10 @@ export class DetoxificationDiaryPage implements OnInit, OnDestroy {
       this.error = this.wp.t('NoSlug');
       return;
     }
-
     this.loadPage();
 
-    /// This is for test
-    // setTimeout(() => this.onClickPost(), 200);
-
+    // test
+    // setTimeout(() => this.onClickPost(), 500);
   }
 
   get loadOptions(): any {
@@ -140,7 +138,7 @@ export class DetoxificationDiaryPage implements OnInit, OnDestroy {
         }
       },
       mode: 'md',
-      cssClass: 'diary-popup i-pop-mt-5px  box-shadow-none',
+      // cssClass: 'diary-popup i-pop-mt-5px  box-shadow-none',
     });
     modal.present();
     const res = await modal.onWillDismiss();
@@ -173,6 +171,29 @@ export class DetoxificationDiaryPage implements OnInit, OnDestroy {
     }
   }
 
+  async onView(post: Post) {
+    // console.log('Going to edit post: ', post);
+    const modal = await this.modalController.create({
+      component: IonPostEditComponent,
+      componentProps: {
+        layout: 'diary-view',
+        post: post,
+        header: {
+          color: 'primary',
+          title: this.wp.t('titleEditPost')
+        }
+      }
+    });
+    modal.present();
+    const res = await modal.onWillDismiss();
+
+    console.log(res);
+    if (res && res.data) {
+      if (res.role === 'edit') {
+        this.onEdit(res.data);
+      }
+    }
+  }
 
 
   updatePost(post: Post) {
@@ -185,7 +206,7 @@ export class DetoxificationDiaryPage implements OnInit, OnDestroy {
 
 
   async onDelete(post: Post) {
-    if ( ! await this.ion.confirmDelete() ) {
+    if (! await this.ion.confirmDelete()) {
       return;
     }
     const sub = this.wp.postDelete(post.ID).subscribe(res => {
@@ -222,6 +243,16 @@ export class DetoxificationDiaryPage implements OnInit, OnDestroy {
       return;
     }
     this.loadPage({ scroll: event.target });
+  }
+
+  displayScore(score: string) {
+    if (score === 'bad') {
+      return this.a.t({ en: 'Bad', ko: '하' });
+    } else if (score === 'normal') {
+      return this.a.t({ en: 'Normal', ko: '중' });
+    } else if (score === 'good') {
+      return this.a.t({ en: 'Good', ko: '상' });
+    }
   }
 }
 

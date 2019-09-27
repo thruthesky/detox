@@ -1,19 +1,21 @@
 <div class="ion-text-center">
   <ion-radio-group>
     <ion-item class="d-iblock" lines="none">
-      <ion-radio color="green" (ionSelect)="onClick($event, 'meditation')" checked no-padding></ion-radio>
-      <ion-label color="medium" [ngClass]="{green: selected === 'meditation'}" >{{ a.t({en: 'Meditation', ko: '명상'}) }}</ion-label>
+      <ion-radio mode="md" color="green" (ionSelect)="onClick($event, 'meditation')" checked no-padding></ion-radio>
+      <ion-label color="medium" [ngClass]="{green: selected === 'meditation'}">{{ a.t({en: 'Meditation', ko: '명상'}) }}
+      </ion-label>
     </ion-item>
     <ion-item class="d-iblock" lines="none">
-      <ion-radio color="green" (ionSelect)="onClick($event, 'yoga')"></ion-radio>
+      <ion-radio mode="md" color="green" (ionSelect)="onClick($event, 'yoga')"></ion-radio>
       <ion-label color="medium" [ngClass]="{green: selected === 'yoga'}">{{ a.t({en: 'Yoga', ko: '요가'}) }}</ion-label>
     </ion-item>
     <ion-item class="d-iblock" lines="none">
-      <ion-radio color="green" (ionSelect)="onClick($event, 'stretching')"></ion-radio>
-      <ion-label color="medium" [ngClass]="{green: selected === 'stretching'}">{{ a.t({en: 'Stretching', ko: '스트레칭'}) }}</ion-label>
+      <ion-radio mode="md" color="green" (ionSelect)="onClick($event, 'stretching')"></ion-radio>
+      <ion-label color="medium" [ngClass]="{green: selected === 'stretching'}">{{ a.t({en: 'Stretching', ko: '스트레칭'}) }}
+      </ion-label>
     </ion-item>
     <ion-item class="d-iblock" lines="none">
-      <ion-radio color="green" (ionSelect)="onClick($event, 'core')"></ion-radio>
+      <ion-radio mode="md" color="green" (ionSelect)="onClick($event, 'core')"></ion-radio>
       <ion-label color="medium" [ngClass]="{green: selected === 'core'}">{{ a.t({en: 'Core', ko: '코어'}) }}</ion-label>
     </ion-item>
   </ion-radio-group>

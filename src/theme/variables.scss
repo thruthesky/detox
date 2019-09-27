@@ -115,7 +115,6 @@
   width: 15px;
 }
 
-
 .h-28px {
   height: 28px !important;
 }
@@ -458,6 +457,9 @@
 .fs-18px {
   font-size: 18px !important;
 }
+.fs-20px {
+  font-size: 20px !important;
+}
 
 .fs-14 {
   font-size: 14px !important;
@@ -474,6 +476,11 @@
 .h-40px {
   height: 40px !important;
   --height: 40px !important;
+}
+
+.h-42px {
+  height: 42px !important;
+  --height: 42px !important;
 }
 
 .h-45px {
@@ -542,7 +549,8 @@
   box-shadow: none !important;
 }
 
-.no-border-radius, .no-radius {
+.no-border-radius,
+.no-radius {
   --border-radius: 0 !important;
   border-radius: 0 !important;
 }
@@ -677,7 +685,11 @@
 }
 
 .align-items-center {
-  align-items: center;
+  align-items: center !important;
+}
+
+.d-flex {
+  display: flex !important;
 }
 
 .ml-5 {
@@ -964,7 +976,6 @@
   line-height: 100px !important;
 }
 
-
 .fs-34px {
   font-size: 34px !important;
 }
@@ -1008,7 +1019,6 @@
   max-width: 600px !important;
   margin: 0 auto !important;
 }
-
 
 .w-400px {
   width: 400px;
@@ -1645,11 +1655,9 @@ ion-slides {
 .diary-popup {
   --width: 360px !important;
 
-  @media all and (min-width:768px) {
+  @media all and (min-width: 768px) {
     --width: 450px !important;
-
   }
-
 
   // .popover-content {
   //   top: 50% !important;
@@ -1661,7 +1669,6 @@ ion-slides {
 .diary-content .native-textarea {
   min-height: 30px !important;
 }
-
 
 .show {
   display: block !important;
@@ -1689,4 +1696,61 @@ ion-slides {
 
 .inline-block {
   display: inline-block;
+}
+.pb-30px {
+  padding-bottom: 30px !important;
+}
+
+.w-300px {
+  width: 300px !important;
+}
+.action-sheet {
+  // .action-sheet-button {
+  //   display: flex;
+  //   --background: red !important;
+  //   background-color: red !important;
+  // }
+  ion-icon {
+    position: absolute;
+    right: 10px;
+
+    --color: #4d76ba !important;
+    color: #4d76ba !important;
+  }
+
+  span {
+    color: black;
+    justify-content: start !important;
+  }
+  .action-sheet-group-cancel {
+    span {
+      justify-content: center !important;
+      color: #4d76ba;
+    }
+  }
+}
+.comment-text p {
+  word-break: break-all !important;
+}
+
+ion-back-button {
+  ion-icon {
+    font-size: 18px !important;
+  }
+}
+
+.subtitle-diary {
+  p {
+    margin-bottom: 0 !important;
+  }
+}
+
+.segment-not-active {
+  --indicator-color-checked: none !important;
+  --color-checked: none !important;
+  outline: none !important;
+}
+.route-active {
+  --color: #7db262 !important;
+  border-bottom: 2px solid #7db262 !important;
 }

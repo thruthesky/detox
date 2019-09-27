@@ -10,7 +10,7 @@
 
 
   <section *ngIf="a.isMobile">
-    <ion-toolbar>
+    <ion-toolbar mode="md">
       <ion-title class="fs-14 bold green" slot="start">{{ alarmsTitle.post_title }}</ion-title>
       <ion-buttons slot="end" mode="md">
         <ion-button (click)="onClickArrow()" mode="md">
@@ -29,7 +29,7 @@
     </div>
   </section>
 
-  <!--  -->
+
 
 
   <section *ngIf="a.isDesktop">
@@ -73,12 +73,16 @@
 
     <ion-list *ngIf=" alarms?.length ">
       <ion-item class="md-mt-3 md-shadow-2 pointer" lines="none" *ngFor="let alarm of alarms">
+
         <ion-grid no-padding>
           <ion-row>
-            <ion-col class="flex-column-center md-py-20px " size="3" (click)="onClickAlarmUpdate($event, alarm)">
-              <ion-label class="fs-22px" color="green">{{ a.add0(alarm.hour) }}:{{ a.add0(alarm.minute) }}</ion-label>
+            <ion-col class="flex-column-center md-py-20px " size="3" (click)="onClickAlarmUpdate(alarm)">
+              <ion-label class="fs-18px" color="green">{{  displayHour(alarm.hour) }}:{{ a.add0(alarm.minute) }}
+                <span *ngIf="!checkHour(alarm.hour)">AM</span>
+                <span *ngIf="checkHour(alarm.hour)">PM</span>
+              </ion-label>
             </ion-col>
-            <ion-col class="fs-14 md-py-20px" size="7" (click)="onClickAlarmUpdate($event, alarm)">
+            <ion-col class="fs-14 md-py-20px" size="7" (click)="onClickAlarmUpdate(alarm)">
               <p class="black bold">{{ alarm.title }}</p>
               <p class="i-color-medium">{{ alarm.content }}</p>
               <!-- <p>
@@ -96,9 +100,9 @@
               <ion-buttons>
                 <ion-toggle class="pl-1" color="success" mode="md" [checked]=" alarm.enabled == 'Y' "
                   (ionChange)="onToggleAlarm(alarm)"></ion-toggle>
-                <ion-button (click)="onClickDelete(alarm)">
+                <!-- <ion-button (click)="onClickDelete(alarm)">
                   <ion-icon name="close"></ion-icon>
-                </ion-button>
+                </ion-button> -->
               </ion-buttons>
 
             </ion-col>

@@ -111,6 +111,7 @@ export class AlarmListPage implements OnInit {
   }
 
   ngOnInit() {
+    console.log(this.alarms);
     this.a.wp.post({ method: 'alarmList' }).pipe(map(r => r.data)).subscribe(res => {
       // console.log('alarmList:', res);
       if (res && res.length === 0) {
@@ -136,7 +137,7 @@ export class AlarmListPage implements OnInit {
     this.creatingDefaultAlarms = true;
     const promise = [];
     for (const a of this.defaultAlarms) {
-      console.log('alaram: ', a);
+      // console.log('alaram: ', a);
 
       /**
        * @todo this code is copied from alaram-set-popover. It need to be moved to a service.
@@ -146,14 +147,19 @@ export class AlarmListPage implements OnInit {
         title: a.title,
         content: a.content,
         days: ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'],
-        hour: '0',
+        hour: '1',
         minute: '0',
         enabled: ''
       };
-      promise.push(this.a.wp.post(req).pipe(map(r => r.data)).toPromise());
+      /**
+       * 2019-09-27. It does not create all default alrams at one.
+       * It create one by one. It will take longer time to create.
+       */
+      await this.a.wp.post(req).pipe(map(r => r.data)).toPromise();
+      // promise.push(this.a.wp.post(req).pipe(map(r => r.data)).toPromise());
     }
 
-    await Promise.all(promise);
+    // await Promise.all(promise);
     this.ngOnInit();
   }
 
@@ -165,9 +171,9 @@ export class AlarmListPage implements OnInit {
 
 
 
-  async onClickAlarmUpdate(event: Event, alarm: Alarm) {
+  async onClickAlarmUpdate(alarm: Alarm) {
+    // console.log(alarm);
     const popover = await this.popoverController.create({
-      event: event,
       component: AlarmSetPopoverComponent,
       cssClass: 'pop-alarm-set',
       mode: 'md',
@@ -180,12 +186,15 @@ export class AlarmListPage implements OnInit {
     if (re.role === 'create') {
       this.updateAlarmList(re.data);
     } else if (re.role === 'update') {
-      this.alarms.splice(this.alarms.findIndex(a => a.ID === re.data.ID), 1);
-      this.updateAlarmList(re.data);
+      this.alarms.splice(this.alarms.findIndex(a => a.ID === re.data.ID), 1, re.data);
+      // this.updateAlarmList(re.data);
     }
-
   }
 
+  /**
+   * 
+   * @param newAlarm
+   */
   updateAlarmList(newAlarm: Alarm) {
     const p = this.alarms.findIndex(a => {
       const eTime = this.a.add0(a.hour as any) + this.a.add0(a.minute as any);
@@ -196,6 +205,7 @@ export class AlarmListPage implements OnInit {
         return false;
       }
     });
+    // @todo don't ... re-sort.
     if (p >= 0) {
       this.alarms.splice(p, 0, newAlarm);
     } else {
@@ -226,5 +236,16 @@ export class AlarmListPage implements OnInit {
   }
 
 
+  checkHour(n: number): boolean {
+    return n > 12 ? true : false;
+  }
+
+  displayHour(n: number): number {
+    if (n > 12) {
+      n = n - 12;
+    }
+    this.a.add0(n);
+    return n;
+  }
 
 }

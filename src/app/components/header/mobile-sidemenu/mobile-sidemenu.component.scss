@@ -1,13 +1,30 @@
-
-ion-col ion-button {
-    height: 26px !important;
-    font-size: 14px !important;
-    color: #707070;
-    --color-hover: #7db262;
+.close {
+  height: 26px !important;
+  font-size: 14px !important;
+  color: #707070;
+  --color-hover: #7db262;
 }
 
 ion-thumbnail {
-    --border-radius: 28px;
-
+  --border-radius: 31px;
+  height: 62px;
+  width: 62px;
 }
 
+.button-login {
+  border-top: 1px solid rgba(255, 255, 255, 0.432);
+
+  ion-col:first-of-type {
+    border-right: 1px solid rgba(255, 255, 255, 0.432);
+  }
+}
+
+.line {
+  border-bottom: 1px solid #7db262;
+  margin: 10px 20px;
+}
+
+
+.dark {
+  color: #555 !important;
+}

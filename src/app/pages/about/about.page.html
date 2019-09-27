@@ -3,50 +3,90 @@
 </ion-header>
 
 <ion-content>
-  <section class="bg-md-background-image md-pt-100px dark-gray-2 md-pb-50px">
-
-    <div class="page-width-md">
 
 
-      <h1 class="title px-4 bold green">{{ posts.topLeft?.post_title }}</h1>
-      <ion-grid class="dark-gray" no-padding>
-        <ion-row>
-          <ion-col class="px-4 pt-4"  size="12" size-md="6">
-            <app-page-post-content [guid]=" a.pageCode.aboutTopLeft " [post]=" posts.topLeft " (edited)=" posts.topLeft = $event "></app-page-post-content>
-          </ion-col>
-          <ion-col class="px-4 pt-4" size="12" size-md="6">
-            <app-page-post-content [guid]=" a.pageCode.aboutTopRight " [post]=" posts.topRight " (edited)=" posts.topRight = $event "></app-page-post-content>
-          </ion-col>
-        </ion-row>
-      </ion-grid>
+    <app-admin-page-edit-button [guid]=" guid " (edited)=" onEdit($event) "></app-admin-page-edit-button>
 
-    </div>
+    <img class="w-100" src="{{ mobileSrc }}" *ngIf="a.isMobile">
+    <img class="w-100" src="{{ desktopSrc }}" *ngIf="a.isDesktop">
 
-  </section>
 
-  
+
+  <!-- 
+  <div class="layout-600px md-pt-5 pb-4">
+    <ion-segment mode="md">
+      <ion-segment-button class="segment-not-active  letter-spacing-0" mode="md" routerLink="/7detox/about"
+        routerLinkActive="active">
+        <ion-label color="green">{{ a.t({en: 'About 7Detox', ko: '7디톡스'}) }}</ion-label>
+      </ion-segment-button>
+
+      <ion-segment-button class="segment-not-active letter-spacing-0" mode="md"
+        routerLink="/7detox/about-detoxification">
+        <ion-label color="green">{{ a.t({en: 'About Detox', ko: '해독이란'}) }}</ion-label>
+      </ion-segment-button>
+      <ion-segment-button class=" segment-not-active  letter-spacing-0" mode="md" routerLink="/7detox/about-toxic">
+        <ion-label color="green">{{ a.t({en: 'About Toxic', ko: '독소란'}) }}</ion-label>
+      </ion-segment-button>
+      <ion-segment-button class=" segment-not-active letter-spacing-0" mode="md"
+        routerLink="/7detox/detoxification-tip">
+        <ion-label color="green">{{ a.t({en: 'Detox Tip', ko: '해독설명서'}) }}</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+
+
+
+  <h1 class="title px-4 mb-4 bold green">{{ posts.topLeft?.post_title }}</h1>
+  <ion-grid class="page-width-md md-pb-50px dark-gray" no-padding>
+    <ion-row>
+      <ion-col class="px-4 pt-4" size="12" size-md="6">
+        <app-page-post-content [guid]=" a.pageCode.aboutTopLeft " [post]=" posts.topLeft "
+          (edited)=" posts.topLeft = $event "></app-page-post-content>
+      </ion-col>
+      <ion-col class="px-4 pt-4" size="12" size-md="6">
+        <app-page-post-content [guid]=" a.pageCode.aboutTopRight " [post]=" posts.topRight "
+          (edited)=" posts.topRight = $event "></app-page-post-content>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
   <section class="md-pb-50px md-mb-145px md-bg-color">
     <div class="page-width-md">
       <ion-grid class="md-pt-50px dark-gray" no-padding>
         <ion-row>
           <ion-col class="px-4" size="12" size-md="6">
-            
+
             <h2 class="title  bold green">{{ posts.bottomLeft?.post_title }}</h2>
             <div class="mt-5">
-              <app-page-post-content [guid]=" a.pageCode.aboutBottomLeft " [post]=" posts.bottomLeft " (edited)=" posts.bottomLeft = $event "></app-page-post-content>
+              <app-page-post-content [guid]=" a.pageCode.aboutBottomLeft " [post]=" posts.bottomLeft "
+                (edited)=" posts.bottomLeft = $event "></app-page-post-content>
             </div>
           </ion-col>
           <ion-col class="px-4" size="12" size-md="6">
-            
+
             <h2 class="title  bold green ">{{ posts.bottomRight?.post_title }}</h2>
             <div class="mt-5">
-                <app-page-post-content [guid]=" a.pageCode.aboutBottomRight " [post]=" posts.bottomRight " (edited)=" posts.bottomRight = $event "></app-page-post-content>
+              <app-page-post-content [guid]=" a.pageCode.aboutBottomRight " [post]=" posts.bottomRight "
+                (edited)=" posts.bottomRight = $event "></app-page-post-content>
             </div>
           </ion-col>
         </ion-row>
       </ion-grid>
-    </div>
+    </div> 
   </section>
+
+
+
+
+
+
+
+
+
+
+
+-->
 
 
   <ng-container *ngIf="a.isDesktop">
