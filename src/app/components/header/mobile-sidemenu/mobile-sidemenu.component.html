@@ -48,9 +48,7 @@
 
   </ion-grid>
 
-
   <div class="flex-between w-100 pt-3 pb-30px" *ngIf=" a.wp.userIsLoggedIn">
-
     <div class="flex pl-3 " (click)="open('/profile')">
       <ion-thumbnail class="pointer" slot="start">
         <img [src]=" profilePhotoUrl ">
@@ -62,139 +60,8 @@
         <p class="pointer py-2" (click)=" open('/admin', $event) " *ngIf=" a.wp.isAdmin ">Admin Page</p>
       </div>
     </div>
-
-
   </div>
 </div>
-<!-- start cut -->
-<!-- <div class="py-22px  fs-14 ">
-  <ion-grid fixed class="pl-10px ion-no-padding gray ">
-
-
-
-    <ion-row class="pt-2">
-      <ion-col size="6" class="ion-no-padding no-outline">
-        <ion-button class="bold" color="green" fill="clear" no-margin mode="ios" (click)="open('/about')">
-          {{ a.t({en: '7Detox', ko: '7디톡스'}) }}
-        </ion-button>
-      </ion-col>
-      <ion-col size="6" class="ion-no-padding">
-        <ion-button class="bold" color="green" fill="clear" no-margin mode="ios" (click)="open('/products')">
-          {{ a.t({ en: 'Products', ko: '제품소개'})}}</ion-button>
-      </ion-col>
-    </ion-row>
-
-    <ion-row>
-      <ion-col size="6" class="ion-no-padding no-outline">
-        <ion-button class="bold" color="green" fill="clear" no-margin mode="ios" (click)="open('/post-list')">
-          {{ a.t({en: 'Forum', ko: '게시판'}) }}</ion-button>
-        <div class="pl-3">
-          <div class="pt-1 pointer" (click)="open('/post-list/discussion')">{{ a.t({en: 'Discussion', ko: '자유게시판'}) }}
-          </div>
-          <div class="pt-2 pointer" (click)="open('/post-list/testimonial')">{{ a.t({en: 'Testimonial', ko: '후기'}) }}
-          </div>
-          <div class="pt-2 pointer" (click)="open('/post-list/knowhow')">{{ a.t({en: 'Knowhow', ko: '노하우'}) }}</div>
-        </div>
-      </ion-col>
-      <ion-col size="6" class="ion-no-padding">
-        <ion-button class="bold" color="green" fill="clear" no-margin mode="ios" (click)="open('/alarm-list')">
-          {{ a.t({en: 'Join', ko: '참여하기'}) }}
-        </ion-button>
-        <div class="pl-3">
-          <div class="pt-1 pointer" (click)="open('/join/alarm-list')">{{ a.t({en: 'Alarm Settings', ko: '알람설정'}) }}
-          </div>
-          <div class="pt-2 pointer" (click)="open('/join/home-training/meditation')">
-            {{ a.t({en: 'Home Training', ko: '홈트레이닝'}) }}</div>
-          <div class="pt-2 pointer" (click)="open('/join/detoxification-diary')">
-            {{ a.t({en: 'Detox diary', ko: '해독일지'}) }}
-          </div>
-        </div>
-      </ion-col>
-    </ion-row>
-
-
-  </ion-grid>
-
-
-  <ion-grid fixed class="pl-10px ion-no-padding gray">
-    <ion-row class="pt-2">
-      <ion-col size="6" class="ion-no-padding no-outline">
-        <ion-button fill="clear" no-margin mode="ios" (click)="open('/measure-detox')">
-          {{ a.t({en: 'Measure Detox', ko: '독소지수,비만도측정'}) }}</ion-button>
-      </ion-col>
-      <ion-col size="6" class="ion-no-padding no-outline">
-        <ion-button fill="clear" no-margin mode="ios" (click)="open('/join/alarm-list')">
-          {{ a.t({en: 'Join', ko: '참여하기'}) }}</ion-button>
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col size="6" class="ion-no-padding no-outline">
-        <ion-button fill="clear" no-margin mode="ios" (click)="open('/join/detoxification-diary')">
-          {{ a.t({en: 'Detoxification Diary', ko: '해독일지'}) }}</ion-button>
-      </ion-col>
-      <ion-col size="6" class="ion-no-padding no-outline">
-        <ion-button fill="clear" no-margin mode="ios" (click)="open('/detoxification-recipe')">
-          {{ a.t({en: 'Detoxification Recipe', ko: '해독레시피'}) }}</ion-button>
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col size="6" class="ion-no-padding no-outline">
-        <ion-button fill="clear" no-margin mode="ios" (click)="open('/join/home-training/meditation')">
-          {{ a.t({en: 'Home Training', ko: '홈트레이닝'}) }}</ion-button>
-      </ion-col>
-      <ion-col size="6" class="ion-no-padding no-outline">
-        <ion-button fill="clear" no-margin mode="ios" (click)="open('/testimonial')">
-          {{ a.t({en: 'Testimonials', ko: '프로그램 후기'}) }}</ion-button>
-      </ion-col>
-    </ion-row>
-
-    <ion-row>
-      <ion-col size="6" class="ion-no-padding no-outline">
-        <ion-button fill="clear" no-margin mode="ios" (click)="open('/detoxification-tip')">
-          {{ a.t({en: 'DetoxTips', ko: '해독꿀팁'}) }}</ion-button>
-      </ion-col>
-    </ion-row>
-
-
-  </ion-grid>
-
-
-
-  <ion-grid fixed class="pl-10px ion-no-padding gray">
-    <ion-row class="pt-2">
-      <ion-col size="6" class="ion-no-padding no-outline">
-        <ion-button fill="clear" no-margin mode="ios" (click)="open('/company-info')">
-          {{ a.t({en: 'Company Intro', ko: '회사소개'}) }}</ion-button>
-      </ion-col>
-      <ion-col size="6" class="ion-no-padding no-outline">
-        <ion-button fill="clear" no-margin mode="ios" (click)="open('/customer-service')">
-          {{ a.t({en: 'Customer Service', ko: '고객센터'}) }}</ion-button>
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col size="6" class="ion-no-padding no-outline">
-        <ion-button fill="clear" no-margin mode="ios" (click)="open('/terms-and-conditions')">
-          {{ a.t({en: 'Terms & Conditions', ko: '이용약관'}) }}</ion-button>
-      </ion-col>
-      <ion-col size="6" class="ion-no-padding no-outline">
-        <ion-button fill="clear" no-margin mode="ios" (click)="open('/privacy-policy')">
-          {{ a.t({en: 'Privacy Policy', ko: '개인정보 처리방침'}) }}</ion-button>
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col size="6" class="ion-no-padding no-outline">
-        <ion-button fill="clear" no-margin mode="ios" (click)="open('/child-protection')">
-          {{ a.t({en: 'Child Protection', ko: '청소년보호정책'}) }}</ion-button>
-      </ion-col>
-      <ion-col size="6" class="ion-no-padding no-outline">
-        <ion-button fill="clear" no-margin mode="ios" (click)="open('/affiliate')">
-          {{ a.t({en: 'Affliates', ko: '제휴문의'}) }}</ion-button>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
-</div> -->
-
-<!-- end cut -->
 
 
 <ion-grid class="pb-4" no-padding>
@@ -223,7 +90,7 @@
       <div class="d-flex align-items-center h-42px pl-4 w-100 fs-14 pointer bold green">
         @t {{ a.t({en: 'Join', ko: '참여하기'}) }}</div>
       <div class="d-flex align-items-center h-42px pl-4 w-100 fs-14 pointer bold dark"
-        (click)="open('/join/alarm-list')">
+        (click)="open('/join/alarm-list')" (click)="open('/join/alarm-list')">
         @t -{{ a.t({en: 'Alarm Settings', ko: '알람설정'}) }}</div>
       <div class="d-flex align-items-center h-42px pl-4 w-100 fs-14 pointer bold dark"
         (click)="open('/join/home-training/meditation')">
@@ -240,10 +107,6 @@
         @t{{ a.t({en: 'Measure Detox', ko: '독소지수,비만도측정'}) }}</div>
     </ion-col>
   </ion-row>
-
-
-
-
 
   <div class="line"></div>
   <ion-row>
