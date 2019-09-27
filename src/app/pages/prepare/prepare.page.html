@@ -1,0 +1,41 @@
+<ion-header no-border>
+  <app-header></app-header>
+</ion-header>
+
+<ion-content>
+
+
+  <section class="px-4 page-width">
+
+
+    <ion-text color="green">
+      <h1 class="title bold">{{ aboutDetox?.post_title }}</h1>
+    </ion-text>
+
+    <ion-grid class="md-pt-50px pb-320px" no-padding>
+      <ion-row no-padding>
+        <ion-col class="md-pr-60px" size="12" size-md="7" *ngIf="a.isDesktop" no-padding>
+          <ion-img src=" {{ src(null) }} " *ngIf=" 0 "></ion-img>
+        </ion-col>
+        <ion-col class="lh-25px" size="12" size-md="5" no-padding>
+
+         <div class="gray">
+            <app-page-post-content [guid]=" a.pageCode.aboutDetox " [post]=" aboutDetox " (edited)=" aboutDetox = $event "></app-page-post-content>
+         </div>
+     
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+  </section>
+
+  <ng-container *ngIf="a.isDesktop">
+    <app-desktop-home-footer></app-desktop-home-footer>
+  </ng-container>
+
+</ion-content>
+
+
+
+
+
