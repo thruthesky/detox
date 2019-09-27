@@ -137,7 +137,7 @@ export class AlarmListPage implements OnInit {
     this.creatingDefaultAlarms = true;
     const promise = [];
     for (const a of this.defaultAlarms) {
-      console.log('alaram: ', a);
+      // console.log('alaram: ', a);
 
       /**
        * @todo this code is copied from alaram-set-popover. It need to be moved to a service.

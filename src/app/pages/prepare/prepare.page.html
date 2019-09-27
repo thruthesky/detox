@@ -11,26 +11,21 @@
 
 
 
+  <section class="px-4 pb-50px md-pb-150px page-width">
 
 
-  <section class="px-4 page-width">
+    <ion-text color="green">
+      <h1 class="title bold ion-text-center mb-4">{{ prepare?.post_title }}</h1>
+    </ion-text>
 
 
-    <h1>Prepare Page</h1>
 
-    <!-- <h1 class="title px-4 mb-4 bold green">{{ posts.topLeft?.post_title }}</h1>
-    <ion-grid class="page-width-md md-pb-50px dark-gray" no-padding>
-      <ion-row>
-        <ion-col class="px-4 pt-4" size="12" size-md="6">
-          <app-page-post-content [guid]=" a.pageCode.aboutTopLeft " [post]=" posts.topLeft "
-            (edited)=" posts.topLeft = $event "></app-page-post-content>
-        </ion-col>
-        <ion-col class="px-4 pt-4" size="12" size-md="6">
-          <app-page-post-content [guid]=" a.pageCode.aboutTopRight " [post]=" posts.topRight "
-            (edited)=" posts.topRight = $event "></app-page-post-content>
-        </ion-col>
-      </ion-row>
-    </ion-grid> -->
+    <section class="newspaper">
+      <ion-img class="mb-4" src=" {{ src(prepare) }} " *ngIf=" src(prepare) "></ion-img>
+      <app-page-post-content [guid]=" a.pageCode.prepare " [post]=" prepare " (edited)=" prepare = $event ">
+      </app-page-post-content>
+    </section>
+
 
 
   </section>

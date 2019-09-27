@@ -11,9 +11,11 @@ export class PreparePage implements OnInit {
 
 
 
-  aboutDetox = {} as Post;
+  prepare = {} as Post;
 
   constructor(public a: AppService) {
+    this.a.wp.postGetIn({ guid: a.pageCode.prepare }, this.prepare);
+
   }
 
   ngOnInit() {
