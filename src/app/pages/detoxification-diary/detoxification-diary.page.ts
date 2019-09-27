@@ -244,5 +244,15 @@ export class DetoxificationDiaryPage implements OnInit, OnDestroy {
     }
     this.loadPage({ scroll: event.target });
   }
+
+  displayScore(score: string) {
+    if (score === 'bad') {
+      return this.a.t({ en: 'Bad', ko: '하' });
+    } else if (score === 'normal') {
+      return this.a.t({ en: 'Normal', ko: '중' });
+    } else if (score === 'good') {
+      return this.a.t({ en: 'Good', ko: '상' });
+    }
+  }
 }
 

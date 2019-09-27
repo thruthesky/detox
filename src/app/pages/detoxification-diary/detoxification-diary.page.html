@@ -75,7 +75,7 @@
               <div class="position-absolute top z-1000 w-100 p-3">
                 <ion-grid class="pt-2" no-padding>
                   <ion-row class="fs-12px ">
-                    <ion-col class="color-gray" no-padding>@t label:label</ion-col>
+                    <ion-col class="color-gray" no-padding>{{ a.t({en: 'selfscore', ko: '평가'} )}}:{{ displayScore(p.score) }}</ion-col>
                     <!-- <ion-col class="color-gray" no-padding>{{ p['target'] }}/{{ p['current'] }}</ion-col> -->
                     <!-- <ion-col class="ion-text-right color-gray" no-padding>{{ p['days'] }}일</ion-col> -->
                   </ion-row>
