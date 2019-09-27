@@ -43,9 +43,6 @@
         </ion-button>
       </ion-col>
     </ion-row>
-
-
-
   </ion-grid>
 
   <div class="flex-between w-100 pt-3 pb-30px" *ngIf=" a.wp.userIsLoggedIn">
@@ -70,13 +67,13 @@
       <div class="d-flex align-items-center h-42px pl-4 w-100 fs-14 pointer bold green" (click)="open('/about')">
         {{ a.t({en: '7Detox', ko: '7디톡스'}) }}</div>
       <div class="d-flex align-items-center h-42px pl-4 w-100 fs-14 pointer bold dark" (click)="open('/company-info')">
-        -@tsubmenu 1</div>
+        -@t {{ a.t( { en:'menu1', ko:''} )}}</div>
       <div class="d-flex align-items-center h-42px pl-4 w-100 fs-14 pointer bold dark" (click)="open('/company-info')">
-        -@tsubMenu 2</div>
+        -@t {{ a.t( { en:'menu1', ko:''} )}}</div>
       <div class="d-flex align-items-center h-42px pl-4 w-100 fs-14 pointer bold dark" (click)="open('/company-info')">
-        -@tsubMenu 3</div>
+        -@t {{ a.t( { en:'menu1', ko:''} )}}</div>
       <div class="d-flex align-items-center h-42px pl-4 w-100 fs-14 pointer bold dark" (click)="open('/company-info')">
-        -@tsubMenu 4</div>
+        -@t {{ a.t( { en:'menu1', ko:''} )}}</div>
       <div class="d-flex align-items-center h-42px pl-4 w-100 fs-14 pointer bold green" (click)="open('/post-list')">
         @t {{ a.t({en: 'Forum', ko: '게시판'}) }}</div>
       <div class="d-flex align-items-center h-42px pl-4 w-100 fs-14 pointer bold dark" (click)="open('/post-list/discussion')">
