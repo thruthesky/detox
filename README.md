@@ -78,3 +78,14 @@
     messagingSenderId: "206606581195",
     appId: "1:206606581195:web:2f2d95bf05330162"
   };
+
+
+## Alarm list
+
+
+### Alaram list order
+
+* @changed alarm list is now order by `idx asc`. This is the request from client.
+
+  * `Alarm list order by hour/minute is done by backend.`
+

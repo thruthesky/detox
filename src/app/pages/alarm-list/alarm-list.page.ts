@@ -151,10 +151,15 @@ export class AlarmListPage implements OnInit {
         minute: '0',
         enabled: ''
       };
-      promise.push(this.a.wp.post(req).pipe(map(r => r.data)).toPromise());
+      /**
+       * 2019-09-27. It does not create all default alrams at one.
+       * It create one by one. It will take longer time to create.
+       */
+      await this.a.wp.post(req).pipe(map(r => r.data)).toPromise();
+      // promise.push(this.a.wp.post(req).pipe(map(r => r.data)).toPromise());
     }
 
-    await Promise.all(promise);
+    // await Promise.all(promise);
     this.ngOnInit();
   }
 
@@ -181,11 +186,15 @@ export class AlarmListPage implements OnInit {
     if (re.role === 'create') {
       this.updateAlarmList(re.data);
     } else if (re.role === 'update') {
-      this.alarms.splice(this.alarms.findIndex(a => a.ID === re.data.ID), 1);
-      this.updateAlarmList(re.data);
+      this.alarms.splice(this.alarms.findIndex(a => a.ID === re.data.ID), 1, re.data);
+      // this.updateAlarmList(re.data);
     }
   }
 
+  /**
+   * 
+   * @param newAlarm
+   */
   updateAlarmList(newAlarm: Alarm) {
     const p = this.alarms.findIndex(a => {
       const eTime = this.a.add0(a.hour as any) + this.a.add0(a.minute as any);
@@ -196,6 +205,7 @@ export class AlarmListPage implements OnInit {
         return false;
       }
     });
+    // @todo don't ... re-sort.
     if (p >= 0) {
       this.alarms.splice(p, 0, newAlarm);
     } else {

@@ -9,6 +9,7 @@ import { AboutPage } from './about.page';
 import { HeaderModule } from 'src/app/components/header/header.module';
 import { PagePostContentModule } from 'src/app/components/page-post-content/page-post-content.module';
 import { DesktopHomeFooterModule } from 'src/app/components/desktop-home-footer/desktop-home-footer.module';
+import { AdminPageEditButtonModule } from 'src/app/components/admin-page-edit-button/admin-page-edit-button.module';
 
 const routes: Routes = [
   {
@@ -26,6 +27,7 @@ const routes: Routes = [
     HeaderModule,
     PagePostContentModule,
     DesktopHomeFooterModule,
+    AdminPageEditButtonModule
   ],
   declarations: [AboutPage]
 })

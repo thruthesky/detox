@@ -4,6 +4,15 @@
 
 <ion-content>
 
+
+    <app-admin-page-edit-button [guid]=" guid " (edited)=" onEdit($event) "></app-admin-page-edit-button>
+
+    <img class="w-100" src="{{ mobileSrc }}" *ngIf="a.isMobile">
+    <img class="w-100" src="{{ desktopSrc }}" *ngIf="a.isDesktop">
+
+
+
+  <!-- 
   <div class="layout-600px md-pt-5 pb-4">
     <ion-segment mode="md">
       <ion-segment-button class="segment-not-active  letter-spacing-0" mode="md" routerLink="/7detox/about"
@@ -64,7 +73,7 @@
           </ion-col>
         </ion-row>
       </ion-grid>
-    </div>
+    </div> 
   </section>
 
 
@@ -77,7 +86,7 @@
 
 
 
-
+-->
 
 
   <ng-container *ngIf="a.isDesktop">
