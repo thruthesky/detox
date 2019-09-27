@@ -5,24 +5,50 @@
 <ion-content>
 
 
+
+
+  <div class="layout-600px md-pt-5 pb-4">
+    <ion-segment mode="md">
+      <ion-segment-button class="segment-not-active  letter-spacing-0" mode="md" routerLink="/about"
+        routerLinkActive="route-active">
+        <ion-label color="green">{{ a.t({en: 'About 7Detox', ko: '7디톡스'}) }}</ion-label>
+      </ion-segment-button>
+      <ion-segment-button class="segment-not-active letter-spacing-0" mode="md" routerLink="/about-detoxification"
+        routerLinkActive="route-active">
+        <ion-label color="green">{{ a.t({en: 'About Detox', ko: '해독이란'}) }}</ion-label>
+      </ion-segment-button>
+      <ion-segment-button class=" segment-not-active  letter-spacing-0" mode="md" routerLink="/about-toxic"
+        routerLinkActive="route-active">
+        <ion-label color="green">{{ a.t({en: 'About Toxic', ko: '독소란'}) }}</ion-label>
+      </ion-segment-button>
+      <ion-segment-button class=" segment-not-active letter-spacing-0" mode="md" routerLink="/detoxification-tip">
+        <ion-label color="green">{{ a.t({en: 'Detox Tip', ko: '해독설명서'}) }}</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+
+
+
+
   <section class="px-4 page-width">
 
 
     <ion-text color="green">
-      <h1 class="title bold">{{ aboutDetox?.post_title }}</h1>
+      <h1 class="title bold">{{ aboutToxic?.post_title }}</h1>
     </ion-text>
 
     <ion-grid class="md-pt-50px pb-320px" no-padding>
       <ion-row no-padding>
         <ion-col class="md-pr-60px" size="12" size-md="7" *ngIf="a.isDesktop" no-padding>
-          <ion-img src=" {{ src(null) }} " *ngIf=" 0 "></ion-img>
+          <ion-img src=" {{ src(aboutToxic) }} " *ngIf=" src(aboutToxic) "></ion-img>
         </ion-col>
         <ion-col class="lh-25px" size="12" size-md="5" no-padding>
 
-         <div class="gray">
-            <app-page-post-content [guid]=" a.pageCode.aboutDetox " [post]=" aboutDetox " (edited)=" aboutDetox = $event "></app-page-post-content>
-         </div>
-     
+          <div class="gray">
+            <app-page-post-content [guid]=" a.pageCode.aboutToxic " [post]=" aboutToxic "
+              (edited)=" aboutToxic = $event "></app-page-post-content>
+          </div>
+
         </ion-col>
       </ion-row>
     </ion-grid>
@@ -34,7 +60,3 @@
   </ng-container>
 
 </ion-content>
-
-
-
-

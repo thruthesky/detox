@@ -5,6 +5,7 @@ export const pageCode = {
     aboutBottomRight: 'about-page-bottom-right',
     terms: 'terms-and-condition',
     aboutDetox: 'about-detoxification',
+    aboutToxic: 'about-toxic',
     affiliate: 'affiliate',
 
 };

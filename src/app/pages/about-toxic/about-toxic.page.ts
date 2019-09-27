@@ -10,9 +10,10 @@ import { AppService } from 'src/app/services/app.service';
 export class AboutToxicPage implements OnInit {
 
 
-  aboutDetox = {} as Post;
+  aboutToxic = {} as Post;
 
   constructor(public a: AppService) {
+    this.a.wp.postGetIn({ guid: a.pageCode.aboutToxic }, this.aboutToxic);
   }
 
   ngOnInit() {

@@ -4,6 +4,28 @@
 
 <ion-content>
 
+  <div class="layout-600px md-pt-5 pb-4">
+    <ion-segment mode="md">
+      <ion-segment-button class="segment-not-active  letter-spacing-0" mode="md" routerLink="/about"
+        routerLinkActive="route-active">
+        <ion-label color="green">{{ a.t({en: 'About 7Detox', ko: '7디톡스'}) }}</ion-label>
+      </ion-segment-button>
+      <ion-segment-button class="segment-not-active letter-spacing-0" mode="md" routerLink="/about-detoxification"
+        routerLinkActive="route-active">
+        <ion-label color="green">{{ a.t({en: 'About Detox', ko: '해독이란'}) }}</ion-label>
+      </ion-segment-button>
+      <ion-segment-button class=" segment-not-active  letter-spacing-0" mode="md" routerLink="/about-toxic"
+        routerLinkActive="route-active">
+        <ion-label color="green">{{ a.t({en: 'About Toxic', ko: '독소란'}) }}</ion-label>
+      </ion-segment-button>
+      <ion-segment-button class=" segment-not-active letter-spacing-0" mode="md" routerLink="/detoxification-tip"
+        routerLinkActive="route-active">
+        <ion-label color="green">{{ a.t({en: 'Detox Tip', ko: '해독설명서'}) }}</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+
+
   <div class="page-width-md mt-5 mb-4 flex-center">
     <h1 class="normal fs-lg green">
       {{ tipTitle.post_title }}

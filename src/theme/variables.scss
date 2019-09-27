@@ -1744,3 +1744,13 @@ ion-back-button {
     margin-bottom: 0 !important;
   }
 }
+
+.segment-not-active {
+  --indicator-color-checked: none !important;
+  --color-checked: none !important;
+  outline: none !important;
+}
+.route-active {
+  --color: #7db262 !important;
+  border-bottom: 2px solid #7db262 !important;
+}

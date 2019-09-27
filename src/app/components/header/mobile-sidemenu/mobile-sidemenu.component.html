@@ -68,31 +68,37 @@
         {{ a.t({en: '7Detox', ko: '7디톡스'}) }}</div>
       <div class="d-flex align-items-center h-42px pl-4 w-100 fs-14 pointer bold dark" (click)="open('/about')">
         {{ a.t( { en:'About 7Detox', ko:'7디톡스란'} )}}</div>
-      <div class="d-flex align-items-center h-42px pl-4 w-100 fs-14 pointer bold dark" (click)="open('/about-detoxification')">
+      <div class="d-flex align-items-center h-42px pl-4 w-100 fs-14 pointer bold dark"
+        (click)="open('/about-detoxification')">
         {{ a.t( { en:'About Detox', ko:'해독이란'} )}}</div>
       <div class="d-flex align-items-center h-42px pl-4 w-100 fs-14 pointer bold dark" (click)="open('/about-toxic')">
         {{ a.t( { en:'About Toxine', ko:'독소란'} )}}</div>
-      <div class="d-flex align-items-center h-42px pl-4 w-100 fs-14 pointer bold dark" (click)="open('/detoxification-tip')">
+
+      <div class="d-flex align-items-center h-42px pl-4 w-100 fs-14 pointer bold dark"
+        (click)="open('/detoxification-tip')">
         {{ a.t( { en:'Detox tip', ko:'해독설명서'} )}}</div>
+
 
       <div class="d-flex align-items-center h-42px pl-4 w-100 fs-14 pointer bold green" (click)="open('/post-list')">
         {{ a.t({en: 'Forum', ko: '게시판'}) }}</div>
-      <div class="d-flex align-items-center h-42px pl-4 w-100 fs-14 pointer bold dark" (click)="open('/post-list/discussion')">
+      <div class="d-flex align-items-center h-42px pl-4 w-100 fs-14 pointer bold dark"
+        (click)="open('/post-list/discussion')">
         {{ a.t({en: 'Discussion', ko: '자유게시판'}) }}</div>
-      <div class="d-flex align-items-center h-42px pl-4 w-100 fs-14 pointer bold dark" (click)="open('/post-list/testimonial')">
+      <div class="d-flex align-items-center h-42px pl-4 w-100 fs-14 pointer bold dark"
+        (click)="open('/post-list/testimonial')">
         {{ a.t({en: 'Testimonial', ko: '후기'}) }}</div>
-      <div class="d-flex align-items-center h-42px pl-4 w-100 fs-14 pointer bold dark" (click)="open('/post-list/knowhow')">
+      <div class="d-flex align-items-center h-42px pl-4 w-100 fs-14 pointer bold dark"
+        (click)="open('/post-list/knowhow')">
         {{ a.t({en: 'Knowhow', ko: '노하우'}) }}</div>
     </ion-col>
     <ion-col size="6" no-padding>
       <div class="d-flex align-items-center h-42px pl-4 w-100 fs-14 pointer bold green">
         {{ a.t({en: 'Join', ko: '참여하기'}) }}</div>
-        <div class="d-flex align-items-center h-42px pl-4 w-100 fs-14 pointer bold dark"
-          (click)="open('/prepare')">
-          {{ a.t({en: 'Prepare', ko: '준비하기'}) }}</div>
-          <div class="d-flex align-items-center h-42px pl-4 w-100 fs-14 pointer bold dark"
-            (click)="open('/join/alarm-list')">
-            {{ a.t({en: 'Alarm Settings', ko: '알람설정'}) }}</div>
+      <div class="d-flex align-items-center h-42px pl-4 w-100 fs-14 pointer bold dark" (click)="open('/join/prepare')">
+        {{ a.t({en: 'Prepare', ko: '준비하기'}) }}</div>
+      <div class="d-flex align-items-center h-42px pl-4 w-100 fs-14 pointer bold dark"
+        (click)="open('/join/alarm-list')">
+        {{ a.t({en: 'Alarm Settings', ko: '알람설정'}) }}</div>
       <div class="d-flex align-items-center h-42px pl-4 w-100 fs-14 pointer bold dark"
         (click)="open('/join/home-training/meditation')">
         {{ a.t({en: 'Home Training', ko: '홈트레이닝'}) }}</div>

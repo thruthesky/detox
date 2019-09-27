@@ -1,6 +1,10 @@
 <ion-segment class="layout-600px md-mt-5" mode="md">
+  <ion-segment-button class="segment-not-active" routerLink="/join/prepare" routerLinkActive="active" no-padding
+    mode="md">
+    <ion-label> {{ a.t({en: 'Prepare', ko: '준비하기'}) }}</ion-label>
+  </ion-segment-button>
   <ion-segment-button class="segment-not-active" routerLink="/join/alarm-list" routerLinkActive="active" no-padding
-    checked mode="md">
+    mode="md">
     <ion-label>{{ a.t( {en: 'Alarm Settings', ko: '알람 설정'} ) }}</ion-label>
   </ion-segment-button>
   <ion-segment-button class="segment-not-active" routerLink="/join/home-training/meditation" routerLinkActive="active"
