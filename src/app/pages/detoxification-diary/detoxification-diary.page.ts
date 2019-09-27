@@ -61,7 +61,7 @@ export class DetoxificationDiaryPage implements OnInit, OnDestroy {
     this.loadPage();
 
     // test
-    setTimeout(() => this.onClickPost(), 500);
+    // setTimeout(() => this.onClickPost(), 500);
   }
 
   get loadOptions(): any {
