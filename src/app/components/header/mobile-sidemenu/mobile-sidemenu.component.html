@@ -64,7 +64,7 @@
 <ion-grid class="pb-4" no-padding>
   <ion-row>
     <ion-col size="6" no-padding>
-      <div class="d-flex align-items-center h-42px pl-4 w-100 fs-14 pointer bold green">
+      <div class="d-flex align-items-center h-42px pl-4 w-100 fs-14 pointer bold green" (click)="open('/7detox/about')">
         {{ a.t({en: '7Detox', ko: '7디톡스'}) }}</div>
       <div class="d-flex align-items-center h-42px pl-4 w-100 fs-14 pointer bold dark" (click)="open('/7detox/about')">
         {{ a.t( { en:'About 7Detox', ko:'7디톡스란'} )}}</div>
@@ -80,7 +80,7 @@
         {{ a.t( { en:'Detox tip', ko:'해독설명서'} )}}</div>
 
 
-      <div class="d-flex align-items-center h-42px pl-4 w-100 fs-14 pointer bold green">
+      <div class="d-flex align-items-center h-42px pl-4 w-100 fs-14 pointer bold green" (click)="open('/post-list/discussion')">
         {{ a.t({en: 'Forum', ko: '게시판'}) }}</div>
       <div class="d-flex align-items-center h-42px pl-4 w-100 fs-14 pointer bold dark"
         (click)="open('/post-list/discussion')">
@@ -93,7 +93,7 @@
         {{ a.t({en: 'Knowhow', ko: '노하우'}) }}</div>
     </ion-col>
     <ion-col size="6" no-padding>
-      <div class="d-flex align-items-center h-42px pl-4 w-100 fs-14 pointer bold green">
+      <div class="d-flex align-items-center h-42px pl-4 w-100 fs-14 pointer bold green" (click)="open('/join/prepare')">
         {{ a.t({en: 'Join', ko: '참여하기'}) }}</div>
       <div class="d-flex align-items-center h-42px pl-4 w-100 fs-14 pointer bold dark" (click)="open('/join/prepare')">
         {{ a.t({en: 'Prepare', ko: '준비하기'}) }}</div>

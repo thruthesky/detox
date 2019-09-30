@@ -9,6 +9,7 @@ const routes: Routes = [
   { path: '7detox', redirectTo: '7detox/about', pathMatch: 'full' },
   { path: '7detox/about', loadChildren: () => import('./pages/about/about.module').then(m => m.AboutPageModule) },
   { path: 'join', redirectTo: 'join/alarm-list', pathMatch: 'full' },
+  { path: 'alarm-list', loadChildren: () => import('./pages/alarm-list/alarm-list.module').then(m => m.AlarmListPageModule) },
   { path: 'join/alarm-list', loadChildren: () => import('./pages/alarm-list/alarm-list.module').then(m => m.AlarmListPageModule) },
   { path: 'products', loadChildren: () => import('./pages/products/products.module').then(m => m.ProductsPageModule) },
   { path: 'post-list', redirectTo: 'post-list/discussion', pathMatch: 'full' },
