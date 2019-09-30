@@ -5,10 +5,13 @@
 <ion-content>
 
 
-    <app-admin-page-edit-button [guid]=" guid " (edited)=" onEdit($event) "></app-admin-page-edit-button>
+  <app-admin-page-edit-button [guid]=" guid " (edited)=" onEdit($event) "></app-admin-page-edit-button>
 
-    <img class="w-100" src="{{ mobileSrc }}" *ngIf="a.isMobile">
-    <img class="w-100" src="{{ desktopSrc }}" *ngIf="a.isDesktop">
+
+  <section class="layout-width">
+    <img class="w-100 mb-4" src="{{ mobileSrc }}" *ngIf="a.isMobile">
+    <img class="w-100  md-mb-150px" src="{{ desktopSrc }}" *ngIf="a.isDesktop">
+  </section>
 
 
 
