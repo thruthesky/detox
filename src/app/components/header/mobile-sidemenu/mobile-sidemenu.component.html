@@ -52,8 +52,8 @@
       </ion-thumbnail>
 
       <div class="pl-3 fs-14 white">
-        <p class="bold pb-2 pt-3">{{ user.display_name }}</p>
-        <p class="fs-12">{{ user.user_email }}</p>
+        <p class="bold pb-2 pt-3">{{ user?.display_name }}</p>
+        <p class="fs-12">{{ user?.session_id }}</p>
         <p class="pointer py-2" (click)=" open('/admin', $event) " *ngIf=" a.wp.isAdmin ">Admin Page</p>
       </div>
     </div>

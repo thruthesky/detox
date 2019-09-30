@@ -4,15 +4,6 @@
 
 <ion-content>
 
-
-    <app-admin-page-edit-button [guid]=" guid " (edited)=" onEdit($event) "></app-admin-page-edit-button>
-
-    <img class="w-100" src="{{ mobileSrc }}" *ngIf="a.isMobile">
-    <img class="w-100" src="{{ desktopSrc }}" *ngIf="a.isDesktop">
-
-
-
-  <!-- 
   <div class="layout-600px md-pt-5 pb-4">
     <ion-segment mode="md">
       <ion-segment-button class="segment-not-active  letter-spacing-0" mode="md" routerLink="/7detox/about"
@@ -35,6 +26,25 @@
   </div>
 
 
+  <section class="layout-width">
+
+
+    <h1 class="ion-text-center fs-lg md-fs-38px green">{{ a.t({en: 'About 7Detox', ko: '7디톡스'}) }}
+
+    </h1>
+
+    <app-admin-page-edit-button class="float-right" [guid]=" guid " (edited)=" onEdit($event) ">
+    </app-admin-page-edit-button>
+
+    <img class=" w-100 mb-4" src="{{ mobileSrc }}" *ngIf="a.isMobile">
+    <img class="w-100  md-mb-150px" src="{{ desktopSrc }}" *ngIf="a.isDesktop">
+  </section>
+
+
+
+
+
+  <!-- 
 
   <h1 class="title px-4 mb-4 bold green">{{ posts.topLeft?.post_title }}</h1>
   <ion-grid class="page-width-md md-pb-50px dark-gray" no-padding>
