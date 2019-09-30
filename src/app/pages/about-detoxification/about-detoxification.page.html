@@ -19,7 +19,8 @@
       <ion-segment-button class=" segment-not-active  letter-spacing-0" mode="md" routerLink="/7detox/about-toxic">
         <ion-label color="green">{{ a.t({en: 'About Toxic', ko: '독소란'}) }}</ion-label>
       </ion-segment-button>
-      <ion-segment-button class=" segment-not-active letter-spacing-0" mode="md" routerLink="/7detox/detoxification-tip">
+      <ion-segment-button class=" segment-not-active letter-spacing-0" mode="md"
+        routerLink="/7detox/detoxification-tip">
         <ion-label color="green">{{ a.t({en: 'Detox Tip', ko: '해독설명서'}) }}</ion-label>
       </ion-segment-button>
     </ion-segment>
@@ -27,7 +28,22 @@
 
 
 
-  <section class="px-4 page-width">
+
+  <section class="layout-width">
+
+    <h1 class="ion-text-center fs-lg md-fs-38px green">{{ a.t({en: 'About Detox', ko: '해독이란'}) }}
+
+    </h1>
+
+    <app-admin-page-edit-button class="float-right" [guid]=" guid " (edited)=" onEdit($event) ">
+    </app-admin-page-edit-button>
+
+    <img class="w-100 mb-4" src="{{ mobileSrc }}" *ngIf="a.isMobile">
+    <img class="w-100  md-mb-150px" src="{{ desktopSrc }}" *ngIf="a.isDesktop">
+  </section>
+
+
+  <!-- <section class="px-4 page-width">
 
 
     <ion-text color="green">
@@ -50,7 +66,7 @@
       </ion-row>
     </ion-grid>
 
-  </section>
+  </section> -->
 
   <ng-container *ngIf="a.isDesktop">
     <app-desktop-home-footer></app-desktop-home-footer>

@@ -13,3 +13,8 @@
     font-size: 16px !important;
   }
 }
+ion-content {
+  @media all and (min-width: 768px) {
+    --background: url(/assets/img/bg_transparent.jpg) 0 0 /100% 100% no-repeat !important;
+  }
+}
