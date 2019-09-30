@@ -24,7 +24,7 @@ export class ProfilePage implements OnInit {
   validationMessages: any = {};
 
   genderOptions: any = {
-    header: 'Choose Gender',
+    header: this.a.t({en: 'Choose Gender', ko: '성별 선택' }),
     cssClass: 'no-underline-on-last-item list-header-bold list-header-fs-18px list-header-green pop-medium  list-header-bottom-border ion-item-pointer'
   };
 
