@@ -9,6 +9,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { pageCode } from './page-code';
 import { FirebaseService } from './firebase.service';
 import { IonService } from 'modules/wordpress-api/components/shared/ion-service/ion-service';
+import { text } from './text';
 
 @Injectable({ providedIn: 'root' })
 export class AppService {
@@ -46,9 +47,24 @@ export class AppService {
     }
 
 
-    t(obj: { en?: string, ko?: string }) {
-        return obj[this.env.lang];
+    // t(obj: { en?: string, ko?: string }) {
+    //     return obj[this.env.lang];
+    // }
+
+    /**
+     * Returns a translate.
+     * @param obj Object or text code
+     */
+    t(obj: any): string {
+        if (typeof obj === 'object') {
+            return obj[this.env.lang];
+        } else if (typeof obj === 'string') {
+            return text[obj][this.env.lang];
+        } else {
+            return obj;
+        }
     }
+
 
     keys(obj: any): any[] {
         if (obj) {

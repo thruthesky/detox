@@ -127,8 +127,8 @@
           <ion-col class="mt-0 medium">
             <ion-select class="ion-text-left" placeholder="Select Gender" okText="" cancelText="" mode="md"
               formControlName="gender" [interfaceOptions]="genderOptions" interface="popover">
-              <ion-select-option value="F">Female</ion-select-option>
-              <ion-select-option value="M">Male</ion-select-option>
+              <ion-select-option value="F">{{ a.t({en: 'Female', ko: '여'}) }}</ion-select-option>
+              <ion-select-option value="M">{{ a.t({en: 'Female', ko: '남'}) }}</ion-select-option>
             </ion-select>
           </ion-col>
         </ion-row>
