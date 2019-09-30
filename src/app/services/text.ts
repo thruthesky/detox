@@ -7,6 +7,14 @@ export const text = {
         en: 'Good',
         ko: '좋음'
     },
+    bad: {
+        en: 'Bad',
+        ko: '나쁨'
+    },
+    normal: {
+        en: 'Normal',
+        ko: '정상'
+    },
     morning: {
         en: 'Morning',
         ko: '아침'
@@ -18,6 +26,6 @@ export const text = {
     evening: {
         en: 'Evening',
         ko: '저녁'
-    }
+    },
 };
 

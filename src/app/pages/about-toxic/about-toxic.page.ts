@@ -20,7 +20,7 @@ export class AboutToxicPage implements OnInit {
 
   constructor(public a: AppService) {
     this.a.wp.postGet({ guid: this.guid }).subscribe(post => {
-      console.log('post: post', post);
+      // console.log('post: post', post);
       this.pre(post);
 
     });
