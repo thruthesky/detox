@@ -9,11 +9,11 @@ export const text = {
     },
     bad: {
         en: 'Bad',
-        ko: '@t Bad'
+        ko: '나쁨'
     },
     normal: {
         en: 'Normal',
-        ko: '@t normal'
+        ko: '정상'
     },
     morning: {
         en: 'Morning',
