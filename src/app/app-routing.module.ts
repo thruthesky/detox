@@ -8,7 +8,7 @@ const routes: Routes = [
   { path: 'login', loadChildren: () => import('./pages/login/login.module').then(m => m.LoginPageModule) },
   { path: '7detox', redirectTo: '7detox/about', pathMatch: 'full' },
   { path: '7detox/about', loadChildren: () => import('./pages/about/about.module').then(m => m.AboutPageModule) },
-  { path: 'join', redirectTo: 'join/alarm-list', pathMatch: 'full' },
+  { path: 'join', redirectTo: 'join/prepare', pathMatch: 'full' },
   { path: 'alarm-list', loadChildren: () => import('./pages/alarm-list/alarm-list.module').then(m => m.AlarmListPageModule) },
   { path: 'join/alarm-list', loadChildren: () => import('./pages/alarm-list/alarm-list.module').then(m => m.AlarmListPageModule) },
   { path: 'products', loadChildren: () => import('./pages/products/products.module').then(m => m.ProductsPageModule) },
