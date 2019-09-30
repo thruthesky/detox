@@ -26,6 +26,6 @@ export const text = {
     evening: {
         en: 'Evening',
         ko: '저녁'
-    }
+    },
 };
 
