@@ -7,6 +7,14 @@ export const text = {
         en: 'Good',
         ko: '좋음'
     },
+    bad: {
+        en: 'Bad',
+        ko: '@t Bad'
+    },
+    normal: {
+        en: 'Normal',
+        ko: '@t normal'
+    },
     morning: {
         en: 'Morning',
         ko: '아침'
