@@ -25,8 +25,9 @@ const routes: Routes = [
     RouterModule.forChild(routes),
     HeaderModule,
     DesktopHomeFooterModule,
-    IonPostEditModule
+    IonPostEditModule,
+
   ],
   declarations: [EditDiaryPage]
 })
-export class EditDiaryPageModule {}
+export class EditDiaryPageModule { }

@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild  } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { AppService } from 'src/app/services/app.service';
 import { Post } from 'modules/wordpress-api/services/wordpress-api.interface';
 import { IonPostEditComponent } from 'modules/wordpress-api/components/forum/ion-post-edit/ion-post-edit.component';
@@ -10,9 +10,9 @@ import { IonPostEditComponent } from 'modules/wordpress-api/components/forum/ion
 })
 export class EditDiaryPage implements OnInit {
 
-  @ViewChild(IonPostEditComponent, {static: true }) edit: IonPostEditComponent;
+  @ViewChild(IonPostEditComponent, { static: true }) edit: IonPostEditComponent;
   constructor(
-    public a: AppService
+    public a: AppService,
   ) {
     window['comp'] = this;
   }
