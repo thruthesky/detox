@@ -17,7 +17,7 @@ export class MobileHomeTopSliderComponent implements OnInit, AfterViewInit {
       delay: 6000,
       disableOnInteraction: false,
     },
-  
+
   };
 
   posts: Posts;
@@ -27,17 +27,17 @@ export class MobileHomeTopSliderComponent implements OnInit, AfterViewInit {
       category_name: 'main-top-banner'
     };
     this.a.wp.postSearch(req).subscribe(res => {
-      // consoe.log('res; ', res);
       this.posts = res;
+      // console.log(this.posts);
 
     });
   }
 
-  ngOnInit() { }
+  ngOnInit() {
+  }
 
 
   ngAfterViewInit() {
- 
   }
 
 
