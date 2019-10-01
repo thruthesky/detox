@@ -11,6 +11,34 @@
 
 
 
+
+
+  <section class="layout-width">
+
+
+    <h1 class="ion-text-center fs-lg md-fs-38px green"> {{ a.t({en: 'Prepare', ko: '준비하기'}) }}
+
+    </h1>
+
+    <app-admin-page-edit-button class="float-right" [guid]=" guid " (edited)=" onEdit($event) ">
+    </app-admin-page-edit-button>
+
+    <img class=" w-100 mb-4" src="{{ mobileSrc }}" *ngIf="a.isMobile">
+    <img class="w-100  md-mb-150px" src="{{ desktopSrc }}" *ngIf="a.isDesktop">
+  </section>
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- 
   <section class="px-4 pb-50px md-pb-150px page-width">
 
 
@@ -28,7 +56,7 @@
 
 
 
-  </section>
+  </section> -->
   <ng-container *ngIf="a.isDesktop">
     <app-desktop-home-footer></app-desktop-home-footer>
   </ng-container>
