@@ -1,23 +1,20 @@
-<ion-header no-border>
+<!-- <ion-header no-border>
   <app-header></app-header>
 
-</ion-header>
+</ion-header> -->
 
-<ion-content>
+<ion-content class="bg-trans">
 
+  <section class="page xy-center">
+    <app-ion-post-edit [layout]="layout" [slug]="'diary'" [header]="{}" [post]="post" (edited)="onEdited($event)"
+      (edit)="onEdit($event)" (goBack)="onGoBack()"></app-ion-post-edit>
+  </section>
 
-  <app-ion-post-edit [layout]="layout" [slug]="'diary'" [header]="{}" [post]="post"
-  (edited)="onEdited($event)"
-  (edit)="onEdit($event)"
-  (goBack)="onGoBack()"
-  ></app-ion-post-edit>
-
+  <!-- 
 
   <ng-container *ngIf="a.isDesktop">
     <app-desktop-home-footer></app-desktop-home-footer>
   </ng-container>
-
+ -->
 
 </ion-content>
-
-
