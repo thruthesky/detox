@@ -39,6 +39,7 @@ const routes: Routes = [
   { path: 'join/prepare', loadChildren: './pages/prepare/prepare.module#PreparePageModule' },
   { path: '7detox/about-toxic', loadChildren: './pages/about-toxic/about-toxic.module#AboutToxicPageModule' },
   { path: 'password-find', loadChildren: './pages/password-find/password-find.module#PasswordFindPageModule' },
+  { path: 'edit-diary', loadChildren: './pages/edit-diary/edit-diary.module#EditDiaryPageModule' },
   { path: '**', loadChildren: () => import('./pages/page-not-found/page-not-found.module').then(m => m.PageNotFoundPageModule) },
 
 

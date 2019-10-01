@@ -2,7 +2,7 @@ import { Injectable, ViewChild } from '@angular/core';
 import { MenuController, AlertController, IonContent, IonSearchbar } from '@ionic/angular';
 import { WordpressApiService } from 'modules/wordpress-api/services/wordpress-api.service';
 import { environment } from 'src/environments/environment';
-import { ErrorObject } from 'modules/wordpress-api/services/wordpress-api.interface';
+import { ErrorObject, Post } from 'modules/wordpress-api/services/wordpress-api.interface';
 import { Router, NavigationEnd } from '@angular/router';
 import { AlertOptions } from '@ionic/core';
 import { DomSanitizer } from '@angular/platform-browser';
@@ -25,6 +25,9 @@ export class AppService {
 
     env = environment;
     anonymousPhotoUrl = '/assets/img/anonymous.jpg';
+
+    diaryPostToEdit: Post = null;
+    diaryPostToView: Post = null;
     constructor(
         private router: Router,
         private sideMenu: MenuController,
@@ -224,7 +227,7 @@ export class AppService {
             return;
         }
         this.wp.resign().subscribe(user => {
-            console.log('resigned user: ', user);
+            // console.log('resigned user: ', user);
             this.alert({ message: this.t({ ko: '회원 탈퇴를 하였습니다.', en: 'You have resigned.' }) });
             this.openHome();
         }, e => this.error(e));

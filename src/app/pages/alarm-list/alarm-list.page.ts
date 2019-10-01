@@ -111,14 +111,14 @@ export class AlarmListPage implements OnInit {
   }
 
   ngOnInit() {
-    console.log(this.alarms);
+    // console.log(this.alarms);
     this.a.wp.post({ method: 'alarmList' }).pipe(map(r => r.data)).subscribe(res => {
       // console.log('alarmList:', res);
       if (res && res.length === 0) {
         // console.log('No alaram exists. ');
         this.createAlarams();
       } else {
-        console.log('res.length', res.length, res);
+        // console.log('res.length', res.length, res);
         this.creatingDefaultAlarms = false;
         this.alarms = res as any;
 
@@ -217,12 +217,12 @@ export class AlarmListPage implements OnInit {
   async onClickDelete(alarm: Alarm) {
     const title = alarm.title;
     const re = await this.a.confirm({ message: this.a.t({ en: `Do you want to delete this alarm - ${title}?`, ko: `"${title}" - 알람을 삭제하시겠습니까?` }) });
-    console.log('re: ', re);
+    // console.log('re: ', re);
     if (re.role === 'no') {
       return;
     }
     this.a.wp.post({ method: 'alarmDelete', ID: alarm.ID }).pipe(map(r => r.data)).subscribe((res: Alarm) => {
-      console.log('delete', res);
+      // console.log('delete', res);
       this.alarms.splice(this.alarms.findIndex(a => a.ID === res.ID), 1);
     }, e => this.a.error(e));
   }
@@ -231,7 +231,7 @@ export class AlarmListPage implements OnInit {
     this.a.wp.post({ method: 'alarmEnable', ID: alarm.ID, enabled: alarm.enabled === 'Y' ? '' : 'Y' }).pipe(
       map(r => r.data)
     ).subscribe(res => {
-      console.log('enabled: ', res);
+      // console.log('enabled: ', res);
     }, e => this.a.error(e));
   }
 

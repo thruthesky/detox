@@ -52,7 +52,7 @@ export class HomeTrainingPage implements OnInit {
   }
 
   onChangeTab(name: string) {
-    console.log('list', this.list);
+    // console.log('list', this.list);
     this.showList();
     this.list.loadItems(name);
     this.scrollToTop();

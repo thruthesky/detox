@@ -22,8 +22,8 @@ export class PostListPage implements OnInit {
     activiatedRoute.paramMap.subscribe(params => {
       this.slug = params.get('slug');
       this.keyword = params.get('keyword');
-      console.log('slug: ', this.slug);
-      console.log('keyword: ', this.keyword);
+      // console.log('slug: ', this.slug);
+      // console.log('keyword: ', this.keyword);
     });
   }
 
