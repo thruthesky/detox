@@ -27,7 +27,7 @@ export class DetoxificationRecipeItemPage implements OnInit {
       this.a.wp.postGet({ ID: params.get('ID') }).subscribe(post => {
         this.post = post;
 
-        console.log(this.post);
+        // console.log(this.post);
         this.posts = {};
         for (let i = 0; i < 1; i++) {
           const guid = `${this.post.ID}-${i}`;

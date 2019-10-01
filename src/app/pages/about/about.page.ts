@@ -31,7 +31,7 @@ export class AboutPage implements OnInit {
     public a: AppService
   ) {
     this.a.wp.postGet({ guid: this.guid }).subscribe(post => {
-      console.log('post: post', post);
+      // console.log('post: post', post);
       this.pre(post);
     }, e => this.a.error(e));
     // this.a.wp.postGetIn({ guid: a.pageCode.aboutTopLeft }, this.posts.topLeft);

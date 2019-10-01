@@ -21,14 +21,14 @@ export class PasswordFindPage implements OnInit {
 
 
     this.a.wp.resetPassword({ email: this.email }).subscribe(res => {
-      console.log('password reset: ', res);
+      // console.log('password reset: ', res);
 
       this.a.wp.sendEmail({
         email: this.email,
         title: `7Detox - Your password has been changed.`,
         body: `Your new password in 7Detox is ${res.new_password}`,
       }).subscribe(re => {
-        console.log('email sent!', re);
+        // console.log('email sent!', re);
       }, e => this.a.error(e));
     }, e => this.a.error(e));
 

@@ -16,7 +16,7 @@ const messaging = firebase.messaging();
 
 
 messaging.setBackgroundMessageHandler(function (payload) {
-    console.log('[firebase-messaging-sw.js] Received background message ', payload);
+    // console.log('[firebase-messaging-sw.js] Received background message ', payload);
     // Customize notification here
     var notificationTitle = '맘카페에서 메시지가 도착하였습니다.';
     var notificationOptions = {

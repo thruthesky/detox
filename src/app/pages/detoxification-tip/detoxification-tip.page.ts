@@ -44,7 +44,7 @@ export class DetoxificationTipPage implements OnInit {
   ) {
     // this.a.wp.postGetIn({ guid: this.guid }, this.tipTitle);
     this.a.wp.postGet({ guid: this.guid }).subscribe(post => {
-      console.log('post: post', post);
+      // console.log('post: post', post);
       this.pre(post);
 
     });

@@ -53,15 +53,16 @@ export class DetoxificationDiaryPage implements OnInit, OnDestroy {
     this.page = 1;
   }
   ngOnInit() {
+  }
+
+  ionViewDidEnter() {
+
     this.reset();
     if (!this.slug) {
       this.error = this.wp.t('NoSlug');
       return;
     }
     this.loadPage();
-
-    // test
-    // setTimeout(() => this.onClickPost(), 500);
   }
 
   get loadOptions(): any {
@@ -126,74 +127,96 @@ export class DetoxificationDiaryPage implements OnInit, OnDestroy {
     }
   }
 
-  async onClickPost() {
-    const modal = await this.modalController.create({
-      component: IonPostEditComponent,
-      componentProps: {
-        layout: 'diary',
-        slug: this.slug,
-        header: {
-          color: 'primary',
-          title: this.wp.t('Diary', { name: this.wp.t(this.slug) })
-        }
-      },
-      mode: 'md',
-      // cssClass: 'diary-popup i-pop-mt-5px  box-shadow-none',
-    });
-    modal.present();
-    const res = await modal.onWillDismiss();
-    if (res && res.data) {
-      this.pre(res.data);
-      // console.log('post created: ', res.data);
-      this.posts.unshift(res.data);
-    }
+  /**
+   * New diary edit page
+   */
+  onClickPost() {
+    this.a.diaryPostToEdit = null;
+    this.a.diaryPostToView = null;
+    // console.log('onClickPost');
+    this.a.open('/edit-diary');
+  }
+  onEdit(post: Post) {
+    // console.log('onEdit');
+    this.a.diaryPostToEdit = post;
+    this.a.diaryPostToView = null;
+    this.a.open('/edit-diary');
+  }
+  onView(post: Post) {
+    // console.log('onView');
+    this.a.diaryPostToEdit = null;
+    this.a.diaryPostToView = post;
+    this.a.open('/edit-diary');
   }
 
-  async onEdit(post: Post) {
-    // console.log('Going to edit post: ', post);
-    const modal = await this.modalController.create({
-      component: IonPostEditComponent,
-      componentProps: {
-        layout: 'diary',
-        post: post,
-        header: {
-          color: 'primary',
-          title: this.wp.t('titleEditPost')
-        }
-      }
-    });
-    modal.present();
-    const res = await modal.onWillDismiss();
-    if (res && res.data) {
-      // console.log('post updated', res.data);
-      this.pre(res.data);
-      this.updatePost(res.data);
-    }
-  }
+  // async onClickPost() {
+  //   const modal = await this.modalController.create({
+  //     component: IonPostEditComponent,
+  //     componentProps: {
+  //       layout: 'diary',
+  //       slug: this.slug,
+  //       header: {
+  //         color: 'primary',
+  //         title: this.wp.t('Diary', { name: this.wp.t(this.slug) })
+  //       }
+  //     },
+  //     mode: 'md',
+  //     // cssClass: 'diary-popup i-pop-mt-5px  box-shadow-none',
+  //   });
+  //   modal.present();
+  //   const res = await modal.onWillDismiss();
+  //   if (res && res.data) {
+  //     this.pre(res.data);
+  //     // console.log('post created: ', res.data);
+  //     this.posts.unshift(res.data);
+  //   }
+  // }
 
-  async onView(post: Post) {
-    // console.log('Going to edit post: ', post);
-    const modal = await this.modalController.create({
-      component: IonPostEditComponent,
-      componentProps: {
-        layout: 'diary-view',
-        post: post,
-        header: {
-          color: 'primary',
-          title: this.wp.t('titleEditPost')
-        }
-      }
-    });
-    modal.present();
-    const res = await modal.onWillDismiss();
+  // async onEdit(post: Post) {
+  //   // console.log('Going to edit post: ', post);
+  //   const modal = await this.modalController.create({
+  //     component: IonPostEditComponent,
+  //     componentProps: {
+  //       layout: 'diary',
+  //       post: post,
+  //       header: {
+  //         color: 'primary',
+  //         title: this.wp.t('titleEditPost')
+  //       }
+  //     }
+  //   });
+  //   modal.present();
+  //   const res = await modal.onWillDismiss();
+  //   if (res && res.data) {
+  //     // console.log('post updated', res.data);
+  //     this.pre(res.data);
+  //     this.updatePost(res.data);
+  //   }
+  // }
 
-    console.log(res);
-    if (res && res.data) {
-      if (res.role === 'edit') {
-        this.onEdit(res.data);
-      }
-    }
-  }
+  // async onView(post: Post) {
+  //   // console.log('Going to edit post: ', post);
+  //   const modal = await this.modalController.create({
+  //     component: IonPostEditComponent,
+  //     componentProps: {
+  //       layout: 'diary-view',
+  //       post: post,
+  //       header: {
+  //         color: 'primary',
+  //         title: this.wp.t('titleEditPost')
+  //       }
+  //     }
+  //   });
+  //   modal.present();
+  //   const res = await modal.onWillDismiss();
+
+  //   console.log(res);
+  //   if (res && res.data) {
+  //     if (res.role === 'edit') {
+  //       this.onEdit(res.data);
+  //     }
+  //   }
+  // }
 
 
   updatePost(post: Post) {
