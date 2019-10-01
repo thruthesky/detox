@@ -64,6 +64,11 @@ export class DetoxificationDiaryPage implements OnInit, OnDestroy {
     // setTimeout(() => this.onClickPost(), 500);
   }
 
+  ionViewDidLeave() {
+    this.modalController.dismiss();
+  }
+
+
   get loadOptions(): any {
     return {
       category_name: this.slug,

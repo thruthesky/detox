@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { AppService } from 'src/app/services/app.service';
 import { IonPostListComponent } from 'modules/wordpress-api/components/forum/ion-post-list/ion-post-list.component';
 import { ActivatedRoute } from '@angular/router';
+import { ModalController } from '@ionic/angular';
 
 @Component({
   selector: 'app-post-list',
@@ -17,7 +18,8 @@ export class PostListPage implements OnInit {
   keyword: string;
   constructor(
     public a: AppService,
-    activiatedRoute: ActivatedRoute
+    activiatedRoute: ActivatedRoute,
+    public modal: ModalController
   ) {
     activiatedRoute.paramMap.subscribe(params => {
       this.slug = params.get('slug');
@@ -30,6 +32,11 @@ export class PostListPage implements OnInit {
   ngOnInit() {
     // console.log('ngOnInit::');
   }
+
+  ionViewDidLeave() {
+    this.modal.dismiss();
+  }
+
 
   onIonChangeForum(event: any) {
     if (this.slug) {
