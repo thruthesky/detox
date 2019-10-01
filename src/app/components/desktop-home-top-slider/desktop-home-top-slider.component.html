@@ -11,7 +11,7 @@
     </button>
   </div>
 
-  <ion-slides mode="ios" pager="ios" scrollbar="ios" [options]="options" #slides *ngIf="posts">
+  <ion-slides mode="ios" pager="ios" scrollbar="ios" [options]="options" #slides *ngIf="posts && posts.length">
     <ng-container *ngFor="let p of posts">
       <ion-slide>
         <div class="xy-center z-1000 ion-text-start w-400px ml-md-100px ml-lg-150px ml-xl-200px "
@@ -26,7 +26,7 @@
         </div>
 
         <div class="w-100 h-md-400px h-lg-450px  h-xl-500px  h-xxl-550px  cover-top-center"
-          [style.background]="'url(' + p.files[0].url + ')'" *ngIf="p.files.length">
+          [style.background]="'url(' + p.files[0].url + ')'" *ngIf="p.files[0]?.url">
         </div>
       </ion-slide>
     </ng-container>

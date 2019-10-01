@@ -20,7 +20,7 @@
         </ion-button> -->
 
     </div>
-    <img class="img-size" [src]="p.files[0]?.url" alt="banner">
+    <img class="img-size" [src]="p.files[0].url" alt="banner" *ngIf="p.files[0]?.url">
 
 
 
