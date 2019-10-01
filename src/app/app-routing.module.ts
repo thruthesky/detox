@@ -20,6 +20,7 @@ const routes: Routes = [
   { path: '7detox/about-detoxification', loadChildren: () => import('./pages/about-detoxification/about-detoxification.module').then(m => m.AboutDetoxificationPageModule) },
   { path: 'how-to-detox-my-body', loadChildren: () => import('./pages/how-to-detox-my-body/how-to-detox-my-body.module').then(m => m.HowToDetoxMyBodyPageModule) },
   { path: 'measure-detox', loadChildren: () => import('./pages/measure-detox/measure-detox.module').then(m => m.MeasureDetoxPageModule) },
+  { path: 'detoxification-diary', loadChildren: () => import('./pages/detoxification-diary/detoxification-diary.module').then(m => m.DetoxificationDiaryPageModule) },
   { path: 'join/detoxification-diary', loadChildren: () => import('./pages/detoxification-diary/detoxification-diary.module').then(m => m.DetoxificationDiaryPageModule) },
   { path: 'detoxification-recipe', loadChildren: () => import('./pages/detoxification-recipe/detoxification-recipe.module').then(m => m.DetoxificationRecipePageModule) },
   { path: 'join/home-training/:name', loadChildren: () => import('./pages/home-training/home-training.module').then(m => m.HomeTrainingPageModule) },
